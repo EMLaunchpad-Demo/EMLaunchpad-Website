@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>EM Launchpad — Render MP4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #0a0d12; overflow: hidden; font-family: 'JetBrains Mono', monospace; }
+  * { box-sizing: border-box; }
+  #stageWrap { position: absolute; inset: 0 0 96px 0; display: flex; align-items: center; justify-content: center; }
+  #frame { width: 1920px; height: 1080px; position: relative; background: #06080c; overflow: hidden; transform-origin: center; }
+  #bar {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 96px;
+    display: flex; align-items: center; gap: 18px; padding: 0 22px;
+    background: #0c1118; border-top: 1px solid rgba(120,180,200,0.18); color: #cfe4ea;
+  }
+  button {
+    font-family: inherit; font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+    color: #061018; background: linear-gradient(120deg, #2f7bff, #13c7e6 50%, #2ff0a6);
+    border: 0; border-radius: 10px; padding: 13px 22px; cursor: pointer;
+  }
+  button:disabled { opacity: 0.5; cursor: default; }
+  select { font-family: inherit; background: #121922; color: #cfe4ea; border: 1px solid rgba(120,180,200,0.25); border-radius: 8px; padding: 9px 10px; }
+  label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.6; }
+  .col { display: flex; flex-direction: column; gap: 5px; }
+  #status { margin-left: auto; font-size: 13px; opacity: 0.85; min-width: 260px; text-align: right; }
+  #track { flex: 1; height: 5px; background: rgba(120,180,200,0.18); border-radius: 3px; overflow: hidden; max-width: 340px; }
+  #fill { height: 100%; width: 0%; background: linear-gradient(90deg, #2f7bff, #2ff0a6); transition: width 0.1s; }
+</style>
+</head>
+<body>
+<div id="stageWrap"><div id="frame"></div></div>
+<div id="bar">
+  <button id="render">Render &amp; Download MP4</button>
+  <div class="col"><label>FPS</label>
+    <select id="fps"><option>24</option><option selected>30</option><option>60</option></select></div>
+  <div class="col"><label>Resolution</label>
+    <select id="res"><option value="1">1920 × 1080</option><option value="0.6667" selected>1280 × 720</option></select></div>
+  <div id="track"><div id="fill"></div></div>
+  <div id="status">Ready.</div>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script>
+<script src="https://unpkg.com/h264-mp4-encoder@1.0.12/embuild/dist/h264-mp4-encoder.web.js"></script>
+
+<script type="text/babel" src="animations.jsx?v=3"></script>
+<script type="text/babel" src="reveal.jsx?v=4"></script>
+<script type="text/babel" src="recorder.jsx?v=2"></script>
+</body>
+</html>

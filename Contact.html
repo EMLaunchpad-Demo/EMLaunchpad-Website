@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact | EM Launchpad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="home.css?v=20260620c" />
+<link rel="stylesheet" href="pages.css?v=20260620c" />
+</head>
+<body data-page="contact">
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>
+    <span class="loader-word">Launchpad</span>
+    <div class="loader-bar"><i></i></div>
+    <span class="loader-status"><span class="dot"></span><span id="loaderMsg">systemen initialiseren</span></span>
+  </div>
+</div>
+
+<div id="nav-mount"></div>
+
+<!-- ════════ HERO ════════ -->
+<header class="page-hero">
+  <div class="dotgrid fade-c"></div>
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="inner">
+      <span class="eyebrow"><span class="dot" style="width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px rgba(47,240,166,.7);"></span>7 dagen op 7 bereikbaar · antwoord binnen 4 uur</span>
+      <h1 class="hero-h">Laten we <span class="grad">praten.</span></h1>
+      <p class="lead">Een vraag? Een project? Of gewoon even kennismaken? We zijn rechtstreeks bereikbaar — geen ticketsysteem, geen wachtrijen.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ CONTACT GRID ════════ -->
+<section class="sec sec--tight" style="padding-top:24px;">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="cinfo-card">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.5a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span>
+          <div><div class="k">Telefoon</div><div class="v"><a href="tel:+32476015451">+32 476 01 54 51</a></div></div>
+        </div>
+        <div class="cinfo-card">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
+          <div><div class="k">E-mail</div><div class="v"><a href="mailto:hallo@emlaunchpad.com">hallo@emlaunchpad.com</a></div></div>
+        </div>
+        <div class="cinfo-card">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><div class="k">Locatie</div><div class="v">Limburg · België</div><div class="s">Actief in heel het land</div></div>
+        </div>
+        <div class="hours">
+          <div class="hour"><div class="d">Ma — Vr</div><div class="t">9:00 — 18:00</div></div>
+          <div class="hour"><div class="d">Za — Zo</div><div class="t">Op afspraak</div></div>
+          <div class="hour"><div class="d">Beschikbaar</div><div class="t">7 dagen op 7</div></div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <span class="corner" style="position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:var(--grad);opacity:.07;filter:blur(22px);"></span>
+        <h3>Stuur ons een bericht</h3>
+        <p class="sub">Vul het formulier in en we nemen binnen 24 uur contact op met een concreet voorstel of een gratis gesprek.</p>
+        <div class="row-2">
+          <div class="field"><label>Naam</label><input type="text" placeholder="Jouw naam" /></div>
+          <div class="field"><label>Telefoon</label><input type="tel" placeholder="+32 ..." /></div>
+        </div>
+        <div class="field"><label>E-mail</label><input type="email" placeholder="jouw@email.be" /></div>
+        <div class="field"><label>Bericht</label><textarea placeholder="Vertel ons kort over je bedrijf en wat je zoekt..."></textarea></div>
+        <button type="submit" class="btn" style="width:100%;justify-content:center;">Verstuur bericht <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        <p class="form-note">Formulier laadt niet? Mail ons direct op <a href="mailto:ebert.vanbrabant@emlaunchpad.com">ebert.vanbrabant@emlaunchpad.com</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ANDERE KANALEN ════════ -->
+<section class="sec" style="background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Liever een andere weg?</span>
+      <h2 class="h2">Kies wat voor <span class="grad">jou werkt.</span></h2>
+      <p class="lead">We zijn op elk kanaal even snel.</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.5a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span>
+        <h4>Bel ons direct</h4>
+        <p>Snelste manier om antwoord te krijgen. We nemen zelf op.</p>
+        <a href="tel:+32476015451" class="go">Bel nu <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <div class="method-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <h4>Plan een gesprek</h4>
+        <p>30 minuten online of telefoon. Kies zelf je moment in onze agenda.</p>
+        <a href="#" class="go">Open agenda <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <div class="method-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.9.9.9-2.8-.2-.3A8.2 8.2 0 1112 20.2zm4.7-6.1c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.2-.7.8-.8 1-.3.2-.6.1a6.7 6.7 0 01-2-1.2 7.4 7.4 0 01-1.4-1.7c-.1-.3 0-.4.1-.6l.4-.5.3-.5v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.9 11.9 0 004.6 4 5.2 5.2 0 003.2.7 2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg></span>
+        <h4>WhatsApp</h4>
+        <p>Stuur een berichtje en we antwoorden binnen het uur (tijdens werkdagen).</p>
+        <a href="https://wa.me/32476015451" class="go">Open chat <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAQ ════════ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Veelgestelde vragen</span>
+      <h2 class="h2">Goed om <span class="grad">te weten.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Hoe snel krijg ik antwoord?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">7 dagen op 7 binnen 4 uur op formulieren en e-mails. Telefoon en WhatsApp gaan meestal sneller — binnen het uur. Ook in het weekend.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Krijg ik direct een offerte?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Nee — eerst plannen we een kort gesprek om je situatie en doelen te begrijpen. Pas dan kunnen we een realistisch voorstel maken dat écht bij jouw bedrijf past. Geen pre-fab offertes met cijfers uit de lucht.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Kunnen we ergens fysiek afspreken?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Zeker. We komen graag bij jou ter plaatse in heel België — of jij komt naar Antwerpen of Limburg. De meeste klanten kiezen voor een eerste online gesprek (sneller en efficiënter), maar het mag perfect fysiek.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Werken jullie ook met startups?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Ja, we hebben verschillende pakketten — van een eerste website voor een startend bedrijf tot complete AI-stack voor groeiende KMO's. We bekijken samen wat realistisch is binnen jouw budget.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta-band">
+  <div class="dotgrid fade-c"></div>
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2>Geen tijd om te wachten? <span class="grad">Plan direct een gesprek.</span></h2>
+      <p class="lead">Kies zelf een moment in onze agenda — vandaag nog mogelijk. 30 minuten, geen verplichtingen.</p>
+      <div class="row"><a href="#" class="btn">Plan een gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="site.js?v=20260620c"></script>
+</body>
+</html>
