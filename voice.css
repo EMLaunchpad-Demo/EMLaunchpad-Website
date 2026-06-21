@@ -1,0 +1,166 @@
+/* EMLaunchpad — AI Voice Agents page.
+   Interactive "live call simulator": a glowing voice orb, a reactive waveform,
+   a typing transcript and a language switcher. Loaded after home.css. */
+
+/* ── hero ─────────────────────────────────────────────────────────────── */
+.vo-hero { position: relative; overflow: hidden; padding: 52px 0 64px; }
+.vo-hero .dotgrid { opacity: .5; }
+.vo-hero .glow { left: 50%; top: 0; width: 1200px; height: 760px; transform: translateX(-50%); }
+.vo-hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 44px; align-items: center; }
+.vo-copy .eyebrow { margin-bottom: 20px; }
+.vo-copy h1 { margin: 0; font-weight: 800; font-size: clamp(38px, 5vw, 62px); line-height: 1.02;
+  letter-spacing: -.04em; max-width: 14ch; text-wrap: balance; }
+.vo-copy .lead { margin-top: 22px; }
+.vo-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.vo-badges span { font-family: var(--mono); font-size: 12px; color: var(--mid);
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--glass-2); }
+.vo-badges span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 8px rgba(47,240,166,.7); }
+.vo-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+/* ════════════════ THE CALL DEVICE ════════════════ */
+.call { position: relative; width: 100%; max-width: 460px; margin: 0 auto; z-index: 2;
+  background: var(--glass-2); -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--line-2); border-radius: 28px; padding: 26px 26px 22px; overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.07); }
+.call::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(40,120,255,.16), transparent 70%); }
+.call > * { position: relative; z-index: 1; }
+
+/* status bar */
+.call-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.call-id { display: flex; align-items: center; gap: 11px; }
+.call-id .em-chip { width: 40px; height: 40px; border-radius: 11px; }
+.call-id .em-chip b, .call-id .em-chip .em-img { font-size: 16px; }
+.call-id .nm { font-weight: 700; font-size: 15px; color: var(--hi); line-height: 1.1; }
+.call-id .ph { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.call-state { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--mint); display: inline-flex; align-items: center; gap: 8px; padding: 6px 11px;
+  border: 1px solid var(--line); border-radius: 999px; background: rgba(10,14,21,.5); white-space: nowrap; }
+.call-state .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mid); transition: background .3s; }
+.call.is-ringing .call-state { color: #ffd27d; } .call.is-ringing .call-state .dot { background: #ffd27d; animation: blink 1s steps(2) infinite; }
+.call.is-live .call-state { color: var(--mint); } .call.is-live .call-state .dot { background: var(--mint); box-shadow: 0 0 8px rgba(47,240,166,.8); animation: blink 1.4s steps(2) infinite; }
+.call.is-ended .call-state { color: var(--dim); } .call.is-ended .call-state .dot { background: var(--dim); }
+
+/* ── voice orb ────────────────────────────────────────────────────────── */
+.orb-wrap { position: relative; height: 188px; display: grid; place-items: center; margin: 6px 0 14px; }
+.orb-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(47,240,166,.35); opacity: 0; }
+.call.is-ringing .orb-ring, .call.is-live .orb-ring { animation: orbRing 2.4s ease-out infinite; }
+.orb-ring.r2 { animation-delay: .8s !important; }
+.orb-ring.r3 { animation-delay: 1.6s !important; }
+@keyframes orbRing { 0% { width: 96px; height: 96px; opacity: .7; } 100% { width: 250px; height: 250px; opacity: 0; } }
+.orb { position: relative; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 38% 32%, #2ff0a6, #13c7e6 46%, #2f7bff 92%);
+  box-shadow: 0 0 50px rgba(40,160,230,.55), inset 0 4px 14px rgba(255,255,255,.4), inset 0 -10px 20px rgba(10,40,90,.5);
+  transition: transform .25s ease; cursor: pointer; }
+.orb::after { content: ""; position: absolute; inset: 8px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 30%, rgba(255,255,255,.6), transparent 55%); opacity: .8; }
+.call.is-idle .orb { animation: orbBreath 4s ease-in-out infinite; }
+@keyframes orbBreath { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+.call.is-live .orb { animation: orbTalk .5s ease-in-out infinite; }
+@keyframes orbTalk { 0%,100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+.orb svg { position: relative; z-index: 1; width: 38px; height: 38px; color: #04221a; }
+.orb .ico-phone, .orb .ico-mic { transition: opacity .2s ease; }
+.call:not(.is-live) .orb .ico-mic { display: none; }
+.call.is-live .orb .ico-phone { display: none; }
+
+/* ── waveform ─────────────────────────────────────────────────────────── */
+.wave { display: flex; align-items: center; justify-content: center; gap: 3px; height: 56px; margin: 4px 0 16px; }
+.wave i { width: 4px; min-height: 4px; height: 4px; border-radius: 4px; background: var(--grad);
+  transition: height .09s ease; opacity: .85; }
+.call.is-idle .wave i, .call.is-ended .wave i { height: 4px !important; opacity: .3; }
+
+/* ── transcript ───────────────────────────────────────────────────────── */
+.transcript { min-height: 132px; display: flex; flex-direction: column; gap: 9px; margin-bottom: 16px;
+  max-height: 168px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, transparent, #000 16%);
+  mask-image: linear-gradient(180deg, transparent, #000 16%); justify-content: flex-end; }
+.tr-line { font-size: 13.5px; line-height: 1.4; padding: 9px 13px; border-radius: 13px; max-width: 88%;
+  opacity: 0; transform: translateY(8px); animation: trIn .4s ease forwards; }
+.tr-line.ai { align-self: flex-start; background: rgba(47,240,166,.1); border: 1px solid rgba(47,240,166,.22); color: var(--hi); border-bottom-left-radius: 4px; }
+.tr-line.user { align-self: flex-end; background: rgba(150,200,210,.08); border: 1px solid var(--line); color: var(--mid); border-bottom-right-radius: 4px; }
+.tr-line .who { font-family: var(--mono); font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; opacity: .6; display: block; margin-bottom: 3px; }
+@keyframes trIn { to { opacity: 1; transform: translateY(0); } }
+
+/* ── controls ─────────────────────────────────────────────────────────── */
+.call-ctrl { display: flex; align-items: center; gap: 10px; }
+.call-btn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 9px; cursor: pointer;
+  font-family: var(--font); font-weight: 700; font-size: 14.5px; padding: 14px 18px; border-radius: 14px; border: 0;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, opacity .2s ease; }
+.call-btn.answer { color: #04130f; background: var(--grad); box-shadow: 0 12px 30px rgba(45,200,180,.32); }
+.call-btn.answer:hover { transform: translateY(-1px); filter: brightness(1.05); }
+.call-btn.hang { color: #ffd9d9; background: rgba(220,70,70,.16); border: 1px solid rgba(220,70,70,.4); flex: none; width: 54px; }
+.call-btn.hang:hover { background: rgba(220,70,70,.28); }
+.call-btn.hang svg { width: 18px; height: 18px; }
+.call-btn svg { width: 17px; height: 17px; }
+.call-btn:disabled { opacity: .4; cursor: default; }
+
+/* language switch */
+.lang-switch { display: flex; gap: 6px; justify-content: center; margin-top: 16px; }
+.lang-switch button { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .06em;
+  color: var(--dim); background: transparent; border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 14px; cursor: pointer; transition: all .18s ease; }
+.lang-switch button:hover { color: var(--mid); border-color: var(--line-2); }
+.lang-switch button.active { color: #04130f; background: var(--grad); border-color: transparent; }
+
+.call-hint { text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: .04em;
+  color: var(--dim); margin-top: 14px; }
+.call-hint b { color: var(--mint); font-weight: 500; }
+
+/* ════════════════ STATS STRIP ════════════════ */
+.vstats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
+.vstat { padding: 24px; border-radius: 16px; background: var(--glass); border: 1px solid var(--line); text-align: center; }
+.vstat .num { font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -.03em; line-height: 1;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.vstat .lab { font-size: 13px; color: var(--mid); margin-top: 10px; line-height: 1.4; }
+
+/* ════════════════ USE CASES (tabs) ════════════════ */
+.uc { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; margin-top: 52px; align-items: stretch; }
+.uc-tabs { display: flex; flex-direction: column; gap: 10px; }
+.uc-tab { text-align: left; cursor: pointer; padding: 20px 22px; border-radius: 16px; background: var(--glass);
+  border: 1px solid var(--line); display: flex; align-items: center; gap: 15px; transition: all .22s ease; color: inherit; font: inherit; }
+.uc-tab:hover { border-color: var(--line-2); }
+.uc-tab.active { border-color: rgba(47,240,166,.45); background: rgba(47,240,166,.06); }
+.uc-tab .uc-ic { width: 44px; height: 44px; border-radius: 12px; flex: none; display: grid; place-items: center;
+  border: 1px solid var(--line-2); color: var(--dim); transition: color .22s, border-color .22s; }
+.uc-tab.active .uc-ic { color: var(--mint); border-color: rgba(47,240,166,.4); }
+.uc-tab .uc-ic svg { width: 22px; height: 22px; }
+.uc-tab h4 { margin: 0 0 2px; font-weight: 700; font-size: 16px; letter-spacing: -.01em; }
+.uc-tab p { margin: 0; font-size: 12.5px; color: var(--dim); }
+.uc-panel { position: relative; border-radius: 20px; background: var(--glass); border: 1px solid var(--line-2);
+  padding: 34px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; min-height: 320px; }
+.uc-panel .corner { position: absolute; right: -50px; top: -50px; width: 170px; height: 170px; border-radius: 50%;
+  background: var(--grad); opacity: .08; filter: blur(26px); }
+.uc-view { display: none; }
+.uc-view.active { display: block; animation: ucIn .45s ease; }
+@keyframes ucIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.uc-view .k { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--mint); }
+.uc-view h3 { margin: 12px 0 10px; font-weight: 800; font-size: 27px; letter-spacing: -.03em; }
+.uc-view p { margin: 0 0 20px; color: var(--mid); font-size: 15.5px; line-height: 1.6; max-width: 48ch; }
+.uc-view .feat { gap: 12px; }
+
+/* ════════════════ CAPABILITIES (reuse cap-grid from chatbot.css if present) ═══ */
+.vcap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; }
+.vcap { padding: 28px; border-radius: 18px; background: var(--glass); border: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 13px; transition: border-color .25s ease, transform .25s ease; }
+.vcap:hover { border-color: rgba(47,240,166,.3); transform: translateY(-3px); }
+.vcap .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; flex: none;
+  background: var(--ink); border: 1px solid transparent; color: var(--mint);
+  background-image: linear-gradient(var(--ink-2), var(--ink-2)), var(--grad); background-origin: border-box; background-clip: padding-box, border-box; }
+.vcap .ic svg { width: 22px; height: 22px; }
+.vcap h4 { margin: 0; font-weight: 700; font-size: 18px; letter-spacing: -.02em; }
+.vcap p { margin: 0; color: var(--mid); font-size: 14.5px; line-height: 1.55; }
+
+@media (max-width: 1040px) {
+  .vo-hero-grid { grid-template-columns: 1fr; gap: 30px; }
+  .vstats { grid-template-columns: repeat(2, 1fr); }
+  .uc { grid-template-columns: 1fr; gap: 22px; }
+  .vcap-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .vstats, .vcap-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orb, .orb-ring, .call.is-idle .orb { animation: none !important; }
+}

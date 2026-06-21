@@ -18,6 +18,9 @@
           <a href="Contact.html" data-nav="contact">contact</a>
         </div>
         <span class="nav-spacer"></span>
+        <div class="lang-pick" data-no-i18n="" role="group" aria-label="Taal / Language">
+          <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
+        </div>
         <a href="#" class="nav-demo">live_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
         <a href="Contact.html" class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </nav>
@@ -101,6 +104,9 @@
     if (a.dataset.nav === page) a.classList.add('active');
   });
 
+  // Apply site-wide language (switcher lives in the nav)
+  if (window.EMi18n) window.EMi18n.init();
+
   // Loader — fade out once page/fonts are ready
   (function () {
     const loader = document.getElementById('loader');
@@ -128,4 +134,85 @@
       if (!open) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
     });
   });
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll progress bar (top of page)
+  (function () {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-prog';
+    document.body.appendChild(bar);
+    let ticking = false;
+    const update = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max > 0 ? (h.scrollTop || window.scrollY) / max : 0;
+      bar.style.width = (p * 100) + '%';
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  })();
+
+  // Nav condense on scroll
+  (function () {
+    const onScroll = () => { document.body.classList.toggle('is-scrolled', (window.scrollY || 0) > 24); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Reveal-on-scroll (staggered) — opt-in via [data-reveal]
+  if (!reduceMotion) {
+    document.documentElement.classList.add('reveal-ready');
+    // stagger children inside [data-reveal-group]
+    document.querySelectorAll('[data-reveal-group]').forEach((grp) => {
+      [...grp.querySelectorAll(':scope > [data-reveal]')].forEach((el, i) => {
+        el.style.transitionDelay = (i * 75) + 'ms';
+      });
+    });
+    const all = [...document.querySelectorAll('[data-reveal]')];
+    const reveal = (el) => el.classList.add('in');
+    // 1) reveal anything already in (or above) the viewport immediately
+    const initPass = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      all.forEach((el) => { if (el.classList.contains('in')) return; if (el.getBoundingClientRect().top < vh * 0.96) reveal(el); });
+    };
+    // 2) observe the rest for staggered reveal on scroll
+    let obs = null;
+    if ('IntersectionObserver' in window) {
+      obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { reveal(e.target); obs.unobserve(e.target); } });
+      }, { threshold: 0.14, rootMargin: '0px 0px -7% 0px' });
+      all.forEach((el) => obs.observe(el));
+    }
+    initPass();
+    // 3) safety fallbacks — content must never stay hidden
+    const revealAll = () => all.forEach(reveal);
+    window.addEventListener('load', () => { initPass(); setTimeout(revealAll, 1600); });
+    setTimeout(initPass, 200);
+    setTimeout(revealAll, 2600);
+    // also catch in-view items as the user scrolls, even if the observer is flaky
+    window.addEventListener('scroll', initPass, { passive: true });
+  }
+
+  // Lightweight parallax — opt-in via [data-parallax="<speed>"]
+  if (!reduceMotion) {
+    const items = [...document.querySelectorAll('[data-parallax]')].map((el) => ({
+      el, speed: parseFloat(el.dataset.parallax) || 0.12,
+      scale: el.dataset.parallaxScale ? parseFloat(el.dataset.parallaxScale) : 0,
+    }));
+    if (items.length) {
+      let ticking = false;
+      const update = () => {
+        const y = window.scrollY || 0;
+        items.forEach((it) => {
+          const sc = it.scale ? ' scale(' + (1 - Math.min(y * it.scale, 0.12)) + ')' : '';
+          it.el.style.transform = 'translate3d(0,' + (y * it.speed).toFixed(1) + 'px,0)' + sc;
+        });
+        ticking = false;
+      };
+      window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+      update();
+    }
+  }
 })();

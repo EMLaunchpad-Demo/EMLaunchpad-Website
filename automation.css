@@ -1,0 +1,119 @@
+/* EMLaunchpad — AI-Automatisering page.
+   Interactive centerpiece: a workflow canvas of connected nodes. Hit "Start
+   workflow" (or a trigger) and a pulse flows along the wires, lighting each
+   node in sequence — like data moving through an automation. Loaded after home.css. */
+
+/* ── hero ─────────────────────────────────────────────────────────────── */
+.au-hero { position: relative; overflow: hidden; padding: 52px 0 64px; }
+.au-hero .dotgrid { opacity: .5; }
+.au-hero .glow { left: 50%; top: -4%; width: 1200px; height: 740px; transform: translateX(-50%); }
+.au-hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: .9fr 1.1fr;
+  gap: 44px; align-items: center; }
+.au-copy .eyebrow { margin-bottom: 20px; }
+.au-copy h1 { margin: 0; font-weight: 800; font-size: clamp(38px, 5vw, 62px); line-height: 1.02;
+  letter-spacing: -.04em; max-width: 14ch; text-wrap: balance; }
+.au-copy .lead { margin-top: 22px; }
+.au-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.au-badges span { font-family: var(--mono); font-size: 12px; color: var(--mid);
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--glass-2); }
+.au-badges span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 8px rgba(47,240,166,.7); }
+.au-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+/* ════════════════ WORKFLOW CANVAS ════════════════ */
+.flowcanvas { position: relative; z-index: 2; background: var(--glass-2);
+  -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--line-2); border-radius: 22px; padding: 22px; overflow: hidden;
+  box-shadow: 0 40px 90px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.07); }
+.flowcanvas::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
+  background-image: radial-gradient(circle, rgba(120,180,200,0.12) 1px, transparent 1px); background-size: 26px 26px; }
+.fc-head { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.fc-title { font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim);
+  display: inline-flex; align-items: center; gap: 9px; }
+.fc-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--mid); transition: background .3s; }
+.flowcanvas.running .fc-title .dot { background: var(--mint); box-shadow: 0 0 10px rgba(47,240,166,.8); animation: blink 1s steps(2) infinite; }
+.fc-run { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-family: var(--font); font-weight: 700;
+  font-size: 13px; color: #04130f; background: var(--grad); border: 0; border-radius: 999px; padding: 9px 16px;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, opacity .2s ease; }
+.fc-run:hover { transform: translateY(-1px); filter: brightness(1.05); box-shadow: 0 10px 24px rgba(45,200,180,.3); }
+.fc-run:disabled { opacity: .5; cursor: default; }
+.fc-run svg { width: 14px; height: 14px; }
+
+.fc-stage { position: relative; z-index: 1; }
+.fc-wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.fc-wire { fill: none; stroke: var(--line-2); stroke-width: 2.5; }
+.fc-wire-lit { fill: none; stroke: url(#flowGrad); stroke-width: 2.5; stroke-linecap: round;
+  stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+.fc-wire-lit.go { transition: stroke-dashoffset .55s linear; stroke-dashoffset: 0; }
+
+.fc-nodes { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; }
+.fc-node { position: relative; display: flex; align-items: center; gap: 14px; padding: 15px 18px; border-radius: 15px;
+  background: rgba(13,19,30,.72); border: 1px solid var(--line); transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease; }
+.fc-node .ic { width: 42px; height: 42px; border-radius: 11px; flex: none; display: grid; place-items: center;
+  border: 1px solid var(--line-2); color: var(--dim); transition: color .3s ease, border-color .3s ease, background .3s ease; }
+.fc-node .ic svg { width: 21px; height: 21px; }
+.fc-node .tx { flex: 1; min-width: 0; }
+.fc-node .tx b { display: block; font-weight: 700; font-size: 15px; letter-spacing: -.01em; color: var(--hi); }
+.fc-node .tx span { font-family: var(--mono); font-size: 11.5px; color: var(--dim); }
+.fc-node .tick { width: 22px; height: 22px; border-radius: 50%; flex: none; display: grid; place-items: center;
+  border: 1px solid var(--line-2); color: transparent; transition: all .3s ease; }
+.fc-node .tick svg { width: 12px; height: 12px; }
+.fc-node .kind { position: absolute; top: -8px; left: 16px; font-family: var(--mono); font-size: 9px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--dim); background: var(--ink-1); padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); }
+.fc-node.trigger .kind { color: #ffd27d; }
+.fc-node.active { border-color: rgba(47,240,166,.5); transform: translateX(4px);
+  box-shadow: 0 16px 40px rgba(20,80,200,.22), 0 0 0 1px rgba(47,240,166,.2); }
+.fc-node.active .ic { color: var(--mint); border-color: rgba(47,240,166,.45); background: rgba(47,240,166,.08); }
+.fc-node.done .tick { color: #04130f; background: var(--grad); border-color: transparent; }
+.fc-pulse { position: absolute; width: 12px; height: 12px; border-radius: 50%; z-index: 3; pointer-events: none; left: 38px;
+  background: radial-gradient(circle, #eafff7, #2ff0a6 55%, transparent 72%);
+  box-shadow: 0 0 14px rgba(47,240,166,.9); opacity: 0; }
+
+.fc-foot { position: relative; z-index: 2; margin-top: 16px; display: flex; align-items: center; justify-content: space-between;
+  padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.fc-foot .saved { color: var(--mint); opacity: 0; transition: opacity .3s ease; display: inline-flex; align-items: center; gap: 7px; }
+.fc-foot .saved.show { opacity: 1; }
+.fc-foot .saved svg { width: 13px; height: 13px; }
+
+/* ── stat band ────────────────────────────────────────────────────────── */
+.au-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
+.au-stat { padding: 26px; border-radius: 16px; background: var(--glass); border: 1px solid var(--line); text-align: center; }
+.au-stat .num { font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -.03em; line-height: 1;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.au-stat .lab { font-size: 13px; color: var(--mid); margin-top: 10px; line-height: 1.4; }
+
+/* ── recipe cards ─────────────────────────────────────────────────────── */
+.recipes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; }
+.recipe { padding: 26px; border-radius: 18px; background: var(--glass); border: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 14px; transition: border-color .25s ease, transform .25s ease; }
+.recipe:hover { border-color: rgba(47,240,166,.3); transform: translateY(-3px); }
+.recipe .chain { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.recipe .chip { font-family: var(--mono); font-size: 11px; color: var(--mid); padding: 5px 10px; border-radius: 8px;
+  background: rgba(150,200,210,.06); border: 1px solid var(--line); }
+.recipe .arrow { color: var(--mint); font-size: 13px; }
+.recipe h4 { margin: 4px 0 0; font-weight: 700; font-size: 17px; letter-spacing: -.02em; }
+.recipe p { margin: 0; color: var(--mid); font-size: 14px; line-height: 1.55; }
+
+/* ── capabilities ─────────────────────────────────────────────────────── */
+.au-cap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; }
+.aucap { padding: 28px; border-radius: 18px; background: var(--glass); border: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 13px; transition: border-color .25s ease; }
+.aucap:hover { border-color: rgba(47,240,166,.3); }
+.aucap .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; flex: none;
+  background: var(--ink); border: 1px solid transparent; color: var(--mint);
+  background-image: linear-gradient(var(--ink-2), var(--ink-2)), var(--grad); background-origin: border-box; background-clip: padding-box, border-box; }
+.aucap .ic svg { width: 22px; height: 22px; }
+.aucap h4 { margin: 0; font-weight: 700; font-size: 18px; letter-spacing: -.02em; }
+.aucap p { margin: 0; color: var(--mid); font-size: 14.5px; line-height: 1.55; }
+
+@media (max-width: 1040px) {
+  .au-hero-grid { grid-template-columns: 1fr; gap: 30px; }
+  .recipes, .au-cap { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .recipes, .au-cap, .au-stats { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fc-wire-lit.go { transition: none; } .fc-pulse { display: none; }
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI-Automatisering | EM Launchpad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="home.css?v=20260621g" />
+<link rel="stylesheet" href="pages.css?v=20260621g" />
+<link rel="stylesheet" href="automation.css?v=20260621g" />
+</head>
+<body data-page="diensten">
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>
+    <span class="loader-word">Launchpad</span>
+    <div class="loader-bar"><i></i></div>
+    <span class="loader-status"><span class="dot"></span><span id="loaderMsg">systemen initialiseren</span></span>
+  </div>
+</div>
+
+<div id="nav-mount"></div>
+
+<!-- ════════ HERO ════════ -->
+<header class="au-hero">
+  <div class="dotgrid fade-c" data-parallax="0.05"></div>
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="au-hero-grid">
+      <div class="au-copy" data-reveal="left">
+        <span class="eyebrow">AI-Automatisering</span>
+        <h1>Laat het werk <span class="grad">zichzelf doen.</span></h1>
+        <p class="lead">Slimme workflows met n8n en moderne AI-tools nemen repetitief werk over — lead-opvolging, herinneringen, reviewverzoeken en CRM-updates draaien automatisch op de achtergrond, dag en nacht.</p>
+        <div class="au-badges">
+          <span>Draait 24/7</span>
+          <span>Nul handwerk</span>
+          <span>Koppelt al je tools</span>
+          <span>Meerstaps</span>
+        </div>
+        <div class="au-cta">
+          <a href="Contact.html" class="btn">Plan een gratis gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="#try" class="btn-ghost">Bekijk een workflow <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE WORKFLOW -->
+      <div class="flowcanvas" id="flow" data-reveal="right">
+        <div class="fc-head">
+          <span class="fc-title"><span class="dot"></span>workflow · nieuwe lead</span>
+          <button class="fc-run" id="runBtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span id="runLabel">Start workflow</span></button>
+        </div>
+
+        <div class="fc-stage">
+          <svg class="fc-wires" id="wires" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <defs><linearGradient id="flowGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f7bff"/><stop offset="0.5" stop-color="#13c7e6"/><stop offset="1" stop-color="#2ff0a6"/></linearGradient></defs>
+          </svg>
+          <div class="fc-nodes" id="nodes">
+            <div class="fc-node trigger" data-node>
+              <span class="kind">trigger</span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg></span>
+              <span class="tx"><b>Nieuwe lead binnen</b><span>via chatbot of formulier</span></span>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            </div>
+            <div class="fc-node" data-node>
+              <span class="kind">actie</span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3 3-2-2"/></svg></span>
+              <span class="tx"><b>Lead toevoegen aan CRM</b><span>met tags &amp; bron</span></span>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            </div>
+            <div class="fc-node" data-node>
+              <span class="kind">actie</span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></span>
+              <span class="tx"><b>Welkomstmail versturen</b><span>direct &amp; gepersonaliseerd</span></span>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            </div>
+            <div class="fc-node" data-node>
+              <span class="kind">vertraging</span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+              <span class="tx"><b>Wacht 1 dag</b><span>geen reactie? volg op</span></span>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            </div>
+            <div class="fc-node" data-node>
+              <span class="kind">actie</span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2z"/></svg></span>
+              <span class="tx"><b>WhatsApp-herinnering</b><span>met boekingslink</span></span>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            </div>
+            <div class="fc-node" data-node>
+              <span class="kind">resultaat</span>
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span>
+              <span class="tx"><b>Afspraak geboekt</b><span>automatisch in agenda</span></span>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            </div>
+          </div>
+          <div class="fc-pulse" id="pulse"></div>
+        </div>
+
+        <div class="fc-foot">
+          <span>6 stappen · 0 handwerk</span>
+          <span class="saved" id="saved"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Workflow voltooid</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ STATS ════════ -->
+<section class="sec sec--tight">
+  <div class="wrap">
+    <div class="au-stats" data-reveal-group>
+      <div class="au-stat" data-reveal><div class="num">15u+</div><div class="lab">bespaard per week</div></div>
+      <div class="au-stat" data-reveal><div class="num">24/7</div><div class="lab">draait op de achtergrond</div></div>
+      <div class="au-stat" data-reveal><div class="num">0</div><div class="lab">vergeten opvolgingen</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ KANT-EN-KLARE WORKFLOWS ════════ -->
+<section class="sec" id="try" style="background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Kant-en-klare workflows</span>
+      <h2 class="h2">Automatiseringen die <span class="grad">meteen renderen.</span></h2>
+      <p class="lead">Een greep uit wat we voor lokale bedrijven bouwen.</p>
+    </div>
+    <div class="recipes" data-reveal-group>
+      <div class="recipe" data-reveal>
+        <div class="chain"><span class="chip">Lead</span><span class="arrow">→</span><span class="chip">CRM</span><span class="arrow">→</span><span class="chip">Mail</span></div>
+        <h4>Lead-opvolging</h4>
+        <p>Elke nieuwe lead wordt automatisch opgeslagen, getagd en krijgt direct een persoonlijke opvolging.</p>
+      </div>
+      <div class="recipe" data-reveal>
+        <div class="chain"><span class="chip">Afspraak</span><span class="arrow">→</span><span class="chip">+2u</span><span class="arrow">→</span><span class="chip">Review</span></div>
+        <h4>Reviewverzoeken</h4>
+        <p>Twee uur na een afspraak vertrekt automatisch een reviewverzoek — tevreden klanten gaan naar Google.</p>
+      </div>
+      <div class="recipe" data-reveal>
+        <div class="chain"><span class="chip">Boeking</span><span class="arrow">→</span><span class="chip">SMS</span><span class="arrow">→</span><span class="chip">-24u</span></div>
+        <h4>No-show preventie</h4>
+        <p>Automatische herinneringen via SMS en e-mail verlagen het aantal gemiste afspraken drastisch.</p>
+      </div>
+      <div class="recipe" data-reveal>
+        <div class="chain"><span class="chip">Betaling</span><span class="arrow">→</span><span class="chip">Factuur</span><span class="arrow">→</span><span class="chip">CRM</span></div>
+        <h4>Facturatie</h4>
+        <p>Na elke betaling vertrekt automatisch een factuur en wordt de klantstatus bijgewerkt.</p>
+      </div>
+      <div class="recipe" data-reveal>
+        <div class="chain"><span class="chip">Formulier</span><span class="arrow">→</span><span class="chip">Routing</span><span class="arrow">→</span><span class="chip">Team</span></div>
+        <h4>Lead routing</h4>
+        <p>Aanvragen worden automatisch naar de juiste persoon of afdeling gestuurd — niets blijft liggen.</p>
+      </div>
+      <div class="recipe" data-reveal>
+        <div class="chain"><span class="chip">Segment</span><span class="arrow">→</span><span class="chip">Campagne</span><span class="arrow">→</span><span class="chip">Track</span></div>
+        <h4>Campagnes</h4>
+        <p>Gerichte e-mail- en SMS-campagnes starten automatisch op basis van klantgedrag.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ WAAROM ════════ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Waarom automatiseren</span>
+      <h2 class="h2">Minder handwerk. <span class="grad">Meer resultaat.</span></h2>
+    </div>
+    <div class="au-cap" data-reveal-group>
+      <div class="aucap" data-reveal><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><h4>Bespaar tijd</h4><p>Repetitieve taken draaien vanzelf — jij en je team houden tijd over voor echt werk.</p></div>
+      <div class="aucap" data-reveal><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span><h4>Geen fouten meer</h4><p>Geen vergeten opvolgingen of dubbel werk. Het systeem doet het elke keer correct.</p></div>
+      <div class="aucap" data-reveal><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 7a2 2 0 1 1 4 0 2 2 0 0 1-4 0zM20 17H9M20 17a2 2 0 1 0-4 0 2 2 0 0 0 4 0zM15 7h5M4 17h1"/></svg></span><h4>Koppelt alles</h4><p>Website, CRM, agenda, betalingen en communicatie spreken automatisch met elkaar.</p></div>
+      <div class="aucap" data-reveal><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></span><h4>Reageert direct</h4><p>Leads krijgen meteen opvolging — snelheid is het verschil tussen winnen en verliezen.</p></div>
+      <div class="aucap" data-reveal><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><h4>Schaalt mee</h4><p>Of je nu 10 of 1000 leads per maand krijgt — het systeem draait zonder extra werk.</p></div>
+      <div class="aucap" data-reveal><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></span><h4>Volledig inzicht</h4><p>Zie precies wat er draait, wat werkt en waar je kunt optimaliseren.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAQ ════════ -->
+<section class="sec" id="faq" style="background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Veelgestelde vragen</span>
+      <h2 class="h2">Goed om <span class="grad">te weten.</span></h2>
+    </div>
+    <div class="faq-list" data-reveal-group>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q">Moet ik zelf workflows bouwen?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Nee. Wij ontwerpen, bouwen en onderhouden alle workflows voor je. Jij ziet enkel het resultaat: meer tijd en minder gemiste kansen.</div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q">Werkt het met mijn bestaande tools?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Vrijwel altijd. Via n8n koppelen we honderden tools — agenda's, CRM's, betaalsystemen, WhatsApp, e-mail en meer.</div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q">Wat als er iets misgaat in een workflow?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We monitoren alles. Bij een fout krijg je (en wij) een melding, en we lossen het op voordat het impact heeft op je klanten.</div></div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <button class="faq-q">Kan ik klein beginnen?<span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Zeker. Veel klanten starten met één workflow — bijvoorbeeld lead-opvolging — en breiden uit zodra ze het resultaat zien.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CTA ════════ -->
+<section class="cta-band">
+  <div class="dotgrid fade-c"></div>
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="cta-inner" data-reveal>
+      <h2>Klaar om werk <span class="grad">van je bord te halen?</span></h2>
+      <p class="lead">Plan een gratis gesprek van 30 minuten. We brengen samen in kaart welke workflows jou het meeste tijd en omzet opleveren.</p>
+      <div class="row"><a href="Contact.html" class="btn">Plan een gratis gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script>
+  // Interactive workflow — a pulse flows through the nodes (single-timer state machine)
+  (function () {
+    const flow = document.getElementById('flow');
+    if (!flow) return;
+    const nodes = [...flow.querySelectorAll('[data-node]')];
+    const runBtn = document.getElementById('runBtn');
+    const runLabel = document.getElementById('runLabel');
+    const pulse = document.getElementById('pulse');
+    const saved = document.getElementById('saved');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const STEP = reduce ? 220 : 780;
+    let timer = null;
+
+    function placePulseAt(node) {
+      if (reduce) { pulse.style.opacity = '0'; return; }
+      const stage = flow.querySelector('.fc-stage');
+      const sr = stage.getBoundingClientRect();
+      const a = node.getBoundingClientRect();
+      const y = a.top - sr.top + a.height / 2 - 6;
+      pulse.style.left = (38 - 6) + 'px';
+      pulse.style.transition = 'transform .5s linear';
+      pulse.style.transform = 'translateY(' + y + 'px)';
+      pulse.style.opacity = '1';
+    }
+
+    function reset() {
+      if (timer) { clearInterval(timer); timer = null; }
+      nodes.forEach((n) => n.classList.remove('active', 'done'));
+      saved.classList.remove('show');
+      flow.classList.remove('running');
+      pulse.style.transition = 'none';
+      pulse.style.opacity = '0';
+    }
+
+    function run() {
+      reset();
+      flow.classList.add('running');
+      runBtn.disabled = true; runLabel.textContent = 'Bezig…';
+      let i = 0;
+      // activate first node immediately
+      const first = () => {
+        nodes[0].classList.add('active'); placePulseAt(nodes[0]);
+      };
+      first();
+      timer = setInterval(() => {
+        // mark current done
+        if (i < nodes.length) nodes[i].classList.add('done');
+        i++;
+        if (i >= nodes.length) {
+          clearInterval(timer); timer = null;
+          pulse.style.opacity = '0';
+          saved.classList.add('show');
+          runBtn.disabled = false; runLabel.textContent = 'Opnieuw afspelen';
+          flow.classList.remove('running');
+          return;
+        }
+        nodes[i].classList.add('active');
+        placePulseAt(nodes[i]);
+      }, STEP);
+    }
+
+    runBtn.addEventListener('click', run);
+    // auto-run once when scrolled into view
+    if ('IntersectionObserver' in window) {
+      let started = false;
+      const obs = new IntersectionObserver((es) => {
+        es.forEach((e) => { if (e.isIntersecting && !started) { started = true; setTimeout(run, 500); obs.disconnect(); } });
+      }, { threshold: 0.35 });
+      obs.observe(flow);
+    }
+  })();
+</script>
+<script src="i18n.js?v=20260621g"></script>
+<script src="i18n-pages.js?v=20260621g"></script>
+<script src="site.js?v=20260621g"></script>
+</body>
+</html>
