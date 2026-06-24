@@ -1,3 +1,18 @@
+<style>
+/* EM Launchpad — GLOBAL CSS for GoHighLevel.
+   If your GHL plan has a dedicated "Custom CSS" field, paste this file
+   there as-is. If you only see "Head tracking code" / "Body tracking
+   code" under Settings -> Tracking en scripts (that field accepts raw
+   HTML, not bare CSS), use head-trackingcode.html instead — it's this
+   exact content already wrapped in <style>...</style>, ready to paste.
+   This is home.css verbatim — it loads on all 8 pages today and contains
+   the design tokens, nav, footer, loader, buttons and shared section
+   primitives every page depends on. Page-specific CSS (chatbot/voice/
+   automation/websites/pages) is NOT merged in here on purpose — each of
+   those is scoped inside its own page's <style> block instead, to avoid
+   class-name collisions now that all pages would otherwise load all CSS
+   at once. */
+
 /* ════════════════════════════════════════════════════════════════════════
    EMLaunchpad — HOMEPAGE redesign (DARK FLIGHTDECK)
    Same copy as the live site, restyled in the techy navbar/footer language:
@@ -712,3 +727,4 @@ html.reveal-ready [data-reveal="rise"]:not(.in) { transform: translateY(48px); }
   .lang-pick { padding: 2px; }
   .lang-pick button { padding: 6px 8px; font-size: 11px; }
 }
+</style>

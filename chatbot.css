@@ -180,6 +180,11 @@
 @media (max-width: 680px) {
   .chan-grid, .cap-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 560px) {
+  .cb-hero { padding: 36px 0 48px; }
+  .robot-stage { max-width: 300px; }
+  .chatwin { max-width: 100%; }
+}
 /* ════════════════ STICKY FLOW (Hoe het werkt) ════════════════ */
 .flow { display: grid; grid-template-columns: .82fr 1.18fr; gap: 56px; margin-top: 52px; align-items: start; }
 .flow-rail { position: sticky; top: 110px; }

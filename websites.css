@@ -90,6 +90,13 @@
 .gauge .track { fill: none; stroke: rgba(150,200,210,.14); stroke-width: 6; }
 .gauge .fill { fill: none; stroke: url(#gaugeGrad); stroke-width: 6; stroke-linecap: round;
   stroke-dasharray: 176; stroke-dashoffset: 176; transition: stroke-dashoffset 1.4s cubic-bezier(.4,.05,.2,1); }
+/* spin-up loader sweep — a bright arc that rotates around before the ring fills */
+.gauge .sweep { fill: none; stroke: url(#gaugeGrad); stroke-width: 6; stroke-linecap: round;
+  stroke-dasharray: 26 150; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.gauge.loading .sweep { opacity: 1; animation: gaugeSpin .8s linear infinite; }
+.gauge.loading .fill { opacity: 0; }
+.gauge.loading .val { opacity: .35; }
+@keyframes gaugeSpin { to { transform: rotate(360deg); } }
 .gauge .val { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 800; font-size: 18px;
   background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .gauge .lab { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); line-height: 1.4; }
@@ -119,6 +126,16 @@
 @media (max-width: 680px) {
   .wfeat { grid-template-columns: 1fr; }
   .browser-stage { height: 380px; }
+}
+@media (max-width: 560px) {
+  .wb-hero { padding: 36px 0 52px; }
+  .device-toggle { gap: 6px; }
+  .device-toggle button { padding: 8px 12px; font-size: 11px; }
+  .browser-stage { height: 340px; }
+  .gauges { gap: 10px; }
+  .gauge { padding: 12px; }
+  .gauge .ring, .gauge svg { width: 54px; height: 54px; }
+  .gauge .lab { font-size: 9.5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .browser, .gauge .fill { transition: none !important; }

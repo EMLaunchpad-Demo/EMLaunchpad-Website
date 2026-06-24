@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Chatbots &amp; Automatisatie voor Bedrijven | EM Launchpad</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=20260624a" />
-</head>
-<body data-page="home">
+<!-- ============================================================================
+     EM Launchpad — HOME page code for GoHighLevel.
+     Paste this WHOLE block into ONE "Custom HTML/Code" element on the page
+     you'll use as your homepage (default slug assumed: "/").
+     Requires global.css (Website Settings -> Custom CSS) and global.js
+     (Website Settings -> Custom JS / Footer code) to already be in place.
+     ============================================================================ -->
 
-<!-- ════════ LOADER ════════ -->
+<!-- LOADER -->
 <div class="loader" id="loader">
   <div class="loader-inner">
-    <span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>
+    <span class="em-chip"><img class="em-img" src="https://assets.cdn.filesafe.space/2tBkltDEdjuF6a2ULx8o/media/6a3c1e06b3c8655da2a49da3.png" alt="EM Launchpad" /></span>
     <span class="loader-word">Launchpad</span>
     <div class="loader-bar"><i></i></div>
     <span class="loader-status"><span class="dot"></span><span id="loaderMsg">systemen initialiseren</span></span>
@@ -51,7 +46,7 @@
         <div class="console" id="heroConsole" data-no-i18n>
           <div class="gcard gcard-chat">
             <div class="ch-head">
-              <span class="em-chip ch-ava"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>
+              <span class="em-chip ch-ava"><img class="em-img" src="https://assets.cdn.filesafe.space/2tBkltDEdjuF6a2ULx8o/media/6a3c1e06b3c8655da2a49da3.png" alt="EM Launchpad" /></span>
               <div class="ch-meta">
                 <span class="nm">EM Launchpad AI</span>
                 <span class="st"><span class="dot"></span><span id="chStatus">Online — antwoordt direct</span></span>
@@ -161,10 +156,12 @@
     </div>
 
     <div class="case-grid">
+      <!-- GHL-hosted interview video (was a static placeholder) -->
       <div class="media">
         <span class="tag">Interview</span>
-        <span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="ph">// video_interview · Sasha Kenis</span>
+        <video controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:cover;display:block;background:#000;" aria-label="Interview met Sasha Kenis van Clinic3D">
+          <source src="https://assets.cdn.filesafe.space/2tBkltDEdjuF6a2ULx8o/media/6a144fb54cce1b7ea181a3ee.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="case-body">
         <blockquote class="case-quote">"227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit <span class="grad">voller dan ooit.</span> Mijn klanten boeken nu zelf — ik moet niets meer doen."</blockquote>
@@ -315,7 +312,6 @@
 <!-- ════════ FOOTER ════════ -->
 <div id="footer-mount"></div>
 
-
 <script>
   // Sectors marquee
   const SECTORS = ['Kapsalons','Tandartsen','Makelaars','Restaurants','Schoonheidssalons','Fitnesscentra','Esthetische klinieken','Dermatologen','Fysiotherapeuten','Advocaten','Boekhouders','Coaches & trainers','Dierenartsen','Yoga & wellness','Massagepraktijken','Personal trainers','Psychologen','Logopedisten','Autorijscholen','Garagisten','Loodgieters','Elektriciens','Hoveniers','Architecten','Fotografen','Webshops','Bakkerijen','Slagerijen','Bloemisten',"Tattoo studio's",'Nagelsalons','Schoonmaakbedrijven','Voedingsadviseurs'];
@@ -371,20 +367,20 @@
           { who: 'bot', t: 'Hallo! Waarmee kan ik je helpen?' },
           { who: 'user', chips: ['Ik wil een afspraak', 'Wat kost een website?'] },
           { who: 'bot', t: 'Met plezier. Komt donderdag 14:30 je goed uit?' },
-          { who: 'user', chips: ['Ja, perfect', 'Liever \u2019s avonds'] },
+          { who: 'user', chips: ['Ja, perfect', 'Liever ’s avonds'] },
           { who: 'bot', t: 'Genoteerd. Je krijgt zo een SMS-bevestiging. Tot dan!' },
         ],
       },
       fr: {
         status: 'En ligne — répond direct', booked: 'Rendez-vous réservé ✓', ph: 'Tapez un message',
-        label1: 'Rendez-vous · Aujourd\u2019hui', big1: 'Planifié', sub1: 'automatiquement', label2: 'Nouvel avis',
+        label1: 'Rendez-vous · Aujourd’hui', big1: 'Planifié', sub1: 'automatiquement', label2: 'Nouvel avis',
         reviews: [['"Super service, réservé en un éclair !"', 'il y a 2 minutes'], ['"Accueil très aimable."', 'il y a 12 minutes'], ['"Rendez-vous pris si facilement."', 'il y a 24 minutes']],
         convo: [
           { who: 'bot', t: 'Bonjour ! Comment puis-je vous aider ?' },
-          { who: 'user', chips: ['Je veux un rendez-vous', 'Le prix d\u2019un site ?'] },
+          { who: 'user', chips: ['Je veux un rendez-vous', 'Le prix d’un site ?'] },
           { who: 'bot', t: 'Avec plaisir. Jeudi 14h30 vous convient ?' },
           { who: 'user', chips: ['Oui, parfait', 'Plutôt en soirée'] },
-          { who: 'bot', t: 'C\u2019est noté. Vous recevrez une confirmation par SMS. À jeudi !' },
+          { who: 'bot', t: 'C’est noté. Vous recevrez une confirmation par SMS. À jeudi !' },
         ],
       },
       en: {
@@ -393,10 +389,10 @@
         reviews: [['"Great service, booked in seconds!"', '2 minutes ago'], ['"Helped me so kindly."', '12 minutes ago'], ['"Booking was effortless."', '24 minutes ago']],
         convo: [
           { who: 'bot', t: 'Hi there! How can I help you?' },
-          { who: 'user', chips: ['I\u2019d like to book', 'What does a website cost?'] },
+          { who: 'user', chips: ['I’d like to book', 'What does a website cost?'] },
           { who: 'bot', t: 'Happy to help. Does Thursday 2:30 PM work for you?' },
           { who: 'user', chips: ['Yes, perfect', 'Evenings are better'] },
-          { who: 'bot', t: 'All set. You\u2019ll get an SMS confirmation shortly. See you then!' },
+          { who: 'bot', t: 'All set. You’ll get an SMS confirmation shortly. See you then!' },
         ],
       },
     };
@@ -542,8 +538,3 @@
     setTimeout(() => { if (!bubbles.children.length) render(); }, 1800);
   })();
 </script>
-<script src="i18n.js?v=20260624a"></script>
-<script src="i18n-pages.js?v=20260624a"></script>
-<script src="site.js?v=20260624a"></script>
-</body>
-</html>

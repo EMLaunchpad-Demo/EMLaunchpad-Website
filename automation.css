@@ -114,6 +114,15 @@
 @media (max-width: 680px) {
   .recipes, .au-cap, .au-stats { grid-template-columns: 1fr; }
 }
+@media (max-width: 560px) {
+  .au-hero { padding: 36px 0 52px; }
+  .flowcanvas { padding: 18px; border-radius: 18px; }
+  .fc-node { padding: 13px 14px; gap: 11px; }
+  .fc-node .ic { width: 38px; height: 38px; }
+  .fc-node .tx b { font-size: 14px; }
+  .fc-run { font-size: 12px; padding: 8px 13px; }
+  .fc-head { flex-wrap: wrap; gap: 10px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .fc-wire-lit.go { transition: none; } .fc-pulse { display: none; }
 }

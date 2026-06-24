@@ -3,6 +3,16 @@
    <div id="nav-mount"></div> after it, <div id="footer-mount"></div> before scripts,
    then <script src="site.js"></script>. Keeps every page's chrome identical. */
 (function () {
+  /* ───────────────────────────────────────────────────────────────────────
+     GoHighLevel booking popup.
+     Paste your GHL calendar / booking widget URL below. While it is empty the
+     "Plan een gesprek" buttons fall back to the contact page (same behaviour
+     as the original site). Example:
+       const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/XXXXXXXX';
+     ─────────────────────────────────────────────────────────────────────── */
+  const GHL_BOOKING_URL = '';
+  const BOOKING_FALLBACK = 'Contact.html';
+
   const NAV = `
   <div class="nav">
     <div class="wrap">
@@ -21,8 +31,8 @@
         <div class="lang-pick" data-no-i18n="" role="group" aria-label="Taal / Language">
           <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
         </div>
-        <a href="#" class="nav-demo">live_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
-        <a href="Contact.html" class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="#" class="nav-demo">gratis_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+        <a href="Contact.html" data-book class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </nav>
     </div>
   </div>`;
@@ -76,7 +86,7 @@
             <div class="foot-contact">
               <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Brugstraat 2A, 3870 Vechmaal, België</span></div>
               <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.1-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.5a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg><a href="tel:+32476015451">+32&nbsp;476&nbsp;01&nbsp;54&nbsp;51</a></div>
-              <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg><a href="mailto:hallo@emlaunchpad.com">hallo@emlaunchpad.com</a></div>
+              <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg><a href="mailto:ebert@emlaunchpad.com">ebert@emlaunchpad.com</a></div>
             </div>
           </div>
         </div>
@@ -107,10 +117,15 @@
   // Apply site-wide language (switcher lives in the nav)
   if (window.EMi18n) window.EMi18n.init();
 
-  // Loader — fade out once page/fonts are ready
+  // Loader — plays only on the FIRST entry to the site (per browser session).
+  // On any later page within the same session it's removed instantly.
   (function () {
     const loader = document.getElementById('loader');
     if (!loader) return;
+    let seen = false;
+    try { seen = sessionStorage.getItem('em_loaded') === '1'; } catch (e) {}
+    if (seen) { loader.remove(); return; }
+    try { sessionStorage.setItem('em_loaded', '1'); } catch (e) {}
     const msg = document.getElementById('loaderMsg');
     const steps = ['systemen initialiseren', 'agenda koppelen', 'ai laden', 'klaar'];
     let s = 0;
@@ -121,6 +136,42 @@
     };
     if (document.readyState === 'complete') setTimeout(finish, 1400);
     else window.addEventListener('load', () => setTimeout(finish, 800));
+  })();
+
+  // Page transitions — smooth cross-fade + gradient sweep when navigating
+  // to another internal page (instead of an instant jump).
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isInternal = (a) => {
+      if (!a) return false;
+      if (a.target === '_blank' || a.hasAttribute('download')) return false;
+      const href = a.getAttribute('href') || '';
+      if (!href || href[0] === '#') return false;
+      if (/^(mailto:|tel:|https?:|\/\/)/i.test(href)) return false;
+      return /\.html(\?|#|$)/i.test(href) || href.endsWith('/');
+    };
+    document.addEventListener('click', (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target.closest && e.target.closest('a[href]');
+      if (!isInternal(a)) return;
+      if (a.hasAttribute('data-book')) return; // booking CTAs open the popup instead
+      const href = a.getAttribute('href');
+      // same page? let the browser handle the in-page anchor
+      if (href.split('#')[0] === location.pathname.split('/').pop()) return;
+      e.preventDefault();
+      if (reduce) { window.location.href = href; return; }
+      const bar = document.createElement('div');
+      bar.className = 'pt-bar';
+      document.body.appendChild(bar);
+      void bar.offsetWidth; bar.classList.add('go');
+      document.body.classList.add('pt-leaving');
+      setTimeout(() => { window.location.href = href; }, 330);
+    });
+    // restore on back/forward (bfcache) so the page isn't left faded out
+    window.addEventListener('pageshow', () => {
+      document.body.classList.remove('pt-leaving');
+      const b = document.querySelector('.pt-bar'); if (b) b.remove();
+    });
   })();
 
   // FAQ accordion (any page with .faq-item)
@@ -215,4 +266,70 @@
       update();
     }
   }
+
+  // ── GoHighLevel booking popup ────────────────────────────────────────────
+  (function () {
+    let overlay = null, lastFocus = null;
+
+    function build() {
+      overlay = document.createElement('div');
+      overlay.className = 'ghl-overlay';
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-label', 'Plan een gesprek');
+      overlay.innerHTML =
+        '<div class="ghl-modal">' +
+          '<div class="ghl-head">' +
+            '<span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>' +
+            '<span class="ttl"><b>Plan een gratis gesprek</b><span><span class="dot"></span>30 min · vrijblijvend</span></span>' +
+            '<button class="ghl-close" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>' +
+          '</div>' +
+          '<div class="ghl-body"><div class="ghl-loading"><span class="spin"></span></div></div>' +
+        '</div>';
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) closePopup(); });
+      overlay.querySelector('.ghl-close').addEventListener('click', closePopup);
+    }
+
+    window.openPopup = function () {
+      if (!GHL_BOOKING_URL) { window.location.href = BOOKING_FALLBACK; return; }
+      if (!overlay) build();
+      const body = overlay.querySelector('.ghl-body');
+      if (!body.querySelector('iframe')) {
+        const f = document.createElement('iframe');
+        f.src = GHL_BOOKING_URL;
+        f.title = 'Plan een gesprek';
+        f.loading = 'lazy';
+        f.setAttribute('scrolling', 'yes');
+        f.allow = 'payment';
+        f.addEventListener('load', () => { const l = body.querySelector('.ghl-loading'); if (l) l.style.display = 'none'; });
+        body.appendChild(f);
+      }
+      lastFocus = document.activeElement;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => overlay.querySelector('.ghl-close').focus(), 60);
+    };
+
+    window.closePopup = function () {
+      if (!overlay) return;
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) closePopup();
+    });
+
+    // Any [data-book] link/button opens the popup (capture phase so it wins
+    // over the page-transition handler).
+    document.addEventListener('click', (e) => {
+      const t = e.target.closest && e.target.closest('[data-book]');
+      if (!t) return;
+      e.preventDefault();
+      e.stopPropagation();
+      window.openPopup();
+    }, true);
+  })();
 })();

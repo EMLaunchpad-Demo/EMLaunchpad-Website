@@ -1,21 +1,123 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Over ons | EM Launchpad</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=20260624a" />
-<link rel="stylesheet" href="pages.css?v=20260624a" />
-</head>
-<body data-page="over_ons">
+<!-- ============================================================================
+     EM Launchpad — OVER ONS page code for GoHighLevel.
+     Paste this WHOLE block into ONE "Custom HTML/Code" element on the page
+     you'll use for this page (default slug assumed: "/over-ons").
+     Requires global.css + global.js to already be in place site-wide.
+     ============================================================================ -->
+
+<!-- page-specific CSS (pages.css) — scoped to this page only -->
+<style>
+.page-hero { position: relative; overflow: visible; padding: 92px 0 72px; }
+.page-hero .dotgrid { opacity: .32; }
+.page-hero .glow { left: 50%; top: -40%; width: 1400px; height: 760px; transform: translateX(-50%);
+  filter: blur(40px); opacity: .6;
+  background: radial-gradient(ellipse 58% 50% at 50% 45%,
+    rgba(36,178,170,0.10) 0%, rgba(40,110,255,0.06) 42%, transparent 70%); }
+.page-hero .inner { position: relative; z-index: 2; max-width: 860px; }
+.page-hero.center .inner { margin: 0 auto; text-align: center; }
+.page-hero.center .eyebrow { justify-content: center; }
+.hero-h { margin: 0; font-weight: 800; font-size: clamp(38px, 5.4vw, 66px); line-height: 1.02;
+  letter-spacing: -.04em; text-wrap: balance; }
+.page-hero .lead { font-size: clamp(16px, 1.8vw, 19px); }
+.page-hero.center .lead { margin-left: auto; margin-right: auto; }
+
+/* ── Over ons ─────────────────────────────────────────────────────────── */
+.prob-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; }
+.prob-card { --acc: var(--mint); position: relative; overflow: hidden;
+  background: linear-gradient(168deg, color-mix(in srgb, var(--acc) 8%, transparent), transparent 46%), var(--glass);
+  border: 1px solid var(--line); border-radius: 18px; padding: 28px;
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  display: flex; flex-direction: column; gap: 12px;
+  transition: border-color .3s ease, transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+.prob-card > * { position: relative; z-index: 1; }
+.prob-card::after { content: ""; position: absolute; z-index: 0; right: -40px; top: -40px; width: 130px; height: 130px;
+  border-radius: 50%; background: var(--acc); opacity: .12; filter: blur(26px); transition: opacity .35s ease; }
+.prob-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--acc) 42%, var(--line));
+  box-shadow: 0 24px 54px rgba(0,0,0,.45); }
+.prob-card:hover::after { opacity: .22; }
+.prob-card .pic { width: 46px; height: 46px; border-radius: 12px; flex: none; display: grid; place-items: center;
+  border: 1px solid transparent; color: var(--acc); margin-bottom: 2px;
+  background-image: linear-gradient(var(--ink-2), var(--ink-2)),
+    linear-gradient(140deg, var(--acc), color-mix(in srgb, var(--acc) 35%, #04221a));
+  background-origin: border-box; background-clip: padding-box, border-box; }
+.prob-card .pic svg { width: 22px; height: 22px; }
+.prob-card .n { font-family: var(--mono); font-size: 12px; color: color-mix(in srgb, var(--acc) 80%, var(--mid));
+  position: absolute; top: 22px; right: 24px; }
+.prob-card h4 { margin: 0; font-weight: 700; font-size: 19px; letter-spacing: -.02em; }
+.prob-card p { margin: 0; color: var(--mid); font-size: 14.5px; line-height: 1.55; }
+
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 52px; }
+.value { --acc: var(--mint); position: relative; overflow: hidden; padding: 32px;
+  border: 1px solid var(--line); border-radius: 18px;
+  background: linear-gradient(165deg, color-mix(in srgb, var(--acc) 11%, transparent), transparent 52%), var(--glass);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  display: flex; flex-direction: column; gap: 12px; min-height: 188px;
+  transition: border-color .3s ease, transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; }
+.value > * { position: relative; z-index: 1; }
+.value .vnum { position: absolute; z-index: 0; right: 18px; top: 8px; font-family: var(--mono); font-weight: 600;
+  font-size: 64px; line-height: 1; letter-spacing: -.04em; pointer-events: none;
+  -webkit-text-fill-color: transparent; -webkit-text-stroke: 1px color-mix(in srgb, var(--acc) 38%, transparent);
+  color: color-mix(in srgb, var(--acc) 38%, transparent); opacity: .5; }
+.value::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; z-index: 2;
+  background: linear-gradient(90deg, transparent, var(--acc), transparent); opacity: 0; transition: opacity .35s ease; }
+.value:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--acc) 48%, var(--line));
+  box-shadow: 0 28px 60px rgba(0,0,0,.5); }
+.value:hover::before { opacity: 1; }
+.value .vk { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--acc) 85%, var(--mid)); }
+.value h4 { margin: auto 0 0; font-weight: 800; font-size: 24px; letter-spacing: -.03em; }
+.value p { margin: 0; color: var(--mid); font-size: 14.5px; line-height: 1.55; }
+
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 52px; }
+.team-card { --acc: var(--mint); position: relative; overflow: hidden;
+  background: linear-gradient(150deg, color-mix(in srgb, var(--acc) 8%, transparent), transparent 50%), var(--glass);
+  border: 1px solid var(--line); border-radius: 20px; padding: 24px;
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  display: flex; gap: 20px; align-items: center;
+  transition: border-color .3s ease, transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; }
+.team-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--acc) 42%, var(--line));
+  box-shadow: 0 26px 56px rgba(0,0,0,.48); }
+.team-photo { width: 104px; height: 104px; border-radius: 18px; flex: none; overflow: hidden; position: relative;
+  border: 1px solid transparent;
+  background-image: linear-gradient(var(--ink-2), var(--ink-2)),
+    linear-gradient(150deg, var(--acc), color-mix(in srgb, var(--acc) 30%, #04221a));
+  background-origin: border-box; background-clip: padding-box, border-box;
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--acc) 20%, transparent); }
+.team-photo .ph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--mono);
+  font-size: 22px; font-weight: 700; letter-spacing: .02em; color: var(--acc); text-align: center; }
+.team-card h4 { margin: 0 0 3px; font-weight: 700; font-size: 19px; letter-spacing: -.02em; }
+.team-card .role { font-family: var(--mono); font-size: 12px; color: color-mix(in srgb, var(--acc) 85%, var(--mid)); margin-bottom: 9px;
+  display: inline-flex; align-items: center; gap: 7px; }
+.team-card .role::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 8px color-mix(in srgb, var(--acc) 70%, transparent); }
+.team-card p { margin: 0; color: var(--mid); font-size: 14px; line-height: 1.5; }
+
+.press { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
+.press span { font-family: var(--mono); font-size: 13px; color: var(--mid); padding: 12px 20px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--glass-2); letter-spacing: .04em;
+  transition: color .25s ease, border-color .25s ease, transform .25s ease; }
+.press span:hover { color: var(--hi); border-color: var(--line-2); transform: translateY(-2px); }
+
+@media (max-width: 1080px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .prob-grid, .values { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .prob-grid, .values { grid-template-columns: 1fr; }
+  .team-card { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .page-hero { padding: 64px 0 52px; }
+  .hero-h { font-size: clamp(30px, 8.5vw, 44px); }
+  .value { padding: 26px; min-height: 0; }
+  .value .vnum { font-size: 52px; }
+  .press span { font-size: 12px; padding: 10px 15px; }
+}
+</style>
 
 <!-- LOADER -->
 <div class="loader" id="loader">
   <div class="loader-inner">
-    <span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>
+    <span class="em-chip"><img class="em-img" src="https://assets.cdn.filesafe.space/2tBkltDEdjuF6a2ULx8o/media/6a3c1e06b3c8655da2a49da3.png" alt="EM Launchpad" /></span>
     <span class="loader-word">Launchpad</span>
     <div class="loader-bar"><i></i></div>
     <span class="loader-status"><span class="dot"></span><span id="loaderMsg">systemen initialiseren</span></span>
@@ -37,7 +139,7 @@
         <span>Websites</span><span>Automatisatie</span><span>Systemen</span>
       </div>
       <div class="hero-cta" style="margin-top:30px;">
-        <a href="Contact.html" class="btn">Neem contact op <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/contact" class="btn">Neem contact op <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -132,6 +234,9 @@
 </section>
 
 <!-- ════════ RESULTAAT ════════ -->
+<!-- NOTE: this "case_visual" block is a different placeholder from the
+     homepage's Clinic3D interview video — it's a generic result image slot,
+     left untouched since no image was provided for it. -->
 <section class="sec case">
   <div class="wrap">
     <div class="sec-head" data-reveal>
@@ -163,7 +268,7 @@
     <div class="cta-inner" data-reveal>
       <h2>Klaar om <span class="grad">te groeien?</span></h2>
       <p class="lead">Laat ons kijken waar jouw grootste kansen liggen.</p>
-      <div class="row"><a href="Contact.html" class="btn">Neem contact op <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+      <div class="row"><a href="/contact" class="btn">Neem contact op <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -181,8 +286,3 @@
     });
   })();
 </script>
-<script src="i18n.js?v=20260624a"></script>
-<script src="i18n-pages.js?v=20260624a"></script>
-<script src="site.js?v=20260624a"></script>
-</body>
-</html>

@@ -161,6 +161,16 @@
 @media (max-width: 680px) {
   .vstats, .vcap-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 560px) {
+  .vo-hero { padding: 36px 0 52px; }
+  .call { padding: 20px 18px 18px; border-radius: 22px; }
+  .orb-wrap { height: 168px; }
+  .orb { width: 92px; height: 92px; }
+  .transcript { min-height: 120px; max-height: 150px; }
+  .lang-switch button { padding: 6px 12px; }
+  .uc-panel { padding: 26px; min-height: 0; }
+  .uc-view h3 { font-size: 23px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .orb, .orb-ring, .call.is-idle .orb { animation: none !important; }
 }

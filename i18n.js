@@ -14,7 +14,7 @@
     fr: {
       /* nav + footer chrome */
       'home': 'accueil', 'diensten': 'services', 'blog': 'blog', 'over_ons': 'à_propos',
-      'contact': 'contact', 'live_demo': 'démo_live', 'plan_een_gesprek': 'planifier_appel',
+      'contact': 'contact', 'live_demo': 'démo_live', 'gratis_demo': 'démo_gratuite', 'plan_een_gesprek': 'planifier_appel',
       'bedrijf': 'entreprise', 'nieuwsbrief': 'newsletter', 'subscribe': "s'inscrire",
       'all_systems_online // 24/7': 'tous_systèmes_en_ligne // 24/7',
       'Belgisch AI-bureau uit Limburg. We bouwen websites, chatbots, voice agents en automatisaties die lokale bedrijven laten groeien.':
@@ -160,7 +160,7 @@
     en: {
       /* nav + footer chrome */
       'home': 'home', 'diensten': 'services', 'blog': 'blog', 'over_ons': 'about',
-      'contact': 'contact', 'live_demo': 'live_demo', 'plan_een_gesprek': 'book_a_call',
+      'contact': 'contact', 'live_demo': 'live_demo', 'gratis_demo': 'free_demo', 'plan_een_gesprek': 'book_a_call',
       'bedrijf': 'company', 'nieuwsbrief': 'newsletter', 'subscribe': 'subscribe',
       'all_systems_online // 24/7': 'all_systems_online // 24/7',
       'Belgisch AI-bureau uit Limburg. We bouwen websites, chatbots, voice agents en automatisaties die lokale bedrijven laten groeien.':
