@@ -10,7 +10,7 @@
      as the original site). Example:
        const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/XXXXXXXX';
      ─────────────────────────────────────────────────────────────────────── */
-  const GHL_BOOKING_URL = '';
+  const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';
   const BOOKING_FALLBACK = 'Contact.html';
 
   const NAV = `
@@ -31,9 +31,39 @@
         <div class="lang-pick" data-no-i18n="" role="group" aria-label="Taal / Language">
           <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
         </div>
-        <a href="#" class="nav-demo">gratis_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+        <a href="Gratis Demo.html" class="nav-demo">gratis_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
         <a href="Contact.html" data-book class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </nav>
+    </div>
+  </div>
+  <div class="mobnav" id="mobnav" aria-hidden="true">
+    <div class="mobnav-glow"></div>
+    <div class="mobnav-top">
+      <span class="mobnav-brand"><span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>Launchpad</span>
+      <button class="mobnav-close" id="mobnavClose" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="mobnav-links">
+      <a href="EMLaunchpad Home.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="Diensten.html" data-nav="diensten"><span>diensten</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="Over ons.html" data-nav="over_ons"><span>over_ons</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="Gratis Demo.html" data-nav="gratis_demo"><span>gratis_demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="Contact.html" data-nav="contact"><span>contact</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    </nav>
+    <div class="mobnav-foot">
+      <div class="mobnav-cta">
+        <a href="Gratis Demo.html" class="mobnav-ghost">gratis_demo</a>
+        <a href="Contact.html" data-book class="mobnav-book">plan_een_gesprek</a>
+      </div>
+      <div class="mobnav-lang" data-no-i18n="" role="group" aria-label="Taal / Language">
+        <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
+      </div>
+      <div class="mobnav-social">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-2.9.9.9-2.8-.2-.3A8.2 8.2 0 1112 20.2z"/></svg></a>
+      </div>
+      <p class="mobnav-copy">© 2026 EM_LAUNCHPAD · GEMAAKT_IN_LIMBURG</p>
     </div>
   </div>`;
 
@@ -110,9 +140,32 @@
 
   // Active nav link from <body data-page="...">
   const page = document.body.dataset.page;
-  document.querySelectorAll('.nav-links a[data-nav]').forEach((a) => {
+  document.querySelectorAll('.nav-links a[data-nav], .mobnav-links a[data-nav]').forEach((a) => {
     if (a.dataset.nav === page) a.classList.add('active');
   });
+
+  // Mobile menu (fullscreen overlay)
+  (function () {
+    const burger = document.getElementById('navBurger');
+    const mob = document.getElementById('mobnav');
+    if (!burger || !mob) return;
+    const closeBtn = document.getElementById('mobnavClose');
+    const open = () => {
+      mob.classList.add('open'); mob.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      mob.classList.remove('open'); mob.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    burger.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    // close when a menu link is tapped (booking link still triggers popup via [data-book])
+    mob.querySelectorAll('.mobnav-links a, .mobnav-cta a').forEach((a) => a.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mob.classList.contains('open')) close(); });
+  })();
 
   // Apply site-wide language (switcher lives in the nav)
   if (window.EMi18n) window.EMi18n.init();
