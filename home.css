@@ -94,14 +94,25 @@ body {
   overflow-x: hidden;
   animation: pageIn .5s cubic-bezier(.2,.7,.2,1) both;
 }
-/* ── page transitions (cross-fade in + gradient sweep out) ─────────────── */
-@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
-body.pt-leaving { opacity: 0; transition: opacity .3s ease; animation: none; }
-.pt-bar { position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 99999;
-  transform: scaleX(0); transform-origin: left;
-  background: linear-gradient(90deg, var(--blue), var(--cyan) 50%, var(--mint));
-  box-shadow: 0 0 12px rgba(47,240,166,.5); transition: transform .34s ease; pointer-events: none; }
+/* ── page transitions (smooth settle-in + quick lift-out) ──────────────── */
+body { animation: pageIn .62s cubic-bezier(.22,.61,.36,1) both; }
+@keyframes pageIn {
+  0%   { opacity: 0; transform: translateY(20px) scale(.988); }
+  100% { opacity: 1; transform: none; }
+}
+body.pt-leaving {
+  opacity: 0; transform: translateY(-14px) scale(.99);
+  transition: opacity .26s cubic-bezier(.4,0,1,1), transform .26s cubic-bezier(.4,0,1,1);
+  animation: none;
+}
+/* gradient sweep bar that races across the top during the hand-off */
+.pt-bar { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 99999;
+  transform: scaleX(0); transform-origin: left; border-radius: 0 3px 3px 0;
+  background: linear-gradient(90deg, var(--blue), var(--cyan) 45%, var(--mint));
+  box-shadow: 0 0 16px rgba(47,240,166,.7), 0 0 4px rgba(19,199,230,.8);
+  transition: transform .42s cubic-bezier(.5,.02,.2,1), opacity .25s ease; pointer-events: none; }
 .pt-bar.go { transform: scaleX(1); }
+.pt-bar.done { opacity: 0; }
 @media (prefers-reduced-motion: reduce) {
   body { animation: none; }
   body.pt-leaving { transition: none; }
@@ -458,6 +469,7 @@ img { max-width: 100%; display: block; }
     repeating-linear-gradient(135deg, rgba(150,200,210,.05) 0 12px, transparent 12px 24px),
     linear-gradient(160deg, var(--ink-3), var(--ink)); aspect-ratio: 4/3; display: grid; place-items: center; }
 .media .ph { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; color: var(--faint); text-transform: uppercase; }
+.media .case-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; border-radius: 20px; }
 .media .play { position: absolute; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center;
   background: var(--grad); color: #04130f; box-shadow: 0 10px 30px rgba(45,200,180,.4); }
 .media .play svg { width: 22px; height: 22px; margin-left: 3px; }

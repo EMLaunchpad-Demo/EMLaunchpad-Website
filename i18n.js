@@ -68,9 +68,9 @@
         'Planification de contenu, publication et analyses — structuré, cohérent et stratégiquement ciblé sur votre audience.',
       'Ontdek social': 'Découvrir le social',
       'Wat onze klant zegt': 'Ce que dit notre client', 'Hoor het rechtstreeks': 'Écoutez-le directement',
-      'van Sasha.': 'de Sasha.',
-      'Een eerlijk interview met Sasha Kenis van Clinic3D — over wat we gebouwd hebben, hoe het werkt en wat het oplevert.':
-        "Une interview honnête de Sasha Kenis de Clinic3D — sur ce que nous avons construit, comment ça marche et ce que ça rapporte.",
+      'van Dr. Kenis.': 'du Dr. Kenis.',
+      'Een eerlijk interview met Dr. Kenis van Clinic3D — over wat we gebouwd hebben, hoe het werkt en wat het oplevert.':
+        "Une interview honnête du Dr. Kenis de Clinic3D — sur ce que nous avons construit, comment ça marche et ce que ça rapporte.",
       'Interview': 'Interview',
       '227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit': '227 rendez-vous en 104 jours, aucune absence, et mon agenda est',
       'voller dan ooit.': 'plus rempli que jamais.',
@@ -214,9 +214,9 @@
         'Content planning, posting and analytics — structured, consistent and strategically aimed at your audience.',
       'Ontdek social': 'Explore social',
       'Wat onze klant zegt': 'What our client says', 'Hoor het rechtstreeks': 'Hear it straight',
-      'van Sasha.': 'from Sasha.',
-      'Een eerlijk interview met Sasha Kenis van Clinic3D — over wat we gebouwd hebben, hoe het werkt en wat het oplevert.':
-        'An honest interview with Sasha Kenis of Clinic3D — about what we built, how it works and what it delivers.',
+      'van Dr. Kenis.': 'from Dr. Kenis.',
+      'Een eerlijk interview met Dr. Kenis van Clinic3D — over wat we gebouwd hebben, hoe het werkt en wat het oplevert.':
+        'An honest interview with Dr. Kenis of Clinic3D — about what we built, how it works and what it delivers.',
       'Interview': 'Interview',
       '227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit': '227 appointments in 104 days, not a single no-show, and my calendar is',
       'voller dan ooit.': 'fuller than ever.',
