@@ -264,7 +264,8 @@ img { max-width: 100%; display: block; }
 
 /* ════════════════ MOBILE FULLSCREEN MENU ════════════════ */
 .mobnav { position: fixed; inset: 0; z-index: 90; display: none; flex-direction: column;
-  padding: 22px 24px 28px; background: #0a0d14; overflow: hidden;
+  padding: 22px 24px 28px; background: #0a0d14; overflow-y: auto; overflow-x: hidden;
+  overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
   opacity: 0; transition: opacity .3s ease; }
 .mobnav.open { display: flex; opacity: 1; }
 .mobnav-glow { position: absolute; z-index: 0; right: -20%; top: 12%; width: 130%; height: 60%; pointer-events: none;
@@ -287,7 +288,7 @@ img { max-width: 100%; display: block; }
 .mobnav-links a svg { width: 20px; height: 20px; color: var(--dim); transition: color .2s ease, transform .2s ease; }
 .mobnav-links a:hover, .mobnav-links a.active { color: var(--mint); }
 .mobnav-links a:hover svg, .mobnav-links a.active svg { color: var(--mint); transform: translateX(3px); }
-.mobnav-foot { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 20px; padding-top: 28px; }
+.mobnav-foot { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 20px; padding-top: 28px; flex: none; }
 .mobnav-cta { display: flex; gap: 12px; width: 100%; }
 .mobnav-ghost, .mobnav-book { flex: 1; text-align: center; padding: 14px 18px; border-radius: 999px;
   font-family: var(--mono); font-size: 13px; font-weight: 600; transition: filter .2s ease, background .2s ease; }
@@ -739,6 +740,14 @@ img { max-width: 100%; display: block; }
   .nav-bar { gap: 8px; }
   .hero h1 { font-size: 30px; }
   .mobnav-links a { font-size: 20px; padding: 19px 2px; }
+}
+
+/* compact mobile menu on short screens so footer never clips */
+@media (max-height: 760px) {
+  .mobnav-links { margin-top: 22px; }
+  .mobnav-links a { padding: 14px 2px; font-size: 19px; }
+  .mobnav-foot { gap: 14px; padding-top: 18px; }
+  .mobnav-copy { display: none; }
 }
 
 /* ════════════════ SCROLL EFFECTS (shared) ════════════════ */

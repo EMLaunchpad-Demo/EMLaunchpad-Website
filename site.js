@@ -150,15 +150,27 @@
     const mob = document.getElementById('mobnav');
     if (!burger || !mob) return;
     const closeBtn = document.getElementById('mobnavClose');
+    let lockY = 0;
     const open = () => {
+      lockY = window.scrollY || 0;
       mob.classList.add('open'); mob.setAttribute('aria-hidden', 'false');
       burger.setAttribute('aria-expanded', 'true');
+      // robust scroll lock (also works on iOS where overflow:hidden is ignored)
+      document.body.style.position = 'fixed';
+      document.body.style.top = (-lockY) + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
       document.body.style.overflow = 'hidden';
     };
     const close = () => {
       mob.classList.remove('open'); mob.setAttribute('aria-hidden', 'true');
       burger.setAttribute('aria-expanded', 'false');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
+      window.scrollTo(0, lockY);
     };
     burger.addEventListener('click', open);
     if (closeBtn) closeBtn.addEventListener('click', close);
