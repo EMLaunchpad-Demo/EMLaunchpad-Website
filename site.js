@@ -11,28 +11,31 @@
        const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/XXXXXXXX';
      ─────────────────────────────────────────────────────────────────────── */
   const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';
-  const BOOKING_FALLBACK = 'Contact.html';
+  // Base prefix so the shared nav/footer + assets resolve correctly from
+  // sub-folders such as /lokaal/ (city landing pages). Root pages get ''.
+  const B = /\/lokaal\//.test(location.pathname) ? '../' : '';
+  const BOOKING_FALLBACK = B + 'Contact.html';
 
   const NAV = `
   <div class="nav">
     <div class="wrap">
       <nav class="nav-bar">
-        <span class="em-chip nav-em"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>
+        <span class="em-chip nav-em"><img class="em-img" src="${B}assets/logo-em.png" alt="EM Launchpad" /></span>
         <span class="nav-word">Launchpad</span>
         <span class="nav-div"></span>
         <div class="nav-links">
-          <a href="index.html" data-nav="home">home</a>
-          <a href="Diensten.html" data-nav="diensten">diensten</a>
+          <a href="${B}index.html" data-nav="home">home</a>
+          <a href="${B}Diensten.html" data-nav="diensten">diensten</a>
           <a href="#" data-nav="blog">blog</a>
-          <a href="Over ons.html" data-nav="over_ons">over_ons</a>
-          <a href="Contact.html" data-nav="contact">contact</a>
+          <a href="${B}Over ons.html" data-nav="over_ons">over_ons</a>
+          <a href="${B}Contact.html" data-nav="contact">contact</a>
         </div>
         <span class="nav-spacer"></span>
         <div class="lang-pick" data-no-i18n="" role="group" aria-label="Taal / Language">
           <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
         </div>
-        <a href="Gratis Demo.html" class="nav-demo">gratis_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
-        <a href="Contact.html" data-book class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="${B}Gratis Demo.html" class="nav-demo">gratis_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+        <a href="${B}Contact.html" data-book class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </nav>
     </div>
@@ -40,20 +43,20 @@
   <div class="mobnav" id="mobnav" aria-hidden="true">
     <div class="mobnav-glow"></div>
     <div class="mobnav-top">
-      <span class="mobnav-brand"><span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>Launchpad</span>
+      <span class="mobnav-brand"><span class="em-chip"><img class="em-img" src="${B}assets/logo-em.png" alt="EM Launchpad" /></span>Launchpad</span>
       <button class="mobnav-close" id="mobnavClose" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
     <nav class="mobnav-links">
-      <a href="index.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="Diensten.html" data-nav="diensten"><span>diensten</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="Over ons.html" data-nav="over_ons"><span>over_ons</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="Gratis Demo.html" data-nav="gratis_demo"><span>gratis_demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="Contact.html" data-nav="contact"><span>contact</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${B}index.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${B}Diensten.html" data-nav="diensten"><span>diensten</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${B}Over ons.html" data-nav="over_ons"><span>over_ons</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${B}Gratis Demo.html" data-nav="gratis_demo"><span>gratis_demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${B}Contact.html" data-nav="contact"><span>contact</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
     </nav>
     <div class="mobnav-foot">
       <div class="mobnav-cta">
-        <a href="Gratis Demo.html" class="mobnav-ghost">gratis_demo</a>
-        <a href="Contact.html" data-book class="mobnav-book">plan_een_gesprek</a>
+        <a href="${B}Gratis Demo.html" class="mobnav-ghost">gratis_demo</a>
+        <a href="${B}Contact.html" data-book class="mobnav-book">plan_een_gesprek</a>
       </div>
       <div class="mobnav-lang" data-no-i18n="" role="group" aria-label="Taal / Language">
         <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
@@ -75,7 +78,7 @@
       <div class="foot-inner">
         <div class="foot-top">
           <div class="foot-id">
-            <div class="foot-lock"><span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span><span class="word">Launchpad</span></div>
+            <div class="foot-lock"><span class="em-chip"><img class="em-img" src="${B}assets/logo-em.png" alt="EM Launchpad" /></span><span class="word">Launchpad</span></div>
             <span class="foot-status"><span class="dot"></span>all_systems_online // 24/7</span>
             <p class="foot-tag">Belgisch AI-bureau uit Limburg. We bouwen websites, chatbots, voice agents en automatisaties die lokale bedrijven laten groeien.</p>
           </div>
@@ -98,17 +101,17 @@
           <div class="foot-cell">
             <h5 class="foot-h">// <b>diensten</b></h5>
             <div class="foot-links">
-              <a href="Diensten.html">ai chatbots</a><a href="Diensten.html">ai voice agents</a>
-              <a href="Diensten.html">websites</a><a href="Diensten.html">ai-automatisering</a>
-              <a href="Diensten.html">reputatiebeheer</a><a href="Diensten.html">crm &amp; dashboard</a>
-              <a href="Diensten.html">email &amp; sms</a><a href="Diensten.html">funnels &amp; landingspagina's</a>
+              <a href="${B}Diensten.html">ai chatbots</a><a href="${B}Diensten.html">ai voice agents</a>
+              <a href="${B}Diensten.html">websites</a><a href="${B}Diensten.html">ai-automatisering</a>
+              <a href="${B}Diensten.html">reputatiebeheer</a><a href="${B}Diensten.html">crm &amp; dashboard</a>
+              <a href="${B}Diensten.html">email &amp; sms</a><a href="${B}Diensten.html">funnels &amp; landingspagina's</a>
             </div>
           </div>
           <div class="foot-cell one">
             <h5 class="foot-h">// <b>bedrijf</b></h5>
             <div class="foot-links">
-              <a href="index.html">home</a><a href="Diensten.html">diensten</a><a href="Over ons.html">over_ons</a>
-              <a href="#">live_demo</a><a href="#">blog</a><a href="Contact.html">contact</a>
+              <a href="${B}index.html">home</a><a href="${B}Diensten.html">diensten</a><a href="${B}Over ons.html">over_ons</a>
+              <a href="#">live_demo</a><a href="#">blog</a><a href="${B}Contact.html">contact</a>
             </div>
           </div>
           <div class="foot-cell">
@@ -122,7 +125,7 @@
         </div>
         <div class="foot-cities">
           <p class="lead2">// lokaal_actief →</p>
-          <a href="#">Hasselt</a><span class="sep">/</span><a href="#">Tongeren</a><span class="sep">/</span><a href="#">Sint-Truiden</a><span class="sep">/</span><a href="#">Genk</a><span class="sep">/</span><a href="#">Bilzen</a><span class="sep">/</span><a href="#">Maaseik</a><span class="sep">/</span><a href="#">Heel Limburg &amp; België</a>
+          <a href="${B}lokaal/ai-hasselt.html">Hasselt</a><span class="sep">/</span><a href="${B}lokaal/ai-tongeren-borgloon.html">Tongeren</a><span class="sep">/</span><a href="${B}lokaal/ai-sint-truiden.html">Sint-Truiden</a><span class="sep">/</span><a href="${B}lokaal/ai-genk.html">Genk</a><span class="sep">/</span><a href="${B}lokaal/ai-bilzen-hoeselt.html">Bilzen</a><span class="sep">/</span><a href="${B}lokaal/ai-maaseik.html">Maaseik</a><span class="sep">/</span><a href="${B}lokaal/index.html">Heel Limburg &amp; België</a>
         </div>
         <div class="foot-bot">
           <span>© 2026 <b>EM_LAUNCHPAD</b> · BTW BE1024.977.818</span>
@@ -344,7 +347,7 @@
       overlay.innerHTML =
         '<div class="ghl-modal">' +
           '<div class="ghl-head">' +
-            '<span class="em-chip"><img class="em-img" src="assets/logo-em.png" alt="EM Launchpad" /></span>' +
+            '<span class="em-chip"><img class="em-img" src="' + B + 'assets/logo-em.png" alt="EM Launchpad" /></span>' +
             '<span class="ttl"><b>Plan een gratis gesprek</b><span><span class="dot"></span>30 min · vrijblijvend</span></span>' +
             '<button class="ghl-close" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>' +
           '</div>' +
