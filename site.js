@@ -26,7 +26,6 @@
         <div class="nav-links">
           <a href="${B}index.html" data-nav="home">home</a>
           <a href="${B}Diensten.html" data-nav="diensten">diensten</a>
-          <a href="#" data-nav="blog">blog</a>
           <a href="${B}Over ons.html" data-nav="over_ons">over_ons</a>
           <a href="${B}Contact.html" data-nav="contact">contact</a>
         </div>
@@ -111,7 +110,7 @@
             <h5 class="foot-h">// <b>bedrijf</b></h5>
             <div class="foot-links">
               <a href="${B}index.html">home</a><a href="${B}Diensten.html">diensten</a><a href="${B}Over ons.html">over_ons</a>
-              <a href="#">live_demo</a><a href="#">blog</a><a href="${B}Contact.html">contact</a>
+              <a href="${B}lokaal/index.html">regio's</a><a href="${B}Gratis Demo.html">gratis_demo</a><a href="${B}Contact.html">contact</a>
             </div>
           </div>
           <div class="foot-cell">
