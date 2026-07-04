@@ -92,10 +92,15 @@ body {
   margin: 0; background: var(--ink); color: var(--hi);
   font-family: var(--font); -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  animation: pageIn .5s cubic-bezier(.2,.7,.2,1) both;
 }
 /* ── page transitions (smooth settle-in + quick lift-out) ──────────────── */
-body { animation: pageIn .62s cubic-bezier(.22,.61,.36,1) both; }
+/* fill-mode MUST stay "backwards" (not "both"): a "both" fill keeps a
+   transform matrix on <body> forever, which turns <body> into the containing
+   block for every position:fixed element — that silently broke the fullscreen
+   mobile menu (it stretched to full document height and pushed its content
+   off-screen). "backwards" gives the same entrance yet leaves no lingering
+   transform once the animation ends. */
+body { animation: pageIn .62s cubic-bezier(.22,.61,.36,1) backwards; }
 @keyframes pageIn {
   0%   { opacity: 0; transform: translateY(20px) scale(.988); }
   100% { opacity: 1; transform: none; }
@@ -274,7 +279,9 @@ img { max-width: 100%; display: block; }
     radial-gradient(ellipse 54% 40% at 64% 46%, rgba(40,90,255,.42), transparent 72%),
     radial-gradient(ellipse 40% 32% at 88% 60%, rgba(220,60,140,.34), transparent 72%);
   filter: blur(34px); }
-.mobnav > * { position: relative; z-index: 1; }
+/* lift real content above the decorative glow — but NOT the glow itself,
+   otherwise it re-enters the flow and pushes the menu content off-screen */
+.mobnav > *:not(.mobnav-glow) { position: relative; z-index: 1; }
 .mobnav-top { display: flex; align-items: center; justify-content: space-between; }
 .mobnav-brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; font-size: 16px; color: var(--hi); }
 .mobnav-brand .em-chip { width: 36px; height: 36px; border-radius: 10px; }

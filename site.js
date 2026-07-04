@@ -21,7 +21,7 @@
         <span class="nav-word">Launchpad</span>
         <span class="nav-div"></span>
         <div class="nav-links">
-          <a href="EMLaunchpad Home.html" data-nav="home">home</a>
+          <a href="index.html" data-nav="home">home</a>
           <a href="Diensten.html" data-nav="diensten">diensten</a>
           <a href="#" data-nav="blog">blog</a>
           <a href="Over ons.html" data-nav="over_ons">over_ons</a>
@@ -44,7 +44,7 @@
       <button class="mobnav-close" id="mobnavClose" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
     <nav class="mobnav-links">
-      <a href="EMLaunchpad Home.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="index.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       <a href="Diensten.html" data-nav="diensten"><span>diensten</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       <a href="Over ons.html" data-nav="over_ons"><span>over_ons</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       <a href="Gratis Demo.html" data-nav="gratis_demo"><span>gratis_demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
@@ -107,7 +107,7 @@
           <div class="foot-cell one">
             <h5 class="foot-h">// <b>bedrijf</b></h5>
             <div class="foot-links">
-              <a href="EMLaunchpad Home.html">home</a><a href="Diensten.html">diensten</a><a href="Over ons.html">over_ons</a>
+              <a href="index.html">home</a><a href="Diensten.html">diensten</a><a href="Over ons.html">over_ons</a>
               <a href="#">live_demo</a><a href="#">blog</a><a href="Contact.html">contact</a>
             </div>
           </div>
