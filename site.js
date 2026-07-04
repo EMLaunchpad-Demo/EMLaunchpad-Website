@@ -1,22 +1,4 @@
-/* EMLaunchpad — shared site chrome (nav + footer) + loader/faq logic.
-   Pages include: <body data-page="...">, an inline .loader at top,
-   <div id="nav-mount"></div> after it, <div id="footer-mount"></div> before scripts,
-   then <script src="site.js"></script>. Keeps every page's chrome identical. */
-(function () {
-  /* ───────────────────────────────────────────────────────────────────────
-     GoHighLevel booking popup.
-     Paste your GHL calendar / booking widget URL below. While it is empty the
-     "Plan een gesprek" buttons fall back to the contact page (same behaviour
-     as the original site). Example:
-       const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/XXXXXXXX';
-     ─────────────────────────────────────────────────────────────────────── */
-  const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';
-  // Base prefix so the shared nav/footer + assets resolve correctly from
-  // sub-folders such as /lokaal/ (city landing pages). Root pages get ''.
-  const B = /\/lokaal\//.test(location.pathname) ? '../' : '';
-  const BOOKING_FALLBACK = B + 'Contact.html';
-
-  const NAV = `
+(function(){const GHL_BOOKING_URL='https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';const B=/\/lokaal\//.test(location.pathname)?'../':'';const BOOKING_FALLBACK=B+'Contact.html';const NAV=`
   <div class="nav">
     <div class="wrap">
       <nav class="nav-bar">
@@ -68,9 +50,7 @@
       </div>
       <p class="mobnav-copy">© 2026 EM_LAUNCHPAD · GEMAAKT_IN_LIMBURG</p>
     </div>
-  </div>`;
-
-  const FOOTER = `
+  </div>`;const FOOTER=`
   <footer class="foot">
     <div class="foot-hair"></div>
     <div class="wrap">
@@ -82,11 +62,7 @@
             <p class="foot-tag">Belgisch AI-bureau uit Limburg. We bouwen websites, chatbots, voice agents en automatisaties die lokale bedrijven laten groeien.</p>
           </div>
           <div class="foot-news">
-            <span class="lbl">// nieuwsbrief</span>
-            <form class="foot-field" onsubmit="return false;">
-              <input type="email" placeholder="jouw@email.be" aria-label="E-mailadres" />
-              <button type="submit">subscribe <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
-            </form>
+            <span class="lbl">// volg ons</span>
             <div class="foot-social">
               <a href="https://be.linkedin.com/in/ebert-vanbrabant-077b5326a" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21H9z"/></svg></a>
               <a href="https://www.instagram.com/em_launchpad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
@@ -132,270 +108,13 @@
         </div>
       </div>
     </div>
-  </footer>`;
-
-  // Inject chrome into mount points
-  const navMount = document.getElementById('nav-mount');
-  if (navMount) navMount.outerHTML = NAV;
-  const footMount = document.getElementById('footer-mount');
-  if (footMount) footMount.outerHTML = FOOTER;
-
-  // Active nav link from <body data-page="...">
-  const page = document.body.dataset.page;
-  document.querySelectorAll('.nav-links a[data-nav], .mobnav-links a[data-nav]').forEach((a) => {
-    if (a.dataset.nav === page) a.classList.add('active');
-  });
-
-  // Mobile menu (fullscreen overlay)
-  (function () {
-    const burger = document.getElementById('navBurger');
-    const mob = document.getElementById('mobnav');
-    if (!burger || !mob) return;
-    const closeBtn = document.getElementById('mobnavClose');
-    let lockY = 0;
-    const open = () => {
-      lockY = window.scrollY || 0;
-      mob.classList.add('open'); mob.setAttribute('aria-hidden', 'false');
-      burger.setAttribute('aria-expanded', 'true');
-      // robust scroll lock (also works on iOS where overflow:hidden is ignored)
-      document.body.style.position = 'fixed';
-      document.body.style.top = (-lockY) + 'px';
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.overflow = 'hidden';
-    };
-    const close = () => {
-      mob.classList.remove('open'); mob.setAttribute('aria-hidden', 'true');
-      burger.setAttribute('aria-expanded', 'false');
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.overflow = '';
-      window.scrollTo(0, lockY);
-    };
-    burger.addEventListener('click', open);
-    if (closeBtn) closeBtn.addEventListener('click', close);
-    // close when a menu link is tapped (booking link still triggers popup via [data-book])
-    mob.querySelectorAll('.mobnav-links a, .mobnav-cta a').forEach((a) => a.addEventListener('click', close));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mob.classList.contains('open')) close(); });
-  })();
-
-  // Apply site-wide language (switcher lives in the nav)
-  if (window.EMi18n) window.EMi18n.init();
-
-  // Loader — plays only on the FIRST entry to the site (per browser session).
-  // On any later page within the same session it's removed instantly.
-  (function () {
-    const loader = document.getElementById('loader');
-    if (!loader) return;
-    let seen = false;
-    try { seen = sessionStorage.getItem('em_loaded') === '1'; } catch (e) {}
-    if (seen) { loader.remove(); return; }
-    try { sessionStorage.setItem('em_loaded', '1'); } catch (e) {}
-    const msg = document.getElementById('loaderMsg');
-    const steps = ['systemen initialiseren', 'agenda koppelen', 'ai laden', 'klaar'];
-    let s = 0;
-    const tick = setInterval(() => { s = Math.min(s + 1, steps.length - 1); if (msg) msg.textContent = steps[s]; }, 420);
-    const finish = () => {
-      clearInterval(tick); if (msg) msg.textContent = 'klaar';
-      setTimeout(() => { loader.classList.add('done'); setTimeout(() => loader.remove(), 650); }, 520);
-    };
-    if (document.readyState === 'complete') setTimeout(finish, 1400);
-    else window.addEventListener('load', () => setTimeout(finish, 800));
-  })();
-
-  // Page transitions — smooth cross-fade + gradient sweep when navigating
-  // to another internal page (instead of an instant jump).
-  (function () {
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isInternal = (a) => {
-      if (!a) return false;
-      if (a.target === '_blank' || a.hasAttribute('download')) return false;
-      const href = a.getAttribute('href') || '';
-      if (!href || href[0] === '#') return false;
-      if (/^(mailto:|tel:|https?:|\/\/)/i.test(href)) return false;
-      return /\.html(\?|#|$)/i.test(href) || href.endsWith('/');
-    };
-    document.addEventListener('click', (e) => {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      const a = e.target.closest && e.target.closest('a[href]');
-      if (!isInternal(a)) return;
-      if (a.hasAttribute('data-book')) return; // booking CTAs open the popup instead
-      const href = a.getAttribute('href');
-      // same page? let the browser handle the in-page anchor
-      if (href.split('#')[0] === location.pathname.split('/').pop()) return;
-      e.preventDefault();
-      if (reduce) { window.location.href = href; return; }
-      const bar = document.createElement('div');
-      bar.className = 'pt-bar';
-      document.body.appendChild(bar);
-      void bar.offsetWidth; bar.classList.add('go');
-      // let the bar race ahead briefly, then lift the page out and hand off
-      requestAnimationFrame(() => document.body.classList.add('pt-leaving'));
-      setTimeout(() => { bar.classList.add('done'); }, 240);
-      setTimeout(() => { window.location.href = href; }, 300);
-    });
-    // restore on back/forward (bfcache) so the page isn't left faded out
-    window.addEventListener('pageshow', () => {
-      document.body.classList.remove('pt-leaving');
-      const b = document.querySelector('.pt-bar'); if (b) b.remove();
-    });
-  })();
-
-  // FAQ accordion (any page with .faq-item)
-  document.querySelectorAll('.faq-item').forEach((item) => {
-    const q = item.querySelector('.faq-q');
-    const a = item.querySelector('.faq-a');
-    if (!q || !a) return;
-    q.addEventListener('click', () => {
-      const open = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach((o) => { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
-      if (!open) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
-    });
-  });
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Scroll progress bar (top of page)
-  (function () {
-    const bar = document.createElement('div');
-    bar.className = 'scroll-prog';
-    document.body.appendChild(bar);
-    let ticking = false;
-    const update = () => {
-      const h = document.documentElement;
-      const max = h.scrollHeight - h.clientHeight;
-      const p = max > 0 ? (h.scrollTop || window.scrollY) / max : 0;
-      bar.style.width = (p * 100) + '%';
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    update();
-  })();
-
-  // Nav condense on scroll
-  (function () {
-    const onScroll = () => { document.body.classList.toggle('is-scrolled', (window.scrollY || 0) > 24); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
-
-  // Reveal-on-scroll (staggered, REPEATABLE) — opt-in via [data-reveal].
-  // Scroll-driven (not IntersectionObserver) so it fires reliably every time:
-  // elements fade in when they enter the viewport and reset when they leave,
-  // replaying on every scroll up or down — even minutes later.
-  if (!reduceMotion) {
-    document.documentElement.classList.add('reveal-ready');
-    document.querySelectorAll('[data-reveal-group]').forEach((grp) => {
-      [...grp.querySelectorAll(':scope > [data-reveal]')].forEach((el, i) => {
-        el.style.transitionDelay = (i * 75) + 'ms';
-      });
-    });
-    const all = [...document.querySelectorAll('[data-reveal]')];
-    let ticking = false;
-    const apply = () => {
-      ticking = false;
-      const vh = window.innerHeight || document.documentElement.clientHeight;
-      for (const el of all) {
-        const r = el.getBoundingClientRect();
-        // visible once its top crosses ~88% of the viewport, hidden once fully past
-        const inView = r.top < vh * 0.88 && r.bottom > vh * 0.10;
-        el.classList.toggle('in', inView);
-      }
-    };
-    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(apply); } };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    window.addEventListener('load', apply);
-    apply();
-    setTimeout(apply, 300);
-  }
-
-  // Lightweight parallax — opt-in via [data-parallax="<speed>"]
-  if (!reduceMotion) {
-    const items = [...document.querySelectorAll('[data-parallax]')].map((el) => ({
-      el, speed: parseFloat(el.dataset.parallax) || 0.12,
-      scale: el.dataset.parallaxScale ? parseFloat(el.dataset.parallaxScale) : 0,
-    }));
-    if (items.length) {
-      let ticking = false;
-      const update = () => {
-        const y = window.scrollY || 0;
-        items.forEach((it) => {
-          const sc = it.scale ? ' scale(' + (1 - Math.min(y * it.scale, 0.12)) + ')' : '';
-          it.el.style.transform = 'translate3d(0,' + (y * it.speed).toFixed(1) + 'px,0)' + sc;
-        });
-        ticking = false;
-      };
-      window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-      update();
-    }
-  }
-
-  // ── GoHighLevel booking popup ────────────────────────────────────────────
-  (function () {
-    let overlay = null, lastFocus = null;
-
-    function build() {
-      overlay = document.createElement('div');
-      overlay.className = 'ghl-overlay';
-      overlay.setAttribute('role', 'dialog');
-      overlay.setAttribute('aria-modal', 'true');
-      overlay.setAttribute('aria-label', 'Plan een gesprek');
-      overlay.innerHTML =
-        '<div class="ghl-modal">' +
-          '<div class="ghl-head">' +
-            '<span class="em-chip"><img class="em-img" src="' + B + 'assets/logo-em.png" alt="EM Launchpad" /></span>' +
-            '<span class="ttl"><b>Plan een gratis gesprek</b><span><span class="dot"></span>30 min · vrijblijvend</span></span>' +
-            '<button class="ghl-close" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>' +
-          '</div>' +
-          '<div class="ghl-body"><div class="ghl-loading"><span class="spin"></span></div></div>' +
-        '</div>';
-      document.body.appendChild(overlay);
-      overlay.addEventListener('click', (e) => { if (e.target === overlay) closePopup(); });
-      overlay.querySelector('.ghl-close').addEventListener('click', closePopup);
-    }
-
-    window.openPopup = function () {
-      if (!GHL_BOOKING_URL) { window.location.href = BOOKING_FALLBACK; return; }
-      if (!overlay) build();
-      const body = overlay.querySelector('.ghl-body');
-      if (!body.querySelector('iframe')) {
-        const f = document.createElement('iframe');
-        f.src = GHL_BOOKING_URL;
-        f.title = 'Plan een gesprek';
-        f.loading = 'lazy';
-        f.setAttribute('scrolling', 'yes');
-        f.allow = 'payment';
-        f.addEventListener('load', () => { const l = body.querySelector('.ghl-loading'); if (l) l.style.display = 'none'; });
-        body.appendChild(f);
-      }
-      lastFocus = document.activeElement;
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => overlay.querySelector('.ghl-close').focus(), 60);
-    };
-
-    window.closePopup = function () {
-      if (!overlay) return;
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
-    };
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) closePopup();
-    });
-
-    // Any [data-book] link/button opens the popup (capture phase so it wins
-    // over the page-transition handler).
-    document.addEventListener('click', (e) => {
-      const t = e.target.closest && e.target.closest('[data-book]');
-      if (!t) return;
-      e.preventDefault();
-      e.stopPropagation();
-      window.openPopup();
-    }, true);
-  })();
-})();
+  </footer>`;const navMount=document.getElementById('nav-mount');if(navMount)navMount.outerHTML=NAV;const footMount=document.getElementById('footer-mount');if(footMount)footMount.outerHTML=FOOTER;const page=document.body.dataset.page;document.querySelectorAll('.nav-links a[data-nav], .mobnav-links a[data-nav]').forEach((a)=>{if(a.dataset.nav===page)a.classList.add('active');});(function(){const burger=document.getElementById('navBurger');const mob=document.getElementById('mobnav');if(!burger||!mob)return;const closeBtn=document.getElementById('mobnavClose');let lockY=0;const open=()=>{lockY=window.scrollY||0;mob.classList.add('open');mob.setAttribute('aria-hidden','false');burger.setAttribute('aria-expanded','true');document.body.style.position='fixed';document.body.style.top=(-lockY)+'px';document.body.style.left='0';document.body.style.right='0';document.body.style.overflow='hidden';};const close=()=>{mob.classList.remove('open');mob.setAttribute('aria-hidden','true');burger.setAttribute('aria-expanded','false');document.body.style.position='';document.body.style.top='';document.body.style.left='';document.body.style.right='';document.body.style.overflow='';window.scrollTo(0,lockY);};burger.addEventListener('click',open);if(closeBtn)closeBtn.addEventListener('click',close);mob.querySelectorAll('.mobnav-links a, .mobnav-cta a').forEach((a)=>a.addEventListener('click',close));document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mob.classList.contains('open'))close();});})();if(window.EMi18n)window.EMi18n.init();(function(){const loader=document.getElementById('loader');if(!loader)return;let seen=false;try{seen=sessionStorage.getItem('em_loaded')==='1';}catch(e){}
+if(seen){loader.remove();return;}
+try{sessionStorage.setItem('em_loaded','1');}catch(e){}
+const msg=document.getElementById('loaderMsg');const steps=['systemen initialiseren','agenda koppelen','ai laden','klaar'];let s=0;const tick=setInterval(()=>{s=Math.min(s+1,steps.length-1);if(msg)msg.textContent=steps[s];},420);const finish=()=>{clearInterval(tick);if(msg)msg.textContent='klaar';setTimeout(()=>{loader.classList.add('done');setTimeout(()=>loader.remove(),650);},520);};if(document.readyState==='complete')setTimeout(finish,1400);else window.addEventListener('load',()=>setTimeout(finish,800));})();(function(){const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;const isInternal=(a)=>{if(!a)return false;if(a.target==='_blank'||a.hasAttribute('download'))return false;const href=a.getAttribute('href')||'';if(!href||href[0]==='#')return false;if(/^(mailto:|tel:|https?:|\/\/)/i.test(href))return false;return/\.html(\?|#|$)/i.test(href)||href.endsWith('/');};document.addEventListener('click',(e)=>{if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=e.target.closest&&e.target.closest('a[href]');if(!isInternal(a))return;if(a.hasAttribute('data-book'))return;const href=a.getAttribute('href');if(href.split('#')[0]===location.pathname.split('/').pop())return;e.preventDefault();if(reduce){window.location.href=href;return;}
+const bar=document.createElement('div');bar.className='pt-bar';document.body.appendChild(bar);void bar.offsetWidth;bar.classList.add('go');requestAnimationFrame(()=>document.body.classList.add('pt-leaving'));setTimeout(()=>{bar.classList.add('done');},240);setTimeout(()=>{window.location.href=href;},300);});window.addEventListener('pageshow',()=>{document.body.classList.remove('pt-leaving');const b=document.querySelector('.pt-bar');if(b)b.remove();});})();document.querySelectorAll('.faq-item').forEach((item)=>{const q=item.querySelector('.faq-q');const a=item.querySelector('.faq-a');if(!q||!a)return;q.addEventListener('click',()=>{const open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach((o)=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null;});if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;(function(){const bar=document.createElement('div');bar.className='scroll-prog';document.body.appendChild(bar);let ticking=false;const update=()=>{const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;const p=max>0?(h.scrollTop||window.scrollY)/max:0;bar.style.width=(p*100)+'%';ticking=false;};window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});update();})();(function(){const onScroll=()=>{document.body.classList.toggle('is-scrolled',(window.scrollY||0)>24);};window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();if(!reduceMotion){document.documentElement.classList.add('reveal-ready');document.querySelectorAll('[data-reveal-group]').forEach((grp)=>{[...grp.querySelectorAll(':scope > [data-reveal]')].forEach((el,i)=>{el.style.transitionDelay=(i*75)+'ms';});});const all=[...document.querySelectorAll('[data-reveal]')];let ticking=false;const apply=()=>{ticking=false;const vh=window.innerHeight||document.documentElement.clientHeight;for(const el of all){const r=el.getBoundingClientRect();const inView=r.top<vh*0.88&&r.bottom>vh*0.10;el.classList.toggle('in',inView);}};const onScroll=()=>{if(!ticking){ticking=true;requestAnimationFrame(apply);}};window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);window.addEventListener('load',apply);apply();setTimeout(apply,300);}
+if(!reduceMotion){const items=[...document.querySelectorAll('[data-parallax]')].map((el)=>({el,speed:parseFloat(el.dataset.parallax)||0.12,scale:el.dataset.parallaxScale?parseFloat(el.dataset.parallaxScale):0,}));if(items.length){let ticking=false;const update=()=>{const y=window.scrollY||0;items.forEach((it)=>{const sc=it.scale?' scale('+(1-Math.min(y*it.scale,0.12))+')':'';it.el.style.transform='translate3d(0,'+(y*it.speed).toFixed(1)+'px,0)'+sc;});ticking=false;};window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});update();}}
+(function(){let overlay=null,lastFocus=null;function build(){overlay=document.createElement('div');overlay.className='ghl-overlay';overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','Plan een gesprek');overlay.innerHTML='<div class="ghl-modal">'+'<div class="ghl-head">'+'<span class="em-chip"><img class="em-img" src="'+B+'assets/logo-em.png" alt="EM Launchpad" /></span>'+'<span class="ttl"><b>Plan een gratis gesprek</b><span><span class="dot"></span>30 min · vrijblijvend</span></span>'+'<button class="ghl-close" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>'+'</div>'+'<div class="ghl-body"><div class="ghl-loading"><span class="spin"></span></div></div>'+'</div>';document.body.appendChild(overlay);overlay.addEventListener('click',(e)=>{if(e.target===overlay)closePopup();});overlay.querySelector('.ghl-close').addEventListener('click',closePopup);}
+window.openPopup=function(){if(!GHL_BOOKING_URL){window.location.href=BOOKING_FALLBACK;return;}
+if(!overlay)build();const body=overlay.querySelector('.ghl-body');if(!body.querySelector('iframe')){const f=document.createElement('iframe');f.src=GHL_BOOKING_URL;f.title='Plan een gesprek';f.loading='lazy';f.setAttribute('scrolling','yes');f.allow='payment';f.addEventListener('load',()=>{const l=body.querySelector('.ghl-loading');if(l)l.style.display='none';});body.appendChild(f);}
+lastFocus=document.activeElement;overlay.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>overlay.querySelector('.ghl-close').focus(),60);};window.closePopup=function(){if(!overlay)return;overlay.classList.remove('open');document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();};document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&overlay&&overlay.classList.contains('open'))closePopup();});document.addEventListener('click',(e)=>{const t=e.target.closest&&e.target.closest('[data-book]');if(!t)return;e.preventDefault();e.stopPropagation();window.openPopup();},true);})();})();
