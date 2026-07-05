@@ -1,4 +1,4 @@
-(function(){const GHL_BOOKING_URL='https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';const B=/\/lokaal\//.test(location.pathname)?'../':'';const BOOKING_FALLBACK=B+'Contact.html';const NAV=`
+(function(){const GHL_BOOKING_URL='https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';const _pp=location.pathname;const B=/\/(lokaal|fr|en)\//.test(_pp)?'../':'';const P=/\/lokaal\//.test(_pp)?'../':'';const BOOKING_FALLBACK=P+'Contact.html';const NAV=`
   <div class="nav">
     <div class="wrap">
       <nav class="nav-bar">
@@ -6,17 +6,17 @@
         <span class="nav-word">Launchpad</span>
         <span class="nav-div"></span>
         <div class="nav-links">
-          <a href="${B}index.html" data-nav="home">home</a>
-          <a href="${B}Diensten.html" data-nav="diensten">diensten</a>
-          <a href="${B}Over ons.html" data-nav="over_ons">over_ons</a>
-          <a href="${B}Contact.html" data-nav="contact">contact</a>
+          <a href="${P}index.html" data-nav="home">home</a>
+          <a href="${P}Diensten.html" data-nav="diensten">diensten</a>
+          <a href="${P}Over ons.html" data-nav="over_ons">over_ons</a>
+          <a href="${P}Contact.html" data-nav="contact">contact</a>
         </div>
         <span class="nav-spacer"></span>
         <div class="lang-pick" data-no-i18n="" role="group" aria-label="Taal / Language">
           <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
         </div>
-        <a href="${B}Gratis Demo.html" class="nav-demo">gratis_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
-        <a href="${B}Contact.html" data-book class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="${P}Gratis Demo.html" class="nav-demo">gratis_demo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+        <a href="${P}Contact.html" data-book class="btn-grad-border">plan_een_gesprek <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </nav>
     </div>
@@ -28,16 +28,16 @@
       <button class="mobnav-close" id="mobnavClose" type="button" aria-label="Sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
     </div>
     <nav class="mobnav-links">
-      <a href="${B}index.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="${B}Diensten.html" data-nav="diensten"><span>diensten</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="${B}Over ons.html" data-nav="over_ons"><span>over_ons</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="${B}Gratis Demo.html" data-nav="gratis_demo"><span>gratis_demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-      <a href="${B}Contact.html" data-nav="contact"><span>contact</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${P}index.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${P}Diensten.html" data-nav="diensten"><span>diensten</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${P}Over ons.html" data-nav="over_ons"><span>over_ons</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${P}Gratis Demo.html" data-nav="gratis_demo"><span>gratis_demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${P}Contact.html" data-nav="contact"><span>contact</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
     </nav>
     <div class="mobnav-foot">
       <div class="mobnav-cta">
-        <a href="${B}Gratis Demo.html" class="mobnav-ghost">gratis_demo</a>
-        <a href="${B}Contact.html" data-book class="mobnav-book">plan_een_gesprek</a>
+        <a href="${P}Gratis Demo.html" class="mobnav-ghost">gratis_demo</a>
+        <a href="${P}Contact.html" data-book class="mobnav-book">plan_een_gesprek</a>
       </div>
       <div class="mobnav-lang" data-no-i18n="" role="group" aria-label="Taal / Language">
         <button data-setlang="nl">NL</button><button data-setlang="fr">FR</button><button data-setlang="en">EN</button>
@@ -76,17 +76,17 @@
           <div class="foot-cell">
             <h5 class="foot-h">// <b>diensten</b></h5>
             <div class="foot-links">
-              <a href="${B}Diensten.html">ai chatbots</a><a href="${B}Diensten.html">ai voice agents</a>
-              <a href="${B}Diensten.html">websites</a><a href="${B}Diensten.html">ai-automatisering</a>
-              <a href="${B}Diensten.html">reputatiebeheer</a><a href="${B}Diensten.html">crm &amp; dashboard</a>
-              <a href="${B}Diensten.html">email &amp; sms</a><a href="${B}Diensten.html">funnels &amp; landingspagina's</a>
+              <a href="${P}Diensten.html">ai chatbots</a><a href="${P}Diensten.html">ai voice agents</a>
+              <a href="${P}Diensten.html">websites</a><a href="${P}Diensten.html">ai-automatisering</a>
+              <a href="${P}Diensten.html">reputatiebeheer</a><a href="${P}Diensten.html">crm &amp; dashboard</a>
+              <a href="${P}Diensten.html">email &amp; sms</a><a href="${P}Diensten.html">funnels &amp; landingspagina's</a>
             </div>
           </div>
           <div class="foot-cell one">
             <h5 class="foot-h">// <b>bedrijf</b></h5>
             <div class="foot-links">
-              <a href="${B}index.html">home</a><a href="${B}Diensten.html">diensten</a><a href="${B}Over ons.html">over_ons</a>
-              <a href="${B}lokaal/index.html">regio's</a><a href="${B}Gratis Demo.html">gratis_demo</a><a href="${B}Contact.html">contact</a>
+              <a href="${P}index.html">home</a><a href="${P}Diensten.html">diensten</a><a href="${P}Over ons.html">over_ons</a>
+              <a href="${B}lokaal/index.html">regio's</a><a href="${P}Gratis Demo.html">gratis_demo</a><a href="${P}Contact.html">contact</a>
             </div>
           </div>
           <div class="foot-cell">
@@ -100,7 +100,7 @@
         </div>
         <div class="foot-cities">
           <p class="lead2">// lokaal_actief →</p>
-          <a href="${B}lokaal/ai-hasselt.html">Hasselt</a><span class="sep">/</span><a href="${B}lokaal/ai-tongeren-borgloon.html">Tongeren</a><span class="sep">/</span><a href="${B}lokaal/ai-sint-truiden.html">Sint-Truiden</a><span class="sep">/</span><a href="${B}lokaal/ai-genk.html">Genk</a><span class="sep">/</span><a href="${B}lokaal/ai-bilzen-hoeselt.html">Bilzen</a><span class="sep">/</span><a href="${B}lokaal/ai-maaseik.html">Maaseik</a><span class="sep">/</span><a href="${B}lokaal/index.html">Heel Limburg &amp; België</a>
+          <a href="${B}lokaal/ai-hasselt.html">Hasselt</a><span class="sep">/</span><a href="${B}lokaal/ai-genk.html">Genk</a><span class="sep">/</span><a href="${B}lokaal/ai-antwerpen.html">Antwerpen</a><span class="sep">/</span><a href="${B}lokaal/ai-mechelen.html">Mechelen</a><span class="sep">/</span><a href="${B}lokaal/ai-turnhout.html">Turnhout</a><span class="sep">/</span><a href="${B}lokaal/ai-sint-truiden.html">Sint-Truiden</a><span class="sep">/</span><a href="${B}lokaal/index.html">Heel Limburg, Antwerpen &amp; België</a>
         </div>
         <div class="foot-bot">
           <span>© 2026 <b>EM_LAUNCHPAD</b> · BTW BE1024.977.818</span>
@@ -108,7 +108,7 @@
         </div>
       </div>
     </div>
-  </footer>`;const navMount=document.getElementById('nav-mount');if(navMount)navMount.outerHTML=NAV;const footMount=document.getElementById('footer-mount');if(footMount)footMount.outerHTML=FOOTER;const page=document.body.dataset.page;document.querySelectorAll('.nav-links a[data-nav], .mobnav-links a[data-nav]').forEach((a)=>{if(a.dataset.nav===page)a.classList.add('active');});(function(){const burger=document.getElementById('navBurger');const mob=document.getElementById('mobnav');if(!burger||!mob)return;const closeBtn=document.getElementById('mobnavClose');let lockY=0;const open=()=>{lockY=window.scrollY||0;mob.classList.add('open');mob.setAttribute('aria-hidden','false');burger.setAttribute('aria-expanded','true');document.body.style.position='fixed';document.body.style.top=(-lockY)+'px';document.body.style.left='0';document.body.style.right='0';document.body.style.overflow='hidden';};const close=()=>{mob.classList.remove('open');mob.setAttribute('aria-hidden','true');burger.setAttribute('aria-expanded','false');document.body.style.position='';document.body.style.top='';document.body.style.left='';document.body.style.right='';document.body.style.overflow='';window.scrollTo(0,lockY);};burger.addEventListener('click',open);if(closeBtn)closeBtn.addEventListener('click',close);mob.querySelectorAll('.mobnav-links a, .mobnav-cta a').forEach((a)=>a.addEventListener('click',close));document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mob.classList.contains('open'))close();});})();if(window.EMi18n)window.EMi18n.init();(function(){const loader=document.getElementById('loader');if(!loader)return;let seen=false;try{seen=sessionStorage.getItem('em_loaded')==='1';}catch(e){}
+  </footer>`;const navMount=document.getElementById('nav-mount');if(navMount)navMount.outerHTML=NAV;const footMount=document.getElementById('footer-mount');if(footMount)footMount.outerHTML=FOOTER;const page=document.body.dataset.page;document.querySelectorAll('.nav-links a[data-nav], .mobnav-links a[data-nav]').forEach((a)=>{if(a.dataset.nav===page)a.classList.add('active');});(function(){const burger=document.getElementById('navBurger');const mob=document.getElementById('mobnav');if(!burger||!mob)return;const closeBtn=document.getElementById('mobnavClose');let lockY=0;const open=()=>{lockY=window.scrollY||0;mob.classList.add('open');mob.setAttribute('aria-hidden','false');burger.setAttribute('aria-expanded','true');document.body.style.position='fixed';document.body.style.top=(-lockY)+'px';document.body.style.left='0';document.body.style.right='0';document.body.style.overflow='hidden';};const close=()=>{mob.classList.remove('open');mob.setAttribute('aria-hidden','true');burger.setAttribute('aria-expanded','false');document.body.style.position='';document.body.style.top='';document.body.style.left='';document.body.style.right='';document.body.style.overflow='';window.scrollTo(0,lockY);};burger.addEventListener('click',open);if(closeBtn)closeBtn.addEventListener('click',close);mob.querySelectorAll('.mobnav-links a, .mobnav-cta a').forEach((a)=>a.addEventListener('click',close));document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mob.classList.contains('open'))close();});})();(function(){var _lang=/\/fr\//.test(_pp)?'fr':/\/en\//.test(_pp)?'en':'nl';var _file=_pp.split('/').pop()||'index.html';var _inLok=/\/lokaal\//.test(_pp);function _t(t){if(_inLok)return t==='nl'?null:'/'+t+'/index.html';return (t==='nl'?'/':'/'+t+'/')+_file;}if(window.EMi18n)window.EMi18n.apply(_lang);document.querySelectorAll('.lang-pick [data-setlang], .mobnav-lang [data-setlang]').forEach(function(b){b.classList.toggle('active',b.dataset.setlang===_lang);b.addEventListener('click',function(e){e.preventDefault();var u=_t(b.dataset.setlang);if(u)location.href=u;});});})();(function(){const loader=document.getElementById('loader');if(!loader)return;let seen=false;try{seen=sessionStorage.getItem('em_loaded')==='1';}catch(e){}
 if(seen){loader.remove();return;}
 try{sessionStorage.setItem('em_loaded','1');}catch(e){}
 const msg=document.getElementById('loaderMsg');const steps=['systemen initialiseren','agenda koppelen','ai laden','klaar'];let s=0;const tick=setInterval(()=>{s=Math.min(s+1,steps.length-1);if(msg)msg.textContent=steps[s];},420);const finish=()=>{clearInterval(tick);if(msg)msg.textContent='klaar';setTimeout(()=>{loader.classList.add('done');setTimeout(()=>loader.remove(),650);},520);};if(document.readyState==='complete')setTimeout(finish,1400);else window.addEventListener('load',()=>setTimeout(finish,800));})();(function(){const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;const isInternal=(a)=>{if(!a)return false;if(a.target==='_blank'||a.hasAttribute('download'))return false;const href=a.getAttribute('href')||'';if(!href||href[0]==='#')return false;if(/^(mailto:|tel:|https?:|\/\/)/i.test(href))return false;return/\.html(\?|#|$)/i.test(href)||href.endsWith('/');};document.addEventListener('click',(e)=>{if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=e.target.closest&&e.target.closest('a[href]');if(!isInternal(a))return;if(a.hasAttribute('data-book'))return;const href=a.getAttribute('href');if(href.split('#')[0]===location.pathname.split('/').pop())return;e.preventDefault();if(reduce){window.location.href=href;return;}
