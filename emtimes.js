@@ -22,6 +22,7 @@
   var ARROW   = ico('<path d="M3 8h10M9 4l4 4-4 4"/>');
   var CHEV    = ico('<path d="M9 6l6 6-6 6"/>');
   var CLOSE   = ico('<path d="M18 6L6 18M6 6l12 12"/>');
+  var SEARCH  = ico('<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>');
 
   var topLinks = TOPICS.map(function(t){
     return '<a href="'+t.href+'"'+(t.key===topic?' class="on"':'')+'>'+t.label+'</a>';
@@ -39,6 +40,7 @@
    + '</a>'
    + '<nav class="et-topics" aria-label="Onderwerpen">'+topLinks+'</nav>'
    + '<div class="et-nav-right">'
+     + '<button class="et-searchbtn" id="etSearchBtn" type="button" aria-label="Zoek een artikel">'+SEARCH+'</button>'
      + '<a class="et-home" href="'+HOME+'">'+HOMEICO+'<span>emlaunchpad.com</span></a>'
      + '<a class="et-navcta" href="'+R+'Contact.html" data-book>Plan een gesprek'+ARROW+'</a>'
      + '<button class="et-burger" id="etBurger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>'
@@ -49,6 +51,7 @@
        + '<a class="et-brand" href="'+HUB+'"><span class="chip"><img src="'+LOGO+'" alt="EM Launchpad"/></span><span class="wm"><b>EM&nbsp;Times</b><span>// kennishub</span></span></a>'
        + '<button class="et-mob-close" id="etMobClose" type="button" aria-label="Sluiten">'+CLOSE+'</button>'
      + '</div>'
+     + '<button class="et-herosearch" id="etMobSearch" type="button" style="max-width:none;margin:0 0 20px">'+SEARCH+'<span class="ph">Zoek een artikel…</span></button>'
      + '<nav class="et-mob-links" aria-label="Onderwerpen">'
        + '<a href="'+HUB+'">Alle artikels'+CHEV+'</a>'
        + mobLinks
@@ -118,4 +121,120 @@
     mob.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',close); });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape' && mob.classList.contains('open')) close(); });
   }
+
+  /* ── ZOEKEN ── */
+  function esc(s){ return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  function highlight(text, toks){
+    var out = esc(text);
+    toks.forEach(function(t){
+      if(!t) return;
+      var re = new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
+      out = out.replace(re,'<mark>$1</mark>');
+    });
+    return out;
+  }
+  function search(q){
+    var arts = window.ET_ARTICLES || [];
+    var query = norm(q).trim();
+    if(!query) return arts.slice();
+    var toks = query.split(/\s+/);
+    var scored = [];
+    arts.forEach(function(a){
+      var titleN = norm(a.title);
+      var hay = norm([a.title, a.excerpt, a.topic, (a.tags||[]).join(' ')].join(' '));
+      var ok = true, score = 0;
+      toks.forEach(function(t){
+        if(hay.indexOf(t) === -1) ok = false;
+        if(titleN.indexOf(t) !== -1) score += 3; else if(hay.indexOf(t) !== -1) score += 1;
+      });
+      if(ok) scored.push({ a:a, score:score });
+    });
+    scored.sort(function(x,y){ return y.score - x.score; });
+    return scored.map(function(o){ return o.a; });
+  }
+
+  var overlay = document.createElement('div');
+  overlay.className = 'et-search';
+  overlay.id = 'etSearch';
+  overlay.innerHTML =
+      '<div class="et-search-box" role="dialog" aria-modal="true" aria-label="Zoek een artikel">'
+    +   '<div class="et-search-in">' + SEARCH
+    +     '<input type="text" id="etSearchInput" placeholder="Zoek een artikel, onderwerp of trefwoord…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Zoekterm"/>'
+    +     '<button class="esc" id="etSearchEsc" type="button">esc</button>'
+    +   '</div>'
+    +   '<div class="et-sr-list" id="etSearchList"></div>'
+    +   '<div class="et-sr-foot"><span><b>↑</b><b>↓</b> navigeren</span><span><b>↵</b> openen</span><span><b>esc</b> sluiten</span></div>'
+    + '</div>';
+  document.body.appendChild(overlay);
+
+  var inputEl = overlay.querySelector('#etSearchInput');
+  var listEl  = overlay.querySelector('#etSearchList');
+  var isOpen = false;
+
+  function renderResults(q){
+    var list = search(q);
+    var toks = norm(q).trim().split(/\s+/).filter(Boolean);
+    if(!list.length){
+      listEl.innerHTML = '<div class="et-sr-empty">Geen artikels gevonden'
+        + (q.trim() ? ' voor “<b>'+esc(q.trim())+'</b>”' : '')
+        + '.<br>Probeer een ander zoekwoord.</div>';
+      return;
+    }
+    listEl.innerHTML = list.map(function(a, i){
+      return '<a class="et-sr-item'+(i===0?' sel':'')+'" href="'+R+a.path+'">'
+        + '<span class="et-sr-tag">'+esc(a.topic)+'</span>'
+        + '<span class="et-sr-t">'+highlight(a.title, toks)+'</span>'
+        + '<span class="et-sr-x">'+esc(a.excerpt)+'</span>'
+        + '</a>';
+    }).join('');
+  }
+  function selItems(){ return [].slice.call(listEl.querySelectorAll('.et-sr-item')); }
+  function moveSel(dir){
+    var its = selItems(); if(!its.length) return;
+    var idx = its.findIndex(function(el){ return el.classList.contains('sel'); });
+    if(idx < 0) idx = 0; else its[idx].classList.remove('sel');
+    idx = (idx + dir + its.length) % its.length;
+    its[idx].classList.add('sel');
+    its[idx].scrollIntoView({ block:'nearest' });
+  }
+  function openSearch(){
+    isOpen = true; overlay.classList.add('open');
+    renderResults(inputEl.value);
+    setTimeout(function(){ inputEl.focus(); inputEl.select(); }, 30);
+  }
+  function closeSearch(){ isOpen = false; overlay.classList.remove('open'); }
+  function closeMobIfOpen(){
+    if(mob && mob.classList.contains('open')){
+      mob.classList.remove('open'); mob.setAttribute('aria-hidden','true');
+      document.body.style.position=''; document.body.style.top=''; document.body.style.left=''; document.body.style.right='';
+    }
+  }
+
+  inputEl.addEventListener('input', function(){ renderResults(inputEl.value); });
+  inputEl.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowDown'){ e.preventDefault(); moveSel(1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); moveSel(-1); }
+    else if(e.key === 'Enter'){
+      var sel = listEl.querySelector('.et-sr-item.sel') || listEl.querySelector('.et-sr-item');
+      if(sel){ e.preventDefault(); window.location.href = sel.getAttribute('href'); }
+    }
+  });
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeSearch(); });
+  overlay.querySelector('#etSearchEsc').addEventListener('click', closeSearch);
+
+  var navBtn = document.getElementById('etSearchBtn');
+  if(navBtn) navBtn.addEventListener('click', openSearch);
+  var heroBtn = document.getElementById('etHeroSearch');
+  if(heroBtn) heroBtn.addEventListener('click', openSearch);
+  var mobBtn = document.getElementById('etMobSearch');
+  if(mobBtn) mobBtn.addEventListener('click', function(){ closeMobIfOpen(); openSearch(); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && isOpen){ closeSearch(); return; }
+    var tag = (e.target && e.target.tagName) || '';
+    var typing = tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable);
+    if((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')){ e.preventDefault(); isOpen ? closeSearch() : openSearch(); return; }
+    if(!isOpen && !typing && e.key === '/'){ e.preventDefault(); openSearch(); }
+  });
 })();
