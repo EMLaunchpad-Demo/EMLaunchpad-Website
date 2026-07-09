@@ -1,4 +1,4 @@
-(function(){const GHL_BOOKING_URL='https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';const _pp=location.pathname;const B=/\/(lokaal|fr|en)\//.test(_pp)?'../':'';const P=/\/lokaal\//.test(_pp)?'../':'';const BOOKING_FALLBACK=P+'Contact.html';const NAV=`
+(function(){const GHL_BOOKING_URL='https://api.leadconnectorhq.com/widget/booking/OoJsvpiXXpwS5oGbQGIE';const _pp=location.pathname;const _dr=(document.body&&document.body.dataset.root)||'';const _hasDR=_dr!=='';const B=_hasDR?_dr:(/\/(lokaal|fr|en)\//.test(_pp)?'../':'');const P=_hasDR?_dr:(/\/lokaal\//.test(_pp)?'../':'');const BOOKING_FALLBACK=P+'Contact.html';const NAV=`
   <div class="nav">
     <div class="wrap">
       <nav class="nav-bar">
@@ -9,6 +9,7 @@
           <a href="${P}index.html" data-nav="home">home</a>
           <a href="${P}Diensten.html" data-nav="diensten">diensten</a>
           <a href="${P}Over ons.html" data-nav="over_ons">over_ons</a>
+          <a href="${B}emtimes/index.html" data-nav="emtimes">em_times</a>
           <a href="${P}Contact.html" data-nav="contact">contact</a>
         </div>
         <span class="nav-spacer"></span>
@@ -31,6 +32,7 @@
       <a href="${P}index.html" data-nav="home"><span>home</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       <a href="${P}Diensten.html" data-nav="diensten"><span>diensten</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       <a href="${P}Over ons.html" data-nav="over_ons"><span>over_ons</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+      <a href="${B}emtimes/index.html" data-nav="emtimes"><span>em_times</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       <a href="${P}Gratis Demo.html" data-nav="gratis_demo"><span>gratis_demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
       <a href="${P}Contact.html" data-nav="contact"><span>contact</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
     </nav>
@@ -86,7 +88,7 @@
             <h5 class="foot-h">// <b>bedrijf</b></h5>
             <div class="foot-links">
               <a href="${P}index.html">home</a><a href="${P}Diensten.html">diensten</a><a href="${P}Over ons.html">over_ons</a>
-              <a href="${B}lokaal/index.html">regio's</a><a href="${P}Gratis Demo.html">gratis_demo</a><a href="${P}Contact.html">contact</a>
+              <a href="${B}emtimes/index.html">em_times</a><a href="${B}lokaal/index.html">regio's</a><a href="${P}Gratis Demo.html">gratis_demo</a><a href="${P}Contact.html">contact</a>
             </div>
           </div>
           <div class="foot-cell">
