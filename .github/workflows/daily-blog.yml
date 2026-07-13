@@ -1,0 +1,43 @@
+name: EM Times — dagelijkse blogpost
+
+on:
+  schedule:
+    - cron: "0 7 * * *"      # elke dag 07:00 UTC (~09:00 Brussel in de zomer)
+  workflow_dispatch: {}       # laat je 'm ook handmatig starten via de Actions-tab
+
+permissions:
+  contents: write             # nodig zodat de ingebouwde GITHUB_TOKEN mag pushen
+
+concurrency:
+  group: emtimes-daily
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo uitchecken
+        uses: actions/checkout@v4
+
+      - name: Node opzetten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Artikel genereren
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-emtimes-post.mjs
+
+      - name: Committen & pushen
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name  "EM Times Bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "EM Times: nieuw artikel ($(date +%F))"
+            git push
+            echo "Gepusht naar main."
+          else
+            echo "Geen wijzigingen — niets gepusht."
+          fi
