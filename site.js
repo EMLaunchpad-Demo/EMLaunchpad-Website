@@ -3,7 +3,6 @@
     <div class="wrap">
       <nav class="nav-bar">
         <span class="em-chip nav-em"><img class="em-img" src="${B}assets/logo-em.png" alt="EM Launchpad" /></span>
-        <span class="nav-word">Launchpad</span>
         <span class="nav-div"></span>
         <div class="nav-links">
           <a href="${P}index.html" data-nav="home">home</a>
