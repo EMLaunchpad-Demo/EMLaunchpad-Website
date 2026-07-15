@@ -11,9 +11,9 @@
   var HUB  = R + 'emtimes/index.html';  // EM Times hub
 
   var TOPICS = [
-    { key:'ai',    label:'AI',            href: R+'emtimes/ai/index.html' },
-    { key:'auto',  label:'Automatisering', href: HUB+'#onderwerpen', soon:true },
-    { key:'web',   label:'Websites',       href: HUB+'#onderwerpen', soon:true },
+    { key:'ai',    label:'AI',             href: R+'emtimes/ai/index.html' },
+    { key:'auto',  label:'Automatisering', href: R+'emtimes/automatisering/index.html' },
+    { key:'web',   label:'Websites',       href: R+'emtimes/websites/index.html' },
     { key:'groei', label:'Groei',          href: HUB+'#onderwerpen', soon:true }
   ];
 
@@ -79,8 +79,8 @@
      + '<div class="et-foot-col">'
        + '<h5>// onderwerpen</h5>'
        + '<a href="'+R+'emtimes/ai/index.html">AI &amp; chatbots</a>'
-       + '<a class="soon" href="'+HUB+'#onderwerpen">Automatisering</a>'
-       + '<a class="soon" href="'+HUB+'#onderwerpen">Websites</a>'
+       + '<a href="'+R+'emtimes/automatisering/index.html">Automatisering</a>'
+       + '<a href="'+R+'emtimes/websites/index.html">Websites</a>'
        + '<a class="soon" href="'+HUB+'#onderwerpen">Groei &amp; marketing</a>'
      + '</div>'
      + '<div class="et-foot-col">'
