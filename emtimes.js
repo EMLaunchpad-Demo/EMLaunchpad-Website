@@ -14,7 +14,7 @@
     { key:'ai',    label:'AI',             href: R+'emtimes/ai/index.html' },
     { key:'auto',  label:'Automatisering', href: R+'emtimes/automatisering/index.html' },
     { key:'web',   label:'Websites',       href: R+'emtimes/websites/index.html' },
-    { key:'groei', label:'Groei',          href: HUB+'#onderwerpen', soon:true }
+    { key:'groei', label:'Groei',          href: R+'emtimes/groei/index.html' }
   ];
 
   function ico(path){ return '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+path+'</svg>'; }
@@ -81,7 +81,7 @@
        + '<a href="'+R+'emtimes/ai/index.html">AI &amp; chatbots</a>'
        + '<a href="'+R+'emtimes/automatisering/index.html">Automatisering</a>'
        + '<a href="'+R+'emtimes/websites/index.html">Websites</a>'
-       + '<a class="soon" href="'+HUB+'#onderwerpen">Groei &amp; marketing</a>'
+       + '<a href="'+R+'emtimes/groei/index.html">Groei &amp; marketing</a>'
      + '</div>'
      + '<div class="et-foot-col">'
        + '<h5>// em launchpad</h5>'
