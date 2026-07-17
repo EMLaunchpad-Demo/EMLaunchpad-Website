@@ -1,2 +1,9 @@
 # Lokale Claude Code preview-helpers (niet voor productie)
 .claude/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
