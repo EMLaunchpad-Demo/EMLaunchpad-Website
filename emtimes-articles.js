@@ -3,6 +3,16 @@
    'path' is relatief t.o.v. de site-root (zonder leading slash). */
 window.ET_ARTICLES = [
   {
+    title: "Meer Google-reviews binnenhalen: het systeem dat écht werkt",
+    excerpt: "Waarom tevreden klanten zelden uit zichzelf een review achterlaten — en het simpele systeem dat daar structureel verandering in brengt.",
+    topic: "Groei · Reviews",
+    topicKey: "groei",
+    path: "emtimes/groei/meer-google-reviews-systeem-dat-werkt/",
+    date: "17 jul 2026",
+    read: "5 min",
+    tags: ["reviews","google reviews","reputatie","sterren","klanttevredenheid","opvolging","sms","e-mail","automatisatie","marketing","groei","kmo","lokaal","google"]
+  },
+  {
     title: "Voice agents: laat AI de telefoon opnemen",
     excerpt: "Wat een AI-telefonist wél en niet kan aan de telefoon, hoe hij afspraken boekt en vragen beantwoordt — en wanneer het loont voor een lokaal bedrijf.",
     topic: "AI · Voice",
