@@ -34,6 +34,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="home.css?v=20260713" rel="stylesheet"/>
+<link href="home-redesign.css?v=20260920c" rel="stylesheet"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://emlaunchpad.com/#organization", "name": "EM Launchpad", "url": "https://emlaunchpad.com/", "logo": {"@type": "ImageObject", "url": "https://emlaunchpad.com/assets/logo-em.png"}, "sameAs": ["https://be.linkedin.com/in/ebert-vanbrabant-077b5326a", "https://www.instagram.com/em_launchpad/", "https://www.youtube.com/@emlaunchpad", "https://www.facebook.com/profile.php?id=61564020189008"], "contactPoint": {"@type": "ContactPoint", "telephone": "+32476015451", "email": "ebert@emlaunchpad.com", "contactType": "customer service", "areaServed": "BE", "availableLanguage": ["nl", "fr", "en"]}}, {"@type": "WebSite", "@id": "https://emlaunchpad.com/#website", "url": "https://emlaunchpad.com/", "name": "EM Launchpad", "inLanguage": "nl-BE", "publisher": {"@id": "https://emlaunchpad.com/#organization"}}, {"@type": "ProfessionalService", "@id": "https://emlaunchpad.com/#business", "name": "EM Launchpad", "url": "https://emlaunchpad.com/", "image": "https://emlaunchpad.com/assets/og-image.png", "logo": "https://emlaunchpad.com/assets/logo-em.png", "description": "Belgisch AI-bureau uit Limburg. Websites, AI-chatbots, voice agents en automatisatie voor lokale bedrijven.", "telephone": "+32476015451", "email": "ebert@emlaunchpad.com", "priceRange": "€€", "vatID": "BE1024.977.818", "address": {"@type": "PostalAddress", "streetAddress": "Brugstraat 2A", "addressLocality": "Vechmaal", "postalCode": "3870", "addressRegion": "Limburg", "addressCountry": "BE"}, "areaServed": [{"@type": "AdministrativeArea", "name": "Limburg"}, {"@type": "Country", "name": "België"}], "sameAs": ["https://be.linkedin.com/in/ebert-vanbrabant-077b5326a", "https://www.instagram.com/em_launchpad/", "https://www.youtube.com/@emlaunchpad", "https://www.facebook.com/profile.php?id=61564020189008"]}]}</script>
 </head>
 <body data-page="home">
@@ -51,7 +52,7 @@
 <div id="nav-mount"></div>
 <!-- ════════ HERO ════════ -->
 <header class="hero" id="main" tabindex="-1">
-<div class="dotgrid fade-c"></div>
+<canvas class="starfield" data-stars="" aria-hidden="true"></canvas>
 <div class="glow"></div>
 <div class="wrap">
 <div class="hero-grid">
@@ -72,43 +73,14 @@
 </div>
 <div class="hero-vis" data-reveal="right">
 <div class="glow"></div>
-<div class="console" data-no-i18n="" id="heroConsole">
-<div class="gcard gcard-chat">
-<div class="ch-head">
-<span class="em-chip ch-ava"><img alt="EM Launchpad" class="em-img" src="assets/logo-em.png"/></span>
-<div class="ch-meta">
-<span class="nm">EM Launchpad AI</span>
-<span class="st"><span class="dot"></span><span id="chStatus">Online — antwoordt direct</span></span>
-</div>
-</div>
-<div class="bubbles" id="chatBubbles"></div>
-<div class="composer">
-<div class="chips" id="chatChips"></div>
-<div class="cbox" id="chatBox">
-<span class="cph"><span id="chatPh">Typ een bericht</span><span class="caret"></span></span>
-<button aria-label="Verstuur" class="csend" id="chatSend"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-</div>
-<div class="gcard-row">
-<div class="gcard gcard-mini">
-<div class="mini-top">
-<span class="mini-label" id="mLabel1">Afspraken · Vandaag</span>
-<span class="mini-pill" id="mPill">+12</span>
-</div>
-<div class="mini-big" id="mBig1">Automatisch</div>
-<div class="mini-sub" id="mSub1">ingepland</div>
-</div>
-<div class="gcard gcard-mini">
-<div class="mini-top">
-<span class="mini-label" id="mLabel2">Nieuwe review</span>
-<span class="mini-stars">★★★★★</span>
-</div>
-<div class="mini-big" id="mReview" style="font-size:18px;">"Top service!"</div>
-<div class="mini-sub" id="mReviewSub">5 minuten geleden</div>
-</div>
-</div>
-</div>
+<figure class="hero-photo">
+<img alt="Ondernemers werken samen aan hun systeem rond een laptop en koffie" height="800" loading="eager" src="https://images.unsplash.com/photo-1542338332-76971ae8c292?w=1200&amp;q=72&amp;auto=format&amp;fit=crop" width="1200"/>
+<figcaption class="hero-proof">
+<span class="hp-row"><span class="hp-dot"></span>Afspraak geboekt</span>
+<span class="hp-big">+12<span>afspraken vandaag — automatisch</span></span>
+<span class="hp-rev">★★★★★ <b>"Topservice, supersnel geboekt!"</b></span>
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
@@ -199,7 +171,7 @@
 </div>
 </section>
 <!-- ════════ OVER ONS ════════ -->
-<section class="sec" id="over_ons">
+<section class="sec is-light" id="over_ons">
 <div class="wrap">
 <div class="sec-head" data-reveal="">
 <span class="eyebrow">Wie staat erachter?</span>
@@ -217,7 +189,7 @@
 </div>
 <div class="about-side">
 <div class="about-media">
-<span class="ph" style="position:absolute;top:18px;left:18px;">// team_photo</span>
+<img alt="Warme, moderne werkplek waar systemen op maat worden gebouwd" height="1250" loading="lazy" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1000&amp;q=72&amp;auto=format&amp;fit=crop" width="1000"/>
 <span class="loc">Antwerpen · Limburg · Heel België</span>
 </div>
 </div>
@@ -241,7 +213,7 @@
 </div>
 </section>
 <!-- ════════ WAAROM ════════ -->
-<section class="sec">
+<section class="sec" id="waarom">
 <div class="wrap">
 <div class="sec-head" data-reveal="">
 <span class="eyebrow">Waarom EM Launchpad?</span>
@@ -306,7 +278,7 @@
 </section>
 <!-- ════════ FINAL CTA ════════ -->
 <section class="cta-band" id="contact">
-<div class="dotgrid fade-c"></div>
+<canvas class="starfield" data-stars="" aria-hidden="true"></canvas>
 <div class="glow"></div>
 <div class="wrap">
 <div class="cta-inner" data-reveal="">
@@ -552,6 +524,79 @@
 <script src="i18n.js?v=20260704b"></script>
 <script src="i18n-pages.js?v=20260704b"></script>
 <script src="site.js?v=20260704b"></script>
+<script>
+  // Interactieve 3D-sterrenhemel — sterren met echte diepte die langzaam naar je toe
+  // komen (perspectief) en waarvan het vluchtpunt je muis volgt. Rustig gehouden.
+  (function () {
+    const canvases = document.querySelectorAll('canvas[data-stars]');
+    if (!canvases.length) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let mx = 0.5, my = 0.5;
+    window.addEventListener('mousemove', (e) => {
+      mx = e.clientX / window.innerWidth;
+      my = e.clientY / window.innerHeight;
+    }, { passive: true });
+
+    canvases.forEach((cv) => {
+      const ctx = cv.getContext('2d');
+      let w = 0, h = 0, dpr = 1, f = 400, stars = [], vx = 0.5, vy = 0.5, raf = 0;
+      const SPEED = 0.0022; // rustige voorwaartse drift
+
+      // Zaai de ster op een willekeurig punt dat NU in beeld valt en reken terug naar
+      // 3D-coördinaten. Zo blijft het beeld altijd gelijkmatig gevuld.
+      function seed(s, init) {
+        s.z = init ? (0.15 + Math.random() * 0.85) : (0.92 + Math.random() * 0.08);
+        const px = Math.random() * w, py = Math.random() * h;
+        s.x = (px - w / 2) * s.z / f;
+        s.y = (py - h / 2) * s.z / f;
+        s.o = 0.45 + Math.random() * 0.55;               // basishelderheid
+      }
+
+      function size() {
+        const r = cv.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = r.width; h = r.height; f = Math.min(w, h) * 0.55;
+        cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const n = Math.max(80, Math.min(280, Math.round((w * h) / 7000)));
+        stars = Array.from({ length: n }, () => { const s = {}; seed(s, true); return s; });
+      }
+
+      function frame() {
+        ctx.clearRect(0, 0, w, h);
+        vx += (mx - vx) * 0.05; vy += (my - vy) * 0.05;        // cursor smoothing
+        const ox = (vx - 0.5) * 0.10, oy = (vy - 0.5) * 0.10;  // muis-offset (3D parallax)
+        const cx = w / 2, cy = h / 2;
+        for (const s of stars) {
+          if (!reduce) { s.z -= SPEED; if (s.z <= 0.05) { seed(s, false); continue; } }
+          const k = f / s.z;                                    // perspectiefprojectie
+          const bx = cx + s.x * k, by = cy + s.y * k;           // positie zonder muis
+          if (bx < -40 || bx > w + 40 || by < -40 || by > h + 40) { if (!reduce) seed(s, false); continue; }
+          // parallax schaalt mee met de diepte: sterren dichtbij verschuiven méér
+          const px = bx + ox * k;
+          const py = by + oy * k;
+          const near = 1 - s.z;                                 // 0 ver -> 1 dichtbij
+          const rad = 0.5 + near * near * 1.7;                  // dichterbij = groter
+          const a = s.o * (0.25 + near * 0.75);                 // dichterbij = helderder
+          ctx.beginPath();
+          ctx.arc(px, py, rad, 0, 6.2832);
+          ctx.fillStyle = 'rgba(255,255,255,' + a.toFixed(3) + ')';
+          ctx.fill();
+        }
+        if (!reduce) raf = requestAnimationFrame(frame);
+      }
+
+      size();
+      if (reduce) frame(); else raf = requestAnimationFrame(frame);
+      let rt = 0;
+      window.addEventListener('resize', () => {
+        clearTimeout(rt);
+        rt = setTimeout(() => { cancelAnimationFrame(raf); size(); if (reduce) frame(); else raf = requestAnimationFrame(frame); }, 150);
+      }, { passive: true });
+    });
+  })();
+</script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="685bcf1cc6f0443168b1c35c"></script>
 </body>
 </html>
