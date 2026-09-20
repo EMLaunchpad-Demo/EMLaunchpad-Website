@@ -1,0 +1,87 @@
+/* =============================================================
+   EM Launchpad — Portfolio
+   Werkt bovenop de "v2" skin (home-redesign.css). Alle regels zijn
+   gescoped op de portfolio-pagina.
+   ============================================================= */
+
+body[data-page="portfolio"] .pf-hero{position:relative;overflow:hidden;padding:76px 0 8px}
+body[data-page="portfolio"] .pf-hero .wrap{position:relative;z-index:2}
+body[data-page="portfolio"] .pf-intro{max-width:760px}
+
+body[data-page="portfolio"] .pf-sec{padding:56px 0 104px}
+body[data-page="portfolio"] .pf-list{display:flex;flex-direction:column;gap:26px}
+
+body[data-page="portfolio"] .pf-case{
+  display:grid;grid-template-columns:1.02fr .98fr;
+  border:1px solid var(--line);border-radius:24px;overflow:hidden;
+  background:var(--glass);
+  box-shadow:0 26px 60px rgba(0,0,0,.34);
+}
+body[data-page="portfolio"] .pf-case:nth-child(even) .pf-media{order:2}
+
+body[data-page="portfolio"] .pf-media{position:relative;min-height:340px;background:var(--ink-2)}
+body[data-page="portfolio"] .pf-media video,
+body[data-page="portfolio"] .pf-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+/* monogram-tegel voor cases waar nog geen beeld van is */
+body[data-page="portfolio"] .pf-tile{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:
+    radial-gradient(120% 90% at 18% 0%,rgba(47,116,224,.20),transparent 60%),
+    radial-gradient(120% 90% at 88% 100%,rgba(47,191,134,.18),transparent 60%),
+    var(--ink-2);
+}
+body[data-page="portfolio"] .pf-mono{
+  font-weight:800;font-size:clamp(44px,6vw,68px);letter-spacing:-.05em;
+  color:var(--hi);opacity:.92;
+}
+body[data-page="portfolio"] .pf-flag{
+  position:absolute;left:18px;bottom:18px;
+  font-family:var(--mono);font-size:11.5px;color:var(--mid);
+  border:1px solid var(--line-2);padding:6px 11px;border-radius:999px;
+  background:rgba(0,0,0,.4);
+}
+
+body[data-page="portfolio"] .pf-body{padding:38px}
+body[data-page="portfolio"] .pf-meta{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--acc);
+}
+body[data-page="portfolio"] .pf-name{
+  margin:10px 0 0;font-weight:800;letter-spacing:-.03em;
+  font-size:clamp(24px,2.7vw,32px);
+}
+body[data-page="portfolio"] .pf-desc{
+  color:var(--mid);font-size:15.5px;line-height:1.62;margin:14px 0 0;max-width:54ch;
+}
+body[data-page="portfolio"] .pf-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+body[data-page="portfolio"] .pf-tags span{
+  font-family:var(--mono);font-size:12px;color:var(--mid);
+  padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--glass-2);
+}
+body[data-page="portfolio"] .pf-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
+}
+body[data-page="portfolio"] .pf-stats .n{
+  font-weight:800;font-size:clamp(19px,2.1vw,25px);letter-spacing:-.02em;color:var(--hi);line-height:1;
+}
+body[data-page="portfolio"] .pf-stats .l{
+  font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:6px;line-height:1.35;
+}
+body[data-page="portfolio"] .pf-quote{
+  margin:26px 0 0;padding:16px 20px;border-left:2px solid var(--acc);
+  background:rgba(255,255,255,.025);border-radius:0 12px 12px 0;
+  font-size:15.5px;line-height:1.6;color:var(--hi);
+}
+body[data-page="portfolio"] .pf-quote cite{
+  display:block;margin-top:10px;font-style:normal;
+  font-family:var(--mono);font-size:11.5px;color:var(--dim);
+}
+
+@media (max-width:900px){
+  body[data-page="portfolio"] .pf-case{grid-template-columns:1fr}
+  body[data-page="portfolio"] .pf-case .pf-media{order:-1 !important;min-height:240px}
+  body[data-page="portfolio"] .pf-body{padding:28px 22px}
+  body[data-page="portfolio"] .pf-stats{grid-template-columns:1fr 1fr}
+}
