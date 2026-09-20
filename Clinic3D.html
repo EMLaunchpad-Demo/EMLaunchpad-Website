@@ -34,8 +34,8 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="home.css?v=20260713" rel="stylesheet"/>
-<link href="home-redesign.css?v=20260920d" rel="stylesheet"/>
-<link href="case.css?v=20260920a" rel="stylesheet"/>
+<link href="home-redesign.css?v=20260920f" rel="stylesheet"/>
+<link href="case.css?v=20260920b" rel="stylesheet"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Case Clinic3D: 650 afspraken, nul no-shows", "description": "Hoe Clinic3D in 263 dagen 650 bevestigde afspraken boekte zonder één enkele no-show.", "image": "https://emlaunchpad.com/assets/og-image.png", "author": {"@type": "Organization", "name": "EM Launchpad", "url": "https://emlaunchpad.com/"}, "publisher": {"@type": "Organization", "name": "EM Launchpad", "logo": {"@type": "ImageObject", "url": "https://emlaunchpad.com/assets/logo-em.png"}}, "mainEntityOfPage": "https://emlaunchpad.com/Clinic3D.html", "about": {"@type": "MedicalBusiness", "name": "Clinic3D", "address": {"@type": "PostalAddress", "addressLocality": "Hasselt", "addressCountry": "BE"}}}</script>
 </head>
 <body data-page="case" data-skin="v2">
@@ -52,7 +52,6 @@
 <div id="nav-mount"></div>
 <!-- ════════ HERO ════════ -->
 <header class="cs-hero" id="main" tabindex="-1">
-<canvas class="starfield" data-stars="" aria-hidden="true"></canvas>
 <div class="glow"></div>
 <div class="wrap">
 <div class="cs-intro" data-reveal="">
@@ -63,10 +62,10 @@
 <div class="cs-period"><span class="dot"></span>Gemeten periode: 1 januari — 20 september 2026 (263 dagen)</div>
 </div>
 <div class="cs-kpis" data-reveal-group="">
-<div class="cs-kpi" data-reveal=""><div class="n">650</div><div class="l">bevestigde afspraken</div><div class="sub">van 681 ingepland</div></div>
+<div class="cs-kpi" data-reveal=""><div class="n" data-count="650">650</div><div class="l">bevestigde afspraken</div><div class="sub">van 681 ingepland</div></div>
 <div class="cs-kpi" data-reveal=""><div class="n">0</div><div class="l">no-shows</div><div class="sub">over de volledige periode</div></div>
-<div class="cs-kpi" data-reveal=""><div class="n">246</div><div class="l">AI-chatbotgesprekken</div><div class="sub">automatisch afgehandeld</div></div>
-<div class="cs-kpi" data-reveal=""><div class="n">40.280</div><div class="l">weergaven op de website</div><div class="sub">sinds de lancering</div></div>
+<div class="cs-kpi" data-reveal=""><div class="n" data-count="246">246</div><div class="l">AI-chatbotgesprekken</div><div class="sub">automatisch afgehandeld</div></div>
+<div class="cs-kpi" data-reveal=""><div class="n" data-count="40280">40.280</div><div class="l">weergaven op de website</div><div class="sub">sinds de lancering</div></div>
 </div>
 </div>
 </header>
@@ -106,26 +105,43 @@
 <h2 class="h2">681 ingepland, <span class="grad">nul gemist.</span></h2>
 <p class="lead">Van alle ingeplande afspraken werd 95,4% bevestigd. De no-showteller bleef de hele periode op nul staan — het rapport vond er simpelweg geen.</p>
 </div>
-<div class="cs-grid" data-reveal-group="">
-<div class="cs-card" data-reveal=""><div class="n">650</div><div class="l">bevestigd</div><div class="s">95,4% van alle ingeplande afspraken</div></div>
-<div class="cs-card" data-reveal=""><div class="n">31</div><div class="l">geannuleerd</div><div class="s">4,6% — netjes op voorhand afgezegd</div></div>
-<div class="cs-card" data-reveal=""><div class="n">0</div><div class="l">no-shows</div><div class="s">geen enkele lege stoel</div></div>
+<div class="cs-ringwrap" data-reveal="">
+<div class="cs-ring" data-ring="">
+<svg viewbox="0 0 220 220">
+<circle class="rg-bg" cx="110" cy="110" r="88"></circle>
+<circle class="rg-seg s1" cx="110" cy="110" data-v="650" r="88"></circle>
+<circle class="rg-seg s2" cx="110" cy="110" data-v="31" r="88"></circle>
+<circle class="rg-seg s3" cx="110" cy="110" data-v="0" r="88"></circle>
+</svg>
+<div class="rg-mid"><b class="rg-n">681</b><span class="rg-l">ingeplande afspraken</span></div>
+</div>
+<ul class="rg-key">
+<li data-l="bevestigd" tabindex="0"><i></i><span>Bevestigd<em>de patiënt kwam opdagen</em></span><b>650</b></li>
+<li data-l="geannuleerd" tabindex="0"><i></i><span>Geannuleerd<em>netjes op voorhand afgezegd</em></span><b>31</b></li>
+<li data-l="no-shows" tabindex="0"><i></i><span>No-shows<em>geen enkele lege stoel</em></span><b>0</b></li>
+</ul>
 </div>
 <div class="cs-head" data-reveal="" style="margin-top:64px;margin-bottom:26px;">
 <h3 class="h2" style="font-size:clamp(22px,2.6vw,30px);">Waarvoor patiënten <span class="grad">langskomen.</span></h3>
-<p class="lead" style="margin-top:12px;">De tien drukst geboekte behandelingen, samen goed voor 641 afspraken.</p>
+<p class="lead" style="margin-top:12px;">De tien drukst geboekte behandelingen, samen goed voor 641 afspraken. Wissel tussen absolute aantallen en hun aandeel.</p>
 </div>
-<div class="cs-bars" data-reveal="">
-<div class="cs-bar"><span class="bl">Spierontspanner</span><span class="bt"><i class="bf" style="width:100%"></i></span><span class="bv">249</span></div>
-<div class="cs-bar"><span class="bl">Consultatie</span><span class="bt"><i class="bf" style="width:49.8%"></i></span><span class="bv">124</span></div>
-<div class="cs-bar"><span class="bl">Haarbehandeling</span><span class="bt"><i class="bf" style="width:24.1%"></i></span><span class="bv">60</span></div>
-<div class="cs-bar"><span class="bl">Fillerbehandeling</span><span class="bt"><i class="bf" style="width:22.9%"></i></span><span class="bv">57</span></div>
-<div class="cs-bar"><span class="bl">Skinbooster</span><span class="bt"><i class="bf" style="width:12.9%"></i></span><span class="bv">32</span></div>
-<div class="cs-bar"><span class="bl">Nazorgbehandeling</span><span class="bt"><i class="bf" style="width:10.8%"></i></span><span class="bv">27</span></div>
-<div class="cs-bar"><span class="bl">Clinic3D-afspraak</span><span class="bt"><i class="bf" style="width:10.8%"></i></span><span class="bv">27</span></div>
-<div class="cs-bar"><span class="bl">Biostimulator</span><span class="bt"><i class="bf" style="width:9.6%"></i></span><span class="bv">24</span></div>
-<div class="cs-bar"><span class="bl">Huidverbetering</span><span class="bt"><i class="bf" style="width:8.4%"></i></span><span class="bv">21</span></div>
-<div class="cs-bar"><span class="bl">HIFU</span><span class="bt"><i class="bf" style="width:8%"></i></span><span class="bv">20</span></div>
+<div class="cs-barsbox">
+<div class="cs-toggle" role="group" aria-label="Weergave van de staven">
+<button aria-pressed="true" class="on" data-mode="n" type="button">Aantal</button>
+<button aria-pressed="false" data-mode="p" type="button">Aandeel</button>
+</div>
+<div class="cs-bars" data-bars="" data-reveal="">
+<div class="cs-bar" data-v="249"><span class="bl">Spierontspanner</span><span class="bt"><i class="bf" style="width:100%"></i></span><span class="bv">249</span></div>
+<div class="cs-bar" data-v="124"><span class="bl">Consultatie</span><span class="bt"><i class="bf" style="width:49.8%"></i></span><span class="bv">124</span></div>
+<div class="cs-bar" data-v="60"><span class="bl">Haarbehandeling</span><span class="bt"><i class="bf" style="width:24.1%"></i></span><span class="bv">60</span></div>
+<div class="cs-bar" data-v="57"><span class="bl">Fillerbehandeling</span><span class="bt"><i class="bf" style="width:22.9%"></i></span><span class="bv">57</span></div>
+<div class="cs-bar" data-v="32"><span class="bl">Skinbooster</span><span class="bt"><i class="bf" style="width:12.9%"></i></span><span class="bv">32</span></div>
+<div class="cs-bar" data-v="27"><span class="bl">Nazorgbehandeling</span><span class="bt"><i class="bf" style="width:10.8%"></i></span><span class="bv">27</span></div>
+<div class="cs-bar" data-v="27"><span class="bl">Clinic3D-afspraak</span><span class="bt"><i class="bf" style="width:10.8%"></i></span><span class="bv">27</span></div>
+<div class="cs-bar" data-v="24"><span class="bl">Biostimulator</span><span class="bt"><i class="bf" style="width:9.6%"></i></span><span class="bv">24</span></div>
+<div class="cs-bar" data-v="21"><span class="bl">Huidverbetering</span><span class="bt"><i class="bf" style="width:8.4%"></i></span><span class="bv">21</span></div>
+<div class="cs-bar" data-v="20"><span class="bl">HIFU</span><span class="bt"><i class="bf" style="width:8%"></i></span><span class="bv">20</span></div>
+</div>
 </div>
 </div>
 </section>
@@ -137,13 +153,18 @@
 <h2 class="h2">3.250 mails verstuurd, <span class="grad">zonder erover na te denken.</span></h2>
 <p class="lead">Elke bevestiging, herinnering en opvolging vertrok automatisch. Bijna twee op de drie werden geopend — ruim boven wat in de zorgsector gebruikelijk is.</p>
 </div>
-<div class="cs-grid" data-reveal-group="">
-<div class="cs-card" data-reveal=""><div class="n">3.250</div><div class="l">e-mails verzonden</div><div class="s">volledig geautomatiseerd</div></div>
-<div class="cs-card" data-reveal=""><div class="n">64%</div><div class="l">openingsratio</div><div class="s">2.090 geopende e-mails</div></div>
-<div class="cs-card" data-reveal=""><div class="n">214</div><div class="l">klikken</div><div class="s">door naar boeken of info</div></div>
+<div class="cs-funnel" data-funnel="" data-reveal="">
+<div class="fn-row" data-v="3250"><span class="fn-l">Verzonden</span><span class="fn-b"><i class="fn-fill"></i></span><span class="fn-v">3.250</span><span class="fn-pc"></span></div>
+<div class="fn-row" data-v="2090"><span class="fn-l">Geopend</span><span class="fn-b"><i class="fn-fill"></i></span><span class="fn-v">2.090</span><span class="fn-pc"></span></div>
+<div class="fn-row" data-v="214"><span class="fn-l">Doorgeklikt</span><span class="fn-b"><i class="fn-fill"></i></span><span class="fn-v">214</span><span class="fn-pc"></span></div>
+</div>
+<div class="cs-grid" data-reveal-group="" style="margin-top:22px;">
+<div class="cs-card" data-reveal=""><div class="n" data-count="3250">3.250</div><div class="l">e-mails verzonden</div><div class="s">volledig geautomatiseerd</div></div>
+<div class="cs-card" data-reveal=""><div class="n" data-count="64" data-suffix="%">64%</div><div class="l">openingsratio</div><div class="s">2.090 geopende e-mails</div></div>
+<div class="cs-card" data-reveal=""><div class="n" data-count="214">214</div><div class="l">klikken</div><div class="s">door naar boeken of info</div></div>
 <div class="cs-card" data-reveal=""><div class="n">0</div><div class="l">soft bounces</div><div class="s">de mails komen aan</div></div>
-<div class="cs-card" data-reveal=""><div class="n">20</div><div class="l">antwoorden</div><div class="s">patiënten reageren rechtstreeks</div></div>
-<div class="cs-card" data-reveal=""><div class="n">8</div><div class="l">uitschrijvingen</div><div class="s">op 3.250 verzonden mails</div></div>
+<div class="cs-card" data-reveal=""><div class="n" data-count="20">20</div><div class="l">antwoorden</div><div class="s">patiënten reageren rechtstreeks</div></div>
+<div class="cs-card" data-reveal=""><div class="n" data-count="8">8</div><div class="l">uitschrijvingen</div><div class="s">op 3.250 verzonden mails</div></div>
 </div>
 </div>
 </section>
@@ -156,7 +177,7 @@
 <p class="lead">De chatbot ving 246 gesprekken op. Daarnaast kwamen er 39 telefoontjes binnen, samen goed voor nog geen uur beltijd — de rest liep via het systeem.</p>
 </div>
 <div class="cs-grid" data-reveal-group="">
-<div class="cs-card" data-reveal=""><div class="n">246</div><div class="l">AI-chatbotgesprekken</div><div class="s">vragen, prijzen en beschikbaarheid</div></div>
+<div class="cs-card" data-reveal=""><div class="n" data-count="246">246</div><div class="l">AI-chatbotgesprekken</div><div class="s">vragen, prijzen en beschikbaarheid</div></div>
 <div class="cs-card" data-reveal=""><div class="n">31/39</div><div class="l">oproepen beantwoord</div><div class="s">6 gemist, 2 naar voicemail</div></div>
 <div class="cs-card" data-reveal=""><div class="n">52m 36s</div><div class="l">totale beltijd</div><div class="s">over 263 dagen</div></div>
 </div>
@@ -184,7 +205,6 @@
 </section>
 <!-- ════════ CTA ════════ -->
 <section class="cta-band" id="contact">
-<canvas class="starfield" data-stars="" aria-hidden="true"></canvas>
 <div class="glow"></div>
 <div class="wrap">
 <div class="cta-inner" data-reveal="">
@@ -203,7 +223,7 @@
 <script src="i18n.js?v=20260704b"></script>
 <script src="i18n-pages.js?v=20260704b"></script>
 <script src="site.js?v=20260920"></script>
-<script src="stars.js?v=1"></script>
+<script src="fx.js?v=20260920b"></script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="685bcf1cc6f0443168b1c35c"></script>
 </body>
 </html>

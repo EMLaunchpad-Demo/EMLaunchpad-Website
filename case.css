@@ -97,6 +97,163 @@ body[data-page="case"] .cs-note{
   border-top:1px solid var(--line);padding-top:18px;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   ACHTERGROND — geen sterren hier; een rustig rasterveld past beter
+   bij een rapportage.
+   ═══════════════════════════════════════════════════════════════ */
+body[data-page="case"] .cs-hero{
+  background:
+    radial-gradient(72% 62% at 80% 4%,rgba(47,116,224,.14),transparent 68%),
+    radial-gradient(62% 58% at 10% 34%,rgba(47,191,134,.11),transparent 70%);
+}
+body[data-page="case"] .cs-hero::before,
+body[data-page="case"] .cta-band::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;
+  background-image:
+    linear-gradient(rgba(196,188,170,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(196,188,170,.07) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 26%,#000 8%,transparent 72%);
+  mask-image:radial-gradient(ellipse 72% 72% at 50% 26%,#000 8%,transparent 72%);
+}
+body[data-page="case"] .cta-band{
+  background:
+    radial-gradient(64% 70% at 50% 6%,rgba(47,116,224,.13),transparent 70%),
+    var(--ink-1);
+}
+body[data-page="case"] .cta-band::before{
+  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 40%,#000 6%,transparent 74%);
+  mask-image:radial-gradient(ellipse 70% 80% at 50% 40%,#000 6%,transparent 74%);
+}
+body[data-page="case"] .cta-band .wrap{position:relative;z-index:2}
+
+/* KPI-kaarten reageren nu op de muis */
+body[data-page="case"] .cs-kpi{
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .35s ease;
+}
+body[data-page="case"] .cs-kpi:hover{
+  transform:translateY(-5px);border-color:var(--line-2);
+  box-shadow:0 28px 62px rgba(0,0,0,.42);
+}
+body[data-page="case"] .cs-card{
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease;
+}
+body[data-page="case"] .cs-card:hover{transform:translateY(-4px);border-color:var(--line-2)}
+
+/* ═══════════════════════════════════════════════════════════════
+   RINGDIAGRAM
+   ═══════════════════════════════════════════════════════════════ */
+body[data-page="case"] .cs-ringwrap{
+  display:grid;grid-template-columns:248px 1fr;gap:44px;align-items:center;
+  margin-top:34px;padding:30px 34px;
+  border:1px solid var(--line);border-radius:22px;background:var(--glass-2);
+}
+body[data-page="case"] .cs-ring{position:relative;width:248px;height:248px}
+body[data-page="case"] .cs-ring svg{width:100%;height:100%;display:block}
+body[data-page="case"] .rg-bg{fill:none;stroke:rgba(255,255,255,.07);stroke-width:20}
+body[data-page="case"] .rg-seg{
+  fill:none;stroke-width:20;stroke-linecap:butt;
+  transform:rotate(-90deg);transform-origin:110px 110px;
+  transition:opacity .3s ease,stroke-width .3s ease;cursor:pointer;
+}
+body[data-page="case"] .rg-seg.s1{stroke:#2fbf86}
+body[data-page="case"] .rg-seg.s2{stroke:#2f74e0}
+body[data-page="case"] .rg-seg.s3{stroke:#e2604a}
+body[data-page="case"] .rg-seg.dim{opacity:.22}
+body[data-page="case"] .rg-mid{
+  position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;
+}
+body[data-page="case"] .rg-n{
+  font-weight:800;font-size:44px;letter-spacing:-.04em;color:var(--hi);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+body[data-page="case"] .rg-l{
+  display:block;margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--mid);
+  max-width:150px;line-height:1.4;
+}
+body[data-page="case"] .rg-key{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+body[data-page="case"] .rg-key li{
+  display:grid;grid-template-columns:14px 1fr auto;gap:14px;align-items:center;
+  padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--glass);
+  cursor:pointer;transition:border-color .25s ease,background .25s ease,transform .25s ease;
+  outline:none;
+}
+body[data-page="case"] .rg-key li:hover,
+body[data-page="case"] .rg-key li.on,
+body[data-page="case"] .rg-key li:focus-visible{
+  border-color:var(--line-2);transform:translateX(3px);background:rgba(255,255,255,.04);
+}
+body[data-page="case"] .rg-key i{width:14px;height:14px;border-radius:4px;display:block}
+body[data-page="case"] .rg-key li:nth-child(1) i{background:#2fbf86}
+body[data-page="case"] .rg-key li:nth-child(2) i{background:#2f74e0}
+body[data-page="case"] .rg-key li:nth-child(3) i{background:#e2604a}
+body[data-page="case"] .rg-key span{font-size:15px;color:var(--hi)}
+body[data-page="case"] .rg-key em{display:block;font-style:normal;font-size:12.5px;color:var(--dim);margin-top:3px}
+body[data-page="case"] .rg-key b{font-weight:800;font-size:20px;color:var(--hi);letter-spacing:-.02em}
+
+/* ═══════════════════════════════════════════════════════════════
+   STAVEN — met schakelaar aantal / aandeel
+   ═══════════════════════════════════════════════════════════════ */
+body[data-page="case"] .cs-barsbox{margin-top:8px}
+body[data-page="case"] .cs-toggle{
+  display:inline-flex;gap:3px;padding:3px;margin-bottom:22px;
+  border:1px solid var(--line);border-radius:999px;background:var(--glass-2);
+}
+body[data-page="case"] .cs-toggle button{
+  cursor:pointer;border:0;background:transparent;color:var(--mid);
+  font-family:var(--mono);font-size:12px;padding:8px 16px;border-radius:999px;
+  transition:background .25s ease,color .25s ease;
+}
+body[data-page="case"] .cs-toggle button:hover{color:var(--hi)}
+body[data-page="case"] .cs-toggle button.on{background:var(--acc);color:#06130d;font-weight:600}
+body[data-page="case"] .cs-bar{transition:transform .2s ease}
+body[data-page="case"] .cs-bar:hover{transform:translateX(3px)}
+body[data-page="case"] .cs-bar:hover .bl{color:var(--hi)}
+body[data-page="case"] .cs-bar .bl{transition:color .25s ease}
+body[data-page="case"] .cs-bar .bf{transition:width .1s linear}
+body[data-page="case"] .cs-bar .bv{font-variant-numeric:tabular-nums}
+
+/* ═══════════════════════════════════════════════════════════════
+   FUNNEL
+   ═══════════════════════════════════════════════════════════════ */
+body[data-page="case"] .cs-funnel{
+  margin-top:34px;padding:28px 32px;
+  border:1px solid var(--line);border-radius:22px;background:var(--glass-2);
+  display:flex;flex-direction:column;gap:18px;
+}
+body[data-page="case"] .fn-row{
+  display:grid;grid-template-columns:168px 1fr 76px 64px;gap:16px;align-items:center;
+}
+body[data-page="case"] .fn-l{font-size:14.5px;color:var(--mid)}
+body[data-page="case"] .fn-b{height:22px;border-radius:7px;background:rgba(255,255,255,.05);overflow:hidden}
+body[data-page="case"] .fn-fill{
+  display:block;height:100%;border-radius:7px;
+  background:linear-gradient(90deg,#2f74e0,#2fbf86);
+}
+body[data-page="case"] .fn-row:nth-child(2) .fn-fill{background:linear-gradient(90deg,#2f74e0,#22c4e0)}
+body[data-page="case"] .fn-row:nth-child(3) .fn-fill{background:linear-gradient(90deg,#22c4e0,#2fbf86)}
+body[data-page="case"] .fn-v{
+  font-weight:800;font-size:18px;color:var(--hi);text-align:right;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;
+}
+body[data-page="case"] .fn-pc{
+  font-family:var(--mono);font-size:12px;color:var(--acc);text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+
+@media (max-width:980px){
+  body[data-page="case"] .cs-ringwrap{grid-template-columns:1fr;gap:28px;justify-items:center;padding:26px 20px}
+  body[data-page="case"] .rg-key{width:100%}
+  body[data-page="case"] .fn-row{grid-template-columns:120px 1fr 66px 56px;gap:12px}
+  body[data-page="case"] .fn-l{font-size:13.5px}
+}
+@media (max-width:640px){
+  body[data-page="case"] .cs-ring{width:210px;height:210px}
+  body[data-page="case"] .cs-funnel{padding:22px 18px}
+  body[data-page="case"] .fn-row{grid-template-columns:1fr 60px 52px;gap:10px}
+  body[data-page="case"] .fn-l{grid-column:1 / -1;margin-bottom:-8px}
+}
+
 @media (max-width:980px){
   body[data-page="case"] .cs-kpis{grid-template-columns:1fr 1fr}
   body[data-page="case"] .cs-grid{grid-template-columns:1fr 1fr}
