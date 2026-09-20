@@ -1,0 +1,111 @@
+/* =============================================================
+   EM Launchpad — Case-study pagina
+   Werkt bovenop de "v2" skin (home-redesign.css).
+   ============================================================= */
+
+body[data-page="case"] .cs-hero{position:relative;overflow:hidden;padding:76px 0 4px}
+body[data-page="case"] .cs-hero .wrap{position:relative;z-index:2}
+body[data-page="case"] .cs-intro{max-width:780px}
+body[data-page="case"] .cs-crumb{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);display:flex;gap:10px;align-items:center;margin-bottom:22px;
+}
+body[data-page="case"] .cs-crumb a{color:var(--acc)}
+body[data-page="case"] .cs-period{
+  margin-top:20px;display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:12px;color:var(--mid);
+  border:1px solid var(--line);border-radius:999px;padding:8px 14px;background:var(--glass-2);
+}
+body[data-page="case"] .cs-period .dot{width:7px;height:7px;border-radius:50%;background:var(--acc)}
+
+/* ---- KPI-rij ---- */
+body[data-page="case"] .cs-kpis{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:54px 0 0;
+  position:relative;z-index:2;
+}
+body[data-page="case"] .cs-kpi{
+  border:1px solid var(--line);border-radius:20px;background:var(--glass);
+  padding:26px 24px;box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+body[data-page="case"] .cs-kpi .n{
+  font-weight:800;letter-spacing:-.035em;line-height:1;
+  font-size:clamp(32px,4.2vw,46px);color:var(--hi);
+}
+body[data-page="case"] .cs-kpi .l{
+  margin-top:10px;font-family:var(--mono);font-size:11.5px;line-height:1.45;color:var(--mid);
+}
+body[data-page="case"] .cs-kpi .sub{margin-top:6px;font-size:12.5px;color:var(--dim)}
+
+/* ---- secties ---- */
+body[data-page="case"] .cs-sec{padding:84px 0}
+body[data-page="case"] .cs-sec.alt{background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+body[data-page="case"] .cs-head{max-width:720px;margin-bottom:40px}
+
+/* ---- metriekkaarten ---- */
+body[data-page="case"] .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+body[data-page="case"] .cs-card{
+  border:1px solid var(--line);border-radius:18px;background:var(--glass);padding:24px;
+}
+body[data-page="case"] .cs-card .n{font-weight:800;font-size:clamp(24px,2.8vw,32px);letter-spacing:-.03em;color:var(--hi);line-height:1}
+body[data-page="case"] .cs-card .l{margin-top:9px;font-family:var(--mono);font-size:11.5px;color:var(--mid);line-height:1.45}
+body[data-page="case"] .cs-card .s{margin-top:8px;font-size:12.5px;color:var(--dim);line-height:1.5}
+
+/* ---- staafdiagram ---- */
+body[data-page="case"] .cs-bars{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+body[data-page="case"] .cs-bar{display:grid;grid-template-columns:190px 1fr 54px;gap:16px;align-items:center}
+body[data-page="case"] .cs-bar .bl{font-size:14px;color:var(--mid)}
+body[data-page="case"] .cs-bar .bt{height:10px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden}
+body[data-page="case"] .cs-bar .bf{
+  display:block;height:100%;border-radius:999px;
+  background:linear-gradient(90deg,#2f74e0,#2fbf86);
+}
+body[data-page="case"] .cs-bar .bv{font-family:var(--mono);font-size:13px;color:var(--hi);text-align:right}
+
+/* ---- split: tekst + media ---- */
+body[data-page="case"] .cs-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+body[data-page="case"] .cs-video{
+  position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-2);
+  box-shadow:0 26px 60px rgba(0,0,0,.45);aspect-ratio:16/10;background:var(--ink-2);
+}
+body[data-page="case"] .cs-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body[data-page="case"] .cs-quote{
+  margin:0;padding:24px 26px;border-left:2px solid var(--acc);
+  background:rgba(255,255,255,.025);border-radius:0 14px 14px 0;
+  font-size:clamp(16px,1.9vw,19px);line-height:1.55;color:var(--hi);
+}
+body[data-page="case"] .cs-quote cite{
+  display:block;margin-top:14px;font-style:normal;
+  font-family:var(--mono);font-size:12px;color:var(--dim);
+}
+
+/* ---- lijst met wat er gebouwd is ---- */
+body[data-page="case"] .cs-build{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+body[data-page="case"] .cs-item{
+  display:flex;gap:14px;align-items:flex-start;
+  border:1px solid var(--line);border-radius:16px;background:var(--glass-2);padding:20px 22px;
+}
+body[data-page="case"] .cs-item .ic{
+  flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:var(--acc-soft);border:1px solid rgba(31,158,95,.3);color:var(--acc);
+}
+body[data-page="case"] .cs-item .ic svg{width:17px;height:17px}
+body[data-page="case"] .cs-item h4{margin:0;font-size:16px;font-weight:700;letter-spacing:-.02em;color:var(--hi)}
+body[data-page="case"] .cs-item p{margin:6px 0 0;font-size:14px;line-height:1.55;color:var(--mid)}
+
+body[data-page="case"] .cs-note{
+  margin-top:34px;font-size:12.5px;color:var(--dim);line-height:1.6;max-width:70ch;
+  border-top:1px solid var(--line);padding-top:18px;
+}
+
+@media (max-width:980px){
+  body[data-page="case"] .cs-kpis{grid-template-columns:1fr 1fr}
+  body[data-page="case"] .cs-grid{grid-template-columns:1fr 1fr}
+  body[data-page="case"] .cs-split{grid-template-columns:1fr;gap:28px}
+  body[data-page="case"] .cs-build{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body[data-page="case"] .cs-grid{grid-template-columns:1fr}
+  body[data-page="case"] .cs-bar{grid-template-columns:130px 1fr 44px;gap:10px}
+  body[data-page="case"] .cs-bar .bl{font-size:13px}
+  body[data-page="case"] .cs-sec{padding:58px 0}
+}
