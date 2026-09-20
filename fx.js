@@ -97,11 +97,13 @@
       { t: 6.67, ic: 'chat', what: 'Chatbot boekte een afspraak', you: 'Jij sliep nog.', d: { a: 1 } },
       { t: 8.25, ic: 'mail', what: 'Bevestiging verstuurd', you: 'Automatisch — jij tikte niets.', d: {} },
       { t: 11.33, ic: 'phone', what: 'Gemiste oproep opgevangen', you: 'Jij stond bij een klant.', d: { b: 1 } },
-      { t: 14.08, ic: 'bell', what: 'Herinnering verstuurd', you: 'Daarom komt iedereen opdagen.', d: {} },
+      { t: 14.08, ic: 'bell', what: 'Herinnering verstuurd', you: 'Jij hoefde niet te bellen.', d: {} },
       { t: 18.5, ic: 'cal', what: 'Nieuwe afspraak via Instagram', you: 'Jij was al naar huis.', d: { a: 1 } },
       { t: 21.17, ic: 'star', what: 'Review binnengekomen', you: 'Jij zat aan tafel.', d: { c: 1 } }
     ];
-    var BASE = { a: 10, b: 0, c: 2 };
+    /* de teller begint op nul en wordt door de zes gebeurtenissen opgebouwd —
+       anders staat er al iets geteld vóór er die dag iets gebeurd is */
+    var BASE = { a: 0, b: 0, c: 0 };
     var START = 5.0;
     var R = 78, CX = 100, CY = 100, CIRC = 2 * Math.PI * R;
     var NS = 'http://www.w3.org/2000/svg';
@@ -114,6 +116,8 @@
     var whatEl = root.querySelector('.hd-what');
     var youEl = root.querySelector('.hd-you');
     var tally = [root.querySelector('.hd-a'), root.querySelector('.hd-b'), root.querySelector('.hd-c')];
+    var tallyLbl = [root.querySelector('.hd-al'), root.querySelector('.hd-bl'), root.querySelector('.hd-cl')];
+    var LBL = [['afspraak', 'afspraken'], ['oproep opgevangen', 'oproepen opgevangen'], ['review', 'reviews']];
     if (!svg || !arc || !hand) return;
 
     function pos(r, t) {
@@ -140,18 +144,19 @@
 
     /* klikbare gebeurtenispunten */
     var dotsG = mk('g', { class: 'hd-dots' });
+    /* Bewust NIET focusbaar: de hele dial is één role="img" met een label,
+       en focusbare knoppen daarbinnen worden door screenreaders genegeerd
+       terwijl ze wél in de tabvolgorde blijven staan. Klikken is een extraatje
+       voor de muis; alle informatie staat al in het label en loopt vanzelf. */
     var dots = EVENTS.map(function (ev, k) {
       var p = pos(R, ev.t);
-      var g = mk('g', { class: 'hd-dot', tabindex: '0', role: 'button' });
+      var g = mk('g', { class: 'hd-dot' });
       g.appendChild(mk('circle', { cx: p[0].toFixed(2), cy: p[1].toFixed(2), r: 11, class: 'hd-hit' }));
       g.appendChild(mk('circle', { cx: p[0].toFixed(2), cy: p[1].toFixed(2), r: 4.2, class: 'hd-pip' }));
       var title = mk('title', {});
       title.textContent = hhmm(ev.t) + ' — ' + ev.what;
       g.appendChild(title);
       g.addEventListener('click', function () { jump(k); });
-      g.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(k); }
-      });
       dotsG.appendChild(g);
       return g;
     });
@@ -189,7 +194,9 @@
       root.classList.add('is-beat');
       var c = counts(k);
       tally.forEach(function (el, n) {
-        if (!el || el.textContent === String(c[n])) return;
+        if (!el) return;
+        if (tallyLbl[n]) tallyLbl[n].textContent = LBL[n][c[n] === 1 ? 0 : 1];
+        if (el.textContent === String(c[n])) return;
         el.textContent = c[n];
         el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump');
       });
@@ -282,8 +289,10 @@
       });
     }
 
+    var sec = wrap.closest ? wrap.closest('.steps-sec') : null;
     function enable(on) {
       wrap.classList.toggle('js-pin', on);
+      if (sec) sec.classList.toggle('is-pinned', on); /* verbergt o.a. de scroll-hint */
       if (on) { wrap.style.height = (cards.length * 85) + 'vh'; }
       else { wrap.style.height = ''; setActive(-1); if (fill) fill.style.transform = ''; }
     }
@@ -361,11 +370,14 @@
       return { len: len, off: o };
     });
 
-    each(segs, function (s, k) {
-      s.style.strokeDasharray = '0 ' + CIRC.toFixed(2);
-      s.style.strokeDashoffset = (-geo[k].off).toFixed(2);
-    });
+    /* pas op het laatste moment naar nul zetten: zolang dit niet gebeurt,
+       blijven de stroke-dasharray-attributen uit de HTML staan en klopt de
+       ring ook zonder (of vóór) JS */
     onView(ring, function () {
+      each(segs, function (s, k) {
+        s.style.strokeDasharray = '0 ' + CIRC.toFixed(2);
+        s.style.strokeDashoffset = (-geo[k].off).toFixed(2);
+      });
       tween(1000, function (p) {
         var e = easeOut(p);
         each(segs, function (s, k) {
@@ -412,12 +424,12 @@
       if (!v) return;
       v.textContent = mode === 'n' ? fmt(vals[k], 0) : fmt(vals[k] / total * 100, 1) + '%';
     }
-    each(bars, function (b, k) {
-      var f = b.querySelector('.bf');
-      if (f) f.style.width = '0%';
-      label(k);
-    });
+    each(bars, function (b, k) { label(k); });
     onView(box, function () {
+      each(bars, function (b) {
+        var f = b.querySelector('.bf');
+        if (f) f.style.width = '0%';
+      });
       tween(1100, function (p) {
         var e = easeOut(p);
         each(bars, function (b, k) {
@@ -446,16 +458,16 @@
     var rows = fn.querySelectorAll('.fn-row');
     if (!rows.length) return;
     var top = parseFloat(rows[0].getAttribute('data-v')) || 1;
-    each(rows, function (r) {
-      var b = r.querySelector('.fn-fill');
-      if (b) b.style.width = '0%';
-    });
     onView(fn, function () {
+      each(rows, function (r) {
+        var b = r.querySelector('.fn-fill');
+        if (b) b.style.width = '0%';
+      });
       each(rows, function (r, k) {
         var v = parseFloat(r.getAttribute('data-v')) || 0;
         var b = r.querySelector('.fn-fill');
         var pc = r.querySelector('.fn-pc');
-        if (pc) pc.textContent = fmt(v / top * 100, 1) + '%';
+        if (pc) pc.textContent = fmt(v / top * 100, 0) + '%';
         if (!b) return;
         setTimeout(function () {
           tween(900, function (p) { b.style.width = (v / top * 100 * easeOut(p)).toFixed(2) + '%'; });

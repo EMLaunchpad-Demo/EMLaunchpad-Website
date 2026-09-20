@@ -176,13 +176,13 @@ body[data-page="case"] .rg-key li{
   display:grid;grid-template-columns:14px 1fr auto;gap:14px;align-items:center;
   padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--glass);
   cursor:pointer;transition:border-color .25s ease,background .25s ease,transform .25s ease;
-  outline:none;
 }
 body[data-page="case"] .rg-key li:hover,
 body[data-page="case"] .rg-key li.on,
 body[data-page="case"] .rg-key li:focus-visible{
   border-color:var(--line-2);transform:translateX(3px);background:rgba(255,255,255,.04);
 }
+body[data-page="case"] .rg-key li:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 body[data-page="case"] .rg-key i{width:14px;height:14px;border-radius:4px;display:block}
 body[data-page="case"] .rg-key li:nth-child(1) i{background:#2fbf86}
 body[data-page="case"] .rg-key li:nth-child(2) i{background:#2f74e0}

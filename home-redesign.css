@@ -80,20 +80,6 @@ body[data-skin="v2"] .hero-photo::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(180deg,transparent 45%,rgba(8,10,8,.55) 100%);
 }
-body[data-skin="v2"] .hero-proof{
-  position:absolute;left:16px;right:16px;bottom:16px;z-index:2;
-  display:flex;flex-direction:column;gap:5px;padding:14px 16px;border-radius:16px;
-  background:rgba(12,15,12,.60);
-  -webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%);
-  border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 34px rgba(0,0,0,.4);
-}
-body[data-skin="v2"] .hp-row{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--acc)}
-body[data-skin="v2"] .hp-dot{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--acc-soft)}
-body[data-skin="v2"] .hp-big{font-weight:800;font-size:21px;color:#fff;letter-spacing:-.01em;line-height:1.1}
-body[data-skin="v2"] .hp-big span{font-weight:500;font-size:12.5px;color:var(--mid);letter-spacing:0;margin-left:6px}
-body[data-skin="v2"] .hp-rev{font-size:12.5px;color:var(--mid);line-height:1.4}
-body[data-skin="v2"] .hp-rev b{color:#ffcf7a;font-weight:600}
-
 /* =========================  LIGHT SECTIONS ("meer wit")  =========================
    .is-light flips the local tokens, so cards/text/faq/etc. restyle to light
    automatically with minimal per-component CSS. */
@@ -213,7 +199,10 @@ body[data-skin="v2"] .hd-arc{
 }
 body[data-skin="v2"] .hd-tick{stroke:rgba(255,255,255,.18);stroke-width:2;stroke-linecap:round}
 body[data-skin="v2"] .hd-tick.major{stroke:rgba(255,255,255,.34);stroke-width:2.6}
-body[data-skin="v2"] .hd-hand{transform-origin:100px 100px;transition:none}
+/* GEEN transform-origin hier: fx.js draait de wijzer met het SVG-attribuut
+   rotate(θ 100 100), dat zijn eigen draaipunt al meebrengt. Een CSS-origin
+   wordt dáár bovenop toegepast en verschuift het draaipunt naar (200,200). */
+body[data-skin="v2"] .hd-hand{transition:none}
 body[data-skin="v2"] .hd-hand line{stroke:rgba(255,255,255,.28);stroke-width:2;stroke-linecap:round}
 body[data-skin="v2"] .hd-hand circle{fill:#fff}
 body[data-skin="v2"] .hd-hit{fill:transparent;cursor:pointer}
@@ -246,6 +235,7 @@ body[data-skin="v2"] .hd-tally{
   margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.10);
 }
 body[data-skin="v2"] .hd-tally span{display:block;text-align:center;font-family:var(--mono);font-size:9.5px;color:var(--dim);line-height:1.3}
+body[data-skin="v2"] .hd-tally em{font-style:normal}
 body[data-skin="v2"] .hd-tally b{display:block;font-family:var(--font);font-size:17px;font-weight:800;color:var(--hi);letter-spacing:-.02em}
 body[data-skin="v2"] .hd-tally b.bump{animation:hdBump .5s ease}
 @keyframes hdBump{0%{transform:translateY(5px);color:var(--acc)}100%{transform:none}}
@@ -307,7 +297,8 @@ body[data-skin="v2"] .is-aurora .mini-card{
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   border-color:rgba(150,200,220,.18);
 }
-body[data-skin="v2"] .is-aurora .about-media{
+/* moet #over_ons .about-media (regel ~122) verslaan, vandaar de id erbij */
+body[data-skin="v2"] .is-aurora#over_ons .about-media{
   box-shadow:0 30px 70px rgba(0,0,0,.5), 0 0 0 1px rgba(150,200,220,.16);
 }
 
@@ -414,7 +405,9 @@ body[data-skin="v2"] .pin-hint{
   margin:26px 0 0;text-align:center;
   font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
 }
-body[data-skin="v2"] .pin-wrap.js-pin .pin-hint{display:none}
+/* .pin-hint is een broer van .pin-wrap, dus die moet via de sectie verborgen
+   worden — fx.js zet daarvoor .is-pinned op .steps-sec */
+body[data-skin="v2"] .steps-sec.is-pinned .pin-hint{display:none}
 
 /* ═══════════════════════════════════════════════════════════════
    WAAROM — kaarten die opengaan met een eigen beeldje
@@ -544,6 +537,9 @@ body[data-skin="v2"] .glass-note{
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width:1080px){
+  /* de hero is hier één kolom; houd het tafereel even breed als de foto,
+     anders hangt de wijzerplaat (absoluut, rechts) los in de achtergrond */
+  body[data-skin="v2"] .hero-stage{max-width:600px;margin:0 auto}
   body[data-skin="v2"] .hero-photo{margin:0 auto;max-width:600px}
   body[data-skin="v2"] .hero-dial{left:auto;right:-10px;bottom:-24px;width:330px}
 }
