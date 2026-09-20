@@ -23,6 +23,17 @@ body[data-page="portfolio"] .pf-media{position:relative;min-height:340px;backgro
 body[data-page="portfolio"] .pf-media video,
 body[data-page="portfolio"] .pf-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 
+/* logo-paneel: licht vlak, want klantlogo's hebben vaak donkere letters */
+body[data-page="portfolio"] .pf-media.pf-logo{
+  background:var(--warm);
+  display:grid;place-items:center;padding:44px;
+}
+body[data-page="portfolio"] .pf-media.pf-logo img{
+  position:static;inset:auto;
+  width:100%;max-width:300px;height:auto;
+  object-fit:contain;
+}
+
 /* monogram-tegel voor cases waar nog geen beeld van is */
 body[data-page="portfolio"] .pf-tile{
   position:absolute;inset:0;display:grid;place-items:center;
