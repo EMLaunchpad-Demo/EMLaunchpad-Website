@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>À propos | EM Launchpad</title>
-<meta content="Faites connaissance avec EM Launchpad — une agence IA belge du Limbourg qui aide les entreprises locales à grandir grâce à la technologie et au contact personnel." name="description"/>
+<meta content="Nous sommes Ebert &amp; Martijn : deux frères du Limbourg qui aident les entrepreneurs locaux à grandir en ligne, avec l’IA comme moteur." name="description"/>
 <meta content="EM Launchpad" name="author"/>
 <meta content="index, follow" name="robots"/>
 <meta content="#0a0d14" name="theme-color"/>
@@ -21,23 +21,24 @@
 <meta content="EM Launchpad" property="og:site_name"/>
 <meta content="fr_BE" property="og:locale"/>
 <meta content="À propos | EM Launchpad" property="og:title"/>
-<meta content="Faites connaissance avec EM Launchpad — une agence IA belge du Limbourg qui aide les entreprises locales à grandir grâce à la technologie et au contact personnel." property="og:description"/>
+<meta content="Nous sommes Ebert &amp; Martijn : deux frères du Limbourg qui aident les entrepreneurs locaux à grandir en ligne, avec l’IA comme moteur." property="og:description"/>
 <meta content="https://emlaunchpad.com/fr/Over%20ons.html" property="og:url"/>
 <meta content="https://emlaunchpad.com/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="À propos | EM Launchpad" name="twitter:title"/>
-<meta content="Faites connaissance avec EM Launchpad — une agence IA belge du Limbourg qui aide les entreprises locales à grandir grâce à la technologie et au contact personnel." name="twitter:description"/>
+<meta content="Nous sommes Ebert &amp; Martijn : deux frères du Limbourg qui aident les entrepreneurs locaux à grandir en ligne, avec l’IA comme moteur." name="twitter:description"/>
 <meta content="https://emlaunchpad.com/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="../home.css?v=20260713" rel="stylesheet"/>
-<link href="../pages.css?v=20260704b" rel="stylesheet"/>
+<link href="../home-redesign.css?v=20260921f" rel="stylesheet"/>
+<link href="../over.css?v=20260921d" rel="stylesheet"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://emlaunchpad.com/#business", "name": "EM Launchpad", "url": "https://emlaunchpad.com/", "image": "https://emlaunchpad.com/assets/og-image.png", "logo": "https://emlaunchpad.com/assets/logo-em.png", "description": "Agence IA belge du Limbourg. Sites web, chatbots IA, agents vocaux et automatisation pour les entreprises locales.", "telephone": "+32476015451", "email": "ebert@emlaunchpad.com", "priceRange": "€€", "vatID": "BE1024.977.818", "address": {"@type": "PostalAddress", "streetAddress": "Brugstraat 2A", "addressLocality": "Vechmaal", "postalCode": "3870", "addressRegion": "Limburg", "addressCountry": "BE"}, "areaServed": [{"@type": "AdministrativeArea", "name": "Limburg"}, {"@type": "Country", "name": "België"}], "sameAs": ["https://be.linkedin.com/in/ebert-vanbrabant-077b5326a", "https://www.instagram.com/em_launchpad/", "https://www.youtube.com/@emlaunchpad", "https://www.facebook.com/profile.php?id=61564020189008"]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://emlaunchpad.com/"}, {"@type": "ListItem", "position": 2, "name": "Over ons", "item": "https://emlaunchpad.com/Over%20ons.html"}]}]}</script>
 </head>
-<body data-page="over_ons">
+<body data-page="over_ons" data-skin="v2">
 <a class="skip-link" href="#main">Naar inhoud</a>
 <!-- LOADER -->
 <div class="loader" id="loader">
@@ -50,157 +51,127 @@
 </div>
 <div id="nav-mount"></div>
 <!-- ════════ HERO ════════ -->
-<header class="page-hero" id="main" tabindex="-1">
-<div class="dotgrid fade-c" data-parallax="0.05"></div>
+<header class="ov-hero" id="main" tabindex="-1">
+<canvas aria-hidden="true" class="starfield" data-stars=""></canvas>
 <div class="glow"></div>
 <div class="wrap">
-<div class="inner" data-reveal="">
-<span class="eyebrow">À propos</span>
-<h1 class="hero-h">Nous bâtissons des systèmes qui <span class="grad">rapportent des clients.</span></h1>
-<p class="lead">La plupart des entreprises ont un site web, mais pas de système qui fonctionne vraiment.</p>
-<div class="hero-badges" style="margin-top:26px;">
-<span>Sites web</span><span>Automatisation</span><span>Systèmes</span>
+<div class="ov-hero-grid">
+<div data-reveal="left">
+<span class="eyebrow">// Over ons</span>
+<h1>Wij zijn <span class="grad">Ebert &amp; Martijn.</span></h1>
+<p class="lead">Twee broers uit Limburg die lokale ondernemers helpen digitaal groeien, met AI als motor.</p>
 </div>
-<div class="hero-cta" style="margin-top:30px;">
-<a class="btn" href="Contact.html">Contactez-nous <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
+<div class="ov-duo" data-reveal="right">
+<article class="ov-card e"><span aria-hidden="true" class="ov-mono">E</span><span class="ov-name">Ebert</span><span class="ov-role">Strategie &amp; groei</span></article>
+<article class="ov-card m"><span aria-hidden="true" class="ov-mono">M</span><span class="ov-name">Martijn</span><span class="ov-role">Automatisatie &amp; implementatie</span></article>
+<span aria-hidden="true" class="ov-amp">&amp;</span>
+<span class="ov-loc"><span class="dot"></span>Limburg · sinds juli 2025</span>
 </div>
 </div>
 </div>
 </header>
-<!-- ════════ WAAROM WIJ BESTAAN ════════ -->
-<section class="sec sec--tight">
+<!-- ════════ MISSIE ════════ -->
+<section class="ov-sec ov-mission">
 <div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">Pourquoi nous existons</span>
-<h2 class="h2">La plupart des entreprises ont des outils. <span class="grad">Mais pas de système qui fonctionne vraiment.</span></h2>
+<h2 class="ov-h" data-reveal=""><span class="ov-slash">//</span>Onze missie</h2>
+<p class="ov-statement" data-reveal="">Lokale bedrijven voorop zetten, <span class="grad">niet achterop laten geraken.</span></p>
+<div class="ov-mission-grid">
+<div class="ov-copy" data-reveal="left">
+<p>AI verandert alles. De manier waarop mensen zoeken, boeken, contact opnemen, beslissingen nemen. Ondernemers die daar nu op inspelen, winnen. De rest volgt.</p>
+<p class="ov-strong">Wij zorgen ervoor dat onze klanten bij de eersten zijn.</p>
 </div>
-<div class="prob-grid" data-reveal-group="">
-<div class="prob-card" data-reveal="" style="--acc:#2f7bff;"><span class="pic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 9h18M9 21V9M3 5h18v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span><span class="n">01</span><h4>Aucune structure</h4><p>Les visiteurs arrivent, mais ne savent pas quoi faire.</p></div>
-<div class="prob-card" data-reveal="" style="--acc:#13c7e6;"><span class="pic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 11l-4 4-2-2"></path></svg></span><span class="n">02</span><h4>Aucun suivi</h4><p>Les leads disparaissent faute de système derrière.</p></div>
-<div class="prob-card" data-reveal="" style="--acc:#2ff0a6;"><span class="pic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="7" rx="1.5" width="7" x="3" y="3"></rect><rect height="7" rx="1.5" width="7" x="14" y="14"></rect><path d="M14 7h-4M7 14v-4"></path></svg></span><span class="n">03</span><h4>Outils dispersés</h4><p>Tout fonctionne séparément et rien ne s’emboîte.</p></div>
-</div>
-<p class="lead" style="margin-top:34px;">Résultat : les entreprises perdent des clients chaque jour. <span class="grad">C’est exactement ce que nous résolvons.</span></p>
-</div>
-</section>
-<!-- ════════ GEEN WEBSITES, SYSTEMEN ════════ -->
-<section class="sec" style="background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-<div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">Notre approche</span>
-<h2 class="h2">Nous ne construisons pas des sites web. <span class="grad">Nous bâtissons des systèmes.</span></h2>
-<p class="lead">Tout ce que nous faisons est conçu pour générer des clients.</p>
-</div>
-<div class="why-grid" data-reveal-group="" style="grid-template-columns:repeat(3,1fr);">
-<div class="why-card" data-reveal=""><span class="tick"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></span><h4>Pas que du design</h4><p>Les beaux sites sans stratégie ne rapportent rien.</p></div>
-<div class="why-card" data-reveal=""><span class="tick"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></span><h4>Tout fonctionne ensemble</h4><p>Site, suivi et systèmes se renforcent mutuellement.</p></div>
-<div class="why-card" data-reveal=""><span class="tick"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></span><h4>Conçu pour la croissance</h4><p>Prêt à évoluer dès le premier jour.</p></div>
-</div>
-</div>
-</section>
-<!-- ════════ WAAR WIJ VOOR STAAN ════════ -->
-<section class="sec sec--tight">
-<div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">Nos valeurs</span>
-<h2 class="h2">Trois principes, <span class="grad">aucun compromis.</span></h2>
-</div>
-<div class="values" data-reveal-group="">
-<div class="value" data-reveal="" style="--acc:#2ff0a6;"><span class="vnum">01</span><span class="vk">Résultat</span><h4>Résultat</h4><p>Tout ce que nous bâtissons doit rapporter des clients.</p></div>
-<div class="value" data-reveal="" style="--acc:#13c7e6;"><span class="vnum">02</span><span class="vk">Rapidité</span><h4>Rapidité</h4><p>En ligne en 14 jours et prêt à grandir.</p></div>
-<div class="value" data-reveal="" style="--acc:#2f7bff;"><span class="vnum">03</span><span class="vk">Focus</span><h4>Focus</h4><p>Aucune distraction. Uniquement ce qui marche.</p></div>
-</div>
-</div>
-</section>
-<!-- ════════ TEAM ════════ -->
-<section class="sec" style="background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-<div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">L’équipe</span>
-<h2 class="h2">Les personnes derrière <span class="grad">EM Launchpad.</span></h2>
-<p class="lead">Nous bâtissons des systèmes qui font grandir les entreprises.</p>
-</div>
-<div class="team-grid" data-reveal-group="">
-<div class="team-card" data-reveal="" style="--acc:#2ff0a6;">
-<div class="team-photo"><span class="ph">EV</span></div>
-<div><h4>Ebert Vanbrabant</h4><div class="role">Stratégie &amp; Croissance</div><p>Focus sur la structure, le positionnement et les systèmes qui génèrent des clients.</p></div>
-</div>
-<div class="team-card" data-reveal="" style="--acc:#2f7bff;">
-<div class="team-photo"><span class="ph">M</span></div>
-<div><h4>Martijn</h4><div class="role">Automatisation &amp; Implémentation</div><p>Veille à ce que tout fonctionne techniquement et s’assemble parfaitement.</p></div>
+<div class="ov-notbut" data-reveal="right">
+<ul class="ov-not">
+<li>Niet met dure tools,</li>
+<li>niet met ingewikkelde systemen,</li>
+<li>niet met contracten die niemand begrijpt.</li>
+</ul>
+<ul class="ov-but">
+<li><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>Maar met een aanpak die werkt,</li>
+<li><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>resultaten die je ziet</li>
+<li><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>en een team dat echt naast je staat.</li>
+</ul>
 </div>
 </div>
 </div>
 </section>
-<!-- ════════ ERKEND ════════ -->
-<section class="sec sec--tight">
+<!-- ════════ HOE HET BEGON ════════ -->
+<section class="ov-sec ov-story">
 <div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">Reconnu et visible</span>
-<h2 class="h2">Repéré par les médias <span class="grad">et les entreprises.</span></h2>
-<p class="lead">EM Launchpad grandit vite et est repéré par les médias et les entreprises.</p>
+<h2 class="ov-h" data-reveal=""><span class="ov-slash">//</span>Hoe het begon</h2>
+<div class="ov-timeline" data-scroll-fill="">
+<span aria-hidden="true" class="ov-tl-fill"></span>
+<div class="ov-step" data-step="">
+<span class="ov-when">Juli 2025</span>
+<p>We zijn gestart in juli 2025. Ebert was 18 jaar. Geen investeerders, geen kantoor, alleen een idee en het geloof dat het kon.</p>
 </div>
-<div class="press" data-reveal="">
-<span>HLN</span><span>Trends</span><span>Interview</span><span>Media</span>
+<div class="ov-step" data-step="">
+<span class="ov-when">De eerste maanden</span>
+<p>De eerste maanden waren uitzoeken: wat werkt, wat niet, hoe je iets verkoopt wat mensen nog niet kennen. Eens we door die fase heen waren, konden we gaan bouwen.</p>
 </div>
-<div class="case-stats" data-reveal-group="" style="margin-top:40px;border-top:1px solid var(--line);padding-top:36px;">
-<div class="stat" data-reveal=""><div class="num">+X</div><div class="lab">Projets réalisés</div></div>
-<div class="stat" data-reveal=""><div class="num">+X%</div><div class="lab">Croissance moyenne</div></div>
-<div class="stat" data-reveal=""><div class="num">24/7</div><div class="lab">Systèmes actifs</div></div>
-<div class="stat" data-reveal=""><div class="num">14d</div><div class="lab">En moyenne jusqu’en ligne</div></div>
+<div class="ov-step" data-step="">
+<span class="ov-when">Januari 2026</span>
+<p>In januari 2026 haalden we onze eerste klant binnen: <strong>Clinic3D</strong>. Dat was voor ons het bewijs dat we op de goeie weg waren.</p>
+</div>
+<div class="ov-step" data-step="">
+<span class="ov-when">Een halfjaar later</span>
+<p>Een halfjaar later: 40.340 websitebezoekers, 650 geboekte afspraken en van een handvol reviews naar 50+ op Google. Volledig automatisch, zonder dat de ondernemer er tussen moest komen.</p>
+<div class="ov-kpis">
+<div class="ov-kpi"><b data-count="40340">40.340</b><span>websitebezoekers</span></div>
+<div class="ov-kpi"><b data-count="650">650</b><span>geboekte afspraken</span></div>
+<div class="ov-kpi"><b data-count="50" data-suffix="+">50+</b><span>reviews op Google</span></div>
 </div>
 </div>
-</section>
-<!-- ════════ RESULTAAT ════════ -->
-<section class="sec case">
-<div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">Des résultats qui parlent</span>
-<h2 class="h2">Ce qui se passe quand <span class="grad">tout fonctionne ensemble.</span></h2>
-</div>
-<div class="case-grid" data-reveal="">
-<div class="media">
-<span class="tag">Case · Clinic3D</span>
-<span class="ph">// case_visual · clinic3d</span>
-</div>
-<div class="case-body">
-<h3 style="margin:0;font-weight:800;font-size:28px;letter-spacing:-.03em;">Clinic3D</h3>
-<p class="lead" style="margin-top:14px;">Une nouvelle structure et un parcours clair ont généré plus de demandes.</p>
-<div class="case-stats" style="grid-template-columns:1fr 1fr;margin-top:30px;">
-<div class="stat"><div class="num">+58%</div><div class="lab">demandes</div></div>
-<div class="stat"><div class="num">2.3x</div><div class="lab">conversion</div></div>
-</div>
+<div class="ov-step now" data-step="">
+<span class="ov-when">Vandaag</span>
+<p>Vandaag helpen we meerdere klanten in Limburg en groeien we elke maand verder.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- ════════ CTA ════════ -->
-<section class="cta-band">
-<div class="dotgrid fade-c"></div>
+<!-- ════════ WAAROM EM LAUNCHPAD ════════ -->
+<section class="ov-sec is-aurora">
+<div class="wrap">
+<h2 class="ov-h" data-reveal=""><span class="ov-slash">//</span>Waarom EM Launchpad</h2>
+<div class="ov-why" data-reveal-group="">
+<article class="ov-reason" data-reveal="" style="--tone:rgba(47,116,224,.26)"><span aria-hidden="true" class="n">01</span><span aria-hidden="true" class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L2 12V3h9l9.6 9.6a2 2 0 0 1 0 2.8zM7.5 7.5h.01"></path></svg></span><h3>De laagste prijzen in de markt.</h3><p>We zijn een jong bedrijf. Onze structuur is slank, onze kosten zijn laag. Die besparing geven we door aan onze klanten.</p></article>
+<article class="ov-reason" data-reveal="" style="--tone:rgba(47,191,134,.24)"><span aria-hidden="true" class="n">02</span><span aria-hidden="true" class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><h3>De beste en meest persoonlijke kwaliteit.</h3><p>Geen accountmanager die je doorverwijst. Je werkt rechtstreeks met ons. Korte lijnen, snelle reacties, altijd bereikbaar. Dat is onze prioriteit.</p></article>
+<article class="ov-reason" data-reveal="" style="--tone:rgba(34,196,224,.24)"><span aria-hidden="true" class="n">03</span><span aria-hidden="true" class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"></path></svg></span><h3>AI die écht ingezet wordt.</h3><p>Niet als verkoopargument, maar als tool die dagelijks het verschil maakt. Van automatische opvolging tot volledige systemen die draaien terwijl jij je bezighoudt met je vak.</p></article>
+<article class="ov-reason" data-reveal="" style="--tone:rgba(47,191,134,.24)"><span aria-hidden="true" class="n">04</span><span aria-hidden="true" class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 9.9-1M5 11h14v10H5zM12 15v2"></path></svg></span><h3>Maandelijks opzegbaar.</h3><p>Geen langlopende contracten. Je blijft omdat het werkt, niet omdat je vast zit.</p></article>
+</div>
+</div>
+</section>
+<!-- ════════ WAT WE AL BEREIKT HEBBEN ════════ -->
+<section class="ov-sec" style="padding-bottom:0">
+<div class="wrap ov-cases">
+<div class="ov-banner" data-reveal="">
+<div>
+<h2 class="ov-h"><span class="ov-slash">//</span>Wat we al bereikt hebben</h2>
+<p>Benieuwd naar concrete resultaten? Bekijk onze cases en zie wat we voor andere ondernemers hebben gedaan.</p>
+<div class="ov-clients"><span>Clinic3D</span><span>Amakhosi Sauna</span><span>Mett-U VZW</span></div>
+</div>
+<a class="btn" href="Portfolio.html">Bekijk onze cases <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a>
+</div>
+</div>
+</section>
+<!-- ════════ KLAAR OM TE GROEIEN? ════════ -->
+<section class="cta-band" id="contact">
+<canvas aria-hidden="true" class="starfield" data-stars=""></canvas>
 <div class="glow"></div>
 <div class="wrap">
 <div class="cta-inner" data-reveal="">
-<h2>Prêt à <span class="grad">grandir ?</span></h2>
-<p class="lead">Laissez-nous voir où se trouvent vos plus grandes opportunités.</p>
-<div class="row"><a class="btn" href="Contact.html">Contactez-nous <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div>
+<h2><span class="ov-slash">//</span>Klaar om <span class="grad">te groeien?</span></h2>
+<p class="lead">Plan een gratis gesprek. We bekijken samen waar de grootste kansen liggen voor jouw bedrijf.</p>
+<div class="row"><a class="btn" data-book="" href="Contact.html">Plan een gesprek <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></a></div>
 </div>
 </div>
 </section>
 <div id="footer-mount"></div>
-<script>
-  // Over ons — cursor spotlight on cards
-  (function () {
-    document.querySelectorAll('.prob-card, .value, .team-card').forEach((c) => {
-      c.addEventListener('pointermove', (e) => {
-        const r = c.getBoundingClientRect();
-        c.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-        c.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
-      });
-    });
-  })();
-</script>
 <script src="../i18n.js?v=20260704b"></script>
-<script src="../i18n-pages.js?v=20260704b"></script>
+<script src="../i18n-pages.js?v=20260921a"></script>
 <script src="../site.js?v=20260920"></script>
+<script src="../stars.js?v=1"></script>
+<script src="../fx.js?v=20260921e"></script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="685bcf1cc6f0443168b1c35c"></script>
 </body>
 </html>

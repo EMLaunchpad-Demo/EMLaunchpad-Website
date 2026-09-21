@@ -3,7 +3,7 @@
    • hero-dial   : "een dag met je systeem" (24-uurs ring)
    • pinned steps: werkwijze, één stap tegelijk in beeld
    • tellers     : cijfers die meelopen zodra ze in beeld komen
-   • glaspanelen : zwevende integratietegels met muisparallax
+   • logoveld    : integratielogo's die traag door de sectie zweven
    • case-grafiek: ring, staven en funnel op de case-pagina
    Alles is progressive enhancement: zonder JS blijft elke
    pagina gewoon leesbaar en volledig.
@@ -13,7 +13,8 @@
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canHover = window.matchMedia('(hover: hover)').matches;
-  var NL = 'nl-BE';
+  /* getalnotatie volgt de taal van de pagina: 40.340 / 40,340 / 40 340 */
+  var NL = ({ en: 'en-GB', fr: 'fr-BE' })[(document.documentElement.lang || 'nl').slice(0, 2)] || 'nl-BE';
 
   function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
@@ -320,32 +321,197 @@
   })();
 
   /* ============================================================
-     4. ZWEVENDE GLASPANELEN (integraties)
+     4. ZWEVEND LOGOVELD (integraties)
+     Elke tegel dwaalt traag rond met een eigen koers, duwt zacht weg van
+     randen, van andere tegels en van de kop, en krijgt een diepte: verder
+     weg = kleiner, doffer, trager en minder muis-parallax.
      ============================================================ */
-  (function floaters() {
-    var stages = document.querySelectorAll('[data-float-stage]');
-    if (!stages.length) return;
-    each(stages, function (stage) {
-      var panels = stage.querySelectorAll('[data-depth]');
-      if (!panels.length) return;
-      /* binnenkomst: één voor één omhoog */
-      onView(stage, function () {
-        each(panels, function (p, k) {
-          setTimeout(function () { p.classList.add('in'); }, reduce ? 0 : k * 90);
-        });
+  (function logoField() {
+    var field = document.querySelector('[data-logo-field]');
+    if (!field) return;
+    var sec = field.parentElement;
+    var head = sec.querySelector('.sec-head');
+    var tiles = Array.prototype.slice.call(field.querySelectorAll('.lf-tile'));
+    if (!tiles.length) return;
+
+    /* vaste "willekeur" (mulberry32): iedereen krijgt dezelfde startopstelling */
+    var seed = 7;
+    function rand() {
+      seed = (seed + 0x6D2B79F5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    }
+    function turn(a, b, k) { return a + Math.atan2(Math.sin(b - a), Math.cos(b - a)) * k; }
+
+    sec.classList.add('has-field');
+    field.classList.add('is-live');
+
+    var W = 0, H = 0, keep = null, parts = [];
+
+    function measure() {
+      W = field.clientWidth;
+      var fr = field.getBoundingClientRect(), hr = head ? head.getBoundingClientRect() : null;
+      keep = hr ? { l: hr.left - fr.left - 28, t: hr.top - fr.top - 28, r: hr.right - fr.left + 28, b: hr.bottom - fr.top + 36 }
+                : { l: 0, t: 0, r: 0, b: 0 };
+      /* genoeg ruimte onder de kop: op gsm wordt de sectie daardoor hoger */
+      var base = clamp(W / 22, 40, 62), avg = base * 0.93;
+      var need = keep.b + tiles.length * Math.pow(avg + 18, 2) * 1.6 / Math.max(W, 1) + 40;
+      sec.style.minHeight = Math.ceil(need) + 'px';
+      H = field.clientHeight;
+      return base;
+    }
+    function inKeep(x, y, half) {
+      return x + half > keep.l && x - half < keep.r && y + half > keep.t && y - half < keep.b;
+    }
+
+    function build() {
+      var base = measure();
+      parts = tiles.map(function (el) {
+        var z = rand(), s = base * (0.72 + 0.42 * z);
+        el.style.setProperty('--ts', s.toFixed(1) + 'px');
+        el.style.setProperty('--o', (0.5 + 0.5 * z).toFixed(2));
+        el.style.zIndex = String(1 + Math.round(z * 9));
+        return { el: el, z: z, s: s, x: 0, y: 0, vx: 0, vy: 0, fx: 0, fy: 0,
+                 a: rand() * Math.PI * 2, sp: 5 + 13 * z, ph: rand() * 100 };
       });
-      if (reduce || !canHover) return;
-      stage.addEventListener('pointermove', function (e) {
-        var r = stage.getBoundingClientRect();
-        stage.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
-        stage.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+      /* startopstelling: verspreid, niet op de kop, niet op elkaar */
+      parts.forEach(function (p, i) {
+        for (var t = 0; t < 400; t++) {
+          var x = p.s / 2 + rand() * (W - p.s), y = p.s / 2 + rand() * (H - p.s);
+          if (inKeep(x, y, p.s / 2 + 6) && t < 399) continue;
+          var ok = true;
+          for (var j = 0; j < i; j++) {
+            var q = parts[j], dx = x - q.x, dy = y - q.y, m = (p.s + q.s) / 2 + 12;
+            if (dx * dx + dy * dy < m * m) { ok = false; break; }
+          }
+          if (ok || t === 399) { p.x = x; p.y = y; break; }
+        }
       });
-      stage.addEventListener('pointerleave', function () {
-        stage.style.setProperty('--px', '0');
-        stage.style.setProperty('--py', '0');
+    }
+
+    function tick(dt, now) {
+      var n = parts.length, i, j, p, q;
+      for (i = 0; i < n; i++) { parts[i].fx = 0; parts[i].fy = 0; }
+      /* tegels duwen elkaar zacht weg */
+      for (i = 0; i < n; i++) {
+        for (j = i + 1; j < n; j++) {
+          p = parts[i]; q = parts[j];
+          var dx = p.x - q.x, dy = p.y - q.y, m = (p.s + q.s) / 2 + 16, d2 = dx * dx + dy * dy;
+          if (d2 < m * m) {
+            var d = Math.sqrt(d2) || 0.01, f = (m - d) / m * 70;
+            dx /= d; dy /= d;
+            p.fx += dx * f; p.fy += dy * f; q.fx -= dx * f; q.fy -= dy * f;
+          }
+        }
+      }
+      for (i = 0; i < n; i++) {
+        p = parts[i];
+        var M = p.s / 2 + 24, h = p.s / 2;
+        if (p.x < M) p.fx += (M - p.x) * 1.6; else if (p.x > W - M) p.fx -= (p.x - (W - M)) * 1.6;
+        if (p.y < M) p.fy += (M - p.y) * 1.6; else if (p.y > H - M) p.fy -= (p.y - (H - M)) * 1.6;
+        /* weg van de kop, naar de dichtstbijzijnde kant */
+        if (inKeep(p.x, p.y, h)) {
+          var dl = p.x - (keep.l - h), dr = keep.r + h - p.x, dtp = p.y - (keep.t - h), db = keep.b + h - p.y;
+          var mn = Math.min(dl, dr, dtp, db);
+          if (mn === dl) p.fx -= 90; else if (mn === dr) p.fx += 90; else if (mn === dtp) p.fy -= 90; else p.fy += 90;
+        }
+        /* dwalen: de koers draait traag heen en weer */
+        p.a += Math.sin(now * 0.0003 * (0.6 + p.z) + p.ph) * 0.45 * dt;
+        var fm = Math.sqrt(p.fx * p.fx + p.fy * p.fy);
+        if (fm > 1) p.a = turn(p.a, Math.atan2(p.fy, p.fx), Math.min(1, fm * 0.02) * dt * 2.2);
+        p.vx += ((Math.cos(p.a) * p.sp - p.vx) * 0.7 + p.fx) * dt;
+        p.vy += ((Math.sin(p.a) * p.sp - p.vy) * 0.7 + p.fy) * dt;
+        var v = Math.sqrt(p.vx * p.vx + p.vy * p.vy), vmax = p.sp * 2.2;
+        if (v > vmax) { p.vx *= vmax / v; p.vy *= vmax / v; }
+        p.x += p.vx * dt; p.y += p.vy * dt;
+      }
+    }
+
+    var mx = 0, my = 0, tmx = 0, tmy = 0;
+    function render() {
+      mx += (tmx - mx) * 0.06; my += (tmy - my) * 0.06;
+      for (var i = 0; i < parts.length; i++) {
+        var p = parts[i], dpar = 6 + 30 * p.z;
+        var x = p.x - p.s / 2 + mx * dpar, y = p.y - p.s / 2 + my * dpar;
+        p.el.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0)';
+      }
+    }
+
+    build();
+    render();
+
+    /* binnenkomst: rustig na elkaar zichtbaar */
+    onView(field, function () {
+      tiles.forEach(function (el, k) {
+        setTimeout(function () { el.classList.add('in'); }, reduce ? 0 : Math.min(k * 40, 1800));
       });
     });
+
+    if (canHover && !reduce) {
+      sec.addEventListener('pointermove', function (e) {
+        var r = sec.getBoundingClientRect();
+        tmx = (e.clientX - r.left) / r.width - 0.5;
+        tmy = (e.clientY - r.top) / r.height - 0.5;
+      });
+      sec.addEventListener('pointerleave', function () { tmx = 0; tmy = 0; });
+    }
+
+    /* bij resize: opnieuw meten en de tegels binnen het veld houden */
+    var rt = 0;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () {
+        measure();
+        parts.forEach(function (p) {
+          p.x = clamp(p.x, p.s / 2, Math.max(p.s / 2, W - p.s / 2));
+          p.y = clamp(p.y, p.s / 2, Math.max(p.s / 2, H - p.s / 2));
+        });
+        render();
+      }, 150);
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { measure(); });
+
+    if (reduce) return; /* geen beweging: de verspreide startopstelling blijft staan */
+
+    /* alleen animeren zolang de sectie in beeld is */
+    var running = false, last = 0, raf = 0, visible = false;
+    function loop(ts) {
+      if (!running) return;
+      var dt = last ? Math.min(0.05, (ts - last) / 1000) : 0.016;
+      last = ts;
+      tick(dt, ts);
+      render();
+      raf = requestAnimationFrame(loop);
+    }
+    function setRunning(on) {
+      if (on === running) return;
+      running = on;
+      if (on) { last = 0; raf = requestAnimationFrame(loop); } else cancelAnimationFrame(raf);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        setRunning(visible && !document.hidden);
+      }, { threshold: 0 }).observe(sec);
+    } else { visible = true; setRunning(true); }
+    document.addEventListener('visibilitychange', function () { setRunning(visible && !document.hidden); });
   })();
+
+  /* ============================================================
+     4b. TIJDLIJN — lijn groeit mee met scrollen (Over ons)
+     <div data-scroll-fill> met kinderen [data-step]; zet --fill (0–1)
+     en .is-reached op elke stap die de leeslijn gepasseerd heeft.
+     ============================================================ */
+  each(document.querySelectorAll('[data-scroll-fill]'), function (line) {
+    var steps = line.querySelectorAll('[data-step]');
+    onScroll(function () {
+      var r = line.getBoundingClientRect();
+      var mark = (window.innerHeight || 800) * 0.62; /* leeslijn iets onder het midden */
+      line.style.setProperty('--fill', clamp((mark - r.top) / r.height, 0, 1).toFixed(3));
+      each(steps, function (s) { s.classList.toggle('is-reached', s.getBoundingClientRect().top + 12 < mark); });
+    });
+  });
 
   /* ============================================================
      5. CASE-GRAFIEKEN
