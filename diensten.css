@@ -1,0 +1,261 @@
+/* =============================================================
+   EM Launchpad — Diensten (pakketten)
+   Werkt bovenop de "v2" skin (home-redesign.css).
+   ============================================================= */
+
+body[data-page="diensten"]{
+  --ok-svg:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306130d' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+}
+body[data-page="diensten"] .dv-slash{font-family:var(--mono);font-weight:500;color:var(--acc);margin-right:.5em;letter-spacing:0}
+body[data-page="diensten"] .dv-label{
+  display:inline-flex;align-items:center;
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);
+}
+body[data-page="diensten"] .dv-sec{position:relative;padding:104px 0}
+
+/* ─────────────────────────── HERO ─────────────────────────── */
+body[data-page="diensten"] .dv-hero{position:relative;overflow:hidden;padding:96px 0 88px}
+body[data-page="diensten"] .dv-hero .glow{left:50%;top:44%;width:1000px;height:620px;transform:translate(-50%,-50%)}
+body[data-page="diensten"] .dv-hero .wrap{position:relative;z-index:2}
+body[data-page="diensten"] .dv-hero-in{max-width:900px;margin:0 auto;text-align:center}
+body[data-page="diensten"] .dv-hero h1{
+  margin:22px 0 0;font-weight:800;font-size:clamp(38px,5.6vw,72px);line-height:1.02;
+  letter-spacing:-.045em;color:var(--hi);text-wrap:balance;
+}
+body[data-page="diensten"] .dv-hero .lead{margin:22px auto 0;max-width:60ch}
+body[data-page="diensten"] .dv-jump{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:660px;margin:42px auto 0}
+body[data-page="diensten"] .dv-jump a{
+  position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+  padding:18px 52px 18px 20px;border-radius:18px;text-align:left;text-decoration:none;
+  border:1px solid var(--line-2);background:var(--glass);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  transition:border-color .25s ease, transform .25s ease;
+}
+body[data-page="diensten"] .dv-jump a.is-prem{background:linear-gradient(150deg,rgba(47,116,224,.16),transparent 62%),var(--glass)}
+body[data-page="diensten"] .dv-jump .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+body[data-page="diensten"] .dv-jump .n em{font-style:normal;color:#9dbcf0;margin-left:4px}
+body[data-page="diensten"] .dv-jump b{font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--hi)}
+body[data-page="diensten"] .dv-jump .p{font-size:14px;color:var(--mid)}
+body[data-page="diensten"] .dv-jump svg{position:absolute;right:20px;top:50%;width:16px;height:16px;margin-top:-8px;color:var(--mid);transform:rotate(90deg);transition:transform .25s ease,color .25s ease}
+body[data-page="diensten"] .dv-jump a:hover{border-color:rgba(31,158,95,.55);transform:translateY(-2px)}
+body[data-page="diensten"] .dv-jump a:hover svg{color:var(--hi);transform:rotate(90deg) translateX(3px)}
+
+/* ─────────────────────────── PAKKET 1 ─────────────────────────── */
+body[data-page="diensten"] .dv-p1{display:grid;grid-template-columns:350px minmax(0,1fr);gap:56px;align-items:start}
+body[data-page="diensten"] .dv-price{position:sticky;top:104px}
+body[data-page="diensten"] .dv-card{
+  padding:30px;border-radius:24px;border:1px solid var(--line-2);
+  background:radial-gradient(120% 80% at 0% 0%,rgba(31,158,95,.15),transparent 60%),var(--ink-2);
+  box-shadow:0 30px 70px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.05);
+}
+body[data-page="diensten"] .dv-card h2{margin:12px 0 0;font-size:34px;font-weight:800;letter-spacing:-.035em;line-height:1.05;color:var(--hi)}
+body[data-page="diensten"] .dv-amount{display:flex;align-items:baseline;gap:4px;margin-top:18px;color:var(--hi)}
+body[data-page="diensten"] .dv-amount .cur{font-size:30px;font-weight:700}
+body[data-page="diensten"] .dv-amount b{font-size:66px;font-weight:800;letter-spacing:-.05em;line-height:.95;font-variant-numeric:tabular-nums}
+body[data-page="diensten"] .dv-amount .per{margin-left:6px;font-size:16px;color:var(--mid)}
+body[data-page="diensten"] .dv-amount.bump b{animation:dvBump .45s cubic-bezier(.3,1.7,.5,1)}
+@keyframes dvBump{40%{transform:scale(1.08)}}
+body[data-page="diensten"] .dv-amount b{display:inline-block;transform-origin:50% 80%}
+body[data-page="diensten"] .dv-cancel{display:inline-flex;align-items:center;gap:8px;margin:12px 0 0;font-size:13.5px;color:#7fd8a8}
+body[data-page="diensten"] .dv-cancel .dot{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(31,158,95,.18)}
+body[data-page="diensten"] .dv-lines{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+body[data-page="diensten"] .dv-lines:not(:empty){margin-top:14px}
+body[data-page="diensten"] .dv-lines li{
+  font-family:var(--mono);font-size:11.5px;color:var(--hi);padding:5px 10px;border-radius:999px;
+  background:rgba(47,116,224,.16);border:1px solid rgba(47,116,224,.42);animation:dvIn .35s ease both;
+}
+@keyframes dvIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+body[data-page="diensten"] .dv-check{list-style:none;margin:22px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;gap:9px}
+body[data-page="diensten"] .dv-check a{display:flex;align-items:center;gap:11px;font-size:14px;line-height:1.3;color:var(--dim);text-decoration:none;transition:color .35s ease}
+body[data-page="diensten"] .dv-check a:hover{color:var(--hi)}
+body[data-page="diensten"] .dv-check i{
+  flex:none;width:18px;height:18px;border-radius:6px;border:1px solid var(--line-2);
+  background:transparent center/10px no-repeat;transition:background-color .35s ease,border-color .35s ease,transform .35s cubic-bezier(.3,1.6,.5,1);
+}
+body[data-page="diensten"] .dv-check li.done a{color:var(--hi)}
+body[data-page="diensten"] .dv-check li.done i{background-color:var(--acc);border-color:var(--acc);background-image:var(--ok-svg);transform:scale(1.08)}
+body[data-page="diensten"] .dv-card .btn{margin-top:26px;width:100%;justify-content:center}
+
+body[data-page="diensten"] .dv-state{
+  margin:0;font-size:clamp(28px,3.4vw,42px);font-weight:800;line-height:1.1;
+  letter-spacing:-.035em;color:var(--hi);text-wrap:balance;
+}
+body[data-page="diensten"] .dv-main .lead{max-width:58ch}
+body[data-page="diensten"] .dv-sub{
+  display:flex;align-items:center;gap:14px;margin:56px 0 18px;
+  font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);
+  scroll-margin-top:110px;
+}
+body[data-page="diensten"] .dv-sub::after{content:"";flex:1;height:1px;background:var(--line)}
+body[data-page="diensten"] .dv-incs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+body[data-page="diensten"] .dv-inc{
+  display:flex;gap:16px;padding:22px;border-radius:18px;scroll-margin-top:110px;
+  border:1px solid var(--line);background:var(--glass);
+  transition:border-color .3s ease, box-shadow .3s ease;
+}
+body[data-page="diensten"] .dv-inc.is-wide{grid-column:1/-1}
+body[data-page="diensten"] .dv-inc:hover{border-color:var(--line-2)}
+body[data-page="diensten"] .dv-inc:target{border-color:rgba(31,158,95,.6);box-shadow:0 0 0 4px rgba(31,158,95,.12)}
+body[data-page="diensten"] .i-ic{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:var(--hi)}
+body[data-page="diensten"] .i-ic svg{width:20px;height:20px}
+body[data-page="diensten"] .dv-inc h3{margin:0;font-size:16.5px;font-weight:700;letter-spacing:-.01em;line-height:1.3;color:var(--hi)}
+body[data-page="diensten"] .dv-inc p{margin:6px 0 0;font-size:14px;line-height:1.58;color:var(--mid)}
+body[data-page="diensten"] .i-more{display:inline-flex;flex-wrap:wrap;gap:4px 8px;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+body[data-page="diensten"] .i-more a{color:var(--hi);text-decoration:none;border-bottom:1px solid var(--line-2);transition:border-color .2s ease}
+body[data-page="diensten"] .i-more a:hover{border-color:var(--acc)}
+
+/* uitbreidingen */
+body[data-page="diensten"] .dv-addons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+body[data-page="diensten"] .dv-addon{
+  display:flex;flex-direction:column;padding:24px;border-radius:18px;
+  border:1px dashed var(--line-2);background:rgba(255,255,255,.015);
+  transition:border-color .3s ease, background .3s ease, box-shadow .3s ease;
+}
+body[data-page="diensten"] .dv-addon.on{
+  border-style:solid;border-color:rgba(47,116,224,.6);
+  background:linear-gradient(160deg,rgba(47,116,224,.15),transparent 65%),var(--glass);
+  box-shadow:0 18px 44px rgba(20,50,110,.25);
+}
+body[data-page="diensten"] .a-top{display:flex;flex-wrap:wrap;align-items:flex-start;gap:0 14px}
+body[data-page="diensten"] .a-ic{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:var(--hi)}
+body[data-page="diensten"] .a-ic svg{width:20px;height:20px}
+body[data-page="diensten"] .a-name{flex:1;min-width:0}
+body[data-page="diensten"] .dv-addon h3{margin:0;font-size:17px;font-weight:700;line-height:1.3;color:var(--hi)}
+body[data-page="diensten"] .a-plus{color:#8fb3f2;margin-right:6px}
+body[data-page="diensten"] .a-why{display:block;margin-top:4px;font-size:12.5px;line-height:1.4;color:var(--dim)}
+body[data-page="diensten"] .a-price{flex-basis:100%;margin-top:18px;font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--hi);white-space:nowrap}
+body[data-page="diensten"] .a-price small{font-size:14px;font-weight:500;letter-spacing:0;color:var(--mid);margin-left:3px}
+body[data-page="diensten"] .dv-addon p{margin:14px 0 0;font-size:14px;line-height:1.58;color:var(--mid)}
+body[data-page="diensten"] .a-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:20px}
+body[data-page="diensten"] .a-sw{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  font:600 13.5px var(--font);color:var(--hi);
+  background:rgba(255,255,255,.05);border:1px solid var(--line-2);border-radius:999px;padding:6px 14px 6px 6px;
+  transition:border-color .2s ease, background .2s ease;
+}
+body[data-page="diensten"] .a-sw:hover{border-color:var(--faint)}
+body[data-page="diensten"] .a-sw i{position:relative;flex:none;width:36px;height:22px;border-radius:999px;background:rgba(255,255,255,.14);transition:background .25s ease}
+body[data-page="diensten"] .a-sw i::after{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .3s cubic-bezier(.3,1.5,.5,1)}
+body[data-page="diensten"] .a-sw .t-on,
+body[data-page="diensten"] .dv-addon.on .a-sw .t-off{display:none}
+body[data-page="diensten"] .dv-addon.on .a-sw .t-on{display:inline}
+body[data-page="diensten"] .dv-addon.on .a-sw{border-color:rgba(47,116,224,.6);background:rgba(47,116,224,.14)}
+body[data-page="diensten"] .dv-addon.on .a-sw i{background:var(--blue)}
+body[data-page="diensten"] .dv-addon.on .a-sw i::after{transform:translateX(14px)}
+body[data-page="diensten"] .a-more{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;color:var(--mid);text-decoration:none;transition:color .2s ease}
+body[data-page="diensten"] .a-more svg{width:13px;height:13px;transition:transform .2s ease}
+body[data-page="diensten"] .a-more:hover{color:var(--hi)}
+body[data-page="diensten"] .a-more:hover svg{transform:translateX(3px)}
+body[data-page="diensten"] .dv-total{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin-top:12px;
+  padding:18px 24px;border-radius:18px;border:1px solid var(--line-2);background:var(--ink-2);
+}
+body[data-page="diensten"] .dv-total > span{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid)}
+body[data-page="diensten"] .dv-amount.sm{margin:0}
+body[data-page="diensten"] .dv-amount.sm .cur{font-size:20px}
+body[data-page="diensten"] .dv-amount.sm b{font-size:36px}
+body[data-page="diensten"] .dv-amount.sm .per{font-size:14px}
+
+/* ─────────────────────────── PAKKET 2 ─────────────────────────── */
+body[data-page="diensten"] .dv-p2-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:start}
+body[data-page="diensten"] .dv-p2-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+body[data-page="diensten"] .dv-prem{
+  display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:#0b0d0c;background:linear-gradient(100deg,#e7e1d2,#ffffff 55%,#dcd5c4);
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+}
+body[data-page="diensten"] .dv-p2-price{
+  display:inline-flex;margin:20px 0 0;padding:8px 14px;border-radius:999px;
+  font-family:var(--mono);font-size:13.5px;color:var(--hi);border:1px solid var(--line-2);background:var(--glass-2);
+}
+body[data-page="diensten"] .dv-p2 h2{
+  margin:22px 0 0;font-weight:800;font-size:clamp(32px,3.7vw,48px);line-height:1.06;
+  letter-spacing:-.04em;color:var(--hi);text-wrap:balance;
+}
+body[data-page="diensten"] .dv-p2 .lead{max-width:56ch}
+body[data-page="diensten"] .dv-qs{list-style:none;margin:28px 0 8px;padding:0;display:grid;gap:10px;max-width:560px}
+body[data-page="diensten"] .dv-qs li{
+  display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;
+  font-size:17px;font-weight:600;line-height:1.35;color:var(--mid);
+  border:1px solid var(--line);background:var(--glass-2);
+  transition:color .5s ease, border-color .5s ease, background .5s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+}
+body[data-page="diensten"] .dv-qs .q{flex:none;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--dim);border:1px solid var(--line-2);transition:all .5s ease}
+body[data-page="diensten"] .dv-qs li.on{color:var(--hi);border-color:rgba(62,224,160,.42);background:rgba(10,22,30,.82);transform:translateX(8px)}
+body[data-page="diensten"] .dv-qs li.on .q{color:#06130d;background:var(--mint);border-color:var(--mint)}
+body[data-page="diensten"] .dv-p2-card{
+  padding:34px;border-radius:24px;border:1px solid rgba(150,200,220,.22);
+  background:linear-gradient(170deg,rgba(18,34,50,.78),rgba(9,17,26,.82));
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  box-shadow:0 34px 80px rgba(0,0,0,.45);
+}
+body[data-page="diensten"] .dv-p2-card h3{margin:0 0 12px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+body[data-page="diensten"] .dv-p2-card .who{margin:0 0 30px;font-size:16.5px;line-height:1.55;color:var(--hi)}
+body[data-page="diensten"] .dv-get{list-style:none;counter-reset:g;margin:0;padding:0}
+body[data-page="diensten"] .dv-get li{
+  counter-increment:g;display:flex;align-items:baseline;gap:14px;padding:13px 0;
+  border-top:1px solid var(--line);font-size:15.5px;line-height:1.4;color:var(--hi);
+}
+body[data-page="diensten"] .dv-get li::before{content:counter(g,decimal-leading-zero);flex:none;font-family:var(--mono);font-size:12px;color:#7fe0b4}
+body[data-page="diensten"] .dv-limited{
+  display:flex;gap:12px;align-items:flex-start;margin:22px 0 0;padding:15px 16px;border-radius:14px;
+  font-size:13.5px;line-height:1.55;color:var(--mid);background:rgba(255,255,255,.04);border:1px solid var(--line);
+}
+body[data-page="diensten"] .dv-limited svg{flex:none;width:17px;height:17px;margin-top:1px;color:var(--hi)}
+body[data-page="diensten"] .dv-p2-card .btn{margin-top:22px;width:100%;justify-content:center}
+
+/* ─────────────────────────── HOE WE WERKEN ─────────────────────────── */
+body[data-page="diensten"] .dv-h{margin:0;font-weight:800;font-size:clamp(30px,4.2vw,48px);letter-spacing:-.035em;line-height:1.05;color:var(--hi)}
+body[data-page="diensten"] .dv-h .dv-slash{font-size:.6em;vertical-align:.14em}
+body[data-page="diensten"] .dv-steps{position:relative;list-style:none;margin:52px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+body[data-page="diensten"] .dv-steps::before,
+body[data-page="diensten"] .dv-steps::after{content:"";position:absolute;left:22px;right:22px;top:22px;height:1px}
+body[data-page="diensten"] .dv-steps::before{background:var(--line-2)}
+body[data-page="diensten"] .dv-steps::after{background:linear-gradient(90deg,#2f74e0,#2fbf86);transform:scaleX(0);transform-origin:0 50%;transition:transform 1.6s cubic-bezier(.2,.8,.2,1) .2s}
+body[data-page="diensten"] .dv-steps.in::after{transform:scaleX(1)}
+body[data-page="diensten"] .dv-steps li{position:relative;padding-top:64px}
+body[data-page="diensten"] .s-n{
+  position:absolute;z-index:1;left:0;top:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--mono);font-size:13px;color:var(--mid);background:var(--ink);border:1px solid var(--line-2);
+  transition:color .4s ease, border-color .4s ease, background .4s ease;
+}
+body[data-page="diensten"] .dv-steps.in .s-n{color:#7fd8a8;border-color:var(--acc);background:#0e1a13}
+body[data-page="diensten"] .dv-steps.in li:nth-child(2) .s-n{transition-delay:.5s}
+body[data-page="diensten"] .dv-steps.in li:nth-child(3) .s-n{transition-delay:.9s}
+body[data-page="diensten"] .dv-steps.in li:nth-child(4) .s-n{transition-delay:1.3s}
+body[data-page="diensten"] .dv-steps h3{margin:0;font-size:19px;font-weight:700;letter-spacing:-.015em;color:var(--hi)}
+body[data-page="diensten"] .dv-steps p{margin:8px 0 0;font-size:14.5px;line-height:1.58;color:var(--mid)}
+
+/* ─────────────────────────── RESPONSIEF ─────────────────────────── */
+@media (max-width:1020px){
+  body[data-page="diensten"] .dv-p1,
+  body[data-page="diensten"] .dv-p2-grid{grid-template-columns:1fr;gap:44px}
+  body[data-page="diensten"] .dv-price{position:static}
+  body[data-page="diensten"] .dv-card{max-width:520px}
+  body[data-page="diensten"] .dv-check{display:none}
+}
+@media (max-width:760px){
+  body[data-page="diensten"] .dv-sec{padding:64px 0}
+  body[data-page="diensten"] .dv-hero{padding:56px 0 60px}
+  body[data-page="diensten"] .dv-jump,
+  body[data-page="diensten"] .dv-incs,
+  body[data-page="diensten"] .dv-addons{grid-template-columns:1fr}
+  body[data-page="diensten"] .dv-inc{padding:18px}
+  body[data-page="diensten"] .dv-card,
+  body[data-page="diensten"] .dv-p2-card{padding:24px}
+  body[data-page="diensten"] .dv-amount b{font-size:56px}
+  body[data-page="diensten"] .dv-qs li{font-size:15.5px}
+  body[data-page="diensten"] .dv-steps{grid-template-columns:1fr;gap:26px}
+  body[data-page="diensten"] .dv-steps::before,
+  body[data-page="diensten"] .dv-steps::after{left:22px;right:auto;top:22px;bottom:22px;width:1px;height:auto}
+  body[data-page="diensten"] .dv-steps::after{transform:scaleY(0);transform-origin:50% 0}
+  body[data-page="diensten"] .dv-steps.in::after{transform:scaleY(1)}
+  body[data-page="diensten"] .dv-steps li{padding:8px 0 0 64px}
+}
+@media (prefers-reduced-motion:reduce){
+  body[data-page="diensten"] .dv-steps::after{transition:none}
+  body[data-page="diensten"] .dv-qs li{transition:none}
+  body[data-page="diensten"] .dv-amount.bump b,
+  body[data-page="diensten"] .dv-lines li{animation:none}
+}
