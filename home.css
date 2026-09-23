@@ -18,3 +18,9 @@
 .nav-burger:active{transform:scale(.92)}
 .nav-burger span{transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .2s ease,background .2s ease}
 @media (prefers-reduced-motion:reduce){.mobnav,.mobnav.open,.mobnav-links a,.mobnav.open .mobnav-links a,.mobnav-foot,.mobnav.open .mobnav-foot{transition-duration:.001s !important;transition-delay:0s !important;transform:none !important}}
+
+/* case-sectie: toelichting bij het citaat + link naar de volledige case */
+.case-note{margin:18px 0 0;font-size:14.5px;line-height:1.6;color:var(--mid);max-width:52ch;padding-left:14px;border-left:2px solid var(--line-2)}
+.case-link{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-family:var(--mono);font-size:12.5px;color:var(--mint);border:1px solid var(--line-2);padding:9px 15px;border-radius:999px;transition:border-color .25s ease,background .25s ease}
+.case-link:hover{border-color:var(--mint);background:rgba(47,240,166,.08)}
+.case-link svg{width:13px;height:13px}

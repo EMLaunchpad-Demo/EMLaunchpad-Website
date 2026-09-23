@@ -501,3 +501,7 @@ body[data-skin="v2"] .lf-tile:hover > span{transform:scale(1.1)}
   body[data-skin="v2"] .hd-ring{width:100px;height:100px}
   body[data-skin="v2"] .hd-what{font-size:14px}
 }
+
+/* case-link in de v2-skin: merkgroen i.p.v. het oude neon */
+body[data-skin="v2"] .case-link{color:var(--acc)}
+body[data-skin="v2"] .case-link:hover{border-color:var(--acc);background:var(--acc-soft)}
