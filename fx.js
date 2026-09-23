@@ -514,6 +514,47 @@
   });
 
   /* ============================================================
+     4c. INTERVIEW-SPELER (homepage) — eigen play-knop, "bioscoopstand"
+     en een lichte 3D-kanteling zolang de video stilstaat.
+     ============================================================ */
+  each(document.querySelectorAll('[data-player]'), function (show) {
+    var video = show.querySelector('video');
+    var play = show.querySelector('.tm-play');
+    var frame = show.querySelector('.tm-frame');
+    if (!video || !play || !frame) return;
+
+    play.addEventListener('click', function () {
+      video.setAttribute('controls', '');       /* pas tonen zodra het speelt */
+      var p = video.play();
+      if (p && p.catch) p.catch(function () { video.setAttribute('controls', ''); });
+    });
+    video.addEventListener('play', function () {
+      show.classList.add('is-playing');
+      frame.style.setProperty('--tx', '0deg');
+      frame.style.setProperty('--ty', '0deg');
+    });
+    /* bij pauze blijven de bedieningsknoppen staan, maar de rest komt terug */
+    video.addEventListener('pause', function () { show.classList.remove('is-playing'); });
+    video.addEventListener('ended', function () {
+      show.classList.remove('is-playing');
+      video.removeAttribute('controls');
+      video.currentTime = 0;
+    });
+
+    if (!canHover || reduce) return;
+    frame.addEventListener('pointermove', function (e) {
+      if (show.classList.contains('is-playing')) return;
+      var r = frame.getBoundingClientRect();
+      frame.style.setProperty('--tx', (((e.clientX - r.left) / r.width - 0.5) * 6).toFixed(2) + 'deg');
+      frame.style.setProperty('--ty', (-((e.clientY - r.top) / r.height - 0.5) * 4).toFixed(2) + 'deg');
+    });
+    frame.addEventListener('pointerleave', function () {
+      frame.style.setProperty('--tx', '0deg');
+      frame.style.setProperty('--ty', '0deg');
+    });
+  });
+
+  /* ============================================================
      5. CASE-GRAFIEKEN
      ============================================================ */
 
