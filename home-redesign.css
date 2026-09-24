@@ -67,22 +67,6 @@ body[data-skin="v2"] .starfield{
 body[data-skin="v2"] .hero .wrap,
 body[data-skin="v2"] .cta-band .wrap{position:relative;z-index:2}
 
-/* =========================  HERO  ========================= */
-body[data-skin="v2"] .hero{padding:60px 0 88px}
-body[data-skin="v2"] .hero-vis{max-width:none}
-body[data-skin="v2"] .hero-photo{
-  position:relative;z-index:1;margin-left:auto;max-width:520px;aspect-ratio:5/6;
-  border-radius:24px;overflow:hidden;border:1px solid var(--line-2);
-  box-shadow:0 34px 80px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.06);
-}
-body[data-skin="v2"] .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-/* werkplek-foto: bovenaan zit alleen plafond, onderaan de persoon. Snijd
-   van boven weg, zodat het hoofd vrij boven de wijzerplaat blijft. */
-body[data-skin="v2"] .hero-photo img{object-position:50% 100%}
-body[data-skin="v2"] .hero-photo::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 45%,rgba(8,10,8,.55) 100%);
-}
 /* =========================  LIGHT SECTIONS ("meer wit")  =========================
    .is-light flips the local tokens, so cards/text/faq/etc. restyle to light
    automatically with minimal per-component CSS. */
@@ -158,97 +142,6 @@ body[data-skin="v2"] .ck-bar .ck-yes{
 }
 body[data-skin="v2"] .ck-bar .ck-yes:hover{filter:brightness(1.06);transform:translateY(-1px)}
 body[data-skin="v2"] .ck-bar .ck-no{border-radius:999px}
-
-/* ═══════════════════════════════════════════════════════════════
-   HERO — "een dag met je systeem"
-   De foto blijft het menselijke anker; de glazen wijzerplaat erop
-   vertelt wat het systeem intussen doet.
-   ═══════════════════════════════════════════════════════════════ */
-body[data-skin="v2"] .hero-vis{perspective:1300px}
-body[data-skin="v2"] .hero-stage{
-  position:relative;transform-style:preserve-3d;
-  transform:rotateY(var(--tx,0deg)) rotateX(var(--ty,0deg));
-  transition:transform .55s cubic-bezier(.2,.7,.2,1);
-}
-body[data-skin="v2"] .hero-stage .hero-photo{transform:translateZ(0)}
-
-body[data-skin="v2"] .hero-dial{
-  /* top in % i.p.v. bottom: bij de werkplek-foto eindigt het hoofd rond 54%
-     van de fotohoogte. Zo blijft het hoofd bij elke breedte vrij en hangt de
-     plaat een stukje onder de foto uit. Andere foto? Dan dit getal nakijken. */
-  position:absolute;left:-36px;top:58%;z-index:3;width:330px;
-  transform:translateZ(38px);
-  padding:15px 18px 13px;border-radius:24px;
-  background:linear-gradient(155deg,rgba(24,31,27,.80),rgba(10,14,12,.86));
-  -webkit-backdrop-filter:blur(20px) saturate(165%);backdrop-filter:blur(20px) saturate(165%);
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:0 30px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.22);
-}
-body[data-skin="v2"] .hd-top{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--dim);
-}
-body[data-skin="v2"] .hd-clock{
-  color:var(--hi);letter-spacing:.06em;font-size:12.5px;
-  font-variant-numeric:tabular-nums;
-}
-body[data-skin="v2"] .hd-main{
-  display:grid;grid-template-columns:124px 1fr;gap:16px;align-items:center;margin-top:12px;
-}
-body[data-skin="v2"] .hd-ring{position:relative;width:124px;height:124px}
-body[data-skin="v2"] .hd-svg{width:100%;height:100%;display:block;overflow:visible}
-body[data-skin="v2"] .hd-track{fill:none;stroke:rgba(255,255,255,.10);stroke-width:4}
-body[data-skin="v2"] .hd-arc{
-  fill:none;stroke:url(#hdGrad);stroke-width:4;stroke-linecap:round;
-  transform:rotate(-90deg);transform-origin:100px 100px;
-}
-body[data-skin="v2"] .hd-tick{stroke:rgba(255,255,255,.18);stroke-width:2;stroke-linecap:round}
-body[data-skin="v2"] .hd-tick.major{stroke:rgba(255,255,255,.34);stroke-width:2.6}
-/* GEEN transform-origin hier: fx.js draait de wijzer met het SVG-attribuut
-   rotate(θ 100 100), dat zijn eigen draaipunt al meebrengt. Een CSS-origin
-   wordt dáár bovenop toegepast en verschuift het draaipunt naar (200,200). */
-body[data-skin="v2"] .hd-hand{transition:none}
-body[data-skin="v2"] .hd-hand line{stroke:rgba(255,255,255,.28);stroke-width:2;stroke-linecap:round}
-body[data-skin="v2"] .hd-hand circle{fill:#fff}
-body[data-skin="v2"] .hd-hit{fill:transparent;cursor:pointer}
-body[data-skin="v2"] .hd-pip{
-  fill:rgba(255,255,255,.24);pointer-events:none;
-  transition:fill .35s ease,r .35s ease;
-}
-body[data-skin="v2"] .hd-dot{cursor:pointer;outline:none}
-body[data-skin="v2"] .hd-dot.on .hd-pip{fill:var(--acc)}
-body[data-skin="v2"] .hd-dot:hover .hd-pip,
-body[data-skin="v2"] .hd-dot:focus-visible .hd-pip{fill:#fff;r:7}
-
-body[data-skin="v2"] .hd-core{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:44px;height:44px;border-radius:15px;display:grid;place-items:center;
-  background:var(--acc-soft);border:1px solid rgba(31,158,95,.34);color:var(--acc);
-}
-body[data-skin="v2"] .hd-core svg{width:20px;height:20px}
-body[data-skin="v2"] .hero-dial.is-beat .hd-core{animation:hdBeat .6s cubic-bezier(.2,.7,.2,1)}
-@keyframes hdBeat{0%{transform:translate(-50%,-50%) scale(.84)}60%{transform:translate(-50%,-50%) scale(1.06)}100%{transform:translate(-50%,-50%) scale(1)}}
-
-body[data-skin="v2"] .hd-ev{display:block;min-width:0}
-body[data-skin="v2"] .hd-what{display:block;font-weight:700;font-size:15px;color:var(--hi);letter-spacing:-.015em;line-height:1.28}
-body[data-skin="v2"] .hd-you{display:block;margin-top:6px;font-size:13px;color:var(--mid);line-height:1.4}
-body[data-skin="v2"] .hero-dial.is-beat .hd-ev{animation:hdIn .55s ease}
-@keyframes hdIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-
-body[data-skin="v2"] .hd-tally{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
-  margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.10);
-}
-body[data-skin="v2"] .hd-tally span{display:block;text-align:center;font-family:var(--mono);font-size:9.5px;color:var(--dim);line-height:1.3}
-body[data-skin="v2"] .hd-tally em{font-style:normal}
-body[data-skin="v2"] .hd-tally b{display:block;font-family:var(--font);font-size:17px;font-weight:800;color:var(--hi);letter-spacing:-.02em}
-body[data-skin="v2"] .hd-tally b.bump{animation:hdBump .5s ease}
-@keyframes hdBump{0%{transform:translateY(5px);color:var(--acc)}100%{transform:none}}
-body[data-skin="v2"] .hd-foot{
-  display:block;margin-top:9px;text-align:center;
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--faint);
-}
 
 /* ═══════════════════════════════════════════════════════════════
    AURORA-SECTIE — diep blauwzwart met neon licht­strepen
@@ -468,13 +361,6 @@ body[data-skin="v2"] .lf-tile:hover > span{transform:scale(1.1)}
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════════════════════ */
-@media (max-width:1080px){
-  /* de hero is hier één kolom; houd het tafereel even breed als de foto,
-     anders hangt de wijzerplaat (absoluut, rechts) los in de achtergrond */
-  body[data-skin="v2"] .hero-stage{max-width:600px;margin:0 auto}
-  body[data-skin="v2"] .hero-photo{margin:0 auto;max-width:600px}
-  body[data-skin="v2"] .hero-dial{left:auto;right:-10px;top:auto;bottom:-24px;width:330px}
-}
 @media (max-width:980px){
   body[data-skin="v2"] .pin-inner{grid-template-columns:1fr;gap:30px}
   body[data-skin="v2"] .pin-rail{flex-direction:row;flex-wrap:wrap;gap:12px}
@@ -485,21 +371,7 @@ body[data-skin="v2"] .lf-tile:hover > span{transform:scale(1.1)}
   body[data-skin="v2"] .pc-ghost{font-size:104px;right:16px}
 }
 @media (max-width:820px){
-  body[data-skin="v2"] .hero-photo{max-width:none;aspect-ratio:4/3}
-  /* in 4:3 valt bijna de helft weg; hier staat de dial onder de foto, dus
-     centreer op persoon + schermen */
-  body[data-skin="v2"] .hero-photo img{object-position:50% 58%}
-  body[data-skin="v2"] .hero{padding:30px 0 56px}
-  body[data-skin="v2"] .hero-dial{
-    position:static;width:auto;max-width:420px;margin:18px auto 0;transform:none;
-  }
-  body[data-skin="v2"] .hero-stage{transform:none}
   body[data-skin="v2"] .steps-sec{padding:72px 0 0}
-}
-@media (max-width:560px){
-  body[data-skin="v2"] .hd-main{grid-template-columns:100px 1fr;gap:13px}
-  body[data-skin="v2"] .hd-ring{width:100px;height:100px}
-  body[data-skin="v2"] .hd-what{font-size:14px}
 }
 
 /* case-link in de v2-skin: merkgroen i.p.v. het oude neon */
@@ -636,3 +508,8 @@ body[data-skin="v2"] .tm-link svg{width:13px;height:13px}
   body[data-skin="v2"] .tm-ring{animation:none}
   body[data-skin="v2"] .tm-frame{transition:none}
 }
+
+/* de decoratieve gloed achter #diensten (920px breed) mag niet buiten het scherm
+   steken: op gsm zoomde de browser anders uit naar ~640px. clip maakt geen
+   scrollcontainer; hidden is de terugval voor oudere browsers. */
+body[data-skin="v2"] #diensten{overflow-x:hidden;overflow-x:clip}
