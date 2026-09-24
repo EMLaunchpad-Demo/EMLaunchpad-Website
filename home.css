@@ -78,7 +78,7 @@ html{scroll-padding-top:100px}
 .nv-link.active::after{content:"";position:absolute;left:50%;bottom:3px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--nv-green-hi)}
 .nv-link svg{width:13px;height:13px;opacity:.7;transition:transform .3s ease}
 .nv-link[aria-expanded="true"] svg{transform:rotate(180deg)}
-.nv-link:focus-visible,.nv-lang-btn:focus-visible,.nv-demo:focus-visible,.nv-cta:focus-visible,.nv-burger:focus-visible,.nv-brand:focus-visible{outline:2px solid var(--nv-green-hi);outline-offset:2px}
+.nv-link:focus-visible,.nv-lang-btn:focus-visible,.nv-demo:focus-visible,.nv-burger:focus-visible,.nv-brand:focus-visible{outline:2px solid var(--nv-green-hi);outline-offset:2px}
 
 .nv-right{margin-left:auto;display:flex;align-items:center;gap:4px}
 .nv-lang{position:relative}
@@ -118,15 +118,35 @@ html{scroll-padding-top:100px}
 .nv-demo i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(79,211,148,.15);color:var(--nv-green-hi)}
 .nv-demo i svg{width:10px;height:10px;margin-left:1px}
 .nv-demo:hover,.nv-demo.active{color:var(--nv-hi);background:rgba(255,255,255,.06)}
+/* blauwe glasknop: doorschijnend blauw, glans bovenaan, dunne lichtrand */
 .nv-cta{
+  position:relative;overflow:hidden;isolation:isolate;
   display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;margin-left:4px;border-radius:12px;white-space:nowrap;
-  background:var(--nv-green);color:#06130d;text-decoration:none;font-family:var(--font);font-weight:700;font-size:14px;
-  box-shadow:0 8px 22px rgba(23,120,72,.3),inset 0 1px 0 rgba(255,255,255,.25);
-  transition:filter .2s ease,transform .2s ease;
+  color:#fff;text-decoration:none;font-family:var(--font);font-weight:700;font-size:14px;text-shadow:0 1px 2px rgba(10,30,80,.35);
+  background:linear-gradient(180deg,rgba(92,150,250,.5) 0%,rgba(47,116,224,.34) 55%,rgba(36,92,200,.42) 100%);
+  border:1px solid rgba(150,190,255,.5);
+  -webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6);
+  box-shadow:0 8px 26px rgba(30,85,200,.38),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -10px 18px rgba(18,55,150,.28);
+  transition:transform .2s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease;
 }
-.nv-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.nv-cta::before{
+  content:"";position:absolute;z-index:-1;left:1px;right:1px;top:1px;height:48%;border-radius:11px 11px 6px 6px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,.04));
+}
+.nv-cta::after{
+  content:"";position:absolute;z-index:-1;top:0;bottom:0;left:-60%;width:45%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-18deg);
+  transition:left .6s ease;
+}
+.nv-cta:hover{
+  transform:translateY(-1px);border-color:rgba(180,210,255,.7);
+  background:linear-gradient(180deg,rgba(110,165,255,.6) 0%,rgba(55,126,236,.44) 55%,rgba(40,100,210,.52) 100%);
+  box-shadow:0 12px 32px rgba(30,85,200,.5),inset 0 1px 0 rgba(255,255,255,.55),inset 0 -10px 18px rgba(18,55,150,.3);
+}
+.nv-cta:hover::after{left:120%}
 .nv-cta svg{width:14px;height:14px;transition:transform .2s ease}
 .nv-cta:hover svg{transform:translateX(2px)}
+.nv-cta:focus-visible{outline:2px solid #9dbcf0;outline-offset:2px}
 .nv-burger{
   display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex:none;
   width:44px;height:44px;margin-left:4px;border-radius:12px;cursor:pointer;
@@ -267,5 +287,5 @@ html{scroll-padding-top:100px}
 @media (max-width:360px){.nv-bar .nv-cta svg{display:none}}
 @media (max-height:700px){.nv-sheet-links > a,.nv-acc-btn{padding:14px 6px;font-size:21px}}
 @media (prefers-reduced-motion:reduce){
-  .nv,.nv-bar,.nv-ind,.nv-mega,.nv-dim,.nv-lang-menu,.nv-sheet,.nv-sheet-links > a,.nv-acc-btn,.nv-acc-panel{transition:none!important}
+  .nv,.nv-bar,.nv-ind,.nv-mega,.nv-dim,.nv-lang-menu,.nv-sheet,.nv-sheet-links > a,.nv-acc-btn,.nv-acc-panel,.nv-cta,.nv-cta::after{transition:none!important}
 }
