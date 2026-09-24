@@ -1,6 +1,6 @@
 /* =============================================================
    EM Launchpad — interactieve effecten
-   • hero-film   : "de film van je dag" (homepage-hero)
+   • hero-lines  : "één draad", een bol uit bewegende lijnen (homepage)
    • pinned steps: werkwijze, één stap tegelijk in beeld
    • tellers     : cijfers die meelopen zodra ze in beeld komen
    • logoveld    : integratielogo's die traag door de sectie zweven
@@ -78,381 +78,246 @@
   });
 
   /* ============================================================
-     2. HERO — "de film van je dag"
-     Schermvullende foto's van één ondernemersdag (05:00–23:00). De
-     ondertitel vertelt wat het systeem intussen deed; de tijdlijn
-     onderaan speelt vanzelf af en je kunt er zelf door slepen. Het
-     licht verloopt mee via drie kleurlagen (alleen opacity, geen
-     blend-modes). Eén dag, daarna blijft de film op het echte
-     resultaat staan. Zonder JS toont de HTML één betekenisvolle still.
+     2. HERO — "één draad": een bol uit gewonden lijnen
+     Losse draden (je losse tools) trekken bij het laden samen tot
+     één rustig draaiende bol (één systeem). Lichtpulsen over de
+     draden zijn boekingen, oproepen en reviews die binnenkomen.
+     De muis kantelt de bol en duwt de draden zacht opzij.
+     Canvas 2D, geen libraries; stilstaand beeld bij reduced motion.
      ============================================================ */
-  (function heroFilm() {
-    var root = document.querySelector('[data-film]');
+  (function heroLines() {
+    var root = document.querySelector('[data-lines-hero]');
     if (!root) return;
-    document.documentElement.classList.add('film-js');
+    var cv = root.querySelector('.hl-canvas');
+    var stage = root.querySelector('.hl-stage');
+    var ctx = cv && cv.getContext && cv.getContext('2d');
+    if (!ctx || !stage) return;
+    var tags = [].slice.call(root.querySelectorAll('.hl-tag'));
+    /* [poolhoek, lengtegraad] van de labels op het oppervlak */
+    var TAGPOS = [[1.05, 0.2], [1.75, 1.45], [2.35, 2.75], [0.7, 3.9], [1.95, 5.05]];
 
-    /* de hero loopt tot achter de glazen navigatiebalk */
-    var spacer = document.querySelector('.nv-space');
-    if (spacer) spacer.style.display = 'none';
+    var W = 0, H = 0, dpr = 1, cx = 0, cy = 0, R = 0, small = null, strands = [];
+    var rotY = 0.8, tilt = 0, tiltT = 0, yaw = 0, yawT = 0, mx = -1e4, my = -1e4;
+    var u = reduce ? 1 : 0, introAt = -1, last = 0, raf = 0, running = false, onScreen = true;
+    var pulses = [], nextPulse = 0, tagW = [];
+    var CH = 8; /* punten per getekend stukje: diepte per stukje */
 
-    var BEATS = [
-      { t: 6 + 40 / 60, tag: 'Website + chatbot', what: 'Chatbot boekte een afspraak.', you: 'Jij sliep nog.', d: [1, 0, 0] },
-      { t: 8.25, tag: 'Automatisatie', what: 'Bevestiging verstuurd.', you: 'Automatisch. Jij tikte niets.', d: [0, 0, 0] },
-      { t: 11 + 20 / 60, tag: 'Voice agent', what: 'Gemiste oproep opgevangen.', you: 'Jij stond bij een klant.', d: [0, 1, 0] },
-      { t: 14 + 5 / 60, tag: 'Automatisatie', what: 'Herinnering verstuurd.', you: 'Jij hoefde niet te bellen.', d: [0, 0, 0] },
-      { t: 18.5, tag: 'Chatbot · Instagram', what: 'Nieuwe afspraak via Instagram.', you: 'Jij was al naar huis.', d: [1, 0, 0] },
-      { t: 21 + 10 / 60, tag: 'Reviews', what: 'Review binnengekomen.', you: 'Jij zat aan tafel.', d: [0, 0, 1] },
-      { t: 23, tag: 'Vandaag', what: '2 afspraken, 1 oproep opgevangen, 1 review.', you: 'En jij? Jij hoefde er niets voor te doen.', d: [0, 0, 0] }
-    ];
-    var LAST = BEATS.length - 1;
-    /* uur → [koel, warm, nacht, schaduw]; lineair ertussen */
-    var TINT = [[5, .16, 0, .06, .30], [7, .10, .04, 0, .28], [10, .03, .03, 0, .24], [13, 0, .02, 0, .24],
-      [16, 0, .08, 0, .26], [18.5, 0, .14, 0, .28], [20, .05, .08, .10, .34], [21.5, 0, .04, .18, .40], [23, 0, 0, .26, .48]];
-
-    var q = function (s) { return root.querySelector(s); };
-    var scenes = [].slice.call(root.querySelectorAll('.film-scene'));
-    var rig = q('.film-rig');
-    var cap = q('.film-cap'), capTag = q('.fc-tag'), capWhat = q('.fc-what'), capYou = q('.fc-you');
-    var clock = q('.film-clock'), track = q('.film-track'), tip = q('.ft-tip'), hint = q('.ft-hint');
-    var pips = [].slice.call(root.querySelectorAll('.ft-pips i'));
-    var tA = q('.fy-a'), tB = q('.fy-b'), tC = q('.fy-c');
-    var lA = q('.fy-al'), lB = q('.fy-bl'), lC = q('.fy-cl');
-    var play = q('.film-play'), real = q('.film-real');
-
-    var st = { t: 5, k: -1, scene: 0, gen: 0, timer: 0, live: false, userPaused: false, hidden: false, epi: false, dragging: false };
-
-    function hhmm(t) {
-      var m = Math.round(t * 60) % 1440;
-      return pad(Math.floor(m / 60)) + ':' + pad(m % 60);
+    function rng(seed) {
+      return function () {
+        seed = seed + 0x6D2B79F5 | 0;
+        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
     }
-    function pad(n) { return (n < 10 ? '0' : '') + n; }
-    function xOf(t) { return clamp((t - 5) / 18, 0, 1); }
-    function sceneAt(t) {
-      var i = 0;
-      each(scenes, function (s, n) { if (t >= parseFloat(s.getAttribute('data-from'))) i = n; });
-      return i;
-    }
-    function ready(s) {
-      var img = s.querySelector('img');
-      return img && img.getAttribute('src') && img.complete && img.naturalWidth > 0;
-    }
-    function setScene(i) {
-      if (i === st.scene || !ready(scenes[i])) return;
-      st.scene = i;
-      each(scenes, function (s, n) { s.classList.toggle('is-on', n === i); });
-    }
-    function tintAt(t) {
-      for (var i = 1; i < TINT.length; i++) {
-        if (t <= TINT[i][0]) {
-          var a = TINT[i - 1], b = TINT[i], p = (t - a[0]) / (b[0] - a[0]);
-          return [1, 2, 3, 4].map(function (j) { return a[j] + (b[j] - a[j]) * clamp(p, 0, 1); });
+
+    /* twee families spiralen, in tegengestelde richting gewonden: een kluwen */
+    function build() {
+      var r = rng(11);
+      var fam = small ? 4 : 6, n = small ? 220 : 340, turns = small ? 6 : 7.5;
+      strands = [];
+      for (var d = 0; d < 2; d++) {
+        var dir = d ? -1 : 1;
+        for (var s = 0; s < fam; s++) {
+          var ph = (s + d * 0.5) / fam * Math.PI * 2;
+          var P = new Float32Array(n * 2);
+          for (var i = 0; i < n; i++) {
+            var v = i / (n - 1);
+            P[i * 2] = 0.1 + v * (Math.PI - 0.2);
+            P[i * 2 + 1] = dir * turns * Math.PI * 2 * v + ph;
+          }
+          strands.push({
+            P: P, n: n, seed: r() * 20, loose: 0.8 + r() * 1.1, off: (r() - 0.5) * 1.4, lift: (r() - 0.5) * 0.9,
+            X: new Float32Array(n), Y: new Float32Array(n), Z: new Float32Array(n)
+          });
         }
       }
-      return TINT[TINT.length - 1].slice(1);
-    }
-    function setT(t) {
-      st.t = t;
-      var v = tintAt(t);
-      root.style.setProperty('--p', xOf(t).toFixed(4));
-      root.style.setProperty('--tc', v[0].toFixed(3));
-      root.style.setProperty('--tw', v[1].toFixed(3));
-      root.style.setProperty('--tn', v[2].toFixed(3));
-      root.style.setProperty('--shade', v[3].toFixed(3));
-      clock.textContent = hhmm(t);
-      setScene(sceneAt(t));
     }
 
-    function totals(k) {
-      var c = [0, 0, 0];
-      for (var i = 0; i <= k; i++) { c[0] += BEATS[i].d[0]; c[1] += BEATS[i].d[1]; c[2] += BEATS[i].d[2]; }
-      return c;
-    }
-    function tally(k) {
-      var c = totals(k), prev = [+tA.textContent, +tB.textContent, +tC.textContent];
-      [tA, tB, tC].forEach(function (el, i) {
-        if (c[i] > prev[i]) { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
-      });
-      tA.textContent = c[0]; lA.textContent = c[0] === 1 ? 'afspraak' : 'afspraken';
-      tB.textContent = c[1]; lB.textContent = c[1] === 1 ? 'oproep opgevangen' : 'oproepen opgevangen';
-      tC.textContent = c[2]; lC.textContent = c[2] === 1 ? 'review' : 'reviews';
-    }
-    function showBeat(k, animate) {
-      st.k = k;
-      each(pips, function (p, n) { p.classList.toggle('on', n <= k); });
-      tally(k);
-      if (k < 0) {
-        cap.classList.add('is-out');
-        track.setAttribute('aria-valuetext', hhmm(st.t));
-        return;
-      }
-      var b = BEATS[k];
-      capTag.textContent = hhmm(b.t) + ' · ' + b.tag;
-      capWhat.textContent = b.what;
-      capYou.textContent = '— ' + b.you;
-      cap.classList.remove('is-out');
-      if (animate) {
-        cap.classList.remove('is-in'); void cap.offsetWidth; cap.classList.add('is-in');
-        if (pips[k]) { pips[k].classList.remove('ping'); void pips[k].offsetWidth; pips[k].classList.add('ping'); }
-      }
-      track.setAttribute('aria-valuenow', b.t.toFixed(2));
-      track.setAttribute('aria-valuetext', hhmm(b.t) + '. ' + b.what + ' ' + b.you);
-    }
-    function beatAtOrBefore(t) {
-      var k = -1;
-      for (var i = 0; i <= LAST; i++) if (BEATS[i].t <= t + 0.001) k = i;
-      return k;
+    function size() {
+      var hr = root.getBoundingClientRect(), sr = stage.getBoundingClientRect();
+      if (!hr.width || !sr.width) return false;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = hr.width; H = hr.height;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cx = sr.left - hr.left + sr.width / 2;
+      cy = sr.top - hr.top + sr.height / 2;
+      R = sr.width / 2 * 0.9;
+      var s = W < 700;
+      if (s !== small) { small = s; build(); }
+      tagW = tags.map(function (el) { return el.offsetWidth; });
+      return true;
     }
 
-    /* ── reizen en afspelen ── */
-    function clearT() { clearTimeout(st.timer); }
-    function later(fn, ms) { clearT(); st.timer = setTimeout(fn, ms); }
-    function halt() { clearT(); st.gen++; }
-    function running() { return st.live && !reduce && !st.userPaused && !st.hidden && !st.epi && !st.dragging; }
-    function travel(to, ms, done) {
-      var my = ++st.gen, from = st.t;
-      tween(ms, function (p) { if (my === st.gen) setT(from + (to - from) * easeInOut(p)); },
-        function () { if (my === st.gen && done) done(); });
+    /* 3D → scherm, met adem, losse intro-lussen en de muisbult */
+    var cyw, syw, ct, st, e;
+    function prep() {
+      cyw = Math.cos(rotY + yaw); syw = Math.sin(rotY + yaw);
+      ct = Math.cos(tilt - 0.36); st = Math.sin(tilt - 0.36);
+      e = easeInOut(u);
     }
-    function step() {
-      if (!running()) return;
-      var next = st.k + 1;
-      if (next > LAST) { epilogue(); return; }
-      cap.classList.add('is-out');
-      later(function () {
-        travel(BEATS[next].t, 900, function () {
-          showBeat(next, true);
-          if (next === 1) showHint();
-          later(next === LAST ? epilogue : step, next === LAST ? 4200 : 3600);
-        });
-      }, 300);
+    function proj(x, y, z, out) {
+      var x1 = x * cyw + z * syw, z1 = -x * syw + z * cyw;
+      var y2 = y * ct - z1 * st, z2 = y * st + z1 * ct;
+      var f = 3.4 / (3.4 - z2);
+      out[0] = cx + x1 * R * f; out[1] = cy - y2 * R * f; out[2] = z2;
     }
-    function kick() { if (running()) step(); }
-    function holdThenPlay() { halt(); later(kick, 7000); }
-
-    function epilogue() {
-      halt();
-      st.epi = true;
-      setT(23);
-      showBeat(LAST, false);
-      root.classList.add('is-epi');
-      play.setAttribute('aria-label', 'Speel de dag opnieuw');
-      play.setAttribute('aria-pressed', 'false');
-    }
-    function restart() {
-      halt();
-      st.epi = false;
-      root.classList.remove('is-epi');
-      setT(5);
-      showBeat(-1, false);
-      play.classList.remove('is-paused');
-      play.setAttribute('aria-label', 'Pauzeer de dag');
-      play.setAttribute('aria-pressed', 'true');
-      st.userPaused = false;
-      later(kick, 500);
-    }
-    function leaveEpi() {
-      if (!st.epi) return;
-      st.epi = false;
-      root.classList.remove('is-epi');
-      play.setAttribute('aria-label', st.userPaused ? 'Speel de dag af' : 'Pauzeer de dag');
-    }
-
-    /* ── knoppen ── */
-    play.addEventListener('click', function () {
-      if (reduce) {                                   /* stap per stap */
-        if (st.epi) { leaveEpi(); setT(BEATS[0].t); showBeat(0, false); return; }
-        if (st.k >= LAST) { epilogue(); return; }
-        var n = st.k + 1; setT(BEATS[n].t); showBeat(n, false); return;
-      }
-      if (st.epi) { restart(); return; }
-      st.userPaused = !st.userPaused;
-      play.classList.toggle('is-paused', st.userPaused);
-      root.classList.toggle('is-paused', st.userPaused);
-      play.setAttribute('aria-pressed', st.userPaused ? 'false' : 'true');
-      play.setAttribute('aria-label', st.userPaused ? 'Speel de dag af' : 'Pauzeer de dag');
-      if (st.userPaused) halt(); else kick();
-    });
-    real.addEventListener('click', function () { epilogue(); });
-
-    /* ── slepen over de tijdlijn ── */
-    var down = null;
-    function tAtX(x) { var r = track.getBoundingClientRect(); return 5 + clamp((x - r.left) / r.width, 0, 1) * 18; }
-    function scrubTo(x) {
-      var t = tAtX(x);
-      setT(t);
-      var k = beatAtOrBefore(t);
-      if (k !== st.k) showBeat(k, false);
-      else if (k >= 0) cap.classList.remove('is-out');
-    }
-    function beginDrag(e) {
-      st.dragging = true;
-      halt();
-      leaveEpi();
-      rig.classList.add('is-scrub');
-      root.classList.add('is-scrub');
-      try { track.setPointerCapture(e.pointerId); } catch (err) {}
-      hideTip();
-      scrubTo(e.clientX);
-    }
-    track.addEventListener('pointerdown', function (e) {
-      if (e.button > 0) return;
-      down = { x: e.clientX, y: e.clientY, id: e.pointerId, type: e.pointerType };
-      if (e.pointerType === 'mouse') { e.preventDefault(); beginDrag(e); }
-    });
-    track.addEventListener('pointermove', function (e) {
-      if (st.dragging) { scrubTo(e.clientX); return; }
-      if (down && down.type !== 'mouse') {
-        var dx = Math.abs(e.clientX - down.x), dy = Math.abs(e.clientY - down.y);
-        if (dx > 8 && dx > dy) beginDrag(e);
-        else if (dy > 10) down = null;           /* verticaal: laat de pagina scrollen */
-        return;
-      }
-      if (canHover) showTip(e.clientX);
-    });
-    function endDrag(e) {
-      if (!st.dragging) {
-        if (down && e && down.type !== 'mouse' && Math.abs(e.clientX - down.x) < 8) {   /* tik = springen */
-          halt(); leaveEpi(); scrubTo(e.clientX); holdThenPlay();
+    var tmp = [0, 0, 0];
+    function project(time) {
+      prep();
+      var B = small ? 70 : 110, B2 = B * B, push = small ? 12 : 20;
+      for (var k = 0; k < strands.length; k++) {
+        var S = strands[k], P = S.P, n = S.n, lo0 = 1 - e;
+        for (var i = 0; i < n; i++) {
+          var phi = P[i * 2], th = P[i * 2 + 1], v = i / (n - 1);
+          var br = 1 + 0.034 * Math.sin(3 * th + time * 0.9 + S.seed) * Math.sin(2 * phi - time * 0.55);
+          var rr = br * (1 + lo0 * (S.loose + 0.55 * Math.sin(S.seed + v * 5 + time * 0.4)));
+          var sp = Math.sin(phi);
+          proj(rr * sp * Math.cos(th) + lo0 * S.off, rr * Math.cos(phi) * (1 - lo0 * 0.3) + lo0 * S.lift, rr * sp * Math.sin(th), tmp);
+          var X = tmp[0], Y = tmp[1];
+          var dx = X - mx, dy = Y - my, d2 = dx * dx + dy * dy;
+          if (d2 < B2 && d2 > 0.01) {
+            var dd = Math.sqrt(d2), kk = (1 - dd / B); kk = kk * kk * push;
+            X += dx / dd * kk; Y += dy / dd * kk;
+          }
+          S.X[i] = X; S.Y[i] = Y; S.Z[i] = tmp[2];
         }
-        down = null;
-        return;
       }
-      st.dragging = false;
-      down = null;
-      rig.classList.remove('is-scrub');
-      root.classList.remove('is-scrub');
-      if (st.k >= 0) cap.classList.remove('is-out');
-      holdThenPlay();
     }
-    track.addEventListener('pointerup', endDrag);
-    track.addEventListener('pointercancel', function () { st.dragging = false; down = null; rig.classList.remove('is-scrub'); root.classList.remove('is-scrub'); holdThenPlay(); });
-    track.addEventListener('pointerleave', function () { if (!st.dragging) hideTip(); });
-    /* losgelaten buiten de tijdlijn (of buiten het venster): slepen netjes afronden */
-    track.addEventListener('lostpointercapture', function () { if (st.dragging) endDrag(); });
-    window.addEventListener('pointerup', function () { if (st.dragging) endDrag(); });
-    window.addEventListener('blur', function () { if (st.dragging) endDrag(); });
 
-    /* zweeftip: het dichtstbijzijnde moment onder de muis */
-    function showTip(x) {
-      if (!tip) return;
-      var r = track.getBoundingClientRect(), best = -1, bd = 18;
-      for (var i = 0; i < LAST; i++) {
-        var px = r.left + xOf(BEATS[i].t) * r.width, d = Math.abs(px - x);
-        if (d < bd) { bd = d; best = i; }
+    function depth(z) { var d = (z + 1.2) / 2.4; return d < 0 ? 0 : (d > 1 ? 1 : d); }
+
+    function draw(dt) {
+      ctx.clearRect(0, 0, W, H);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var fade = clamp(0.25 + u * 1.2, 0, 1);
+      for (var k = 0; k < strands.length; k++) {
+        var S = strands[k], X = S.X, Y = S.Y, Z = S.Z, n = S.n;
+        for (var i = 0; i < n - 1; i += CH) {
+          var j = Math.min(i + CH, n - 1);
+          var dp = depth((Z[i] + Z[j]) * 0.5);
+          var a = (0.03 + 0.5 * dp * dp) * fade;
+          ctx.strokeStyle = 'rgba(236,232,222,' + a.toFixed(3) + ')';
+          ctx.lineWidth = 0.55 + 0.75 * dp;
+          ctx.beginPath();
+          ctx.moveTo(X[i], Y[i]);
+          for (var q = i + 1; q <= j; q++) ctx.lineTo(X[q], Y[q]);
+          ctx.stroke();
+        }
       }
-      if (best < 0) { hideTip(); return; }
-      tip.textContent = hhmm(BEATS[best].t) + ' · ' + BEATS[best].what;
-      tip.style.setProperty('--x', xOf(BEATS[best].t).toFixed(4));
-      tip.classList.add('show');
+      /* lichtpulsen: een boeking, oproep of review die binnenkomt */
+      for (var p = pulses.length - 1; p >= 0; p--) {
+        var pu = pulses[p], T = strands[pu.k];
+        if (!T) { pulses.splice(p, 1); continue; }
+        pu.pos += pu.sp * dt;
+        var head = Math.floor(pu.pos), tail = Math.max(0, head - pu.len);
+        if (tail >= T.n - 1) { pulses.splice(p, 1); continue; }
+        head = Math.min(head, T.n - 1);
+        if (head - tail < 2) continue;
+        var ad = depth(T.Z[head]), A = (0.25 + 0.75 * ad) * fade;
+        var g = ctx.createLinearGradient(T.X[tail], T.Y[tail], T.X[head], T.Y[head]);
+        g.addColorStop(0, 'rgba(47,116,224,0)');
+        g.addColorStop(0.55, 'rgba(47,116,224,' + (A * 0.8).toFixed(3) + ')');
+        g.addColorStop(1, 'rgba(62,214,150,' + A.toFixed(3) + ')');
+        ctx.strokeStyle = g;
+        ctx.lineWidth = 1.2 + 1.2 * ad;
+        ctx.beginPath();
+        ctx.moveTo(T.X[tail], T.Y[tail]);
+        for (var w = tail + 1; w <= head; w++) ctx.lineTo(T.X[w], T.Y[w]);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(120,236,180,' + A.toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(T.X[head], T.Y[head], 1.6 + 1.4 * ad, 0, 6.2832); ctx.fill();
+      }
     }
-    function hideTip() { if (tip) tip.classList.remove('show'); }
 
-    /* eenmalige hint dat je kunt slepen */
-    function showHint() {
-      if (!hint || !canHover || reduce) return;
-      try { if (sessionStorage.getItem('em_film_hint')) return; sessionStorage.setItem('em_film_hint', '1'); } catch (err) {}
-      setTimeout(function () {
-        hint.classList.add('show');
-        setTimeout(function () { hint.classList.remove('show'); }, 4000);
-      }, 1500);
-    }
-
-    /* toetsenbord op de schuif */
-    track.addEventListener('keydown', function (e) {
-      var k = st.k;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') k = Math.min(LAST, st.k + 1);
-      else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') k = Math.max(-1, st.k - 1);
-      else if (e.key === 'Home') k = -1;
-      else if (e.key === 'End') k = LAST;
-      else return;
-      e.preventDefault();
-      halt(); leaveEpi();
-      setT(k < 0 ? 5 : BEATS[k].t);
-      showBeat(k, false);
-      if (!reduce) holdThenPlay();
-    });
-
-    /* ── "nu"-streepje op de echte Belgische tijd ── */
-    (function () {
-      var now = q('.ft-now');
-      if (!now) return;
-      var h, m;
-      try {
-        var parts = new Intl.DateTimeFormat('nl-BE', { timeZone: 'Europe/Brussels', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
-        parts.forEach(function (p) { if (p.type === 'hour') h = +p.value; if (p.type === 'minute') m = +p.value; });
-      } catch (err) { var d = new Date(); h = d.getHours(); m = d.getMinutes(); }
-      if (h == null || h < 5 || h >= 23) return;
-      now.style.setProperty('--x', xOf(h + m / 60).toFixed(4));
-      now.title = 'Nu: ' + pad(h) + ':' + pad(m);
-      now.hidden = false;
-    })();
-
-    /* ── de overige scènes pas laden als de pagina er is ── */
-    function loadScenes() {
-      each(scenes, function (s) {
-        var img = s.querySelector('img'), src = s.querySelector('source');
-        if (!img || img.getAttribute('src')) return;
-        if (src && src.getAttribute('data-srcset')) src.setAttribute('srcset', src.getAttribute('data-srcset'));
-        img.addEventListener('load', function () { if (!st.dragging) setScene(sceneAt(st.t)); });
-        img.addEventListener('error', function () { s.setAttribute('data-broken', ''); });
-        if (img.getAttribute('data-srcset')) img.setAttribute('srcset', img.getAttribute('data-srcset'));
-        img.setAttribute('src', img.getAttribute('data-src'));
+    function placeTags() {
+      prep();
+      var show = clamp((u - 0.8) / 0.2, 0, 1);
+      each(tags, function (el, i) {
+        var tp = TAGPOS[i % TAGPOS.length], sp = Math.sin(tp[0]), rr = 1.16;
+        proj(rr * sp * Math.cos(tp[1]), rr * Math.cos(tp[0]), rr * sp * Math.sin(tp[1]), tmp);
+        var vis = clamp((tmp[2] + 0.1) / 0.45, 0, 1) * show;
+        var hw = (tagW[i] || 90) / 2 + 10;                    /* label blijft binnen het scherm */
+        tmp[0] = clamp(tmp[0], hw, W - hw);
+        el.style.transform = 'translate(' + tmp[0].toFixed(1) + 'px,' + tmp[1].toFixed(1) + 'px) translate(-50%,-50%) scale(' + (0.88 + 0.12 * vis).toFixed(3) + ')';
+        el.style.opacity = vis.toFixed(3);
       });
     }
-    if (document.readyState === 'complete') setTimeout(loadScenes, 300);
-    else window.addEventListener('load', function () { setTimeout(loadScenes, 300); });
 
-    /* ── pauzeren buiten beeld of in een ander tabblad ── */
-    function setHidden(h) {
-      if (h === st.hidden) return;
-      st.hidden = h;
-      root.classList.toggle('is-away', h);
-      if (h) halt(); else if (!reduce) later(kick, 400);
+    function frame(ts) {
+      raf = 0;
+      if (!running) return;
+      var time = ts / 1000, dt = last ? Math.min(0.05, time - last) : 0.016;
+      last = time;
+      if (introAt >= 0 && u < 1) u = clamp((time - introAt) / 2.8, 0, 1);
+      rotY += dt * 0.16;
+      tilt += (tiltT - tilt) * Math.min(1, dt * 3);
+      yaw += (yawT - yaw) * Math.min(1, dt * 3);
+      if (u >= 1 && time > nextPulse && pulses.length < (small ? 3 : 5)) {
+        var k = Math.floor(Math.random() * strands.length);
+        pulses.push({ k: k, pos: Math.random() * strands[k].n * 0.4, sp: (small ? 70 : 95) + Math.random() * 70, len: small ? 22 : 30 });
+        nextPulse = time + 0.6 + Math.random() * 0.9;
+      }
+      project(time);
+      draw(dt);
+      placeTags();
+      raf = requestAnimationFrame(frame);
+    }
+    function run() {
+      if (running || reduce || !onScreen || document.hidden) return;
+      running = true; last = 0;
+      raf = requestAnimationFrame(frame);
+    }
+    function halt() { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; }
+    function still() { project(0); draw(0); placeTags(); }
+
+    if (!size()) return;
+    root.classList.add('is-js');
+
+    if (reduce) {
+      root.classList.add('is-live');
+      u = 1; still();
+      window.addEventListener('resize', function () { if (size()) still(); });
+      return;
+    }
+
+    /* muis: kantelen en de draden opzij duwen */
+    if (canHover) {
+      root.addEventListener('pointermove', function (ev) {
+        var r = root.getBoundingClientRect();
+        mx = ev.clientX - r.left; my = ev.clientY - r.top;
+        tiltT = clamp((my - cy) / (H || 1), -0.5, 0.5) * 0.55;
+        yawT = clamp((mx - cx) / (W || 1), -0.5, 0.5) * 0.9;
+      });
+      root.addEventListener('pointerleave', function () { mx = my = -1e4; tiltT = 0; yawT = 0; });
+    }
+
+    if ('ResizeObserver' in window) {
+      var rq = false;
+      new ResizeObserver(function () {
+        if (rq) return; rq = true;
+        requestAnimationFrame(function () { rq = false; size(); if (!running) still(); });
+      }).observe(root);
+    } else {
+      window.addEventListener('resize', function () { size(); });
     }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
-        each(entries, function (e) { setHidden(e.intersectionRatio < 0.25 || document.hidden); });
-      }, { threshold: [0, 0.25, 0.5] }).observe(root);
+        each(entries, function (en) { onScreen = en.isIntersecting; if (onScreen) run(); else halt(); });
+      }).observe(root);
     }
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) setHidden(true);
-      else {
-        var r = root.getBoundingClientRect();
-        setHidden(r.bottom < window.innerHeight * 0.25 || r.top > window.innerHeight * 0.75);
-      }
-    });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) halt(); else run(); });
 
-    /* tekst vervaagt zacht als je de hero uit scrolt (alleen desktop) */
-    if (!reduce) {
-      onScroll(function () {
-        if (window.innerWidth <= 700) { root.style.removeProperty('--fade'); return; }
-        var h = root.offsetHeight || 1;
-        root.style.setProperty('--fade', clamp(1 - (window.scrollY || 0) / (h * 0.6), 0, 1).toFixed(3));
-      });
-    }
-
-    /* ── start ── */
-    if (reduce) {
-      root.classList.add('is-live', 'is-rm', 'is-open');
-      play.setAttribute('aria-label', 'Volgend moment');
-      setT(BEATS[0].t);
-      showBeat(0, false);
-      return;
-    }
-    setT(5);
-    showBeat(-1, false);
-    function start() {
-      st.live = true;
-      root.classList.add('is-live', 'is-open');
-      later(kick, 1200);
-    }
+    /* de draden trekken samen zodra de hero echt zichtbaar is (na de loader) */
+    function begin() { root.classList.add('is-live'); introAt = performance.now() / 1000 + 0.15; run(); }
+    still();
+    run();
     var loader = document.getElementById('loader');
-    if (!loader) {                      /* terugkerend bezoek: meteen, zonder filmbalken */
-      root.classList.add('no-bars');
-      setTimeout(start, 120);
-    } else {
+    if (!loader) setTimeout(begin, 80);
+    else {
       var started = false;
-      var go = function () { if (started) return; started = true; if (mo) mo.disconnect(); setTimeout(start, 250); };
+      var go = function () { if (started) return; started = true; if (mo) mo.disconnect(); setTimeout(begin, 200); };
       var mo = 'MutationObserver' in window ? new MutationObserver(function () {
         if (!document.body.contains(loader) || loader.classList.contains('done')) go();
       }) : null;
