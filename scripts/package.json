@@ -1,0 +1,13 @@
+{
+  "name": "emlaunchpad-scripts",
+  "private": true,
+  "description": "Hulpscripts voor emlaunchpad.com (EM Times-generator, build, IndexNow). Staat bewust in scripts/ zodat de site-root statisch blijft voor Cloudflare.",
+  "type": "module",
+  "scripts": {
+    "emtimes:build": "node build-emtimes.mjs",
+    "emtimes:post": "node generate-emtimes-post.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0"
+  }
+}

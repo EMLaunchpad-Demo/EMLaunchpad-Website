@@ -17,27 +17,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repo uitchecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Node opzetten
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
 
-      - name: Artikel genereren
+      - name: Afhankelijkheden installeren
+        run: npm ci --prefix scripts --no-audit --no-fund
+
+      - name: Artikel genereren + EM Times opbouwen
+        id: gen
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/generate-emtimes-post.mjs
 
       - name: Committen & pushen
+        env:
+          TITLE: ${{ steps.gen.outputs.title }}
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name  "EM Times Bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "EM Times: nieuw artikel ($(date +%F))"
+            git commit -m "EM Times: $TITLE"
             git push
             echo "Gepusht naar main."
           else
             echo "Geen wijzigingen — niets gepusht."
           fi
+
+      - name: Aanmelden bij zoekmachines (IndexNow)
+        if: steps.gen.outputs.path != ''
+        continue-on-error: true   # een mislukte melding mag de publicatie niet laten falen
+        run: node scripts/indexnow.mjs "${{ steps.gen.outputs.path }}" /emtimes/
