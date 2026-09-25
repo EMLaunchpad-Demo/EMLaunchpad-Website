@@ -768,6 +768,8 @@
       { p: 0.74, ax: 20, ay: 82, bx: 84, by: 20,  ao: 0.9, bo: 0.8 },
       { p: 1,    ax: 40, ay: 34, bx: 62, by: 40,  ao: 1,   bo: 1 }
     ];
+    /* een pagina kan een eigen route meegeven: <div data-sky data-keys='[…]'> */
+    try { var own = JSON.parse(sky.getAttribute('data-keys') || 'null'); if (own && own.length > 1) K = own; } catch (e) {}
     var KEYS = ['ax', 'ay', 'bx', 'by', 'ao', 'bo'];
     function target() {
       var h = document.documentElement.scrollHeight - window.innerHeight;
