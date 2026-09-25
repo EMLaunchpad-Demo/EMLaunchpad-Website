@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>EM Times — EM Launchpad</title>
+<link>https://emlaunchpad.com/emtimes/</link>
+<atom:link href="https://emlaunchpad.com/emtimes/feed.xml" rel="self" type="application/rss+xml"/>
+<description>Praktische inzichten over AI, automatisatie en websites voor Belgische bedrijven.</description>
+<language>nl-BE</language>
+<lastBuildDate>Tue, 14 Jul 2026 07:00:00 GMT</lastBuildDate>
+<item>
+<title>Voice agents: laat AI de telefoon opnemen</title>
+<link>https://emlaunchpad.com/emtimes/ai/voice-agents-laat-ai-de-telefoon-opnemen/</link>
+<guid isPermaLink="true">https://emlaunchpad.com/emtimes/ai/voice-agents-laat-ai-de-telefoon-opnemen/</guid>
+<pubDate>Tue, 14 Jul 2026 07:00:00 GMT</pubDate>
+<category>AI-chatbots &amp; voice</category>
+<description>Wat een AI-telefonist wél en niet kan aan de telefoon, hoe hij afspraken boekt en vragen beantwoordt — en wanneer het loont voor een lokaal bedrijf.</description>
+</item>
+<item>
+<title>Chatbot op WhatsApp, Instagram én je site: één brein</title>
+<link>https://emlaunchpad.com/emtimes/ai/chatbot-whatsapp-instagram-website-een-brein/</link>
+<guid isPermaLink="true">https://emlaunchpad.com/emtimes/ai/chatbot-whatsapp-instagram-website-een-brein/</guid>
+<pubDate>Mon, 13 Jul 2026 07:00:00 GMT</pubDate>
+<category>AI-chatbots &amp; voice</category>
+<description>Eén AI achter al je kanalen: waarom dat slimmer is dan losse tools — consistente antwoorden, één overzicht en continuïteit voor je klant.</description>
+</item>
+<item>
+<title>5 taken die elke KMO vandaag kan automatiseren</title>
+<link>https://emlaunchpad.com/emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/</link>
+<guid isPermaLink="true">https://emlaunchpad.com/emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/</guid>
+<pubDate>Sun, 12 Jul 2026 07:00:00 GMT</pubDate>
+<category>Automatisering</category>
+<description>Een praktische lijst met terugkerende taken die je meteen uit handen kunt geven: opvolging, afspraken, reviews, facturen en veelgestelde vragen.</description>
+</item>
+<item>
+<title>Waarom je website traag is (en wat het je kost)</title>
+<link>https://emlaunchpad.com/emtimes/websites/waarom-je-website-traag-is/</link>
+<guid isPermaLink="true">https://emlaunchpad.com/emtimes/websites/waarom-je-website-traag-is/</guid>
+<pubDate>Sat, 11 Jul 2026 07:00:00 GMT</pubDate>
+<category>Websites</category>
+<description>Een trage website kost je klanten én Google-posities. De meest voorkomende oorzaken van traagheid — en wat je er concreet aan doet.</description>
+</item>
+<item>
+<title>Waarom AI-chatbots werken voor lokale Belgische bedrijven</title>
+<link>https://emlaunchpad.com/emtimes/ai/waarom-ai-chatbots-werken-voor-lokale-bedrijven/</link>
+<guid isPermaLink="true">https://emlaunchpad.com/emtimes/ai/waarom-ai-chatbots-werken-voor-lokale-bedrijven/</guid>
+<pubDate>Thu, 09 Jul 2026 07:00:00 GMT</pubDate>
+<category>AI-chatbots &amp; voice</category>
+<description>Van gemiste telefoontjes naar geboekte afspraken: hoe een chatbot je klantcontact overneemt zonder dat het onpersoonlijk wordt — met concrete cijfers.</description>
+</item>
+</channel>
+</rss>

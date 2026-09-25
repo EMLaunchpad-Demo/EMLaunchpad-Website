@@ -1,240 +1,189 @@
-/* EM Times — eigen nav + footer.
-   Booking-modal, cookie-bar, reveal & page-transitions komen uit site.js. */
-(function(){
-  var body = document.body;
-  var R = (body && body.dataset.root) || '';   // pad naar site-root (bv. "../../")
-  var topic = (body && body.dataset.topic) || '';
+/* EM Times — interactie bovenop de gedeelde site-nav (site.js).
+   · zoekvenster (knop, "/" of ⌘/Ctrl+K) over window.ET_ARTICLES
+   · categoriebalk + zijbalk schuiven mee met de nav die zich verstopt
+   · actieve inhoudstafel en "kopieer link" op artikels */
+(function () {
+  'use strict';
+  var doc = document, root = doc.documentElement;
+  var R = (doc.body && doc.body.dataset.root) || '';
+  var ARTS = window.ET_ARTICLES || [];
+  var ICO_SEARCH = '<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>';
 
-  // ── logo (external SVG uit assets) ──
-  var LOGO = R + 'assets/logo-em.png';
-  var HOME = R + 'index.html';          // hoofdsite home
-  var HUB  = R + 'emtimes/index.html';  // EM Times hub
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
 
-  var TOPICS = [
-    { key:'ai',    label:'AI',             href: R+'emtimes/ai/index.html' },
-    { key:'auto',  label:'Automatisering', href: R+'emtimes/automatisering/index.html' },
-    { key:'web',   label:'Websites',       href: R+'emtimes/websites/index.html' },
-    { key:'groei', label:'Groei',          href: HUB+'#onderwerpen', soon:true }
-  ];
+  /* ── sticky offset: volg de nav (die verdwijnt bij naar beneden scrollen) ── */
+  function syncTop() {
+    var nv = doc.getElementById('nv');
+    var top = 0;
+    if (nv && !nv.classList.contains('is-hidden')) {
+      var r = nv.getBoundingClientRect();
+      top = Math.max(0, Math.round(r.top + r.height));
+    }
+    root.style.setProperty('--emt-top', top + 'px');
+    onScroll();
+  }
+  function watchNav() {
+    var nv = doc.getElementById('nv');
+    if (!nv) return;
+    new MutationObserver(syncTop).observe(nv, { attributes: true, attributeFilter: ['class'] });
+    syncTop();
+  }
+  window.addEventListener('resize', syncTop, { passive: true });
+  if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', watchNav); else watchNav();
 
-  function ico(path){ return '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+path+'</svg>'; }
-  var HOMEICO = ico('<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>');
-  var ARROW   = ico('<path d="M3 8h10M9 4l4 4-4 4"/>');
-  var CHEV    = ico('<path d="M9 6l6 6-6 6"/>');
-  var CLOSE   = ico('<path d="M18 6L6 18M6 6l12 12"/>');
-  var SEARCH  = ico('<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>');
+  /* ── zoekvenster ── */
+  var sr, input, list, lastFocus, results = [], sel = 0;
 
-  var topLinks = TOPICS.map(function(t){
-    return '<a href="'+t.href+'"'+(t.key===topic?' class="on"':'')+'>'+t.label+'</a>';
-  }).join('');
-
-  var mobLinks = TOPICS.map(function(t){
-    return '<a href="'+t.href+'">'+t.label+(t.soon?' <small>binnenkort</small>':'')+CHEV+'</a>';
-  }).join('');
-
-  var NAV =
-   '<div class="et-nav-in">'
-   + '<a class="et-brand" href="'+HUB+'" aria-label="EM Times home">'
-     + '<span class="chip"><img src="'+LOGO+'" alt="EM Launchpad"/></span>'
-     + '<span class="wm"><b>EM&nbsp;Times</b><span>// kennishub</span></span>'
-   + '</a>'
-   + '<nav class="et-topics" aria-label="Onderwerpen">'+topLinks+'</nav>'
-   + '<div class="et-nav-right">'
-     + '<button class="et-searchbtn" id="etSearchBtn" type="button" aria-label="Zoek een artikel">'+SEARCH+'</button>'
-     + '<a class="et-home" href="'+HOME+'">'+HOMEICO+'<span>emlaunchpad.com</span></a>'
-     + '<a class="et-navcta" href="'+R+'Contact.html" data-book>Plan een gesprek'+ARROW+'</a>'
-     + '<button class="et-burger" id="etBurger" type="button" aria-label="Menu"><span></span><span></span><span></span></button>'
-   + '</div>'
-   + '</div>'
-   + '<div class="et-mob" id="etMob" aria-hidden="true">'
-     + '<div class="et-mob-top">'
-       + '<a class="et-brand" href="'+HUB+'"><span class="chip"><img src="'+LOGO+'" alt="EM Launchpad"/></span><span class="wm"><b>EM&nbsp;Times</b><span>// kennishub</span></span></a>'
-       + '<button class="et-mob-close" id="etMobClose" type="button" aria-label="Sluiten">'+CLOSE+'</button>'
-     + '</div>'
-     + '<button class="et-herosearch" id="etMobSearch" type="button" style="max-width:none;margin:0 0 20px">'+SEARCH+'<span class="ph">Zoek een artikel…</span></button>'
-     + '<nav class="et-mob-links" aria-label="Onderwerpen">'
-       + '<a href="'+HUB+'">Alle artikels'+CHEV+'</a>'
-       + mobLinks
-     + '</nav>'
-     + '<div class="et-mob-foot">'
-       + '<a class="et-navcta" href="'+R+'Contact.html" data-book>Plan een gratis gesprek'+ARROW+'</a>'
-       + '<a class="et-home" href="'+HOME+'">'+HOMEICO+'<span>Terug naar emlaunchpad.com</span></a>'
-     + '</div>'
-   + '</div>';
-
-  var SOC =
-    '<a href="https://be.linkedin.com/in/ebert-vanbrabant-077b5326a" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21H9z"/></svg></a>'
-   +'<a href="https://www.instagram.com/em_launchpad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="var(--mid)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="var(--mid)" stroke="none"/></svg></a>'
-   +'<a href="https://www.youtube.com/@emlaunchpad" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 001.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 001.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>'
-   +'<a href="https://www.facebook.com/profile.php?id=61564020189008" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0022 12z"/></svg></a>';
-
-  var FOOT =
-   '<div class="et-foot-in">'
-   + '<div class="et-foot-top">'
-     + '<div class="et-foot-brand">'
-       + '<div class="mast"><span class="chip"><img src="'+LOGO+'" alt="EM Launchpad"/></span><span class="wm">EM&nbsp;Times</span></div>'
-       + '<p>De kennishub van EM Launchpad. Praktische inzichten over AI, automatisatie en websites voor groeiende Belgische bedrijven.</p>'
-       + '<div class="et-foot-soc">'+SOC+'</div>'
-     + '</div>'
-     + '<div class="et-foot-col">'
-       + '<h5>// onderwerpen</h5>'
-       + '<a href="'+R+'emtimes/ai/index.html">AI &amp; chatbots</a>'
-       + '<a href="'+R+'emtimes/automatisering/index.html">Automatisering</a>'
-       + '<a href="'+R+'emtimes/websites/index.html">Websites</a>'
-       + '<a class="soon" href="'+HUB+'#onderwerpen">Groei &amp; marketing</a>'
-     + '</div>'
-     + '<div class="et-foot-col">'
-       + '<h5>// em launchpad</h5>'
-       + '<a href="'+HOME+'">Hoofdsite</a>'
-       + '<a href="'+R+'Diensten.html">Diensten</a>'
-       + '<a href="'+R+'Over ons.html">Over ons</a>'
-       + '<a href="'+R+'Contact.html">Contact</a>'
-     + '</div>'
-     + '<div class="et-backsite">'
-       + '<span class="txt">EM Times is onderdeel van <b>EM Launchpad</b> — het Belgische AI-bureau uit Limburg.</span>'
-       + '<a href="'+HOME+'">'+HOMEICO+'Terug naar de hoofdsite</a>'
-     + '</div>'
-   + '</div>'
-   + '<div class="et-foot-bot">'
-     + '<span>© 2026 <b>EM&nbsp;LAUNCHPAD</b> · <a href="'+R+'privacy.html">privacy</a></span>'
-     + '<span><span class="mint">▲</span> GEMAAKT_IN_LIMBURG · BELGIË</span>'
-   + '</div>'
-   + '</div>';
-
-  var navEl = document.getElementById('et-nav');
-  if(navEl){ navEl.className='et-nav'; navEl.innerHTML=NAV; }
-  var footEl = document.getElementById('et-foot');
-  if(footEl){ footEl.className='et-foot'; footEl.innerHTML=FOOT; }
-
-  // burger
-  var burger = document.getElementById('etBurger');
-  var mob = document.getElementById('etMob');
-  if(burger && mob){
-    var closeBtn = document.getElementById('etMobClose');
-    var lockY = 0;
-    function open(){ lockY=window.scrollY||0; mob.classList.add('open'); mob.setAttribute('aria-hidden','false');
-      document.body.style.position='fixed'; document.body.style.top=(-lockY)+'px'; document.body.style.left='0'; document.body.style.right='0'; }
-    function close(){ mob.classList.remove('open'); mob.setAttribute('aria-hidden','true');
-      document.body.style.position=''; document.body.style.top=''; document.body.style.left=''; document.body.style.right=''; window.scrollTo(0,lockY); }
-    burger.addEventListener('click',open);
-    if(closeBtn) closeBtn.addEventListener('click',close);
-    mob.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',close); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape' && mob.classList.contains('open')) close(); });
+  function build() {
+    sr = doc.createElement('div');
+    sr.className = 'emt-sr';
+    sr.setAttribute('role', 'dialog');
+    sr.setAttribute('aria-modal', 'true');
+    sr.setAttribute('aria-label', 'Zoek in EM Times');
+    sr.innerHTML =
+      '<div class="emt-sr-panel">' +
+        '<div class="emt-sr-head">' + ICO_SEARCH +
+          '<input type="search" autocomplete="off" spellcheck="false" placeholder="Zoek een artikel, onderwerp of trefwoord…" aria-label="Zoekterm" aria-controls="emtSrList"/>' +
+          '<button class="emt-sr-close" type="button" aria-label="Sluiten"><kbd>esc</kbd></button>' +
+        '</div>' +
+        '<div class="emt-sr-lbl" id="emtSrLbl"></div>' +
+        '<ul class="emt-sr-list" id="emtSrList" role="listbox" aria-labelledby="emtSrLbl"></ul>' +
+        '<div class="emt-sr-foot"><span><kbd>↑</kbd><kbd>↓</kbd> kiezen</span><span><kbd>enter</kbd> openen</span><span><kbd>esc</kbd> sluiten</span></div>' +
+      '</div>';
+    doc.body.appendChild(sr);
+    input = sr.querySelector('input');
+    list = sr.querySelector('.emt-sr-list');
+    sr.addEventListener('click', function (e) { if (e.target === sr) close(); });
+    sr.querySelector('.emt-sr-close').addEventListener('click', close);
+    input.addEventListener('input', function () { sel = 0; render(); });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
+      else if (e.key === 'Enter' && results[sel]) { e.preventDefault(); location.href = R + results[sel].path; }
+    });
   }
 
-  /* ── ZOEKEN ── */
-  function esc(s){ return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-  function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
-  function highlight(text, toks){
+  function search(q) {
+    var terms = norm(q).split(/\s+/).filter(Boolean);
+    if (!terms.length) return ARTS.slice(0, 6);
+    return ARTS.map(function (a) {
+      var f = { t: norm(a.title), c: norm(a.topic), g: norm((a.tags || []).join(' ')), x: norm(a.excerpt) };
+      var score = 0;
+      for (var i = 0; i < terms.length; i++) {
+        var w = terms[i], s = (f.t.indexOf(w) > -1 ? 6 : 0) + (f.c.indexOf(w) > -1 ? 3 : 0) + (f.g.indexOf(w) > -1 ? 3 : 0) + (f.x.indexOf(w) > -1 ? 1 : 0);
+        if (!s) return null;
+        score += s;
+      }
+      return { a: a, s: score };
+    }).filter(Boolean).sort(function (p, q2) { return q2.s - p.s; }).map(function (r) { return r.a; });
+  }
+
+  function mark(text, q) {
     var out = esc(text);
-    toks.forEach(function(t){
-      if(!t) return;
-      var re = new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
-      out = out.replace(re,'<mark>$1</mark>');
+    norm(q).split(/\s+/).filter(function (w) { return w.length > 1; }).forEach(function (w) {
+      out = out.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'), '<mark>$1</mark>');
     });
     return out;
   }
-  function search(q){
-    var arts = window.ET_ARTICLES || [];
-    var query = norm(q).trim();
-    if(!query) return arts.slice();
-    var toks = query.split(/\s+/);
-    var scored = [];
-    arts.forEach(function(a){
-      var titleN = norm(a.title);
-      var hay = norm([a.title, a.excerpt, a.topic, (a.tags||[]).join(' ')].join(' '));
-      var ok = true, score = 0;
-      toks.forEach(function(t){
-        if(hay.indexOf(t) === -1) ok = false;
-        if(titleN.indexOf(t) !== -1) score += 3; else if(hay.indexOf(t) !== -1) score += 1;
-      });
-      if(ok) scored.push({ a:a, score:score });
-    });
-    scored.sort(function(x,y){ return y.score - x.score; });
-    return scored.map(function(o){ return o.a; });
-  }
 
-  var overlay = document.createElement('div');
-  overlay.className = 'et-search';
-  overlay.id = 'etSearch';
-  overlay.innerHTML =
-      '<div class="et-search-box" role="dialog" aria-modal="true" aria-label="Zoek een artikel">'
-    +   '<div class="et-search-in">' + SEARCH
-    +     '<input type="text" id="etSearchInput" placeholder="Zoek een artikel, onderwerp of trefwoord…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Zoekterm"/>'
-    +     '<button class="esc" id="etSearchEsc" type="button">esc</button>'
-    +   '</div>'
-    +   '<div class="et-sr-list" id="etSearchList"></div>'
-    +   '<div class="et-sr-foot"><span><b>↑</b><b>↓</b> navigeren</span><span><b>↵</b> openen</span><span><b>esc</b> sluiten</span></div>'
-    + '</div>';
-  document.body.appendChild(overlay);
-
-  var inputEl = overlay.querySelector('#etSearchInput');
-  var listEl  = overlay.querySelector('#etSearchList');
-  var isOpen = false;
-
-  function renderResults(q){
-    var list = search(q);
-    var toks = norm(q).trim().split(/\s+/).filter(Boolean);
-    if(!list.length){
-      listEl.innerHTML = '<div class="et-sr-empty">Geen artikels gevonden'
-        + (q.trim() ? ' voor “<b>'+esc(q.trim())+'</b>”' : '')
-        + '.<br>Probeer een ander zoekwoord.</div>';
+  function render() {
+    var q = input.value.trim();
+    results = search(q);
+    sr.querySelector('.emt-sr-lbl').textContent = q ? (results.length ? results.length + (results.length === 1 ? ' resultaat' : ' resultaten') : '') : 'Nieuwste artikels';
+    if (!results.length) {
+      list.innerHTML = '<li class="emt-sr-empty">Geen artikels gevonden voor “' + esc(q) + '”. Probeer een ander woord, zoals <b>chatbot</b> of <b>website</b>.</li>';
       return;
     }
-    listEl.innerHTML = list.map(function(a, i){
-      return '<a class="et-sr-item'+(i===0?' sel':'')+'" href="'+R+a.path+'">'
-        + '<span class="et-sr-tag">'+esc(a.topic)+'</span>'
-        + '<span class="et-sr-t">'+highlight(a.title, toks)+'</span>'
-        + '<span class="et-sr-x">'+esc(a.excerpt)+'</span>'
-        + '</a>';
+    list.innerHTML = results.map(function (a, i) {
+      return '<li class="emt-sr-item' + (i === sel ? ' is-sel' : '') + '" role="option" aria-selected="' + (i === sel) + '">' +
+        '<a href="' + esc(R + a.path) + '"><img alt="" loading="lazy" src="' + esc(R + (a.img || 'assets/og-image.png')) + '"/>' +
+        '<span><span class="t">' + mark(a.title, q) + '</span><span class="m">' + esc(a.topic) + ' · ' + esc(a.date) + ' · ' + esc(a.read) + '</span></span></a></li>';
     }).join('');
   }
-  function selItems(){ return [].slice.call(listEl.querySelectorAll('.et-sr-item')); }
-  function moveSel(dir){
-    var its = selItems(); if(!its.length) return;
-    var idx = its.findIndex(function(el){ return el.classList.contains('sel'); });
-    if(idx < 0) idx = 0; else its[idx].classList.remove('sel');
-    idx = (idx + dir + its.length) % its.length;
-    its[idx].classList.add('sel');
-    its[idx].scrollIntoView({ block:'nearest' });
+
+  function move(d) {
+    if (!results.length) return;
+    sel = (sel + d + results.length) % results.length;
+    var items = list.querySelectorAll('.emt-sr-item');
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.toggle('is-sel', i === sel);
+      items[i].setAttribute('aria-selected', i === sel);
+    }
+    if (items[sel]) items[sel].scrollIntoView({ block: 'nearest' });
   }
-  function openSearch(){
-    isOpen = true; overlay.classList.add('open');
-    renderResults(inputEl.value);
-    setTimeout(function(){ inputEl.focus(); inputEl.select(); }, 30);
+
+  function open() {
+    if (!sr) build();
+    lastFocus = doc.activeElement;
+    sel = 0; input.value = ''; render();
+    sr.classList.add('is-open');
+    root.style.overflow = 'hidden';
+    setTimeout(function () { input.focus(); }, 30);
   }
-  function closeSearch(){ isOpen = false; overlay.classList.remove('open'); }
-  function closeMobIfOpen(){
-    if(mob && mob.classList.contains('open')){
-      mob.classList.remove('open'); mob.setAttribute('aria-hidden','true');
-      document.body.style.position=''; document.body.style.top=''; document.body.style.left=''; document.body.style.right='';
+  function close() {
+    if (!sr || !sr.classList.contains('is-open')) return;
+    sr.classList.remove('is-open');
+    root.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  doc.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-et-search]');
+    if (t) { e.preventDefault(); open(); }
+  });
+  doc.addEventListener('keydown', function (e) {
+    var typing = /^(input|textarea|select)$/i.test(e.target.tagName) || e.target.isContentEditable;
+    if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); sr && sr.classList.contains('is-open') ? close() : open(); }
+    else if (e.key === '/' && !typing) { e.preventDefault(); open(); }
+    else if (e.key === 'Escape') close();
+  });
+
+  /* ── scroll: categoriebalk "vastgeplakt" + actieve inhoudstafel ── */
+  var tabs = doc.querySelector('.emt-tabs');
+  var art = doc.getElementById('artikel');
+  var heads = art ? [].slice.call(art.querySelectorAll('h2[id]')) : [];
+  var tocLinks = [].slice.call(doc.querySelectorAll('.emt-toc a'));
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    var top = parseInt(getComputedStyle(root).getPropertyValue('--emt-top'), 10) || 0;
+    // de hero erboven beweegt niet mee met de (geanimeerde) sticky-positie → betrouwbare meting
+    var above = tabs && tabs.previousElementSibling;
+    if (above) tabs.classList.toggle('is-stuck', above.getBoundingClientRect().bottom <= top + 1);
+    if (tocLinks && tocLinks.length) {
+      var cur = -1;
+      for (var i = 0; i < heads.length; i++) if (heads[i].getBoundingClientRect().top <= top + window.innerHeight * 0.3) cur = i;
+      tocLinks.forEach(function (l, j) { l.classList.toggle('is-on', j === cur); });
     }
   }
+  if (tabs || tocLinks.length) {
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
 
-  inputEl.addEventListener('input', function(){ renderResults(inputEl.value); });
-  inputEl.addEventListener('keydown', function(e){
-    if(e.key === 'ArrowDown'){ e.preventDefault(); moveSel(1); }
-    else if(e.key === 'ArrowUp'){ e.preventDefault(); moveSel(-1); }
-    else if(e.key === 'Enter'){
-      var sel = listEl.querySelector('.et-sr-item.sel') || listEl.querySelector('.et-sr-item');
-      if(sel){ e.preventDefault(); window.location.href = sel.getAttribute('href'); }
-    }
+  var toast;
+  function say(msg) {
+    if (!toast) { toast = doc.createElement('div'); toast.className = 'emt-toast'; toast.setAttribute('role', 'status'); doc.body.appendChild(toast); }
+    toast.textContent = msg;
+    toast.classList.add('is-on');
+    clearTimeout(say.t);
+    say.t = setTimeout(function () { toast.classList.remove('is-on'); }, 2200);
+  }
+  doc.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-copy]');
+    if (!b) return;
+    var url = b.getAttribute('data-copy');
+    var done = function () { say('Link gekopieerd'); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(done, function () { fallback(url); done(); });
+    else { fallback(url); done(); }
   });
-  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeSearch(); });
-  overlay.querySelector('#etSearchEsc').addEventListener('click', closeSearch);
-
-  var navBtn = document.getElementById('etSearchBtn');
-  if(navBtn) navBtn.addEventListener('click', openSearch);
-  var heroBtn = document.getElementById('etHeroSearch');
-  if(heroBtn) heroBtn.addEventListener('click', openSearch);
-  var mobBtn = document.getElementById('etMobSearch');
-  if(mobBtn) mobBtn.addEventListener('click', function(){ closeMobIfOpen(); openSearch(); });
-
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && isOpen){ closeSearch(); return; }
-    var tag = (e.target && e.target.tagName) || '';
-    var typing = tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable);
-    if((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')){ e.preventDefault(); isOpen ? closeSearch() : openSearch(); return; }
-    if(!isOpen && !typing && e.key === '/'){ e.preventDefault(); openSearch(); }
-  });
+  function fallback(text) {
+    var t = doc.createElement('textarea');
+    t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+    doc.body.appendChild(t); t.select();
+    try { doc.execCommand('copy'); } catch (e) { /* niets */ }
+    doc.body.removeChild(t);
+  }
 })();

@@ -1,2 +1,5 @@
 # Lokale Claude Code preview-helpers (niet voor productie)
 .claude/
+
+# Node-afhankelijkheden van de hulpscripts
+node_modules/
