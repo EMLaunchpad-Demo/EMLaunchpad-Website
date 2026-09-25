@@ -5,6 +5,7 @@
    • tellers     : cijfers die meelopen zodra ze in beeld komen
    • logoveld    : integratielogo's die traag door de sectie zweven
    • case-grafiek: ring, staven en funnel op de case-pagina
+   • blauw uur   : lichtvelden in de merkkleuren die meereizen (homepage)
    Alles is progressive enhancement: zonder JS blijft elke
    pagina gewoon leesbaar en volledig.
    ============================================================= */
@@ -748,5 +749,60 @@
       });
     });
   });
+
+  /* ============================================================
+     6. BLAUW UUR — twee lichtvelden (EM-blauw en gedempt groen)
+        achter de hele homepage. Ze reizen mee met de scroll en
+        komen onderaan samen. Alleen transform/opacity: goedkoop.
+     ============================================================ */
+  (function () {
+    var sky = document.querySelector('[data-sky]');
+    if (!sky) return;
+    var fa = sky.querySelector('.sky-a'), fb = sky.querySelector('.sky-b');
+    if (!fa || !fb) return;
+    /* p = scrollpositie (0..1); x/y = middelpunt in % van het scherm; o = helderheid */
+    var K = [
+      { p: 0,    ax: 76, ay: 16, bx: 6,  by: 104, ao: 1,   bo: 0.55 },
+      { p: 0.22, ax: 16, ay: 34, bx: 94, by: 78,  ao: 0.9, bo: 0.8 },
+      { p: 0.48, ax: 86, ay: 72, bx: 12, by: 26,  ao: 0.9, bo: 0.9 },
+      { p: 0.74, ax: 20, ay: 82, bx: 84, by: 20,  ao: 0.9, bo: 0.8 },
+      { p: 1,    ax: 40, ay: 34, bx: 62, by: 40,  ao: 1,   bo: 1 }
+    ];
+    var KEYS = ['ax', 'ay', 'bx', 'by', 'ao', 'bo'];
+    function target() {
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? clamp(window.scrollY / h, 0, 1) : 0;
+      var i = 1;
+      while (i < K.length - 1 && K[i].p < p) i++;
+      var k0 = K[i - 1], k1 = K[i];
+      var t = easeInOut(clamp((p - k0.p) / (k1.p - k0.p), 0, 1));
+      var o = {};
+      KEYS.forEach(function (n) { o[n] = k0[n] + (k1[n] - k0[n]) * t; });
+      return o;
+    }
+    function put(s) {
+      fa.style.transform = 'translate3d(calc(' + s.ax.toFixed(2) + 'vw - 50%),calc(' + s.ay.toFixed(2) + 'vh - 50%),0)';
+      fb.style.transform = 'translate3d(calc(' + s.bx.toFixed(2) + 'vw - 50%),calc(' + s.by.toFixed(2) + 'vh - 50%),0)';
+      fa.style.opacity = s.ao.toFixed(3);
+      fb.style.opacity = s.bo.toFixed(3);
+    }
+    var cur = target();
+    put(cur);
+    if (reduce) return;        /* minder beweging: het licht blijft waar de pagina start */
+    /* zacht naijlen, zodat het licht achter je scroll aan drijft */
+    var raf = 0;
+    function frame() {
+      raf = 0;
+      var t = target(), moving = false;
+      KEYS.forEach(function (n) {
+        var d = t[n] - cur[n];
+        if (Math.abs(d) > 0.02) moving = true;
+        cur[n] += d * 0.08;
+      });
+      put(cur);
+      if (moving) raf = requestAnimationFrame(frame);
+    }
+    onScroll(function () { if (!raf) raf = requestAnimationFrame(frame); });
+  })();
 
 })();

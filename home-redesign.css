@@ -513,3 +513,53 @@ body[data-skin="v2"] .tm-link svg{width:13px;height:13px}
    steken: op gsm zoomde de browser anders uit naar ~640px. clip maakt geen
    scrollcontainer; hidden is de terugval voor oudere browsers. */
 body[data-skin="v2"] #diensten{overflow-x:hidden;overflow-x:clip}
+
+/* ═══════════════════════════════════════════════════════════════
+   BLAUW UUR (2026-09) — homepage minder zwart, meer EM
+   Diep marineblauw i.p.v. bijna-zwart, en achter de hele pagina twee
+   lichtvelden in de merkkleuren (blauw en gedempt groen) die meereizen
+   terwijl je scrolt; onderaan komen ze samen, zoals de onderlijning.
+   Aan via <body data-tone="blauw"> + <div class="sky" data-sky>.
+   Beweging: fx.js (sectie 6). Koppen blijven wit, kleur blijft licht.
+   ═══════════════════════════════════════════════════════════════ */
+.sky{display:none}
+body[data-skin="v2"][data-tone="blauw"]{
+  --ink:#0b1526; --ink-1:#0e1a2f; --ink-2:#12213a; --ink-3:#182a47;
+  --line:rgba(150,190,235,.13); --line-2:rgba(150,190,235,.24);
+  --hi:#f3f6fa; --mid:#aebccb; --dim:#8fa0b3; --faint:rgba(160,195,235,.42);
+  --glass:rgba(17,31,54,.55); --glass-2:rgba(13,25,45,.62);
+  background:var(--ink);
+}
+/* body-achtergrond gaat naar het canvas, dus deze laag (z-index -1) ligt erboven */
+body[data-tone="blauw"] .sky{
+  display:block;position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+  background:
+    repeating-linear-gradient(103deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px),
+    linear-gradient(180deg,#0a1424 0%,#0d1b31 52%,#0b1729 100%);
+}
+body[data-tone="blauw"] .sky i{
+  position:absolute;left:0;top:0;border-radius:50%;will-change:transform,opacity;
+}
+/* startstand = scrollpositie 0 (ook zonder JS en bij minder beweging) */
+body[data-tone="blauw"] .sky-a{
+  width:96vmax;height:96vmax;
+  background:radial-gradient(closest-side,rgba(47,116,224,.36),rgba(47,116,224,.14) 46%,rgba(47,116,224,0) 100%);
+  transform:translate3d(calc(76vw - 50%),calc(16vh - 50%),0);
+}
+body[data-tone="blauw"] .sky-b{
+  width:78vmax;height:78vmax;opacity:.55;
+  background:radial-gradient(closest-side,rgba(47,191,134,.24),rgba(47,191,134,.09) 48%,rgba(47,191,134,0) 100%);
+  transform:translate3d(calc(6vw - 50%),calc(104vh - 50%),0);
+}
+/* secties laten het licht door; banden krijgen een lichte sluier voor ritme */
+body[data-skin="v2"][data-tone="blauw"] .hero.hero-lines{background:transparent}
+body[data-skin="v2"][data-tone="blauw"] .sectors,
+body[data-skin="v2"][data-tone="blauw"] .case,
+body[data-skin="v2"][data-tone="blauw"] .steps-sec,
+body[data-skin="v2"][data-tone="blauw"] .integr{background:rgba(6,12,24,.3)}
+body[data-skin="v2"][data-tone="blauw"] .is-aurora{
+  background:
+    repeating-linear-gradient(103deg,rgba(255,255,255,.016) 0 1px,transparent 1px 4px),
+    radial-gradient(130% 110% at 88% 78%,rgba(22,46,74,.92) 0%,rgba(12,28,48,.72) 36%,rgba(8,18,33,.5) 70%,rgba(6,12,24,.4) 100%);
+}
+body[data-skin="v2"][data-tone="blauw"] .hero-lines .hl-tag{background:rgba(12,23,42,.62)}
