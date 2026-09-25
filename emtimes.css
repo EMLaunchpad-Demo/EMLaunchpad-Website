@@ -158,6 +158,13 @@ a.emt-topic:hover .cnt svg{transform:translateX(3px)}
 .et-prose .et-note p{margin:0}
 .et-prose .et-note p + p{margin-top:.6em}
 
+/* veelgestelde vragen */
+.et-prose .et-faq{margin-top:2.4em}
+.et-prose .et-faq h2{margin-bottom:.4em}
+.et-prose .et-faq h3{margin:0;padding-top:20px;border-top:1px solid var(--line);font-size:18px;line-height:1.35}
+.et-prose .et-faq h3 + p{margin-top:.5em}
+.et-prose .et-faq p{margin-bottom:20px}
+
 .emt-authorbox{display:flex;align-items:flex-start;gap:18px;margin-top:3em!important;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--glass)}
 .emt-authorbox b{display:block;margin-bottom:6px;font-size:16px;color:var(--hi)}
 .emt-authorbox p{margin:0;font-size:14.5px;line-height:1.6;color:var(--mid)}

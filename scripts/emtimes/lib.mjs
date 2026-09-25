@@ -49,8 +49,8 @@ export const CATEGORIES = [
   {
     key: "groei", dir: "groei", label: "Groei", name: "Groei & marketing",
     h1: ["Groei &", "marketing."],
-    lead: "Reviews, reputatie, e-mail en SMS: systemen die meer klanten laten terugkomen — en nieuwe klanten laten vinden.",
-    desc: "Reviews, reputatie, e-mail & SMS: systemen die meer klanten laten terugkomen.",
+    lead: "Google Bedrijfsprofiel, lokale SEO, reviews en reputatie: hoe je beter gevonden wordt in je eigen regio — en meer klanten laat terugkomen.",
+    desc: "Lokale SEO, Google Bedrijfsprofiel en reviews: beter gevonden worden in je regio.",
     icon: '<path d="M3 17l6-6 4 4 8-8m0 0h-5m5 0v5"/>',
   },
 ];
@@ -139,6 +139,16 @@ function withToc(prose) {
     return has ? all : `<h2${attrs} id="${id}">${inner}</h2>`;
   });
   return { html, toc };
+}
+
+/* Vragen uit een <div class="et-faq"> (h3 = vraag, wat volgt = antwoord) → FAQPage-schema. */
+function faqOf(prose) {
+  const m = prose.match(/<div class="et-faq">([\s\S]*?)<\/div>/);
+  if (!m) return [];
+  return m[1].split(/<h3[^>]*>/).slice(1).map((chunk) => {
+    const [q, rest = ""] = chunk.split("</h3>");
+    return { q: stripTags(q), a: stripTags(rest).replace(/\s+/g, " ") };
+  }).filter((f) => f.q && f.a);
 }
 
 /* ── gedeelde bouwstenen ─────────────────────────────────────────────── */
@@ -318,7 +328,7 @@ export function hubPage(arts, V) {
 <div class="wrap emt-hero-in">
 <span class="eyebrow" data-reveal="">EM Times · kennishub</span>
 <h1 class="emt-h1" data-reveal="">AI-inzichten voor <span class="grad">Belgische bedrijven.</span></h1>
-<p class="lead" data-reveal="">De kennishub van EM Launchpad — praktische gidsen en uitleg over AI-chatbots, voice agents, automatisatie en websites. Zonder de technische wollige taal.</p>
+<p class="lead" data-reveal="">De kennishub van EM Launchpad — praktische gidsen en uitleg over AI-chatbots, voice agents, automatisatie, websites en lokale SEO. Zonder de technische wollige taal.</p>
 <button class="emt-search" data-et-search="" data-reveal="" type="button">${SEARCH_ICO}<span class="ph">Zoek een artikel, onderwerp of trefwoord…</span><span class="keys"><kbd>⌘</kbd><kbd>K</kbd></span></button>
 </div>
 </header>
@@ -330,7 +340,7 @@ ${ctaBand(R)}
 </main>`;
   return page({ R, V, main, jsonld,
     title: "EM Times — AI-inzichten voor Belgische bedrijven | EM Launchpad",
-    desc: "EM Times is de kennishub van EM Launchpad: praktische inzichten over AI-chatbots, voice agents, automatisatie en websites voor groeiende Belgische bedrijven.",
+    desc: "EM Times is de kennishub van EM Launchpad: praktische gidsen over AI-chatbots, automatisatie, websites en lokale SEO voor groeiende Belgische bedrijven.",
     canonical: `${SITE}/emtimes/` });
 }
 
@@ -374,6 +384,9 @@ export function articlePage(a, proseRaw, related, V) {
       mainEntityOfPage: { "@type": "WebPage", "@id": url }, articleSection: c.name, keywords: (a.tags || []).join(", "), wordCount: words },
     breadcrumbLd([["Home", `${SITE}/`], ["EM Times", `${SITE}/emtimes/`], [c.name, `${SITE}/emtimes/${c.dir}/`], [a.title, url]]),
   ] };
+  const faq = faqOf(prose);
+  if (faq.length) jsonld["@graph"].push({ "@type": "FAQPage", "@id": `${url}#faq`,
+    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
   const share = encodeURIComponent(url), shareText = encodeURIComponent(a.title);
   const main = `<header class="emt-ahead" id="main" tabindex="-1">
 <canvas aria-hidden="true" class="starfield" data-stars=""></canvas>
@@ -521,7 +534,7 @@ export async function build({ log = console.log } = {}) {
     a.alt ||= a.title;
     a.desc ||= unesc((html.match(/<meta content="([^"]*)" name="description"/) || [])[1] || "") || a.excerpt;
   }
-  arts.sort((x, y) => y.iso.localeCompare(x.iso) || x.title.localeCompare(y.title));
+  arts.sort((x, y) => y.iso.localeCompare(x.iso)); // stabiel: zelfde dag = volgorde uit de index
   await writeArticles(arts);
   const V = await versions(); // ná writeArticles, zodat de index-hash klopt
 
