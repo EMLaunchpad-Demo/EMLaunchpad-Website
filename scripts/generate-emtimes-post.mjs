@@ -67,6 +67,7 @@ Vereisten voor proseHtml (alleen deze elementen, geen andere classes, geen <h1>,
 - precies één callout: <div class="et-note"><p class="lbl">▲ goed om te weten</p><p>…</p></div>
 - precies één <blockquote>…</blockquote> met een krachtige kernzin (geen verzonnen citaat van een persoon)
 - <strong> voor nadruk waar het helpt
+- sluit af met een blok veelgestelde vragen: <div class="et-faq"><h2>Veelgestelde vragen</h2> en daarin 3 vragen als <h3> met elk een kort antwoord in <p></div>. Kies vragen die mensen echt in Google typen.
 - 750 tot 1100 woorden in totaal
 
 Velden:
@@ -109,7 +110,7 @@ function sanitize(html) {
       if (!OK.has(name)) return "";
       if (tag.startsWith("</")) return `</${name}>`;
       const cls = (tag.match(/\sclass="([^"]*)"/) || [])[1];
-      const keep = (name === "p" || name === "div") && /^(et-lead|et-note|lbl)$/.test(cls || "") ? ` class="${cls}"` : "";
+      const keep = (name === "p" || name === "div") && /^(et-lead|et-note|et-faq|lbl)$/.test(cls || "") ? ` class="${cls}"` : "";
       return `<${name}${keep}>`;
     })
     .trim();
