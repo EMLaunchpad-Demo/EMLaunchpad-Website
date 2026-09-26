@@ -12,7 +12,14 @@
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canHover = window.matchMedia('(hover: hover)').matches;
-  var LOC = 'nl-BE';
+  var LANG = (document.documentElement.lang || 'nl').slice(0, 2);
+  var LOC = ({ nl: 'nl-BE', en: 'en-GB', fr: 'fr-BE' })[LANG] || 'nl-BE';
+  /* zichtbare teksten per taal; Nederlands staat in de code zelf */
+  var TR = ({
+    en: {"Ma": "Mon", "Di": "Tue", "Wo": "Wed", "Do": "Thu", "Vr": "Fri", "Za": "Sat", "Knippen": "Haircut", "Kleuring": "Colour", "Brushing": "Blow-dry", "Kleuring & snit": "Colour & cut", "Balayage": "Balayage", "Baard & knippen": "Beard & haircut", "Knippen & brushen": "Cut & blow-dry", "Gelaatsverzorging": "Facial", "Manicure": "Manicure", "Wimperlift": "Lash lift", "Eerste consultatie": "First consultation", "Behandeling": "Treatment", "Sportmassage": "Sports massage", "Consultatie": "Consultation", "Nazorgafspraak": "Aftercare appointment", "Onderhoudsbeurt": "Service", "Bandenwissel": "Tyre change", "Aircocheck": "Air-con check", "website": "website", "chatbot": "chatbot", "Zaak gesloten. Je agenda niet.": "Business closed. Your calendar isn’t.", "Jij slaapt. Het systeem niet.": "You sleep. The system doesn’t.", "Goedemorgen. Dit kwam er vannacht bij.": "Good morning. This came in overnight.", "Nieuwe boeking": "New booking", "via ": "via ", "Herinneringen verstuurd": "Reminders sent", " klanten van maandag": " Monday customers", "e-mail + sms": "email + text", "Na 6 weken": "After 6 weeks", "Tijd voor een nieuwe knipbeurt?": "Time for a new haircut?", "Je laatste bezoek is zes weken geleden. Kies meteen een nieuw moment, in twee tikken.": "Your last visit was six weeks ago. Pick a new time right away, in two taps.", "Na 4 weken": "After 4 weeks", "Tijd om jezelf weer te verwennen?": "Time to treat yourself again?", "Je laatste behandeling is vier weken geleden. Kies meteen een nieuw moment.": "Your last treatment was four weeks ago. Pick a new time right away.", "Na 3 weken": "After 3 weeks", "Hoe gaat het met je herstel?": "How is your recovery going?", "Plan je volgende sessie in, op een moment dat jou past.": "Book your next session at a time that suits you.", "Na 3 maanden": "After 3 months", "Tijd voor je opvolging": "Time for your follow-up", "Drie maanden na je behandeling is het ideale moment voor een controle.": "Three months after your treatment is the ideal time for a check-up.", "Na 1 jaar": "After 1 year", "Je jaarlijkse onderhoud komt eraan": "Your annual service is coming up", "Je laatste beurt is een jaar geleden. Kies meteen een moment dat jou past.": "Your last service was a year ago. Pick a time that suits you right away.", "Opnieuw boeken": "Book again", "Jouw zaak": "Your business", " min": " min", "Kies eerst een dag.": "Choose a day first.", "bezet": "taken", " bezet": " taken", "Wat": "What", "Wanneer": "When", "Uur": "Time", "Waar": "Where", "E-mail": "Email", "Sms": "Text", "Je afspraak staat vast": "Your appointment is confirmed", " op ": " on ", " om ": " at ", ". Past het toch niet? Verplaats of annuleer met één klik.": ". Doesn’t suit you after all? Reschedule or cancel in one click.", "Morgen verwachten we je": "See you tomorrow", ". Tot morgen! Verplaatsen kan nog altijd via de link.": ". See you tomorrow! You can still reschedule via the link.", "Tot straks!": "See you soon!", "Om ": "See you at ", " verwachten we je bij ": " at ", ". Tik hier voor de route.": ". Tap here for directions.", "Hoe was het?": "How was it?", "Bedankt voor je bezoek aan ": "Thanks for your visit to ", ". Heb je 30 seconden voor een review? ★★★★★": ". Do you have 30 seconds for a review? ★★★★★", "Sleep de schuif of druk op play. Zo ziet je klant het, van boeking tot volgende afspraak.": "Drag the slider or press play. This is what your customer sees, from booking to the next appointment.", "Boek eerst een afspraak in de telefoon. Daarna neemt het systeem het over.": "First book an appointment on the phone. Then the system takes over.", "Tot ": "See you on ", "nu": "now"},
+    fr: {"Ma": "Lun", "Di": "Mar", "Wo": "Mer", "Do": "Jeu", "Vr": "Ven", "Za": "Sam", "Knippen": "Coupe", "Kleuring": "Coloration", "Brushing": "Brushing", "Kleuring & snit": "Coloration & coupe", "Balayage": "Balayage", "Baard & knippen": "Barbe & coupe", "Knippen & brushen": "Coupe & brushing", "Gelaatsverzorging": "Soin du visage", "Manicure": "Manucure", "Wimperlift": "Rehaussement de cils", "Eerste consultatie": "Première consultation", "Behandeling": "Séance", "Sportmassage": "Massage sportif", "Consultatie": "Consultation", "Nazorgafspraak": "Rendez-vous de suivi", "Onderhoudsbeurt": "Entretien", "Bandenwissel": "Changement de pneus", "Aircocheck": "Contrôle clim", "website": "site web", "chatbot": "chatbot", "Zaak gesloten. Je agenda niet.": "Commerce fermé. Votre agenda, non.", "Jij slaapt. Het systeem niet.": "Vous dormez. Le système, non.", "Goedemorgen. Dit kwam er vannacht bij.": "Bonjour. Voici ce qui est arrivé cette nuit.", "Nieuwe boeking": "Nouvelle réservation", "via ": "via ", "Herinneringen verstuurd": "Rappels envoyés", " klanten van maandag": " clients du lundi", "e-mail + sms": "e-mail + SMS", "Na 6 weken": "Après 6 semaines", "Tijd voor een nieuwe knipbeurt?": "L’heure d’une nouvelle coupe ?", "Je laatste bezoek is zes weken geleden. Kies meteen een nieuw moment, in twee tikken.": "Votre dernière visite remonte à six semaines. Choisissez tout de suite un nouveau créneau, en deux clics.", "Na 4 weken": "Après 4 semaines", "Tijd om jezelf weer te verwennen?": "Envie de vous faire à nouveau plaisir ?", "Je laatste behandeling is vier weken geleden. Kies meteen een nieuw moment.": "Votre dernier soin remonte à quatre semaines. Choisissez tout de suite un nouveau créneau.", "Na 3 weken": "Après 3 semaines", "Hoe gaat het met je herstel?": "Comment se passe votre récupération ?", "Plan je volgende sessie in, op een moment dat jou past.": "Planifiez votre prochaine séance, au moment qui vous convient.", "Na 3 maanden": "Après 3 mois", "Tijd voor je opvolging": "L’heure de votre suivi", "Drie maanden na je behandeling is het ideale moment voor een controle.": "Trois mois après votre traitement, c’est le moment idéal pour un contrôle.", "Na 1 jaar": "Après 1 an", "Je jaarlijkse onderhoud komt eraan": "Votre entretien annuel approche", "Je laatste beurt is een jaar geleden. Kies meteen een moment dat jou past.": "Votre dernier entretien remonte à un an. Choisissez tout de suite le moment qui vous convient.", "Opnieuw boeken": "Réserver à nouveau", "Jouw zaak": "Votre commerce", " min": " min", "Kies eerst een dag.": "Choisissez d’abord un jour.", "bezet": "pris", " bezet": " pris", "Wat": "Quoi", "Wanneer": "Quand", "Uur": "Heure", "Waar": "Où", "E-mail": "E-mail", "Sms": "SMS", "Je afspraak staat vast": "Votre rendez-vous est confirmé", " op ": " le ", " om ": " à ", ". Past het toch niet? Verplaats of annuleer met één klik.": ". Finalement, ça ne vous convient pas ? Déplacez ou annulez en un clic.", "Morgen verwachten we je": "On vous attend demain", ". Tot morgen! Verplaatsen kan nog altijd via de link.": ". À demain ! Vous pouvez encore déplacer via le lien.", "Tot straks!": "À tout à l’heure !", "Om ": "À ", " verwachten we je bij ": ", on vous attend chez ", ". Tik hier voor de route.": ". Touchez ici pour l’itinéraire.", "Hoe was het?": "Comment ça s’est passé ?", "Bedankt voor je bezoek aan ": "Merci pour votre visite chez ", ". Heb je 30 seconden voor een review? ★★★★★": ". Vous avez 30 secondes pour un avis ? ★★★★★", "Sleep de schuif of druk op play. Zo ziet je klant het, van boeking tot volgende afspraak.": "Faites glisser le curseur ou appuyez sur lecture. Voici ce que voit votre client, de la réservation au prochain rendez-vous.", "Boek eerst een afspraak in de telefoon. Daarna neemt het systeem het over.": "Réservez d’abord un rendez-vous sur le téléphone. Ensuite, le système prend le relais.", "Tot ": "À ", "nu": "maintenant"}
+  })[LANG] || {};
+  function T(s) { return TR[s] != null ? TR[s] : s; }
 
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
@@ -44,24 +51,24 @@
     var countEl = $('[data-newcount]', app);
     var toast = $('[data-toast]', app);
 
-    var DAYS = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za'];
+    var DAYS = [T('Ma'), T('Di'), T('Wo'), T('Do'), T('Vr'), T('Za')];
     /* [dag, start, duur (u), naam, dienst, tint] */
     var BASE = [
-      [0, 9, 1, 'Marie', 'Knippen', 's'], [0, 10.5, 1.5, 'Nora', 'Kleuring', 'b'], [0, 14, 1, 'Pieter', 'Knippen', 'g'],
-      [1, 9.5, 1, 'Ilse', 'Brushing', 's'], [1, 11, 2, 'Hanne', 'Kleuring & snit', 'b'],
-      [2, 10, 1, 'Kobe', 'Knippen', 'g'], [2, 13.5, 1.5, 'Julie', 'Balayage', 'b'],
-      [3, 9, 1, 'Wout', 'Baard & knippen', 'g'], [3, 15.5, 1, 'Sarah', 'Brushing', 's'],
-      [4, 11, 1, 'Lien', 'Knippen', 's'], [4, 14, 2, 'Eva', 'Kleuring & snit', 'b'],
-      [5, 9, 1, 'Mats', 'Knippen', 'g'], [5, 11.5, 1.5, 'Fien', 'Kleuring', 'b']
+      [0, 9, 1, 'Marie', T('Knippen'), 's'], [0, 10.5, 1.5, 'Nora', T('Kleuring'), 'b'], [0, 14, 1, 'Pieter', T('Knippen'), 'g'],
+      [1, 9.5, 1, 'Ilse', T('Brushing'), 's'], [1, 11, 2, 'Hanne', T('Kleuring & snit'), 'b'],
+      [2, 10, 1, 'Kobe', T('Knippen'), 'g'], [2, 13.5, 1.5, 'Julie', T('Balayage'), 'b'],
+      [3, 9, 1, 'Wout', T('Baard & knippen'), 'g'], [3, 15.5, 1, 'Sarah', T('Brushing'), 's'],
+      [4, 11, 1, 'Lien', T('Knippen'), 's'], [4, 14, 2, 'Eva', T('Kleuring & snit'), 'b'],
+      [5, 9, 1, 'Mats', T('Knippen'), 'g'], [5, 11.5, 1.5, 'Fien', T('Kleuring'), 'b']
     ];
     /* at = minuten sinds middernacht van de avond ervoor (dus > 1440 = na middernacht) */
     var EVENTS = [
-      { at: 1247, b: [1, 14, 1, 'Sofie', 'Knippen & brushen', 'g'], ch: 'website' },
-      { at: 1296, b: [5, 10, 1, 'Tom', 'Baard & knippen', 's'], ch: 'Instagram' },
-      { at: 1378, b: [3, 13, 1.5, 'Lotte', 'Kleuring', 'b'], ch: 'Google' },
-      { at: 1421, b: [2, 16.5, 1, 'Jonas', 'Knippen', 'g'], ch: 'chatbot' },
-      { at: 1512, b: [4, 9, 2, 'Emma', 'Kleuring & snit', 'b'], ch: 'website' },
-      { at: 1854, b: [0, 16, 1, 'An', 'Knippen', 's'], ch: 'website' },
+      { at: 1247, b: [1, 14, 1, 'Sofie', T('Knippen & brushen'), 'g'], ch: T('website') },
+      { at: 1296, b: [5, 10, 1, 'Tom', T('Baard & knippen'), 's'], ch: 'Instagram' },
+      { at: 1378, b: [3, 13, 1.5, 'Lotte', T('Kleuring'), 'b'], ch: 'Google' },
+      { at: 1421, b: [2, 16.5, 1, 'Jonas', T('Knippen'), 'g'], ch: T('chatbot') },
+      { at: 1512, b: [4, 9, 2, 'Emma', T('Kleuring & snit'), 'b'], ch: T('website') },
+      { at: 1854, b: [0, 16, 1, 'An', T('Knippen'), 's'], ch: T('website') },
       { at: 1860, remind: true },
       { at: 1890, morning: true }
     ];
@@ -109,9 +116,9 @@
     function hhmm(min) { min = ((Math.round(min) % 1440) + 1440) % 1440; return pad(Math.floor(min / 60)) + ':' + pad(min % 60); }
     function phase(min) { return min >= 1860 ? 'morning' : (min >= 1320 ? 'night' : 'evening'); }
     var STATUS = {
-      evening: 'Zaak gesloten. Je agenda niet.',
-      night: 'Jij slaapt. Het systeem niet.',
-      morning: 'Goedemorgen. Dit kwam er vannacht bij.'
+      evening: T('Zaak gesloten. Je agenda niet.'),
+      night: T('Jij slaapt. Het systeem niet.'),
+      morning: T('Goedemorgen. Dit kwam er vannacht bij.')
     };
     var lastPhase = '';
     function setTime(min) {
@@ -145,11 +152,11 @@
         block(b, true);
         bump();
         var slot = DAYS[b[0]].toLowerCase() + ' ' + hhmm(b[1] * 60);
-        showToast('Nieuwe boeking', b[3] + ' · ' + b[4] + ' · ' + slot, 'via ' + ev.ch);
+        showToast(T('Nieuwe boeking'), b[3] + ' · ' + b[4] + ' · ' + slot, T('via ') + ev.ch);
       } else if (ev.remind) {
         var mondays = $$('.ag-ev[data-day="0"]', cal);
         mondays.forEach(function (e, i) { setTimeout(function () { e.classList.add('is-reminded'); }, i * 140); });
-        showToast('Herinneringen verstuurd', mondays.length + ' klanten van maandag', 'e-mail + sms', 'remind');
+        showToast(T('Herinneringen verstuurd'), mondays.length + T(' klanten van maandag'), T('e-mail + sms'), 'remind');
       }
     }
 
@@ -221,34 +228,34 @@
 
     var SECTORS = {
       kapper: {
-        svcs: [['Knippen', 30], ['Knippen & brushen', 45], ['Kleuring', 90]],
-        weeks: 6, when: 'Na 6 weken',
-        title: 'Tijd voor een nieuwe knipbeurt?',
-        text: 'Je laatste bezoek is zes weken geleden. Kies meteen een nieuw moment, in twee tikken.'
+        svcs: [[T('Knippen'), 30], [T('Knippen & brushen'), 45], [T('Kleuring'), 90]],
+        weeks: 6, when: T('Na 6 weken'),
+        title: T('Tijd voor een nieuwe knipbeurt?'),
+        text: T('Je laatste bezoek is zes weken geleden. Kies meteen een nieuw moment, in twee tikken.')
       },
       beauty: {
-        svcs: [['Gelaatsverzorging', 60], ['Manicure', 45], ['Wimperlift', 60]],
-        weeks: 4, when: 'Na 4 weken',
-        title: 'Tijd om jezelf weer te verwennen?',
-        text: 'Je laatste behandeling is vier weken geleden. Kies meteen een nieuw moment.'
+        svcs: [[T('Gelaatsverzorging'), 60], [T('Manicure'), 45], [T('Wimperlift'), 60]],
+        weeks: 4, when: T('Na 4 weken'),
+        title: T('Tijd om jezelf weer te verwennen?'),
+        text: T('Je laatste behandeling is vier weken geleden. Kies meteen een nieuw moment.')
       },
       kine: {
-        svcs: [['Eerste consultatie', 45], ['Behandeling', 30], ['Sportmassage', 45]],
-        weeks: 3, when: 'Na 3 weken',
-        title: 'Hoe gaat het met je herstel?',
-        text: 'Plan je volgende sessie in, op een moment dat jou past.'
+        svcs: [[T('Eerste consultatie'), 45], [T('Behandeling'), 30], [T('Sportmassage'), 45]],
+        weeks: 3, when: T('Na 3 weken'),
+        title: T('Hoe gaat het met je herstel?'),
+        text: T('Plan je volgende sessie in, op een moment dat jou past.')
       },
       kliniek: {
-        svcs: [['Consultatie', 30], ['Behandeling', 45], ['Nazorgafspraak', 20]],
-        weeks: 13, when: 'Na 3 maanden',
-        title: 'Tijd voor je opvolging',
-        text: 'Drie maanden na je behandeling is het ideale moment voor een controle.'
+        svcs: [[T('Consultatie'), 30], [T('Behandeling'), 45], [T('Nazorgafspraak'), 20]],
+        weeks: 13, when: T('Na 3 maanden'),
+        title: T('Tijd voor je opvolging'),
+        text: T('Drie maanden na je behandeling is het ideale moment voor een controle.')
       },
       garage: {
-        svcs: [['Onderhoudsbeurt', 60], ['Bandenwissel', 30], ['Aircocheck', 45]],
-        weeks: 52, when: 'Na 1 jaar',
-        title: 'Je jaarlijkse onderhoud komt eraan',
-        text: 'Je laatste beurt is een jaar geleden. Kies meteen een moment dat jou past.'
+        svcs: [[T('Onderhoudsbeurt'), 60], [T('Bandenwissel'), 30], [T('Aircocheck'), 45]],
+        weeks: 52, when: T('Na 1 jaar'),
+        title: T('Je jaarlijkse onderhoud komt eraan'),
+        text: T('Je laatste beurt is een jaar geleden. Kies meteen een moment dat jou past.')
       }
     };
     var TIMES = ['09:00', '10:30', '13:00', '14:30', '16:00', '17:30'];
@@ -269,14 +276,14 @@
     var steps = $$('[data-steps] li', demo);
     var stepsBox = $('[data-steps]', demo);
 
-    var again = mk('button', 'ag-again', 'Opnieuw boeken');
+    var again = mk('button', 'ag-again', T('Opnieuw boeken'));
     again.type = 'button';
     $('.ag-scrub', demo).appendChild(again);
 
     var st = { sector: 'kapper', svc: -1, day: -1, time: '', k: 0, booked: false };
     var autoTimer = 0;
 
-    function biz() { return (bizIn.value || '').replace(/\s+/g, ' ').trim() || 'Jouw zaak'; }
+    function biz() { return (bizIn.value || '').replace(/\s+/g, ' ').trim() || T('Jouw zaak'); }
     function sector() { return SECTORS[st.sector]; }
 
     /* 5 dagen vanaf overmorgen, zondag overgeslagen. Morgen valt weg, anders
@@ -316,7 +323,7 @@
         var btn = mk('button', 'ph-svc');
         btn.type = 'button';
         btn.appendChild(mk('b', null, s[0]));
-        btn.appendChild(mk('span', null, s[1] + ' min'));
+        btn.appendChild(mk('span', null, s[1] + T(' min')));
         btn.addEventListener('click', function () {
           st.svc = i; st.day = -1; st.time = '';
           renderDays(); renderTimes();
@@ -341,13 +348,13 @@
 
     function renderTimes() {
       timesBox.innerHTML = '';
-      if (st.day < 0) { timesBox.appendChild(mk('p', 'ph-pick', 'Kies eerst een dag.')); return; }
+      if (st.day < 0) { timesBox.appendChild(mk('p', 'ph-pick', T('Kies eerst een dag.'))); return; }
       TIMES.forEach(function (t, i) {
         var busy = taken(st.day, i);
-        var btn = mk('button', 'ph-time' + (busy ? ' busy' : ''), busy ? 'bezet' : t);
+        var btn = mk('button', 'ph-time' + (busy ? ' busy' : ''), busy ? T('bezet') : t);
         btn.type = 'button';
         btn.disabled = busy;
-        if (busy) btn.setAttribute('aria-label', t + ' bezet');
+        if (busy) btn.setAttribute('aria-label', t + T(' bezet'));
         btn.addEventListener('click', function () { st.time = t; renderSum(); show('ok'); });
         timesBox.appendChild(btn);
       });
@@ -363,7 +370,7 @@
     function renderSum() {
       var s = sector().svcs[st.svc], d = apptDate();
       sumBox.innerHTML = '';
-      [['Wat', s[0]], ['Wanneer', fmtLong(d)], ['Uur', st.time + ' · ' + s[1] + ' min'], ['Waar', biz()]].forEach(function (r) {
+      [[T('Wat'), s[0]], [T('Wanneer'), fmtLong(d)], [T('Uur'), st.time + ' · ' + s[1] + T(' min')], [T('Waar'), biz()]].forEach(function (r) {
         var row = mk('div', 'ph-row');
         row.appendChild(mk('span', null, r[0]));
         row.appendChild(mk('b', null, r[1]));
@@ -380,11 +387,11 @@
       var m3 = new Date(a.getTime() + (svc[1] + 120) * 60e3);
       var m4 = new Date(a.getTime() + s.weeks * 7 * 24 * 3600e3); m4.setHours(10, 0, 0, 0);
       return [
-        { d: now, ch: 'E-mail', title: 'Je afspraak staat vast', text: svc[0] + ' op ' + fmtLong(a) + ' om ' + st.time + '. Past het toch niet? Verplaats of annuleer met één klik.' },
-        { d: m1, ch: 'E-mail', title: 'Morgen verwachten we je', text: svc[0] + ' om ' + st.time + '. Tot morgen! Verplaatsen kan nog altijd via de link.' },
-        { d: m2, ch: 'Sms', title: 'Tot straks!', text: 'Om ' + st.time + ' verwachten we je bij ' + b + '. Tik hier voor de route.' },
-        { d: m3, ch: 'Sms', title: 'Hoe was het?', text: 'Bedankt voor je bezoek aan ' + b + '. Heb je 30 seconden voor een review? ★★★★★' },
-        { d: m4, ch: 'E-mail', title: s.title, text: s.text }
+        { d: now, ch: T('E-mail'), title: T('Je afspraak staat vast'), text: svc[0] + T(' op ') + fmtLong(a) + T(' om ') + st.time + T('. Past het toch niet? Verplaats of annuleer met één klik.') },
+        { d: m1, ch: T('E-mail'), title: T('Morgen verwachten we je'), text: svc[0] + T(' om ') + st.time + T('. Tot morgen! Verplaatsen kan nog altijd via de link.') },
+        { d: m2, ch: T('Sms'), title: T('Tot straks!'), text: T('Om ') + st.time + T(' verwachten we je bij ') + b + T('. Tik hier voor de route.') },
+        { d: m3, ch: T('Sms'), title: T('Hoe was het?'), text: T('Bedankt voor je bezoek aan ') + b + T('. Heb je 30 seconden voor een review? ★★★★★') },
+        { d: m4, ch: T('E-mail'), title: s.title, text: s.text }
       ];
     }
 
@@ -399,7 +406,7 @@
         var top = mk('div', 'n-top');
         top.appendChild(mk('span', 'n-ava', b.charAt(0).toUpperCase()));
         top.appendChild(mk('span', 'n-app', m.ch + ' · ' + b));
-        top.appendChild(mk('time', null, i === st.k ? 'nu' : fmtShort(m.d)));
+        top.appendChild(mk('time', null, i === st.k ? T('nu') : fmtShort(m.d)));
         n.appendChild(top);
         n.appendChild(mk('b', null, m.title));
         n.appendChild(mk('p', null, m.text));
@@ -441,7 +448,7 @@
       screen.classList.add('is-locked');
       demo.classList.add('is-booked');
       range.disabled = false; play.disabled = false;
-      hint.textContent = 'Sleep de schuif of druk op play. Zo ziet je klant het, van boeking tot volgende afspraak.';
+      hint.textContent = T('Sleep de schuif of druk op play. Zo ziet je klant het, van boeking tot volgende afspraak.');
       renderLock();
       if (!reduce) startAuto();
     }
@@ -454,14 +461,14 @@
       range.disabled = true; play.disabled = true;
       range.value = 0; range.style.setProperty('--fill', '0%');
       steps.forEach(function (li) { li.classList.remove('is-reached', 'is-current'); $('time', li).textContent = ''; });
-      hint.textContent = 'Boek eerst een afspraak in de telefoon. Daarna neemt het systeem het over.';
+      hint.textContent = T('Boek eerst een afspraak in de telefoon. Daarna neemt het systeem het over.');
       line();
       renderSvcs();
       show('svc');
     }
 
     $('[data-confirm]', demo).addEventListener('click', function () {
-      $('[data-done-text]', demo).textContent = 'Tot ' + fmtLong(apptDate()) + ' om ' + st.time + '.';
+      $('[data-done-text]', demo).textContent = T('Tot ') + fmtLong(apptDate()) + T(' om ') + st.time + '.';
       show('done');
       setTimeout(lockOn, reduce ? 300 : 1500);
     });
