@@ -3,3 +3,6 @@
 
 # Node-afhankelijkheden van de hulpscripts
 node_modules/
+
+# Python-cache van lokale scripts
+__pycache__/

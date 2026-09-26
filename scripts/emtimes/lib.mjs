@@ -283,7 +283,7 @@ const ctaBand = (R) => `<section class="cta-band emt-cta">
 <div class="cta-inner" data-reveal="">
 <h2>Klaar om AI voor jóú <span class="grad">te laten werken?</span></h2>
 <p class="lead">Plan een gratis kennismakingsgesprek van 30 minuten. We bekijken samen welke systemen jouw bedrijf tijd en klanten opleveren. Geen verplichtingen, geen sales-druk.</p>
-<div class="row"><a class="btn" data-book="" href="${R}Contact.html">Plan je gratis gesprek ${ARROW}</a><a class="btn-ghost" href="${R}Diensten.html">Bekijk onze diensten</a></div>
+<div class="row"><a class="btn" data-book="" href="${R}Contact">Plan je gratis gesprek ${ARROW}</a><a class="btn-ghost" href="${R}Diensten">Bekijk onze diensten</a></div>
 <div class="badges">
 <span>Gratis en vrijblijvend</span>
 <span>30 minuten</span>
@@ -356,7 +356,7 @@ export function categoryPage(c, list, arts, V) {
 <canvas aria-hidden="true" class="starfield" data-stars=""></canvas>
 <div class="glow"></div>
 <div class="wrap emt-hero-in">
-${crumb([["Home", `${R}index.html`], ["EM Times", `${R}emtimes/`], [c.name, null]])}
+${crumb([["Home", `${R}`], ["EM Times", `${R}emtimes/`], [c.name, null]])}
 <span class="eyebrow" data-reveal="">Onderwerp · ${plural(list.length)}</span>
 <h1 class="emt-h1" data-reveal="">${esc(c.h1[0])} <span class="grad">${esc(c.h1[1])}</span></h1>
 <p class="lead" data-reveal="">${esc(c.lead)}</p>
@@ -392,7 +392,7 @@ export function articlePage(a, proseRaw, related, V) {
 <canvas aria-hidden="true" class="starfield" data-stars=""></canvas>
 <div class="glow"></div>
 <div class="wrap emt-ahead-in">
-${crumb([["Home", `${R}index.html`], ["EM Times", `${R}emtimes/`], [c.name, `${R}emtimes/${c.dir}/`]])}
+${crumb([["Home", `${R}`], ["EM Times", `${R}emtimes/`], [c.name, `${R}emtimes/${c.dir}/`]])}
 <span class="eyebrow">${esc(a.topic)}</span>
 <h1 class="emt-atitle">${esc(a.title)}</h1>
 <p class="emt-adek">${esc(a.excerpt)}</p>
@@ -430,7 +430,7 @@ ${toc.map((t) => `<li><a href="#${t.id}">${esc(t.text)}</a></li>`).join("\n")}
 <span class="emt-lbl">Gratis demo</span>
 <b>Wat levert dit op voor jóúw bedrijf?</b>
 <p>We bouwen een demo op maat en tonen in 30 minuten wat het concreet oplevert.</p>
-<a class="btn" data-book="" href="${R}Contact.html">Plan een gesprek ${ARROW}</a>
+<a class="btn" data-book="" href="${R}Contact">Plan een gesprek ${ARROW}</a>
 </div>
 </aside>
 </div>
