@@ -20,16 +20,46 @@ const flags = process.argv.slice(2).filter((a) => a.startsWith('--'));
 const ENDPOINT = flags.includes('--algemeen') ? 'https://api.indexnow.org/indexnow' : 'https://www.bing.com/indexnow';
 
 const args = process.argv.slice(2).filter((a) => !a.startsWith('--'));
-let urls;
-if (args.length) {
-  urls = args.map((a) => (a.startsWith('http') ? a : `https://${HOST}${a.startsWith('/') ? '' : '/'}${a}`));
-} else {
-  const xml = readFileSync(new URL('../sitemap.xml', import.meta.url), 'utf8');
-  urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+
+// Git Bash (MSYS) op Windows maakt van een argument als "/fr/Diensten" stilletjes
+// "C:/Program Files/Git/fr/Diensten". Dat herstellen we; een ander Windows-pad weigeren we.
+function toUrl(a) {
+  if (/^https?:\/\//i.test(a)) return a;
+  const p = a.replace(/\\/g, '/');
+  const msys = p.match(/^[A-Za-z]:\/.*?\/Git(\/.*)?$/i);
+  if (msys) a = msys[1] || '/';
+  else if (/^[A-Za-z]:\//.test(p)) throw new Error(`Geen geldig pad voor de site: ${a}`);
+  return `https://${HOST}${a.startsWith('/') ? '' : '/'}${a}`;
 }
-urls = [...new Set(urls)].filter((u) => new URL(u).hostname === HOST);
+
+let urls;
+try {
+  if (args.length) {
+    urls = args.map(toUrl);
+  } else {
+    const xml = readFileSync(new URL('../sitemap.xml', import.meta.url), 'utf8');
+    urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+  }
+} catch (e) {
+  console.error(e.message);
+  process.exit(1);
+}
+// nette, gecodeerde vorm (spaties -> %20), enkel ons domein, geen dubbels
+urls = [...new Set(urls.map((u) => new URL(u).href))].filter((u) => new URL(u).hostname === HOST);
+
+// Alleen melden wat echt bestaat: 200, zonder omleiding. Zo komt er nooit een foute URL bij Bing.
+const bad = [];
+const good = [];
+for (const u of urls) {
+  const r = await fetch(u, { method: 'HEAD', redirect: 'manual' }).catch(() => null);
+  if (r && r.status === 200) good.push(u); else bad.push(r ? `${r.status} ${u}` : `fout ${u}`);
+}
+if (bad.length) {
+  console.warn(`Niet gemeld (bestaat niet of stuurt door):\n  ${bad.join('\n  ')}`);
+}
+urls = good.map((x) => x);
 if (!urls.length) {
-  console.error('Geen URL\'s gevonden om aan te melden.');
+  console.error('Geen geldige URL\'s om aan te melden.');
   process.exit(1);
 }
 
