@@ -1,0 +1,10 @@
+# Cloudflare-headers voor de statische site.
+# Stadspagina's en klantdemo's: bereikbaar voor bezoekers, maar niet in zoekmachines.
+# De stadspagina's zijn op de stadsnaam na bijna identiek (doorway pages);
+# haal een stad hier pas weg als die pagina echt eigen inhoud heeft.
+
+/lokaal/ai-*
+  X-Robots-Tag: noindex, follow
+
+/demo/*
+  X-Robots-Tag: noindex, nofollow
