@@ -1,0 +1,828 @@
+{
+ "lang": "nl",
+ "tone": "blauw",
+ "font": "family=Caveat:wght@600",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 74,
+   "ay": 34,
+   "bx": 10,
+   "by": 96,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.18,
+   "ax": 24,
+   "ay": 40,
+   "bx": 82,
+   "by": 70,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.4,
+   "ax": 78,
+   "ay": 58,
+   "bx": 18,
+   "by": 30,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.62,
+   "ax": 30,
+   "ay": 46,
+   "bx": 72,
+   "by": 60,
+   "ao": 0.8,
+   "bo": 0.6
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "meta": {
+  "title": "Websites die klanten laten boeken | EM Launchpad",
+  "desc": "Wij bouwen en beheren je website: snel, gemaakt voor de gsm, SEO-klaar, met afsprakenplanner, leadformulieren en online betalen. In Digitale groei, €150 per maand.",
+  "ogtitle": "Websites die klanten laten boeken | EM Launchpad",
+  "service": "Websites",
+  "offer": "Inbegrepen in het pakket Digitale groei"
+ },
+ "hero": {
+  "crumb_home": "Diensten",
+  "crumb": "Websites",
+  "eyebrow": "Websites",
+  "h1a": "Van een leeg blad",
+  "h1b": "tot een zaak die boekt.",
+  "lede": "Wij ontwerpen je website rond jouw zaak, bouwen hem en beheren hem. Klanten vinden je, zien meteen wie je bent en boeken, betalen of vragen iets aan. Ook als jij al dicht bent.",
+  "cta": "Plan een gratis gesprek",
+  "cta2": "Bekijk echt werk",
+  "pick": "Bekijk het voor een",
+  "name_btn": "Zet je eigen naam erop",
+  "name_label": "Naam van je zaak",
+  "name_ph": "Bv. de naam op je gevel",
+  "name_hint": "Je naam blijft op je toestel. We sturen niets door.",
+  "chapters": [
+   "Tekenen",
+   "Inkleuren",
+   "Op je gsm",
+   "'s Avonds"
+  ],
+  "chapters_label": "Hoofdstukken",
+  "caption": "Voorbeeld. Je echte site ontwerpen we samen met jou: jouw foto's, jouw teksten, jouw kleuren. Wij bouwen en beheren hem.",
+  "foot": [
+   "Zit in Digitale groei, €150 per maand",
+   "Wij bouwen en beheren hem",
+   "Meestal live binnen 14 dagen"
+  ],
+  "chip_wait": "Deze pagina: meten…",
+  "chip_fallback": "Echt werk: amakhosi.be"
+ },
+ "ui": {
+  "example": "Voorbeeld",
+  "pause": "Pauzeer",
+  "play": "Speel verder",
+  "again": "Opnieuw",
+  "pause_aria": "Pauzeer het voorbeeld",
+  "play_aria": "Speel het voorbeeld verder",
+  "again_aria": "Speel het voorbeeld opnieuw",
+  "labels": {
+   "logo": "LOGO",
+   "links": "MENU",
+   "cta": "KNOP",
+   "foto": "FOTO VAN JE ZAAK",
+   "titel": "WAT JE DOET",
+   "uren": "OPENINGSUREN",
+   "review": "REVIEW",
+   "adres": "ADRES",
+   "bar": "ONDERBALK"
+  },
+  "notes": [
+   "knop altijd in beeld",
+   "openingsuren bovenaan: dat vraagt iedereen",
+   "een echte foto van je zaak",
+   "op de gsm boek je met je duim",
+   "Je rolluik is dicht. Je site niet."
+  ],
+  "closed": "Nu gesloten",
+  "hours_label": "Openingsuren",
+  "review_label": "Wat klanten zeggen",
+  "address_label": "Adres",
+  "clock_a": "Za 18:00",
+  "clock_b": "Zo 20:52",
+  "clock_sub": "je zaak is dicht",
+  "confirmed": "Bevestigd",
+  "sent": "Aanvraag verstuurd",
+  "form": [
+   "Merk",
+   "Onderhoud",
+   "Je gsm-nummer"
+  ],
+  "toast_boek": [
+   "Nieuwe boeking via je website",
+   "{moment} · {dienst} · bevestigd"
+  ],
+  "toast_offerte": [
+   "Nieuwe offerteaanvraag via je website",
+   "{dienst} · staat in je CRM"
+  ],
+  "sr_hero": "Voorbeeld: een website voor {naam} wordt getekend, ingekleurd en op de gsm getoond. Op zondagavond, als de zaak dicht is, komt er via de site {wat} binnen.",
+  "sr_boek": "een boeking",
+  "sr_offerte": "een offerteaanvraag",
+  "live_chapter": "Hoofdstuk {i} van 4: {naam}",
+  "lens_pause": "Pauzeer de rondleiding",
+  "lens_play": "Speel de rondleiding verder",
+  "search_ph": "Zoeken",
+  "open_until": "Open tot 18:00",
+  "result_btns": [
+   "Website",
+   "Route",
+   "Bellen"
+  ],
+  "sms_text": "Bedankt voor je bezoek. Hoe was het?",
+  "sms_meta": "2 UUR NA JE AFSPRAAK",
+  "tile_service": "Dienst: {dienst}",
+  "pay": "Betalen",
+  "pay_chips": [
+   "Bancontact",
+   "iDEAL",
+   "Visa",
+   "Apple Pay"
+  ],
+  "crm": "staat in je CRM",
+  "inbox": [
+   [
+    "web",
+    "Website",
+    "nieuwe boeking"
+   ],
+   [
+    "wa",
+    "WhatsApp",
+    "Kan ik zaterdag nog langskomen?"
+   ],
+   [
+    "ig",
+    "Instagram",
+    "Mooi werk! Hoeveel kost dat?"
+   ],
+   [
+    "mail",
+    "E-mail",
+    "Vraag over je prijzen"
+   ],
+   [
+    "sms",
+    "Sms",
+    "Ik ben wat later, sorry"
+   ],
+   [
+    "tel",
+    "Telefoon",
+    "Gemiste oproep, 10:05"
+   ]
+  ],
+  "slider": "Doorsnede van amakhosi.be",
+  "slider_none": "Nog niets doorgelicht",
+  "desk": "Computer",
+  "gsm": "Gsm",
+  "total_sr": "Samen: €{t} per maand",
+  "per_sum": "per maand, samen",
+  "per": "per maand",
+  "picks": "neemt op",
+  "measured_at": "gemeten om {t}"
+ },
+ "vak": [
+  {
+   "id": "kapper",
+   "chip": "Kapper",
+   "naam": "Kapsalon Mira",
+   "domein": "kapsalonmira.be",
+   "zoek": "kapper hasselt",
+   "links": [
+    "Diensten",
+    "Prijzen",
+    "Team",
+    "Contact"
+   ],
+   "titel": "Knippen en kleuren in Hasselt",
+   "sub": "Dinsdag tot zaterdag. Boek online, ook 's avonds.",
+   "cta": "Boek nu",
+   "dienst": "Knippen",
+   "moment": "Di 10:00",
+   "uren": "Di tot za · 9:00 tot 18:00",
+   "review": "“Altijd welkom, nooit lang wachten.”",
+   "adres": "Voorbeeldstraat 12, Hasselt",
+   "tel": "011 00 00 00",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1585747860715-2ba37e788b70",
+    "pos": "50% 45%"
+   },
+   "pal": {
+    "bg": "#211813",
+    "ink": "#f3e9e1",
+    "acc": "#c9825b",
+    "line": "rgba(243,233,225,.14)",
+    "card": "rgba(243,233,225,.06)"
+   }
+  },
+  {
+   "id": "kine",
+   "chip": "Kinesist",
+   "naam": "Kinepraktijk De Linde",
+   "domein": "kinepraktijkdelinde.be",
+   "zoek": "kinesist genk",
+   "links": [
+    "Behandelingen",
+    "Tarieven",
+    "Team",
+    "Contact"
+   ],
+   "titel": "Kinesitherapie in Genk",
+   "sub": "Maak zelf een afspraak, ook buiten de uren.",
+   "cta": "Maak een afspraak",
+   "dienst": "Eerste behandeling",
+   "moment": "Ma 08:30",
+   "uren": "Ma tot vr · 8:00 tot 19:00",
+   "review": "“Rustig uitgelegd en meteen geholpen.”",
+   "adres": "Voorbeeldstraat 12, Genk",
+   "tel": "089 00 00 00",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1519824145371-296894a0daa9",
+    "pos": "40% 50%"
+   },
+   "pal": {
+    "bg": "#16231f",
+    "ink": "#e8f0ec",
+    "acc": "#8fb8a2",
+    "line": "rgba(232,240,236,.14)",
+    "card": "rgba(232,240,236,.06)"
+   }
+  },
+  {
+   "id": "garage",
+   "chip": "Garage",
+   "naam": "Garage Janssens",
+   "domein": "garagejanssens.be",
+   "zoek": "garage tongeren",
+   "links": [
+    "Onderhoud",
+    "Herstellingen",
+    "Banden",
+    "Contact"
+   ],
+   "titel": "Onderhoud en herstellingen in Tongeren",
+   "sub": "Vraag je offerte online aan.",
+   "cta": "Vraag een offerte",
+   "dienst": "Onderhoud",
+   "moment": "Wo 08:00",
+   "uren": "Ma tot vr · 8:00 tot 18:00",
+   "review": "“Eerlijke prijs, op tijd klaar.”",
+   "adres": "Voorbeeldstraat 12, Tongeren",
+   "tel": "012 00 00 00",
+   "flow": "offerte",
+   "foto": {
+    "id": "photo-1702146713858-8e7d1cc29fe8",
+    "pos": "45% 55%"
+   },
+   "pal": {
+    "bg": "#18191c",
+    "ink": "#eef0f2",
+    "acc": "#e0b43a",
+    "line": "rgba(238,240,242,.14)",
+    "card": "rgba(238,240,242,.06)"
+   }
+  },
+  {
+   "id": "kliniek",
+   "chip": "Kliniek",
+   "naam": "Huidkliniek Aura",
+   "domein": "huidkliniekaura.be",
+   "zoek": "kliniek sint-truiden",
+   "links": [
+    "Behandelingen",
+    "Prijzen",
+    "Over ons",
+    "Contact"
+   ],
+   "titel": "Huidverzorging in Sint-Truiden",
+   "sub": "Plan je consult wanneer het jou past.",
+   "cta": "Plan je consult",
+   "dienst": "Consult",
+   "moment": "Wo 14:00",
+   "uren": "Di tot za · 9:00 tot 17:00",
+   "review": "“Warm ontvangen en eerlijk advies.”",
+   "adres": "Voorbeeldstraat 12, Sint-Truiden",
+   "tel": "011 00 00 01",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1570172619644-dfd03ed5d881",
+    "pos": "50% 40%"
+   },
+   "pal": {
+    "bg": "#efebe6",
+    "ink": "#2a2622",
+    "acc": "#9b7b62",
+    "line": "rgba(42,38,34,.12)",
+    "card": "rgba(42,38,34,.05)"
+   }
+  }
+ ],
+ "doet": {
+  "eyebrow": "Wat je site voor je doet",
+  "h2a": "Vier dingen doet een goede site.",
+  "h2b": "Elke dag, ook zonder jou.",
+  "lede": "Kies er één. Je ziet het meteen op het voorbeeld van hierboven.",
+  "group": "Wat je site doet",
+  "lenses": [
+   {
+    "id": "gevonden",
+    "part": "logo",
+    "titel": "Gevonden worden",
+    "tekst": "Wie een {vak} in de buurt zoekt, moet jou vinden. We bouwen je site snel en SEO-klaar, en je Google-profiel vullen we volledig in en houden we up-to-date. Een plek bovenaan belooft niemand eerlijk. Een site die Google goed kan lezen, die bouwen we wel."
+   },
+   {
+    "id": "vertrouwen",
+    "part": "foto",
+    "titel": "Vertrouwen wekken",
+    "tekst": "Een echte foto, je openingsuren, je adres en wat klanten over je zeggen. Zo ziet een klant meteen bij wie hij binnenkomt. En 2 uur na elke afspraak vraagt je systeem vanzelf om een review."
+   },
+   {
+    "id": "boeken",
+    "part": "knop",
+    "titel": "Laten boeken en betalen",
+    "titel_offerte": "Laten aanvragen",
+    "tekst": "Met één tik op {cta} boekt je klant meteen. De afsprakenplanner en de leadformulieren zitten erin, en betalen kan online met Bancontact, iDEAL, Visa of Apple Pay.",
+    "tekst_offerte": "Met één tik op {cta} vult je klant zijn aanvraag in. Het leadformulier zit erin, en de aanvraag komt meteen in je CRM."
+   },
+   {
+    "id": "alles",
+    "part": "",
+    "titel": "Alles op één plek",
+    "tekst": "Elke boeking en elke aanvraag komt in je CRM. Berichten via WhatsApp, Instagram, e-mail, sms en telefoon staan samen in één inbox."
+   }
+  ],
+  "links": [
+   {
+    "label": "Zo boeken klanten zelf: bekijk het afsprakensysteem",
+    "href": "Afsprakensysteem"
+   },
+   {
+    "label": "Ook 's avonds antwoorden op vragen? Dat is de AI-chatbot, + €50 per maand",
+    "href": "AI%20Chatbots"
+   }
+  ]
+ },
+ "werk": {
+  "eyebrow": "Echt werk",
+  "h2a": "Van blauwdruk",
+  "h2b": "tot amakhosi.be.",
+  "lede": "Sleep de lijn. Erboven zie je het plan, eronder de site zoals hun gasten hem zien.",
+  "line": "DOORSNEDE",
+  "name": "Amakhosi Sauna",
+  "place": "Hamont-Achel",
+  "text": "Amakhosi is een privésauna en wellness in Hamont-Achel. We bouwden een nieuwe website in een warme stijl van espresso en goud. Gasten reserveren en betalen online, en krijgen vanzelf een bevestiging, een herinnering en opvolging per mail.",
+  "tags": [
+   "Website",
+   "Online reserveren en betalen",
+   "Mailflow",
+   "SEO"
+  ],
+  "visit": "Bekijk amakhosi.be",
+  "newtab": "(opent in een nieuw venster)",
+  "caption": "Schermafbeeldingen van amakhosi.be, september 2026.",
+  "alt_desk": "Startpagina van amakhosi.be op een computer: een wellnessruimte met bubbelbad, de titel Welkom bij Amakhosi en de knop Reserveer hier.",
+  "alt_gsm": "Dezelfde startpagina op een gsm, met onderaan de knop Reserveer nu.",
+  "bp": {
+   "desk": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 10,
+     "l": ""
+    },
+    {
+     "x": 1.6,
+     "y": 1,
+     "w": 4,
+     "h": 7.6,
+     "l": "LOGO"
+    },
+    {
+     "x": 11.3,
+     "y": 1.8,
+     "w": 23.4,
+     "h": 3.4,
+     "l": "MENU"
+    },
+    {
+     "x": 85.8,
+     "y": 2.3,
+     "w": 11,
+     "h": 5,
+     "l": "RESERVEER HIER"
+    },
+    {
+     "x": 0,
+     "y": 10,
+     "w": 100,
+     "h": 83,
+     "l": "FOTO",
+     "x_": 1
+    },
+    {
+     "x": 37,
+     "y": 47,
+     "w": 26,
+     "h": 6,
+     "l": "TITEL"
+    },
+    {
+     "x": 22,
+     "y": 54,
+     "w": 56,
+     "h": 6,
+     "l": "ONDERTITEL"
+    },
+    {
+     "x": 0,
+     "y": 93,
+     "w": 100,
+     "h": 7,
+     "l": "ONDERBALK"
+    },
+    {
+     "x": 86.6,
+     "y": 94.4,
+     "w": 9.8,
+     "h": 4.2,
+     "l": "RESERVEER NU"
+    }
+   ],
+   "gsm": [
+    {
+     "x": 3,
+     "y": 1,
+     "w": 17,
+     "h": 6.5,
+     "l": "LOGO"
+    },
+    {
+     "x": 89,
+     "y": 2.2,
+     "w": 8,
+     "h": 3.4,
+     "l": "MENU"
+    },
+    {
+     "x": 0,
+     "y": 10.7,
+     "w": 100,
+     "h": 48.8,
+     "l": "FOTO",
+     "x_": 1
+    },
+    {
+     "x": 4,
+     "y": 27.6,
+     "w": 92,
+     "h": 4.8,
+     "l": "TITEL"
+    },
+    {
+     "x": 10,
+     "y": 34.8,
+     "w": 80,
+     "h": 13.4,
+     "l": "ONDERTITEL"
+    },
+    {
+     "x": 5,
+     "y": 65.5,
+     "w": 90,
+     "h": 26,
+     "l": "FOTO",
+     "x_": 1
+    },
+    {
+     "x": 0,
+     "y": 93.3,
+     "w": 100,
+     "h": 6.7,
+     "l": "ONDERBALK"
+    },
+    {
+     "x": 53,
+     "y": 94.4,
+     "w": 35,
+     "h": 4.6,
+     "l": "RESERVEER NU"
+    }
+   ]
+  },
+  "pins": {
+   "desk": [
+    {
+     "y": 50,
+     "x": 50,
+     "t": "Titels en teksten waar Google op leest."
+    },
+    {
+     "y": 5,
+     "x": 91,
+     "t": "Reserveren en meteen betalen, online."
+    },
+    {
+     "y": 30,
+     "x": 20,
+     "t": "Echte foto's in een warme stijl van espresso en goud."
+    },
+    {
+     "y": 96,
+     "x": 20,
+     "t": "Na het reserveren vertrekken bevestiging, herinnering en opvolging per mail."
+    }
+   ],
+   "gsm": [
+    {
+     "y": 22,
+     "x": 50,
+     "t": "Dezelfde site, herschikt voor een klein scherm."
+    },
+    {
+     "y": 30,
+     "x": 50,
+     "t": "Titels en teksten waar Google op leest."
+    },
+    {
+     "y": 96,
+     "x": 70,
+     "t": "Hun knop Reserveer nu staat onderaan altijd in beeld."
+    }
+   ]
+  },
+  "cards": [
+   {
+    "k": "WERK 02 · HASSELT",
+    "t": "Clinic3D",
+    "txt": "Esthetische kliniek. Website met online afsprakensysteem, AI-chatbot, automatische mailflow en reviewopvolging.",
+    "nums": [
+     [
+      "40.280",
+      "weergaven op de website sinds de lancering"
+     ],
+     [
+      "650",
+      "van 681 ingeplande afspraken bevestigd"
+     ],
+     [
+      "0",
+      "no-shows"
+     ]
+    ],
+    "note": "Afspraken gemeten van 1 januari tot 20 september 2026 (263 dagen).",
+    "quote": "Mijn klanten boeken nu zelf — ik moet niets meer doen.",
+    "cite": "Dr. Kenis, Clinic3D",
+    "link": "Lees de case",
+    "href": "Clinic3D"
+   },
+   {
+    "k": "WERK 03 · VZW",
+    "t": "Mett-U VZW",
+    "txt": "Een nieuwe website, gekoppeld aan geautomatiseerde opvolging en een centraal CRM."
+   },
+   {
+    "k": "WERK 04 · DEZE SITE",
+    "t": "emlaunchpad.com",
+    "txt": "Drietalig, statisch gebouwd en snel. Hoe snel bij jou? Dat meet je hieronder.",
+    "link": "Naar de meting",
+    "href": "#gemeten"
+   }
+  ]
+ },
+ "meet": {
+  "eyebrow": "Gemeten op jouw toestel, zonet",
+  "h2a": "Deze pagina bouwden we ook.",
+  "h2b": "Zo snel kwam ze bij jou binnen.",
+  "lede": "Geen score uit een folder. Je browser heeft net zelf gemeten hoe deze pagina bij jou laadde. De cijfers blijven op je toestel.",
+  "rows": [
+   {
+    "k": "fcp",
+    "label": "Eerste beeld na",
+    "max": 4000,
+    "tick": 1800,
+    "tick_l": "Google: tot 1,8 s is goed"
+   },
+   {
+    "k": "lcp",
+    "label": "Grootste stuk in beeld na",
+    "max": 5000,
+    "tick": 2500,
+    "tick_l": "Google: tot 2,5 s is goed"
+   },
+   {
+    "k": "cls",
+    "label": "Hoeveel de pagina versprong",
+    "max": 0.25,
+    "tick": 0.1,
+    "tick_l": "Google: tot 0,1 is goed"
+   },
+   {
+    "k": "kb",
+    "label": "Eigen bestanden over het net",
+    "max": 1000
+   }
+  ],
+  "lcp_note": "Het grootste beeld hier is onze voorbeeldfoto, die we bewust later tonen. Daarom kijken we naar het eerste beeld.",
+  "others": "Plus {n} bestanden van andere diensten, zoals lettertypes, foto's en de chat. Hun grootte geeft je browser niet altijd vrij.",
+  "load": "Volledig geladen na {x}.",
+  "less": "minder dan 0,1 s",
+  "v_good": "Vlot, ook bij jou.",
+  "v_slow": "Trager dan we willen. Dat kan aan je verbinding of je toestel liggen. We tonen het toch zoals het is.",
+  "v_cache": "Je had deze bestanden al. Er ging bijna niets opnieuw over het net.",
+  "v_bf": "Je kwam terug via de terugknop. Je browser toonde de pagina uit zijn geheugen.",
+  "v_none": "Je browser geeft deze meting niet vrij. Dit meet hij wel:",
+  "v_bg": "Deze pagina ging open in een ander tabblad. Dan meet je browser niet eerlijk. Herlaad ze om het te zien.",
+  "wait": "Even meten…",
+  "reload": "Herlaad en meet opnieuw",
+  "foot": "Gemeten in je eigen browser, met de meetpunten die Google gebruikt voor snelheid en stabiliteit (Core Web Vitals). Er gaat niets naar ons of naar iemand anders. Een ander toestel of een andere verbinding geeft andere cijfers. De grenzen komen van Google (web.dev).",
+  "slot": "emlaunchpad.com is drietalig en statisch, en we bouwden het zelf. Met dezelfde zorg bouwen we de jouwe.",
+  "sr": "Deze pagina stond er bij jou na {x}.",
+  "chip": "Deze pagina stond er bij jou na {x}"
+ },
+ "prijs": {
+  "eyebrow": "Wat het kost",
+  "h2a": "Geen apart prijskaartje.",
+  "h2b": "Je website zit in Digitale groei.",
+  "lede": "€150 per maand, maandelijks opzegbaar. Wij bouwen en beheren je volledige digitale werking. Je website is daar het begin van.",
+  "head": "STUKLIJST · DIGITALE GROEI",
+  "rows": [
+   [
+    "Website",
+    "Een professionele, snelle website die van bezoekers klanten maakt. Eerst voor de gsm ontworpen, geoptimaliseerd voor Core Web Vitals, SEO-klaar, met een ingebouwde afsprakenplanner en leadformulieren."
+   ],
+   [
+    "Google-profiel en lokale zichtbaarheid",
+    "Volledig ingevuld en up-to-date."
+   ],
+   [
+    "Reputatiebeheer",
+    "2 uur na een afspraak vertrekt vanzelf een reviewverzoek."
+   ],
+   [
+    "CRM en klantendashboard",
+    "WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
+   ],
+   [
+    "Campagnes per e-mail en sms",
+    ""
+   ],
+   [
+    "Funnels en landingspagina's",
+    ""
+   ],
+   [
+    "Online betalen en facturatie",
+    "Via Stripe, met Bancontact, iDEAL, Visa en Apple Pay."
+   ],
+   [
+    "AI-automatisering en workflows",
+    ""
+   ],
+   [
+    "Toegang tot het platform",
+    ""
+   ]
+  ],
+  "tb": [
+   [
+    "PAKKET",
+    "DIGITALE GROEI"
+   ],
+   [
+    "PRIJS",
+    "€150 / maand"
+   ],
+   [
+    "LOOPTIJD",
+    "maandelijks opzegbaar"
+   ],
+   [
+    "GETEKEND",
+    "EM Launchpad · blad 1/1"
+   ]
+  ],
+  "addons_label": "Wil je er iets bij?",
+  "addons": [
+   {
+    "id": "cb",
+    "label": "AI-chatbot",
+    "price": 50,
+    "txt": "Beantwoordt vragen op je site, ook 's avonds.",
+    "row": "AI-chatbot",
+    "href": "AI%20Chatbots"
+   },
+   {
+    "id": "rc",
+    "label": "AI-receptioniste",
+    "price": 125,
+    "txt": "Neemt je telefoon op.",
+    "row": "AI-receptioniste",
+    "href": "AI%20Voice%20Agents"
+   }
+  ],
+  "total_label": "Jouw maandprijs",
+  "cons": "AI tot in je interne processen? Dat is AI Consulting, op aanvraag.",
+  "cons_link": "Bekijk de pakketten",
+  "cta": "Plan een gratis gesprek",
+  "cta2": "Bekijk het pakket"
+ },
+ "stappen": {
+  "eyebrow": "Zo komt hij er",
+  "h2a": "Van een gesprek",
+  "h2b": "tot een site die boekt.",
+  "lede": "Meestal live binnen 14 dagen. Jij hoeft niets te bouwen of te koppelen.",
+  "items": [
+   [
+    "Gratis gesprek",
+    "Dertig minuten. Wat doe je, voor wie, en wat moet een bezoeker kunnen: boeken, betalen of iets aanvragen?"
+   ],
+   [
+    "Wij ontwerpen",
+    "Rond jouw zaak, met jouw foto's, teksten en kleuren."
+   ],
+   [
+    "Wij bouwen en koppelen",
+    "Planner, formulieren, betalingen en je CRM. Ook je Google-profiel zetten we in orde."
+   ],
+   [
+    "Live, en wij beheren hem",
+    "Vanaf dan werkt je site ook als jij dicht bent."
+   ]
+  ]
+ },
+ "faq": {
+  "eyebrow": "Veelgestelde vragen",
+  "h2a": "Goed om te weten",
+  "h2b": "voor we beginnen te tekenen.",
+  "items": [
+   {
+    "q": "Wat kost een website bij jullie?",
+    "a": "Er is geen apart prijskaartje. Je website zit in Digitale groei: €150 per maand, maandelijks opzegbaar. Daarin zitten ook je Google-profiel, reviewverzoeken, je CRM en online betalen."
+   },
+   {
+    "q": "Hoe snel staat mijn site online?",
+    "a": "Meestal binnen 14 dagen."
+   },
+   {
+    "q": "Kunnen klanten online boeken en betalen?",
+    "a": "Ja. De afsprakenplanner en de leadformulieren zitten erin. Betalen gaat via Stripe, met Bancontact, iDEAL, Visa of Apple Pay."
+   },
+   {
+    "q": "Zit er een chatbot bij?",
+    "a": "Niet standaard. De AI-chatbot is een uitbreiding van €50 per maand. Wil je dat er ook iemand je telefoon opneemt? Dat is de AI-receptioniste, voor €125 per maand."
+   },
+   {
+    "q": "Sta ik dan bovenaan in Google?",
+    "a": "Dat kan niemand eerlijk beloven. Wij bouwen je site snel en SEO-klaar, en we vullen je Google-profiel volledig in en houden het up-to-date."
+   },
+   {
+    "q": "Wie beheert mijn website?",
+    "a": "Wij. We bouwen en beheren je volledige digitale werking, en je website hoort daarbij."
+   }
+  ],
+  "more_label": "Lees ook:",
+  "more": [
+   {
+    "title": "Waarom je website traag is",
+    "href": "emtimes/websites/waarom-je-website-traag-is/"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "Het eerste lijntje",
+  "h2b": "trekken we samen.",
+  "text": "Plan een gratis gesprek van 30 minuten. We bekijken wat jouw site moet doen. Daarna ontwerpen we het eerste blad.",
+  "btn": "Plan een gratis gesprek",
+  "demo": "Of vraag een gratis demo aan",
+  "demo_href": "Gratis%20Demo",
+  "micro": "Deze pagina stond er bij jou na {x}. Met dezelfde zorg bouwen we de jouwe.",
+  "micro_fb": "Met dezelfde zorg als deze pagina bouwen we de jouwe.",
+  "badges": [
+   "Gratis en vrijblijvend",
+   "30 minuten",
+   "Meestal live binnen 14 dagen"
+  ]
+ }
+}

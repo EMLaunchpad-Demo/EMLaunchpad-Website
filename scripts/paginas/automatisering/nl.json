@@ -1,0 +1,823 @@
+{
+ "lang": "nl",
+ "tone": "blauw",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 78,
+   "ay": 28,
+   "bx": 8,
+   "by": 100,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.2,
+   "ax": 22,
+   "ay": 36,
+   "bx": 84,
+   "by": 72,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.42,
+   "ax": 80,
+   "ay": 62,
+   "bx": 16,
+   "by": 26,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.68,
+   "ax": 36,
+   "ay": 44,
+   "bx": 70,
+   "by": 58,
+   "ao": 0.8,
+   "bo": 0.7
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "meta": {
+  "title": "AI-automatisering: het saaie werk loopt vanzelf | EM Launchpad",
+  "desc": "Bevestigingen, herinneringen, facturen, reviewverzoeken en opvolging die vanzelf vertrekken, op het juiste moment. Wij bouwen en onderhouden de workflows. Inbegrepen in Digitale groei.",
+  "ogtitle": "AI-automatisering: het saaie werk loopt vanzelf",
+  "service": "AI-automatisering",
+  "offer": "Inbegrepen in het pakket Digitale groei"
+ },
+ "hero": {
+  "crumb_home": "Diensten",
+  "crumb": "AI-automatisering",
+  "eyebrow": "AI-automatisering",
+  "h1a": "Eén klant boekt.",
+  "h1b": "De rest loopt als een uurwerk.",
+  "lede": "Bevestigen, herinneren, factureren, om een review vragen. Wij bouwen de workflows die dat saaie werk vanzelf doen, telkens op het juiste moment. Jij werkt gewoon verder.",
+  "cta": "Plan een gratis gesprek",
+  "cta2": "Wat zit erin",
+  "label": "Kies wat er gebeurt",
+  "read_label": "Wat er net vanzelf gebeurde",
+  "foot": [
+   "Zit in Digitale groei, €150 per maand",
+   "Wij bouwen en onderhouden de workflows",
+   "Meestal live binnen 14 dagen"
+  ],
+  "foot_link": "Clinic3D: 3.250 e-mails vanzelf verstuurd"
+ },
+ "ui": {
+  "example": "Voorbeeld",
+  "pause": "Pauzeer het uurwerk",
+  "play": "Speel verder",
+  "again": "Opnieuw",
+  "other": "Kies iets anders",
+  "seq": "Lees de hele reeks",
+  "goto": "Ga naar: {m}",
+  "steps_label": "Momenten in deze reeks",
+  "chips_label": "Kies wat er gebeurt",
+  "or": "of",
+  "choice": "Keuze: {c}",
+  "auto": "Kies je niet, dan loopt de gewone weg verder.",
+  "done_sr": "Klaar.",
+  "tools": {
+   "mail": "E-mail",
+   "sms": "Sms",
+   "agenda": "Google Agenda",
+   "crm": "CRM",
+   "stripe": "Stripe",
+   "google": "Google-profiel",
+   "inbox": "Inbox"
+  },
+  "nogeens": "Nog eens",
+  "sr_how": "gebeurt vanzelf:",
+  "total_sr": "Samen: €{t} per maand",
+  "per": "per maand",
+  "per_sum": "per maand, samen",
+  "tab_label": "Kies je vak",
+  "next": "Volgend moment",
+  "finish": "Afronden"
+ },
+ "geo": {
+  "p": 11,
+  "n": [
+   78,
+   42,
+   51,
+   61,
+   74,
+   100
+  ],
+  "a": [
+   null,
+   -145,
+   -61,
+   -28,
+   38,
+   80
+  ],
+  "c0": [
+   376,
+   598
+  ],
+  "onrust": [
+   240,
+   790,
+   60
+  ],
+  "dial": 490
+ },
+ "order": [
+  "boekt",
+  "factuur",
+  "oproep",
+  "aanvraag"
+ ],
+ "events": {
+  "boekt": {
+   "chip": "Een klant boekt",
+   "h1": "Eén klant boekt.",
+   "icon": "cal",
+   "vars": {
+    "naam": "Lotte",
+    "zij": "Ze",
+    "haar": "Haar"
+   },
+   "steps": [
+    {
+     "w": 1,
+     "grav": "METEEN",
+     "win": "Di 21:40",
+     "jij": "Jij: al lang thuis",
+     "kop": "Bevestiging per e-mail en sms",
+     "msg": "Hoi {naam}, je afspraak staat vast: zaterdag om 10:00. Past het toch niet? Verplaats of annuleer met één klik.",
+     "extra": "In je agenda gezet, ook in Google Agenda. {naam} staat in je CRM.",
+     "tools": [
+      "mail",
+      "sms",
+      "agenda",
+      "crm"
+     ],
+     "sr": "Meteen: bevestiging per e-mail en sms verstuurd."
+    },
+    {
+     "w": 2,
+     "grav": "1 DAG VOORAF",
+     "win": "Vr 10:00",
+     "jij": "Jij: aan het werk",
+     "kop": "Herinnering",
+     "msg": "Hoi {naam}, morgen om 10:00 verwachten we je. Tot morgen!",
+     "tools": [
+      "mail",
+      "sms"
+     ],
+     "sr": "Eén dag vooraf: herinnering verstuurd."
+    },
+    {
+     "w": 3,
+     "grav": "2 UUR VOORAF",
+     "win": "Za 08:00",
+     "jij": "Jij: koffie aan het zetten",
+     "kop": "Laatste sms, met je adres",
+     "msg": "Tot straks, {naam}! We verwachten je om 10:00. Hier vind je ons adres.",
+     "tools": [
+      "sms"
+     ],
+     "sr": "Twee uur vooraf: laatste sms met het adres verstuurd."
+    },
+    {
+     "w": 4,
+     "grav": "NA AFLOOP",
+     "win": "Za 12:30",
+     "jij": "Jij: bij de volgende klant",
+     "kop": "Reviewverzoek, 2 uur na de afspraak",
+     "msg": "Bedankt voor je bezoek, {naam}. Hoe was het?",
+     "tools": [
+      "sms",
+      "mail"
+     ],
+     "sr": "Twee uur na de afspraak: reviewverzoek verstuurd.",
+     "fork": {
+      "q": "Hoe was het voor {naam}?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Tevreden",
+        "grav": "NAAR GOOGLE",
+        "res": "{zij} krijgt de link naar je Google-profiel.",
+        "tools": [
+         "google"
+        ]
+       },
+       {
+        "label": "Niet tevreden",
+        "grav": "EERST PRIVÉ",
+        "res": "{haar} reactie komt eerst bij jou terecht, niet op Google."
+       }
+      ]
+     }
+    },
+    {
+     "w": 5,
+     "grav": "NA 6 WEKEN",
+     "win": "6 weken later",
+     "jij": "Jij: er niet meer aan gedacht",
+     "kop": "Uitnodiging voor een volgende afspraak",
+     "msg": "Hoi {naam}, tijd voor een nieuwe afspraak? Kies meteen een moment dat je past.",
+     "tools": [
+      "mail"
+     ],
+     "sr": "Na zes weken: uitnodiging voor een volgende afspraak verstuurd."
+    }
+   ],
+   "end": {
+    "txt": "Vijf momenten, elk op tijd. Jij deed er niets voor.",
+    "note": "De momenten en teksten stemmen we samen met jou af.",
+    "link": {
+     "label": "Hoe klanten zelf boeken: bekijk het afsprakensysteem",
+     "href": "Afsprakensysteem"
+    }
+   }
+  },
+  "factuur": {
+   "chip": "Een factuur blijft open",
+   "h1": "Eén factuur blijft open.",
+   "icon": "bill",
+   "steps": [
+    {
+     "w": 2,
+     "grav": "STAAT ZE OPEN",
+     "win": "Ma 09:00",
+     "jij": "Jij: onder een auto",
+     "kop": "Automatische herinnering",
+     "msg": "Hoi Jonas, je factuur staat nog open. Betalen kan online met Bancontact, iDEAL, Visa of Apple Pay.",
+     "tools": [
+      "mail",
+      "stripe"
+     ],
+     "sr": "Herinnering voor de open factuur verstuurd.",
+     "fork": {
+      "q": "Betaalt Jonas?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Hij betaalt online",
+        "then": [
+         {
+          "w": 3,
+          "grav": "NA BETALING",
+          "win": "Ma 11:20",
+          "jij": "Jij: aan de volgende herstelling",
+          "kop": "Betaling ontvangen",
+          "msg": "Bedankt, Jonas. Je betaling is goed ontvangen.",
+          "extra": "Betaald met Bancontact via Stripe. Genoteerd bij Jonas in je CRM.",
+          "tools": [
+           "stripe",
+           "crm"
+          ],
+          "sr": "Betaling ontvangen en genoteerd in je CRM."
+         }
+        ]
+       },
+       {
+        "label": "Nog niet",
+        "then": [
+         {
+          "w": 4,
+          "grav": "NOG OPEN",
+          "win": "Later",
+          "jij": "Jij: niet achter je geld aan",
+          "kop": "Nog een herinnering",
+          "msg": "Hoi Jonas, kleine herinnering: je factuur staat nog open. Betalen kan met één klik.",
+          "tools": [
+           "mail"
+          ],
+          "sr": "Nog een herinnering verstuurd."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "Het uurwerk loopt achter je geld aan. Jij niet.",
+    "note": "Na elke online betaling vertrekt ook de factuur vanzelf."
+   }
+  },
+  "oproep": {
+   "chip": "Je mist een oproep",
+   "h1": "Je mist een oproep.",
+   "icon": "call",
+   "steps": [
+    {
+     "w": 1,
+     "grav": "METEEN",
+     "win": "Wo 10:05",
+     "jij": "Jij: midden in een behandeling",
+     "kop": "Sms met je boekingslink",
+     "msg": "Sorry, we konden je net niet opnemen. Boek hier meteen een moment dat je past.",
+     "extra": "De oproep staat in je inbox.",
+     "tools": [
+      "sms",
+      "inbox"
+     ],
+     "sr": "Meteen: sms met je boekingslink verstuurd.",
+     "fork": {
+      "q": "Wat doet de beller?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Boekt via de link",
+        "res": "Dan begint alles van 'Een klant boekt'.",
+        "goto": "boekt",
+        "vars": {
+         "naam": "Sam",
+         "zij": "Hij",
+         "haar": "Zijn"
+        },
+        "first": {
+         "win": "Wo 10:12",
+         "jij": "Jij: nog in behandeling"
+        }
+       },
+       {
+        "label": "Boekt niet",
+        "then": [
+         {
+          "w": 2,
+          "grav": "IN JE INBOX",
+          "win": "Wo 12:30",
+          "jij": "Jij: middagpauze",
+          "kop": "Staat in je inbox",
+          "txt": "Zo zie je wie belde en bel je terug wanneer het jou past.",
+          "tools": [
+           "inbox"
+          ],
+          "sr": "De oproep staat in je inbox."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "Geen oproep die zomaar verdwijnt. Jij deed er niets voor.",
+    "link": {
+     "label": "Liever dat er meteen iemand opneemt? Bekijk de AI-receptioniste",
+     "href": "AI%20Voice%20Agents"
+    }
+   }
+  },
+  "aanvraag": {
+   "chip": "Er komt een aanvraag binnen",
+   "h1": "Er komt een aanvraag binnen.",
+   "icon": "form",
+   "steps": [
+    {
+     "w": 1,
+     "grav": "METEEN",
+     "win": "Zo 20:15",
+     "jij": "Jij: aan tafel",
+     "kop": "In je CRM, bij de juiste persoon",
+     "txt": "Nieuwe aanvraag van Sarah via je website. Tags: offerte, website. Doorgestuurd naar wie de offertes maakt.",
+     "tools": [
+      "crm"
+     ],
+     "sr": "Meteen: aanvraag in je CRM gezet en doorgestuurd.",
+     "fork": {
+      "q": "Antwoordt Sarah op je offerte?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Nog niet",
+        "then": [
+         {
+          "w": 2,
+          "grav": "OPVOLGING",
+          "win": "Wo 09:00",
+          "jij": "Jij: aan het werk",
+          "kop": "Opvolging vertrekt vanzelf",
+          "msg": "Hoi Sarah, nog vragen over je offerte? Antwoord gewoon op dit bericht.",
+          "tools": [
+           "mail"
+          ],
+          "sr": "Opvolging verstuurd."
+         }
+        ]
+       },
+       {
+        "label": "Ze antwoordt",
+        "then": [
+         {
+          "w": 2,
+          "grav": "IN GESPREK",
+          "win": "Ma 08:40",
+          "jij": "Jij: nog niet eens begonnen",
+          "kop": "Pipeline bijgewerkt",
+          "txt": "Sarah staat nu op 'in gesprek'. Haar antwoord zit in je inbox.",
+          "tools": [
+           "crm",
+           "inbox"
+          ],
+          "sr": "Pipeline bijgewerkt: in gesprek."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "Geen aanvraag die in je mailbox blijft liggen."
+   }
+  }
+ },
+ "lijst": {
+  "eyebrow": "Het briefje naast de kassa",
+  "h2a": "Je lijstje van vandaag.",
+  "h2b": "Het streept zichzelf door.",
+  "lede": "Terugbellen, herinneren, een factuur sturen, om een review vragen. Kies je vak en kijk wat er van je lijstje overblijft.",
+  "head": "Nog te doen",
+  "caption": "Voorbeeld. Wat vanzelf loopt en wanneer, stemmen we samen af.",
+  "trades": [
+   {
+    "id": "kapsalon",
+    "label": "Kapsalon",
+    "photo": {
+     "id": "photo-1675034741473-afed58a142e8",
+     "alt": "Kapster aan het werk bij een klant in haar salon",
+     "pos": "50% 28%",
+     "posM": "30% 30%",
+     "w": 420,
+     "h": 630
+    },
+    "tasks": [
+     {
+      "t": "Lotte herinneren aan zaterdag",
+      "how": "vanzelf · 1 dag vooraf"
+     },
+     {
+      "t": "Tom terugbellen voor een afspraak",
+      "how": "vanzelf · sms met je boekingslink"
+     },
+     {
+      "t": "Mevrouw Peeters om een review vragen",
+      "how": "vanzelf · 2 uur na haar afspraak"
+     },
+     {
+      "t": "Factuur sturen na een online betaling",
+      "how": "vanzelf · na elke betaling"
+     },
+     {
+      "t": "Klanten van zes weken geleden uitnodigen",
+      "how": "vanzelf · na 6 weken"
+     },
+     {
+      "t": "Nieuwe klant in het klantenbestand zetten",
+      "how": "vanzelf · in je CRM"
+     }
+    ],
+    "rest": "Wat overblijft: knippen."
+   },
+   {
+    "id": "kinesist",
+    "label": "Kinesist",
+    "photo": {
+     "id": "photo-1519824145371-296894a0daa9",
+     "alt": "Kinesitherapeut behandelt de rug van een patiënt",
+     "pos": "40% 50%",
+     "posM": "45% 50%",
+     "w": 600,
+     "h": 400
+    },
+    "tasks": [
+     {
+      "t": "Patiënten van morgen herinneren",
+      "how": "vanzelf · 1 dag vooraf"
+     },
+     {
+      "t": "Gemiste oproep van 10:05 terugbellen",
+      "how": "vanzelf · sms met je boekingslink"
+     },
+     {
+      "t": "Openstaande factuur opvolgen",
+      "how": "vanzelf · automatische herinnering"
+     },
+     {
+      "t": "Aanvraag van de website doorgeven",
+      "how": "vanzelf · naar de juiste persoon"
+     },
+     {
+      "t": "Om een review vragen",
+      "how": "vanzelf · 2 uur na de afspraak"
+     },
+     {
+      "t": "Volgende afspraak voorstellen",
+      "how": "vanzelf · na 6 weken"
+     }
+    ],
+    "rest": "Wat overblijft: behandelen."
+   },
+   {
+    "id": "garage",
+    "label": "Garage",
+    "photo": {
+     "id": "photo-1702146713858-8e7d1cc29fe8",
+     "alt": "Mecanicien ligt onder een opgekrikte auto",
+     "pos": "45% 55%",
+     "posM": "60% 55%",
+     "w": 600,
+     "h": 400
+    },
+    "tasks": [
+     {
+      "t": "Klant herinneren aan het onderhoud van morgen",
+      "how": "vanzelf · 1 dag vooraf"
+     },
+     {
+      "t": "Sms met het adres sturen",
+      "how": "vanzelf · 2 uur vooraf"
+     },
+     {
+      "t": "Factuur sturen na een online betaling",
+      "how": "vanzelf · na elke betaling"
+     },
+     {
+      "t": "Achter een onbetaalde factuur aan",
+      "how": "vanzelf · automatische herinnering"
+     },
+     {
+      "t": "Gemiste oproep terugbellen",
+      "how": "vanzelf · sms met je boekingslink"
+     },
+     {
+      "t": "Offerteaanvraag doorgeven aan de juiste collega",
+      "how": "vanzelf · naar de juiste persoon"
+     }
+    ],
+    "rest": "Wat overblijft: sleutelen."
+   }
+  ]
+ },
+ "erin": {
+  "eyebrow": "Wat erin zit",
+  "h2a": "Open het uurwerk.",
+  "h2b": "Dit draait er allemaal in.",
+  "lede": "Zes onderdelen die samen draaien. Wij bouwen ze met n8n en in je platform, en we houden ze draaiende.",
+  "parts": [
+   {
+    "w": 0,
+    "label": "CRM",
+    "kop": "Alles op één plek",
+    "txt": "WhatsApp, Instagram, e-mail, sms en telefoongesprekken in één inbox. Klantgeschiedenis, notities, tags en pipeline-status worden vanzelf bijgewerkt."
+   },
+   {
+    "w": 1,
+    "label": "Afspraken",
+    "kop": "Bevestigen en herinneren",
+    "txt": "Meteen een bevestiging per e-mail en sms, een herinnering 1 dag vooraf en een laatste sms 2 uur vooraf met je adres. Na 6 weken een uitnodiging voor de volgende keer. Synchroniseert met Google Agenda."
+   },
+   {
+    "w": 2,
+    "label": "Gemiste oproepen",
+    "kop": "Niemand blijft hangen",
+    "txt": "Mis je een oproep? Dan krijgt de beller meteen een sms met je boekingslink."
+   },
+   {
+    "w": 3,
+    "label": "Reviews",
+    "kop": "Vanzelf om een review vragen",
+    "txt": "2 uur na elke afspraak vertrekt een reviewverzoek per sms of e-mail. Tevreden klanten gaan naar Google. Wie niet tevreden is, komt eerst bij jou terecht."
+   },
+   {
+    "w": 4,
+    "label": "Betalingen",
+    "kop": "Facturen die zichzelf sturen",
+    "txt": "Na elke betaling via Stripe vertrekt een factuur. Staat er een factuur open, dan volgen automatische herinneringen. Met Bancontact, iDEAL, Visa en Apple Pay."
+   },
+   {
+    "w": 5,
+    "label": "Aanvragen",
+    "kop": "Opvolgen en doorsturen",
+    "txt": "Een nieuwe aanvraag komt bij de juiste persoon terecht en krijgt vanzelf opvolging. Campagnes per e-mail en sms starten op basis van wat je klant doet."
+   }
+  ],
+  "onrust": "In een uurwerk heet het tikkende wieltje de onrust. Die houden wij in beweging: wij bouwen je workflows en onderhouden ze. Zo zit de onrust bij ons, niet bij jou.",
+  "links": [
+   {
+    "label": "Meer over het afsprakensysteem",
+    "href": "Afsprakensysteem"
+   },
+   {
+    "label": "Meer over de AI-receptioniste",
+    "href": "AI%20Voice%20Agents"
+   }
+  ]
+ },
+ "bewijs": {
+  "eyebrow": "Gemeten bij Clinic3D, Hasselt",
+  "h2a": "3.250 e-mails in 263 dagen.",
+  "h2b": "Allemaal vanzelf verstuurd.",
+  "lede": "Bij Clinic3D, een esthetische kliniek in Hasselt, vertrekken bevestigingen, herinneringen en opvolging volledig automatisch. 2.090 van die e-mails werden geopend. En de teller van de no-shows bleef op nul staan.",
+  "quote": "Mijn klanten boeken nu zelf — ik moet niets meer doen.",
+  "cite": "Dr. Kenis, eigenaar Clinic3D",
+  "note": "Gemeten van 1 januari tot 20 september 2026 (263 dagen). Dr. Kenis deed zijn uitspraak na 104 dagen.",
+  "link": "Lees de volledige case",
+  "legend": [
+   {
+    "k": "sent",
+    "label": "Verstuurd",
+    "n": 3250
+   },
+   {
+    "k": "opened",
+    "label": "Geopend",
+    "n": 2090,
+    "pct": "64%"
+   },
+   {
+    "k": "clicked",
+    "label": "Geklikt",
+    "n": 214
+   },
+   {
+    "k": "replies",
+    "label": "Antwoorden",
+    "n": 20
+   },
+   {
+    "k": "unsub",
+    "label": "Uitschrijvingen",
+    "n": 8
+   }
+  ],
+  "caption": "Elk puntje is één e-mail. Welke puntjes oplichten is willekeurig, de aantallen kloppen.",
+  "dots_label": "3.250 automatisch verstuurde e-mails, waarvan 2.090 geopend (64%), 214 klikken, 20 antwoorden en 8 uitschrijvingen.",
+  "windows": [
+   {
+    "n": 681,
+    "label": "afspraken ingepland"
+   },
+   {
+    "n": 650,
+    "label": "bevestigd"
+   },
+   {
+    "n": 0,
+    "label": "no-shows",
+    "sub": "geen enkele in 263 dagen"
+   }
+  ],
+  "report": [
+   "2.090 geopend (64%)",
+   "214 klikken",
+   "20 antwoorden",
+   "0 soft bounces",
+   "8 uitschrijvingen",
+   "31 op voorhand geannuleerd"
+  ],
+  "legend_label": "Kies wat oplicht in het raster"
+ },
+ "prijs": {
+  "eyebrow": "Wat het kost",
+  "h2a": "Geen apart prijskaartje.",
+  "h2b": "Het zit in Digitale groei.",
+  "lede": "Automatisering hoort bij het pakket Digitale groei: €150 per maand, maandelijks opzegbaar. Daarin zit ook alles waar de workflows mee werken.",
+  "list": [
+   "AI-automatisering en workflows",
+   "Website",
+   "Google Business en lokale zichtbaarheid",
+   "Reputatiebeheer",
+   "CRM en klantendashboard",
+   "E-mail- en sms-campagnes",
+   "Funnels en landingspagina's",
+   "Online betalingen en facturatie",
+   "Toegang tot ons platform"
+  ],
+  "rim": "DIGITALE GROEI · MAANDELIJKS OPZEGBAAR · WIJ BOUWEN EN ONDERHOUDEN · AUTOMATISERING INBEGREPEN · ",
+  "arc": "AUTOMATISERING INBEGREPEN",
+  "cancel": "maandelijks opzegbaar",
+  "addons_label": "Wil je er iets bij?",
+  "addons": [
+   {
+    "id": "chatbot",
+    "label": "AI-chatbot",
+    "price": 50,
+    "ring": "AI-CHATBOT",
+    "href": "AI%20Chatbots",
+    "more": "Wat doet de AI-chatbot?"
+   },
+   {
+    "id": "receptie",
+    "label": "AI-receptioniste",
+    "price": 125,
+    "ring": "AI-RECEPTIONISTE",
+    "href": "AI%20Voice%20Agents",
+    "more": "Wat doet de AI-receptioniste?"
+   }
+  ],
+  "cta": "Plan een gratis gesprek",
+  "cta2": "Bekijk het pakket",
+  "cons_eyebrow": "Voor wie verder wil",
+  "cons_h": "AI tot in je interne processen? Dat is AI Consulting.",
+  "cons_txt": "Een volledige analyse van je werking, een AI-implementatieplan op maat, begeleiding bij de opzet en maandelijkse optimalisatie. Op aanvraag en bewust beperkt beschikbaar.",
+  "cons_link": "Vraag een persoonlijk gesprek aan"
+ },
+ "stappen": {
+  "eyebrow": "Zo gaat het lopen",
+  "h2a": "Van een gesprek",
+  "h2b": "tot een uurwerk dat loopt.",
+  "lede": "Meestal live binnen 14 dagen. Jij hoeft niets zelf te bouwen.",
+  "items": [
+   {
+    "lab": "GESPREK",
+    "kop": "Gratis gesprek",
+    "txt": "Dertig minuten. We overlopen je dag: wat je telkens opnieuw doet en wat je liever niet meer zelf doet."
+   },
+   {
+    "lab": "BOUWEN",
+    "kop": "Wij bouwen de workflows",
+    "txt": "Met n8n en in je platform. Jij hoeft niets te bouwen of te koppelen."
+   },
+   {
+    "lab": "AFSTEMMEN",
+    "kop": "Jij keurt de momenten en teksten",
+    "txt": "Wanneer een bericht vertrekt en wat erin staat, stemmen we samen af op jouw zaak."
+   },
+   {
+    "lab": "LIVE",
+    "kop": "Het loopt",
+    "txt": "Vanaf dan gaat het vanzelf. Wij onderhouden de workflows."
+   }
+  ]
+ },
+ "faq": {
+  "eyebrow": "Veelgestelde vragen",
+  "h2a": "Goed om te weten",
+  "h2b": "voor het begint te lopen.",
+  "items": [
+   {
+    "q": "Moet ik zelf iets bouwen?",
+    "a": "Nee. Wij bouwen de workflows en onderhouden ze. Jij keurt alleen de momenten en de teksten goed."
+   },
+   {
+    "q": "Wat kost het?",
+    "a": "Automatisering heeft geen aparte prijs. Ze zit in Digitale groei: €150 per maand, maandelijks opzegbaar. Wil je er een AI-chatbot of een AI-receptioniste bij, dan komt daar €50 of €125 per maand bij."
+   },
+   {
+    "q": "Wat kan er vanzelf lopen?",
+    "a": "Bevestigingen en herinneringen, reviewverzoeken, facturen na een betaling en herinneringen bij onbetaalde facturen, het doorsturen en opvolgen van aanvragen, campagnes per e-mail en sms, en updates in je CRM."
+   },
+   {
+    "q": "Kan ik zelf kiezen wat er vertrekt, en wanneer?",
+    "a": "Ja. De momenten en de teksten stemmen we samen af op jouw zaak."
+   },
+   {
+    "q": "Werkt het met mijn agenda en met online betalingen?",
+    "a": "Het afsprakensysteem synchroniseert met Google Agenda. Betalen gaat online via Stripe, met Bancontact, iDEAL, Visa en Apple Pay. Na elke betaling vertrekt vanzelf een factuur."
+   },
+   {
+    "q": "Wat is n8n?",
+    "a": "Het werktuig waarmee wij je workflows bouwen. Jij hoeft het niet te kennen."
+   }
+  ],
+  "more_label": "Lees ook:",
+  "more": [
+   {
+    "title": "5 taken die elke KMO vandaag kan automatiseren",
+    "href": "emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/"
+   },
+   {
+    "title": "Leads automatisch opvolgen",
+    "href": "emtimes/automatisering/leads-automatisch-opvolgen/"
+   },
+   {
+    "title": "No-shows verminderen met automatische herinneringen",
+    "href": "emtimes/automatisering/no-shows-verminderen-automatische-herinneringen/"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "Eén ding doe je nog zelf.",
+  "h2b": "Een gesprek plannen.",
+  "text": "Dertig minuten, gratis. We overlopen je dag en kijken welk werk vanzelf kan lopen.",
+  "btn": "Plan een gratis gesprek",
+  "demo": "Of vraag een gratis demo aan",
+  "demo_href": "Gratis%20Demo",
+  "micro": "Daarna zetten wij het uurwerk in gang.",
+  "badges": [
+   "Gratis en vrijblijvend",
+   "30 minuten",
+   "Meestal live binnen 14 dagen"
+  ]
+ }
+}
