@@ -145,7 +145,7 @@ def body(L, lang, pre):
     # ---------------- BEWIJS ----------------
     def nl_num(n):
         s = '{:,}'.format(n)
-        return s.replace(',', L.get('thousands', '.'))
+        return s.replace(',', {'nl': '.', 'en': ',', 'fr': ' '}.get(lang, '.'))
     legend = ''.join(
         '<button aria-pressed="false" class="am-lg" data-am-lg="%s" type="button"><i class="am-sw %s"></i><span>%s</span> <b data-am-n="%d">%s</b>%s</button>'
         % (x['k'], x['k'], esc(x['label']), x['n'], nl_num(x['n']), (' <small>(%s)</small>' % esc(x['pct']) if x.get('pct') else ''))

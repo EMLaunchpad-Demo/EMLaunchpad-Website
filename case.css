@@ -89,7 +89,7 @@ body[data-page="case"] .cs-item .ic{
   background:var(--acc-soft);border:1px solid rgba(31,158,95,.3);color:var(--acc);
 }
 body[data-page="case"] .cs-item .ic svg{width:17px;height:17px}
-body[data-page="case"] .cs-item h4{margin:0;font-size:16px;font-weight:700;letter-spacing:-.02em;color:var(--hi)}
+body[data-page="case"] .cs-item h3,body[data-page="case"] .cs-item h4{margin:0;font-size:16px;font-weight:700;letter-spacing:-.02em;color:var(--hi)}
 body[data-page="case"] .cs-item p{margin:6px 0 0;font-size:14px;line-height:1.55;color:var(--mid)}
 
 body[data-page="case"] .cs-note{

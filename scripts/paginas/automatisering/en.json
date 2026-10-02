@@ -1,0 +1,823 @@
+{
+ "lang": "en",
+ "tone": "blauw",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 78,
+   "ay": 28,
+   "bx": 8,
+   "by": 100,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.2,
+   "ax": 22,
+   "ay": 36,
+   "bx": 84,
+   "by": 72,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.42,
+   "ax": 80,
+   "ay": 62,
+   "bx": 16,
+   "by": 26,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.68,
+   "ax": 36,
+   "ay": 44,
+   "bx": 70,
+   "by": 58,
+   "ao": 0.8,
+   "bo": 0.7
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "meta": {
+  "title": "AI automation: the boring work runs itself | EM Launchpad",
+  "desc": "Confirmations, reminders, invoices, review requests and follow-up that send themselves, right on time. We build and maintain it all. Part of Digital Growth.",
+  "ogtitle": "AI automation: the boring work runs itself",
+  "service": "AI automation",
+  "offer": "Included in the Digital Growth package"
+ },
+ "hero": {
+  "crumb_home": "Services",
+  "crumb": "AI automation",
+  "eyebrow": "AI automation",
+  "h1a": "One customer books.",
+  "h1b": "The rest runs like clockwork.",
+  "lede": "Confirming, reminding, invoicing, asking for a review. We build the workflows that do that boring work for you, every time at the right moment. You just carry on working.",
+  "cta": "Book a free call",
+  "cta2": "What's included",
+  "label": "Choose what happens",
+  "read_label": "What just happened by itself",
+  "foot": [
+   "Part of Digital Growth, €150 per month",
+   "We build and maintain the workflows",
+   "Usually live within 14 days"
+  ],
+  "foot_link": "Clinic3D: 3,250 emails sent automatically"
+ },
+ "ui": {
+  "example": "Example",
+  "pause": "Pause the clockwork",
+  "play": "Resume",
+  "again": "Start over",
+  "other": "Pick something else",
+  "seq": "Read the whole sequence",
+  "goto": "Ga naar: {m}",
+  "steps_label": "Moments in this sequence",
+  "chips_label": "Choose what happens",
+  "or": "or",
+  "choice": "Choice: {c}",
+  "auto": "If you don't choose, it carries on the usual way.",
+  "done_sr": "Done.",
+  "tools": {
+   "mail": "Email",
+   "sms": "SMS",
+   "agenda": "Google Calendar",
+   "crm": "CRM",
+   "stripe": "Stripe",
+   "google": "Google profile",
+   "inbox": "Inbox"
+  },
+  "nogeens": "Once more",
+  "sr_how": "happens by itself:",
+  "total_sr": "Together: €{t} per month",
+  "per": "per month",
+  "per_sum": "per month, in total",
+  "tab_label": "Choose your trade",
+  "next": "Next moment",
+  "finish": "Finish"
+ },
+ "geo": {
+  "p": 11,
+  "n": [
+   78,
+   42,
+   51,
+   61,
+   74,
+   100
+  ],
+  "a": [
+   null,
+   -145,
+   -61,
+   -28,
+   38,
+   80
+  ],
+  "c0": [
+   376,
+   598
+  ],
+  "onrust": [
+   240,
+   790,
+   60
+  ],
+  "dial": 490
+ },
+ "order": [
+  "boekt",
+  "factuur",
+  "oproep",
+  "aanvraag"
+ ],
+ "events": {
+  "boekt": {
+   "chip": "A customer books",
+   "h1": "One customer books.",
+   "icon": "cal",
+   "vars": {
+    "naam": "Lotte",
+    "zij": "She",
+    "haar": "Her"
+   },
+   "steps": [
+    {
+     "w": 1,
+     "grav": "RIGHT AWAY",
+     "win": "Tue 21:40",
+     "jij": "You: home hours ago",
+     "kop": "Confirmation by email and SMS",
+     "msg": "Hi {naam}, your appointment is booked: Saturday at 10:00. Can't make it after all? Reschedule or cancel in one click.",
+     "extra": "Added to your calendar, and to Google Calendar too. {naam} is in your CRM.",
+     "tools": [
+      "mail",
+      "sms",
+      "agenda",
+      "crm"
+     ],
+     "sr": "Right away: confirmation sent by email and SMS."
+    },
+    {
+     "w": 2,
+     "grav": "1 DAY BEFORE",
+     "win": "Fri 10:00",
+     "jij": "You: at work",
+     "kop": "Reminder",
+     "msg": "Hi {naam}, we're expecting you tomorrow at 10:00. See you then!",
+     "tools": [
+      "mail",
+      "sms"
+     ],
+     "sr": "One day before: reminder sent."
+    },
+    {
+     "w": 3,
+     "grav": "2 HOURS BEFORE",
+     "win": "Sat 08:00",
+     "jij": "You: making coffee",
+     "kop": "Final SMS, with your address",
+     "msg": "See you soon, {naam}! We're expecting you at 10:00. Here's our address.",
+     "tools": [
+      "sms"
+     ],
+     "sr": "Two hours before: final SMS with the address sent."
+    },
+    {
+     "w": 4,
+     "grav": "AFTERWARDS",
+     "win": "Sat 12:30",
+     "jij": "You: with the next customer",
+     "kop": "Review request, 2 hours after the appointment",
+     "msg": "Thanks for your visit, {naam}. How was it?",
+     "tools": [
+      "sms",
+      "mail"
+     ],
+     "sr": "Two hours after the appointment: review request sent.",
+     "fork": {
+      "q": "How was it for {naam}?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Happy",
+        "grav": "TO GOOGLE",
+        "res": "{zij} gets the link to your Google profile.",
+        "tools": [
+         "google"
+        ]
+       },
+       {
+        "label": "Not happy",
+        "grav": "PRIVATE FIRST",
+        "res": "{haar} feedback comes to you first, not to Google."
+       }
+      ]
+     }
+    },
+    {
+     "w": 5,
+     "grav": "AFTER 6 WEEKS",
+     "win": "6 weeks later",
+     "jij": "You: had forgotten all about it",
+     "kop": "Invitation for the next appointment",
+     "msg": "Hi {naam}, time for a new appointment? Pick a time that suits you, right here.",
+     "tools": [
+      "mail"
+     ],
+     "sr": "After six weeks: invitation for the next appointment sent."
+    }
+   ],
+   "end": {
+    "txt": "Five moments, each one on time. You didn't lift a finger.",
+    "note": "We agree the moments and the wording together with you.",
+    "link": {
+     "label": "How customers book by themselves: see the booking system",
+     "href": "Afsprakensysteem"
+    }
+   }
+  },
+  "factuur": {
+   "chip": "An invoice goes unpaid",
+   "h1": "One invoice goes unpaid.",
+   "icon": "bill",
+   "steps": [
+    {
+     "w": 2,
+     "grav": "WHEN UNPAID",
+     "win": "Mon 09:00",
+     "jij": "You: under a car",
+     "kop": "Automatic reminder",
+     "msg": "Hi Jonas, your invoice is still unpaid. You can pay online with Bancontact, iDEAL, Visa or Apple Pay.",
+     "tools": [
+      "mail",
+      "stripe"
+     ],
+     "sr": "Reminder for the unpaid invoice sent.",
+     "fork": {
+      "q": "Does Jonas pay?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "He pays online",
+        "then": [
+         {
+          "w": 3,
+          "grav": "AFTER PAYMENT",
+          "win": "Mon 11:20",
+          "jij": "You: on to the next repair",
+          "kop": "Payment received",
+          "msg": "Thanks, Jonas. We've received your payment.",
+          "extra": "Paid with Bancontact via Stripe. Noted on Jonas's record in your CRM.",
+          "tools": [
+           "stripe",
+           "crm"
+          ],
+          "sr": "Payment received and noted in your CRM."
+         }
+        ]
+       },
+       {
+        "label": "Not yet",
+        "then": [
+         {
+          "w": 4,
+          "grav": "STILL UNPAID",
+          "win": "Later",
+          "jij": "You: not chasing your money",
+          "kop": "Another reminder",
+          "msg": "Hi Jonas, a quick reminder: your invoice is still unpaid. You can pay in one click.",
+          "tools": [
+           "mail"
+          ],
+          "sr": "Another reminder sent."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "The clockwork chases your money. You don't.",
+    "note": "After every online payment, the invoice goes out by itself too."
+   }
+  },
+  "oproep": {
+   "chip": "You miss a call",
+   "h1": "You miss a call.",
+   "icon": "call",
+   "steps": [
+    {
+     "w": 1,
+     "grav": "RIGHT AWAY",
+     "win": "Wed 10:05",
+     "jij": "You: in the middle of a treatment",
+     "kop": "SMS with your booking link",
+     "msg": "Sorry, we couldn't pick up just now. Book a time that suits you, right here.",
+     "extra": "The call is in your inbox.",
+     "tools": [
+      "sms",
+      "inbox"
+     ],
+     "sr": "Right away: SMS with your booking link sent.",
+     "fork": {
+      "q": "What does the caller do?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Books via the link",
+        "res": "Then everything from 'A customer books' kicks in.",
+        "goto": "boekt",
+        "vars": {
+         "naam": "Sam",
+         "zij": "He",
+         "haar": "His"
+        },
+        "first": {
+         "win": "Wed 10:12",
+         "jij": "You: still mid-treatment"
+        }
+       },
+       {
+        "label": "Doesn't book",
+        "then": [
+         {
+          "w": 2,
+          "grav": "IN YOUR INBOX",
+          "win": "Wed 12:30",
+          "jij": "You: lunch break",
+          "kop": "In your inbox",
+          "txt": "So you can see who called and ring back when it suits you.",
+          "tools": [
+           "inbox"
+          ],
+          "sr": "The call is in your inbox."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "No call just disappears. You didn't lift a finger.",
+    "link": {
+     "label": "Rather have someone pick up straight away? See the AI receptionist",
+     "href": "AI%20Voice%20Agents"
+    }
+   }
+  },
+  "aanvraag": {
+   "chip": "An enquiry comes in",
+   "h1": "An enquiry comes in.",
+   "icon": "form",
+   "steps": [
+    {
+     "w": 1,
+     "grav": "RIGHT AWAY",
+     "win": "Sun 20:15",
+     "jij": "You: at dinner",
+     "kop": "In your CRM, with the right person",
+     "txt": "New enquiry from Sarah via your website. Tags: quote, website. Passed on to whoever does the quotes.",
+     "tools": [
+      "crm"
+     ],
+     "sr": "Right away: enquiry added to your CRM and passed on.",
+     "fork": {
+      "q": "Does Sarah reply to your quote?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Not yet",
+        "then": [
+         {
+          "w": 2,
+          "grav": "FOLLOW-UP",
+          "win": "Wed 09:00",
+          "jij": "You: at work",
+          "kop": "Follow-up goes out by itself",
+          "msg": "Hi Sarah, any questions about your quote? Just reply to this message.",
+          "tools": [
+           "mail"
+          ],
+          "sr": "Follow-up sent."
+         }
+        ]
+       },
+       {
+        "label": "She replies",
+        "then": [
+         {
+          "w": 2,
+          "grav": "IN TALKS",
+          "win": "Mon 08:40",
+          "jij": "You: not even started yet",
+          "kop": "Pipeline updated",
+          "txt": "Sarah is now marked 'in talks'. Her reply is in your inbox.",
+          "tools": [
+           "crm",
+           "inbox"
+          ],
+          "sr": "Pipeline updated: in talks."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "No enquiry left sitting in your inbox."
+   }
+  }
+ },
+ "lijst": {
+  "eyebrow": "The note next to the till",
+  "h2a": "Your to-do list for today.",
+  "h2b": "It crosses itself off.",
+  "lede": "Calling back, reminding, sending an invoice, asking for a review. Choose your trade and see what's left of your list.",
+  "head": "Still to do",
+  "caption": "Example. Together, we agree what runs by itself, and when.",
+  "trades": [
+   {
+    "id": "kapsalon",
+    "label": "Hair salon",
+    "photo": {
+     "id": "photo-1675034741473-afed58a142e8",
+     "alt": "Hairdresser at work with a client in her salon",
+     "pos": "50% 28%",
+     "posM": "30% 30%",
+     "w": 420,
+     "h": 630
+    },
+    "tasks": [
+     {
+      "t": "Remind Lotte about Saturday",
+      "how": "by itself · 1 day before"
+     },
+     {
+      "t": "Call Tom back about an appointment",
+      "how": "by itself · SMS with your booking link"
+     },
+     {
+      "t": "Ask Mrs Peeters for a review",
+      "how": "by itself · 2 hours after her appointment"
+     },
+     {
+      "t": "Send an invoice after an online payment",
+      "how": "by itself · after every payment"
+     },
+     {
+      "t": "Invite back clients from six weeks ago",
+      "how": "by itself · after 6 weeks"
+     },
+     {
+      "t": "Add a new client to your customer records",
+      "how": "by itself · in your CRM"
+     }
+    ],
+    "rest": "What's left: cutting hair."
+   },
+   {
+    "id": "kinesist",
+    "label": "Physiotherapist",
+    "photo": {
+     "id": "photo-1519824145371-296894a0daa9",
+     "alt": "Physiotherapist treating a patient's back",
+     "pos": "40% 50%",
+     "posM": "45% 50%",
+     "w": 600,
+     "h": 400
+    },
+    "tasks": [
+     {
+      "t": "Remind tomorrow's patients",
+      "how": "by itself · 1 day before"
+     },
+     {
+      "t": "Call back the missed call from 10:05",
+      "how": "by itself · SMS with your booking link"
+     },
+     {
+      "t": "Follow up an unpaid invoice",
+      "how": "by itself · automatic reminder"
+     },
+     {
+      "t": "Pass on the enquiry from the website",
+      "how": "by itself · to the right person"
+     },
+     {
+      "t": "Ask for a review",
+      "how": "by itself · 2 hours after the appointment"
+     },
+     {
+      "t": "Suggest the next appointment",
+      "how": "by itself · after 6 weeks"
+     }
+    ],
+    "rest": "What's left: treating patients."
+   },
+   {
+    "id": "garage",
+    "label": "Garage",
+    "photo": {
+     "id": "photo-1702146713858-8e7d1cc29fe8",
+     "alt": "Mechanic lying under a jacked-up car",
+     "pos": "45% 55%",
+     "posM": "60% 55%",
+     "w": 600,
+     "h": 400
+    },
+    "tasks": [
+     {
+      "t": "Remind a customer about tomorrow's service",
+      "how": "by itself · 1 day before"
+     },
+     {
+      "t": "Send an SMS with the address",
+      "how": "by itself · 2 hours before"
+     },
+     {
+      "t": "Send an invoice after an online payment",
+      "how": "by itself · after every payment"
+     },
+     {
+      "t": "Chase an unpaid invoice",
+      "how": "by itself · automatic reminder"
+     },
+     {
+      "t": "Call back a missed call",
+      "how": "by itself · SMS with your booking link"
+     },
+     {
+      "t": "Pass a quote request to the right colleague",
+      "how": "by itself · to the right person"
+     }
+    ],
+    "rest": "What's left: fixing cars."
+   }
+  ]
+ },
+ "erin": {
+  "eyebrow": "What's inside",
+  "h2a": "Open up the clockwork.",
+  "h2b": "Here's everything that turns inside.",
+  "lede": "Six parts that turn together. We build them with n8n and in your platform, and we keep them running.",
+  "parts": [
+   {
+    "w": 0,
+    "label": "CRM",
+    "kop": "Everything in one place",
+    "txt": "WhatsApp, Instagram, email, SMS and phone calls in one inbox. Customer history, notes, tags and pipeline status update by themselves."
+   },
+   {
+    "w": 1,
+    "label": "Appointments",
+    "kop": "Confirm and remind",
+    "txt": "An instant confirmation by email and SMS, a reminder 1 day before and a final SMS 2 hours before with your address. After 6 weeks, an invitation for next time. Syncs with Google Calendar."
+   },
+   {
+    "w": 2,
+    "label": "Missed calls",
+    "kop": "Nobody left hanging",
+    "txt": "Miss a call? The caller gets an SMS with your booking link straight away."
+   },
+   {
+    "w": 3,
+    "label": "Reviews",
+    "kop": "Asking for reviews, automatically",
+    "txt": "2 hours after every appointment, a review request goes out by SMS or email. Happy customers go to Google. Anyone who isn't happy comes to you first."
+   },
+   {
+    "w": 4,
+    "label": "Payments",
+    "kop": "Invoices that send themselves",
+    "txt": "After every payment via Stripe, an invoice goes out. If an invoice is still unpaid, automatic reminders follow. With Bancontact, iDEAL, Visa and Apple Pay."
+   },
+   {
+    "w": 5,
+    "label": "Enquiries",
+    "kop": "Follow up and pass on",
+    "txt": "A new enquiry lands with the right person and gets followed up automatically. Email and SMS campaigns start based on what your customer does."
+   }
+  ],
+  "onrust": "In a watch, the little ticking wheel is called the balance wheel. We keep it moving: we build your workflows and maintain them. So keeping things in balance is our job, not yours.",
+  "links": [
+   {
+    "label": "More about the booking system",
+    "href": "Afsprakensysteem"
+   },
+   {
+    "label": "More about the AI receptionist",
+    "href": "AI%20Voice%20Agents"
+   }
+  ]
+ },
+ "bewijs": {
+  "eyebrow": "Measured at Clinic3D, Hasselt",
+  "h2a": "3,250 emails in 263 days.",
+  "h2b": "All sent automatically.",
+  "lede": "At Clinic3D, an aesthetic clinic in Hasselt, confirmations, reminders and follow-up go out fully automatically. 2,090 of those emails were opened. And the no-show counter stayed at zero.",
+  "quote": "My clients now book by themselves — I don't have to do a thing.",
+  "cite": "Dr. Kenis, owner of Clinic3D",
+  "note": "Measured from 1 January to 20 September 2026 (263 days). Dr. Kenis said this after 104 days.",
+  "link": "Read the full case",
+  "legend": [
+   {
+    "k": "sent",
+    "label": "Sent",
+    "n": 3250
+   },
+   {
+    "k": "opened",
+    "label": "Opened",
+    "n": 2090,
+    "pct": "64%"
+   },
+   {
+    "k": "clicked",
+    "label": "Clicked",
+    "n": 214
+   },
+   {
+    "k": "replies",
+    "label": "Replies",
+    "n": 20
+   },
+   {
+    "k": "unsub",
+    "label": "Unsubscribes",
+    "n": 8
+   }
+  ],
+  "caption": "Each dot is one email. Which dots light up is random, but the numbers are real.",
+  "dots_label": "3,250 automatically sent emails, of which 2,090 were opened (64%), with 214 clicks, 20 replies and 8 unsubscribes.",
+  "windows": [
+   {
+    "n": 681,
+    "label": "appointments scheduled"
+   },
+   {
+    "n": 650,
+    "label": "confirmed"
+   },
+   {
+    "n": 0,
+    "label": "no-shows",
+    "sub": "not a single one in 263 days"
+   }
+  ],
+  "report": [
+   "2,090 opened (64%)",
+   "214 clicks",
+   "20 replies",
+   "0 soft bounces",
+   "8 unsubscribes",
+   "31 cancelled in good time"
+  ],
+  "legend_label": "Choose what lights up in the grid"
+ },
+ "prijs": {
+  "eyebrow": "What it costs",
+  "h2a": "No separate price tag.",
+  "h2b": "It's part of Digital Growth.",
+  "lede": "Automation is part of the Digital Growth package: €150 per month, cancellable monthly. It also covers everything the workflows run on.",
+  "list": [
+   "AI automation and workflows",
+   "Website",
+   "Google Business and local visibility",
+   "Reputation management",
+   "CRM and customer dashboard",
+   "Email and SMS campaigns",
+   "Funnels and landing pages",
+   "Online payments and invoicing",
+   "Access to our platform"
+  ],
+  "rim": "DIGITAL GROWTH · CANCELLABLE MONTHLY · WE BUILD AND MAINTAIN · AUTOMATION INCLUDED · ",
+  "arc": "AUTOMATION INCLUDED",
+  "cancel": "cancellable monthly",
+  "addons_label": "Want something extra?",
+  "addons": [
+   {
+    "id": "chatbot",
+    "label": "AI chatbot",
+    "price": 50,
+    "ring": "AI CHATBOT",
+    "href": "AI%20Chatbots",
+    "more": "What does the AI chatbot do?"
+   },
+   {
+    "id": "receptie",
+    "label": "AI receptionist",
+    "price": 125,
+    "ring": "AI RECEPTIONIST",
+    "href": "AI%20Voice%20Agents",
+    "more": "What does the AI receptionist do?"
+   }
+  ],
+  "cta": "Book a free call",
+  "cta2": "View the package",
+  "cons_eyebrow": "For those who want to go further",
+  "cons_h": "AI right into your internal processes? That's AI Consulting.",
+  "cons_txt": "A full analysis of how you work, a personalised AI implementation plan, guidance during setup and monthly optimisation. On request, with deliberately limited places.",
+  "cons_link": "Request a personal call"
+ },
+ "stappen": {
+  "eyebrow": "How it gets going",
+  "h2a": "From one conversation",
+  "h2b": "to clockwork that runs.",
+  "lede": "Usually live within 14 days. You don't have to build a thing yourself.",
+  "items": [
+   {
+    "lab": "CALL",
+    "kop": "Free call",
+    "txt": "Thirty minutes. We go through your day: what you do over and over again, and what you'd rather stop doing yourself."
+   },
+   {
+    "lab": "BUILD",
+    "kop": "We build the workflows",
+    "txt": "With n8n and in your platform. You don't have to build or connect anything."
+   },
+   {
+    "lab": "FINE-TUNE",
+    "kop": "You approve the moments and the wording",
+    "txt": "Together, we decide when a message goes out and what it says, to suit your business."
+   },
+   {
+    "lab": "LIVE",
+    "kop": "It runs",
+    "txt": "From then on, it runs by itself. We maintain the workflows."
+   }
+  ]
+ },
+ "faq": {
+  "eyebrow": "Frequently asked questions",
+  "h2a": "Good to know",
+  "h2b": "before it starts running.",
+  "items": [
+   {
+    "q": "Do I have to build anything myself?",
+    "a": "No. We build the workflows and maintain them. You only approve the moments and the wording."
+   },
+   {
+    "q": "What does it cost?",
+    "a": "Automation has no separate price. It's part of Digital Growth: €150 per month, cancellable monthly. If you'd also like an AI chatbot or an AI receptionist, that's an extra €50 or €125 per month."
+   },
+   {
+    "q": "What can run by itself?",
+    "a": "Confirmations and reminders, review requests, invoices after a payment and reminders for unpaid invoices, passing on and following up enquiries, email and SMS campaigns, and updates in your CRM."
+   },
+   {
+    "q": "Can I choose what goes out, and when?",
+    "a": "Yes. Together, we tailor the moments and the wording to your business."
+   },
+   {
+    "q": "Does it work with my calendar and with online payments?",
+    "a": "The booking system syncs with Google Calendar. Payments are made online through Stripe, with Bancontact, iDEAL, Visa and Apple Pay. After every payment, an invoice goes out by itself."
+   },
+   {
+    "q": "What is n8n?",
+    "a": "The tool we use to build your workflows. You don't need to know it."
+   }
+  ],
+  "more_label": "Also read (in Dutch):",
+  "more": [
+   {
+    "title": "5 tasks every SME can automate today",
+    "href": "emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/"
+   },
+   {
+    "title": "Following up leads automatically",
+    "href": "emtimes/automatisering/leads-automatisch-opvolgen/"
+   },
+   {
+    "title": "Reducing no-shows with automatic reminders",
+    "href": "emtimes/automatisering/no-shows-verminderen-automatische-herinneringen/"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "One thing you still do yourself.",
+  "h2b": "Booking a call.",
+  "text": "Thirty minutes, free. We go through your day and look at which work can run by itself.",
+  "btn": "Book a free call",
+  "demo": "Or request a free demo",
+  "demo_href": "Gratis%20Demo",
+  "micro": "Then we set the clockwork in motion.",
+  "badges": [
+   "Free, no obligation",
+   "30 minutes",
+   "Usually live within 14 days"
+  ]
+ }
+}

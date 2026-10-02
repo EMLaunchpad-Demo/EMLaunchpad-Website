@@ -1,0 +1,850 @@
+{
+ "lang": "fr",
+ "tone": "blauw",
+ "font": "family=Caveat:wght@600",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 74,
+   "ay": 34,
+   "bx": 10,
+   "by": 96,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.18,
+   "ax": 24,
+   "ay": 40,
+   "bx": 82,
+   "by": 70,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.4,
+   "ax": 78,
+   "ay": 58,
+   "bx": 18,
+   "by": 30,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.62,
+   "ax": 30,
+   "ay": 46,
+   "bx": 72,
+   "by": 60,
+   "ao": 0.8,
+   "bo": 0.6
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "meta": {
+  "title": "Sites web où vos clients réservent en ligne | EM Launchpad",
+  "desc": "Nous créons et gérons votre site web : rapide, pensé pour le smartphone, prêt pour le SEO, avec prise de rendez-vous et paiement en ligne. 150 € par mois.",
+  "ogtitle": "Sites web où vos clients réservent en ligne | EM Launchpad",
+  "service": "Sites web",
+  "offer": "Inclus dans le pack Croissance digitale"
+ },
+ "hero": {
+  "crumb_home": "Services",
+  "crumb": "Sites web",
+  "eyebrow": "Sites web",
+  "h1a": "D'une page blanche",
+  "h1b": "à des clients qui réservent.",
+  "lede": "Nous concevons votre site web autour de votre commerce, nous le construisons et nous le gérons. Vos clients vous trouvent, voient tout de suite qui vous êtes, et réservent, paient ou font une demande. Même quand vous avez déjà fermé.",
+  "cta": "Planifiez un appel gratuit",
+  "cta2": "Voir nos réalisations",
+  "pick": "Choisissez votre secteur",
+  "name_btn": "Essayez avec votre nom",
+  "name_label": "Nom de votre commerce",
+  "name_ph": "Ex. : le nom sur votre devanture",
+  "name_hint": "Votre nom reste sur votre appareil. Nous n'envoyons rien.",
+  "chapters": [
+   "Dessiner",
+   "Colorier",
+   "Sur smartphone",
+   "Le soir"
+  ],
+  "chapters_label": "Chapitres",
+  "caption": "Exemple. Votre vrai site, nous le concevons avec vous : vos photos, vos textes, vos couleurs. Nous le construisons et le gérons.",
+  "foot": [
+   "Inclus dans Croissance digitale, 150 € par mois",
+   "Nous le construisons et le gérons",
+   "En général en ligne dans les 14 jours"
+  ],
+  "chip_wait": "Cette page : mesure en cours…",
+  "chip_fallback": "Un vrai projet : amakhosi.be"
+ },
+ "ui": {
+  "example": "Exemple",
+  "pause": "Pause",
+  "play": "Reprendre",
+  "again": "Revoir",
+  "pause_aria": "Mettre l'exemple en pause",
+  "play_aria": "Reprendre l'exemple",
+  "again_aria": "Revoir l'exemple depuis le début",
+  "labels": {
+   "logo": "LOGO",
+   "links": "MENU",
+   "cta": "BOUTON",
+   "foto": "PHOTO DU COMMERCE",
+   "titel": "VOTRE MÉTIER",
+   "uren": "HORAIRES",
+   "review": "AVIS",
+   "adres": "ADRESSE",
+   "bar": "BARRE DU BAS"
+  },
+  "notes": [
+   "bouton toujours visible",
+   "les horaires en haut : tout le monde les demande",
+   "une vraie photo de votre commerce",
+   "sur smartphone, on réserve avec le pouce",
+   "Votre rideau est baissé. Votre site, non."
+  ],
+  "closed": "Fermé actuellement",
+  "hours_label": "Horaires",
+  "review_label": "Ce que disent les clients",
+  "address_label": "Adresse",
+  "clock_a": "Sam. 18:00",
+  "clock_b": "Dim. 20:52",
+  "clock_sub": "votre commerce est fermé",
+  "confirmed": "Confirmé",
+  "sent": "Demande envoyée",
+  "form": [
+   "Marque",
+   "Entretien",
+   "Votre numéro de GSM"
+  ],
+  "toast_boek": [
+   "Nouvelle réservation via votre site web",
+   "{moment} · {dienst} · confirmé"
+  ],
+  "toast_offerte": [
+   "Nouvelle demande de devis via votre site web",
+   "{dienst} · dans votre CRM"
+  ],
+  "sr_hero": "Exemple : un site web pour {naam} est dessiné, mis en couleur puis affiché sur smartphone. Le dimanche soir, quand le commerce est fermé, {wat} arrive via le site.",
+  "sr_boek": "une réservation",
+  "sr_offerte": "une demande de devis",
+  "live_chapter": "Chapitre {i} sur 4 : {naam}",
+  "lens_pause": "Mettre la visite guidée en pause",
+  "lens_play": "Reprendre la visite guidée",
+  "search_ph": "Rechercher",
+  "open_until": "Ouvert jusqu'à 18:00",
+  "result_btns": [
+   "Site web",
+   "Itinéraire",
+   "Appeler"
+  ],
+  "sms_text": "Merci pour votre visite. Comment ça s'est passé ?",
+  "sms_meta": "2 HEURES APRÈS VOTRE RENDEZ-VOUS",
+  "tile_service": "Service : {dienst}",
+  "pay": "Paiement",
+  "pay_chips": [
+   "Bancontact",
+   "iDEAL",
+   "Visa",
+   "Apple Pay"
+  ],
+  "crm": "dans votre CRM",
+  "inbox": [
+   [
+    "web",
+    "Site web",
+    "nouvelle réservation"
+   ],
+   [
+    "wa",
+    "WhatsApp",
+    "Je peux encore passer samedi ?"
+   ],
+   [
+    "ig",
+    "Instagram",
+    "Superbe travail ! Ça coûte combien ?"
+   ],
+   [
+    "mail",
+    "E-mail",
+    "Question sur vos tarifs"
+   ],
+   [
+    "sms",
+    "SMS",
+    "J'ai un peu de retard, désolé"
+   ],
+   [
+    "tel",
+    "Téléphone",
+    "Appel manqué, 10:05"
+   ]
+  ],
+  "slider": "Vue en coupe d'amakhosi.be",
+  "slider_none": "Rien n'est encore passé à la loupe",
+  "desk": "Ordinateur",
+  "gsm": "Smartphone",
+  "total_sr": "Au total : {t} € par mois",
+  "per_sum": "par mois, au total",
+  "per": "par mois",
+  "picks": "décroche",
+  "measured_at": "mesuré à {t}"
+ },
+ "vak": [
+  {
+   "id": "kapper",
+   "chip": "Coiffeur",
+   "naam": "Kapsalon Mira",
+   "domein": "kapsalonmira.be",
+   "zoek": "coiffeur hasselt",
+   "links": [
+    "Services",
+    "Tarifs",
+    "Équipe",
+    "Contact"
+   ],
+   "titel": "Coupe et couleur à Hasselt",
+   "sub": "Du mardi au samedi. Réservez en ligne, même le soir.",
+   "cta": "Réserver",
+   "dienst": "Coupe",
+   "moment": "Mar. 10:00",
+   "uren": "Du mar. au sam. · 9:00 à 18:00",
+   "review": "« Un accueil toujours chaleureux, jamais d'attente. »",
+   "adres": "Rue Exemple 12, Hasselt",
+   "tel": "011 00 00 00",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1585747860715-2ba37e788b70",
+    "pos": "50% 45%"
+   },
+   "pal": {
+    "bg": "#211813",
+    "ink": "#f3e9e1",
+    "acc": "#c9825b",
+    "line": "rgba(243,233,225,.14)",
+    "card": "rgba(243,233,225,.06)"
+   }
+  },
+  {
+   "id": "kine",
+   "chip": "Kiné",
+   "naam": "Kinepraktijk De Linde",
+   "domein": "kinepraktijkdelinde.be",
+   "zoek": "kiné genk",
+   "links": [
+    "Soins",
+    "Tarifs",
+    "Équipe",
+    "Contact"
+   ],
+   "titel": "Kinésithérapie à Genk",
+   "sub": "Prenez rendez-vous vous-même, même en dehors des heures d'ouverture.",
+   "cta": "Prendre rendez-vous",
+   "dienst": "Première séance",
+   "moment": "Lun. 08:30",
+   "uren": "Du lun. au ven. · 8:00 à 19:00",
+   "review": "« Des explications claires et une aide immédiate. »",
+   "adres": "Rue Exemple 12, Genk",
+   "tel": "089 00 00 00",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1519824145371-296894a0daa9",
+    "pos": "40% 50%"
+   },
+   "pal": {
+    "bg": "#16231f",
+    "ink": "#e8f0ec",
+    "acc": "#8fb8a2",
+    "line": "rgba(232,240,236,.14)",
+    "card": "rgba(232,240,236,.06)"
+   }
+  },
+  {
+   "id": "garage",
+   "chip": "Garage",
+   "naam": "Garage Janssens",
+   "domein": "garagejanssens.be",
+   "zoek": "garage tongres",
+   "links": [
+    "Entretien",
+    "Réparations",
+    "Pneus",
+    "Contact"
+   ],
+   "titel": "Entretien et réparations à Tongres",
+   "sub": "Demandez votre devis en ligne.",
+   "cta": "Demander un devis",
+   "dienst": "Entretien",
+   "moment": "Mer. 08:00",
+   "uren": "Du lun. au ven. · 8:00 à 18:00",
+   "review": "« Prix honnête, voiture prête à temps. »",
+   "adres": "Rue Exemple 12, Tongres",
+   "tel": "012 00 00 00",
+   "flow": "offerte",
+   "foto": {
+    "id": "photo-1702146713858-8e7d1cc29fe8",
+    "pos": "45% 55%"
+   },
+   "pal": {
+    "bg": "#18191c",
+    "ink": "#eef0f2",
+    "acc": "#e0b43a",
+    "line": "rgba(238,240,242,.14)",
+    "card": "rgba(238,240,242,.06)"
+   }
+  },
+  {
+   "id": "kliniek",
+   "chip": "Clinique",
+   "naam": "Huidkliniek Aura",
+   "domein": "huidkliniekaura.be",
+   "zoek": "clinique saint-trond",
+   "links": [
+    "Traitements",
+    "Tarifs",
+    "À propos",
+    "Contact"
+   ],
+   "titel": "Soins de la peau à Saint-Trond",
+   "sub": "Planifiez votre consultation quand cela vous arrange.",
+   "cta": "Réserver une consultation",
+   "dienst": "Consultation",
+   "moment": "Mer. 14:00",
+   "uren": "Du mar. au sam. · 9:00 à 17:00",
+   "review": "« Un accueil chaleureux et des conseils honnêtes. »",
+   "adres": "Rue Exemple 12, Saint-Trond",
+   "tel": "011 00 00 01",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1570172619644-dfd03ed5d881",
+    "pos": "50% 40%"
+   },
+   "pal": {
+    "bg": "#efebe6",
+    "ink": "#2a2622",
+    "acc": "#9b7b62",
+    "line": "rgba(42,38,34,.12)",
+    "card": "rgba(42,38,34,.05)"
+   }
+  }
+ ],
+ "doet": {
+  "eyebrow": "Ce que votre site fait pour vous",
+  "h2a": "Un bon site fait quatre choses.",
+  "h2b": "Chaque jour, même sans vous.",
+  "lede": "Choisissez-en une. Vous la voyez tout de suite sur l'exemple ci-dessus.",
+  "group": "Ce que fait votre site",
+  "lenses": [
+   {
+    "id": "gevonden",
+    "part": "logo",
+    "titel": "Être trouvé",
+    "tekst": "Quand quelqu'un cherche « {vak} » près de chez lui, c'est vous qu'il doit trouver. Nous construisons un site rapide et prêt pour le SEO, et nous complétons entièrement votre profil Google, que nous tenons à jour. Une place en tête de Google, personne ne peut honnêtement la promettre. Un site que Google lit facilement, ça, nous le construisons."
+   },
+   {
+    "id": "vertrouwen",
+    "part": "foto",
+    "titel": "Inspirer confiance",
+    "tekst": "Une vraie photo, vos horaires, votre adresse et ce que vos clients disent de vous. Ainsi, un client voit tout de suite chez qui il entre. Et 2 heures après chaque rendez-vous, votre système demande automatiquement un avis."
+   },
+   {
+    "id": "boeken",
+    "part": "knop",
+    "titel": "Recevoir réservations et paiements",
+    "titel_offerte": "Recevoir des demandes",
+    "tekst": "D'une simple pression sur « {cta} », votre client réserve tout de suite. L'agenda de réservation et les formulaires de contact sont inclus, et le paiement en ligne se fait par Bancontact, iDEAL, Visa ou Apple Pay.",
+    "tekst_offerte": "D'une simple pression sur « {cta} », votre client remplit sa demande. Le formulaire de contact est inclus, et la demande arrive directement dans votre CRM."
+   },
+   {
+    "id": "alles",
+    "part": "",
+    "titel": "Tout au même endroit",
+    "tekst": "Chaque réservation et chaque demande arrive dans votre CRM. Les messages par WhatsApp, Instagram, e-mail, SMS et téléphone sont réunis dans une seule boîte de réception."
+   }
+  ],
+  "links": [
+   {
+    "label": "Vos clients réservent eux-mêmes : découvrez la prise de rendez-vous en ligne",
+    "href": "Afsprakensysteem"
+   },
+   {
+    "label": "Répondre aux questions, même le soir ? C'est le chatbot IA, + 50 € par mois",
+    "href": "AI%20Chatbots"
+   }
+  ]
+ },
+ "werk": {
+  "eyebrow": "Du vrai travail",
+  "h2a": "Du plan",
+  "h2b": "à amakhosi.be.",
+  "lede": "Faites glisser la ligne. Au-dessus, vous voyez le plan ; en dessous, le site tel que leurs clients le voient.",
+  "line": "COUPE",
+  "name": "Amakhosi Sauna",
+  "place": "Hamont-Achel",
+  "text": "Amakhosi est un sauna privé et espace bien-être à Hamont-Achel. Nous avons créé un nouveau site web dans un style chaleureux, espresso et or. Les clients réservent et paient en ligne, et reçoivent automatiquement une confirmation, un rappel et un suivi par e-mail.",
+  "tags": [
+   "Site web",
+   "Réservation et paiement en ligne",
+   "Flux d'e-mails",
+   "SEO"
+  ],
+  "visit": "Voir amakhosi.be",
+  "newtab": "(s'ouvre dans une nouvelle fenêtre)",
+  "caption": "Captures d'écran d'amakhosi.be, septembre 2026.",
+  "alt_desk": "Page d'accueil d'amakhosi.be sur un ordinateur : un espace bien-être avec jacuzzi, le titre « Welkom bij Amakhosi » et le bouton « Reserveer hier ».",
+  "alt_gsm": "La même page d'accueil sur un smartphone, avec en bas le bouton « Reserveer nu ».",
+  "bp": {
+   "desk": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 10,
+     "l": ""
+    },
+    {
+     "x": 1.6,
+     "y": 1,
+     "w": 4,
+     "h": 7.6,
+     "l": "LOGO"
+    },
+    {
+     "x": 11.3,
+     "y": 1.8,
+     "w": 23.4,
+     "h": 3.4,
+     "l": "MENU"
+    },
+    {
+     "x": 85.8,
+     "y": 2.3,
+     "w": 11,
+     "h": 5,
+     "l": "RÉSERVER ICI"
+    },
+    {
+     "x": 0,
+     "y": 10,
+     "w": 100,
+     "h": 83,
+     "l": "PHOTO",
+     "x_": 1
+    },
+    {
+     "x": 37,
+     "y": 47,
+     "w": 26,
+     "h": 6,
+     "l": "TITRE"
+    },
+    {
+     "x": 22,
+     "y": 54,
+     "w": 56,
+     "h": 6,
+     "l": "SOUS-TITRE"
+    },
+    {
+     "x": 0,
+     "y": 93,
+     "w": 100,
+     "h": 7,
+     "l": "BARRE DU BAS"
+    },
+    {
+     "x": 86.6,
+     "y": 94.4,
+     "w": 9.8,
+     "h": 4.2,
+     "l": "RÉSERVER"
+    }
+   ],
+   "gsm": [
+    {
+     "x": 3,
+     "y": 1,
+     "w": 17,
+     "h": 6.5,
+     "l": "LOGO"
+    },
+    {
+     "x": 89,
+     "y": 2.2,
+     "w": 8,
+     "h": 3.4,
+     "l": "MENU"
+    },
+    {
+     "x": 0,
+     "y": 10.7,
+     "w": 100,
+     "h": 48.8,
+     "l": "PHOTO",
+     "x_": 1
+    },
+    {
+     "x": 4,
+     "y": 27.6,
+     "w": 92,
+     "h": 4.8,
+     "l": "TITRE"
+    },
+    {
+     "x": 10,
+     "y": 34.8,
+     "w": 80,
+     "h": 13.4,
+     "l": "SOUS-TITRE"
+    },
+    {
+     "x": 5,
+     "y": 65.5,
+     "w": 90,
+     "h": 26,
+     "l": "PHOTO",
+     "x_": 1
+    },
+    {
+     "x": 0,
+     "y": 93.3,
+     "w": 100,
+     "h": 6.7,
+     "l": "BARRE DU BAS"
+    },
+    {
+     "x": 53,
+     "y": 94.4,
+     "w": 35,
+     "h": 4.6,
+     "l": "RÉSERVER"
+    }
+   ]
+  },
+  "pins": {
+   "desk": [
+    {
+     "y": 50,
+     "x": 50,
+     "t": "Des titres et des textes que Google sait lire."
+    },
+    {
+     "y": 5,
+     "x": 91,
+     "t": "Réserver et payer tout de suite, en ligne."
+    },
+    {
+     "y": 30,
+     "x": 20,
+     "t": "De vraies photos, dans un style chaleureux espresso et or."
+    },
+    {
+     "y": 96,
+     "x": 20,
+     "t": "Après la réservation, la confirmation, le rappel et le suivi partent par e-mail."
+    }
+   ],
+   "gsm": [
+    {
+     "y": 22,
+     "x": 50,
+     "t": "Le même site, réorganisé pour un petit écran."
+    },
+    {
+     "y": 30,
+     "x": 50,
+     "t": "Des titres et des textes que Google sait lire."
+    },
+    {
+     "y": 96,
+     "x": 70,
+     "t": "Leur bouton de réservation reste toujours visible en bas de l'écran."
+    }
+   ]
+  },
+  "cards": [
+   {
+    "k": "PROJET 02 · HASSELT",
+    "t": "Clinic3D",
+    "txt": "Clinique esthétique. Site web avec prise de rendez-vous en ligne, flux d'e-mails automatique et suivi des avis.",
+    "nums": [
+     [
+      "40 280",
+      "vues sur le site web depuis le lancement"
+     ],
+     [
+      "650",
+      "rendez-vous confirmés sur 681 planifiés"
+     ],
+     [
+      "0",
+      "no-shows"
+     ]
+    ],
+    "note": "Rendez-vous mesurés du 1er janvier au 20 septembre 2026 (263 jours).",
+    "quote": "Mes clients réservent désormais eux-mêmes — je n'ai plus rien à faire.",
+    "cite": "Dr. Kenis, Clinic3D",
+    "link": "Lire l'étude de cas",
+    "href": "Clinic3D"
+   },
+   {
+    "k": "PROJET 03 · HEERS",
+    "t": "Mett-U VZW",
+    "txt": "Un nouveau site web, connecté à un suivi automatisé et à un CRM central.",
+    "logo": {
+     "src": "https://assets.cdn.filesafe.space/YFfKOg7Am0tTMiZxOYIM/media/6a42356a3a7f0c54687855fb.png",
+     "alt": "Logo de Mett-U VZW",
+     "w": 550,
+     "h": 180
+    }
+   },
+   {
+    "k": "PROJET 04 · VECHMAAL",
+    "t": "'t Kleinhof",
+    "txt": "Une petite ferme bio et ferme de soins. Un nouveau site web qui raconte l'histoire de Liesbeth et Gert, de leur ferme bio et de soins, et de leurs produits.",
+    "logo": {
+     "src": "https://assets.cdn.filesafe.space/ZgvefHL6tlfdRaNGLqdD/media/694a73c4a6b40253f5b23d27.png",
+     "alt": "Logo de 't Kleinhof",
+     "w": 400,
+     "h": 400
+    },
+    "link": "Voir kleinhof.be",
+    "href": "https://kleinhof.be"
+   },
+   {
+    "k": "PROJET 05 · CE SITE",
+    "t": "emlaunchpad.com",
+    "txt": "Trilingue, statique et rapide. Et chez vous, à quelle vitesse ? Vous le mesurez juste en dessous.",
+    "link": "Voir la mesure",
+    "href": "#gemeten",
+    "site": true
+   }
+  ],
+  "newtab_short": "(s'ouvre dans une nouvelle fenêtre)",
+  "k1": "PROJET 01 · HAMONT-ACHEL"
+ },
+ "meet": {
+  "eyebrow": "Mesuré sur votre appareil, à l'instant",
+  "h2a": "Cette page, nous l'avons construite aussi.",
+  "h2b": "Voici à quelle vitesse elle s'est chargée chez vous.",
+  "lede": "Pas un score tiré d'une brochure. Votre navigateur vient de mesurer lui-même comment cette page s'est chargée chez vous. Les chiffres restent sur votre appareil.",
+  "rows": [
+   {
+    "k": "fcp",
+    "label": "Premier affichage après",
+    "max": 4000,
+    "tick": 1800,
+    "tick_l": "Google : bon jusqu'à 1,8 s"
+   },
+   {
+    "k": "lcp",
+    "label": "Plus grand élément affiché après",
+    "max": 5000,
+    "tick": 2500,
+    "tick_l": "Google : bon jusqu'à 2,5 s"
+   },
+   {
+    "k": "cls",
+    "label": "De combien la page a bougé",
+    "max": 0.25,
+    "tick": 0.1,
+    "tick_l": "Google : bon jusqu'à 0,1"
+   },
+   {
+    "k": "kb",
+    "label": "Nos propres fichiers via le réseau",
+    "max": 1000
+   }
+  ],
+  "lcp_note": "Le plus grand élément ici est notre photo d'exemple, que nous affichons volontairement plus tard. C'est pourquoi nous regardons le premier affichage.",
+  "others": "Plus {n} fichiers d'autres services, comme les polices, les photos et le chat. Votre navigateur ne communique pas toujours leur taille.",
+  "load": "Entièrement chargée en {x}.",
+  "less": "moins de 0,1 s",
+  "v_good": "Rapide, chez vous aussi.",
+  "v_slow": "Plus lent que nous le voudrions. Cela peut venir de votre connexion ou de votre appareil. Nous le montrons quand même tel quel.",
+  "v_cache": "Vous aviez déjà ces fichiers. Presque rien n'est repassé par le réseau.",
+  "v_bf": "Vous êtes revenu avec le bouton retour. Votre navigateur a affiché la page depuis sa mémoire.",
+  "v_none": "Votre navigateur ne communique pas cette mesure. Voici ce qu'il mesure :",
+  "v_bg": "Cette page s'est ouverte dans un autre onglet. Dans ce cas, votre navigateur ne mesure pas correctement. Rechargez-la pour voir le résultat.",
+  "wait": "Mesure en cours…",
+  "reload": "Recharger et mesurer à nouveau",
+  "foot": "Mesuré dans votre propre navigateur, avec les indicateurs que Google utilise pour la vitesse et la stabilité (Core Web Vitals). Rien n'est envoyé, ni à nous ni à personne d'autre. Un autre appareil ou une autre connexion donne d'autres chiffres. Les seuils viennent de Google (web.dev).",
+  "slot": "emlaunchpad.com est trilingue et statique, et nous l'avons construit nous-mêmes. Nous construisons le vôtre avec le même soin.",
+  "sr": "Cette page s'est affichée chez vous en {x}.",
+  "chip": "Cette page s'est affichée chez vous en {x}"
+ },
+ "prijs": {
+  "eyebrow": "Ce que ça coûte",
+  "h2a": "Pas de prix à part.",
+  "h2b": "Votre site est inclus dans Croissance digitale.",
+  "lede": "150 € par mois, résiliable chaque mois. Nous construisons et gérons toute votre activité digitale. Votre site web en est le point de départ.",
+  "head": "NOMENCLATURE · CROISSANCE DIGITALE",
+  "rows": [
+   [
+    "Site web",
+    "Un site web professionnel et rapide qui transforme vos visiteurs en clients. Conçu d'abord pour le smartphone, optimisé pour les Core Web Vitals, prêt pour le SEO, avec un agenda de réservation intégré et des formulaires de contact."
+   ],
+   [
+    "Profil Google et visibilité locale",
+    "Entièrement complété et à jour."
+   ],
+   [
+    "Gestion de la réputation",
+    "2 heures après un rendez-vous, une demande d'avis part automatiquement."
+   ],
+   [
+    "CRM et tableau de bord clients",
+    "WhatsApp, Instagram, e-mail, SMS et téléphone dans une seule boîte de réception."
+   ],
+   [
+    "Campagnes par e-mail et SMS",
+    ""
+   ],
+   [
+    "Funnels et landing pages",
+    ""
+   ],
+   [
+    "Paiement en ligne et facturation",
+    "Via Stripe, avec Bancontact, iDEAL, Visa et Apple Pay."
+   ],
+   [
+    "Automatisation IA et workflows",
+    ""
+   ],
+   [
+    "Accès à la plateforme",
+    ""
+   ]
+  ],
+  "tb": [
+   [
+    "PACK",
+    "CROISSANCE DIGITALE"
+   ],
+   [
+    "PRIX",
+    "150 € / mois"
+   ],
+   [
+    "DURÉE",
+    "résiliable chaque mois"
+   ],
+   [
+    "SIGNÉ",
+    "EM Launchpad · feuille 1/1"
+   ]
+  ],
+  "addons_label": "Envie d'une option en plus ?",
+  "addons": [
+   {
+    "id": "cb",
+    "label": "Chatbot IA",
+    "price": 50,
+    "txt": "Répond aux questions sur votre site, même le soir.",
+    "row": "Chatbot IA",
+    "href": "AI%20Chatbots"
+   },
+   {
+    "id": "rc",
+    "label": "Réceptionniste IA",
+    "price": 125,
+    "txt": "Répond à votre téléphone.",
+    "row": "Réceptionniste IA",
+    "href": "AI%20Voice%20Agents"
+   }
+  ],
+  "total_label": "Votre prix mensuel",
+  "cons": "L'IA jusque dans vos processus internes ? C'est le Consulting IA, sur demande.",
+  "cons_link": "Voir les packs",
+  "cta": "Planifiez un appel gratuit",
+  "cta2": "Voir le pack"
+ },
+ "stappen": {
+  "eyebrow": "Comment votre site voit le jour",
+  "h2a": "D'un premier appel",
+  "h2b": "à un site qui prend des réservations.",
+  "lede": "En général en ligne dans les 14 jours. Vous n'avez rien à construire ni à connecter.",
+  "items": [
+   [
+    "Appel gratuit",
+    "Trente minutes. Que faites-vous, pour qui, et que doit pouvoir faire un visiteur : réserver, payer ou faire une demande ?"
+   ],
+   [
+    "Nous concevons",
+    "Autour de votre commerce, avec vos photos, vos textes et vos couleurs."
+   ],
+   [
+    "Nous construisons et connectons",
+    "Agenda, formulaires, paiements et votre CRM. Nous mettons aussi votre profil Google en ordre."
+   ],
+   [
+    "En ligne, et nous le gérons",
+    "Dès ce moment, votre site travaille aussi quand vous êtes fermé."
+   ]
+  ]
+ },
+ "faq": {
+  "eyebrow": "Questions fréquentes",
+  "h2a": "Bon à savoir",
+  "h2b": "avant de commencer à dessiner.",
+  "items": [
+   {
+    "q": "Combien coûte un site web chez vous ?",
+    "a": "Il n'y a pas de prix à part. Votre site est inclus dans Croissance digitale : 150 € par mois, résiliable chaque mois. Votre profil Google, les demandes d'avis, votre CRM et le paiement en ligne sont aussi compris."
+   },
+   {
+    "q": "En combien de temps mon site est-il en ligne ?",
+    "a": "En général dans les 14 jours."
+   },
+   {
+    "q": "Mes clients peuvent-ils réserver et payer en ligne ?",
+    "a": "Oui. L'agenda de réservation et les formulaires de contact sont inclus. Le paiement passe par Stripe, avec Bancontact, iDEAL, Visa ou Apple Pay."
+   },
+   {
+    "q": "Un chatbot est-il inclus ?",
+    "a": "Pas par défaut. Le chatbot IA est une option à 50 € par mois. Vous voulez aussi que quelqu'un réponde à votre téléphone ? C'est la réceptionniste IA, pour 125 € par mois."
+   },
+   {
+    "q": "Est-ce que j'apparaîtrai en tête de Google ?",
+    "a": "Personne ne peut honnêtement le promettre. Nous construisons un site rapide et prêt pour le SEO, et nous complétons entièrement votre profil Google, que nous tenons à jour."
+   },
+   {
+    "q": "Qui gère mon site web ?",
+    "a": "Nous. Nous construisons et gérons toute votre activité digitale, et votre site web en fait partie."
+   }
+  ],
+  "more_label": "À lire aussi :",
+  "more": [
+   {
+    "title": "Pourquoi votre site est lent",
+    "href": "emtimes/websites/waarom-je-website-traag-is/"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "Le premier trait,",
+  "h2b": "traçons-le ensemble.",
+  "text": "Planifiez un appel gratuit de 30 minutes. Nous regardons ensemble ce que votre site doit faire. Ensuite, nous dessinons la première ébauche.",
+  "btn": "Planifiez un appel gratuit",
+  "demo": "Ou demandez une démo gratuite",
+  "demo_href": "Gratis%20Demo",
+  "micro": "Cette page s'est affichée chez vous en {x}. Nous construirons votre site avec le même soin.",
+  "micro_fb": "Nous construirons votre site avec le même soin que cette page.",
+  "badges": [
+   "Gratuit et sans engagement",
+   "30 minutes",
+   "En général en ligne dans les 14 jours"
+  ]
+ }
+}

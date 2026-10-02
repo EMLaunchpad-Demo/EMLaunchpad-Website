@@ -1,0 +1,14 @@
+// Cloudflare Workers: statische site uit de hoofdmap van deze repo.
+// Zelfde instellingen als de config die Cloudflare automatisch aanmaakte,
+// plus not_found_handling: onbekende adressen tonen 404.html (status 404).
+{
+  "name": "emlaunchpad-website",
+  "compatibility_date": "2026-10-01",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  }
+}

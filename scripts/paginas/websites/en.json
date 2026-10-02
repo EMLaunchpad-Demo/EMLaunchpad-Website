@@ -1,0 +1,850 @@
+{
+ "lang": "en",
+ "tone": "blauw",
+ "font": "family=Caveat:wght@600",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 74,
+   "ay": 34,
+   "bx": 10,
+   "by": 96,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.18,
+   "ax": 24,
+   "ay": 40,
+   "bx": 82,
+   "by": 70,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.4,
+   "ax": 78,
+   "ay": 58,
+   "bx": 18,
+   "by": 30,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.62,
+   "ax": 30,
+   "ay": 46,
+   "bx": 72,
+   "by": 60,
+   "ao": 0.8,
+   "bo": 0.6
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "meta": {
+  "title": "Websites that let customers book | EM Launchpad",
+  "desc": "We build and manage your website: fast, made for phones, SEO-ready, with online booking, lead forms and payments. Included in Digital Growth, €150 per month.",
+  "ogtitle": "Websites that let customers book | EM Launchpad",
+  "service": "Websites",
+  "offer": "Included in the Digital Growth package"
+ },
+ "hero": {
+  "crumb_home": "Services",
+  "crumb": "Websites",
+  "eyebrow": "Websites",
+  "h1a": "From a blank sheet",
+  "h1b": "to a business that takes bookings.",
+  "lede": "We design your website around your business, build it and manage it. Customers find you, see straight away who you are, and book, pay or send a request. Even when you've already closed.",
+  "cta": "Book a free call",
+  "cta2": "See real work",
+  "pick": "See it for a",
+  "name_btn": "Put your own name on it",
+  "name_label": "Your business name",
+  "name_ph": "E.g. the name above your door",
+  "name_hint": "Your name stays on your device. We don't pass anything on.",
+  "chapters": [
+   "Sketch",
+   "Colour in",
+   "On your phone",
+   "After hours"
+  ],
+  "chapters_label": "Chapters",
+  "caption": "Example. We design your real site together with you: your photos, your words, your colours. We build it and manage it.",
+  "foot": [
+   "Included in Digital Growth, €150 per month",
+   "We build and manage it",
+   "Usually live within 14 days"
+  ],
+  "chip_wait": "This page: measuring…",
+  "chip_fallback": "Real work: amakhosi.be"
+ },
+ "ui": {
+  "example": "Example",
+  "pause": "Pause",
+  "play": "Resume",
+  "again": "Replay",
+  "pause_aria": "Pause the example",
+  "play_aria": "Resume the example",
+  "again_aria": "Replay the example",
+  "labels": {
+   "logo": "LOGO",
+   "links": "MENU",
+   "cta": "BUTTON",
+   "foto": "PHOTO OF YOUR BUSINESS",
+   "titel": "WHAT YOU DO",
+   "uren": "OPENING HOURS",
+   "review": "REVIEW",
+   "adres": "ADDRESS",
+   "bar": "BOTTOM BAR"
+  },
+  "notes": [
+   "button always in view",
+   "opening hours at the top: everyone asks",
+   "a real photo of your business",
+   "on a phone, you book with your thumb",
+   "Your shutters are down. Your site isn't."
+  ],
+  "closed": "Closed now",
+  "hours_label": "Opening hours",
+  "review_label": "What customers say",
+  "address_label": "Address",
+  "clock_a": "Sat 18:00",
+  "clock_b": "Sun 20:52",
+  "clock_sub": "your business is closed",
+  "confirmed": "Confirmed",
+  "sent": "Request sent",
+  "form": [
+   "Car make",
+   "Servicing",
+   "Your mobile number"
+  ],
+  "toast_boek": [
+   "New booking via your website",
+   "{moment} · {dienst} · confirmed"
+  ],
+  "toast_offerte": [
+   "New quote request via your website",
+   "{dienst} · now in your CRM"
+  ],
+  "sr_hero": "Example: a website for {naam} is sketched, coloured in and shown on a phone. On Sunday evening, when the business is closed, {wat} comes in through the site.",
+  "sr_boek": "a booking",
+  "sr_offerte": "a quote request",
+  "live_chapter": "Chapter {i} of 4: {naam}",
+  "lens_pause": "Pause the tour",
+  "lens_play": "Resume the tour",
+  "search_ph": "Search",
+  "open_until": "Open until 18:00",
+  "result_btns": [
+   "Website",
+   "Directions",
+   "Call"
+  ],
+  "sms_text": "Thanks for your visit. How was it?",
+  "sms_meta": "2 HOURS AFTER YOUR APPOINTMENT",
+  "tile_service": "Service: {dienst}",
+  "pay": "Pay",
+  "pay_chips": [
+   "Bancontact",
+   "iDEAL",
+   "Visa",
+   "Apple Pay"
+  ],
+  "crm": "now in your CRM",
+  "inbox": [
+   [
+    "web",
+    "Website",
+    "new booking"
+   ],
+   [
+    "wa",
+    "WhatsApp",
+    "Can I still come in on Saturday?"
+   ],
+   [
+    "ig",
+    "Instagram",
+    "Lovely work! How much is that?"
+   ],
+   [
+    "mail",
+    "Email",
+    "Question about your prices"
+   ],
+   [
+    "sms",
+    "SMS",
+    "Running a bit late, sorry"
+   ],
+   [
+    "tel",
+    "Phone",
+    "Missed call, 10:05"
+   ]
+  ],
+  "slider": "Cross-section of amakhosi.be",
+  "slider_none": "Nothing revealed yet",
+  "desk": "Computer",
+  "gsm": "Phone",
+  "total_sr": "Total: €{t} per month",
+  "per_sum": "per month, in total",
+  "per": "per month",
+  "picks": "picks up",
+  "measured_at": "measured at {t}"
+ },
+ "vak": [
+  {
+   "id": "kapper",
+   "chip": "Hairdresser",
+   "naam": "Kapsalon Mira",
+   "domein": "kapsalonmira.be",
+   "zoek": "hairdresser hasselt",
+   "links": [
+    "Services",
+    "Prices",
+    "Team",
+    "Contact"
+   ],
+   "titel": "Cuts and colour in Hasselt",
+   "sub": "Tuesday to Saturday. Book online, even in the evening.",
+   "cta": "Book now",
+   "dienst": "Haircut",
+   "moment": "Tue 10:00",
+   "uren": "Tue to Sat · 9:00 to 18:00",
+   "review": "“Always welcoming, never a long wait.”",
+   "adres": "12 Example Street, Hasselt",
+   "tel": "011 00 00 00",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1585747860715-2ba37e788b70",
+    "pos": "50% 45%"
+   },
+   "pal": {
+    "bg": "#211813",
+    "ink": "#f3e9e1",
+    "acc": "#c9825b",
+    "line": "rgba(243,233,225,.14)",
+    "card": "rgba(243,233,225,.06)"
+   }
+  },
+  {
+   "id": "kine",
+   "chip": "Physio",
+   "naam": "Kinepraktijk De Linde",
+   "domein": "kinepraktijkdelinde.be",
+   "zoek": "physio genk",
+   "links": [
+    "Treatments",
+    "Rates",
+    "Team",
+    "Contact"
+   ],
+   "titel": "Physiotherapy in Genk",
+   "sub": "Book your own appointment, even outside opening hours.",
+   "cta": "Book an appointment",
+   "dienst": "First treatment",
+   "moment": "Mon 08:30",
+   "uren": "Mon to Fri · 8:00 to 19:00",
+   "review": "“Explained calmly and helped straight away.”",
+   "adres": "12 Example Street, Genk",
+   "tel": "089 00 00 00",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1519824145371-296894a0daa9",
+    "pos": "40% 50%"
+   },
+   "pal": {
+    "bg": "#16231f",
+    "ink": "#e8f0ec",
+    "acc": "#8fb8a2",
+    "line": "rgba(232,240,236,.14)",
+    "card": "rgba(232,240,236,.06)"
+   }
+  },
+  {
+   "id": "garage",
+   "chip": "Garage",
+   "naam": "Garage Janssens",
+   "domein": "garagejanssens.be",
+   "zoek": "garage tongeren",
+   "links": [
+    "Servicing",
+    "Repairs",
+    "Tyres",
+    "Contact"
+   ],
+   "titel": "Servicing and repairs in Tongeren",
+   "sub": "Request your quote online.",
+   "cta": "Request a quote",
+   "dienst": "Servicing",
+   "moment": "Wed 08:00",
+   "uren": "Mon to Fri · 8:00 to 18:00",
+   "review": "“Fair price, ready on time.”",
+   "adres": "12 Example Street, Tongeren",
+   "tel": "012 00 00 00",
+   "flow": "offerte",
+   "foto": {
+    "id": "photo-1702146713858-8e7d1cc29fe8",
+    "pos": "45% 55%"
+   },
+   "pal": {
+    "bg": "#18191c",
+    "ink": "#eef0f2",
+    "acc": "#e0b43a",
+    "line": "rgba(238,240,242,.14)",
+    "card": "rgba(238,240,242,.06)"
+   }
+  },
+  {
+   "id": "kliniek",
+   "chip": "Clinic",
+   "naam": "Huidkliniek Aura",
+   "domein": "huidkliniekaura.be",
+   "zoek": "clinic sint-truiden",
+   "links": [
+    "Treatments",
+    "Prices",
+    "About us",
+    "Contact"
+   ],
+   "titel": "Skincare in Sint-Truiden",
+   "sub": "Book your consultation when it suits you.",
+   "cta": "Book a consultation",
+   "dienst": "Consultation",
+   "moment": "Wed 14:00",
+   "uren": "Tue to Sat · 9:00 to 17:00",
+   "review": "“A warm welcome and honest advice.”",
+   "adres": "12 Example Street, Sint-Truiden",
+   "tel": "011 00 00 01",
+   "flow": "boek",
+   "foto": {
+    "id": "photo-1570172619644-dfd03ed5d881",
+    "pos": "50% 40%"
+   },
+   "pal": {
+    "bg": "#efebe6",
+    "ink": "#2a2622",
+    "acc": "#9b7b62",
+    "line": "rgba(42,38,34,.12)",
+    "card": "rgba(42,38,34,.05)"
+   }
+  }
+ ],
+ "doet": {
+  "eyebrow": "What your site does for you",
+  "h2a": "A good site does four things.",
+  "h2b": "Every day, even without you.",
+  "lede": "Pick one. You'll see it straight away on the example above.",
+  "group": "What your site does",
+  "lenses": [
+   {
+    "id": "gevonden",
+    "part": "logo",
+    "titel": "Getting found",
+    "tekst": "Anyone looking for a {vak} nearby should find you. We build your site fast and SEO-ready, and we fill in your Google profile completely and keep it up to date. Nobody can honestly promise you the top spot. What we can build is a site Google reads well."
+   },
+   {
+    "id": "vertrouwen",
+    "part": "foto",
+    "titel": "Building trust",
+    "tekst": "A real photo, your opening hours, your address and what customers say about you. That way, customers see straight away who they're coming to. And 2 hours after every appointment, your system asks for a review by itself."
+   },
+   {
+    "id": "boeken",
+    "part": "knop",
+    "titel": "Taking bookings and payments",
+    "titel_offerte": "Taking requests",
+    "tekst": "One tap on {cta} and your customer has booked. The appointment planner and lead forms are built in, and customers can pay online with Bancontact, iDEAL, Visa or Apple Pay.",
+    "tekst_offerte": "With one tap on {cta}, your customer fills in their request. The lead form is built in, and the request goes straight into your CRM."
+   },
+   {
+    "id": "alles",
+    "part": "",
+    "titel": "Everything in one place",
+    "tekst": "Every booking and every request lands in your CRM. Messages from WhatsApp, Instagram, email, SMS and phone sit together in one inbox."
+   }
+  ],
+  "links": [
+   {
+    "label": "How customers book by themselves: see the booking system",
+    "href": "Afsprakensysteem"
+   },
+   {
+    "label": "Answering questions in the evening too? That's the AI chatbot, + €50 per month",
+    "href": "AI%20Chatbots"
+   }
+  ]
+ },
+ "werk": {
+  "eyebrow": "Real work",
+  "h2a": "From blueprint",
+  "h2b": "to amakhosi.be.",
+  "lede": "Drag the line. Above it you see the plan, below it the site as their guests see it.",
+  "line": "CROSS-SECTION",
+  "name": "Amakhosi Sauna",
+  "place": "Hamont-Achel",
+  "text": "Amakhosi is a private sauna and wellness spot in Hamont-Achel. We built a new website in a warm style of espresso and gold. Guests book and pay online, and automatically get a confirmation, a reminder and follow-up by email.",
+  "tags": [
+   "Website",
+   "Online booking and payment",
+   "Email flow",
+   "SEO"
+  ],
+  "visit": "Visit amakhosi.be",
+  "newtab": "(opens in a new window)",
+  "caption": "Screenshots of amakhosi.be, September 2026.",
+  "alt_desk": "The amakhosi.be home page on a computer: a wellness room with a hot tub, the title Welkom bij Amakhosi (Welcome to Amakhosi) and the button Reserveer hier (Book here).",
+  "alt_gsm": "The same home page on a phone, with the button Reserveer nu (Book now) at the bottom.",
+  "bp": {
+   "desk": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 100,
+     "h": 10,
+     "l": ""
+    },
+    {
+     "x": 1.6,
+     "y": 1,
+     "w": 4,
+     "h": 7.6,
+     "l": "LOGO"
+    },
+    {
+     "x": 11.3,
+     "y": 1.8,
+     "w": 23.4,
+     "h": 3.4,
+     "l": "MENU"
+    },
+    {
+     "x": 85.8,
+     "y": 2.3,
+     "w": 11,
+     "h": 5,
+     "l": "BOOK HERE"
+    },
+    {
+     "x": 0,
+     "y": 10,
+     "w": 100,
+     "h": 83,
+     "l": "PHOTO",
+     "x_": 1
+    },
+    {
+     "x": 37,
+     "y": 47,
+     "w": 26,
+     "h": 6,
+     "l": "TITLE"
+    },
+    {
+     "x": 22,
+     "y": 54,
+     "w": 56,
+     "h": 6,
+     "l": "SUBTITLE"
+    },
+    {
+     "x": 0,
+     "y": 93,
+     "w": 100,
+     "h": 7,
+     "l": "BOTTOM BAR"
+    },
+    {
+     "x": 86.6,
+     "y": 94.4,
+     "w": 9.8,
+     "h": 4.2,
+     "l": "BOOK NOW"
+    }
+   ],
+   "gsm": [
+    {
+     "x": 3,
+     "y": 1,
+     "w": 17,
+     "h": 6.5,
+     "l": "LOGO"
+    },
+    {
+     "x": 89,
+     "y": 2.2,
+     "w": 8,
+     "h": 3.4,
+     "l": "MENU"
+    },
+    {
+     "x": 0,
+     "y": 10.7,
+     "w": 100,
+     "h": 48.8,
+     "l": "PHOTO",
+     "x_": 1
+    },
+    {
+     "x": 4,
+     "y": 27.6,
+     "w": 92,
+     "h": 4.8,
+     "l": "TITLE"
+    },
+    {
+     "x": 10,
+     "y": 34.8,
+     "w": 80,
+     "h": 13.4,
+     "l": "SUBTITLE"
+    },
+    {
+     "x": 5,
+     "y": 65.5,
+     "w": 90,
+     "h": 26,
+     "l": "PHOTO",
+     "x_": 1
+    },
+    {
+     "x": 0,
+     "y": 93.3,
+     "w": 100,
+     "h": 6.7,
+     "l": "BOTTOM BAR"
+    },
+    {
+     "x": 53,
+     "y": 94.4,
+     "w": 35,
+     "h": 4.6,
+     "l": "BOOK NOW"
+    }
+   ]
+  },
+  "pins": {
+   "desk": [
+    {
+     "y": 50,
+     "x": 50,
+     "t": "Titles and text that Google reads."
+    },
+    {
+     "y": 5,
+     "x": 91,
+     "t": "Book and pay straight away, online."
+    },
+    {
+     "y": 30,
+     "x": 20,
+     "t": "Real photos in a warm style of espresso and gold."
+    },
+    {
+     "y": 96,
+     "x": 20,
+     "t": "After booking, a confirmation, a reminder and follow-up go out by email."
+    }
+   ],
+   "gsm": [
+    {
+     "y": 22,
+     "x": 50,
+     "t": "The same site, rearranged for a small screen."
+    },
+    {
+     "y": 30,
+     "x": 50,
+     "t": "Titles and text that Google reads."
+    },
+    {
+     "y": 96,
+     "x": 70,
+     "t": "Their Book now button (Reserveer nu) always stays in view at the bottom."
+    }
+   ]
+  },
+  "cards": [
+   {
+    "k": "WORK 02 · HASSELT",
+    "t": "Clinic3D",
+    "txt": "Aesthetic clinic. Website with an online booking system, automated email flow and review follow-up.",
+    "nums": [
+     [
+      "40,280",
+      "website views since launch"
+     ],
+     [
+      "650",
+      "of 681 scheduled appointments confirmed"
+     ],
+     [
+      "0",
+      "no-shows"
+     ]
+    ],
+    "note": "Appointments measured from 1 January to 20 September 2026 (263 days).",
+    "quote": "My clients now book by themselves — I don't have to do a thing.",
+    "cite": "Dr. Kenis, Clinic3D",
+    "link": "Read the case",
+    "href": "Clinic3D"
+   },
+   {
+    "k": "WORK 03 · HEERS",
+    "t": "Mett-U VZW",
+    "txt": "A new website, connected to automated follow-up and a central CRM.",
+    "logo": {
+     "src": "https://assets.cdn.filesafe.space/YFfKOg7Am0tTMiZxOYIM/media/6a42356a3a7f0c54687855fb.png",
+     "alt": "Mett-U VZW logo",
+     "w": 550,
+     "h": 180
+    }
+   },
+   {
+    "k": "WORK 04 · VECHMAAL",
+    "t": "'t Kleinhof",
+    "txt": "A small-scale organic and care farm. A new website telling the story of Liesbeth and Gert, their organic and care farm, and their products.",
+    "logo": {
+     "src": "https://assets.cdn.filesafe.space/ZgvefHL6tlfdRaNGLqdD/media/694a73c4a6b40253f5b23d27.png",
+     "alt": "'t Kleinhof logo",
+     "w": 400,
+     "h": 400
+    },
+    "link": "Visit kleinhof.be",
+    "href": "https://kleinhof.be"
+   },
+   {
+    "k": "WORK 05 · THIS SITE",
+    "t": "emlaunchpad.com",
+    "txt": "Trilingual, statically built and fast. How fast is it for you? You can measure that below.",
+    "link": "See the measurement",
+    "href": "#gemeten",
+    "site": true
+   }
+  ],
+  "newtab_short": "(opens in a new window)",
+  "k1": "WORK 01 · HAMONT-ACHEL"
+ },
+ "meet": {
+  "eyebrow": "Measured on your device, just now",
+  "h2a": "We built this page too.",
+  "h2b": "This is how fast it reached you.",
+  "lede": "Not a score from a brochure. Your browser has just measured for itself how this page loaded for you. The figures stay on your device.",
+  "rows": [
+   {
+    "k": "fcp",
+    "label": "First thing on screen after",
+    "max": 4000,
+    "tick": 1800,
+    "tick_l": "Google: up to 1.8 s is good"
+   },
+   {
+    "k": "lcp",
+    "label": "Largest part on screen after",
+    "max": 5000,
+    "tick": 2500,
+    "tick_l": "Google: up to 2.5 s is good"
+   },
+   {
+    "k": "cls",
+    "label": "How much the page shifted",
+    "max": 0.25,
+    "tick": 0.1,
+    "tick_l": "Google: up to 0.1 is good"
+   },
+   {
+    "k": "kb",
+    "label": "Own files sent over the network",
+    "max": 1000
+   }
+  ],
+  "lcp_note": "The largest image here is our example photo, which we deliberately show later. That's why we go by the first thing on screen.",
+  "others": "Plus {n} files from other services, such as fonts, photos and the chat. Your browser doesn't always reveal their size.",
+  "load": "Fully loaded after {x}.",
+  "less": "less than 0.1 s",
+  "v_good": "Fast, on your device too.",
+  "v_slow": "Slower than we'd like. That may be down to your connection or your device. We're showing it as it is anyway.",
+  "v_cache": "You already had these files. Almost nothing had to come over the network again.",
+  "v_bf": "You came back using the back button. Your browser showed the page from its memory.",
+  "v_none": "Your browser doesn't share this measurement. This is what it does measure:",
+  "v_bg": "This page opened in another tab, so your browser can't measure it fairly. Reload the page to see the figures.",
+  "wait": "Measuring…",
+  "reload": "Reload and measure again",
+  "foot": "Measured in your own browser, using the metrics Google uses for speed and stability (Core Web Vitals). Nothing is sent to us or to anyone else. A different device or connection gives different figures. The thresholds come from Google (web.dev).",
+  "slot": "emlaunchpad.com is trilingual and static, and we built it ourselves. We'll build yours with the same care.",
+  "sr": "This page reached your screen in {x}.",
+  "chip": "This page reached your screen in {x}"
+ },
+ "prijs": {
+  "eyebrow": "What it costs",
+  "h2a": "No separate price tag.",
+  "h2b": "Your website is included in Digital Growth.",
+  "lede": "€150 per month, cancellable monthly. We build and manage your entire digital operation. Your website is where it starts.",
+  "head": "PARTS LIST · DIGITAL GROWTH",
+  "rows": [
+   [
+    "Website",
+    "A professional, fast website that turns visitors into customers. Designed for phones first, optimised for Core Web Vitals, SEO-ready, with a built-in appointment planner and lead forms."
+   ],
+   [
+    "Google profile and local visibility",
+    "Fully filled in and up to date."
+   ],
+   [
+    "Reputation management",
+    "2 hours after an appointment, a review request goes out automatically."
+   ],
+   [
+    "CRM and customer dashboard",
+    "WhatsApp, Instagram, email, SMS and phone in one inbox."
+   ],
+   [
+    "Email and SMS campaigns",
+    ""
+   ],
+   [
+    "Funnels and landing pages",
+    ""
+   ],
+   [
+    "Online payments and invoicing",
+    "Via Stripe, with Bancontact, iDEAL, Visa and Apple Pay."
+   ],
+   [
+    "AI automation and workflows",
+    ""
+   ],
+   [
+    "Access to the platform",
+    ""
+   ]
+  ],
+  "tb": [
+   [
+    "PACKAGE",
+    "DIGITAL GROWTH"
+   ],
+   [
+    "PRICE",
+    "€150 / month"
+   ],
+   [
+    "TERM",
+    "cancellable monthly"
+   ],
+   [
+    "DRAWN BY",
+    "EM Launchpad · sheet 1/1"
+   ]
+  ],
+  "addons_label": "Want to add something?",
+  "addons": [
+   {
+    "id": "cb",
+    "label": "AI chatbot",
+    "price": 50,
+    "txt": "Answers questions on your site, even in the evening.",
+    "row": "AI chatbot",
+    "href": "AI%20Chatbots"
+   },
+   {
+    "id": "rc",
+    "label": "AI receptionist",
+    "price": 125,
+    "txt": "Answers your phone.",
+    "row": "AI receptionist",
+    "href": "AI%20Voice%20Agents"
+   }
+  ],
+  "total_label": "Your monthly price",
+  "cons": "AI all the way into your internal processes? That's AI Consulting, on request.",
+  "cons_link": "View the packages",
+  "cta": "Book a free call",
+  "cta2": "View the package"
+ },
+ "stappen": {
+  "eyebrow": "How it comes together",
+  "h2a": "From a conversation",
+  "h2b": "to a site that takes bookings.",
+  "lede": "Usually live within 14 days. You don't have to build or connect a thing.",
+  "items": [
+   [
+    "Free call",
+    "Thirty minutes. What do you do, for whom, and what should a visitor be able to do: book, pay or send a request?"
+   ],
+   [
+    "We design",
+    "Around your business, with your photos, words and colours."
+   ],
+   [
+    "We build and connect",
+    "Planner, forms, payments and your CRM. We sort out your Google profile too."
+   ],
+   [
+    "Live, and we manage it",
+    "From then on, your site keeps working even when you're closed."
+   ]
+  ]
+ },
+ "faq": {
+  "eyebrow": "Frequently asked questions",
+  "h2a": "Good to know",
+  "h2b": "before we start drawing.",
+  "items": [
+   {
+    "q": "How much does a website from you cost?",
+    "a": "There's no separate price tag. Your website is included in Digital Growth: €150 per month, cancellable monthly. That also covers your Google profile, review requests, your CRM and online payments."
+   },
+   {
+    "q": "How soon will my site be online?",
+    "a": "Usually within 14 days."
+   },
+   {
+    "q": "Can customers book and pay online?",
+    "a": "Yes. The appointment planner and lead forms are built in. Payments go through Stripe, with Bancontact, iDEAL, Visa or Apple Pay."
+   },
+   {
+    "q": "Does it come with a chatbot?",
+    "a": "Not as standard. The AI chatbot is an add-on for €50 per month. Want someone to answer your phone too? That's the AI receptionist, for €125 per month."
+   },
+   {
+    "q": "Will I be at the top of Google?",
+    "a": "Nobody can honestly promise that. We build your site fast and SEO-ready, and we fill in your Google profile completely and keep it up to date."
+   },
+   {
+    "q": "Who manages my website?",
+    "a": "We do. We build and manage your entire digital operation, and your website is part of that."
+   }
+  ],
+  "more_label": "Also worth reading:",
+  "more": [
+   {
+    "title": "Why your website is slow",
+    "href": "emtimes/websites/waarom-je-website-traag-is/"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "We'll draw the first line",
+  "h2b": "together.",
+  "text": "Book a free 30-minute call. We'll look at what your site needs to do. Then we design the first sheet.",
+  "btn": "Book a free call",
+  "demo": "Or request a free demo",
+  "demo_href": "Gratis%20Demo",
+  "micro": "This page reached your screen in {x}. We'll build yours with the same care.",
+  "micro_fb": "We'll build yours with the same care as this page.",
+  "badges": [
+   "Free and no obligation",
+   "30 minutes",
+   "Usually live within 14 days"
+  ]
+ }
+}

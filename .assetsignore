@@ -1,0 +1,13 @@
+# Niet online zetten: alleen voor ontwikkeling en GitHub.
+.git
+.github
+.claude
+.gitignore
+.gitattributes
+.assetsignore
+wrangler.jsonc
+wrangler.toml
+node_modules
+scripts
+*.py
+*.md

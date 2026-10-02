@@ -377,3 +377,4 @@ html{scroll-padding-top:100px}
 .emld.go{animation:emld-out .35s both!important}
 .emld.go .emld-veil{-webkit-mask-image:none;mask-image:none}
 }
+.why-card h3{margin:4px 0 0;font-weight:700;font-size:18px;letter-spacing:-.02em}

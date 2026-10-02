@@ -1,0 +1,823 @@
+{
+ "lang": "fr",
+ "tone": "blauw",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 78,
+   "ay": 28,
+   "bx": 8,
+   "by": 100,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.2,
+   "ax": 22,
+   "ay": 36,
+   "bx": 84,
+   "by": 72,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.42,
+   "ax": 80,
+   "ay": 62,
+   "bx": 16,
+   "by": 26,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.68,
+   "ax": 36,
+   "ay": 44,
+   "bx": 70,
+   "by": 58,
+   "ao": 0.8,
+   "bo": 0.7
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "meta": {
+  "title": "Automatisation IA : la routine tourne toute seule | EM Launchpad",
+  "desc": "Confirmations, rappels, factures, demandes d'avis et suivi partent tout seuls, au bon moment. Nous gérons les workflows. Inclus dans Croissance digitale.",
+  "ogtitle": "Automatisation IA : la routine tourne toute seule",
+  "service": "Automatisation IA",
+  "offer": "Inclus dans le pack Croissance digitale"
+ },
+ "hero": {
+  "crumb_home": "Services",
+  "crumb": "Automatisation IA",
+  "eyebrow": "Automatisation IA",
+  "h1a": "Un client réserve.",
+  "h1b": "Le reste est réglé comme une horloge.",
+  "lede": "Confirmer, rappeler, facturer, demander un avis. Nous construisons les workflows qui font ce travail ennuyeux tout seuls, chaque fois au bon moment. Vous, vous continuez à travailler.",
+  "cta": "Planifiez un appel gratuit",
+  "cta2": "Ce qu'il y a dedans",
+  "label": "Choisissez ce qui se passe",
+  "read_label": "Ce qui vient de se passer tout seul",
+  "foot": [
+   "Inclus dans Croissance digitale, 150 € par mois",
+   "Nous construisons et maintenons les workflows",
+   "En général en ligne dans les 14 jours"
+  ],
+  "foot_link": "Clinic3D : 3 250 e-mails envoyés tout seuls"
+ },
+ "ui": {
+  "example": "Exemple",
+  "pause": "Mettre le mécanisme en pause",
+  "play": "Reprendre",
+  "again": "Recommencer",
+  "other": "Choisir autre chose",
+  "seq": "Lire toute la séquence",
+  "goto": "Aller à : {m}",
+  "steps_label": "Moments de cette séquence",
+  "chips_label": "Choisissez ce qui se passe",
+  "or": "ou",
+  "choice": "Choix : {c}",
+  "auto": "Si vous ne choisissez pas, le parcours habituel continue.",
+  "done_sr": "Terminé.",
+  "tools": {
+   "mail": "E-mail",
+   "sms": "SMS",
+   "agenda": "Google Agenda",
+   "crm": "CRM",
+   "stripe": "Stripe",
+   "google": "Fiche Google",
+   "inbox": "Boîte de réception"
+  },
+  "nogeens": "Encore une fois",
+  "sr_how": "se fait tout seul :",
+  "total_sr": "Total : {t} € par mois",
+  "per": "par mois",
+  "per_sum": "par mois, au total",
+  "tab_label": "Choisissez votre métier",
+  "next": "Moment suivant",
+  "finish": "Terminer"
+ },
+ "geo": {
+  "p": 11,
+  "n": [
+   78,
+   42,
+   51,
+   61,
+   74,
+   100
+  ],
+  "a": [
+   null,
+   -145,
+   -61,
+   -28,
+   38,
+   80
+  ],
+  "c0": [
+   376,
+   598
+  ],
+  "onrust": [
+   240,
+   790,
+   60
+  ],
+  "dial": 490
+ },
+ "order": [
+  "boekt",
+  "factuur",
+  "oproep",
+  "aanvraag"
+ ],
+ "events": {
+  "boekt": {
+   "chip": "Un client réserve",
+   "h1": "Un client réserve.",
+   "icon": "cal",
+   "vars": {
+    "naam": "Lotte",
+    "zij": "Elle",
+    "haar": "Son"
+   },
+   "steps": [
+    {
+     "w": 1,
+     "grav": "AUSSITÔT",
+     "win": "Mar. 21:40",
+     "jij": "Vous : à la maison depuis longtemps",
+     "kop": "Confirmation par e-mail et SMS",
+     "msg": "Bonjour {naam}, votre rendez-vous est confirmé : samedi à 10:00. Finalement, ça ne vous convient pas ? Déplacez ou annulez en un clic.",
+     "extra": "Ajouté à votre agenda, y compris dans Google Agenda. {naam} figure dans votre CRM.",
+     "tools": [
+      "mail",
+      "sms",
+      "agenda",
+      "crm"
+     ],
+     "sr": "Aussitôt : confirmation envoyée par e-mail et SMS."
+    },
+    {
+     "w": 2,
+     "grav": "1 JOUR AVANT",
+     "win": "Ven. 10:00",
+     "jij": "Vous : au travail",
+     "kop": "Rappel",
+     "msg": "Bonjour {naam}, nous vous attendons demain à 10:00. À demain !",
+     "tools": [
+      "mail",
+      "sms"
+     ],
+     "sr": "Un jour avant : rappel envoyé."
+    },
+    {
+     "w": 3,
+     "grav": "2 HEURES AVANT",
+     "win": "Sam. 08:00",
+     "jij": "Vous : en train de faire le café",
+     "kop": "Dernier SMS, avec votre adresse",
+     "msg": "À tout à l'heure, {naam} ! Nous vous attendons à 10:00. Voici notre adresse.",
+     "tools": [
+      "sms"
+     ],
+     "sr": "Deux heures avant : dernier SMS avec l'adresse envoyé."
+    },
+    {
+     "w": 4,
+     "grav": "APRÈS LA VISITE",
+     "win": "Sam. 12:30",
+     "jij": "Vous : avec le client suivant",
+     "kop": "Demande d'avis, 2 heures après le rendez-vous",
+     "msg": "Merci pour votre visite, {naam}. Comment ça s'est passé ?",
+     "tools": [
+      "sms",
+      "mail"
+     ],
+     "sr": "Deux heures après le rendez-vous : demande d'avis envoyée.",
+     "fork": {
+      "q": "Comment ça s'est passé pour {naam} ?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Très bien",
+        "grav": "VERS GOOGLE",
+        "res": "{zij} reçoit le lien vers votre fiche Google.",
+        "tools": [
+         "google"
+        ]
+       },
+       {
+        "label": "Pas bien",
+        "grav": "D'ABORD EN PRIVÉ",
+        "res": "{haar} avis arrive d'abord chez vous, pas sur Google."
+       }
+      ]
+     }
+    },
+    {
+     "w": 5,
+     "grav": "APRÈS 6 SEMAINES",
+     "win": "6 semaines après",
+     "jij": "Vous : vous n'y pensiez plus",
+     "kop": "Invitation pour un prochain rendez-vous",
+     "msg": "Bonjour {naam}, c'est le moment de reprendre rendez-vous ? Choisissez tout de suite le créneau qui vous convient.",
+     "tools": [
+      "mail"
+     ],
+     "sr": "Après six semaines : invitation pour un prochain rendez-vous envoyée."
+    }
+   ],
+   "end": {
+    "txt": "Cinq moments, chacun pile à l'heure. Vous n'avez rien eu à faire.",
+    "note": "Les moments et les textes, nous les choisissons ensemble avec vous.",
+    "link": {
+     "label": "Comment vos clients réservent eux-mêmes : découvrez la prise de rendez-vous en ligne",
+     "href": "Afsprakensysteem"
+    }
+   }
+  },
+  "factuur": {
+   "chip": "Une facture n'est pas payée",
+   "h1": "Une facture n'est pas payée.",
+   "icon": "bill",
+   "steps": [
+    {
+     "w": 2,
+     "grav": "SI IMPAYÉE",
+     "win": "Lun. 09:00",
+     "jij": "Vous : sous une voiture",
+     "kop": "Rappel automatique",
+     "msg": "Bonjour Jonas, votre facture n'est pas encore réglée. Vous pouvez payer en ligne avec Bancontact, iDEAL, Visa ou Apple Pay.",
+     "tools": [
+      "mail",
+      "stripe"
+     ],
+     "sr": "Rappel envoyé pour la facture impayée.",
+     "fork": {
+      "q": "Jonas va-t-il payer ?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Il paie en ligne",
+        "then": [
+         {
+          "w": 3,
+          "grav": "APRÈS PAIEMENT",
+          "win": "Lun. 11:20",
+          "jij": "Vous : sur la réparation suivante",
+          "kop": "Paiement reçu",
+          "msg": "Merci, Jonas. Nous avons bien reçu votre paiement.",
+          "extra": "Payé avec Bancontact via Stripe. Noté dans la fiche de Jonas, dans votre CRM.",
+          "tools": [
+           "stripe",
+           "crm"
+          ],
+          "sr": "Paiement reçu et noté dans votre CRM."
+         }
+        ]
+       },
+       {
+        "label": "Pas encore",
+        "then": [
+         {
+          "w": 4,
+          "grav": "ENCORE IMPAYÉE",
+          "win": "Plus tard",
+          "jij": "Vous : sans courir après votre argent",
+          "kop": "Encore un rappel",
+          "msg": "Bonjour Jonas, petit rappel : votre facture n'est pas encore réglée. Vous pouvez payer en un clic.",
+          "tools": [
+           "mail"
+          ],
+          "sr": "Nouveau rappel envoyé."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "Le mécanisme court après votre argent. Pas vous.",
+    "note": "Après chaque paiement en ligne, la facture part aussi toute seule."
+   }
+  },
+  "oproep": {
+   "chip": "Vous manquez un appel",
+   "h1": "Vous manquez un appel.",
+   "icon": "call",
+   "steps": [
+    {
+     "w": 1,
+     "grav": "AUSSITÔT",
+     "win": "Mer. 10:05",
+     "jij": "Vous : en plein soin",
+     "kop": "SMS avec votre lien de réservation",
+     "msg": "Désolé, nous n'avons pas pu décrocher. Réservez ici tout de suite le créneau qui vous convient.",
+     "extra": "L'appel est dans votre boîte de réception.",
+     "tools": [
+      "sms",
+      "inbox"
+     ],
+     "sr": "Aussitôt : SMS avec votre lien de réservation envoyé.",
+     "fork": {
+      "q": "Que fait l'appelant ?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Réserve via le lien",
+        "res": "Alors tout se déroule comme dans « Un client réserve ».",
+        "goto": "boekt",
+        "vars": {
+         "naam": "Sam",
+         "zij": "Il",
+         "haar": "Son"
+        },
+        "first": {
+         "win": "Mer. 10:12",
+         "jij": "Vous : toujours en plein soin"
+        }
+       },
+       {
+        "label": "Ne réserve pas",
+        "then": [
+         {
+          "w": 2,
+          "grav": "À RAPPELER",
+          "win": "Mer. 12:30",
+          "jij": "Vous : pause de midi",
+          "kop": "Dans votre boîte de réception",
+          "txt": "Vous voyez qui a appelé et vous rappelez quand ça vous arrange.",
+          "tools": [
+           "inbox"
+          ],
+          "sr": "L'appel est dans votre boîte de réception."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "Aucun appel ne se perd. Vous n'avez rien eu à faire.",
+    "link": {
+     "label": "Vous préférez que quelqu'un décroche tout de suite ? Découvrez la réceptionniste IA",
+     "href": "AI%20Voice%20Agents"
+    }
+   }
+  },
+  "aanvraag": {
+   "chip": "Une demande arrive",
+   "h1": "Une demande arrive.",
+   "icon": "form",
+   "steps": [
+    {
+     "w": 1,
+     "grav": "AUSSITÔT",
+     "win": "Dim. 20:15",
+     "jij": "Vous : à table",
+     "kop": "Dans votre CRM, chez la bonne personne",
+     "txt": "Nouvelle demande de Sarah via votre site web. Tags : devis, site web. Transmise à la personne qui fait les devis.",
+     "tools": [
+      "crm"
+     ],
+     "sr": "Aussitôt : demande ajoutée à votre CRM et transmise.",
+     "fork": {
+      "q": "Sarah répond-elle à votre devis ?",
+      "def": 0,
+      "opts": [
+       {
+        "label": "Pas encore",
+        "then": [
+         {
+          "w": 2,
+          "grav": "RELANCE",
+          "win": "Mer. 09:00",
+          "jij": "Vous : au travail",
+          "kop": "La relance part toute seule",
+          "msg": "Bonjour Sarah, des questions sur votre devis ? Répondez simplement à ce message.",
+          "tools": [
+           "mail"
+          ],
+          "sr": "Relance envoyée."
+         }
+        ]
+       },
+       {
+        "label": "Elle répond",
+        "then": [
+         {
+          "w": 2,
+          "grav": "EN DISCUSSION",
+          "win": "Lun. 08:40",
+          "jij": "Vous : pas encore au travail",
+          "kop": "Pipeline mis à jour",
+          "txt": "Sarah est maintenant à l'étape « en discussion ». Sa réponse est dans votre boîte de réception.",
+          "tools": [
+           "crm",
+           "inbox"
+          ],
+          "sr": "Pipeline mis à jour : en discussion."
+         }
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "end": {
+    "txt": "Plus aucune demande qui traîne dans votre boîte mail."
+   }
+  }
+ },
+ "lijst": {
+  "eyebrow": "Le pense-bête près de la caisse",
+  "h2a": "Votre liste du jour.",
+  "h2b": "Elle se raye toute seule.",
+  "lede": "Rappeler un client, envoyer un rappel, une facture, demander un avis. Choisissez votre métier et voyez ce qu'il reste de votre liste.",
+  "head": "À faire",
+  "caption": "Exemple. Ce qui tourne tout seul, et quand, nous le décidons ensemble.",
+  "trades": [
+   {
+    "id": "kapsalon",
+    "label": "Salon de coiffure",
+    "photo": {
+     "id": "photo-1675034741473-afed58a142e8",
+     "alt": "Coiffeuse au travail avec une cliente dans son salon",
+     "pos": "50% 28%",
+     "posM": "30% 30%",
+     "w": 420,
+     "h": 630
+    },
+    "tasks": [
+     {
+      "t": "Rappeler à Lotte son rendez-vous de samedi",
+      "how": "tout seul · 1 jour avant"
+     },
+     {
+      "t": "Rappeler Tom pour un rendez-vous",
+      "how": "tout seul · SMS avec votre lien de réservation"
+     },
+     {
+      "t": "Demander un avis à Madame Peeters",
+      "how": "tout seul · 2 heures après son rendez-vous"
+     },
+     {
+      "t": "Envoyer la facture après un paiement en ligne",
+      "how": "tout seul · après chaque paiement"
+     },
+     {
+      "t": "Réinviter les clients venus il y a six semaines",
+      "how": "tout seul · après 6 semaines"
+     },
+     {
+      "t": "Ajouter le nouveau client au fichier clients",
+      "how": "tout seul · dans votre CRM"
+     }
+    ],
+    "rest": "Ce qui reste : coiffer."
+   },
+   {
+    "id": "kinesist",
+    "label": "Kiné",
+    "photo": {
+     "id": "photo-1519824145371-296894a0daa9",
+     "alt": "Kinésithérapeute qui soigne le dos d'un patient",
+     "pos": "40% 50%",
+     "posM": "45% 50%",
+     "w": 600,
+     "h": 400
+    },
+    "tasks": [
+     {
+      "t": "Envoyer un rappel aux patients de demain",
+      "how": "tout seul · 1 jour avant"
+     },
+     {
+      "t": "Rappeler la personne qui a appelé à 10:05",
+      "how": "tout seul · SMS avec votre lien de réservation"
+     },
+     {
+      "t": "Relancer une facture impayée",
+      "how": "tout seul · rappel automatique"
+     },
+     {
+      "t": "Transmettre la demande reçue via le site",
+      "how": "tout seul · à la bonne personne"
+     },
+     {
+      "t": "Demander un avis",
+      "how": "tout seul · 2 heures après le rendez-vous"
+     },
+     {
+      "t": "Proposer le prochain rendez-vous",
+      "how": "tout seul · après 6 semaines"
+     }
+    ],
+    "rest": "Ce qui reste : soigner."
+   },
+   {
+    "id": "garage",
+    "label": "Garage",
+    "photo": {
+     "id": "photo-1702146713858-8e7d1cc29fe8",
+     "alt": "Mécanicien couché sous une voiture levée sur cric",
+     "pos": "45% 55%",
+     "posM": "60% 55%",
+     "w": 600,
+     "h": 400
+    },
+    "tasks": [
+     {
+      "t": "Rappeler au client son entretien de demain",
+      "how": "tout seul · 1 jour avant"
+     },
+     {
+      "t": "Envoyer un SMS avec l'adresse",
+      "how": "tout seul · 2 heures avant"
+     },
+     {
+      "t": "Envoyer la facture après un paiement en ligne",
+      "how": "tout seul · après chaque paiement"
+     },
+     {
+      "t": "Courir après une facture impayée",
+      "how": "tout seul · rappel automatique"
+     },
+     {
+      "t": "Rappeler après un appel manqué",
+      "how": "tout seul · SMS avec votre lien de réservation"
+     },
+     {
+      "t": "Transmettre la demande de devis au bon collègue",
+      "how": "tout seul · à la bonne personne"
+     }
+    ],
+    "rest": "Ce qui reste : réparer."
+   }
+  ]
+ },
+ "erin": {
+  "eyebrow": "Ce qu'il y a dedans",
+  "h2a": "Ouvrez le mécanisme.",
+  "h2b": "Voici tout ce qui tourne à l'intérieur.",
+  "lede": "Six pièces qui tournent ensemble. Nous les construisons avec n8n et dans votre plateforme, et nous veillons à ce qu'elles continuent de tourner.",
+  "parts": [
+   {
+    "w": 0,
+    "label": "CRM",
+    "kop": "Tout au même endroit",
+    "txt": "WhatsApp, Instagram, e-mail, SMS et appels téléphoniques dans une seule boîte de réception. L'historique client, les notes, les tags et le statut du pipeline se mettent à jour tout seuls."
+   },
+   {
+    "w": 1,
+    "label": "Rendez-vous",
+    "kop": "Confirmer et rappeler",
+    "txt": "Une confirmation immédiate par e-mail et SMS, un rappel 1 jour avant et un dernier SMS 2 heures avant, avec votre adresse. Après 6 semaines, une invitation pour la fois suivante. Se synchronise avec Google Agenda."
+   },
+   {
+    "w": 2,
+    "label": "Appels manqués",
+    "kop": "Personne ne reste sans réponse",
+    "txt": "Vous manquez un appel ? L'appelant reçoit aussitôt un SMS avec votre lien de réservation."
+   },
+   {
+    "w": 3,
+    "label": "Avis",
+    "kop": "Demander un avis sans y penser",
+    "txt": "2 heures après chaque rendez-vous, une demande d'avis part par SMS ou e-mail. Les clients satisfaits vont vers Google. Ceux qui ne le sont pas arrivent d'abord chez vous."
+   },
+   {
+    "w": 4,
+    "label": "Paiements",
+    "kop": "Des factures qui partent toutes seules",
+    "txt": "Après chaque paiement via Stripe, une facture part. Une facture reste impayée ? Des rappels automatiques suivent. Avec Bancontact, iDEAL, Visa et Apple Pay."
+   },
+   {
+    "w": 5,
+    "label": "Demandes",
+    "kop": "Suivre et transmettre",
+    "txt": "Une nouvelle demande arrive chez la bonne personne et reçoit un suivi automatique. Les campagnes par e-mail et SMS démarrent selon ce que fait votre client."
+   }
+  ],
+  "onrust": "Dans une montre, la petite roue qui fait tic-tac s'appelle le balancier. Nous le gardons en mouvement : nous construisons vos workflows et nous les maintenons. Les soucis restent chez nous, pas chez vous.",
+  "links": [
+   {
+    "label": "En savoir plus sur la prise de rendez-vous en ligne",
+    "href": "Afsprakensysteem"
+   },
+   {
+    "label": "En savoir plus sur la réceptionniste IA",
+    "href": "AI%20Voice%20Agents"
+   }
+  ]
+ },
+ "bewijs": {
+  "eyebrow": "Mesuré chez Clinic3D, Hasselt",
+  "h2a": "3 250 e-mails en 263 jours.",
+  "h2b": "Tous partis tout seuls.",
+  "lede": "Chez Clinic3D, une clinique esthétique à Hasselt, les confirmations, les rappels et le suivi partent de façon entièrement automatique. 2 090 de ces e-mails ont été ouverts. Et le compteur de no-shows est resté à zéro.",
+  "quote": "Mes clients réservent désormais eux-mêmes — je n'ai plus rien à faire.",
+  "cite": "Dr. Kenis, propriétaire de Clinic3D",
+  "note": "Mesuré du 1er janvier au 20 septembre 2026 (263 jours). Le Dr Kenis a tenu ces propos après 104 jours.",
+  "link": "Lire l'étude de cas complète",
+  "legend": [
+   {
+    "k": "sent",
+    "label": "Envoyés",
+    "n": 3250
+   },
+   {
+    "k": "opened",
+    "label": "Ouverts",
+    "n": 2090,
+    "pct": "64 %"
+   },
+   {
+    "k": "clicked",
+    "label": "Cliqués",
+    "n": 214
+   },
+   {
+    "k": "replies",
+    "label": "Réponses",
+    "n": 20
+   },
+   {
+    "k": "unsub",
+    "label": "Désinscriptions",
+    "n": 8
+   }
+  ],
+  "caption": "Chaque point est un e-mail. Les points qui s'allument sont choisis au hasard, les nombres sont exacts.",
+  "dots_label": "3 250 e-mails envoyés automatiquement, dont 2 090 ouverts (64 %), 214 clics, 20 réponses et 8 désinscriptions.",
+  "windows": [
+   {
+    "n": 681,
+    "label": "rendez-vous planifiés"
+   },
+   {
+    "n": 650,
+    "label": "confirmés"
+   },
+   {
+    "n": 0,
+    "label": "no-shows",
+    "sub": "pas un seul en 263 jours"
+   }
+  ],
+  "report": [
+   "2 090 ouverts (64 %)",
+   "214 clics",
+   "20 réponses",
+   "0 soft bounces",
+   "8 désinscriptions",
+   "31 annulés à l'avance"
+  ],
+  "legend_label": "Choisissez ce qui s'allume dans la grille"
+ },
+ "prijs": {
+  "eyebrow": "Ce que ça coûte",
+  "h2a": "Pas de prix à part.",
+  "h2b": "C'est inclus dans Croissance digitale.",
+  "lede": "L'automatisation fait partie du pack Croissance digitale : 150 € par mois, résiliable chaque mois. Le pack comprend aussi tout ce dont les workflows ont besoin pour travailler.",
+  "list": [
+   "Automatisation IA et workflows",
+   "Site web",
+   "Google Business et visibilité locale",
+   "Gestion de la réputation",
+   "CRM et tableau de bord clients",
+   "Campagnes e-mail et SMS",
+   "Funnels et landing pages",
+   "Paiements en ligne et facturation",
+   "Accès à notre plateforme"
+  ],
+  "rim": "CROISSANCE DIGITALE · RÉSILIABLE CHAQUE MOIS · NOUS CRÉONS ET MAINTENONS · AUTOMATISATION INCLUSE · ",
+  "arc": "AUTOMATISATION INCLUSE",
+  "cancel": "résiliable chaque mois",
+  "addons_label": "Envie d'ajouter quelque chose ?",
+  "addons": [
+   {
+    "id": "chatbot",
+    "label": "Chatbot IA",
+    "price": 50,
+    "ring": "CHATBOT IA",
+    "href": "AI%20Chatbots",
+    "more": "Que fait le chatbot IA ?"
+   },
+   {
+    "id": "receptie",
+    "label": "Réceptionniste IA",
+    "price": 125,
+    "ring": "RÉCEPTIONNISTE IA",
+    "href": "AI%20Voice%20Agents",
+    "more": "Que fait la réceptionniste IA ?"
+   }
+  ],
+  "cta": "Planifiez un appel gratuit",
+  "cta2": "Voir le pack",
+  "cons_eyebrow": "Pour aller plus loin",
+  "cons_h": "L'IA jusque dans vos processus internes ? C'est AI Consulting.",
+  "cons_txt": "Une analyse complète de votre fonctionnement, un plan d'implémentation IA sur mesure, un accompagnement lors de la mise en place et une optimisation mensuelle. Sur demande, et volontairement limité.",
+  "cons_link": "Demander un entretien personnel"
+ },
+ "stappen": {
+  "eyebrow": "Comment ça se met en route",
+  "h2a": "D'un simple appel",
+  "h2b": "à un mécanisme qui tourne.",
+  "lede": "En général en ligne dans les 14 jours. Vous n'avez rien à construire vous-même.",
+  "items": [
+   {
+    "lab": "APPEL",
+    "kop": "Appel gratuit",
+    "txt": "Trente minutes. Nous passons votre journée en revue : ce que vous refaites sans cesse et ce que vous préférez ne plus faire vous-même."
+   },
+   {
+    "lab": "CRÉATION",
+    "kop": "Nous construisons les workflows",
+    "txt": "Avec n8n et dans votre plateforme. Vous n'avez rien à construire ni à connecter."
+   },
+   {
+    "lab": "RÉGLAGE",
+    "kop": "Vous validez les moments et les textes",
+    "txt": "Quand un message part et ce qu'il dit, nous l'adaptons ensemble à votre commerce."
+   },
+   {
+    "lab": "EN MARCHE",
+    "kop": "Ça tourne",
+    "txt": "À partir de là, tout se fait tout seul. Nous maintenons les workflows."
+   }
+  ]
+ },
+ "faq": {
+  "eyebrow": "Questions fréquentes",
+  "h2a": "Bon à savoir",
+  "h2b": "avant que ça se mette à tourner.",
+  "items": [
+   {
+    "q": "Dois-je construire quelque chose moi-même ?",
+    "a": "Non. Nous construisons les workflows et nous les maintenons. Vous validez seulement les moments et les textes."
+   },
+   {
+    "q": "Combien ça coûte ?",
+    "a": "L'automatisation n'a pas de prix à part. Elle est incluse dans Croissance digitale : 150 € par mois, résiliable chaque mois. Vous voulez en plus un chatbot IA ou une réceptionniste IA ? Comptez 50 € ou 125 € de plus par mois."
+   },
+   {
+    "q": "Qu'est-ce qui peut tourner tout seul ?",
+    "a": "Les confirmations et les rappels, les demandes d'avis, les factures après un paiement et les rappels pour les factures impayées, la transmission et le suivi des demandes, les campagnes par e-mail et SMS, et les mises à jour de votre CRM."
+   },
+   {
+    "q": "Puis-je choisir moi-même ce qui part, et quand ?",
+    "a": "Oui. Les moments et les textes, nous les adaptons ensemble à votre commerce."
+   },
+   {
+    "q": "Est-ce que ça fonctionne avec mon agenda et les paiements en ligne ?",
+    "a": "La prise de rendez-vous en ligne se synchronise avec Google Agenda. Le paiement se fait en ligne via Stripe, avec Bancontact, iDEAL, Visa et Apple Pay. Après chaque paiement, une facture part toute seule."
+   },
+   {
+    "q": "C'est quoi, n8n ?",
+    "a": "L'outil avec lequel nous construisons vos workflows. Vous n'avez pas besoin de le connaître."
+   }
+  ],
+  "more_label": "À lire aussi (en néerlandais) :",
+  "more": [
+   {
+    "title": "5 tâches que toute PME peut automatiser dès aujourd'hui",
+    "href": "emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/"
+   },
+   {
+    "title": "Suivre ses leads automatiquement",
+    "href": "emtimes/automatisering/leads-automatisch-opvolgen/"
+   },
+   {
+    "title": "Réduire les no-shows grâce aux rappels automatiques",
+    "href": "emtimes/automatisering/no-shows-verminderen-automatische-herinneringen/"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "Il ne vous reste qu'une chose à faire.",
+  "h2b": "Planifier un appel.",
+  "text": "Trente minutes, gratuitement. Nous passons votre journée en revue et voyons quel travail peut tourner tout seul.",
+  "btn": "Planifiez un appel gratuit",
+  "demo": "Ou demandez une démo gratuite",
+  "demo_href": "Gratis%20Demo",
+  "micro": "Ensuite, c'est nous qui mettons le mécanisme en marche.",
+  "badges": [
+   "Gratuit et sans engagement",
+   "30 minutes",
+   "En général en ligne dans les 14 jours"
+  ]
+ }
+}

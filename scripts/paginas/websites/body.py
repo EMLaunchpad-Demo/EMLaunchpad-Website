@@ -96,7 +96,7 @@ def body(L, lang, pre):
     prow = ''.join('<li><span class="ws-pos">%02d</span><div><b>%s</b>%s</div></li>' % (i + 1, esc(r[0]), ('<span>%s</span>' % esc(r[1])) if r[1] else '')
                    for i, r in enumerate(pr['rows']))
     extra = ''.join('<li class="ws-extra" data-ws-row="%s" hidden=""><span class="ws-pos">%02d</span><div><b>%s</b><span>€%d / %s</span></div></li>'
-                    % (a['id'], len(pr['rows']) + 1 + i, esc(a['row']), a['price'], esc(u['per'].replace('per ', ''))) for i, a in enumerate(pr['addons']))
+                    % (a['id'], len(pr['rows']) + 1 + i, esc(a['row']), a['price'], esc(re.sub(r'^\S+\s', '', u['per']))) for i, a in enumerate(pr['addons']))
     tb = ''.join('<div><dt>%s</dt><dd%s>%s</dd></div>' % (esc(a), ' data-ws-tbp=""' if i == 1 else '', esc(b)) for i, (a, b) in enumerate(pr['tb']))
     addons = ''.join('<button aria-pressed="false" class="ws-addon" data-price="%d" data-ws-add="%s" type="button"><span class="ws-plus" aria-hidden="true"></span><b>%s</b><span class="ws-ap">+ €%d %s</span><span class="ws-at">%s</span></button>'
                      % (a['price'], a['id'], esc(a['label']), a['price'], esc(u['per']), esc(a['txt'])) for a in pr['addons'])
@@ -219,7 +219,7 @@ def body(L, lang, pre):
 <ul class="sr-only">{pins_sr}</ul>
 </div>
 <div class="ws-werk-txt">
-<p class="ws-card-k">WERK 01 · {esc(wk['place']).upper()}</p>
+<p class="ws-card-k">{esc(wk['k1'])}</p>
 <h3>{esc(wk['name'])}</h3>
 <p>{esc(wk['text'])}</p>
 <p class="ws-tags">{tags}</p>
