@@ -65,12 +65,20 @@ def body(L, lang, pre):
     pins_sr = ''.join('<li>%s</li>' % esc(p['t']) for p in wk['pins']['desk'])
     def card(c):
         nums = ''.join('<div><b>%s</b><span>%s</span></div>' % (esc(n[0]), esc(n[1])) for n in c.get('nums', []))
-        out = '<article class="ws-card%s"><p class="ws-card-k">%s</p><h3>%s</h3><p>%s</p>' % (' is-wide' if c.get('nums') else '', esc(c['k']), esc(c['t']), esc(c['txt']))
+        cls = ' is-wide' if c.get('nums') else (' is-site' if c.get('site') else '')
+        logo = ''
+        if c.get('logo'):
+            lg = c['logo']
+            logo = '<img alt="%s" class="ws-card-logo" decoding="async" height="%d" loading="lazy" src="%s" width="%d"/>' % (attr(lg['alt']), lg['h'], lg['src'], lg['w'])
+        out = '<article class="ws-card%s">%s<p class="ws-card-k">%s</p><h3>%s</h3><p>%s</p>' % (cls, logo, esc(c['k']), esc(c['t']), esc(c['txt']))
         if nums: out += '<div class="ws-nums">%s</div><p class="ws-note-s">%s</p>' % (nums, esc(c['note']))
         if c.get('quote'): out += '<blockquote class="ws-quote"><p>“%s”</p><cite>%s</cite></blockquote>' % (esc(c['quote']), esc(c['cite']))
         if c.get('link'):
-            href = c['href'] if c['href'].startswith('#') else rel + c['href']
-            out += '<a class="ws-link" href="%s">%s %s</a>' % (href, esc(c['link']), ARROW)
+            if c['href'].startswith('http'):
+                out += '<a class="ws-link" href="%s" rel="noopener" target="_blank">%s %s<span class="sr-only"> %s</span></a>' % (attr(c['href']), esc(c['link']), OUT, esc(wk['newtab']))
+            else:
+                href = c['href'] if c['href'].startswith('#') else rel + c['href']
+                out += '<a class="ws-link" href="%s">%s %s</a>' % (href, esc(c['link']), ARROW)
         return out + '</article>'
     cards = ''.join(card(c) for c in wk['cards'])
 

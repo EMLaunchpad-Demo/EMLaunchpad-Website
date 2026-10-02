@@ -576,7 +576,7 @@
    {
     "k": "WERK 02 · HASSELT",
     "t": "Clinic3D",
-    "txt": "Esthetische kliniek. Website met online afsprakensysteem, AI-chatbot, automatische mailflow en reviewopvolging.",
+    "txt": "Esthetische kliniek. Website met online afsprakensysteem, automatische mailflow en reviewopvolging.",
     "nums": [
      [
       "40.280",
@@ -598,18 +598,39 @@
     "href": "Clinic3D"
    },
    {
-    "k": "WERK 03 · VZW",
+    "k": "WERK 03 · HEERS",
     "t": "Mett-U VZW",
-    "txt": "Een nieuwe website, gekoppeld aan geautomatiseerde opvolging en een centraal CRM."
+    "txt": "Een nieuwe website, gekoppeld aan geautomatiseerde opvolging en een centraal CRM.",
+    "logo": {
+     "src": "https://assets.cdn.filesafe.space/YFfKOg7Am0tTMiZxOYIM/media/6a42356a3a7f0c54687855fb.png",
+     "alt": "Logo van Mett-U VZW",
+     "w": 550,
+     "h": 180
+    }
    },
    {
-    "k": "WERK 04 · DEZE SITE",
+    "k": "WERK 04 · VECHMAAL",
+    "t": "'t Kleinhof",
+    "txt": "Een kleinschalige bio- en zorgboerderij. Een nieuwe website met het verhaal van Liesbeth en Gert, de bio- en zorgboerderij en hun producten.",
+    "logo": {
+     "src": "https://assets.cdn.filesafe.space/ZgvefHL6tlfdRaNGLqdD/media/694a73c4a6b40253f5b23d27.png",
+     "alt": "Logo van 't Kleinhof",
+     "w": 400,
+     "h": 400
+    },
+    "link": "Bekijk kleinhof.be",
+    "href": "https://kleinhof.be"
+   },
+   {
+    "k": "WERK 05 · DEZE SITE",
     "t": "emlaunchpad.com",
     "txt": "Drietalig, statisch gebouwd en snel. Hoe snel bij jou? Dat meet je hieronder.",
     "link": "Naar de meting",
-    "href": "#gemeten"
+    "href": "#gemeten",
+    "site": true
    }
-  ]
+  ],
+  "newtab_short": "(opent in een nieuw venster)"
  },
  "meet": {
   "eyebrow": "Gemeten op jouw toestel, zonet",

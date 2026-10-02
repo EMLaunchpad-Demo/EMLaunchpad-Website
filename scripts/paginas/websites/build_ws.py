@@ -6,7 +6,7 @@ import io, re, json, html, sys, os
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20260929a', '20260929a'
+V_CSS, V_JS = '20261002a', '20261002a'
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20260925a'
 FILE = 'Websites.html'
@@ -69,11 +69,11 @@ def head(L, lang, pre, s):
     data['@graph'] = g
     return hd[:mm.start(2)] + json.dumps(data, ensure_ascii=False) + hd[mm.end(2):]
 
-def tail(pre):
-    return f'''<div id="footer-mount"></div>
+def tail(pre, footer='<div id="footer-mount"></div>'):
+    return f'''{footer}
 <script src="{pre}i18n.js?v=20260926a"></script>
 <script src="{pre}i18n-pages.js?v=20260921a"></script>
-<script src="{pre}site.js?v=20260926b"></script>
+<script src="{pre}site.js?v=20261002a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}website.js?v={V_JS}"></script>
@@ -87,7 +87,9 @@ def build(lang):
     path = ('' if lang == 'nl' else lang + '/') + FILE
     pre = '' if lang == 'nl' else '../'
     s = io.open(R + path, encoding='utf-8').read()
-    out = head(L, lang, pre, s) + B.body(L, lang, pre) + tail(pre)
+    # de linklijst in #footer-mount (crawl-fallback voor zoekmachines) blijft behouden
+    fm = re.search(r'<div id="footer-mount">.*?</div>(?=\s*<script)', s, re.S)
+    out = head(L, lang, pre, s) + B.body(L, lang, pre) + (tail(pre, fm.group(0)) if fm else tail(pre))
     io.open(R + path, 'w', encoding='utf-8', newline='').write(out)
     print(path, 'ok', len(out))
 

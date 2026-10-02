@@ -337,3 +337,43 @@ html{scroll-padding-top:100px}
   .ck{transition:opacity .2s ease;transform:none}
   .ck.show .ck-ic svg{animation:none}
 }
+/* ═══ LOADER "één draad" — intro puur CSS/SVG, exit via .go (site.js) ═══ */
+@property --emld-r{syntax:'<length>';inherits:true;initial-value:0px}
+.emld{--emld-s:1;--emld-R:calc(104px*var(--emld-s));position:fixed;inset:0;z-index:2147483647;overflow:hidden;contain:strict;animation:emld-safe .5s 8s both}
+.emld i{display:block;font-style:normal}
+.emld-veil{position:absolute;inset:0;background:radial-gradient(75% 60% at 84% 0%,rgba(47,116,224,.2),transparent 70%),radial-gradient(60% 55% at 6% 100%,rgba(47,191,134,.08),transparent 70%),#0b1526}
+.emld-veil::before{content:"";position:absolute;left:50%;top:50%;width:min(96vmin,820px);height:min(96vmin,820px);margin:calc(min(96vmin,820px)/-2) 0 0 calc(min(96vmin,820px)/-2);border-radius:50%;background:radial-gradient(closest-side,rgba(47,116,224,.2),rgba(47,116,224,.06) 55%,transparent);animation:emld-breathe 3.2s 1.2s ease-in-out infinite alternate}
+.emld-threads{position:absolute;left:50%;top:50%;width:calc(1600px*var(--emld-s));height:calc(1600px*var(--emld-s));margin:calc(-800px*var(--emld-s)) 0 0 calc(-800px*var(--emld-s));overflow:visible}
+.emld-threads path{animation:emld-wind .86s cubic-bezier(.16,.7,.22,1) both}
+.emld-logo{position:absolute;inset:0;margin:auto;width:calc(108px*var(--emld-s));height:calc(68.3px*var(--emld-s));animation:emld-logo .62s .4s cubic-bezier(.2,.7,.2,1) both}
+.emld-comet{position:absolute;inset:0;margin:auto;width:calc(var(--emld-R)*2 + 40px);height:calc(var(--emld-R)*2 + 40px);animation:emld-in .5s .8s both}
+.emld-comet i{position:absolute;inset:0;animation:emld-spin 2.4s linear infinite}
+.emld-comet i::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(transparent 0 48%,rgba(47,116,224,.5) 78%,#2f74e0 90%,#2fbf86 99.7%,transparent 0);-webkit-mask:radial-gradient(closest-side,transparent calc(100% - 28px),rgba(0,0,0,.16) calc(100% - 21.2px),#000 calc(100% - 21px),#000 calc(100% - 19px),rgba(0,0,0,.16) calc(100% - 18.8px),transparent calc(100% - 12px));mask:radial-gradient(closest-side,transparent calc(100% - 28px),rgba(0,0,0,.16) calc(100% - 21.2px),#000 calc(100% - 21px),#000 calc(100% - 19px),rgba(0,0,0,.16) calc(100% - 18.8px),transparent calc(100% - 12px))}
+.emld-comet i::after{content:"";position:absolute;left:50%;top:20px;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:radial-gradient(circle,#f2fff9 0 1.6px,rgba(47,191,134,.75) 2.8px,rgba(47,191,134,0) 7px)}
+.emld-edge{position:absolute;inset:0;margin:auto;width:calc(2*max(var(--emld-r),var(--emld-R)));height:calc(2*max(var(--emld-r),var(--emld-R)));opacity:0}
+.emld-edge::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 200deg,#2f74e0,#2fbf86,#2f74e0,#2fbf86,#2f74e0);-webkit-mask:radial-gradient(closest-side,transparent calc(100% - 1.7px),#000 calc(100% - 1.1px));mask:radial-gradient(closest-side,transparent calc(100% - 1.7px),#000 calc(100% - 1.1px))}
+.emld-edge::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(255,255,255,.3)}
+@keyframes emld-wind{from{stroke-dashoffset:900px;stroke-dasharray:900px 6000px}}
+@keyframes emld-logo{from{opacity:0;transform:scale(.9)}}
+@keyframes emld-in{from{opacity:0}}
+@keyframes emld-spin{to{transform:rotate(1turn)}}
+@keyframes emld-breathe{to{opacity:.55;transform:scale(.92)}}
+@keyframes emld-safe{to{opacity:0;visibility:hidden}}
+/* exit: opening vanuit het logo */
+.emld.go{pointer-events:none;animation:emld-open .66s .1s cubic-bezier(.55,0,.2,1) both}
+.emld.go .emld-veil{-webkit-mask-image:radial-gradient(circle at 50% 50%,transparent var(--emld-r),#000 calc(var(--emld-r) + 40px));mask-image:radial-gradient(circle at 50% 50%,transparent var(--emld-r),#000 calc(var(--emld-r) + 40px))}
+.emld.go .emld-edge{animation:emld-edge .76s both}
+.emld.go .emld-logo{animation:emld-launch .32s cubic-bezier(.4,0,.6,1) both}
+.emld.go .emld-comet{animation:emld-out .2s both}
+.emld.go .emld-threads path{animation:emld-unwind .56s cubic-bezier(.55,0,.8,.35) both;animation-delay:0s!important}
+@keyframes emld-open{to{--emld-r:78vmax}}
+@keyframes emld-edge{0%{opacity:0}14%{opacity:1}50%{opacity:.9}100%{opacity:0}}
+@keyframes emld-launch{0%{opacity:1;transform:none}22%{opacity:1;transform:scale(.95)}58%{opacity:.35;transform:scale(1.2)}100%{opacity:0;transform:scale(1.5)}}
+@keyframes emld-out{to{opacity:0}}
+@keyframes emld-unwind{to{stroke-dashoffset:900px;stroke-dasharray:900px 6000px}}
+@media (max-width:600px){.emld{--emld-s:.8}}
+@media (prefers-reduced-motion:reduce){
+.emld *,.emld *::before,.emld *::after{animation:none!important}
+.emld.go{animation:emld-out .35s both!important}
+.emld.go .emld-veil{-webkit-mask-image:none;mask-image:none}
+}

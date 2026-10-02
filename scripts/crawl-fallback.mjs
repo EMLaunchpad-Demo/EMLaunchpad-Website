@@ -51,7 +51,7 @@ export function staticFooter(lang = "nl", alternates = {}) {
     + `</nav>`;
 }
 
-export const LOADER_NOSCRIPT = `<noscript><style>.loader{display:none!important}</style></noscript>`;
+export const LOADER_NOSCRIPT = `<noscript><style>#loader{display:none!important}</style></noscript>`;
 
 const langOf = (rel) => (/^(en|fr)\//.exec(rel.replace(/\\/g, "/")) || [, "nl"])[1];
 
