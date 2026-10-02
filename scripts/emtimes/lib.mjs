@@ -17,6 +17,7 @@ import path from "node:path";
 import vm from "node:vm";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
+import { staticFooter } from "../crawl-fallback.mjs";
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 export const SITE = "https://emlaunchpad.com";
@@ -195,7 +196,7 @@ function page({ R, V, title, desc, canonical, ogType = "website", ogImage, jsonl
 <a class="skip-link" href="#main">Naar inhoud</a>
 <div id="nav-mount"></div>
 ${main}
-<div id="footer-mount"></div>
+<div id="footer-mount">${staticFooter("nl")}</div>
 <script src="${R}site.js?v=${V.siteJs}"></script>
 <script src="${R}stars.js?v=${V.starsJs}"></script>
 <script src="${R}emtimes-articles.js?v=${V.etIdx}"></script>
