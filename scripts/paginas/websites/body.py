@@ -46,6 +46,8 @@ def body(L, lang, pre):
     h, u, dt, wk, mt, pr, st, fq, ct = L['hero'], L['ui'], L['doet'], L['werk'], L['meet'], L['prijs'], L['stappen'], L['faq'], L['cta']
     rel = '' if lang == 'nl' else '../'
     v0 = L['vak'][0]
+    # Frans: bedrag voor het €-teken (150 €), nl/en: €150
+    eur = (lambda n: '%s €' % n) if lang == 'fr' else (lambda n: '€%s' % n)
 
     # ---------------- HERO ----------------
     chips = ''.join('<button aria-pressed="%s" class="ws-chip" data-ws-vak="%d" type="button">%s</button>'
@@ -95,11 +97,11 @@ def body(L, lang, pre):
     # ---------------- PRIJS ----------------
     prow = ''.join('<li><span class="ws-pos">%02d</span><div><b>%s</b>%s</div></li>' % (i + 1, esc(r[0]), ('<span>%s</span>' % esc(r[1])) if r[1] else '')
                    for i, r in enumerate(pr['rows']))
-    extra = ''.join('<li class="ws-extra" data-ws-row="%s" hidden=""><span class="ws-pos">%02d</span><div><b>%s</b><span>€%d / %s</span></div></li>'
-                    % (a['id'], len(pr['rows']) + 1 + i, esc(a['row']), a['price'], esc(re.sub(r'^\S+\s', '', u['per']))) for i, a in enumerate(pr['addons']))
+    extra = ''.join('<li class="ws-extra" data-ws-row="%s" hidden=""><span class="ws-pos">%02d</span><div><b>%s</b><span>%s / %s</span></div></li>'
+                    % (a['id'], len(pr['rows']) + 1 + i, esc(a['row']), eur(a['price']), esc(re.sub(r'^\S+\s', '', u['per']))) for i, a in enumerate(pr['addons']))
     tb = ''.join('<div><dt>%s</dt><dd%s>%s</dd></div>' % (esc(a), ' data-ws-tbp=""' if i == 1 else '', esc(b)) for i, (a, b) in enumerate(pr['tb']))
-    addons = ''.join('<button aria-pressed="false" class="ws-addon" data-price="%d" data-ws-add="%s" type="button"><span class="ws-plus" aria-hidden="true"></span><b>%s</b><span class="ws-ap">+ €%d %s</span><span class="ws-at">%s</span></button>'
-                     % (a['price'], a['id'], esc(a['label']), a['price'], esc(u['per']), esc(a['txt'])) for a in pr['addons'])
+    addons = ''.join('<button aria-pressed="false" class="ws-addon" data-price="%d" data-ws-add="%s" type="button"><span class="ws-plus" aria-hidden="true"></span><b>%s</b><span class="ws-ap">+ %s %s</span><span class="ws-at">%s</span></button>'
+                     % (a['price'], a['id'], esc(a['label']), eur(a['price']), esc(u['per']), esc(a['txt'])) for a in pr['addons'])
 
     # ---------------- STAPPEN ----------------
     SK = [
@@ -274,7 +276,7 @@ def body(L, lang, pre):
 <div class="ws-prijs-side">
 <p class="ws-addl">{esc(pr['addons_label'])}</p>
 <div aria-label="{attr(pr['addons_label'])}" class="ws-addons" role="group">{addons}</div>
-<div class="ws-total"><span>{esc(pr['total_label'])}</span><b><span class="ws-eur">€</span><span class="ws-amt" data-ws-amt=""><span aria-hidden="true" class="ws-amt-d">150</span><span class="sr-only">150</span></span></b><em data-ws-per="">{esc(u['per'])}</em></div>
+<div class="ws-total"><span>{esc(pr['total_label'])}</span><b>{'' if lang == 'fr' else '<span class="ws-eur">€</span>'}<span class="ws-amt" data-ws-amt=""><span aria-hidden="true" class="ws-amt-d">150</span><span class="sr-only">150</span></span>{'<span class="ws-eur">€</span>' if lang == 'fr' else ''}</b><em data-ws-per="">{esc(u['per'])}</em></div>
 <p aria-live="polite" class="sr-only" data-ws-totsr=""></p>
 </div>
 </div>

@@ -891,7 +891,7 @@
         R.set(t, false); if (amtSr) amtSr.textContent = String(t);
         var any = t !== D.base;
         if (per) per.textContent = any ? U.per_sum : U.per;
-        if (tbp) tbp.textContent = '€' + t + ' / ' + U.per.replace(/^\S+\s/, '');
+        if (tbp) tbp.textContent = (D.lang === 'fr' ? t + ' €' : '€' + t) + ' / ' + U.per.replace(/^\S+\s/, '');
         if (totSr) totSr.textContent = fill(U.total_sr, { t: t });
       });
     });

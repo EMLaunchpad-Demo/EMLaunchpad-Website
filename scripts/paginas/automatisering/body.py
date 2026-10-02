@@ -97,6 +97,8 @@ def body(L, lang, pre):
     ls, er, bw, pr, st, fq, ct = L['lijst'], L['erin'], L['bewijs'], L['prijs'], L['stappen'], L['faq'], L['cta']
     rel = '' if lang == 'nl' else '../'
     case = rel + 'Clinic3D'
+    # Frans: bedrag voor het €-teken (150 €), nl/en: €150
+    eur = (lambda n: '%s €' % n) if lang == 'fr' else (lambda n: '€%s' % n)
 
     # ---------------- HERO ----------------
     chips = ''.join(
@@ -162,8 +164,8 @@ def body(L, lang, pre):
     checks = ''.join('<li>%s<span>%s</span></li>' % (CHECK, esc(x)) for x in pr['list'])
     addons = ''.join(
         '<button aria-pressed="false" class="am-addon" data-am-add="%s" data-price="%d" type="button"><span class="am-plus" aria-hidden="true"></span>'
-        '<span class="am-aname">%s</span><span class="am-aprice">+ €%d %s</span></button>'
-        % (a['id'], a['price'], esc(a['label']), a['price'], esc(u['per'])) for a in pr['addons'])
+        '<span class="am-aname">%s</span><span class="am-aprice">+ %s %s</span></button>'
+        % (a['id'], a['price'], esc(a['label']), eur(a['price']), esc(u['per'])) for a in pr['addons'])
     alinks = ' '.join('<a href="%s%s">%s %s</a>' % (rel, a['href'], esc(a['more']), ARROW) for a in pr['addons'])
     kast_ticks = arc_ticks(210, 210, 160, 0, 354, 59, 5)
     KAST = f'''<svg class="am-kast-svg" viewBox="0 0 420 420">
@@ -327,7 +329,7 @@ def body(L, lang, pre):
 <div class="am-kast-col">
 <div class="am-kast" data-am-kast="">
 <div aria-hidden="true" class="am-kast-art">{KAST}</div>
-<div class="am-amount"><span class="am-amtrow"><span class="am-eur">€</span><span class="am-amt" data-am-amt=""><span class="sr-only">150</span><span aria-hidden="true" class="am-amt-d">150</span></span></span>
+<div class="am-amount"><span class="am-amtrow">{'' if lang == 'fr' else '<span class="am-eur">€</span>'}<span class="am-amt" data-am-amt=""><span class="sr-only">150</span><span aria-hidden="true" class="am-amt-d">150</span></span>{'<span class="am-eur">€</span>' if lang == 'fr' else ''}</span>
 <span class="am-per" data-am-per="">{esc(u['per'])}</span><span class="am-cancel">{esc(pr['cancel'])}</span></div>
 </div>
 <p aria-live="polite" class="sr-only" data-am-total=""></p>
