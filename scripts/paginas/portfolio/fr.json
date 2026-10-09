@@ -1,0 +1,305 @@
+{
+  "lang": "fr",
+  "tone": "blauw",
+  "skyKeys": [
+    {
+      "p": 0,
+      "ax": 72,
+      "ay": 40,
+      "bx": 10,
+      "by": 100,
+      "ao": 0.95,
+      "bo": 0.4
+    },
+    {
+      "p": 0.24,
+      "ax": 24,
+      "ay": 48,
+      "bx": 84,
+      "by": 72,
+      "ao": 0.85,
+      "bo": 0.6
+    },
+    {
+      "p": 0.5,
+      "ax": 78,
+      "ay": 50,
+      "bx": 16,
+      "by": 30,
+      "ao": 0.85,
+      "bo": 0.6
+    },
+    {
+      "p": 0.74,
+      "ax": 24,
+      "ay": 52,
+      "bx": 80,
+      "by": 62,
+      "ao": 0.8,
+      "bo": 0.9
+    },
+    {
+      "p": 1,
+      "ax": 46,
+      "ay": 36,
+      "bx": 56,
+      "by": 42,
+      "ao": 1,
+      "bo": 1
+    }
+  ],
+  "meta": {
+    "title": "Portfolio : sites web et IA pour entreprises belges | EM Launchpad",
+    "ogtitle": "Portfolio : de vraies entreprises, du vrai travail | EM Launchpad",
+    "desc": "Découvrez le travail d'EM Launchpad : le nouveau site d'Amakhosi Sauna, le système de rendez-vous de Clinic3D, et les sites de Mett-U VZW et 't Kleinhof. De vraies entreprises belges, de vrais résultats.",
+    "service": "Travail d'EM Launchpad"
+  },
+  "hero": {
+    "eyebrow": "Portfolio",
+    "h1a": "De vraies entreprises.",
+    "h1b": "Du vrai travail.",
+    "lede": "Quatre entreprises du Limbourg. Quatre sites web en ligne aujourd'hui. Regardez à l'intérieur, sur ordinateur et sur smartphone.",
+    "spring_label": "Sur cette page",
+    "feiten": [
+      "Hamont-Achel · Hasselt · Heers · Vechmaal",
+      "Construit à Vechmaal · En ligne en général sous 14 jours"
+    ],
+    "glas_aria": "La page d'accueil d'amakhosi.be sur un ordinateur, telle qu'un visiteur la voit. L'image défile lentement de haut en bas.",
+    "caps_label": "Ce que vous voyez",
+    "caps": [
+      "Le titre le dit tout de suite : Koninklijk genieten, helemaal privé. Un seul bouton : Reserveer uw moment.",
+      "Le bandeau des équipements défile. En dessous, l'accueil dans une ambiance africaine chaleureuse.",
+      "Titres en serif, espresso et or. Le style de l'établissement se retrouve dans chaque section.",
+      "La grille de photos : whirlpool, sauna finlandais, douche à l'italienne, lounge et feu d'ambiance, suite avec chambre."
+    ],
+    "live": "Tout juste en ligne",
+    "pauze": "Pause",
+    "verder": "Reprendre",
+    "pauze_sr": "Mettre en pause l'exemple animé",
+    "open": "Ouvrir {d}",
+    "img": {
+      "lang": "amakhosi2-lang-1200.webp",
+      "glang": "amakhosi2-glang-468.webp"
+    }
+  },
+  "labels": {
+    "zaak": "Entreprise",
+    "gemaakt": "Réalisé",
+    "website": "Site web",
+    "de_zaak": "L'entreprise",
+    "wat": "Ce que nous avons réalisé",
+    "anders": "Ce qui a changé",
+    "shot": "Capture d'écran de {d}, octobre 2026.",
+    "newtab": "(s'ouvre dans une nouvelle fenêtre)",
+    "case_link": "Lire l'étude de cas complète",
+    "open": "Ouvrir {d}",
+    "van": "sur"
+  },
+  "cases": [
+    {
+      "id": "amakhosi",
+      "slug": "amakhosi2",
+      "naam": "Amakhosi Sauna",
+      "url": "https://amakhosi.be",
+      "domein": "amakhosi.be",
+      "index": [
+        "01 / 04",
+        "Tout juste en ligne",
+        "Hamont-Achel"
+      ],
+      "kop_a": "Un sauna privé que l'on",
+      "kop_b": "réserve et paie en ligne.",
+      "kort": "Nouveau site web pour un sauna privé et wellness à Hamont-Achel, avec réservation et paiement en ligne, flux d'e-mails et SEO.",
+      "soort": "Sauna privé et wellness · Hamont-Achel",
+      "gemaakt": "Site web · Réservation et paiement en ligne · Flux d'e-mails · SEO",
+      "logo": null,
+      "beats": [
+        [
+          "L'entreprise",
+          "Un sauna privé et wellness de luxe à Hamont-Achel. Les clients ont tout l'espace bien-être pour eux seuls."
+        ],
+        [
+          "Ce que nous avons réalisé",
+          "Un nouveau site web en espresso et or, avec des titres en serif, un hero avec le whirlpool dans une arche, un bandeau défilant des équipements et une grille de photos des espaces. Réservation en ligne avec paiement immédiat. Un flux d'e-mails avec confirmation, rappel et suivi. SEO."
+        ],
+        [
+          "Ce qui a changé",
+          "Le client choisit son moment, paie tout de suite et reçoit automatiquement confirmation, rappel et suivi dans sa boîte mail."
+        ]
+      ]
+    },
+    {
+      "id": "clinic3d",
+      "slug": "clinic3d",
+      "naam": "Clinic3D",
+      "url": "https://clinic3d.be",
+      "domein": "clinic3d.be",
+      "case": "Clinic3D",
+      "side": "links",
+      "index": [
+        "02 / 04",
+        "Mesuré sur 263 jours",
+        "Hasselt"
+      ],
+      "kop_a": "Les patients réservent",
+      "kop_b": "eux-mêmes.",
+      "kort": "Site web, agenda en ligne et flux d'e-mails pour une clinique esthétique à Hasselt. Sur 263 jours : 650 rendez-vous sur 681 confirmés, 0 no-show.",
+      "alt": "Page d'accueil de clinic3d.be : un site clair avec le titre Natuurlijke schoonheid, wetenschappelijk onderbouwd, une photo du médecin au comptoir et le bouton Boek je gratis consult.",
+      "soort": "Clinique esthétique · Hasselt · Dr Kenis",
+      "gemaakt": "Site web · Agenda en ligne · Flux d'e-mails",
+      "logo": {
+        "src": "https://assets.cdn.filesafe.space/U08LkHeoQdx8yNxCQvps/media/69525c5573a5e0065b9027d4.png",
+        "w": 500,
+        "h": 500,
+        "alt": "Logo de Clinic3D",
+        "dark": false
+      },
+      "beats": [
+        [
+          "L'entreprise",
+          "Clinique esthétique à Hasselt, dirigée par le Dr Kenis."
+        ],
+        [
+          "Ce que nous avons réalisé",
+          "Le site web, l'agenda en ligne et le flux d'e-mails. Les patients choisissent eux-mêmes un moment. La confirmation et le rappel partent automatiquement."
+        ],
+        [
+          "Ce qui a changé",
+          "Mesuré sur 263 jours : 650 rendez-vous sur 681 confirmés et pas un seul no-show."
+        ]
+      ],
+      "meet": [
+        [
+          "650 sur 681",
+          "rendez-vous confirmés"
+        ],
+        [
+          "0",
+          "no-shows"
+        ],
+        [
+          "3 250",
+          "e-mails automatiques"
+        ],
+        [
+          "2 090",
+          "ouverts (64 %)"
+        ],
+        [
+          "40 280",
+          "vues du site"
+        ],
+        [
+          "39",
+          "appels téléphoniques"
+        ]
+      ],
+      "meet_noot": "Mesuré sur 263 jours. Les chiffres viennent du système lui-même.",
+      "quote": {
+        "text": "227 rendez-vous en 104 jours, pas un seul no-show, et mon agenda est plus rempli que jamais. Mes clients réservent désormais eux-mêmes — je n'ai plus rien à faire.",
+        "cite": "Dr Kenis, propriétaire de Clinic3D"
+      }
+    },
+    {
+      "id": "mett-u",
+      "slug": "mettu",
+      "naam": "Mett-U VZW",
+      "url": "https://mett-u.be",
+      "domein": "mett-u.be",
+      "side": "rechts",
+      "index": [
+        "03 / 04",
+        "",
+        "Heers"
+      ],
+      "kop_a": "Un site web,",
+      "kop_b": "un CRM.",
+      "kort": "Nouveau site web pour une ASBL à Heers, relié à un suivi automatisé et à un CRM central.",
+      "alt": "Page d'accueil de mett-u.be : un en-tête vert VZW Mett-U avec deux boutons et une photo de bénévoles dans le potager.",
+      "soort": "ASBL · Heers",
+      "gemaakt": "Site web · Suivi automatisé · CRM",
+      "logo": {
+        "src": "https://assets.cdn.filesafe.space/YFfKOg7Am0tTMiZxOYIM/media/6a42356a3a7f0c54687855fb.png",
+        "w": 550,
+        "h": 180,
+        "alt": "Logo de Mett-U VZW",
+        "dark": true
+      },
+      "beats": [
+        [
+          "L'entreprise",
+          "Une ASBL à Heers."
+        ],
+        [
+          "Ce que nous avons réalisé",
+          "Un nouveau site web, relié à un suivi automatisé et à un CRM central."
+        ],
+        [
+          "Ce qui a changé",
+          "Le site ne vit pas seul : le suivi et le CRM y sont rattachés."
+        ]
+      ],
+      "schema": [
+        "Site web",
+        "Suivi",
+        "CRM"
+      ]
+    },
+    {
+      "id": "kleinhof",
+      "slug": "kleinhof",
+      "naam": "'t Kleinhof",
+      "url": "https://kleinhof.be",
+      "domein": "kleinhof.be",
+      "side": "links",
+      "index": [
+        "04 / 04",
+        "notre propre village",
+        "Vechmaal"
+      ],
+      "kop_a": "L'histoire de",
+      "kop_b": "Liesbeth et Gert.",
+      "kort": "Nouveau site web pour une ferme bio et ferme de soins à Vechmaal, avec leur histoire et leurs produits.",
+      "alt": "Page d'accueil de kleinhof.be : un champ de céréales avec le titre Biologisch kleinschalig et deux blocs Bio-boerderij et Zorg-boerderij.",
+      "soort": "Ferme bio et ferme de soins · Vechmaal · Liesbeth et Gert",
+      "gemaakt": "Site web",
+      "logo": null,
+      "beats": [
+        [
+          "L'entreprise",
+          "Une petite ferme bio et ferme de soins à Vechmaal, le même village qu'EM Launchpad."
+        ],
+        [
+          "Ce que nous avons réalisé",
+          "Un nouveau site web avec leur histoire, la ferme bio et la ferme de soins, et leurs produits."
+        ],
+        [
+          "Ce qui a changé",
+          "Qui les cherche voit tout de suite qui ils sont et ce qu'ils cultivent."
+        ]
+      ],
+      "producten": [
+        "Œufs",
+        "Pommes de terre",
+        "Viande",
+        "Légumes",
+        "Fruits"
+      ]
+    }
+  ],
+  "eerlijk": {
+    "text": "Nous n'avons pas encore d'avis. Mais quatre entreprises où vous pouvez regarder vous-même.",
+    "sub": "Appel gratuit de 30 minutes · En ligne en général sous 14 jours"
+  },
+  "cta": {
+    "h2a": "Votre entreprise sera-t-elle",
+    "h2b": "la cinquième ?",
+    "text": "Réservez un appel gratuit de 30 minutes. Sans engagement. Votre site est en général en ligne sous 14 jours.",
+    "btn": "Réserver un appel gratuit",
+    "badges": [
+      "Gratuit et sans engagement",
+      "30 minutes",
+      "En ligne en général sous 14 jours"
+    ]
+  }
+}

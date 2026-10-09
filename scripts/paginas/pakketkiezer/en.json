@@ -1,0 +1,865 @@
+{
+  "lang": "en",
+  "tone": "blauw",
+  "font": "family=Caveat:wght@600",
+  "skyKeys": [
+    {
+      "p": 0,
+      "ax": 74,
+      "ay": 34,
+      "bx": 10,
+      "by": 96,
+      "ao": 0.9,
+      "bo": 0.4
+    },
+    {
+      "p": 0.18,
+      "ax": 24,
+      "ay": 40,
+      "bx": 82,
+      "by": 70,
+      "ao": 0.6,
+      "bo": 0.7
+    },
+    {
+      "p": 0.4,
+      "ax": 78,
+      "ay": 58,
+      "bx": 18,
+      "by": 30,
+      "ao": 0.7,
+      "bo": 0.6
+    },
+    {
+      "p": 0.62,
+      "ax": 30,
+      "ay": 46,
+      "bx": 72,
+      "by": 60,
+      "ao": 0.8,
+      "bo": 0.6
+    },
+    {
+      "p": 1,
+      "ax": 46,
+      "ay": 36,
+      "bx": 56,
+      "by": 42,
+      "ao": 1,
+      "bo": 1
+    }
+  ],
+  "eur": "€{n}",
+  "meta": {
+    "title": "Package finder: which package fits your business? | EM Launchpad",
+    "ogtitle": "Package finder: weighed up honestly | EM Launchpad",
+    "desc": "Six short questions about your business and you get honest advice: Digital Growth (€150 per month), with the AI chatbot or AI receptionist only if you need them. Including what we don't recommend, and why."
+  },
+  "crumbs": [
+    "Home",
+    "Services",
+    "Package finder"
+  ],
+  "hero": {
+    "crumb_home": "Services",
+    "crumb": "Package finder",
+    "eyebrow": "Package finder",
+    "h1a": "What does your business need?",
+    "h1b": "Weighed up honestly.",
+    "lede": "Six short questions about your business. With every answer you see what we put on the other side, what we leave out and what it costs per month.",
+    "facts": "Six questions · no email address needed · your answers stay on your device",
+    "figcap": "A shop counter scale. On the left your business puts what it needs; on the right we put what covers it: Digital Growth (€150 per month) and, only when it's needed, the AI chatbot (+€50) or the AI receptionist (+€125).",
+    "noscript": "Without JavaScript the scale doesn't move. For every answer you can still read what it means, and below you'll find exactly how we weigh.",
+    "start": "Answer, and watch what happens."
+  },
+  "ui": {
+    "q_of": "Question {n} of {t}",
+    "next": "Next",
+    "back": "Back",
+    "to_result": "See your advice",
+    "pick_one": "Pick an answer.",
+    "need_h": "What your business needs",
+    "catch_h": "What covers it",
+    "off_h": "Not on the scale",
+    "empty": "Nothing yet.",
+    "per_month": "per month",
+    "per_month_caps": "PER MONTH",
+    "zit_erin": "INCLUDED",
+    "dash": "—",
+    "sum": "On the scale: {n} · {p}",
+    "sum_none": "On the scale: nothing yet",
+    "welcome_q": "Welcome back, you were at question {n}.",
+    "welcome_r": "Welcome back, your advice is ready.",
+    "restart": "Start over",
+    "dg": "Digital Growth",
+    "chat": "AI chatbot",
+    "recep": "AI receptionist",
+    "cons": "AI Consulting",
+    "on_request": "on request",
+    "tag_dg": "DIGITAL GROWTH",
+    "tag_cons": "AI CONSULTING · ON REQUEST",
+    "note_count": "count your missed calls for a week",
+    "note_leave": "we leave this out",
+    "note_talk": "we'll discuss",
+    "for_you": "for you",
+    "leave": "we leave this out",
+    "talk": "we'll discuss",
+    "your_advice": "your advice",
+    "catch_dg_sub": "For you: {ribs}",
+    "catch_dg_base": "All nine parts are included.",
+    "catch_maybe": "possibly {p}",
+    "off_recep": "AI receptionist · we leave this out (saves {p})",
+    "off_chat": "AI chatbot · we leave this out (saves {p})",
+    "off_cons": "AI Consulting · doesn't go on the scale",
+    "cons_side": "AI Consulting · on request, next to the scale",
+    "total_live": "Total: {p} per month.",
+    "total_none": "Nothing in the price yet.",
+    "euro_word": "euros",
+    "plus_word": "plus",
+    "chat_le": "AI chatbot",
+    "recep_le": "AI receptionist"
+  },
+  "gen": {
+    "woord": "business",
+    "plaat": "BUSINESS",
+    "werk": "because you're busy",
+    "afspraak": "appointment"
+  },
+  "vak": [
+    {
+      "c": "kapper",
+      "label": "Hairdresser, barber or beauty",
+      "kort": "hairdresser",
+      "woord": "salon",
+      "plaat": "SALON",
+      "werk": "while you're cutting hair",
+      "afspraak": "appointment"
+    },
+    {
+      "c": "zorg",
+      "label": "Physio, practice or clinic",
+      "kort": "practice",
+      "woord": "practice",
+      "plaat": "PRACTICE",
+      "werk": "during a treatment",
+      "afspraak": "appointment"
+    },
+    {
+      "c": "garage",
+      "label": "Garage or tradesperson",
+      "kort": "garage or trade",
+      "woord": "garage",
+      "plaat": "GARAGE",
+      "werk": "while you're under a car",
+      "afspraak": "appointment"
+    },
+    {
+      "c": "horeca",
+      "label": "Hospitality or shop",
+      "kort": "hospitality or shop",
+      "woord": "business",
+      "plaat": "BUSINESS",
+      "werk": "during service",
+      "afspraak": "reservation or order"
+    },
+    {
+      "c": "ander",
+      "label": "Other services",
+      "kort": "services",
+      "woord": "business",
+      "plaat": "BUSINESS",
+      "werk": "while you're helping a customer",
+      "afspraak": "appointment"
+    }
+  ],
+  "q": [
+    {
+      "id": "vak",
+      "type": "radio",
+      "legend": "What kind of business do you run?",
+      "hint": "Your trade doesn't change the advice, only the examples."
+    },
+    {
+      "id": "boek",
+      "type": "radio",
+      "legend": "How do customers make an {afspraak} now?",
+      "hint": "",
+      "opts": [
+        {
+          "c": "bel",
+          "label": "They call",
+          "kort": "they call",
+          "eff": "Appointments by phone. On the other side: Digital Growth, with an online calendar in your website and reminders that go out by themselves."
+        },
+        {
+          "c": "bericht",
+          "label": "By message (WhatsApp, Instagram, Messenger or email)",
+          "kort": "by message",
+          "eff": "Appointments by message. On the other side: Digital Growth, with an online calendar and one inbox for WhatsApp, Instagram, email and text."
+        },
+        {
+          "c": "online",
+          "label": "Online, through a calendar I already have",
+          "kort": "online, own calendar",
+          "eff": "Your calendar is already running. That doesn't count; in the call we'll look at what you want to do with it."
+        },
+        {
+          "c": "binnen",
+          "label": "They walk in without an appointment",
+          "kort": "walk-ins",
+          "eff": "No appointments needed. That doesn't count."
+        }
+      ]
+    },
+    {
+      "id": "opr",
+      "type": "radio",
+      "legend": "How often do you miss a call {werk}?",
+      "hint": "",
+      "opts": [
+        {
+          "c": "dag",
+          "label": "Every day, now and then",
+          "kort": "every day, now and then",
+          "eff": "On the other side we put the AI receptionist: +€125 per month, on top of Digital Growth. She answers every call, day and night."
+        },
+        {
+          "c": "week",
+          "label": "A few times a week",
+          "kort": "a few times a week",
+          "eff": "Do your customers mostly call? Then we'll discuss the AI receptionist together; she isn't counted in the price. Otherwise your phone is part of your inbox, at no extra cost."
+        },
+        {
+          "c": "zelden",
+          "label": "Hardly ever",
+          "kort": "hardly ever",
+          "eff": "No AI receptionist needed. Saves €125 per month."
+        },
+        {
+          "c": "onbekend",
+          "label": "No idea",
+          "kort": "no idea",
+          "eff": "Then we don't count them. Before the call, try counting your missed calls for a week."
+        }
+      ]
+    },
+    {
+      "id": "ber",
+      "type": "radio",
+      "legend": "Do messages come in that you can't answer straight away?",
+      "hint": "Through your site, WhatsApp, Instagram or Messenger.",
+      "opts": [
+        {
+          "c": "avond",
+          "label": "Every day, also in the evening and at weekends",
+          "kort": "every day, also evenings and weekends",
+          "eff": "Questions while you're closed. On the other side we put the AI chatbot: +€50 per month. It answers questions and books appointments, 24/7."
+        },
+        {
+          "c": "werk",
+          "label": "Every day, mostly during opening hours",
+          "kort": "every day, mostly during the day",
+          "eff": "Do your customers book by message? Then we recommend the AI chatbot (+€50 per month). Otherwise we'll discuss it together: during the day you can also reply later from your inbox."
+        },
+        {
+          "c": "paar",
+          "label": "A few a week",
+          "kort": "a few a week",
+          "eff": "You answer those yourself from one inbox. No AI chatbot needed. Saves €50 per month."
+        },
+        {
+          "c": "zelden",
+          "label": "Hardly ever",
+          "kort": "hardly ever",
+          "eff": "No AI chatbot needed. Saves €50 per month."
+        }
+      ]
+    },
+    {
+      "id": "inb",
+      "type": "check",
+      "legend": "What often slips through the cracks now?",
+      "hint": "Pick everything that applies.",
+      "opts": [
+        {
+          "c": "reviews",
+          "label": "Asking for a review",
+          "kort": "asking for a review",
+          "eff": "Included in Digital Growth: 2 hours after every appointment a review request goes out by text or email, automatically."
+        },
+        {
+          "c": "facturen",
+          "label": "Making invoices and chasing payments",
+          "kort": "invoices and payments",
+          "eff": "Included in Digital Growth: online payments, an automatic invoice after every payment, and reminders for unpaid invoices."
+        },
+        {
+          "c": "herinneren",
+          "label": "Reminding customers of their appointment",
+          "kort": "reminding customers",
+          "eff": "Included in Digital Growth: follow-up and reminders run by themselves through your workflows."
+        },
+        {
+          "c": "kanalen",
+          "label": "Following up WhatsApp, Instagram and email separately",
+          "kort": "messages on separate channels",
+          "eff": "Included in Digital Growth: WhatsApp, Instagram, email, text and phone in one inbox."
+        },
+        {
+          "c": "niets",
+          "label": "Nothing, that's already fine",
+          "kort": "nothing, that's fine",
+          "eff": "Already fine. Doesn't count."
+        }
+      ]
+    },
+    {
+      "id": "doel",
+      "type": "radio",
+      "legend": "What do you want most?",
+      "hint": "",
+      "opts": [
+        {
+          "c": "klanten",
+          "label": "More customers who find me and book",
+          "kort": "more customers who find me and book",
+          "eff": "Included in Digital Growth: a fast website, your Google profile, campaigns and landing pages."
+        },
+        {
+          "c": "eenplek",
+          "label": "Everything in one place, fewer separate tools",
+          "kort": "everything in one place",
+          "eff": "Included in Digital Growth: website, calendar, inbox, campaigns and payments on one platform, for one monthly price."
+        },
+        {
+          "c": "intern",
+          "label": "My business runs well: I want AI in how we work internally",
+          "kort": "AI in how we work internally",
+          "eff": "That's AI Consulting: tailored, on request. It doesn't go on the scale."
+        },
+        {
+          "c": "horen",
+          "label": "First hear what's possible",
+          "kort": "first hear what's possible",
+          "eff": "No rush. The call is free and without obligation."
+        }
+      ]
+    }
+  ],
+  "needs": {
+    "boek_bel": "Appointments come in by phone",
+    "boek_bericht": "Appointments come in by message",
+    "opr_dag": "Missed calls every day {werk}",
+    "opr_week_bel": "Now and then a missed call, and your customers call",
+    "opr_week": "Now and then a missed call",
+    "ber_avond": "Questions while you're closed",
+    "ber_werk_bericht": "Messages every day while you work",
+    "ber_werk": "Messages every day, mostly during the day",
+    "ber_paar": "The occasional message",
+    "inb_reviews": "Asking for reviews",
+    "inb_facturen": "Invoices and payments",
+    "inb_herinneren": "Reminding customers",
+    "inb_kanalen": "Messages on separate channels",
+    "doel_klanten": "More customers who find you",
+    "doel_eenplek": "Too many separate tools"
+  },
+  "fb": {
+    "vak": "Your trade doesn't change the advice, only the examples.",
+    "boek_bel": "On the scale: appointments by phone. On the other side: Digital Growth, with an online calendar in your website.",
+    "boek_bericht": "On the scale: appointments by message. On the other side: Digital Growth, with an online calendar and one inbox.",
+    "boek_online": "Your calendar is already running. Doesn't count.",
+    "boek_binnen": "No appointments needed. Doesn't count.",
+    "opr_dag": "On the scale: missed calls every day {werk}. On the other side: the AI receptionist, +€125 per month.",
+    "opr_week_bel": "On the edge: your customers call and you miss a call now and then. We'll discuss the AI receptionist together; not in the price.",
+    "opr_week": "No AI receptionist: your phone is part of your inbox, next to WhatsApp, Instagram, email and text. Saves €125 per month.",
+    "opr_zelden": "No AI receptionist: you hardly ever miss a call. Saves €125 per month.",
+    "opr_onbekend": "Nothing on the scale. Tip: count your missed calls for a week.",
+    "ber_avond": "On the scale: questions while you're closed. On the other side: the AI chatbot, +€50 per month.",
+    "ber_werk_bericht": "On the scale: messages every day while you work. On the other side: the AI chatbot, +€50 per month.",
+    "ber_werk": "On the edge: messages every day, mostly during the day. We'll discuss the AI chatbot together; not in the price.",
+    "ber_paar": "You answer those yourself from one inbox. No AI chatbot needed. Saves €50 per month.",
+    "ber_zelden": "No AI chatbot: few messages come in. Saves €50 per month.",
+    "inb_on": "On the scale: {need}. Included in Digital Growth, at no extra cost.",
+    "inb_off": "Off the scale: {need}.",
+    "inb_niets": "Nothing, that's already fine. Doesn't count.",
+    "inb_cleared": "Nothing, that's already fine. The other ticks have been cleared.",
+    "doel_klanten": "On the scale: more customers who find you. Included in Digital Growth: website, Google profile, campaigns and landing pages.",
+    "doel_eenplek": "On the scale: too many separate tools. Digital Growth puts everything on one platform.",
+    "doel_intern": "AI Consulting doesn't go on the scale: it's tailored work, on request.",
+    "doel_horen": "No rush. The call is without obligation."
+  },
+  "ribs": [
+    "Website",
+    "Google profile",
+    "Reputation",
+    "CRM & inbox",
+    "Campaigns",
+    "Funnels",
+    "Payments",
+    "Automation",
+    "Platform"
+  ],
+  "result": {
+    "kicker": "Weighing slip · {datum}",
+    "h": {
+      "C": [
+        "Our advice: ",
+        "Digital Growth",
+        "."
+      ],
+      "C_chat": [
+        "Our advice: ",
+        "Digital Growth",
+        " with the AI chatbot."
+      ],
+      "C_recep": [
+        "Our advice: ",
+        "Digital Growth",
+        " with the AI receptionist."
+      ],
+      "C_both": [
+        "Our advice: ",
+        "Digital Growth",
+        " with the AI chatbot and the AI receptionist."
+      ],
+      "A": [
+        "Our advice: ",
+        "AI Consulting",
+        ", on request."
+      ],
+      "B": [
+        "Our advice: start with ",
+        "AI Consulting",
+        ". Digital Growth for the front of house."
+      ],
+      "D": [
+        "Weighed up honestly: you don't need us ",
+        "right now",
+        "."
+      ]
+    },
+    "voor": "For your {woord}",
+    "voor_naam": "For {naam}",
+    "opbouw_dg": "{p} Digital Growth",
+    "opbouw_chat": "{p} AI chatbot",
+    "opbouw_recep": "{p} AI receptionist",
+    "opbouw_cons": "AI Consulting on request",
+    "mono": "cancellable monthly · usually live within 14 days",
+    "alt": "or {p} per month if we decide together that the {x} is needed",
+    "on_request": "On request",
+    "cons_txt": "No standard package. We analyse how you work, make a personal AI plan, guide the set-up and optimise every month. Deliberately limited availability.",
+    "b_txt": "Your answers also show work at the front of house ({needs}). For that: {list}, {p} per month. What comes first, we'll look at in the same call.",
+    "d_txt": "Your answers don't ask for anything you don't already have. Keep your {p} per month. Still want to take a look together? The call is free and without obligation.",
+    "why_h": "Why this",
+    "not_h": "What we don't recommend",
+    "talk_h": "To discuss",
+    "said": "You said:",
+    "proof_pre": "Measured at Clinic3D in Hasselt, over 263 days:",
+    "proof_link": "Read the case",
+    "incl_h": "Also in Digital Growth, at no extra cost",
+    "try_h": "Try it yourself",
+    "try_txt": "Add or remove something yourself. The scale and the price follow.",
+    "advice_label": "Our advice",
+    "own_label": "Your choice",
+    "dev": "You're going against our advice. No problem, we'll talk it through.",
+    "dev_back": "Back to our advice",
+    "heavy": "Heavier than your business needs: {p} per month that we don't recommend.",
+    "light": "Lighter than your business needs: then work gets left undone.",
+    "doubt_on": "Possible. We'll discuss it.",
+    "talk_cta_h": "Your call, prepared",
+    "book": "Book your free call (30 min)",
+    "book_micro": "We'll put your weighing slip on your clipboard. Feel free to paste it into your booking, or send it on WhatsApp.",
+    "wa": "Send your slip on WhatsApp",
+    "wa_micro": "You send it yourself. Until then we see nothing.",
+    "name_label": "Name of your business (can stay empty)",
+    "brief_h": "Your weighing slip",
+    "copy": "Copy slip",
+    "copied": "Copied.",
+    "copy_fail": "Copying didn't work. Select the slip and copy it yourself.",
+    "share": "Share",
+    "foot": "Your answers stay in this tab on your device until you close it. The package finder doesn't send anything.",
+    "edit_h": "Change your answers",
+    "again": "Weigh again",
+    "popup_note": "Your weighing slip is on your clipboard · {advies}",
+    "popup_note_fail": "You can also send your weighing slip on WhatsApp."
+  },
+  "why": {
+    "recep": [
+      "You miss a call every day {werk}.",
+      "The AI receptionist answers every call, day and night, books appointments into your calendar and introduces herself as a digital assistant."
+    ],
+    "chat_avond": [
+      "Messages come in every day, also in the evening and at weekends.",
+      "The AI chatbot answers questions and books appointments, 24/7, on your website, WhatsApp, Instagram and Messenger."
+    ],
+    "chat_werk": [
+      "Messages come in every day, mostly during the day.",
+      "The AI chatbot answers questions and books appointments, 24/7, on your website, WhatsApp, Instagram and Messenger."
+    ],
+    "agenda_bel": [
+      "Your customers book by phone.",
+      "With the online calendar in your website, customers book themselves and reminders go out automatically."
+    ],
+    "agenda_bericht": [
+      "Your customers book by message.",
+      "With the online calendar in your website, customers book themselves and reminders go out automatically."
+    ],
+    "reviews": [
+      "Asking for a review slips through the cracks.",
+      "2 hours after every appointment a review request goes out by text or email, automatically."
+    ],
+    "facturen": [
+      "Making invoices and chasing payments slips through the cracks.",
+      "Customers pay online (Stripe, Bancontact, iDEAL, Visa, Apple Pay). After every payment an invoice goes out automatically, and unpaid invoices get reminders."
+    ],
+    "herinneren": [
+      "Reminding customers slips through the cracks.",
+      "Follow-up and reminders run by themselves through your workflows."
+    ],
+    "inbox_kanalen": [
+      "Following up messages on separate channels slips through the cracks.",
+      "WhatsApp, Instagram, email, text and phone come together in one inbox."
+    ],
+    "inbox_opr": [
+      "You miss a call now and then.",
+      "Your phone is part of one inbox, next to WhatsApp, Instagram, email and text."
+    ],
+    "inbox_ber": [
+      "A few messages come in every week.",
+      "You answer them from one inbox, together with WhatsApp, Instagram, email, text and phone."
+    ],
+    "klanten": [
+      "You mainly want more customers who find you and book.",
+      "A fast, mobile, SEO-ready website, your Google Business Profile and local visibility, plus email and text campaigns and landing pages."
+    ],
+    "eenplek": [
+      "You want everything in one place.",
+      "Website, calendar, inbox, campaigns and payments on one platform, for one monthly price."
+    ]
+  },
+  "not": {
+    "recep_zelden": "AI receptionist: you hardly ever miss a call. Saves {p} per month.",
+    "recep_week": "AI receptionist: you miss a call now and then, but your customers don't mainly book by phone. Your phone is part of your inbox. Saves {p} per month.",
+    "recep_onbekend": "AI receptionist: we'll only know once you've counted your missed calls for a week. Not counted for now.",
+    "chat_zelden": "AI chatbot: few messages come in. Saves {p} per month.",
+    "chat_paar": "AI chatbot: you answer a few messages a week yourself from one inbox. Saves {p} per month.",
+    "cons": "AI Consulting: meant for businesses that already run well and want AI in how they work internally. That's not what you chose."
+  },
+  "talk": {
+    "recep": "AI receptionist: your customers call and you miss a few calls a week. Whether that's worth {p} per month, we'll decide together.",
+    "chat": "AI chatbot: messages every day, mostly during opening hours. During the day you can also answer them later from your inbox. Whether the chatbot makes the difference, we'll look at together.",
+    "tel": "Count your missed calls for a week before the call.",
+    "agenda": "Which calendar do you use now, and what do we do with it?",
+    "volgorde": "What comes first: AI Consulting or Digital Growth."
+  },
+  "talk_short": {
+    "recep": "AI receptionist",
+    "chat": "AI chatbot",
+    "tel": "counting missed calls",
+    "agenda": "current calendar",
+    "volgorde": "order of AI Consulting and Digital Growth"
+  },
+  "proof": {
+    "afspraken": "650 of 681 appointments confirmed, 0 no-shows.",
+    "web": "40,280 website views.",
+    "mails": "3,250 automatic emails, 2,090 opened (64%)."
+  },
+  "brief": {
+    "head": "EM Launchpad package finder · {datum}",
+    "zaak": "Business: {v}",
+    "zaak_naam": "Business: {naam} ({v})",
+    "advies": "Advice: {v}",
+    "boek": "Appointments: {v}",
+    "opr": "Missed calls: {v}",
+    "ber": "Messages: {v}",
+    "inb": "Slips through: {v}",
+    "doel": "Wants most: {v}",
+    "talk": "To discuss: {v}",
+    "zelf": "Own adjustment: {v} ({p} per month)",
+    "adv_C": "{list}, {p} per month",
+    "adv_doubt": " ({x} to discuss)",
+    "adv_A": "AI Consulting (on request)",
+    "adv_B": "AI Consulting (on request) + Digital Growth, {p} per month",
+    "adv_D": "nothing right now",
+    "and": " + "
+  },
+  "wa": {
+    "hallo": "Hello EM Launchpad, I did the package finder on your site.",
+    "slot": "Can we have a 30-minute call?",
+    "slot_cons": "I'm interested in AI Consulting. Can we have a 30-minute call?",
+    "generic": "Hello EM Launchpad, I have a question about your packages."
+  },
+  "sections": {
+    "weights": {
+      "eyebrow": "The weights",
+      "h2a": "What can go on",
+      "h2b": "the scale.",
+      "lede": "One block and two separate weights. What we put against your answers always comes from this list.",
+      "g1": "Digital Growth",
+      "g1_sub": "One block, nine ribs. €150 per month, cancellable monthly.",
+      "items": [
+        {
+          "t": "Website",
+          "d": "Fast, mobile and SEO-ready, with an online booking system (calendar) and forms.",
+          "links": [
+            [
+              "Websites",
+              "More about websites"
+            ],
+            [
+              "Afsprakensysteem",
+              "The booking system"
+            ]
+          ]
+        },
+        {
+          "t": "Google Business Profile",
+          "d": "Fully filled in and kept up to date, for local visibility."
+        },
+        {
+          "t": "Reputation management",
+          "d": "2 hours after every appointment a review request goes out by text or email, automatically."
+        },
+        {
+          "t": "CRM & customer dashboard",
+          "d": "WhatsApp, Instagram, email, text and phone in one inbox."
+        },
+        {
+          "t": "Email and text campaigns",
+          "d": "Targeted campaigns to your own customer list."
+        },
+        {
+          "t": "Funnels and landing pages",
+          "d": "Pages for a promotion or an ad, linked straight to your CRM."
+        },
+        {
+          "t": "Online payments and invoicing",
+          "d": "Stripe, Bancontact, iDEAL, Visa and Apple Pay. An automatic invoice after every payment, and reminders for unpaid invoices."
+        },
+        {
+          "t": "AI automation and workflows",
+          "d": "Follow-up, reminders, review requests and CRM updates run by themselves.",
+          "links": [
+            [
+              "AI-Automatisering",
+              "More about automation"
+            ]
+          ]
+        },
+        {
+          "t": "Access to the platform",
+          "d": "Everything in one dashboard, without separate subscriptions."
+        }
+      ],
+      "g2": "Two separate weights",
+      "g2_sub": "Only when your business needs them. Always on top of Digital Growth.",
+      "chat_d": "Answers questions and books appointments, 24/7, on your website, WhatsApp, Instagram and Messenger.",
+      "chat_href": "AI%20Chatbots",
+      "chat_more": "More about the AI chatbot",
+      "recep_d": "Answers every call, day and night, books appointments into your calendar and introduces herself as a digital assistant.",
+      "recep_href": "AI%20Voice%20Agents",
+      "recep_more": "More about the AI receptionist",
+      "g3": "Doesn't go on the scale",
+      "cons_d": "On request and deliberately limited. For businesses that already run well and want AI in how they work internally: an analysis, a personal AI plan, guidance with the set-up and monthly optimisation.",
+      "cons_href": "Diensten#pakket-2",
+      "cons_more": "More about AI Consulting"
+    },
+    "rules": {
+      "eyebrow": "How we weigh",
+      "h2a": "The same rules for",
+      "h2b": "everyone.",
+      "lede": "No hidden scoring. These are the rules the package finder weighs with.",
+      "th1": "If you …",
+      "th2": "then …",
+      "rows": [
+        [
+          "Your trade",
+          "never changes the advice, only the examples."
+        ],
+        [
+          "Customers book by phone or by message",
+          "Digital Growth: an online calendar in your website and one inbox."
+        ],
+        [
+          "You miss a call every day",
+          "AI receptionist, +€125 per month."
+        ],
+        [
+          "You miss a few calls a week and your customers mostly call",
+          "We discuss the AI receptionist together. Not in the price."
+        ],
+        [
+          "You miss a few calls a week, but your customers book another way",
+          "No AI receptionist: your phone is part of your inbox."
+        ],
+        [
+          "You hardly ever miss a call",
+          "No AI receptionist."
+        ],
+        [
+          "You don't know how many calls you miss",
+          "Not counted. Count for a week."
+        ],
+        [
+          "Messages every day, also in the evening or at weekends",
+          "AI chatbot, +€50 per month."
+        ],
+        [
+          "Messages every day during the day, and customers book by message",
+          "AI chatbot, +€50 per month."
+        ],
+        [
+          "Messages every day during the day, but customers book another way",
+          "We discuss the AI chatbot together. Not in the price."
+        ],
+        [
+          "A few messages a week, or hardly ever",
+          "No AI chatbot."
+        ],
+        [
+          "Reviews, invoices, reminders or separate channels slip through",
+          "Included in Digital Growth, at no extra cost."
+        ],
+        [
+          "You want AI in how you work internally",
+          "AI Consulting, on request."
+        ],
+        [
+          "None of the above",
+          "Sometimes our advice is: nothing right now."
+        ],
+        [
+          "Always",
+          "An add-on comes on top of Digital Growth."
+        ]
+      ]
+    },
+    "prices": {
+      "eyebrow": "Four prices",
+      "h2a": "Four prices,",
+      "h2b": "nothing more.",
+      "lede": "Per month and cancellable monthly. AI Consulting is on request.",
+      "items": [
+        {
+          "p": 150,
+          "t": "Digital Growth"
+        },
+        {
+          "p": 200,
+          "t": "with the AI chatbot"
+        },
+        {
+          "p": 275,
+          "t": "with the AI receptionist"
+        },
+        {
+          "p": 325,
+          "t": "with both"
+        }
+      ],
+      "cons": "AI Consulting: on request."
+    },
+    "proof": {
+      "eyebrow": "Weighed in practice",
+      "h2a": "Clinic3D, Hasselt:",
+      "h2b": "263 days.",
+      "lede": "We don't have reviews yet. We do have these figures, measured at Clinic3D.",
+      "stats": [
+        [
+          "650",
+          "of 681 appointments confirmed"
+        ],
+        [
+          "0",
+          "no-shows"
+        ],
+        [
+          "3,250",
+          "automatic emails"
+        ],
+        [
+          "2,090",
+          "of those opened (64%)"
+        ],
+        [
+          "40,280",
+          "website views"
+        ],
+        [
+          "39",
+          "phone calls"
+        ]
+      ],
+      "link": "Read the case"
+    },
+    "steps": {
+      "eyebrow": "After the weighing",
+      "h2a": "What happens",
+      "h2b": "next.",
+      "items": [
+        [
+          "A free call",
+          "30 minutes, without obligation. Bring your weighing slip and we'll start where you left off."
+        ],
+        [
+          "Usually live within 14 days",
+          "We build and set up everything. You don't have to build anything yourself."
+        ],
+        [
+          "Cancellable monthly",
+          "No annual contract. You pay per month."
+        ]
+      ]
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "h2a": "Anything still",
+      "h2b": "unclear?",
+      "items": [
+        {
+          "q": "Do I have to take everything?",
+          "a": "Digital Growth is one package with all nine parts, for €150 per month. We only recommend the AI chatbot and the AI receptionist when your answers call for them."
+        },
+        {
+          "q": "Can I take an add-on without Digital Growth?",
+          "a": "No. The AI chatbot and the AI receptionist always come on top of Digital Growth. That's why there are only four prices: €150, €200, €275 and €325 per month."
+        },
+        {
+          "q": "What if I don't need anything?",
+          "a": "Then we'll say so. Sometimes our advice is: nothing right now. The call stays free and without obligation."
+        },
+        {
+          "q": "Is the advice binding?",
+          "a": "No. It's a first estimate based on your answers. In the free 30-minute call we look at it together."
+        },
+        {
+          "q": "Where are your reviews?",
+          "a": "We don't have reviews yet. That's why we'd rather show what we measure, like at Clinic3D in Hasselt."
+        },
+        {
+          "q": "What happens to my answers?",
+          "a": "They stay in this tab on your device. The package finder doesn't send anything. Your weighing slip only leaves your device if you copy it, share it or send it on WhatsApp."
+        },
+        {
+          "q": "How quickly is everything up and running?",
+          "a": "You're usually live within 14 days. Digital Growth is cancellable monthly."
+        }
+      ]
+    },
+    "cta": {
+      "h2a": "Shall we weigh",
+      "h2b": "together?",
+      "h2a_r": "Your slip is",
+      "h2b_r": "ready.",
+      "text": "A free 30-minute call. Without obligation, and you don't need to prepare anything.",
+      "btn": "Book a free call",
+      "wa": "Send a WhatsApp",
+      "badges": [
+        "30 minutes",
+        "Free",
+        "No obligation"
+      ]
+    }
+  },
+  "nav_cta": "Try the package finder"
+}

@@ -1,113 +1,201 @@
 /* =============================================================
-   EM Launchpad — Portfolio
-   Werkt bovenop de "v2" skin (home-redesign.css). Alle regels zijn
-   gescoped op de portfolio-pagina.
+   EM Launchpad — Portfolio ("Door het venster")
+   Het is blauw uur: bij vier zaken brandt het licht en je kijkt
+   binnen. Het hero-venster laat de nieuwe amakhosi.be traag
+   doorscrollen (computer en gsm samen, met bijschriften); de andere
+   zaken staan als open composities op de lichtlaag van de homepage,
+   elk met een naambordje. Bovenop de v2-skin (home-redesign.css),
+   met data-tone="blauw". Klassen met pf-. Nergens position:sticky,
+   nergens backdrop-filter. De beweging is CSS; portfolio.js pauzeert
+   ze alleen buiten beeld.
    ============================================================= */
 
-body[data-page="portfolio"] .pf-hero{position:relative;overflow:hidden;padding:76px 0 8px}
-body[data-page="portfolio"] .pf-hero .wrap{position:relative;z-index:2}
-body[data-page="portfolio"] .pf-intro{max-width:760px}
+body[data-page="portfolio"]{
+  --pf-focus:#9dbcf0;
+  --pf-rand:rgba(150,190,235,.24);
+  --pf-glas:#12213a;
+}
+body[data-page="portfolio"] .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+body[data-page="portfolio"] .pf-hero,body[data-page="portfolio"] .pf-zaak,body[data-page="portfolio"] .pf-eerlijk{background:transparent}
+body[data-page="portfolio"] .pf-hero a:focus-visible,body[data-page="portfolio"] .pf-zaak a:focus-visible,
+body[data-page="portfolio"] .btn:focus-visible,body[data-page="portfolio"] .btn-ghost:focus-visible{outline:2px solid var(--pf-focus);outline-offset:3px}
 
-body[data-page="portfolio"] .pf-sec{padding:56px 0 104px}
-body[data-page="portfolio"] .pf-list{display:flex;flex-direction:column;gap:26px}
+/* ---------------- HERO ---------------- */
+body[data-page="portfolio"] .pf-hero{position:relative;overflow:hidden;padding:76px 0 0}
+body[data-page="portfolio"] .pf-hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+body[data-page="portfolio"] .pf-h1{margin:14px 0 0;font-weight:800;font-size:clamp(38px,3.7vw,54px);line-height:1.03;letter-spacing:-.04em;color:var(--hi);text-wrap:balance}
+body[data-page="portfolio"] .pf-lede{max-width:40ch;margin-top:18px}
+body[data-page="portfolio"] .pf-spring{display:flex;flex-wrap:wrap;align-items:center;margin-top:26px;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em}
+body[data-page="portfolio"] .pf-spring a{color:var(--mid);text-decoration:none;padding-bottom:3px;
+  background:var(--uline) no-repeat 0 100%/0% 1px;transition:background-size .4s cubic-bezier(.2,.7,.2,1),color .2s ease}
+body[data-page="portfolio"] .pf-spring a:hover,body[data-page="portfolio"] .pf-spring a:focus-visible{color:var(--hi);background-size:100% 1px}
+body[data-page="portfolio"] .pf-spring a + a::before{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;background:var(--dim);margin:0 12px;vertical-align:3px}
+body[data-page="portfolio"] .pf-feiten{display:grid;gap:4px;margin:22px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--dim)}
 
-body[data-page="portfolio"] .pf-case{
-  display:grid;grid-template-columns:1.02fr .98fr;
-  border:1px solid var(--line);border-radius:24px;overflow:hidden;
-  background:var(--glass);
-  box-shadow:0 26px 60px rgba(0,0,0,.34);
+/* het venster */
+body[data-page="portfolio"] .pf-venster-blok{position:relative;padding:0 24px 56px 0}
+body[data-page="portfolio"] .pf-pauze-in{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+body[data-page="portfolio"] .pf-venster{position:relative}
+body[data-page="portfolio"] .pf-glas{position:relative;max-width:660px;aspect-ratio:16/10;border-radius:18px;border:1px solid var(--pf-rand);background:var(--pf-glas);
+  overflow:hidden;container-type:size;box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.04)}
+body[data-page="portfolio"] .pf-lang{position:absolute;left:0;top:0;width:100%;height:auto;display:block;will-change:transform;
+  --pf-d:calc(100cqh - 100%)}
+@supports not (height:1cqh){
+  body[data-page="portfolio"] .pf-glas .pf-lang{--pf-d:-72%}
+  body[data-page="portfolio"] .pf-gsm .pf-lang{--pf-d:-80%}
 }
-body[data-page="portfolio"] .pf-case:nth-child(even) .pf-media{order:2}
+body[data-page="portfolio"] .pf-ruit{position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;
+  background:linear-gradient(115deg,rgba(255,255,255,.07),transparent 38%);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+body[data-page="portfolio"] .pf-gsm{position:absolute;right:-24px;bottom:-56px;width:27%;aspect-ratio:390/844;border-radius:26px;border:1px solid rgba(150,190,235,.28);
+  background:#0b1526;overflow:hidden;container-type:size;z-index:3;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+body[data-page="portfolio"] .pf-gsm .pf-ruit{border-radius:26px}
+/* stops: fracties van --pf-d, per raam gemeten op de opname (lint, welkom met citaat, fotoraster) */
+body[data-page="portfolio"] .pf-glas .pf-lang{--pf-s1:.32;--pf-s2:.44;--pf-s3:.92}
+body[data-page="portfolio"] .pf-gsm .pf-lang{--pf-s1:.28;--pf-s2:.54;--pf-s3:.84}
+body[data-page="portfolio"] .pf-venster:not(.is-stil) .pf-lang{animation:pfGlijd 44s ease-in-out infinite}
+@keyframes pfGlijd{
+  0%,10%{transform:translate3d(0,0,0)}
+  17%,30%{transform:translate3d(0,calc(var(--pf-d) * var(--pf-s1)),0)}
+  37%,50%{transform:translate3d(0,calc(var(--pf-d) * var(--pf-s2)),0)}
+  57%,78%{transform:translate3d(0,calc(var(--pf-d) * var(--pf-s3)),0)}
+  100%{transform:translate3d(0,0,0)}
+}
+body[data-page="portfolio"] .pf-bijschriften{position:absolute;left:16px;right:34%;bottom:16px;z-index:4;list-style:none;margin:0;padding:0;min-height:60px}
+body[data-page="portfolio"] .pf-bijschriften li{position:absolute;left:0;bottom:0;max-width:100%;opacity:0;padding:9px 13px;border-radius:12px;
+  border:1px solid var(--line-2);background:rgba(13,25,45,.82);color:var(--hi);font-size:13.5px;line-height:1.45}
+body[data-page="portfolio"] .pf-bijschriften li:nth-child(1){animation:pfCap1 44s linear infinite}
+body[data-page="portfolio"] .pf-bijschriften li:nth-child(2){animation:pfCap2 44s linear infinite}
+body[data-page="portfolio"] .pf-bijschriften li:nth-child(3){animation:pfCap3 44s linear infinite}
+body[data-page="portfolio"] .pf-bijschriften li:nth-child(4){animation:pfCap4 44s linear infinite}
+@keyframes pfCap1{0%,11%{opacity:1}15%,95%{opacity:0}99%,100%{opacity:1}}
+@keyframes pfCap2{0%,14%{opacity:0}18%,31%{opacity:1}35%,100%{opacity:0}}
+@keyframes pfCap3{0%,34%{opacity:0}38%,51%{opacity:1}55%,100%{opacity:0}}
+@keyframes pfCap4{0%,54%{opacity:0}58%,80%{opacity:1}84%,100%{opacity:0}}
+/* pauze (zonder JS) en buiten beeld (met JS) */
+body[data-page="portfolio"] #pfPauze:checked ~ .pf-venster .pf-lang,
+body[data-page="portfolio"] #pfPauze:checked ~ .pf-venster .pf-bijschriften li,
+body[data-page="portfolio"] .pf-venster-blok.is-weg .pf-lang,
+body[data-page="portfolio"] .pf-venster-blok.is-weg .pf-bijschriften li{animation-play-state:paused}
+body[data-page="portfolio"] .pf-venster-rij{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:18px;max-width:660px;padding-right:calc(27% + 36px)}
+body[data-page="portfolio"] .pf-domein{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim)}
+body[data-page="portfolio"] .pf-dot{width:6px;height:6px;border-radius:50%;background:var(--grad);flex:none}
+body[data-page="portfolio"] .pf-pauze{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:var(--hi);font-family:var(--font);font-weight:600;font-size:13.5px;transition:background .2s ease}
+body[data-page="portfolio"] .pf-pauze:hover{background:rgba(255,255,255,.08)}
+body[data-page="portfolio"] .pf-pauze .is-uit{display:none}
+body[data-page="portfolio"] #pfPauze:checked ~ .pf-venster-rij .pf-pauze .is-aan{display:none}
+body[data-page="portfolio"] #pfPauze:checked ~ .pf-venster-rij .pf-pauze .is-uit{display:inline}
+body[data-page="portfolio"] #pfPauze:focus-visible ~ .pf-venster-rij .pf-pauze{outline:2px solid var(--pf-focus);outline-offset:3px}
+body[data-page="portfolio"] .pf-open{display:inline-flex;align-items:center;gap:8px;color:var(--hi);font-weight:600;font-size:14.5px;text-decoration:none;
+  background:var(--uline) no-repeat 0 100%/0% 1px;padding-bottom:3px;transition:background-size .4s cubic-bezier(.2,.7,.2,1)}
+body[data-page="portfolio"] .pf-open:hover{background-size:100% 1px}
+body[data-page="portfolio"] .pf-open svg,body[data-page="portfolio"] .pf-nb-link svg,body[data-page="portfolio"] .pf-ghost svg{width:14px;height:14px;flex:none}
 
-body[data-page="portfolio"] .pf-media{position:relative;min-height:340px;background:var(--ink-2)}
-body[data-page="portfolio"] .pf-media video,
-body[data-page="portfolio"] .pf-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* hero-voet = zaak 01 */
+body[data-page="portfolio"] .pf-hero-voet{margin-top:56px;border-top:1px solid var(--line);padding:28px 0 64px}
+body[data-page="portfolio"] .pf-voet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;align-items:start}
+body[data-page="portfolio"] .pf-voet-kol .pf-beats{margin-top:0}
+body[data-page="portfolio"] .pf-voet-kol .pf-beats dt:first-child{margin-top:4px}
+body[data-page="portfolio"] .pf-voet-kol .pf-ghost{margin-top:22px}
 
-/* logo-paneel: licht vlak, want klantlogo's hebben vaak donkere letters */
-body[data-page="portfolio"] .pf-media.pf-logo{
-  background:var(--warm);
-  display:grid;place-items:center;padding:44px;
-}
-body[data-page="portfolio"] .pf-media.pf-logo img{
-  position:static;inset:auto;
-  width:100%;max-width:300px;height:auto;
-  object-fit:contain;
-}
+/* ---------------- GEDEELDE ONDERDELEN ---------------- */
+body[data-page="portfolio"] .pf-index{margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+body[data-page="portfolio"] .pf-index b{font-weight:500;color:var(--hi)}
+body[data-page="portfolio"] .pf-h2{margin:10px 0 0;font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1.1;letter-spacing:-.03em;color:var(--hi)}
+body[data-page="portfolio"] .pf-kop{margin:10px 0 0;font-size:20.5px;line-height:1.4;font-weight:600;color:var(--hi);text-wrap:balance}
+body[data-page="portfolio"] .pf-naambord{display:grid;gap:8px;margin:18px 0 22px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--glass)}
+body[data-page="portfolio"] .pf-naambord dl{margin:0;display:grid;gap:6px}
+body[data-page="portfolio"] .pf-naambord dt{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:4px}
+body[data-page="portfolio"] .pf-naambord dd{margin:0;font-size:14.5px;color:var(--hi)}
+body[data-page="portfolio"] .pf-nb-mono{font-family:var(--mono);font-size:12.5px!important;letter-spacing:.02em}
+body[data-page="portfolio"] .pf-nb-link{display:inline-flex;align-items:center;gap:7px;color:var(--hi);font-family:var(--mono);font-size:12.5px;text-decoration:none;
+  background:var(--uline) no-repeat 0 100%/100% 1px;padding-bottom:2px}
+body[data-page="portfolio"] .pf-naambord-logo{display:grid;place-items:center;width:132px;height:44px;border-radius:8px;overflow:hidden;background:#f5f3ee}
+body[data-page="portfolio"] .pf-naambord-logo img{display:block;width:132px;height:44px;object-fit:cover;object-position:center}
+body[data-page="portfolio"] .pf-naambord-logo.is-dark{width:auto;height:36px;background:none;border-radius:0;justify-items:start}
+body[data-page="portfolio"] .pf-naambord-logo.is-dark img{width:auto;height:36px;object-fit:contain}
+body[data-page="portfolio"] .pf-beats{margin:0}
+body[data-page="portfolio"] .pf-beats dt{margin-top:16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+body[data-page="portfolio"] .pf-beats dt:first-child{margin-top:0}
+body[data-page="portfolio"] .pf-beats dd{margin:6px 0 0;font-size:15.5px;line-height:1.6;color:var(--mid);max-width:52ch}
+body[data-page="portfolio"] .pf-ghost{display:inline-flex;align-items:center;gap:8px}
 
-/* donker logovlak, voor lichte logo's (Mett-U) */
-body[data-page="portfolio"] .pf-media.pf-logo.is-dark{
-  background:radial-gradient(120% 90% at 18% 0%,rgba(47,116,224,.16),transparent 60%),radial-gradient(120% 90% at 88% 100%,rgba(47,191,134,.14),transparent 60%),var(--ink-2);
+/* ---------------- ZAKEN 02 tot 04 ---------------- */
+body[data-page="portfolio"] .pf-zaak{padding:112px 0}
+body[data-page="portfolio"] .pf-zaak-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px 56px;align-items:start}
+body[data-page="portfolio"] .pf-zaak-venster{margin:0;min-width:0}
+body[data-page="portfolio"] .is-links .pf-zaak-venster{grid-column:1/8}
+body[data-page="portfolio"] .is-links .pf-zaak-tekst{grid-column:8/13}
+body[data-page="portfolio"] .is-rechts .pf-zaak-venster{grid-column:6/13}
+body[data-page="portfolio"] .is-rechts .pf-zaak-tekst{grid-column:1/6;grid-row:1}
+body[data-page="portfolio"] .pf-zaak-venster .pf-glas{max-width:none}
+body[data-page="portfolio"] .pf-onder{margin:12px 0 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--dim)}
+/* op een muis-toestel glijdt de lange pagina door het raam zodra je erover gaat */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  body[data-page="portfolio"] .pf-venster.is-stil .pf-lang{transition:transform 1.4s ease}
+  body[data-page="portfolio"] .pf-venster.is-stil:hover .pf-lang{transform:translate3d(0,var(--pf-d),0);transition:transform 9s linear}
 }
-body[data-page="portfolio"] .pf-media.pf-logo.is-dark img{max-width:360px}
+body[data-page="portfolio"] .pf-meet{grid-column:1/-1;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;margin:8px 0 0;padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--line)}
+body[data-page="portfolio"] .pf-meet div{padding:20px 18px;background:var(--ink)}
+body[data-page="portfolio"] .pf-meet dd{margin:0;font-weight:800;font-size:28px;letter-spacing:-.02em;line-height:1.1;color:var(--hi);font-variant-numeric:tabular-nums;white-space:nowrap}
+body[data-page="portfolio"] .pf-meet dt{margin-top:6px;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+body[data-page="portfolio"] .pf-meet-noot{grid-column:1/-1;margin:-24px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+body[data-page="portfolio"] .pf-citaat{grid-column:1/-1;max-width:820px;margin:0}
+body[data-page="portfolio"] .pf-citaat blockquote{position:relative;margin:0;padding-left:22px;font-size:22px;line-height:1.5;color:var(--hi)}
+body[data-page="portfolio"] .pf-citaat blockquote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;border-radius:2px;background:var(--uline)}
+body[data-page="portfolio"] .pf-citaat blockquote p{margin:0}
+body[data-page="portfolio"] .pf-citaat figcaption{margin:12px 0 0 22px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+body[data-page="portfolio"] .pf-zaak-link{grid-column:1/-1;margin-top:-8px}
+body[data-page="portfolio"] .pf-schema{display:flex;flex-wrap:wrap;align-items:center;gap:10px 0;margin:22px 0 0;font-family:var(--mono);font-size:12.5px;color:var(--hi)}
+body[data-page="portfolio"] .pf-schema span{padding:7px 12px;border:1px solid var(--line-2);border-radius:999px;white-space:nowrap}
+body[data-page="portfolio"] .pf-pijl{position:relative;flex:1 1 28px;min-width:28px;height:1px;background:var(--line-2)}
+body[data-page="portfolio"] .pf-pijl::after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid var(--faint);border-right:1px solid var(--faint);transform:rotate(45deg)}
+body[data-page="portfolio"] .pf-producten{margin:22px 0 0;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--hi)}
 
-/* monogram-tegel voor cases waar nog geen beeld van is */
-body[data-page="portfolio"] .pf-tile{
-  position:absolute;inset:0;display:grid;place-items:center;
-  background:
-    radial-gradient(120% 90% at 18% 0%,rgba(47,116,224,.20),transparent 60%),
-    radial-gradient(120% 90% at 88% 100%,rgba(47,191,134,.18),transparent 60%),
-    var(--ink-2);
-}
-body[data-page="portfolio"] .pf-mono{
-  font-weight:800;font-size:clamp(44px,6vw,68px);letter-spacing:-.05em;
-  color:var(--hi);opacity:.92;
-}
-body[data-page="portfolio"] .pf-flag{
-  position:absolute;left:18px;bottom:18px;
-  font-family:var(--mono);font-size:11.5px;color:var(--mid);
-  border:1px solid var(--line-2);padding:6px 11px;border-radius:999px;
-  background:rgba(0,0,0,.4);
-}
+/* ---------------- EERLIJK + CTA ---------------- */
+body[data-page="portfolio"] .pf-eerlijk{padding:0 0 96px}
+body[data-page="portfolio"] .pf-eerlijk-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding:18px 22px;border:1px solid var(--line);border-radius:16px;background:var(--glass-2)}
+body[data-page="portfolio"] .pf-eerlijk-in p{margin:0;font-size:15px;color:var(--hi)}
+body[data-page="portfolio"] .pf-eerlijk-in span{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+body[data-page="portfolio"] .cta-band .row .btn svg{width:14px;height:14px}
 
-body[data-page="portfolio"] .pf-body{padding:38px}
-body[data-page="portfolio"] .pf-meta{
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--acc);
-}
-body[data-page="portfolio"] .pf-name{
-  margin:10px 0 0;font-weight:800;letter-spacing:-.03em;
-  font-size:clamp(24px,2.7vw,32px);
-}
-body[data-page="portfolio"] .pf-desc{
-  color:var(--mid);font-size:15.5px;line-height:1.62;margin:14px 0 0;max-width:54ch;
-}
-body[data-page="portfolio"] .pf-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-body[data-page="portfolio"] .pf-tags span{
-  font-family:var(--mono);font-size:12px;color:var(--mid);
-  padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--glass-2);
-}
-body[data-page="portfolio"] .pf-stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
-  margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
-}
-body[data-page="portfolio"] .pf-stats .n{
-  font-weight:800;font-size:clamp(19px,2.1vw,25px);letter-spacing:-.02em;color:var(--hi);line-height:1;
-}
-body[data-page="portfolio"] .pf-stats .l{
-  font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:6px;line-height:1.35;
-}
-body[data-page="portfolio"] .pf-quote{
-  margin:26px 0 0;padding:16px 20px;border-left:2px solid var(--acc);
-  background:rgba(255,255,255,.025);border-radius:0 12px 12px 0;
-  font-size:15.5px;line-height:1.6;color:var(--hi);
-}
-body[data-page="portfolio"] .pf-link{
-  margin-top:22px;display:inline-flex;align-items:center;gap:8px;
-  font-family:var(--mono);font-size:12.5px;color:var(--acc);
-  border:1px solid var(--line-2);padding:9px 15px;border-radius:999px;
-  transition:border-color .25s ease,background .25s ease;
-}
-body[data-page="portfolio"] .pf-link:hover{border-color:var(--acc);background:var(--acc-soft)}
-body[data-page="portfolio"] .pf-link svg{width:13px;height:13px}
-
-body[data-page="portfolio"] .pf-quote cite{
-  display:block;margin-top:10px;font-style:normal;
-  font-family:var(--mono);font-size:11.5px;color:var(--dim);
+/* ---------------- MINDER BEWEGING ---------------- */
+@media (prefers-reduced-motion:reduce){
+  body[data-page="portfolio"] .pf-lang{animation:none!important;transform:none!important;transition:none!important}
+  body[data-page="portfolio"] .pf-bijschriften{position:static;display:grid;gap:6px;margin-top:14px;min-height:0}
+  body[data-page="portfolio"] .pf-bijschriften li{position:static;opacity:1;animation:none!important;padding:0;border:0;background:none;color:var(--mid)}
+  body[data-page="portfolio"] .pf-pauze{display:none}
+  body[data-page="portfolio"] .pf-spring a{transition:none}
+  html{scroll-behavior:auto}
 }
 
-@media (max-width:900px){
-  body[data-page="portfolio"] .pf-case{grid-template-columns:1fr}
-  body[data-page="portfolio"] .pf-case .pf-media{order:-1 !important;min-height:240px}
-  body[data-page="portfolio"] .pf-body{padding:28px 22px}
-  body[data-page="portfolio"] .pf-stats{grid-template-columns:1fr 1fr}
+/* ---------------- KLEINER ---------------- */
+@media (max-width:1100px){
+  body[data-page="portfolio"] .pf-hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  body[data-page="portfolio"] .pf-venster-blok{max-width:660px}
+  body[data-page="portfolio"] .pf-zaak{padding:88px 0}
+  body[data-page="portfolio"] .pf-zaak-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  body[data-page="portfolio"] .is-links .pf-zaak-venster,body[data-page="portfolio"] .is-rechts .pf-zaak-venster,
+  body[data-page="portfolio"] .is-links .pf-zaak-tekst,body[data-page="portfolio"] .is-rechts .pf-zaak-tekst{grid-column:1/-1;grid-row:auto}
+  body[data-page="portfolio"] .pf-zaak-venster{max-width:760px}
+  body[data-page="portfolio"] .pf-meet{grid-template-columns:repeat(3,minmax(0,1fr))}
+  body[data-page="portfolio"] .pf-voet-grid{grid-template-columns:minmax(0,1fr);gap:22px}
+}
+@media (max-width:760px){
+  body[data-page="portfolio"] .pf-hero{padding:56px 0 0}
+  body[data-page="portfolio"] .pf-hero-grid{gap:32px}
+  body[data-page="portfolio"] .pf-venster-blok{padding:0}
+  body[data-page="portfolio"] .pf-glas{aspect-ratio:3/4;border-radius:16px}
+  body[data-page="portfolio"] .pf-glas .pf-lang{--pf-s1:.22;--pf-s2:.5;--pf-s3:.78}
+  body[data-page="portfolio"] .pf-gsm{display:none}
+  body[data-page="portfolio"] .pf-bijschriften{right:16px}
+  body[data-page="portfolio"] .pf-venster-rij{gap:12px 16px;padding-right:0}
+  body[data-page="portfolio"] .pf-hero-voet{margin-top:40px;padding:24px 0 72px}
+  body[data-page="portfolio"] .pf-zaak{padding:64px 0}
+  body[data-page="portfolio"] .pf-zaak-venster .pf-glas{aspect-ratio:3/4}
+  body[data-page="portfolio"] .pf-meet{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body[data-page="portfolio"] .pf-meet dd{font-size:24px}
+  body[data-page="portfolio"] .pf-citaat blockquote{font-size:19px}
+  body[data-page="portfolio"] .pf-eerlijk{padding:0 0 64px}
+  body[data-page="portfolio"] .pf-naambord{padding:14px 16px}
 }
