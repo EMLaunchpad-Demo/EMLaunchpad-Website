@@ -897,8 +897,13 @@
       var b = brussels(), mins = b.h * 60 + b.m;
       nowEl.hidden = false; nowEl.style.left = (mins / 1440 * 100).toFixed(3) + '%';
       nowEl.firstChild.textContent = U.now + ' ' + pad(b.h) + ':' + pad(b.m);
+      // het label blijft binnen de tijdlijn (anders is de pagina 's avonds breder dan een smalle gsm)
+      var em = nowEl.firstChild, aw = nowEl.parentNode.clientWidth, x = mins / 1440 * aw, w = em.offsetWidth, sh = 0;
+      if (aw && w) { if (x - w / 2 < 0) sh = w / 2 - x; else if (x + w / 2 > aw) sh = aw - x - w / 2; }
+      em.style.transform = sh ? 'translateX(calc(-50% + ' + sh.toFixed(1) + 'px))' : '';
     }
-    tickNow(); setInterval(tickNow, 30000);
+    tickNow(); setInterval(tickNow, 30000); window.addEventListener('resize', tickNow);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(tickNow);
 
     mos.forEach(function (b, i) {
       var m = byId(b.getAttribute('data-mo'));

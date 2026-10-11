@@ -12,7 +12,7 @@ body[data-page="over_ons"] .ov-slash{
   font-family:var(--mono);font-weight:500;font-size:.62em;letter-spacing:0;
   color:var(--acc);margin-right:.35em;vertical-align:.12em;
 }
-body[data-page="over_ons"] .ov-sec{position:relative;padding:112px 0}
+body[data-page="over_ons"] .ov-sec{position:relative;padding:112px 0;overflow-x:clip}
 
 /* ─────────────────────────── HERO ─────────────────────────── */
 body[data-page="over_ons"] .ov-hero{position:relative;overflow:hidden;padding:84px 0 96px}
@@ -219,6 +219,15 @@ body[data-page="over_ons"] .ov-clients span{
   body[data-page="over_ons"] .ov-kpi{padding:14px 12px}
   body[data-page="over_ons"] .ov-notbut{padding:24px 22px}
   body[data-page="over_ons"] .ov-cases{padding-bottom:76px}
+}
+/* smalle gsm: de drie cijfers passen naast elkaar, op 320 px onder elkaar */
+@media (max-width:400px){
+  body[data-page="over_ons"] .ov-kpis{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  body[data-page="over_ons"] .ov-kpi{padding:14px 10px}
+  body[data-page="over_ons"] .ov-kpi b{font-size:20px}
+}
+@media (max-width:359px){
+  body[data-page="over_ons"] .ov-kpis{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:reduce){
   body[data-page="over_ons"] .ov-card,

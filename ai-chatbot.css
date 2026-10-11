@@ -227,7 +227,8 @@
 /* ─────────────────────────── RESPONSIEF ─────────────────────────── */
 @media (max-width:980px){
   .cb-hero{padding:44px 0 72px}
-  .cb-hero-grid,.cb-proof,.cb-price{grid-template-columns:1fr}
+  .cb-hero-grid,.cb-proof{grid-template-columns:1fr}
+  .cb-price{grid-template-columns:minmax(0,1fr)}
   .cb-inbox{justify-self:stretch;max-width:560px}
   .cb-stage{grid-template-columns:1fr}
   .cb-log{min-height:0}

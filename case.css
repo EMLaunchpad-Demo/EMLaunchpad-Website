@@ -37,7 +37,7 @@ body[data-page="case"] .cs-kpi .l{
 body[data-page="case"] .cs-kpi .sub{margin-top:6px;font-size:12.5px;color:var(--dim)}
 
 /* ---- secties ---- */
-body[data-page="case"] .cs-sec{padding:84px 0}
+body[data-page="case"] .cs-sec{padding:84px 0;overflow-x:clip}
 body[data-page="case"] .cs-sec.alt{background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 body[data-page="case"] .cs-head{max-width:720px;margin-bottom:40px}
 

@@ -267,7 +267,7 @@ body[data-skin="v2"] .ws-hero.is-js:not(.is-booked) .ws-h1 .grad{background-size
 .ws-res b{display:block;font-size:15px}
 .ws-res em{display:block;font-style:normal;font-size:12px;color:#2c6e3f}
 .ws-res span{display:block;margin-top:2px;font-size:12.5px;color:#55585e}
-.ws-res-b{display:flex;gap:6px;margin-top:8px}
+.ws-res-b{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .ws-res-b i{font-style:normal;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid #d6d6d6;color:#1a57b8}
 .ws-sms{max-width:230px}
 .ws-sms p{margin:6px 0 0;padding:9px 12px;border-radius:14px 14px 14px 4px;background:rgba(255,255,255,.08);font-size:14px}
@@ -531,5 +531,13 @@ body[data-tone="blauw"] .ws-stap{background:rgba(6,12,24,.3);border-top:1px soli
   .ws-steps{grid-template-columns:1fr;gap:18px}
   .ws-step{grid-template-columns:96px 1fr;column-gap:14px}
   .ws-sk{width:96px;height:64px;grid-row:1 / 4}
+}
+/* ─────────────── SMALLE GSM (320 px) ─────────────── */
+@media (max-width:359px){
+  .ws-prijs-grid{grid-template-columns:minmax(0,1fr)}
+  .ws-prijs-r{grid-template-columns:minmax(0,1fr);gap:52px}
+  .ws-mini{margin:0 auto}
+  .ws-lab{font-size:9px;letter-spacing:.08em}
+  .ws-labels{overflow-x:clip}
 }
 .ws-defs{position:absolute;width:0;height:0;overflow:hidden}
