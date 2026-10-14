@@ -1,5 +1,5 @@
 # HTML van de Portfolio-pagina ("Door het venster"). body(L, lang, pre) -> str
-# Het is blauw uur: bij vier zaken brandt het licht en je kijkt binnen. Het hero-venster
+# Het is blauw uur: bij vijf zaken brandt het licht en je kijkt binnen. Het hero-venster
 # laat de nieuwe amakhosi.be traag doorscrollen (pure CSS, pauzeerbaar via checkbox + label);
 # de andere zaken staan als open composities op de lichtlaag, elk met een naambordje.
 import html, re, os
@@ -112,7 +112,7 @@ def body(L, lang, pre):
 </header>
 '''
 
-    # ---------------- CASES 02 tot 04 ----------------
+    # ---------------- CASES 02 en verder ----------------
     secs = []
     for c in C[1:]:
         extra = ''

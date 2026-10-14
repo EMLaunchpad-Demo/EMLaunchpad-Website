@@ -12,7 +12,7 @@
       "bo": 0.4
     },
     {
-      "p": 0.24,
+      "p": 0.25,
       "ax": 24,
       "ay": 48,
       "bx": 84,
@@ -21,7 +21,7 @@
       "bo": 0.6
     },
     {
-      "p": 0.5,
+      "p": 0.44,
       "ax": 78,
       "ay": 50,
       "bx": 16,
@@ -30,13 +30,22 @@
       "bo": 0.6
     },
     {
-      "p": 0.74,
+      "p": 0.585,
       "ax": 24,
       "ay": 52,
       "bx": 80,
       "by": 62,
       "ao": 0.8,
       "bo": 0.9
+    },
+    {
+      "p": 0.735,
+      "ax": 78,
+      "ay": 50,
+      "bx": 18,
+      "by": 34,
+      "ao": 0.85,
+      "bo": 0.6
     },
     {
       "p": 1,
@@ -51,17 +60,17 @@
   "meta": {
     "title": "Portfolio : sites web et IA pour entreprises belges | EM Launchpad",
     "ogtitle": "Portfolio : de vraies entreprises, du vrai travail | EM Launchpad",
-    "desc": "Découvrez le travail d'EM Launchpad : le nouveau site d'Amakhosi Sauna, le système de rendez-vous de Clinic3D, et les sites de Mett-U VZW et 't Kleinhof. De vraies entreprises belges, de vrais résultats.",
+    "desc": "Découvrez le travail d'EM Launchpad : le nouveau site d'Amakhosi Sauna, le système de rendez-vous de Clinic3D, et les sites de Mett-U VZW, 't Kleinhof et Bambine. De vraies entreprises belges, de vrais résultats.",
     "service": "Travail d'EM Launchpad"
   },
   "hero": {
     "eyebrow": "Portfolio",
     "h1a": "De vraies entreprises.",
     "h1b": "Du vrai travail.",
-    "lede": "Quatre entreprises du Limbourg. Quatre sites web en ligne aujourd'hui. Regardez à l'intérieur, sur ordinateur et sur smartphone.",
+    "lede": "Cinq entreprises du Limbourg. Cinq sites web en ligne aujourd'hui. Regardez à l'intérieur, sur ordinateur et sur smartphone.",
     "spring_label": "Sur cette page",
     "feiten": [
-      "Hamont-Achel · Hasselt · Heers · Vechmaal",
+      "Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel",
       "Construit à Vechmaal · En ligne en général sous 14 jours"
     ],
     "glas_aria": "La page d'accueil d'amakhosi.be sur un ordinateur, telle qu'un visiteur la voit. L'image défile lentement de haut en bas.",
@@ -103,7 +112,7 @@
       "url": "https://amakhosi.be",
       "domein": "amakhosi.be",
       "index": [
-        "01 / 04",
+        "01 / 05",
         "Tout juste en ligne",
         "Hamont-Achel"
       ],
@@ -137,7 +146,7 @@
       "case": "Clinic3D",
       "side": "links",
       "index": [
-        "02 / 04",
+        "02 / 05",
         "Mesuré sur 263 jours",
         "Hasselt"
       ],
@@ -208,7 +217,7 @@
       "domein": "mett-u.be",
       "side": "rechts",
       "index": [
-        "03 / 04",
+        "03 / 05",
         "",
         "Heers"
       ],
@@ -253,7 +262,7 @@
       "domein": "kleinhof.be",
       "side": "links",
       "index": [
-        "04 / 04",
+        "04 / 05",
         "notre propre village",
         "Vechmaal"
       ],
@@ -285,15 +294,54 @@
         "Légumes",
         "Fruits"
       ]
+    },
+    {
+      "id": "bambine",
+      "slug": "bambine",
+      "naam": "Bambine",
+      "url": "https://bambine.be",
+      "domein": "bambine.be",
+      "side": "rechts",
+      "index": [
+        "05 / 05",
+        "",
+        "Lommel"
+      ],
+      "kop_a": "Un bain bien chaud,",
+      "kop_b": "réservé en ligne.",
+      "kort": "Nouveau site web pour le bien-être des bébés et les soins aux mamans à Lommel, avec le système de réservation et ses options, un bon cadeau numérique et des e-mails automatiques.",
+      "alt": "Page d'accueil de bambine.be : un bébé qui regarde sous une serviette blanche, avec le titre Een warm bad voor de allerkleinsten et les boutons Reserveer jullie moment et Bekijk de cadeaubonnen.",
+      "soort": "Bien-être pour bébés et soins pour mamans · Lommel · Ine",
+      "gemaakt": "Site web · Système de réservation avec options · Bon cadeau numérique · E-mails automatiques",
+      "logo": null,
+      "beats": [
+        [
+          "L'entreprise",
+          "Bien-être pour bébés, soins pour mamans et moments de détente dans la galerie Vivaldi à Lommel. Ine travaille en tête-à-tête."
+        ],
+        [
+          "Ce que nous avons réalisé",
+          "Un nouveau site web en or, brun clair et blanc, avec des images en arc et les tarifs présentés comme une carte. Avec le système de réservation et ses options, un bon cadeau numérique et des e-mails automatiques."
+        ],
+        [
+          "Ce qui a changé",
+          "Les parents réservent eux-mêmes un moment en ligne et peuvent y ajouter un extra, comme un petit moment de toilette. Un bon cadeau s'achète tout de suite en version numérique."
+        ]
+      ],
+      "producten": [
+        "Bien-être bébé",
+        "Maman & femme",
+        "Enfants"
+      ]
     }
   ],
   "eerlijk": {
-    "text": "Nous n'avons pas encore d'avis. Mais quatre entreprises où vous pouvez regarder vous-même.",
+    "text": "Nous n'avons pas encore d'avis. Mais cinq entreprises où vous pouvez regarder vous-même.",
     "sub": "Appel gratuit de 30 minutes · En ligne en général sous 14 jours"
   },
   "cta": {
     "h2a": "Votre entreprise sera-t-elle",
-    "h2b": "la cinquième ?",
+    "h2b": "la sixième ?",
     "text": "Réservez un appel gratuit de 30 minutes. Sans engagement. Votre site est en général en ligne sous 14 jours.",
     "btn": "Réserver un appel gratuit",
     "badges": [

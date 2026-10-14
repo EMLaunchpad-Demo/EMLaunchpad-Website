@@ -1,20 +1,20 @@
 {
   "lang": "nl",
   "tone": "blauw",
-  "skyKeys": [{"p": 0, "ax": 72, "ay": 40, "bx": 10, "by": 100, "ao": 0.95, "bo": 0.4}, {"p": 0.24, "ax": 24, "ay": 48, "bx": 84, "by": 72, "ao": 0.85, "bo": 0.6}, {"p": 0.5, "ax": 78, "ay": 50, "bx": 16, "by": 30, "ao": 0.85, "bo": 0.6}, {"p": 0.74, "ax": 24, "ay": 52, "bx": 80, "by": 62, "ao": 0.8, "bo": 0.9}, {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}],
+  "skyKeys": [{"p": 0, "ax": 72, "ay": 40, "bx": 10, "by": 100, "ao": 0.95, "bo": 0.4}, {"p": 0.25, "ax": 24, "ay": 48, "bx": 84, "by": 72, "ao": 0.85, "bo": 0.6}, {"p": 0.44, "ax": 78, "ay": 50, "bx": 16, "by": 30, "ao": 0.85, "bo": 0.6}, {"p": 0.585, "ax": 24, "ay": 52, "bx": 80, "by": 62, "ao": 0.8, "bo": 0.9}, {"p": 0.735, "ax": 78, "ay": 50, "bx": 18, "by": 34, "ao": 0.85, "bo": 0.6}, {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}],
   "meta": {
     "title": "Portfolio: websites en AI voor Belgische zaken | EM Launchpad",
     "ogtitle": "Portfolio: echte bedrijven, echt werk | EM Launchpad",
-    "desc": "Bekijk het werk van EM Launchpad: de nieuwe website van Amakhosi Sauna, het afsprakensysteem van Clinic3D, en de sites van Mett-U VZW en 't Kleinhof. Echte Belgische zaken, echte resultaten.",
+    "desc": "Bekijk het werk van EM Launchpad: de nieuwe website van Amakhosi Sauna, het afsprakensysteem van Clinic3D, en de sites van Mett-U VZW, 't Kleinhof en Bambine. Echte Belgische zaken, echte resultaten.",
     "service": "Werk van EM Launchpad"
   },
   "hero": {
     "eyebrow": "Portfolio",
     "h1a": "Echte bedrijven.",
     "h1b": "Echt werk.",
-    "lede": "Vier zaken uit Limburg. Vier websites die vandaag online staan. Kijk gerust binnen, op computer en op gsm.",
+    "lede": "Vijf zaken uit Limburg. Vijf websites die vandaag online staan. Kijk gerust binnen, op computer en op gsm.",
     "spring_label": "Op deze pagina",
-    "feiten": ["Hamont-Achel · Hasselt · Heers · Vechmaal", "Gebouwd in Vechmaal · Meestal live binnen 14 dagen"],
+    "feiten": ["Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel", "Gebouwd in Vechmaal · Meestal live binnen 14 dagen"],
     "glas_aria": "De startpagina van amakhosi.be op een computer, zoals een bezoeker ze ziet. Het beeld scrolt traag van boven naar onder.",
     "caps_label": "Wat je ziet",
     "caps": [
@@ -46,7 +46,7 @@
   "cases": [
     {
       "id": "amakhosi", "slug": "amakhosi2", "naam": "Amakhosi Sauna", "url": "https://amakhosi.be", "domein": "amakhosi.be",
-      "index": ["01 / 04", "Net live", "Hamont-Achel"],
+      "index": ["01 / 05", "Net live", "Hamont-Achel"],
       "kop_a": "Een privésauna die je", "kop_b": "online reserveert en betaalt.",
       "kort": "Nieuwe website voor een privésauna en wellness in Hamont-Achel, met online reserveren en betalen, mailflow en SEO.",
       "soort": "Privésauna en wellness · Hamont-Achel",
@@ -60,7 +60,7 @@
     },
     {
       "id": "clinic3d", "slug": "clinic3d", "naam": "Clinic3D", "url": "https://clinic3d.be", "domein": "clinic3d.be", "case": "Clinic3D", "side": "links",
-      "index": ["02 / 04", "Gemeten over 263 dagen", "Hasselt"],
+      "index": ["02 / 05", "Gemeten over 263 dagen", "Hasselt"],
       "kop_a": "Patiënten boeken", "kop_b": "zelf.",
       "kort": "Website, online agenda en mailflow voor een esthetische kliniek in Hasselt. Over 263 dagen: 650 van 681 afspraken bevestigd, 0 no-shows.",
       "alt": "Startpagina van clinic3d.be: een lichte site met de kop Natuurlijke schoonheid, wetenschappelijk onderbouwd, een foto van de arts aan de balie en de knop Boek je gratis consult.",
@@ -78,7 +78,7 @@
     },
     {
       "id": "mett-u", "slug": "mettu", "naam": "Mett-U VZW", "url": "https://mett-u.be", "domein": "mett-u.be", "side": "rechts",
-      "index": ["03 / 04", "", "Heers"],
+      "index": ["03 / 05", "", "Heers"],
       "kop_a": "Eén website,", "kop_b": "één CRM.",
       "kort": "Nieuwe website voor een vereniging in Heers, gekoppeld aan geautomatiseerde opvolging en een centraal CRM.",
       "alt": "Startpagina van mett-u.be: een groene kop VZW Mett-U met twee knoppen en een foto van vrijwilligers in de moestuin.",
@@ -94,7 +94,7 @@
     },
     {
       "id": "kleinhof", "slug": "kleinhof", "naam": "'t Kleinhof", "url": "https://kleinhof.be", "domein": "kleinhof.be", "side": "links",
-      "index": ["04 / 04", "ons eigen dorp", "Vechmaal"],
+      "index": ["04 / 05", "ons eigen dorp", "Vechmaal"],
       "kop_a": "Het verhaal van", "kop_b": "Liesbeth en Gert.",
       "kort": "Nieuwe website voor een bio- en zorgboerderij in Vechmaal, met hun verhaal en hun producten.",
       "alt": "Startpagina van kleinhof.be: een graanveld met de kop Biologisch kleinschalig en twee blokken Bio-boerderij en Zorg-boerderij.",
@@ -107,14 +107,30 @@
         ["Wat er nu anders is", "Wie hen zoekt, ziet meteen wie ze zijn en wat ze telen."]
       ],
       "producten": ["Eieren", "Aardappelen", "Vlees", "Groenten", "Fruit"]
+    },
+    {
+      "id": "bambine", "slug": "bambine", "naam": "Bambine", "url": "https://bambine.be", "domein": "bambine.be", "side": "rechts",
+      "index": ["05 / 05", "", "Lommel"],
+      "kop_a": "Een warm bad,", "kop_b": "online geboekt.",
+      "kort": "Nieuwe website voor babywellness en mamazorg in Lommel, met het boekingssysteem en add-ons, een digitale cadeaubon en automatische mails.",
+      "alt": "Startpagina van bambine.be: een baby gluurt van onder een witte handdoek, met de kop Een warm bad voor de allerkleinsten en de knoppen Reserveer jullie moment en Bekijk de cadeaubonnen.",
+      "soort": "Babywellness en mamazorg · Lommel · Ine",
+      "gemaakt": "Website · Boekingssysteem met add-ons · Digitale cadeaubon · Automatische mails",
+      "logo": null,
+      "beats": [
+        ["De zaak", "Babywellness, mamazorg en verwenmomenten in galerij Vivaldi in Lommel. Ine werkt er één op één."],
+        ["Wat we maakten", "Een nieuwe website in goud, lichtbruin en wit, met boogvormige beelden en de tarieven als menukaart. Daarbij het boekingssysteem met add-ons, een digitale cadeaubon en automatische mails."],
+        ["Wat er nu anders is", "Ouders boeken online zelf een moment en kunnen er een extra bij nemen, zoals een wasmomentje. Een cadeaubon koop je meteen digitaal."]
+      ],
+      "producten": ["Babywellness", "Mama & vrouw", "Kids"]
     }
   ],
   "eerlijk": {
-    "text": "Reviews hebben we nog niet. Wel vier zaken waar je zelf kunt binnenkijken.",
+    "text": "Reviews hebben we nog niet. Wel vijf zaken waar je zelf kunt binnenkijken.",
     "sub": "Gratis gesprek van 30 minuten · Meestal live binnen 14 dagen"
   },
   "cta": {
-    "h2a": "Wordt jouw zaak", "h2b": "de vijfde?",
+    "h2a": "Wordt jouw zaak", "h2b": "de zesde?",
     "text": "Plan een gratis gesprek van 30 minuten. Vrijblijvend. Meestal staat je site binnen 14 dagen live.",
     "btn": "Plan een gratis gesprek",
     "badges": ["Gratis en vrijblijvend", "30 minuten", "Meestal live binnen 14 dagen"]
