@@ -56,6 +56,11 @@
   "service": "Websites",
   "offer": "Included in the Digital Growth package"
  },
+ "crumbs": [
+  "Home",
+  "Services",
+  "Websites"
+ ],
  "hero": {
   "crumb_home": "Services",
   "crumb": "Websites",
@@ -225,7 +230,8 @@
    "flow": "boek",
    "foto": {
     "id": "photo-1585747860715-2ba37e788b70",
-    "pos": "50% 45%"
+    "pos": "50% 45%",
+    "alt": "Barbershop with three chairs, mirrors and warm lamps against a brick wall"
    },
    "pal": {
     "bg": "#211813",
@@ -259,7 +265,8 @@
    "flow": "boek",
    "foto": {
     "id": "photo-1519824145371-296894a0daa9",
-    "pos": "40% 50%"
+    "pos": "40% 50%",
+    "alt": "Physiotherapist massaging a patient's back and shoulder"
    },
    "pal": {
     "bg": "#16231f",
@@ -293,7 +300,8 @@
    "flow": "offerte",
    "foto": {
     "id": "photo-1702146713858-8e7d1cc29fe8",
-    "pos": "45% 55%"
+    "pos": "45% 55%",
+    "alt": "Mechanic working underneath a car on the lift"
    },
    "pal": {
     "bg": "#18191c",
@@ -327,7 +335,8 @@
    "flow": "boek",
    "foto": {
     "id": "photo-1570172619644-dfd03ed5d881",
-    "pos": "50% 40%"
+    "pos": "50% 40%",
+    "alt": "Facial treatment at a skin clinic: a mask is applied with a brush"
    },
    "pal": {
     "bg": "#efebe6",
@@ -622,7 +631,17 @@
     "href": "https://kleinhof.be"
    },
    {
-    "k": "WORK 05 · THIS SITE",
+    "k": "WORK 05 · LOMMEL",
+    "t": "Bambine",
+    "txt": "Baby wellness, care for mums and pampering moments in the Vivaldi gallery in Lommel. Ine works one on one.",
+    "txt2": "We built a new website in gold, light brown and white, with arched images and the prices laid out like a menu. Plus the booking system with add-ons, a digital gift card and automatic emails.",
+    "txt3": "Parents book a moment online themselves and can add an extra, such as a gentle wash. A gift card can be bought straight away in digital form.",
+    "wide": true,
+    "link": "Read the case",
+    "href": "Portfolio#bambine"
+   },
+   {
+    "k": "WORK 06 · THIS SITE",
     "t": "emlaunchpad.com",
     "txt": "Trilingual, statically built and fast. How fast is it for you? You can measure that below.",
     "link": "See the measurement",

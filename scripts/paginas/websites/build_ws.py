@@ -6,10 +6,12 @@ import io, re, json, html, sys, os
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20261011a', '20261002b'
+V_CSS, V_JS = '20261011a', '20261016a'
 V_SKIN = '20260925a'          # home-redesign.css
-V_FX = '20260925a'
+V_FX = '20261016a'
 FILE = 'Websites.html'
+PRELOAD = '<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>'
+UNSPLASH = '<link href="https://images.unsplash.com" rel="preconnect"/>'
 
 def esc(s):
     return html.escape(str(s), quote=False)
@@ -35,11 +37,10 @@ def head(L, lang, pre, s):
         hc = re.search(r'<link href="%shome\.css\?v=[0-9a-z]+" rel="stylesheet"/>\n' % re.escape(pre), hd)
         hd = hd[:hc.end()] + ('<link href="%shome-redesign.css?v=%s" rel="stylesheet"/>\n<link href="%swebsite.css?v=%s" rel="stylesheet"/>\n'
                               % (pre, V_SKIN, pre, V_CSS)) + hd[hc.end():]
-    # (optioneel) extra lettertype
-    if L.get('font') and L['font'] not in hd:
-        hd = hd.replace('family=JetBrains+Mono:wght@400;500;600&amp;display=swap', 'family=JetBrains+Mono:wght@400;500;600&amp;' + L['font'] + '&amp;display=swap')
-    if '<link href="https://images.unsplash.com" rel="preconnect"/>' not in hd:
-        hd = hd.replace('<link href="https://fonts.googleapis.com" rel="preconnect"/>', '<link href="https://images.unsplash.com" rel="preconnect"/>\n<link href="https://fonts.googleapis.com" rel="preconnect"/>')
+    # lettertypes: zelf gehost via @font-face in home.css (Caveat laadt vanzelf waar het gebruikt wordt);
+    # sneller naar de foto's: preconnect vóór de font-preload
+    if UNSPLASH not in hd:
+        hd = hd.replace(PRELOAD, UNSPLASH + '\n' + PRELOAD)
     # geen laadscherm op deze pagina: ze meet zichzelf, dus er mag niets kunstmatig tussen zitten
     if '<!-- LOADER -->' in hd:
         a0 = hd.index('<!-- LOADER -->')
@@ -58,12 +59,23 @@ def head(L, lang, pre, s):
     mm = re.search(r'(<script type="application/ld\+json">)(.*?)(</script>)', hd, re.S)
     data = json.loads(mm.group(2))
     base = 'https://emlaunchpad.com/' + ('' if lang == 'nl' else lang + '/') + 'Websites'
-    g = [x for x in data['@graph'] if x.get('@type') not in ('Service', 'FAQPage')]
-    g.append({'@type': 'Service', 'name': m['service'], 'serviceType': 'Web design', 'url': base,
-              'description': m['desc'], 'provider': {'@id': 'https://emlaunchpad.com/#business'},
+    site = 'https://emlaunchpad.com/'
+    home = site + ('' if lang == 'nl' else lang + '/')
+    g = [x for x in data['@graph'] if x.get('@type') not in ('Service', 'FAQPage', 'BreadcrumbList')]
+    # kruimelpad in de taal van de pagina (crumbs in de json), met de URL's van die taal
+    bc = L['crumbs']
+    g.append({'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': bc[0], 'item': home},
+        {'@type': 'ListItem', 'position': 2, 'name': bc[1], 'item': home + 'Diensten'},
+        {'@type': 'ListItem', 'position': 3, 'name': bc[2], 'item': base}]})
+    # dienst: eigen @id, aanbieder = het bedrijf (#business), prijs per maand excl. btw (patroon werkpakket/seo/schema-nl.json)
+    g.append({'@type': 'Service', '@id': base + '#service', 'name': m['service'], 'serviceType': 'Web design', 'url': base,
+              'description': m['desc'], 'provider': {'@id': site + '#business'},
               'areaServed': {'@type': 'Country', 'name': 'Belgium'},
-              'offers': {'@type': 'Offer', 'name': m['offer'], 'price': '150', 'priceCurrency': 'EUR',
-                         'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': '150', 'priceCurrency': 'EUR', 'unitCode': 'MON'}}})
+              'offers': {'@type': 'Offer', 'name': m['offer'], 'url': base + '#prijs', 'price': '150', 'priceCurrency': 'EUR',
+                         'eligibleRegion': {'@type': 'Country', 'name': 'BE'},
+                         'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': '150', 'priceCurrency': 'EUR', 'unitCode': 'MON',
+                                                'valueAddedTaxIncluded': False}}})
     g.append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': q['a']}}
                                                  for q in L['faq']['items']]})
     data['@graph'] = g
@@ -71,9 +83,9 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261002a"></script>
-<script src="{pre}i18n-pages.js?v=20260921a"></script>
-<script src="{pre}site.js?v=20261011a"></script>
+<script src="{pre}i18n.js?v=20261016a"></script>
+<script src="{pre}i18n-pages.js?v=20261016a"></script>
+<script src="{pre}site.js?v=20261016a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}website.js?v={V_JS}"></script>

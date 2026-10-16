@@ -28,7 +28,7 @@ IC = {
     'crm': '<circle cx="9" cy="8" r="3.2"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 8h4M17 12h4M18 16h3"></path>',
     'inbox': '<path d="M3 13h5l1.5 3h5L16 13h5"></path><path d="M5.5 5h13L21 13v6H3v-6z"></path>',
 }
-LOGO = {'agenda': 'assets/logos/google-agenda.svg', 'stripe': 'assets/logos/stripe.svg', 'google': 'assets/logos/google-bedrijfsprofiel.png'}
+LOGO = {'agenda': 'assets/logos/google-agenda.svg', 'stripe': 'assets/logos/stripe.svg', 'google': 'assets/logos/google-bedrijfsprofiel.webp'}
 
 def fill(s, v):
     return re.sub(r'\{(\w+)\}', lambda m: str(v.get(m.group(1), m.group(0))), s)

@@ -55,6 +55,11 @@
   "service": "AI-automatisering",
   "offer": "Inbegrepen in het pakket Digitale groei"
  },
+ "crumbs": [
+  "Home",
+  "Diensten",
+  "AI-automatisering"
+ ],
  "hero": {
   "crumb_home": "Diensten",
   "crumb": "AI-automatisering",
@@ -572,7 +577,7 @@
   "eyebrow": "Wat erin zit",
   "h2a": "Open het uurwerk.",
   "h2b": "Dit draait er allemaal in.",
-  "lede": "Zes onderdelen die samen draaien. Wij bouwen ze met n8n en in je platform, en we houden ze draaiende.",
+  "lede": "Zes onderdelen die samen draaien. Wij bouwen ze als slimme workflows in je platform, en we houden ze draaiende.",
   "parts": [
    {
     "w": 0,
@@ -746,7 +751,7 @@
    {
     "lab": "BOUWEN",
     "kop": "Wij bouwen de workflows",
-    "txt": "Met n8n en in je platform. Jij hoeft niets te bouwen of te koppelen."
+    "txt": "Slimme workflows in je platform. Jij hoeft niets te bouwen of te koppelen."
    },
    {
     "lab": "AFSTEMMEN",
@@ -786,8 +791,8 @@
     "a": "Het afsprakensysteem synchroniseert met Google Agenda. Betalen gaat online via Stripe, met Bancontact, iDEAL, Visa en Apple Pay. Na elke betaling vertrekt vanzelf een factuur."
    },
    {
-    "q": "Wat is n8n?",
-    "a": "Het werktuig waarmee wij je workflows bouwen. Jij hoeft het niet te kennen."
+    "q": "Wat is een slimme workflow?",
+    "a": "Een reeks stappen die vanzelf loopt zodra er iets gebeurt: een boeking, een betaling, een gemiste oproep. Wij bouwen en onderhouden ze in je platform. Jij hoeft er niets van te kennen."
    }
   ],
   "more_label": "Lees ook:",

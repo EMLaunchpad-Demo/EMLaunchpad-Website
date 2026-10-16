@@ -442,7 +442,7 @@
       var ul = mk('ul', 'am-tools');
       (tools || []).forEach(function (t) {
         var li = mk('li', 'am-tool'); li.setAttribute('data-t', t);
-        var logo = { agenda: 'google-agenda.svg', stripe: 'stripe.svg', google: 'google-bedrijfsprofiel.png' }[t];
+        var logo = { agenda: 'google-agenda.svg', stripe: 'stripe.svg', google: 'google-bedrijfsprofiel.webp' }[t];
         if (logo) { var im = mk('img'); im.alt = ''; im.width = 14; im.height = 14; im.decoding = 'async'; im.src = D.rel + 'assets/logos/' + logo; li.appendChild(im); }
         else li.appendChild(toolIcon(t));
         li.appendChild(mk('span', null, U.tools[t] || t));

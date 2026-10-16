@@ -25,15 +25,16 @@ def fill(s, v):
 def unsplash(pid, w=600):
     return 'https://images.unsplash.com/%s?auto=format&amp;fit=crop&amp;q=70&amp;w=%d' % (pid, w)
 
-def site(v, ui, cls=''):
-    """de voorbeeldsite (mock). Alle teksten hebben data-f, zodat JS ze per vak kan wisselen."""
+def site(v, ui, cls='', lazy=True):
+    """de voorbeeldsite (mock). Alle teksten hebben data-f, zodat JS ze per vak kan wisselen.
+    lazy=False voor de kopie in de hero (eerste scherm, anders komt de foto later binnen)."""
     p = v['pal']
     style = '--s-bg:%s;--s-ink:%s;--s-acc:%s;--s-line:%s;--s-card:%s' % (p['bg'], p['ink'], p['acc'], p['line'], p['card'])
     links = ''.join('<i>%s</i>' % esc(x) for x in v['links'])
     return f'''<div aria-hidden="true" class="ws-site{cls}" data-ws-site="" style="{style}">
 <div class="ws-s-nav" data-part="nav"><b class="ws-s-logo" data-f="naam" data-part="logo">{esc(v['naam'])}</b><span class="ws-s-links" data-f="links" data-part="links">{links}</span><span class="ws-s-tel"><i></i><span data-f="tel">{esc(v['tel'])}</span><em>{esc(ui['picks'])}</em></span><span class="ws-s-cta" data-f="cta" data-part="cta">{esc(v['cta'])}</span><span class="ws-s-burger" data-part="burger"><i></i><i></i><i></i></span></div>
 <div class="ws-s-hero"><div class="ws-s-copy"><b class="ws-s-title" data-f="titel" data-part="titel">{esc(v['titel'])}</b><span class="ws-s-sub" data-f="sub" data-part="sub">{esc(v['sub'])}</span><span class="ws-s-btn" data-f="cta" data-part="knop">{esc(v['cta'])}</span></div>
-<div class="ws-s-photo" data-part="foto"><img alt="" data-f="foto" decoding="async" height="390" src="{unsplash(v['foto']['id'])}" style="object-position:{v['foto']['pos']}" width="600"/></div></div>
+<div class="ws-s-photo" data-part="foto"><img alt="{attr(v['foto'].get('alt', ''))}" data-f="foto" decoding="async" height="390"{' loading="lazy"' if lazy else ''} src="{unsplash(v['foto']['id'])}" style="object-position:{v['foto']['pos']}" width="600"/></div></div>
 <div class="ws-s-row"><div class="ws-s-card" data-part="uren"><small>{esc(ui['hours_label'])}</small><b data-f="uren">{esc(v['uren'])}</b><em class="ws-s-closed">{esc(ui['closed'])}</em></div>
 <div class="ws-s-card" data-part="review"><small>{esc(ui['review_label'])}</small><b data-f="review">{esc(v['review'])}</b><em class="ws-s-ex">{esc(ui['example'])}</em></div>
 <div class="ws-s-card" data-part="adres"><small>{esc(ui['address_label'])}</small><b data-f="adres">{esc(v['adres'])}</b></div></div>
@@ -67,12 +68,13 @@ def body(L, lang, pre):
     pins_sr = ''.join('<li>%s</li>' % esc(p['t']) for p in wk['pins']['desk'])
     def card(c):
         nums = ''.join('<div><b>%s</b><span>%s</span></div>' % (esc(n[0]), esc(n[1])) for n in c.get('nums', []))
-        cls = ' is-wide' if c.get('nums') else (' is-site' if c.get('site') else '')
+        cls = ' is-wide' if (c.get('nums') or c.get('wide')) else (' is-site' if c.get('site') else '')
         logo = ''
         if c.get('logo'):
             lg = c['logo']
             logo = '<img alt="%s" class="ws-card-logo" decoding="async" height="%d" loading="lazy" src="%s" width="%d"/>' % (attr(lg['alt']), lg['h'], lg['src'], lg['w'])
         out = '<article class="ws-card%s">%s<p class="ws-card-k">%s</p><h3>%s</h3><p>%s</p>' % (cls, logo, esc(c['k']), esc(c['t']), esc(c['txt']))
+        out += ''.join('<p>%s</p>' % esc(c[k]) for k in ('txt2', 'txt3') if c.get(k))
         if nums: out += '<div class="ws-nums">%s</div><p class="ws-note-s">%s</p>' % (nums, esc(c['note']))
         if c.get('quote'): out += '<blockquote class="ws-quote"><p>“%s”</p><cite>%s</cite></blockquote>' % (esc(c['quote']), esc(c['cite']))
         if c.get('link'):
@@ -150,7 +152,7 @@ def body(L, lang, pre):
 <div aria-hidden="true" class="ws-ruler"><i></i><span data-ws-rulen="">1280 px</span><i></i></div>
 <div class="ws-stage" data-ws-stage="">
 <div class="ws-frame" data-ws-frame=""><div aria-hidden="true" class="ws-addr"><i></i><i></i><i></i><span data-f="domein">{esc(v0['domein'])}</span></div>
-<div class="ws-view" data-ws-view=""><div class="ws-scale" data-ws-scale="">{site(v0, u)}</div></div></div>
+<div class="ws-view" data-ws-view=""><div class="ws-scale" data-ws-scale="">{site(v0, u, lazy=False)}</div></div></div>
 </div>
 <div aria-hidden="true" class="ws-labels" data-ws-labels=""></div>
 <div aria-hidden="true" class="ws-notes" data-ws-notes=""></div>

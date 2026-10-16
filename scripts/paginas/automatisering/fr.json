@@ -55,6 +55,11 @@
   "service": "Automatisation IA",
   "offer": "Inclus dans le pack Croissance digitale"
  },
+ "crumbs": [
+  "Accueil",
+  "Services",
+  "Automatisation IA"
+ ],
  "hero": {
   "crumb_home": "Services",
   "crumb": "Automatisation IA",
@@ -572,7 +577,7 @@
   "eyebrow": "Ce qu'il y a dedans",
   "h2a": "Ouvrez le mécanisme.",
   "h2b": "Voici tout ce qui tourne à l'intérieur.",
-  "lede": "Six pièces qui tournent ensemble. Nous les construisons avec n8n et dans votre plateforme, et nous veillons à ce qu'elles continuent de tourner.",
+  "lede": "Six pièces qui tournent ensemble. Nous les construisons sous forme de workflows intelligents dans votre plateforme, et nous veillons à ce qu'elles continuent de tourner.",
   "parts": [
    {
     "w": 0,
@@ -746,7 +751,7 @@
    {
     "lab": "CRÉATION",
     "kop": "Nous construisons les workflows",
-    "txt": "Avec n8n et dans votre plateforme. Vous n'avez rien à construire ni à connecter."
+    "txt": "Des workflows intelligents dans votre plateforme. Vous n'avez rien à construire ni à connecter."
    },
    {
     "lab": "RÉGLAGE",
@@ -786,8 +791,8 @@
     "a": "La prise de rendez-vous en ligne se synchronise avec Google Agenda. Le paiement se fait en ligne via Stripe, avec Bancontact, iDEAL, Visa et Apple Pay. Après chaque paiement, une facture part toute seule."
    },
    {
-    "q": "C'est quoi, n8n ?",
-    "a": "L'outil avec lequel nous construisons vos workflows. Vous n'avez pas besoin de le connaître."
+    "q": "C'est quoi, un workflow intelligent ?",
+    "a": "Une série d'étapes qui se déroule toute seule dès que quelque chose se passe : une réservation, un paiement, un appel manqué. Nous les construisons et les entretenons dans votre plateforme. Vous n'avez pas besoin de vous y connaître."
    }
   ],
   "more_label": "À lire aussi (en néerlandais) :",

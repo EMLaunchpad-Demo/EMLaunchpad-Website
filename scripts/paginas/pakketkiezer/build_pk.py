@@ -9,7 +9,9 @@ R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..
 HERE = os.path.dirname(os.path.abspath(__file__))
 V_CSS, V_JS = '20261002a', '20261002a'
 V_SKIN = '20260925a'          # home-redesign.css
-V_FX = '20260925a'
+V_FX = '20261016a'
+PRELOAD = '<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>'
+UNSPLASH = '<link href="https://images.unsplash.com" rel="preconnect"/>'
 FILE = 'Pakketkiezer.html'
 SLUG = 'Pakketkiezer'
 SEED = 'AI-Automatisering.html'
@@ -51,13 +53,9 @@ def head(L, lang, pre, s):
         hc = re.search(r'<link href="%shome\.css\?v=[0-9a-z]+" rel="stylesheet"/>\n' % re.escape(pre), hd)
         hd = hd[:hc.end()] + ('<link href="%shome-redesign.css?v=%s" rel="stylesheet"/>\n<link href="%spakketkiezer.css?v=%s" rel="stylesheet"/>\n'
                               % (pre, V_SKIN, pre, V_CSS)) + hd[hc.end():]
-    # lettertypes: enkel wat deze pagina gebruikt (Caveat alleen als de json erom vraagt)
-    if not L.get('font'):
-        hd = hd.replace('&amp;family=Caveat:wght@600', '')
-    elif L['font'] not in hd:
-        hd = hd.replace('family=JetBrains+Mono:wght@400;500;600&amp;display=swap', 'family=JetBrains+Mono:wght@400;500;600&amp;' + L['font'] + '&amp;display=swap')
-    if L.get('photos') and '<link href="https://images.unsplash.com" rel="preconnect"/>' not in hd:
-        hd = hd.replace('<link href="https://fonts.googleapis.com" rel="preconnect"/>', '<link href="https://images.unsplash.com" rel="preconnect"/>\n<link href="https://fonts.googleapis.com" rel="preconnect"/>')
+    # lettertypes: zelf gehost via @font-face in home.css (Caveat laadt vanzelf waar het gebruikt wordt)
+    if L.get('photos') and UNSPLASH not in hd:
+        hd = hd.replace(PRELOAD, UNSPLASH + '\n' + PRELOAD)
     if not L.get('photos'):
         hd = hd.replace('<link href="https://images.unsplash.com" rel="preconnect"/>\n', '')
     # geen laadscherm: de kiezer moet meteen aantikbaar zijn
@@ -97,13 +95,12 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261002a"></script>
-<script src="{pre}i18n-pages.js?v=20260921a"></script>
-<script src="{pre}site.js?v=20261011a"></script>
+<script src="{pre}i18n.js?v=20261016a"></script>
+<script src="{pre}i18n-pages.js?v=20261016a"></script>
+<script src="{pre}site.js?v=20261016a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}pakketkiezer.js?v={V_JS}"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="685bcf1cc6f0443168b1c35c"></script>
 </body>
 </html>
 '''

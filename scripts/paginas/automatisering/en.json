@@ -55,6 +55,11 @@
   "service": "AI automation",
   "offer": "Included in the Digital Growth package"
  },
+ "crumbs": [
+  "Home",
+  "Services",
+  "AI automation"
+ ],
  "hero": {
   "crumb_home": "Services",
   "crumb": "AI automation",
@@ -572,7 +577,7 @@
   "eyebrow": "What's inside",
   "h2a": "Open up the clockwork.",
   "h2b": "Here's everything that turns inside.",
-  "lede": "Six parts that turn together. We build them with n8n and in your platform, and we keep them running.",
+  "lede": "Six parts that turn together. We build them as smart workflows in your platform, and we keep them running.",
   "parts": [
    {
     "w": 0,
@@ -746,7 +751,7 @@
    {
     "lab": "BUILD",
     "kop": "We build the workflows",
-    "txt": "With n8n and in your platform. You don't have to build or connect anything."
+    "txt": "Smart workflows in your platform. You don't have to build or connect anything."
    },
    {
     "lab": "FINE-TUNE",
@@ -786,8 +791,8 @@
     "a": "The booking system syncs with Google Calendar. Payments are made online through Stripe, with Bancontact, iDEAL, Visa and Apple Pay. After every payment, an invoice goes out by itself."
    },
    {
-    "q": "What is n8n?",
-    "a": "The tool we use to build your workflows. You don't need to know it."
+    "q": "What is a smart workflow?",
+    "a": "A series of steps that runs by itself as soon as something happens: a booking, a payment, a missed call. We build and maintain them in your platform. You don't need to know anything about it."
    }
   ],
   "more_label": "Also read (in Dutch):",

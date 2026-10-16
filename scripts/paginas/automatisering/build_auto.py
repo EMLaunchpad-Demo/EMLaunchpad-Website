@@ -6,9 +6,11 @@ import io, re, json, html, sys, os
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20260926a', '20260926a'
+V_CSS, V_JS = '20260926a', '20261016a'
 V_SKIN = '20260925a'          # home-redesign.css
-V_FX = '20260925a'
+V_FX = '20261016a'
+PRELOAD = '<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>'
+UNSPLASH = '<link href="https://images.unsplash.com" rel="preconnect"/>'
 FILE = 'AI-Automatisering.html'
 
 def esc(s):
@@ -35,12 +37,10 @@ def head(L, lang, pre, s):
         hc = re.search(r'<link href="%shome\.css\?v=[0-9a-z]+" rel="stylesheet"/>\n' % re.escape(pre), hd)
         hd = hd[:hc.end()] + ('<link href="%shome-redesign.css?v=%s" rel="stylesheet"/>\n<link href="%sautomatisering.css?v=%s" rel="stylesheet"/>\n'
                               % (pre, V_SKIN, pre, V_CSS)) + hd[hc.end():]
-    # lettertype voor het briefje (Caveat) en sneller naar de foto's
-    if 'family=Caveat' not in hd:
-        hd = hd.replace('family=JetBrains+Mono:wght@400;500;600&amp;display=swap', 'family=JetBrains+Mono:wght@400;500;600&amp;family=Caveat:wght@600&amp;display=swap')
-        assert 'family=Caveat' in hd
-    if '<link href="https://images.unsplash.com" rel="preconnect"/>' not in hd:
-        hd = hd.replace('<link href="https://fonts.googleapis.com" rel="preconnect"/>', '<link href="https://images.unsplash.com" rel="preconnect"/>\n<link href="https://fonts.googleapis.com" rel="preconnect"/>')
+    # lettertypes: zelf gehost via @font-face in home.css (Caveat voor het briefje laadt vanzelf waar het gebruikt wordt);
+    # sneller naar de foto's: preconnect vóór de font-preload
+    if UNSPLASH not in hd:
+        hd = hd.replace(PRELOAD, UNSPLASH + '\n' + PRELOAD)
     # body: v2-skin (+ eventueel toon), zonder dubbele attributen bij herbouwen
     tone = L.get('tone')
     body_tag = '<body data-page="diensten" data-skin="v2"%s>' % (' data-tone="%s"' % tone if tone else '')
@@ -54,12 +54,23 @@ def head(L, lang, pre, s):
     mm = re.search(r'(<script type="application/ld\+json">)(.*?)(</script>)', hd, re.S)
     data = json.loads(mm.group(2))
     base = 'https://emlaunchpad.com/' + ('' if lang == 'nl' else lang + '/') + 'AI-Automatisering'
-    g = [x for x in data['@graph'] if x.get('@type') not in ('Service', 'FAQPage')]
-    g.append({'@type': 'Service', 'name': m['service'], 'serviceType': 'Business process automation', 'url': base,
-              'description': m['desc'], 'provider': {'@id': 'https://emlaunchpad.com/#business'},
+    site = 'https://emlaunchpad.com/'
+    home = site + ('' if lang == 'nl' else lang + '/')
+    g = [x for x in data['@graph'] if x.get('@type') not in ('Service', 'FAQPage', 'BreadcrumbList')]
+    # kruimelpad in de taal van de pagina (crumbs in de json), met de URL's van die taal
+    bc = L['crumbs']
+    g.append({'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': bc[0], 'item': home},
+        {'@type': 'ListItem', 'position': 2, 'name': bc[1], 'item': home + 'Diensten'},
+        {'@type': 'ListItem', 'position': 3, 'name': bc[2], 'item': base}]})
+    # dienst: eigen @id, aanbieder = het bedrijf (#business), prijs per maand excl. btw (patroon werkpakket/seo/schema-nl.json)
+    g.append({'@type': 'Service', '@id': base + '#service', 'name': m['service'], 'serviceType': 'Business process automation', 'url': base,
+              'description': m['desc'], 'provider': {'@id': site + '#business'},
               'areaServed': {'@type': 'Country', 'name': 'Belgium'},
-              'offers': {'@type': 'Offer', 'name': m['offer'], 'price': '150', 'priceCurrency': 'EUR',
-                         'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': '150', 'priceCurrency': 'EUR', 'unitCode': 'MON'}}})
+              'offers': {'@type': 'Offer', 'name': m['offer'], 'url': base + '#prijs', 'price': '150', 'priceCurrency': 'EUR',
+                         'eligibleRegion': {'@type': 'Country', 'name': 'BE'},
+                         'priceSpecification': {'@type': 'UnitPriceSpecification', 'price': '150', 'priceCurrency': 'EUR', 'unitCode': 'MON',
+                                                'valueAddedTaxIncluded': False}}})
     g.append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': q['a']}}
                                                  for q in L['faq']['items']]})
     data['@graph'] = g
@@ -67,13 +78,12 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261002a"></script>
-<script src="{pre}i18n-pages.js?v=20260921a"></script>
-<script src="{pre}site.js?v=20261011a"></script>
+<script src="{pre}i18n.js?v=20261016a"></script>
+<script src="{pre}i18n-pages.js?v=20261016a"></script>
+<script src="{pre}site.js?v=20261016a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}automatisering.js?v={V_JS}"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="685bcf1cc6f0443168b1c35c"></script>
 </body>
 </html>
 '''

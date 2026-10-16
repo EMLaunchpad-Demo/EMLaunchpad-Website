@@ -9,7 +9,7 @@ R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..
 HERE = os.path.dirname(os.path.abspath(__file__))
 V_CSS, V_JS = '20261007a', '20261007a'
 V_SKIN = '20260925a'          # home-redesign.css
-V_FX = '20260925a'
+V_FX = '20261016a'
 FILE = 'Portfolio.html'
 SITE = 'https://emlaunchpad.com/'
 
@@ -37,8 +37,6 @@ def head(L, lang, pre, s):
         hd = hd[:hc.end()] + '<link href="%sportfolio.css?v=%s" rel="stylesheet"/>\n' % (pre, V_CSS) + hd[hc.end():]
     hd = re.sub(r'home-redesign\.css\?v=[0-9a-z]+', 'home-redesign.css?v=' + V_SKIN, hd)
     # (optioneel) extra lettertype
-    if L.get('font') and L['font'] not in hd:
-        hd = hd.replace('family=JetBrains+Mono:wght@400;500;600&amp;display=swap', 'family=JetBrains+Mono:wght@400;500;600&amp;' + L['font'] + '&amp;display=swap')
     # body: v2-skin met de blauwe toon van de homepage, zonder dubbele attributen bij herbouwen
     tone = L.get('tone')
     body_tag = '<body data-page="portfolio" data-skin="v2"%s>' % (' data-tone="%s"' % tone if tone else '')
@@ -67,13 +65,12 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261002a"></script>
-<script src="{pre}i18n-pages.js?v=20260921a"></script>
-<script src="{pre}site.js?v=20261011a"></script>
+<script src="{pre}i18n.js?v=20261016a"></script>
+<script src="{pre}i18n-pages.js?v=20261016a"></script>
+<script src="{pre}site.js?v=20261016a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}portfolio.js?v={V_JS}"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="685bcf1cc6f0443168b1c35c"></script>
 </body>
 </html>
 '''
