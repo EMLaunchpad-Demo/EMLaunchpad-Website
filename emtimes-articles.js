@@ -3,7 +3,7 @@
    Nieuwste bovenaan. 'path' en 'img' zijn relatief t.o.v. de site-root. */
 window.ET_ARTICLES = [
   {
-    title: "Google Bedrijfsprofiel optimaliseren: de complete gids voor lokale bedrijven",
+    title: "Google Bedrijfsprofiel optimaliseren: de complete gids",
     excerpt: "Stap voor stap je Google-profiel in orde: categorie, openingsuren, foto's, diensten en reviews, zodat klanten in je regio jou als eerste vinden.",
     desc: "Google Bedrijfsprofiel optimaliseren in gewone taal: categorie, openingsuren, foto's, diensten en reviews. Zo vinden klanten in je regio jou als eerste.",
     topic: "Groei · Google",
@@ -17,7 +17,7 @@ window.ET_ARTICLES = [
     tags: ["google bedrijfsprofiel","google my business","google business profile","google maps","lokale seo","vindbaarheid","reviews","openingsuren","zichtbaarheid","gids","kmo","lokaal"]
   },
   {
-    title: "Wat is een AI-chatbot? Uitleg in gewone taal voor ondernemers",
+    title: "Wat is een AI-chatbot? Uitleg voor ondernemers",
     excerpt: "Wat een AI-chatbot is, hoe hij met jouw bedrijfsinfo werkt, wat hij wel en niet kan en wanneer het loont voor je zaak. Zonder technisch jargon.",
     desc: "Wat is een AI-chatbot? Heldere uitleg voor ondernemers: hoe een chatbot met je eigen bedrijfsinfo werkt, wat hij kan, wat niet en wanneer het loont.",
     topic: "AI · Chatbots",
@@ -31,7 +31,7 @@ window.ET_ARTICLES = [
     tags: ["chatbot","ai-chatbot","wat is een chatbot","ai","klantcontact","kennisbank","uitleg","24/7","website","whatsapp","kmo","lokaal"]
   },
   {
-    title: "Wat kost een website laten maken in België? Zo zit de prijs in elkaar",
+    title: "Wat kost een website laten maken in België?",
     excerpt: "Waarom prijzen zo ver uit elkaar liggen, eenmalig of per maand betalen, welke kosten terugkomen en waar je op let bij het vergelijken van offertes.",
     desc: "Wat kost een website laten maken in België? Waarom prijzen verschillen, eenmalig of per maand betalen, verborgen kosten en hoe je offertes goed vergelijkt.",
     topic: "Websites · Prijzen",
@@ -45,7 +45,7 @@ window.ET_ARTICLES = [
     tags: ["website laten maken","prijs website","kostprijs","website kosten","offerte","webdesign","hosting","onderhoud","abonnement","belgië","kmo","lokaal"]
   },
   {
-    title: "No-shows verminderen: zo werken automatische afspraakherinneringen",
+    title: "No-shows verminderen met automatische afspraakherinneringen",
     excerpt: "Lege plekken in je agenda kosten geld. Zo verminder je no-shows met automatische herinneringen via sms, e-mail of WhatsApp en makkelijk verplaatsen.",
     desc: "No-shows verminderen met automatische afspraakherinneringen: sms, e-mail of WhatsApp, het juiste moment en hoe klanten verplaatsen in plaats van wegblijven.",
     topic: "Automatisering · Afspraken",
@@ -59,7 +59,7 @@ window.ET_ARTICLES = [
     tags: ["no-shows","afspraken","herinneringen","sms","afsprakensysteem","agenda","online boeken","automatisering","kapper","praktijk","kmo","lokaal"]
   },
   {
-    title: "Meer Google-reviews krijgen: zo vraag je ze zonder opdringerig te zijn",
+    title: "Meer Google-reviews krijgen zonder opdringerig te zijn",
     excerpt: "Hoe je meer echte Google-reviews krijgt: het juiste moment, een directe link, een automatisch verzoek en een antwoord op elke review. Binnen de regels.",
     desc: "Meer Google-reviews krijgen zonder opdringerig te zijn: wanneer en hoe je het vraagt, wat Google niet toestaat en hoe je op elke review goed antwoordt.",
     topic: "Groei · Reviews",
@@ -73,7 +73,7 @@ window.ET_ARTICLES = [
     tags: ["google reviews","reviews","recensies","reputatie","beoordelingen","review vragen","google bedrijfsprofiel","lokale seo","klanttevredenheid","kmo","lokaal"]
   },
   {
-    title: "AI voor kleine bedrijven: 7 toepassingen die je vandaag al kunt gebruiken",
+    title: "AI voor kleine bedrijven: 7 toepassingen voor vandaag",
     excerpt: "Zeven concrete manieren waarop een kleine zaak AI vandaag al inzet: klantvragen, telefoon, afspraken, opvolging, teksten, reviews en administratie.",
     desc: "AI voor kleine bedrijven: 7 praktische toepassingen die je vandaag al kunt gebruiken, van klantvragen en telefoon tot opvolging en teksten. En waar je op let.",
     topic: "AI · Praktijk",
@@ -87,7 +87,7 @@ window.ET_ARTICLES = [
     tags: ["ai","kleine bedrijven","kmo","toepassingen","chatbot","voice agent","automatisering","productiviteit","ai-verordening","privacy","zelfstandige","lokaal"]
   },
   {
-    title: "Lokale SEO: zo kom je hoger in Google Maps in je eigen regio",
+    title: "Lokale SEO: hoger in Google Maps in je eigen regio",
     excerpt: "Hoger in Google Maps in je regio: begin bij je Bedrijfsprofiel, gebruik overal dezelfde gegevens, maak je site lokaal relevant en verzamel reviews.",
     desc: "Lokale SEO uitgelegd: zo kom je hoger in Google Maps en de lokale zoekresultaten met je Bedrijfsprofiel, correcte gegevens, een lokale website en reviews.",
     topic: "Groei · Lokale SEO",
@@ -101,7 +101,7 @@ window.ET_ARTICLES = [
     tags: ["lokale seo","google maps","seo","vindbaarheid","google bedrijfsprofiel","in de buurt","regio","reviews","nap","zoekmachine","kmo","lokaal"]
   },
   {
-    title: "Website voor je lokale zaak: 10 dingen die er zeker op moeten",
+    title: "Website voor je lokale zaak: 10 dingen die erop moeten",
     excerpt: "Tien onderdelen die elke website van een lokale zaak nodig heeft, van een klikbaar telefoonnummer en online boeken tot snelheid en privacy.",
     desc: "Website voor je lokale zaak: 10 dingen die er zeker op moeten, van een klikbaar telefoonnummer en online boeken tot snelheid, SEO-basis en privacy.",
     topic: "Websites · Checklist",
@@ -115,7 +115,7 @@ window.ET_ARTICLES = [
     tags: ["website","checklist","lokale zaak","webdesign","conversie","mobiel","seo","privacy","cookies","online boeken","kmo","lokaal"]
   },
   {
-    title: "Leads automatisch opvolgen: nooit meer een aanvraag die tussen de plooien valt",
+    title: "Leads automatisch opvolgen: nooit meer een aanvraag kwijt",
     excerpt: "Aanvragen, gemiste oproepen en offertes die blijven liggen: zo zet je een eenvoudig systeem op dat elke lead snel en automatisch opvolgt.",
     desc: "Leads automatisch opvolgen: reageer meteen, vang gemiste oproepen op, breng al je kanalen samen en volg offertes op zodat geen aanvraag meer verloren gaat.",
     topic: "Automatisering · Opvolging",
@@ -129,7 +129,7 @@ window.ET_ARTICLES = [
     tags: ["leads","opvolging","offertes","crm","gemiste oproepen","sms","automatisering","verkoop","inbox","klantcontact","kmo","lokaal"]
   },
   {
-    title: "ChatGPT of een eigen AI-chatbot op je website: wat is het verschil?",
+    title: "ChatGPT of een eigen AI-chatbot: wat is het verschil?",
     excerpt: "Beide draaien op een taalmodel, maar ze doen iets heel anders. Het verschil in kennis, plaats, acties en controle, en wanneer je welke gebruikt.",
     desc: "ChatGPT of een eigen AI-chatbot op je website? Het verschil in kennis, acties, controle en privacy, waar ChatGPT sterk in is en wanneer een eigen chatbot loont.",
     topic: "AI · Chatbots",
@@ -199,9 +199,9 @@ window.ET_ARTICLES = [
     tags: ["website","snelheid","traag","laadtijd","seo","conversie","google","hosting","afbeeldingen","caching","vindbaarheid","mobiel","kmo","lokaal"]
   },
   {
-    title: "Waarom AI-chatbots werken voor lokale Belgische bedrijven",
+    title: "Waarom AI-chatbots werken voor Belgische bedrijven",
     excerpt: "Van gemiste telefoontjes naar geboekte afspraken: hoe een chatbot je klantcontact overneemt zonder dat het onpersoonlijk wordt — met concrete cijfers.",
-    desc: "Ontdek waarom AI-chatbots zo goed werken voor lokale Belgische bedrijven: minder gemiste leads, 24/7 bereikbaarheid en meer geboekte afspraken — met concrete cijfers en voorbeelden.",
+    desc: "Ontdek waarom AI-chatbots zo goed werken voor Belgische bedrijven: minder gemiste leads, 24/7 bereikbaarheid en meer geboekte afspraken — met concrete cijfers en voorbeelden.",
     topic: "AI · Chatbots",
     topicKey: "ai",
     path: "emtimes/ai/waarom-ai-chatbots-werken-voor-lokale-bedrijven/",

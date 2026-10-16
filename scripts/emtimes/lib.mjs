@@ -184,9 +184,7 @@ function page({ R, V, title, desc, canonical, ogType = "website", ogImage, jsonl
 <meta content="${esc(title)}" name="twitter:title"/>
 <meta content="${esc(desc)}" name="twitter:description"/>
 <meta content="${img}" name="twitter:image"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link href="${R}home.css?v=${V.homeCss}" rel="stylesheet"/>
 <link href="${R}home-redesign.css?v=${V.redesignCss}" rel="stylesheet"/>
 <link href="${R}emtimes.css?v=${V.etCss}" rel="stylesheet"/>
@@ -201,7 +199,6 @@ ${main}
 <script src="${R}stars.js?v=${V.starsJs}"></script>
 <script src="${R}emtimes-articles.js?v=${V.etIdx}"></script>
 <script src="${R}emtimes.js?v=${V.etJs}"></script>
-<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="685bcf1cc6f0443168b1c35c"></script>
 </body>
 </html>
 `;
@@ -283,8 +280,8 @@ const ctaBand = (R) => `<section class="cta-band emt-cta">
 <div class="wrap">
 <div class="cta-inner" data-reveal="">
 <h2>Klaar om AI voor jóú <span class="grad">te laten werken?</span></h2>
-<p class="lead">Plan een gratis kennismakingsgesprek van 30 minuten. We bekijken samen welke systemen jouw bedrijf tijd en klanten opleveren. Geen verplichtingen, geen sales-druk.</p>
-<div class="row"><a class="btn" data-book="" href="${R}Contact">Plan je gratis gesprek ${ARROW}</a><a class="btn-ghost" href="${R}Diensten">Bekijk onze diensten</a></div>
+<p class="lead">Vraag een gratis demo aan: 30 minuten via Teams of telefoon. We bekijken samen welke systemen jouw bedrijf tijd en klanten opleveren. Geen verplichtingen, geen sales-druk.</p>
+<div class="row"><a class="btn" data-book="" href="${R}Contact">Plan een gratis demo ${ARROW}</a><a class="btn-ghost" href="${R}Diensten">Bekijk onze diensten</a></div>
 <div class="badges">
 <span>Gratis en vrijblijvend</span>
 <span>30 minuten</span>
@@ -312,15 +309,23 @@ ${rest.map((a) => cardHtml(a, R)).join("\n")}
 
 const countsOf = (arts) => Object.fromEntries(CATEGORIES.map((c) => [c.key, arts.filter((a) => a.topicKey === c.key).length]));
 const breadcrumbLd = (items) => ({ "@type": "BreadcrumbList", itemListElement: items.map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })) });
+/* Organization-knoop: staat in elke @graph, zodat author/publisher ({"@id": ".../#organization"}) op de pagina zelf oplosbaar zijn.
+   Zelfde @id en gegevens als het #organization-blok op de homepage. */
+const ORG_ID = `${SITE}/#organization`;
+const organizationLd = () => ({ "@type": "Organization", "@id": ORG_ID, name: "EM Launchpad", url: `${SITE}/`,
+  logo: { "@type": "ImageObject", url: `${SITE}/assets/logo-em.png` },
+  sameAs: ["https://www.linkedin.com/company/em-launchpad/", "https://be.linkedin.com/in/ebert-vanbrabant-077b5326a", "https://www.instagram.com/em_launchpad/", "https://www.youtube.com/@emlaunchpad", "https://www.facebook.com/profile.php?id=61564020189008"],
+  contactPoint: { "@type": "ContactPoint", email: "ebert@emlaunchpad.com", contactType: "customer service", areaServed: "BE", availableLanguage: ["nl", "fr", "en"] } });
 
 /* ── pagina's ────────────────────────────────────────────────────────── */
 export function hubPage(arts, V) {
   const R = "../", counts = countsOf(arts);
   const jsonld = { "@context": "https://schema.org", "@graph": [
+    organizationLd(),
     { "@type": "Blog", "@id": `${SITE}/emtimes/#blog`, name: "EM Times", url: `${SITE}/emtimes/`,
       description: "Kennishub van EM Launchpad over AI, automatisatie en websites voor Belgische bedrijven.", inLanguage: "nl-BE",
-      publisher: { "@id": `${SITE}/#organization` },
-      blogPost: arts.map((a) => ({ "@type": "BlogPosting", headline: a.title, url: `${SITE}/${a.path}`, datePublished: a.iso, image: `${SITE}/${a.img}`, author: { "@id": `${SITE}/#organization` } })) },
+      publisher: { "@id": ORG_ID },
+      blogPost: arts.map((a) => ({ "@type": "BlogPosting", headline: a.title, url: `${SITE}/${a.path}`, datePublished: a.iso, image: `${SITE}/${a.img}`, author: { "@id": ORG_ID } })) },
     breadcrumbLd([["Home", `${SITE}/`], ["EM Times", `${SITE}/emtimes/`]]),
   ] };
   const main = `<header class="emt-hero" id="main" tabindex="-1">
@@ -348,8 +353,9 @@ ${ctaBand(R)}
 export function categoryPage(c, list, arts, V) {
   const R = "../../", counts = countsOf(arts), url = `${SITE}/emtimes/${c.dir}/`;
   const jsonld = { "@context": "https://schema.org", "@graph": [
+    organizationLd(),
     { "@type": "CollectionPage", "@id": `${url}#page`, name: `${c.name} — EM Times`, url, description: c.lead, inLanguage: "nl-BE",
-      isPartOf: { "@id": `${SITE}/emtimes/#blog` },
+      isPartOf: { "@id": `${SITE}/emtimes/#blog` }, publisher: { "@id": ORG_ID },
       hasPart: list.map((a) => ({ "@type": "BlogPosting", headline: a.title, url: `${SITE}/${a.path}`, datePublished: a.iso })) },
     breadcrumbLd([["Home", `${SITE}/`], ["EM Times", `${SITE}/emtimes/`], [c.name, url]]),
   ] };
@@ -379,9 +385,10 @@ export function articlePage(a, proseRaw, related, V) {
   const words = stripTags(prose).split(/\s+/).filter(Boolean).length;
   const published = `${a.iso}T09:00:00${cestOffset(a.iso)}`;
   const jsonld = { "@context": "https://schema.org", "@graph": [
+    organizationLd(),
     { "@type": "BlogPosting", "@id": `${url}#article`, headline: a.title, description: a.desc, image: img,
       datePublished: published, dateModified: published, inLanguage: "nl-BE",
-      author: { "@id": `${SITE}/#organization` }, publisher: { "@id": `${SITE}/#organization` },
+      author: { "@id": ORG_ID }, publisher: { "@id": ORG_ID },
       mainEntityOfPage: { "@type": "WebPage", "@id": url }, articleSection: c.name, keywords: (a.tags || []).join(", "), wordCount: words },
     breadcrumbLd([["Home", `${SITE}/`], ["EM Times", `${SITE}/emtimes/`], [c.name, `${SITE}/emtimes/${c.dir}/`], [a.title, url]]),
   ] };
@@ -409,7 +416,7 @@ ${prose}
 <!-- ET:PROSE:END -->
 <div class="emt-authorbox">
 <span class="emt-av lg"><img alt="" src="${R}assets/logo-em.png" width="56" height="56"/></span>
-<div><b>Geschreven door EM Launchpad</b><p>Belgisch AI-bureau uit Limburg. We bouwen websites, chatbots, voice agents en automatisaties die lokale bedrijven laten groeien — en schrijven hier op wat we onderweg leren.</p></div>
+<div><b>Geschreven door EM Launchpad</b><p>Belgisch AI-bureau uit Limburg. We bouwen websites, chatbots, voice agents en automatisaties voor ondernemers die willen groeien, en schrijven hier op wat we onderweg leren.</p></div>
 </div>
 </article>
 <aside class="emt-aside" aria-label="Artikel-hulpmiddelen">
@@ -431,7 +438,7 @@ ${toc.map((t) => `<li><a href="#${t.id}">${esc(t.text)}</a></li>`).join("\n")}
 <span class="emt-lbl">Gratis demo</span>
 <b>Wat levert dit op voor jóúw bedrijf?</b>
 <p>We bouwen een demo op maat en tonen in 30 minuten wat het concreet oplevert.</p>
-<a class="btn" data-book="" href="${R}Contact">Plan een gesprek ${ARROW}</a>
+<a class="btn" data-book="" href="${R}Contact">Plan een gratis demo ${ARROW}</a>
 </div>
 </aside>
 </div>
