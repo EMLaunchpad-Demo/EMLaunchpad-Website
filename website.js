@@ -142,18 +142,7 @@
     }
   };
 
-  /* GHL-chat pas na het laden: dan meet de pagina zichzelf eerlijk */
-  window.addEventListener('load', function () {
-    var go = function () {
-      if (document.querySelector('script[data-widget-id="685bcf1cc6f0443168b1c35c"]')) return;
-      var s = document.createElement('script');
-      s.src = 'https://widgets.leadconnectorhq.com/loader.js';
-      s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
-      s.setAttribute('data-widget-id', '685bcf1cc6f0443168b1c35c');
-      document.body.appendChild(s);
-    };
-    if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 2500 }); else setTimeout(go, 1500);
-  });
+  /* chatwidget: site.js laadt hem na de eerste interactie of na 5 s, zoals op de rest van de site */
 
   /* ============================================================
      2. SITE — alle voorbeeldsites volgen één gedeelde keuze
@@ -181,7 +170,7 @@
     el.style.setProperty('--s-line', p.line); el.style.setProperty('--s-card', p.card);
     var img = $('[data-f="foto"]', el);
     if (img && img.getAttribute('data-id') !== v.foto.id) {
-      img.setAttribute('data-id', v.foto.id); img.src = photoUrl(v.foto.id); img.style.objectPosition = v.foto.pos;
+      img.setAttribute('data-id', v.foto.id); img.src = photoUrl(v.foto.id); img.style.objectPosition = v.foto.pos; img.alt = v.foto.alt || '';
     }
   }
   function applyAll(onlyText) {

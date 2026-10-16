@@ -505,6 +505,13 @@
       }
     }
 
+    /* de hoogte van de sectie staat meteen vast (geen verschuiving later); het veld zelf
+       wordt pas gebouwd en geanimeerd als de sectie in de buurt van het scherm komt */
+    measure();
+    var started = false;
+    function start() {
+    if (started) return;
+    started = true;
     build();
     render();
 
@@ -563,6 +570,14 @@
       }, { threshold: 0 }).observe(sec);
     } else { visible = true; setRunning(true); }
     document.addEventListener('visibilitychange', function () { setRunning(visible && !document.hidden); });
+    }
+
+    if ('IntersectionObserver' in window) {
+      var pre = new IntersectionObserver(function (es) {
+        each(es, function (e) { if (e.isIntersecting) { pre.disconnect(); start(); } });
+      }, { rootMargin: '40% 0px 40% 0px', threshold: 0 });
+      pre.observe(sec);
+    } else start();
   })();
 
   /* ============================================================

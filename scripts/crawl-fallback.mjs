@@ -23,11 +23,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SKIP_DIRS = new Set([".git", ".github", ".claude", "node_modules", "scripts", "assets", "demo"]);
 
 const LABELS = {
-  nl: { nav: "Sitemap", home: "Home", services: "Diensten", pk: "Pakketkiezer", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI-automatisering", s5: "Online afsprakensysteem", portfolio: "Portfolio", case: "Case: Clinic3D", about: "Over ons", contact: "Contact", demo: "Gratis demo", privacy: "Privacy", emtimes: "EM Times (blog)", lokaal: "Regio's" },
+  nl: { nav: "Sitemap", home: "Home", services: "Diensten", pk: "Pakketkiezer", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI-automatisering", s5: "Online afsprakensysteem", portfolio: "Portfolio", case: "Case: Clinic3D", about: "Over ons", contact: "Contact", demo: "Gratis demo", privacy: "Privacy", emtimes: "EM Times (blog)" },
   en: { nav: "Sitemap", home: "Home", services: "Services", pk: "Package finder", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI automation", s5: "Online booking system", portfolio: "Portfolio", case: "Case: Clinic3D", about: "About us", contact: "Contact", demo: "Free demo", privacy: "Privacy" },
   fr: { nav: "Plan du site", home: "Accueil", services: "Services", pk: "Choix du pack", s1: "Chatbots IA", s2: "Agents vocaux IA", s3: "Sites web", s4: "Automatisation IA", s5: "Prise de rendez-vous en ligne", portfolio: "Portfolio", case: "Étude de cas : Clinic3D", about: "À propos", contact: "Contact", demo: "Démo gratuite", privacy: "Confidentialité" },
 };
 const LANG_NAMES = { nl: "Nederlands", en: "English", fr: "Français" };
+/** NAP (naam, adres, telefoon) zoals in de footer van site.js; zo staat het ook zonder JavaScript op elke pagina. */
+const NAP = { name: "EM Launchpad", street: "Brugstraat 2A", postal: "3870", city: "Vechmaal", tel: "+32 476 01 54 51", telHref: "+32476015451", email: "ebert@emlaunchpad.com" };
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -40,7 +42,7 @@ export function staticFooter(lang = "nl", alternates = {}) {
     [`${pre}Websites`, T.s3], [`${pre}AI-Automatisering`, T.s4], [`${pre}Afsprakensysteem`, T.s5], [`${pre}Portfolio`, T.portfolio],
     [`${pre}Clinic3D`, T.case], [`${pre}Over%20ons`, T.about], [`${pre}Contact`, T.contact], [`${pre}Gratis%20Demo`, T.demo],
   ];
-  if (lang === "nl") links.push(["/emtimes/", T.emtimes], ["/lokaal/", T.lokaal]);
+  if (lang === "nl") links.push(["/emtimes/", T.emtimes]);
   links.push([`${pre}privacy`, T.privacy]);
   const li = (href, label, attrs = "") => `<li><a href="${esc(href)}"${attrs}>${esc(label)}</a></li>`;
   const langs = Object.keys(LANG_NAMES).filter((l) => alternates[l])
@@ -48,6 +50,7 @@ export function staticFooter(lang = "nl", alternates = {}) {
   return `<!-- crawl-fallback: wordt door site.js vervangen --><nav class="crawl-fallback" aria-label="${esc(T.nav)}" style="padding:48px 24px">`
     + `<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin:0;padding:0">${links.map(([h, l]) => li(h, l)).join("")}</ul>`
     + (langs ? `<ul style="list-style:none;display:flex;gap:8px 24px;margin:16px 0 0;padding:0">${langs}</ul>` : "")
+    + `<p style="margin:16px 0 0">${NAP.name} · ${NAP.street}, ${NAP.postal} ${NAP.city} · <a href="tel:${NAP.telHref}">${NAP.tel}</a> · <a href="mailto:${NAP.email}">${NAP.email}</a></p>`
     + `</nav>`;
 }
 
