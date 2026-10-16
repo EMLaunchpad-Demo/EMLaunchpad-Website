@@ -3,7 +3,11 @@
 # versienummers tellen niet). Bron: de git-geschiedenis; wat lokaal nog niet gecommit is,
 # krijgt de datum van vandaag. Bing gebruikt lastmod om te zien wat er veranderd is.
 #   py scripts/sitemap-lastmod.py
-import os, re, subprocess, html, datetime, urllib.parse
+# Controleert ook dat elke URL in de sitemap thuishoort: het bestand bestaat, de pagina heeft
+# geen noindex (meta robots of X-Robots-Tag in _headers) en de URL staat er maar één keer.
+# Bij een probleem stopt het script met een foutcode, zodat /lokaal/ of een noindex-pagina
+# niet opnieuw in de sitemap sluipt.
+import os, re, sys, subprocess, html, datetime, urllib.parse, fnmatch
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 SITE = 'https://emlaunchpad.com'
@@ -46,8 +50,42 @@ def lastmod(rel):
             return day
     return commits[-1][1] if commits else TODAY
 
+def noindex_patterns():
+    """Paden uit _headers die een X-Robots-Tag met noindex krijgen (als glob, * = splat)."""
+    pats, cur = [], None
+    for line in open(os.path.join(ROOT, '_headers'), encoding='utf-8'):
+        if line.startswith('#') or not line.strip():
+            continue
+        if not line[0].isspace():
+            cur = line.strip()
+        elif cur and re.match(r'\s*X-Robots-Tag\s*:.*noindex', line, re.I):
+            pats.append(cur)
+    return pats
+
+def controleer(locs):
+    fouten = []
+    pats = noindex_patterns()
+    for loc in locs:
+        if locs.count(loc) > 1 and loc not in fouten:
+            fouten.append('staat dubbel in de sitemap: ' + loc)
+        rel = file_for(loc)
+        path = os.path.join(ROOT, rel)
+        if not os.path.exists(path):
+            fouten.append('bestand ontbreekt: %s (%s)' % (loc, rel)); continue
+        if re.search(r'<meta[^>]+robots[^>]+noindex|<meta[^>]+noindex[^>]+robots', open(path, encoding='utf-8').read(), re.I):
+            fouten.append('pagina heeft meta noindex: ' + loc)
+        p = urllib.parse.unquote(loc[len(SITE):]) or '/'
+        for pat in pats:
+            if fnmatch.fnmatchcase(p, pat):
+                fouten.append('krijgt noindex via _headers (%s): %s' % (pat, loc))
+    return sorted(set(fouten))
+
 sm_path = os.path.join(ROOT, 'sitemap.xml')
 xml = open(sm_path, encoding='utf-8').read()
+fouten = controleer(re.findall(r'<loc>([^<]+)</loc>', xml))
+if fouten:
+    print('\n'.join('FOUT: ' + f for f in fouten))
+    sys.exit(1)
 changed = 0
 def fix(m):
     global changed

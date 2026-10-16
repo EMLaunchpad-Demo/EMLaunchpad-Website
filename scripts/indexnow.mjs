@@ -1,9 +1,14 @@
 // Meldt pagina's aan bij IndexNow (Bing, Yandex, Seznam, Naver… delen de meldingen onderling).
 //
 // Gebruik (vanuit de projectmap):
-//   node scripts/indexnow.mjs                  → alle URL's uit sitemap.xml
-//   node scripts/indexnow.mjs /Diensten /Afsprakensysteem   → alleen deze pagina's
-//   node scripts/indexnow.mjs --algemeen       → via api.indexnow.org i.p.v. rechtstreeks naar Bing
+//   node scripts/indexnow.mjs /Diensten /Afsprakensysteem   → alleen deze pagina's (de gewone weg)
+//   node scripts/indexnow.mjs --alles          → alle URL's uit sitemap.xml (alleen bij een echte
+//                                                 wijziging van de hele site; anders nooit)
+//   node scripts/indexnow.mjs --algemeen ...   → via api.indexnow.org i.p.v. rechtstreeks naar Bing
+//
+// Zonder argumenten weigert het script. IndexNow is een melding van een wijziging, geen
+// hefboom voor indexatie: meld alleen wat echt veranderd is (op 2 en 11 oktober 2026 werden
+// telkens alle pagina's opnieuw gemeld, dat is precies wat Bing als ruis ziet).
 //
 // Voorwaarde: het sleutelbestand https://emlaunchpad.com/<KEY>.txt staat online
 // (het zit in de hoofdmap van deze repo en gaat dus mee met elke deploy).
@@ -36,9 +41,14 @@ let urls;
 try {
   if (args.length) {
     urls = args.map(toUrl);
-  } else {
+  } else if (flags.includes('--alles')) {
     const xml = readFileSync(new URL('../sitemap.xml', import.meta.url), 'utf8');
     urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+  } else {
+    console.error('Geen URL\'s opgegeven. Meld alleen de gewijzigde of nieuwe pagina\'s, bv.:');
+    console.error('  node scripts/indexnow.mjs /Diensten /emtimes/');
+    console.error('Echt de hele sitemap melden? Dan uitdrukkelijk: node scripts/indexnow.mjs --alles');
+    process.exit(2);
   }
 } catch (e) {
   console.error(e.message);

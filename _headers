@@ -1,10 +1,33 @@
-# Cloudflare-headers voor de statische site.
-# Stadspagina's en klantdemo's: bereikbaar voor bezoekers, maar niet in zoekmachines.
-# De stadspagina's zijn op de stadsnaam na bijna identiek (doorway pages);
-# haal een stad hier pas weg als die pagina echt eigen inhoud heeft.
+# Cloudflare-headers voor de statische site (Workers static assets, leest dit bestand bij elke deploy).
+# Limiet: 100 regels. Omleidingen uit _redirects gaan voor op deze headers.
+#
+# 1. Beveiliging op elke URL. Geen X-Frame-Options: de boekingspopup en de formulieren zijn
+#    iframes van ons platform die wij inladen; frame-ancestors beperkt alleen wie ons inlijst.
+#    De volledige CSP staat alleen als Report-Only: overtredingen zie je in de browserconsole,
+#    niets wordt geblokkeerd. Pas na een maand zonder meldingen mag ze naar Content-Security-Policy.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: frame-ancestors 'self'
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://widgets.leadconnectorhq.com https://services.leadconnectorhq.com https://stcdn.leadconnectorhq.com https://backend.leadconnectorhq.com https://api.leadconnectorhq.com https://*.msgsndr.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net https://stcdn.leadconnectorhq.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.bunny.net https://stcdn.leadconnectorhq.com; img-src 'self' data: blob: https://images.unsplash.com https://assets.cdn.filesafe.space https://*.leadconnectorhq.com https://*.msgsndr.com; media-src 'self' blob: https://assets.cdn.filesafe.space https://*.leadconnectorhq.com; connect-src 'self' https://*.leadconnectorhq.com wss://*.leadconnectorhq.com https://*.msgsndr.com https://challenges.cloudflare.com; frame-src 'self' https://*.leadconnectorhq.com https://*.msgsndr.com https://challenges.cloudflare.com; worker-src 'self' blob:; form-action 'self' https://*.leadconnectorhq.com https://*.msgsndr.com; base-uri 'self'; object-src 'none'
 
-/lokaal/ai-*
+# 2. Caching. CSS, JS en alles in assets/ een jaar en immutable: veilig, want elke CSS en JS
+#    wordt met ?v= geladen en bestanden in assets/ worden nooit overschreven (regel in kennis/02).
+#    HTML krijgt hier bewust niets: Cloudflare geeft het standaard max-age=0, must-revalidate.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# 3. Niet in zoekmachines. De stadspagina's zijn op de stadsnaam na bijna identiek (doorway pages)
+#    en de hub /lokaal/ hoort daarbij (beslissing B2, fase 0); ze blijven wel bereikbaar.
+#    Haal /lokaal/ hier pas weg als de pagina's echt eigen inhoud hebben (fase 2).
+#    Klantdemo's: niet indexeren en niet volgen.
+/lokaal/*
   X-Robots-Tag: noindex, follow
-
 /demo/*
   X-Robots-Tag: noindex, nofollow

@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://emlaunchpad.com/</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://emlaunchpad.com/Diensten</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://emlaunchpad.com/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://emlaunchpad.com/Diensten</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://emlaunchpad.com/Afsprakensysteem</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://emlaunchpad.com/Websites</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://emlaunchpad.com/Websites</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://emlaunchpad.com/Pakketkiezer</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://emlaunchpad.com/Contact</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://emlaunchpad.com/Contact</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://emlaunchpad.com/Over%20ons</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://emlaunchpad.com/AI%20Chatbots</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://emlaunchpad.com/AI%20Chatbots</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://emlaunchpad.com/AI%20Voice%20Agents</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://emlaunchpad.com/AI-Automatisering</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://emlaunchpad.com/AI-Automatisering</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://emlaunchpad.com/Gratis%20Demo</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://emlaunchpad.com/lokaal/</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/fr/</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/fr/Diensten</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/fr/Websites</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/privacy</loc><lastmod>2026-10-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://emlaunchpad.com/fr/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/fr/Diensten</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/fr/Websites</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/fr/Pakketkiezer</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/fr/Contact</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/fr/Contact</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/fr/Over%20ons</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/fr/AI%20Chatbots</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/fr/AI%20Chatbots</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/fr/AI%20Voice%20Agents</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/fr/AI-Automatisering</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/fr/AI-Automatisering</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/fr/Gratis%20Demo</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/en/</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/en/Diensten</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/en/Websites</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/fr/privacy</loc><lastmod>2026-10-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://emlaunchpad.com/en/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/en/Diensten</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/en/Websites</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/en/Pakketkiezer</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/en/Contact</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/en/Contact</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/en/Over%20ons</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/en/AI%20Chatbots</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/en/AI%20Chatbots</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/en/AI%20Voice%20Agents</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/en/AI-Automatisering</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://emlaunchpad.com/en/AI-Automatisering</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/en/Gratis%20Demo</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/</loc><lastmod>2026-09-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/ai/</loc><lastmod>2026-09-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/automatisering/</loc><lastmod>2026-09-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/websites/</loc><lastmod>2026-09-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/ai/waarom-ai-chatbots-werken-voor-lokale-bedrijven/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/ai/voice-agents-laat-ai-de-telefoon-opnemen/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/ai/chatbot-whatsapp-instagram-website-een-brein/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/websites/waarom-je-website-traag-is/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/en/privacy</loc><lastmod>2026-10-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/ai/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/automatisering/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/websites/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/ai/waarom-ai-chatbots-werken-voor-lokale-bedrijven/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/ai/voice-agents-laat-ai-de-telefoon-opnemen/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/ai/chatbot-whatsapp-instagram-website-een-brein/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/websites/waarom-je-website-traag-is/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://emlaunchpad.com/Portfolio</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://emlaunchpad.com/Clinic3D</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://emlaunchpad.com/en/Portfolio</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -49,15 +51,15 @@
   <url><loc>https://emlaunchpad.com/fr/Portfolio</loc><lastmod>2026-10-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://emlaunchpad.com/fr/Afsprakensysteem</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://emlaunchpad.com/fr/Clinic3D</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/groei/</loc><lastmod>2026-09-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/groei/google-bedrijfsprofiel-optimaliseren/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/ai/wat-is-een-ai-chatbot/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/websites/wat-kost-een-website-laten-maken/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/automatisering/no-shows-verminderen-automatische-herinneringen/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/groei/meer-google-reviews-krijgen/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/ai/ai-voor-kleine-bedrijven/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/groei/lokale-seo-google-maps/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/websites/website-lokale-zaak-checklist/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/automatisering/leads-automatisch-opvolgen/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://emlaunchpad.com/emtimes/ai/chatgpt-of-eigen-ai-chatbot/</loc><lastmod>2026-09-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/groei/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/groei/google-bedrijfsprofiel-optimaliseren/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/ai/wat-is-een-ai-chatbot/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/websites/wat-kost-een-website-laten-maken/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/automatisering/no-shows-verminderen-automatische-herinneringen/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/groei/meer-google-reviews-krijgen/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/ai/ai-voor-kleine-bedrijven/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/groei/lokale-seo-google-maps/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/websites/website-lokale-zaak-checklist/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/automatisering/leads-automatisch-opvolgen/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emlaunchpad.com/emtimes/ai/chatgpt-of-eigen-ai-chatbot/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

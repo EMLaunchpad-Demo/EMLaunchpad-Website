@@ -1,9 +1,9 @@
-name: EM Times — dagelijkse blogpost
+name: EM Times blogpost (handmatig)
 
+# Sinds 15/10/2026 alleen handmatig (beslissing B5): geen cron meer. Een nieuw artikel
+# start je via de Actions-tab > "Run workflow" en lees je na vóór het live gaat.
 on:
-  schedule:
-    - cron: "0 7 * * *"      # elke dag 07:00 UTC (~09:00 Brussel in de zomer)
-  workflow_dispatch: {}       # laat je 'm ook handmatig starten via de Actions-tab
+  workflow_dispatch: {}
 
 permissions:
   contents: write             # nodig zodat de ingebouwde GITHUB_TOKEN mag pushen
@@ -47,7 +47,7 @@ jobs:
             git push
             echo "Gepusht naar main."
           else
-            echo "Geen wijzigingen — niets gepusht."
+            echo "Geen wijzigingen, niets gepusht."
           fi
 
       - name: Aanmelden bij zoekmachines (IndexNow)

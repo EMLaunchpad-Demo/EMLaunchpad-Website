@@ -6,3 +6,6 @@ node_modules/
 
 # Python-cache van lokale scripts
 __pycache__/
+
+# Lokale wrangler dev (test van _headers en _redirects)
+.wrangler/
