@@ -1,4 +1,4 @@
-/* EM Times — interactie bovenop de gedeelde site-nav (site.js).
+/* EM Times: interactie bovenop de gedeelde site-nav (site.js).
    · zoekvenster (knop, "/" of ⌘/Ctrl+K) over window.ET_ARTICLES
    · categoriebalk + zijbalk schuiven mee met de nav die zich verstopt
    · actieve inhoudstafel en "kopieer link" op artikels */

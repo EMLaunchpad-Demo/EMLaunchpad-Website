@@ -1,4 +1,4 @@
-/* EM Times — artikel-index (bron voor zoekfunctie, hubs en gerelateerde artikels).
+/* EM Times: artikel-index (bron voor zoekfunctie, hubs en gerelateerde artikels).
    Wordt beheerd door scripts/build-emtimes.mjs en de dagelijkse generator.
    Nieuwste bovenaan. 'path' en 'img' zijn relatief t.o.v. de site-root. */
 window.ET_ARTICLES = [
@@ -45,7 +45,7 @@ window.ET_ARTICLES = [
     tags: ["website laten maken","prijs website","kostprijs","website kosten","offerte","webdesign","hosting","onderhoud","abonnement","belgië","kmo","lokaal"]
   },
   {
-    title: "No-shows verminderen met automatische afspraakherinneringen",
+    title: "No-shows verminderen met automatische herinneringen",
     excerpt: "Lege plekken in je agenda kosten geld. Zo verminder je no-shows met automatische herinneringen via sms, e-mail of WhatsApp en makkelijk verplaatsen.",
     desc: "No-shows verminderen met automatische afspraakherinneringen: sms, e-mail of WhatsApp, het juiste moment en hoe klanten verplaatsen in plaats van wegblijven.",
     topic: "Automatisering · Afspraken",
@@ -115,7 +115,7 @@ window.ET_ARTICLES = [
     tags: ["website","checklist","lokale zaak","webdesign","conversie","mobiel","seo","privacy","cookies","online boeken","kmo","lokaal"]
   },
   {
-    title: "Leads automatisch opvolgen: nooit meer een aanvraag kwijt",
+    title: "Leads automatisch opvolgen: geen aanvraag meer kwijt",
     excerpt: "Aanvragen, gemiste oproepen en offertes die blijven liggen: zo zet je een eenvoudig systeem op dat elke lead snel en automatisch opvolgt.",
     desc: "Leads automatisch opvolgen: reageer meteen, vang gemiste oproepen op, breng al je kanalen samen en volg offertes op zodat geen aanvraag meer verloren gaat.",
     topic: "Automatisering · Opvolging",
@@ -144,8 +144,8 @@ window.ET_ARTICLES = [
   },
   {
     title: "Voice agents: laat AI de telefoon opnemen",
-    excerpt: "Wat een AI-telefonist wél en niet kan aan de telefoon, hoe hij afspraken boekt en vragen beantwoordt — en wanneer het loont voor een lokaal bedrijf.",
-    desc: "Wat een AI-voice agent wél en niet kan aan de telefoon, hoe hij afspraken boekt en vragen beantwoordt, en wanneer het loont voor een lokaal Belgisch bedrijf.",
+    excerpt: "Wat een AI-telefonist wél en niet kan aan de telefoon, hoe hij afspraken boekt en vragen beantwoordt, en wanneer het loont voor jouw zaak.",
+    desc: "Wat een AI-voice agent wél en niet kan aan de telefoon, hoe hij afspraken boekt en vragen beantwoordt, en wanneer het loont voor een Belgische kmo.",
     topic: "AI · Voice",
     topicKey: "ai",
     path: "emtimes/ai/voice-agents-laat-ai-de-telefoon-opnemen/",
@@ -158,7 +158,7 @@ window.ET_ARTICLES = [
   },
   {
     title: "Chatbot op WhatsApp, Instagram én je site: één brein",
-    excerpt: "Eén AI achter al je kanalen: waarom dat slimmer is dan losse tools — consistente antwoorden, één overzicht en continuïteit voor je klant.",
+    excerpt: "Eén AI achter al je kanalen: waarom dat slimmer is dan losse tools: consistente antwoorden, één overzicht en continuïteit voor je klant.",
     desc: "Waarom je klantcontact op WhatsApp, Instagram en je website door één AI-chatbot laten lopen slimmer is dan losse tools: consistente antwoorden en één overzicht.",
     topic: "AI · Praktijk",
     topicKey: "ai",
@@ -186,8 +186,8 @@ window.ET_ARTICLES = [
   },
   {
     title: "Waarom je website traag is (en wat het je kost)",
-    excerpt: "Een trage website kost je klanten én Google-posities. De meest voorkomende oorzaken van traagheid — en wat je er concreet aan doet.",
-    desc: "Een trage website kost je klanten én Google-posities. Ontdek de meest voorkomende oorzaken van traagheid en wat je eraan kunt doen — in gewone taal.",
+    excerpt: "Een trage website kost je klanten én Google-posities. De meest voorkomende oorzaken van traagheid, en wat je er concreet aan doet.",
+    desc: "Een trage website kost je klanten én Google-posities. Ontdek de meest voorkomende oorzaken van traagheid en wat je eraan kunt doen, in gewone taal.",
     topic: "Websites",
     topicKey: "web",
     path: "emtimes/websites/waarom-je-website-traag-is/",
@@ -200,8 +200,8 @@ window.ET_ARTICLES = [
   },
   {
     title: "Waarom AI-chatbots werken voor Belgische bedrijven",
-    excerpt: "Van gemiste telefoontjes naar geboekte afspraken: hoe een chatbot je klantcontact overneemt zonder dat het onpersoonlijk wordt — met concrete cijfers.",
-    desc: "Ontdek waarom AI-chatbots zo goed werken voor Belgische bedrijven: minder gemiste leads, 24/7 bereikbaarheid en meer geboekte afspraken — met concrete cijfers en voorbeelden.",
+    excerpt: "Van gemiste telefoontjes naar geboekte afspraken: hoe een chatbot je klantcontact overneemt zonder dat het onpersoonlijk wordt, met concrete cijfers.",
+    desc: "Ontdek waarom AI-chatbots zo goed werken voor Belgische bedrijven: minder gemiste leads, 24/7 bereikbaarheid en meer geboekte afspraken, met concrete cijfers en voorbeelden.",
     topic: "AI · Chatbots",
     topicKey: "ai",
     path: "emtimes/ai/waarom-ai-chatbots-werken-voor-lokale-bedrijven/",

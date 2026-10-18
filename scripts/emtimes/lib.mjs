@@ -1,5 +1,5 @@
 /**
- * EM Times — sjablonen + build.
+ * EM Times: sjablonen + build.
  *
  * Eén bron van waarheid voor alle EM Times-pagina's (hub, categorieën, artikels).
  * Metadata komt uit emtimes-articles.js, de artikeltekst uit de bestaande
@@ -29,8 +29,8 @@ export const CATEGORIES = [
   {
     key: "ai", dir: "ai", label: "AI", name: "AI-chatbots & voice",
     h1: ["AI-chatbots &", "voice agents."],
-    lead: "Hoe slimme assistenten je klantcontact overnemen — vragen beantwoorden, leads kwalificeren en afspraken boeken, dag en nacht. Alles wat je moet weten, in gewone taal.",
-    desc: "Hoe slimme assistenten vragen beantwoorden, leads kwalificeren en afspraken boeken — 24/7.",
+    lead: "Hoe slimme assistenten je klantcontact overnemen: vragen beantwoorden, leads kwalificeren en afspraken boeken, dag en nacht. Alles wat je moet weten, in gewone taal.",
+    desc: "Hoe slimme assistenten vragen beantwoorden, leads kwalificeren en afspraken boeken, dag en nacht.",
     icon: '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>',
   },
   {
@@ -50,7 +50,7 @@ export const CATEGORIES = [
   {
     key: "groei", dir: "groei", label: "Groei", name: "Groei & marketing",
     h1: ["Groei &", "marketing."],
-    lead: "Google Bedrijfsprofiel, lokale SEO, reviews en reputatie: hoe je beter gevonden wordt in je eigen regio — en meer klanten laat terugkomen.",
+    lead: "Google Bedrijfsprofiel, lokale SEO, reviews en reputatie: hoe je beter gevonden wordt in je eigen regio, en meer klanten laat terugkomen.",
     desc: "Lokale SEO, Google Bedrijfsprofiel en reviews: beter gevonden worden in je regio.",
     icon: '<path d="M3 17l6-6 4 4 8-8m0 0h-5m5 0v5"/>',
   },
@@ -94,7 +94,7 @@ const FIELDS = ["title", "excerpt", "desc", "topic", "topicKey", "path", "date",
 export async function writeArticles(list) {
   const body = list.map((a) => "  {\n" + FIELDS.filter((f) => a[f] !== undefined)
     .map((f) => `    ${f}: ${JSON.stringify(a[f])}`).join(",\n") + "\n  }").join(",\n");
-  const src = `/* EM Times — artikel-index (bron voor zoekfunctie, hubs en gerelateerde artikels).
+  const src = `/* EM Times: artikel-index (bron voor zoekfunctie, hubs en gerelateerde artikels).
    Wordt beheerd door scripts/build-emtimes.mjs en de dagelijkse generator.
    Nieuwste bovenaan. 'path' en 'img' zijn relatief t.o.v. de site-root. */
 window.ET_ARTICLES = [
@@ -222,7 +222,7 @@ export function cardHtml(a, R) {
 
 function featHtml(a, R, badge) {
   return `<a class="emt-feat" data-reveal="" href="${R}${a.path}">
-<span class="emt-feat-media"><img${fb(a)} alt="${esc(a.alt)}" height="500" src="${R}${a.img}" width="800"/><span class="emt-badge"><span class="dot"></span>${esc(badge)}</span></span>
+<span class="emt-feat-media"><img${fb(a)} alt="${esc(a.alt)}" fetchpriority="high" height="500" src="${R}${a.img}" width="800"/><span class="emt-badge"><span class="dot"></span>${esc(badge)}</span></span>
 <span class="emt-feat-body">
 <span class="et-cat">${esc(a.topic)}</span>
 <h2 class="emt-feat-title">${esc(a.title)}</h2>
@@ -333,8 +333,8 @@ export function hubPage(arts, V) {
 <div class="glow"></div>
 <div class="wrap emt-hero-in">
 <span class="eyebrow" data-reveal="">EM Times · kennishub</span>
-<h1 class="emt-h1" data-reveal="">AI-inzichten voor <span class="grad">Belgische bedrijven.</span></h1>
-<p class="lead" data-reveal="">De kennishub van EM Launchpad — praktische gidsen en uitleg over AI-chatbots, voice agents, automatisatie, websites en lokale SEO. Zonder de technische wollige taal.</p>
+<h1 class="emt-h1" data-reveal="">AI-inzichten voor <span class="grad">Belgische ondernemers.</span></h1>
+<p class="lead" data-reveal="">De kennishub van EM Launchpad: praktische gidsen en uitleg over AI-chatbots, voice agents, automatisatie, websites en lokale SEO. Zonder technische wollige taal.</p>
 <button class="emt-search" data-et-search="" data-reveal="" type="button">${SEARCH_ICO}<span class="ph">Zoek een artikel, onderwerp of trefwoord…</span><span class="keys"><kbd>⌘</kbd><kbd>K</kbd></span></button>
 </div>
 </header>
@@ -345,8 +345,8 @@ ${topicsHtml(R, counts, { eyebrow: "Onderwerpen", h2a: "Ontdek per", h2b: "categ
 ${ctaBand(R)}
 </main>`;
   return page({ R, V, main, jsonld,
-    title: "EM Times — AI-inzichten voor Belgische bedrijven | EM Launchpad",
-    desc: "EM Times is de kennishub van EM Launchpad: praktische gidsen over AI-chatbots, automatisatie, websites en lokale SEO voor groeiende Belgische bedrijven.",
+    title: "EM Times: AI-inzichten voor ondernemers | EM Launchpad",
+    desc: "Praktische artikels over websites, online afspraken, AI-chatbots, AI-receptionistes en automatisering voor Belgische ondernemers.",
     canonical: `${SITE}/emtimes/` });
 }
 
@@ -354,7 +354,7 @@ export function categoryPage(c, list, arts, V) {
   const R = "../../", counts = countsOf(arts), url = `${SITE}/emtimes/${c.dir}/`;
   const jsonld = { "@context": "https://schema.org", "@graph": [
     organizationLd(),
-    { "@type": "CollectionPage", "@id": `${url}#page`, name: `${c.name} — EM Times`, url, description: c.lead, inLanguage: "nl-BE",
+    { "@type": "CollectionPage", "@id": `${url}#page`, name: `${c.name} | EM Times`, url, description: c.lead, inLanguage: "nl-BE",
       isPartOf: { "@id": `${SITE}/emtimes/#blog` }, publisher: { "@id": ORG_ID },
       hasPart: list.map((a) => ({ "@type": "BlogPosting", headline: a.title, url: `${SITE}/${a.path}`, datePublished: a.iso })) },
     breadcrumbLd([["Home", `${SITE}/`], ["EM Times", `${SITE}/emtimes/`], [c.name, url]]),
@@ -376,7 +376,7 @@ ${topicsHtml(R, counts, { exclude: c.key, eyebrow: "Verder lezen", h2a: "Andere"
 ${ctaBand(R)}
 </main>`;
   return page({ R, V, main, jsonld, topic: c.key,
-    title: `${c.name} — EM Times | EM Launchpad`, desc: c.lead, canonical: url });
+    title: `${c.name} | EM Times`, desc: c.lead, canonical: url });
 }
 
 export function articlePage(a, proseRaw, related, V) {
@@ -473,7 +473,7 @@ function feedXml(arts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title>EM Times — EM Launchpad</title>
+<title>EM Times | EM Launchpad</title>
 <link>${SITE}/emtimes/</link>
 <atom:link href="${SITE}/emtimes/feed.xml" rel="self" type="application/rss+xml"/>
 <description>Praktische inzichten over AI, automatisatie en websites voor Belgische bedrijven.</description>
