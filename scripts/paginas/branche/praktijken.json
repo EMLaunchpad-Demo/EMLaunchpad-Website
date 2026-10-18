@@ -54,7 +54,7 @@
   "h2b": "650 afspraken, 0 no-shows.",
   "lede": "Clinic3D is een medisch-esthetische kliniek in Hasselt en onze eerste klant. We bouwden de website, de online agenda en de automatische mails. Patiënten boeken sindsdien zelf.",
   "cijfers": [["650 van 681", "afspraken bevestigd"], ["0", "no-shows"], ["31", "netjes op voorhand geannuleerd"], ["3.250", "automatische e-mails"]],
-  "cijfers_noot": "Gemeten van 1 januari tot 20 september 2026 (263 dagen). De cijfers komen uit het systeem zelf.",
+  "cijfers_noot": "Gemeten van 1 januari tot 20 september 2026 (263 dagen). De cijfers komen uit de rapportage van ons platform.",
   "quote": {"text": "227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.", "cite": "Dr. Kenis, eigenaar Clinic3D, na 104 dagen"},
   "slot": "Clinic3D is een kliniek, geen kinepraktijk. Een kinesist of osteopaat hebben we nog niet als klant. Maar de vraag is dezelfde: hoe raakt de agenda vol zonder dat jij de hele dag aan de telefoon hangt? En nul no-shows beloven we niet: wat bij Clinic3D lukte, is gemeten, geen garantie.",
   "links": [{"t": "Lees de volledige case Clinic3D", "href": "Clinic3D"}, {"t": "clinic3d.be", "href": "https://clinic3d.be"}]

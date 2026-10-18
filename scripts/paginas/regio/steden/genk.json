@@ -50,7 +50,7 @@
       "alineas": [
         "Je zou op deze plek een rij namen uit Genk verwachten. Die hebben we niet, en we gaan ze ook niet verzinnen. Onze vijf klanten zitten in Hasselt, Lommel, Hamont-Achel en Heers. De dichtste bij Genk is de kliniek van Dr. Kenis in Hasselt: Clinic3D, medisch-esthetisch, met één arts.",
         "Is dat een probleem? Voor hoe we werken niet. Alles loopt online, ook bij Clinic3D. De demo doen we via Teams, en de feedback van de kliniek komt via WhatsApp binnen. Een zaak in Genk merkt van de afstand dus even weinig als een zaak in Hasselt.",
-        "Wat we wel kunnen tonen, zijn cijfers uit het systeem van een echte zaak. Die gaan hieronder over één vraag: hoe raakt een zaak met afspraken gevonden, geboekt en aanbevolen, zonder de hele dag aan de telefoon te hangen?"
+        "Wat we wel kunnen tonen, zijn cijfers van een echte zaak, uit de rapportage van ons platform. Die gaan hieronder over één vraag: hoe raakt een zaak met afspraken gevonden, geboekt en aanbevolen, zonder de hele dag aan de telefoon te hangen?"
       ],
       "kader": {
         "k": "Dichtste case",
@@ -82,7 +82,7 @@
           ["52m 36s", "beltijd in totaal"],
           ["64%", "van de mails geopend"]
         ],
-        "noot": "Clinic3D, Hasselt, van 1 januari tot 20 september 2026 (263 dagen). Alle cijfers komen uit het eigen systeem van de kliniek."
+        "noot": "Clinic3D, Hasselt, van 1 januari tot 20 september 2026 (263 dagen). Alle cijfers komen uit de rapportage van ons platform."
       },
       "beeld": {
         "src": "assets/werk/clinic3d-gsm-780.webp",

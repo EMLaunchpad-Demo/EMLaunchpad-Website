@@ -514,7 +514,7 @@
   "why": {
     "recep": [
       "Je mist elke dag wel eens een oproep {werk}.",
-      "De AI-receptioniste neemt dag en nacht je telefoon op, plant afspraken in je agenda en stelt zich voor als digitale assistente."
+      "De AI-receptioniste neemt dag en nacht je telefoon op en plant afspraken in je agenda. Ze stelt zich voor zoals jij wilt, bijvoorbeeld als de digitale assistente van je zaak."
     ],
     "chat_avond": [
       "Er komen elke dag berichten binnen, ook 's avonds en in het weekend.",
@@ -689,7 +689,7 @@
       "chat_d": "Beantwoordt vragen en boekt afspraken, 24/7, op je website, WhatsApp, Instagram en Messenger.",
       "chat_href": "AI%20Chatbots",
       "chat_more": "Meer over de AI-chatbot",
-      "recep_d": "Neemt dag en nacht je telefoon op, plant afspraken in je agenda en stelt zich voor als digitale assistente.",
+      "recep_d": "Neemt dag en nacht je telefoon op en plant afspraken in je agenda. Ze stelt zich voor zoals jij wilt, bijvoorbeeld als de digitale assistente van je zaak.",
       "recep_href": "AI%20Voice%20Agents",
       "recep_more": "Meer over de AI-receptioniste",
       "g3": "Past niet op de schaal",

@@ -29,7 +29,7 @@
     "eyebrow": "Hasselt",
     "h1a": "Website laten maken in Hasselt,",
     "h1b": "waar ons eerste punt op de kaart staat.",
-    "lede": "Een website laten maken in Hasselt? Daar begon het voor ons. Clinic3D, een medisch-esthetische kliniek aan de Luikersteenweg, was onze allereerste klant. Hier lees je wat we voor de kliniek bouwden en wat het opleverde, met de cijfers uit hun eigen systeem.",
+    "lede": "Een website laten maken in Hasselt? Daar begon het voor ons. Clinic3D, een medisch-esthetische kliniek aan de Luikersteenweg, was onze allereerste klant. Hier lees je wat we voor de kliniek bouwden en wat het opleverde, met de cijfers uit de rapportage van ons platform.",
     "cta": "Plan een gratis demo",
     "cta2": "Bekijk wat het opleverde",
     "cta2_href": "#clinic3d",
@@ -112,7 +112,7 @@
             "telefoontjes"
           ]
         ],
-        "noot": "Gemeten van 1 januari tot 20 september 2026, dat is 263 dagen. De cijfers komen uit het systeem van de kliniek zelf."
+        "noot": "Gemeten van 1 januari tot 20 september 2026, dat is 263 dagen. De cijfers komen uit de rapportage van ons platform."
       },
       "citaat": {
         "tekst": "227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.",
@@ -180,7 +180,7 @@
       "alineas": [
         "Ons kantoor staat in Vechmaal, in Haspengouw. Voor een zaak in Hasselt maakt dat weinig uit, want we werken volledig online. De gratis demo duurt dertig minuten en loopt via Teams. Je hoeft niets voor te bereiden: je vertelt wat je doet, en wij tonen hoe een site met online agenda er voor jou uitziet.",
         "Daarna gaat alles op afstand. Je bezorgt je foto's, je teksten en je prijzen, en wij bouwen. Feedback geef je zoals het jou past: per mail, aan de telefoon of via WhatsApp. Ebert volgt op, Martijn past aan.",
-        "Reviews van klanten hebben we nog niet. Daarom tonen we liever wat je zelf kunt nagaan: de site van Clinic3D staat online, en de cijfers op deze pagina komen uit het systeem van de kliniek, niet uit een schatting."
+        "Reviews van klanten hebben we nog niet. Daarom tonen we liever wat je zelf kunt nagaan: de site van Clinic3D staat online, en de cijfers op deze pagina komen uit de rapportage van ons platform, niet uit een schatting."
       ],
       "kader": {
         "k": "Clinic3D",
@@ -258,7 +258,7 @@
       },
       {
         "q": "Waar komen de cijfers van Clinic3D vandaan?",
-        "a": "Uit het systeem van de kliniek zelf, gemeten van 1 januari tot 20 september 2026. In die 263 dagen werden 650 van de 681 afspraken bevestigd, zonder één no-show. De uitleg per cijfer staat op de pagina van de [case](Clinic3D)."
+        "a": "Uit de rapportage van ons platform, gemeten van 1 januari tot 20 september 2026. In die 263 dagen werden 650 van de 681 afspraken bevestigd, zonder één no-show. De uitleg per cijfer staat op de pagina van de [case](Clinic3D)."
       },
       {
         "q": "Ik heb al een website. Kan de online agenda daarop?",

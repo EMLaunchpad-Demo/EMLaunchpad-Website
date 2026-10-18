@@ -95,7 +95,7 @@
   "eyebrow": "De receptioniste aan de lijn",
   "h2a": "Terwijl jij een behandeling doet,",
   "h2b": "neemt zij de telefoon op.",
-  "lede": "Een voorbeeld van hoe een gesprek kan lopen. De echte receptioniste stellen we in met de info van jouw salon, en ze stelt zich voor als digitale assistente.",
+  "lede": "Een voorbeeld van hoe een gesprek kan lopen. De echte receptioniste stellen we in met de info van jouw salon. Ze stelt zich voor zoals jij wilt, bijvoorbeeld als de digitale assistente van je salon, en we stellen haar zo in dat de beller weet dat hij met een AI-assistent praat.",
   "titel": "Inkomende oproep, 13:20",
   "sub": "Een salon, terwijl de eigenaar met een klant bezig is",
   "wie_ai": "Receptioniste",
@@ -141,7 +141,7 @@
    {"q": "Hoe annuleert een klant een reservatie?", "a": "Zoals jij het wil. In de bevestiging en de herinnering kan een link staan om te annuleren of te verplaatsen; het vrijgekomen moment staat dan weer open in je agenda. Wil je dat klanten bellen om af te zeggen, zoals bij Bambine, dan laten we die link weg en zetten we je afspraken in de mail."},
    {"q": "Kan ik cadeaubonnen online verkopen?", "a": "Ja. Bij Amakhosi kies je een bon voor een arrangement, je betaalt online en de bon komt met een unieke code per mail. Bij Bambine koop je een digitale bon met een vast bedrag, of vraag je een echte bon aan via een formulier."},
    {"q": "Werkt dit ook voor een privésauna of wellness?", "a": "Ja, Amakhosi is een privésauna in Hamont-Achel. Gasten boeken er arrangementen van enkele uren of een overnachting, en na een overnachting blokkeert het systeem de ochtend erna. Ze krijgen een bevestiging, een herinnering en achteraf een bedankje."},
-   {"q": "Neemt de AI-receptioniste op als ik met een klant bezig ben?", "a": "Ja. Je laat je huidige nummer doorschakelen en kiest of ze altijd opneemt of alleen als jij niet opneemt. Ze stelt zich voor als digitale assistente, beantwoordt vragen uit wat jij haar leert, stuurt de link om te reserveren per sms en noteert de rest. Ze kost €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
+   {"q": "Neemt de AI-receptioniste op als ik met een klant bezig ben?", "a": "Ja. Je laat je huidige nummer doorschakelen en kiest of ze altijd opneemt of alleen als jij niet opneemt. Ze stelt zich voor zoals jij wilt, en we stellen haar zo in dat de beller weet dat hij met een AI-assistent praat. Ze beantwoordt vragen uit wat jij haar leert, stuurt de link om te reserveren per sms en noteert de rest. Ze kost €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
    {"q": "Hoe snel staat mijn website online?", "a": "Meestal binnen 14 dagen. We hebben je behandelingen nodig met prijs en duur, je openingsuren en foto's van je zaak. We ontwerpen de site samen met jou: jouw foto's, jouw teksten, jouw kleuren."},
    {"q": "Wat als ik stop?", "a": "Online groeien zeg je maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou. Ook je klantenlijst blijft dus van jou."}
   ],

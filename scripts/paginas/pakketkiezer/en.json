@@ -514,7 +514,7 @@
   "why": {
     "recep": [
       "You miss a call every day {werk}.",
-      "The AI receptionist answers your phone day and night, books appointments into your calendar and introduces herself as a digital assistant."
+      "The AI receptionist answers your phone day and night and books appointments into your calendar. She introduces herself the way you want, for example as your business's digital assistant."
     ],
     "chat_avond": [
       "Messages come in every day, also in the evening and at weekends.",
@@ -689,7 +689,7 @@
       "chat_d": "Answers questions and books appointments, 24/7, on your website, WhatsApp, Instagram and Messenger.",
       "chat_href": "AI%20Chatbots",
       "chat_more": "More about the AI chatbot",
-      "recep_d": "Answers your phone day and night, books appointments into your calendar and introduces herself as a digital assistant.",
+      "recep_d": "Answers your phone day and night and books appointments into your calendar. She introduces herself the way you want, for example as your business's digital assistant.",
       "recep_href": "AI%20Voice%20Agents",
       "recep_more": "More about the AI receptionist",
       "g3": "Doesn't go on the scale",

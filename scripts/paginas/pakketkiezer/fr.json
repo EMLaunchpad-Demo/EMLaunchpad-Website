@@ -514,7 +514,7 @@
   "why": {
     "recep": [
       "Vous manquez un appel tous les jours {werk}.",
-      "La réceptionniste IA répond au téléphone jour et nuit, planifie les rendez-vous dans votre agenda et se présente comme assistante numérique."
+      "La réceptionniste IA répond au téléphone jour et nuit et planifie les rendez-vous dans votre agenda. Elle se présente comme vous le souhaitez, par exemple comme l'assistante numérique de votre commerce."
     ],
     "chat_avond": [
       "Vous recevez des messages tous les jours, aussi le soir et le week-end.",
@@ -689,7 +689,7 @@
       "chat_d": "Répond aux questions et prend des rendez-vous, 24h/24 et 7j/7, sur votre site, WhatsApp, Instagram et Messenger.",
       "chat_href": "AI%20Chatbots",
       "chat_more": "En savoir plus sur le chatbot IA",
-      "recep_d": "Répond au téléphone jour et nuit, planifie les rendez-vous dans votre agenda et se présente comme assistante numérique.",
+      "recep_d": "Répond au téléphone jour et nuit et planifie les rendez-vous dans votre agenda. Elle se présente comme vous le souhaitez, par exemple comme l'assistante numérique de votre commerce.",
       "recep_href": "AI%20Voice%20Agents",
       "recep_more": "En savoir plus sur la réceptionniste IA",
       "g3": "Ne va pas sur la balance",
