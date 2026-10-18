@@ -12,10 +12,16 @@
  * 2. Het laadscherm (#loader) bedekt de hele pagina tot site.js het weghaalt. Een
  *    <noscript>-regel verbergt het als er geen JavaScript draait.
  *
+ * 3. "Voor wie" (fase 2): de drie branchepagina's en de regiopagina Limburg. Ze bestaan alleen
+ *    in het Nederlands; op de EN- en FR-pagina's staat de link er ook, met hreflang="nl".
+ *    Een link komt er pas bij als het bestand bestaat, dus het script maakt nooit een dode link.
+ *    De stadspagina's (/website-laten-maken-<stad>) staan hier niet: die hangen aan de regiopagina.
+ *
  * Veilig om vaker te draaien. Draai het opnieuw na het toevoegen of herbouwen van pagina's;
  * de EM Times-build doet het zelf.
  */
 import { readFile, writeFile, readdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,6 +33,14 @@ const LABELS = {
   en: { nav: "Sitemap", home: "Home", services: "Services", pk: "Package finder", eml: "EML AI Team", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI automation", s5: "Online booking system", portfolio: "Portfolio", case: "Case: Clinic3D", about: "About us", contact: "Contact", demo: "Free demo", privacy: "Privacy" },
   fr: { nav: "Plan du site", home: "Accueil", services: "Services", pk: "Choix du pack", eml: "EML AI Team", s1: "Chatbots IA", s2: "Agents vocaux IA", s3: "Sites web", s4: "Automatisation IA", s5: "Prise de rendez-vous en ligne", portfolio: "Portfolio", case: "Étude de cas : Clinic3D", about: "À propos", contact: "Contact", demo: "Démo gratuite", privacy: "Confidentialité" },
 };
+/** Voor wie: [bestand in de hoofdmap zonder .html, label]. Labels blijven Nederlands, want de pagina's zijn Nederlands. */
+const VOOR_WIE = [
+  ["website-voor-schoonheidssalons", "Website voor schoonheidssalons en wellness"],
+  ["website-voor-kappers", "Website voor kappers"],
+  ["website-voor-praktijken", "Website voor praktijken"],
+  ["website-laten-maken-limburg", "Website laten maken in Limburg"],
+];
+const voorWie = () => VOOR_WIE.filter(([slug]) => existsSync(path.join(ROOT, `${slug}.html`)));
 const LANG_NAMES = { nl: "Nederlands", en: "English", fr: "Français" };
 /** NAP (naam, adres, telefoon) zoals in de footer van site.js; zo staat het ook zonder JavaScript op elke pagina. */
 const NAP = { name: "EM Launchpad", street: "Brugstraat 2A", postal: "3870", city: "Vechmaal", tel: "+32 476 01 54 51", telHref: "+32476015451", email: "ebert@emlaunchpad.com" };
@@ -45,10 +59,13 @@ export function staticFooter(lang = "nl", alternates = {}) {
   if (lang === "nl") links.push(["/emtimes/", T.emtimes]);
   links.push([`${pre}privacy`, T.privacy]);
   const li = (href, label, attrs = "") => `<li><a href="${esc(href)}"${attrs}>${esc(label)}</a></li>`;
+  const nlAttr = lang === "nl" ? "" : ` hreflang="nl" lang="nl"`;
+  const forLinks = voorWie().map(([slug, label]) => li(`/${slug}`, label, nlAttr)).join("");
   const langs = Object.keys(LANG_NAMES).filter((l) => alternates[l])
     .map((l) => li(alternates[l], LANG_NAMES[l], ` hreflang="${l}" lang="${l}"`)).join("");
   return `<!-- crawl-fallback: wordt door site.js vervangen --><nav class="crawl-fallback" aria-label="${esc(T.nav)}" style="padding:48px 24px">`
     + `<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin:0;padding:0">${links.map(([h, l]) => li(h, l)).join("")}</ul>`
+    + (forLinks ? `<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin:16px 0 0;padding:0">${forLinks}</ul>` : "")
     + (langs ? `<ul style="list-style:none;display:flex;gap:8px 24px;margin:16px 0 0;padding:0">${langs}</ul>` : "")
     + `<p style="margin:16px 0 0">${NAP.name} · ${NAP.street}, ${NAP.postal} ${NAP.city} · <a href="tel:${NAP.telHref}">${NAP.tel}</a> · <a href="mailto:${NAP.email}">${NAP.email}</a></p>`
     + `</nav>`;
