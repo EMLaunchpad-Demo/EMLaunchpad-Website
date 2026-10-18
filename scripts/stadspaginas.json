@@ -1,0 +1,42 @@
+{
+  "_uitleg": [
+    "Gelezen door scripts/redirects.py: de 301's van de oude map /lokaal/ (taak 2.5 van fase 2).",
+    "actief: false = de oude pagina's in lokaal/ blijven bereikbaar, er komt nog geen 301. Zet op true bij de integratie, als de regiopagina bestaat. Daarna mogen de bestanden in lokaal/ weg.",
+    "limburg: per oude pagina /lokaal/ai-<stad> de nieuwe stadspagina, bv. \"/website-laten-maken-hasselt\". null = naar de regiopagina. Een stadspagina die (nog) niet bestaat, valt ook terug op de regiopagina; het script meldt dat.",
+    "antwerpen: de oude Antwerpse pagina's gaan allemaal naar het doel (/Websites).",
+    "De lijst van de steden met een eigen pagina staat in onderzoek-seo-2026-10/15-STADSPAGINAS.md (F2-A)."
+  ],
+  "actief": true,
+  "regiopagina": "/website-laten-maken-limburg",
+  "limburg": {
+    "beringen": null,
+    "bilzen-hoeselt": null,
+    "genk": "/website-laten-maken-genk",
+    "hasselt": "/website-laten-maken-hasselt",
+    "heusden-zolder": null,
+    "houthalen-helchteren": null,
+    "lanaken": null,
+    "lommel": "/website-laten-maken-lommel",
+    "maaseik": null,
+    "maasmechelen": null,
+    "sint-truiden": "/website-laten-maken-sint-truiden",
+    "tongeren-borgloon": "/website-laten-maken-tongeren"
+  },
+  "antwerpen": {
+    "doel": "/Websites",
+    "steden": [
+      "antwerpen",
+      "boom",
+      "brasschaat",
+      "geel",
+      "heist-op-den-berg",
+      "herentals",
+      "lier",
+      "mechelen",
+      "mol",
+      "mortsel",
+      "turnhout",
+      "willebroek"
+    ]
+  }
+}
