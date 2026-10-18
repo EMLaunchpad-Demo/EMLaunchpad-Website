@@ -1,6 +1,8 @@
 /* =============================================================
    EM Launchpad — Diensten (pakketten)
-   1. uitbreidingen aan/uit → maandprijs telt mee
+   1. uitbreidingen aan/uit → maandprijs telt mee; een uitbreiding met
+      data-once (bv. €750 voor de AI-receptioniste) komt als aparte regel
+      "eenmalig" onder de maandprijs en telt niet mee in het maandbedrag
    2. checklist in de prijskaart vinkt af terwijl je scrolt
    3. de drie vragen van AI Consulting lichten om beurten op
    4. de lijn van "Hoe we werken" loopt vol als hij in beeld komt
@@ -18,8 +20,9 @@
   var BASE = 150;
   var totals = $$('[data-total]');
   var lines = document.querySelector('[data-lines]');
+  var onceLines = $$('[data-once-line]');
   var addons = $$('[data-addon]');
-  var shown = BASE, raf = 0;
+  var shown = BASE, raf = 0, fin = 0;
 
   function paint(v) {
     var t = Math.round(v).toLocaleString(LOC);
@@ -30,9 +33,13 @@
       var box = el.parentNode;
       box.classList.remove('bump'); void box.offsetWidth; box.classList.add('bump');
     });
+    cancelAnimationFrame(raf);
+    clearTimeout(fin);
     if (reduce) { shown = to; paint(to); return; }
     var from = shown, t0 = 0;
-    cancelAnimationFrame(raf);
+    /* vangnet: draait requestAnimationFrame niet (tab op de achtergrond),
+       dan staat het juiste bedrag er toch na de animatietijd */
+    fin = setTimeout(function () { cancelAnimationFrame(raf); shown = to; paint(to); }, 480);
     raf = requestAnimationFrame(function step(ts) {
       if (!t0) t0 = ts;
       var p = Math.min(1, (ts - t0) / 420);
@@ -42,16 +49,22 @@
     });
   }
   function update() {
-    var sum = BASE;
+    var sum = BASE, once = [];
     if (lines) lines.innerHTML = '';
     addons.forEach(function (a) {
       if (!a.classList.contains('on')) return;
       sum += parseFloat(a.getAttribute('data-addon')) || 0;
+      /* eenmalig bedrag: apart tonen, niet optellen in de maandprijs */
+      if ((parseFloat(a.getAttribute('data-once')) || 0) > 0) once.push(a.getAttribute('data-once-label') || '');
       if (lines) {
         var li = document.createElement('li');
         li.textContent = '+ ' + a.getAttribute('data-name');
         lines.appendChild(li);
       }
+    });
+    onceLines.forEach(function (el) {
+      el.textContent = once.join(' · ');
+      el.hidden = !once.length;
     });
     tween(sum);
   }
