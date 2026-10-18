@@ -104,10 +104,11 @@ def head(L, s, fresh):
     return hd[:mm.start(2)] + json.dumps(data, ensure_ascii=False) + hd[mm.end(2):]
 
 
+# Geen i18n-pages.js: dat is alleen een woordenboek voor EN/FR (93 KB) en de branchepagina's bestaan alleen in het NL,
+# net als de regiopagina's. Scheelt een lange taak (Total Blocking Time) op de gsm.
 def tail(footer):
     return f'''{footer}
 <script src="i18n.js?v=20261019a"></script>
-<script src="i18n-pages.js?v=20261019a"></script>
 <script src="site.js?v=20261019a"></script>
 <script src="fx.js?v={V_FX}"></script>
 </body>
