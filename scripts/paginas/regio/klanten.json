@@ -1,0 +1,56 @@
+{
+  "_uitleg": "Vaste gegevens per klant voor de kaart en de casekaarten. Bron: Portfolio (scripts/paginas/portfolio/nl.json) en ai-team/kennis/martijn/claudecode-12 tot -15. Alleen bevestigde feiten. Lopende tekst over een klant schrijf je in de json van de pagina zelf, niet hier.",
+  "thuis": {
+    "naam": "EM Launchpad",
+    "gemeente": "Vechmaal (Heers)",
+    "plaats": "vechmaal",
+    "soort": "ons kantoor, Brugstraat 2A",
+    "dx": -4, "dy": -12
+  },
+  "clinic3d": {
+    "naam": "Clinic3D",
+    "gemeente": "Hasselt",
+    "plaats": "hasselt",
+    "soort": "medisch-esthetische kliniek",
+    "url": "https://clinic3d.be",
+    "domein": "clinic3d.be",
+    "case": "Clinic3D",
+    "dx": 0, "dy": 0
+  },
+  "amakhosi": {
+    "naam": "Amakhosi Sauna",
+    "gemeente": "Hamont-Achel",
+    "plaats": "hamont-achel",
+    "soort": "privésauna en wellness",
+    "url": "https://amakhosi.be",
+    "domein": "amakhosi.be",
+    "dx": 0, "dy": 0
+  },
+  "bambine": {
+    "naam": "Bambine",
+    "gemeente": "Lommel",
+    "plaats": "lommel",
+    "soort": "babywellness en mamazorg",
+    "url": "https://bambine.be",
+    "domein": "bambine.be",
+    "dx": 0, "dy": 0
+  },
+  "kleinhof": {
+    "naam": "'t Kleinhof",
+    "gemeente": "Vechmaal (Heers)",
+    "plaats": "vechmaal",
+    "soort": "bio- en zorgboerderij",
+    "url": "https://kleinhof.be",
+    "domein": "kleinhof.be",
+    "dx": 14, "dy": 6
+  },
+  "mettu": {
+    "naam": "Mett-U VZW",
+    "gemeente": "Heks (Heers)",
+    "plaats": "heks",
+    "soort": "vereniging met een pluktuin",
+    "url": "https://mett-u.be",
+    "domein": "mett-u.be",
+    "dx": -12, "dy": 10
+  }
+}

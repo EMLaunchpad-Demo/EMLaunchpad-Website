@@ -1,0 +1,180 @@
+{
+  "type": "stad",
+  "klaar": true,
+  "volgorde": 3,
+  "slug": "heers",
+  "naam": "Heers",
+  "crumb": "Heers",
+  "plaats": "heers",
+  "ook_plaatsen": ["vechmaal", "heks"],
+  "kort": "Ons eigen dorp, met 't Kleinhof en Mett-U als buren.",
+  "bronnen": {
+    "zoekvraag": "Rapport 03, cluster B: 'website laten maken heers' = zeer laag, afgeleid (samen met borgloon, bilzen, lanaken), google.be 15/10/2026.",
+    "klant": "'t Kleinhof en Mett-U: Portfolio (scripts/paginas/portfolio/nl.json), ai-team/kennis/martijn/claudecode-15 (tijdlijn, regels van Martijn, mails Mett-U) en -05 (opbouw van de mails Mett-U). EM Launchpad: 15-STADSPAGINAS.md, deel 4."
+  },
+  "meta": {
+    "title": "Website laten maken in Heers | EM Launchpad",
+    "ogtitle": "Website laten maken in Heers: twee klanten in ons eigen dorp",
+    "desc": "Website laten maken in Heers? Wij zitten in Vechmaal en bouwden de sites van 't Kleinhof en Mett-U. €150 per maand, excl. btw.",
+    "service": "Website laten maken in Heers",
+    "areaServed": {"@type": "City", "name": "Heers", "containedInPlace": {"@type": "AdministrativeArea", "name": "Limburg"}}
+  },
+  "hero": {
+    "eyebrow": "Heers",
+    "h1a": "Website laten maken in Heers,",
+    "h1b": "de gemeente waar onze kaart begint.",
+    "lede": "Een website laten maken in Heers? Dan zoek je eigenlijk bij ons om de hoek. Ons kantoor staat in de Brugstraat in Vechmaal, en twee van onze klanten zitten in dezelfde gemeente: de bio- en zorgboerderij 't Kleinhof, in onze eigen straat, en de vereniging Mett-U, met haar pluktuin in Heks.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Bekijk het werk van onze buren",
+    "cta2_href": "#kleinhof",
+    "feiten": ["Ons kantoor: Vechmaal", "Klanten in Vechmaal en Heks", "Website, opvolging en CRM", "€150 per maand, excl. btw"]
+  },
+  "kaart": {
+    "titel": "Twee klanten en ons kantoor, allemaal in Heers",
+    "alt": "Vereenvoudigde kaart van het zuiden van Limburg, ingezoomd op Heers: 't Kleinhof in Vechmaal en Mett-U in Heks als genummerde punten, en ons kantoor in Vechmaal.",
+    "zoom": 1.7,
+    "focus": [50.77, 5.33],
+    "punten": [
+      {"klant": "kleinhof", "href": "#kleinhof", "soort": "bio- en zorgboerderij, in onze straat"},
+      {"klant": "mettu", "href": "#mettu", "soort": "vereniging met een pluktuin in Heks"},
+      {"klant": "thuis", "href": "#dorp"}
+    ],
+    "steden": ["heers", "sint-truiden", "borgloon", "tongeren", "gingelom"],
+    "streken": [{"t": "Haspengouw", "plaats": [50.725, 5.215]}],
+    "bijschrift": "Vereenvoudigde kaart, zo ver ingezoomd als het gaat: op de gemeente Heers en haar buren."
+  },
+  "secties": [
+    {
+      "type": "case",
+      "id": "kleinhof",
+      "eyebrow": "Klant in Vechmaal",
+      "h2a": "Website laten maken in Heers:",
+      "h2b": "'t Kleinhof, in onze eigen straat.",
+      "alineas": [
+        "'t Kleinhof is de bio- en zorgboerderij van Liesbeth en Gert in Vechmaal. Gert zorgt voor de bio-boerderij, Liesbeth voor de zorgboerderij. Boven hun site staat hun motto: biologisch kleinschalig. En de boerderij ligt in de Brugstraat, dezelfde straat als ons kantoor.",
+        "Een website hadden ze al, maar die was toe aan iets nieuws. De afspraak was helder: de inhoud blijft, de links in het menu blijven, alleen het ontwerp verandert. Hun teksten, hun pagina's en hun manier van vertellen zijn dus van hen gebleven.",
+        "Het nieuwe ontwerp moest landelijk aanvoelen, gerust een beetje ouderwets, zoals een boerderij hoort te ogen. In de eerste versie zat te weinig groen. Daarna kwam er meer appelgroen bij en meer foto's van hun eigen velden, tot het klopte.",
+        "Wie de site nu opent, leest wie Liesbeth en Gert zijn, wat de bio-boerderij en de zorgboerderij doen, en wat er bij hen geteeld en gekweekt wordt: eieren, aardappelen, vlees, groenten en fruit."
+      ],
+      "beeld": {
+        "src": "assets/werk/kleinhof-gsm-780.webp",
+        "srcset": "assets/werk/kleinhof-gsm-390.webp 390w, assets/werk/kleinhof-gsm-780.webp 780w",
+        "sizes": "260px",
+        "w": 780,
+        "h": 1688,
+        "vorm": "gsm",
+        "alt": "De startpagina van kleinhof.be op een gsm: een strook graanveld, een appelgroen vlak met de kop Biologisch kleinschalig en het logo van 't Kleinhof, en daaronder een blok over de bio-boerderij."
+      },
+      "links": [
+        {"label": "Bekijk kleinhof.be", "href": "https://kleinhof.be"},
+        {"label": "'t Kleinhof in ons portfolio", "href": "Portfolio"}
+      ]
+    },
+    {
+      "type": "case",
+      "id": "mettu",
+      "eyebrow": "Klant in Heks",
+      "h2a": "Mett-U:",
+      "h2b": "een vereniging met een pluktuin.",
+      "alineas": [
+        "In Heks, ook een deelgemeente van Heers, heeft Mett-U VZW haar pluktuin. De vereniging is actief in Heks en Vechmaal en begon ooit met bijen. Ze wil samen met wie meedoet bijdragen aan een duurzame natuur- en voedselvoorziening.",
+        "Ook hier bleven de teksten en de pagina's zoals de vereniging ze zelf geschreven had. Het ontwerp kreeg het landschap van Haspengouw mee, in groen en crème. Wat erbij kwam, zie je niet meteen: achter het contactformulier hangen nu automatische opvolging en een CRM.",
+        "Stuurt iemand een bericht, dan krijgt die meteen een mail met een bedankje en een kopie van wat hij invulde. Tegelijk krijgt de vereniging een melding, waaruit ze meteen kan terugmailen of bellen. Elk contact komt in één klantenbestand, zodat de vrijwilligers overzicht houden over wie zich meldde.",
+        "Kijk ook eens verder dan de startpagina. Er staat een galerij met foto's, een pagina over de pluktuin in Heks, een overzicht van de locaties en een pagina die uitlegt wat de naam Mett-U betekent. Dat is de vereniging, in haar eigen woorden."
+      ],
+      "beeld": {
+        "src": "assets/werk/mettu-gsm-780.webp",
+        "srcset": "assets/werk/mettu-gsm-390.webp 390w, assets/werk/mettu-gsm-780.webp 780w",
+        "sizes": "260px",
+        "w": 780,
+        "h": 1688,
+        "vorm": "gsm",
+        "alt": "De startpagina van mett-u.be op een gsm: een groen vlak met de naam VZW Mett-U, de zin over een duurzame natuur- en voedselvoorziening en de knoppen Lid worden of doneren en Galerij."
+      },
+      "links": [
+        {"label": "Bekijk mett-u.be", "href": "https://mett-u.be"},
+        {"label": "Zo werkt automatische opvolging", "href": "AI-Automatisering"}
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "dorp",
+      "eyebrow": "Waar we zitten",
+      "h2a": "Een webbureau in Vechmaal,",
+      "h2b": "met de makers zelf aan de lijn.",
+      "alineas": [
+        "Heers ligt in Haspengouw, helemaal in het zuiden van Limburg: een gemeente van dorpen, velden en boomgaarden. Dat zie je ook aan onze klanten hier. Een boerderij en een vereniging met een pluktuin.",
+        "EM Launchpad is van twee broers, Ebert en Martijn Vanbrabant. Sinds juli 2025 werken we vanuit de Brugstraat 2A in Vechmaal. Ebert voert het eerste gesprek en houdt de opvolging in handen. Martijn bouwt de site en alles wat erachter vanzelf moet lopen.",
+        "Zit je zaak of vereniging in Heers, dan zijn we buren. Toch verloopt het bij jou net zoals bij een klant aan de andere kant van de provincie: een gratis demo van een halfuur via Teams, en daarna alles op afstand. Je stuurt je foto's en teksten door wanneer het jou uitkomt, en je hoeft niets in te plannen rond een bezoek.",
+        "Eén voordeel van zo dichtbij is er wel: je kunt het werk van je dorpsgenoten zelf gaan bekijken. Beide sites staan online, en de boerderij en de pluktuin liggen gewoon in de gemeente."
+      ],
+      "kader": {
+        "k": "In Heers",
+        "tekst": [
+          "EM Launchpad, Brugstraat 2A, 3870 Vechmaal",
+          "'t Kleinhof, bio- en zorgboerderij, Vechmaal",
+          "Mett-U VZW, pluktuin in Heks",
+          "[Over ons](Over%20ons)"
+        ]
+      }
+    },
+    {
+      "type": "prijs",
+      "id": "prijs",
+      "eyebrow": "Wat het kost",
+      "h2a": "Voor een hoeve, een vereniging",
+      "h2b": "of een praktijk: één pakket.",
+      "lede": "Of je nu producten, leden of afspraken hebt: het pakket heet Online groeien, en de prijs is overal dezelfde.",
+      "pakket": "Online groeien",
+      "per": "per maand, excl. btw",
+      "voorwaarden": "Geen opstartkost, elke maand opzegbaar",
+      "rijen": [
+        "Een nieuw ontwerp, met je eigen teksten als je dat wil",
+        "Contactformulieren die zelf een bevestiging sturen",
+        "Een klantenbestand met iedereen die zich ooit meldde",
+        "Online boeken of online betalen, als je zaak dat nodig heeft",
+        "Je Google-bedrijfsprofiel, ingevuld en bijgehouden",
+        "Hosting, beheer en support, door ons"
+      ],
+      "extra": "Wil je dat vragen ook 's avonds een antwoord krijgen? Een AI-chatbot kost €50 per maand bovenop het pakket. Alle prijzen excl. btw.",
+      "links": [
+        {"label": "Alles wat in Online groeien zit", "href": "Diensten"},
+        {"label": "Zoek je pakket met de pakketkiezer", "href": "Pakketkiezer"}
+      ]
+    },
+    {
+      "type": "buren",
+      "id": "meer",
+      "eyebrow": "Elders in Limburg",
+      "h2a": "Ook buiten Heers",
+      "h2b": "staan er punten op de kaart.",
+      "alineas": [
+        "Van een kliniek in Hasselt tot een privésauna in Hamont-Achel: de kaart van Limburg toont al onze klanten samen."
+      ],
+      "regio_kort": "De hele provincie, met al onze klanten."
+    }
+  ],
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Vragen uit Heers,",
+    "h2b": "van Vechmaal tot Heks.",
+    "items": [
+      {"q": "Wat kost een website laten maken in Heers?", "a": "€150 per maand, excl. btw, voor het pakket Online groeien. Daarin zitten je site, het beheer en wat erachter draait, zoals formulieren met opvolging of een online agenda. Je betaalt geen opstartkost en zegt per maand op als je wil."},
+      {"q": "Jullie zitten in Heers. Werken jullie dan ter plaatse?", "a": "Nee, ook voor een klant uit onze eigen gemeente werken we online. De demo doen we via Teams, en je materiaal stuur je per mail of via WhatsApp. Zo kies je zelf wanneer je iets doorstuurt."},
+      {"q": "Maken jullie ook een website voor een vereniging?", "a": "Ja. Mett-U VZW uit Heks is een vereniging. Hun site toont wie ze zijn en wat ze doen, en achter het contactformulier zit automatische opvolging: een bevestiging voor wie een bericht stuurt, en een melding voor de vereniging."},
+      {"q": "Ik heb een hoeve. Moet ik dan online verkopen?", "a": "Nee. Bij 't Kleinhof draait de site rond hun verhaal en wat ze telen. Wat jouw site moet kunnen, beslis je zelf. In de demo bekijken we wat bij jouw hoeve past."},
+      {"q": "Blijven mijn eigen teksten behouden?", "a": "Als je dat wil, ja. Bij 't Kleinhof en bij Mett-U bleven de teksten en de pagina's zoals ze waren. Alleen het ontwerp werd nieuw, en waar nodig wat erachter draait."},
+      {"q": "Kan ik jullie werk in Heers zelf bekijken?", "a": "Ja, beide sites staan online: [kleinhof.be](https://kleinhof.be) en [mett-u.be](https://mett-u.be). Reviews van klanten hebben we nog niet, dus kijk gerust zelf."},
+      {"q": "Wat als ik stop?", "a": "Opzeggen kan elke maand. We dragen alles aan je over: je website en al je gegevens gaan naar jou."}
+    ]
+  },
+  "cta": {
+    "h2a": "Een zaak of vereniging",
+    "h2b": "in Heers?",
+    "text": "Plan een gratis demo van een halfuur via Teams. Dan tonen we hoe jouw site eruit kan zien, met de teksten die je al hebt.",
+    "btn": "Plan een gratis demo",
+    "demo": "Of vraag je demo aan via het formulier",
+    "demo_href": "Gratis%20Demo",
+    "badges": ["Gratis en vrijblijvend", "Een halfuur, via Teams", "Gebouwd in Vechmaal"]
+  }
+}

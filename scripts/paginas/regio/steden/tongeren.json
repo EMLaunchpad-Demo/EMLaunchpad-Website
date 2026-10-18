@@ -1,0 +1,170 @@
+{
+  "type": "stad",
+  "klaar": true,
+  "volgorde": 5,
+  "slug": "tongeren",
+  "naam": "Tongeren",
+  "crumb": "Tongeren",
+  "plaats": "tongeren",
+  "kort": "'t Kleinhof: een boerderij die haar eigen verhaal vertelt.",
+  "bronnen": {
+    "zoekvraag": "Rapport 03, cluster B: 'website laten maken tongeren' = laag (Google-autocomplete), google.be 15/10/2026.",
+    "klant": "'t Kleinhof: Portfolio (scripts/paginas/portfolio/nl.json: verhaal, bio- en zorgboerderij, producten), ai-team/kennis/martijn/claudecode-15 (regels van Martijn, navigatie en subpagina's, huisstijl). Mett-U: claudecode-15. Clinic3D-huisstijl: claudecode-12."
+  },
+  "meta": {
+    "title": "Website laten maken in Tongeren | EM Launchpad",
+    "ogtitle": "Website laten maken in Tongeren: je verhaal en je producten online",
+    "desc": "Website laten maken in Tongeren? Voor 't Kleinhof, vlak bij Tongeren, zetten we hun verhaal en producten online. €150 per maand, excl. btw.",
+    "service": "Website laten maken in Tongeren",
+    "areaServed": {"@type": "City", "name": "Tongeren", "containedInPlace": {"@type": "AdministrativeArea", "name": "Limburg"}}
+  },
+  "hero": {
+    "eyebrow": "Tongeren",
+    "h1a": "Website laten maken in Tongeren,",
+    "h1b": "met een boerderij als dichtste punt op de kaart.",
+    "lede": "Een website laten maken in Tongeren? We hebben er nog geen klant, maar zitten wel vlakbij, in Vechmaal. In dat dorp bouwden we de site van 't Kleinhof, een bio- en zorgboerderij. Hier lees je hoe je een zaak met een eigen verhaal en eigen producten online zet, zonder dat ze haar karakter verliest.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Lees hoe we het aanpakten",
+    "cta2_href": "#kleinhof",
+    "feiten": ["Nog geen klant in Tongeren", "'t Kleinhof in Vechmaal", "Jouw verhaal, jouw stijl", "€150 per maand, excl. btw"]
+  },
+  "kaart": {
+    "titel": "Tongeren, met 't Kleinhof en Mett-U in de buurt",
+    "alt": "Vereenvoudigde kaart van het zuidoosten van Limburg met Tongeren in het vet, en in Heers 't Kleinhof en Mett-U als genummerde punten bij ons kantoor in Vechmaal.",
+    "zoom": 1.6,
+    "focus": [50.79, 5.43],
+    "punten": [
+      {"klant": "kleinhof", "href": "#kleinhof", "soort": "bio- en zorgboerderij van Liesbeth en Gert"},
+      {"klant": "mettu", "href": "#werken"},
+      {"klant": "thuis", "href": "#werken"}
+    ],
+    "steden": ["tongeren", "borgloon", "heers", "riemst", "bilzen"],
+    "streken": [],
+    "bijschrift": "Vereenvoudigde kaart. In Tongeren zelf hebben we nog geen klant; de dichtste punten liggen in Heers."
+  },
+  "secties": [
+    {
+      "type": "case",
+      "id": "kleinhof",
+      "eyebrow": "De dichtste case",
+      "h2a": "Website laten maken in Tongeren:",
+      "h2b": "begin bij je eigen verhaal.",
+      "alineas": [
+        "'t Kleinhof is een kleinschalige bio-boerderij met een zorgboerderij, in Vechmaal. Liesbeth en Gert houden ze samen draaiende. Wie hen online zoekt, moet meteen zien wie ze zijn, wat ze doen en wat er op hun land groeit en rondloopt.",
+        "Daarom vertrekt de site van hun verhaal. Je leest hun visie, je maakt kennis met de bio-boerderij en met de zorgboerderij, en je ziet wat ze aanbieden: eieren, aardappelen, vlees, groenten en fruit. Er zijn aparte pagina's over de koeien, over de bijen en over hun bio-weide-eieren.",
+        "Wat we bewust niet deden: hun teksten herschrijven. De inhoud en de links in het menu bleven zoals Liesbeth en Gert ze kenden. Alleen het ontwerp is nieuw, zodat hun verhaal beter uitkomt.",
+        "Ook wat onderaan de oude site stond, kreeg een plaats in de nieuwe: de nieuwsberichten, de inschrijving voor hun nieuwsbrief en de link naar hun Facebookpagina. Wie de oude site kende, vindt dus alles terug."
+      ],
+      "beeld": {
+        "src": "assets/werk/kleinhof-lang-1200.webp",
+        "sizes": "(max-width: 760px) 92vw, 520px",
+        "w": 1200,
+        "h": 1519,
+        "domein": "kleinhof.be",
+        "alt": "De startpagina van kleinhof.be op een computer: een groen logovlak, een menu, een veld met hoog gras onder de kop Biologisch kleinschalig, en daaronder blokken voor de bio-boerderij en de zorgboerderij."
+      },
+      "links": [
+        {"label": "Bekijk kleinhof.be", "href": "https://kleinhof.be"},
+        {"label": "Liesbeth en Gert in ons portfolio", "href": "Portfolio"}
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "stijl",
+      "eyebrow": "Hun stijl, niet de onze",
+      "h2a": "Een site die eruitziet",
+      "h2b": "zoals de zaak zelf.",
+      "alineas": [
+        "Een boerderij hoort er online niet uit te zien als een webwinkel. Voor 't Kleinhof wilden we een site die landelijk aanvoelt, een tikje ouderwets zelfs, met grote foto's van hun velden en hun eigen appelgroen. Na de eerste versie wilden we nog meer groen en meer veld zien, en zo is het ook gebeurd.",
+        "Zo werken we bij elke klant: de stijl komt van de zaak, niet van ons. Bij een kliniek in Hasselt werd het goud en ivoor, bij een privésauna espresso en goud, bij de boerderij groen en veld. Heb je in Tongeren een winkel, een atelier of een hoeve met een eigen gezicht, dan hoort je site dat gezicht te tonen.",
+        "Dat geldt ook voor je woorden. Kloppen je teksten al, dan blijven ze. Moeten ze nog geschreven worden, dan vertrekken we van wat jij vertelt in de demo, niet van algemene zinnen die bij om het even welke zaak passen."
+      ],
+      "lijst": [
+        "Je verhaal en je visie, in je eigen woorden",
+        "Een eigen pagina per product of activiteit",
+        "Foto's van je eigen zaak, waar je ze hebt",
+        "Kleuren en letters die bij je zaak passen"
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "werken",
+      "eyebrow": "Hoe we werken",
+      "h2a": "Vanuit Vechmaal,",
+      "h2b": "zonder dat je de deur uit moet.",
+      "alineas": [
+        "Ons kantoor staat in Vechmaal, niet ver van Tongeren. Toch komen we niet langs, want alles gaat online. In een gratis demo van dertig minuten via Teams vertel jij over je zaak, en tonen wij hoe je site eruit kan zien. Daarna stuur je je foto's en teksten door, en bouwen wij. Meestal staat de site binnen 14 dagen online.",
+        "In dezelfde gemeente bouwden we ook voor Mett-U, een vereniging met een pluktuin in Heks. Daar zit achter het contactformulier automatische opvolging en een CRM. Wie een vraag stuurt, krijgt meteen bericht dat ze goed aankwam, en de vereniging krijgt een melding.",
+        "Een site voor een zaak in Tongeren kan dus allebei: je verhaal vertellen zoals bij 't Kleinhof, en aanvragen opvolgen zoals bij Mett-U. Wat jij nodig hebt, bekijken we samen. Ebert stelt in de demo de vragen, Martijn bouwt daarna."
+      ],
+      "beeld": {
+        "src": "assets/werk/mettu-gsm-780.webp",
+        "srcset": "assets/werk/mettu-gsm-390.webp 390w, assets/werk/mettu-gsm-780.webp 780w",
+        "sizes": "220px",
+        "w": 780,
+        "h": 1688,
+        "vorm": "gsm",
+        "alt": "De startpagina van mett-u.be op een gsm, in groen, met de naam VZW Mett-U en twee knoppen."
+      }
+    },
+    {
+      "type": "prijs",
+      "id": "prijs",
+      "eyebrow": "Wat het kost",
+      "h2a": "Je verhaal online,",
+      "h2b": "voor één vaste maandprijs.",
+      "lede": "Het pakket heet Online groeien. Een ontwerp in jouw stijl zit erin, net als het beheer achteraf.",
+      "pakket": "Online groeien",
+      "per": "per maand, excl. btw",
+      "voorwaarden": "Geen opstartkost, per maand op te zeggen",
+      "rijen": [
+        "Een website in de stijl van je zaak, met je eigen foto's",
+        "Pagina's voor je verhaal, je aanbod en je producten",
+        "Contactformulieren met automatische opvolging",
+        "Online betalen en facturen, als je dat wil",
+        "Je Google-bedrijfsprofiel, volledig ingevuld",
+        "Reviews op Google, met een vraag aan je klanten",
+        "Hosting en beheer, en wijzigingen via een berichtje"
+      ],
+      "extra": "Wil je dat klanten ook een moment kunnen boeken, zoals bij een kliniek of een sauna? Dat kan binnen hetzelfde pakket. Een AI-chatbot kost €50 per maand extra. Alles excl. btw.",
+      "links": [
+        {"label": "Bekijk wat er in elk pakket zit", "href": "Diensten"},
+        {"label": "Welk pakket? De pakketkiezer helpt", "href": "Pakketkiezer"}
+      ]
+    },
+    {
+      "type": "buren",
+      "id": "meer",
+      "eyebrow": "Elders in Limburg",
+      "h2a": "Van Haspengouw",
+      "h2b": "tot aan de Nederlandse grens.",
+      "alineas": [
+        "Zoek je een klant dichter bij jou, of wil je alle punten tegelijk zien? Kijk dan op de kaart van Limburg."
+      ],
+      "regio_kort": "Alle klanten van EM Launchpad samen."
+    }
+  ],
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Vragen uit Tongeren",
+    "h2b": "en omstreken.",
+    "items": [
+      {"q": "Wat kost een website laten maken in Tongeren?", "a": "Het pakket Online groeien kost €150 per maand, excl. btw. Ontwerp, bouw, hosting en beheer zitten erin. Er is geen opstartkost, en je zit niet voor jaren vast: opzeggen kan per maand."},
+      {"q": "Hebben jullie al een klant in Tongeren?", "a": "We hebben nog geen klant in Tongeren. De dichtste is 't Kleinhof in Vechmaal, een deelgemeente van Heers. Ook Mett-U zit in Heers. Beide sites kun je zelf bekijken."},
+      {"q": "Mijn teksten zijn goed. Moeten die herschreven worden?", "a": "Nee. Bij 't Kleinhof bleef de inhoud dezelfde, met dezelfde links in het menu. Alleen het ontwerp werd nieuw. Wil je wel nieuwe teksten, dan bespreken we dat in de demo."},
+      {"q": "Kan de site er landelijk of klassiek uitzien?", "a": "Ja. Je site krijgt de stijl van je zaak. Voor 't Kleinhof kozen we een landelijke, wat ouderwetse look met veel groen en foto's van de velden, en zo staat de site nu online."},
+      {"q": "Kan ik mijn producten op de site tonen?", "a": "Ja. Bij 't Kleinhof staan de eieren, de aardappelen, het vlees, de groenten en het fruit op de site, met aparte pagina's over de koeien en de bijen. Wat jij aanbiedt, krijgt een eigen plek."},
+      {"q": "Komen jullie naar Tongeren voor een gesprek?", "a": "Nee, ook al zitten we dichtbij. We werken volledig online: de demo loopt via Teams, en daarna regelen we alles per mail, telefoon of WhatsApp."},
+      {"q": "Wat als ik stop?", "a": "Online groeien zeg je per maand op. We dragen alles aan je over: je website en al je gegevens gaan naar jou."}
+    ]
+  },
+  "cta": {
+    "h2a": "Een zaak met een eigen verhaal",
+    "h2b": "in Tongeren?",
+    "text": "Plan een gratis demo via Teams. Een halfuur is genoeg om te tonen hoe jouw verhaal en je aanbod online kunnen staan.",
+    "btn": "Plan een gratis demo",
+    "demo": "Of vraag je demo aan via het formulier",
+    "demo_href": "Gratis%20Demo",
+    "badges": ["Gratis en vrijblijvend", "Dertig minuten, via Teams", "Jouw stijl, jouw teksten"]
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "type": "stad",
+  "klaar": true,
+  "volgorde": 2,
+  "slug": "lommel",
+  "naam": "Lommel",
+  "crumb": "Lommel",
+  "plaats": "lommel",
+  "kort": "Bambine: online boeken, extra's en een digitale cadeaubon.",
+  "bronnen": {
+    "zoekvraag": "Rapport 03, cluster B: 'website laten maken lommel' = laag (Google-autocomplete), google.be 15/10/2026.",
+    "klant": "Bambine: Portfolio (scripts/paginas/portfolio/nl.json), ai-team/kennis/martijn/claudecode-14 en -05. Amakhosi: Portfolio en claudecode-13."
+  },
+  "meta": {
+    "title": "Website laten maken in Lommel | EM Launchpad",
+    "ogtitle": "Website laten maken in Lommel: zo boeken ouders bij Bambine",
+    "desc": "Website laten maken in Lommel? Voor Bambine bouwden we een site met online boeken, extra's en een digitale cadeaubon. €150 per maand, excl. btw.",
+    "service": "Website laten maken in Lommel",
+    "areaServed": {
+      "@type": "City",
+      "name": "Lommel",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Limburg"
+      }
+    }
+  },
+  "hero": {
+    "eyebrow": "Lommel",
+    "h1a": "Website laten maken in Lommel,",
+    "h1b": "waar ouders online een warm bad boeken.",
+    "lede": "Een website laten maken in Lommel? In galerij Vivaldi zit Bambine, de babywellness en mamazorg van Ine. Wij bouwden haar nieuwe site, met online boeken, extra's bij een sessie en een cadeaubon die je meteen digitaal koopt. Iets verder, in Hamont-Achel, deden we iets gelijkaardigs voor een privésauna.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Bekijk wat we bouwden",
+    "cta2_href": "#bambine",
+    "feiten": [
+      "Klant in Lommel: Bambine",
+      "Online boeken met extra's",
+      "Digitale cadeaubon",
+      "€150 per maand, excl. btw"
+    ]
+  },
+  "kaart": {
+    "titel": "Bambine in Lommel, Amakhosi in Hamont-Achel",
+    "alt": "Vereenvoudigde kaart van het noorden van Limburg: Bambine in Lommel en Amakhosi Sauna in Hamont-Achel als genummerde punten, tegen de grens met Nederland.",
+    "zoom": 1.6,
+    "focus": [
+      51.19,
+      5.42
+    ],
+    "punten": [
+      {
+        "klant": "bambine",
+        "href": "#bambine",
+        "soort": "babywellness en mamazorg, galerij Vivaldi"
+      },
+      {
+        "klant": "amakhosi",
+        "href": "#amakhosi"
+      }
+    ],
+    "steden": [
+      "lommel",
+      "pelt",
+      "hamont-achel",
+      "leopoldsburg",
+      "beringen",
+      "peer",
+      "bree"
+    ],
+    "streken": [
+      {
+        "t": "Nederland",
+        "plaats": [
+          51.312,
+          5.62
+        ]
+      }
+    ],
+    "bijschrift": "Vereenvoudigde kaart, ingezoomd op het noorden van Limburg."
+  },
+  "secties": [
+    {
+      "type": "case",
+      "id": "bambine",
+      "eyebrow": "Klant in Lommel",
+      "h2a": "Website laten maken in Lommel:",
+      "h2b": "zo boekt Bambine online.",
+      "alineas": [
+        "Bambine is babywellness en mamazorg in galerij Vivaldi, aan het Michiel Jansplein. Baby's gaan er in een warm bad of krijgen een massage, mama's komen voor een massage of een verwenmoment, en kinderen voor een verwensessie. Ine doet het allemaal zelf, één op één. Ze werkte zeventien jaar in een kinderopvang in Lommel en is hoger redder.",
+        "We schreven niets bij wat Ine zelf niet zegt. Haar bestaande site was de bron: haar diensten, haar prijzen, haar woorden. Wat nieuw is, zit in het ontwerp en in wat de site kan. Goud, lichtbruin en wit, met boogvormige beelden en de tarieven als een menukaart.",
+        "Ouders kiezen online zelf een moment. Bij een sessie nemen ze er een extra bij, zoals een wasmomentje, of ze boeken een verwensessie meteen voor een tweede kind. Een cadeaubon koop je digitaal. Na het boeken lopen er vijf automatische mails, van de bevestiging met wat je meebrengt tot een bedankje na het bezoek.",
+        "De eerste feedback van Ine kwam via WhatsApp binnen en zat dezelfde dag in de site. Haar uren en haar beschikbaarheid past ze zelf aan in ons platform. En haar webshop bleef gewoon bestaan: die staat in het menu van de nieuwe site."
+      ],
+      "beeld": {
+        "src": "assets/werk/bambine-gsm-780.webp",
+        "sizes": "260px",
+        "w": 780,
+        "h": 1688,
+        "vorm": "gsm",
+        "alt": "De startpagina van bambine.be op een gsm: een baby gluurt van onder een witte handdoek, met de kop Een warm bad voor de allerkleinsten en een knop om te reserveren."
+      },
+      "links": [
+        {
+          "label": "Bekijk bambine.be",
+          "href": "https://bambine.be"
+        },
+        {
+          "label": "Bambine in ons portfolio",
+          "href": "Portfolio"
+        }
+      ]
+    },
+    {
+      "type": "case",
+      "id": "amakhosi",
+      "eyebrow": "Iets verder: Hamont-Achel",
+      "h2a": "Amakhosi Sauna:",
+      "h2b": "reserveren en meteen betalen.",
+      "alineas": [
+        "Tegen de grens met Nederland ligt Amakhosi Sauna, de luxe privésauna en wellness van Patrick en Connie. Gasten hebben er alles voor zich alleen: een Finse sauna, een stoombad, een bubbelbad, een lounge met sfeerhaard en, voor wie blijft slapen, een aparte slaapkamer.",
+        "Op de nieuwe site kies je een moment overdag of een overnachting, en je betaalt meteen online. Daarna komen de bevestiging, de herinnering en de opvolging vanzelf. Na een overnachting houdt het systeem de ochtend erna vrij, zodat niemand dan een dagmoment kan boeken.",
+        "De naam betekent koningen in het Zulu, en dat zie je aan de site: espresso en goud, koppen met schreef en een lint met alles wat er te beleven valt. Ook de extra's staan erop, van een uitgebreid ontbijt voor twee tot een tapas- of kaasplank. Die bestel je minstens een dag vooraf.",
+        "De mails spreken de gasten aan met u, want zo spreekt Amakhosi ook op zijn eigen site."
+      ],
+      "beeld": {
+        "src": "assets/werk/amakhosi2-gsm-780.webp",
+        "srcset": "assets/werk/amakhosi2-gsm-390.webp 390w, assets/werk/amakhosi2-gsm-780.webp 780w",
+        "sizes": "260px",
+        "w": 780,
+        "h": 1688,
+        "vorm": "gsm",
+        "alt": "De startpagina van amakhosi.be op een gsm, in espresso en goud, met een knop om een moment te reserveren."
+      },
+      "links": [
+        {
+          "label": "Bekijk amakhosi.be",
+          "href": "https://amakhosi.be"
+        }
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "noorden",
+      "eyebrow": "Hoe we werken",
+      "h2a": "Lommel ligt aan de andere kant",
+      "h2b": "van de provincie. Dat merk je niet.",
+      "alineas": [
+        "Wij zitten in Vechmaal, helemaal in het zuiden van Limburg. Lommel en Hamont-Achel liggen in het noorden, tegen de grens met Nederland. Op de kaart lijkt dat ver, maar voor hoe we werken maakt het niets uit: alles loopt online.",
+        "De gratis demo duurt dertig minuten en loopt via Teams. Daarna stuur je je foto's, teksten en prijzen door, en wij bouwen. Feedback geef je zoals Ine het deed: een berichtje via WhatsApp is genoeg.",
+        "Wie met sessies werkt, zoals een wellness, een salon of een praktijk, stelt zich meestal dezelfde vragen. Hoe boeken klanten zelf, ook 's avonds? Hoe verkoop ik een cadeaubon zonder dat iemand moet langskomen? En hoe zorg ik dat niemand zijn afspraak vergeet? Bij Bambine en Amakhosi beantwoordt de site die vragen nu zelf."
+      ],
+      "lijst": [
+        "Online boeken, met extra's die klanten zelf aanvinken",
+        "Een bevestiging met wat je klant moet meebrengen",
+        "Een herinnering vooraf, en een bedankje achteraf",
+        "Je eigen uren, die je zelf aanpast"
+      ]
+    },
+    {
+      "type": "prijs",
+      "id": "prijs",
+      "eyebrow": "Wat het kost",
+      "h2a": "Online boeken en betalen",
+      "h2b": "in één maandprijs.",
+      "lede": "Dat pakket heet Online groeien. Er is geen opstartkost, en je kunt elke maand opzeggen.",
+      "pakket": "Online groeien",
+      "per": "per maand, excl. btw",
+      "voorwaarden": "Geen opstartkost, maandelijks opzegbaar",
+      "rijen": [
+        "Een nieuwe website in de stijl van jouw zaak",
+        "Een boekingssysteem, met extra's die klanten erbij kiezen",
+        "Online betalen en facturen",
+        "Automatische mails voor en na elke afspraak",
+        "Je Google-bedrijfsprofiel en reviewverzoeken",
+        "Al je berichten op één scherm"
+      ],
+      "extra": "Krijg je veel vragen via berichtjes? Een AI-chatbot antwoordt voor €50 per maand extra. Wil je dat iemand je telefoon opneemt terwijl je met een klant bezig bent? Dat doet een AI-receptioniste: eenmalig €750, daarna €150 per maand met 300 belminuten. Alles excl. btw.",
+      "links": [
+        {
+          "label": "Alle diensten en prijzen",
+          "href": "Diensten"
+        },
+        {
+          "label": "Doe de pakketkiezer",
+          "href": "Pakketkiezer"
+        }
+      ]
+    },
+    {
+      "type": "buren",
+      "id": "meer",
+      "eyebrow": "Elders in Limburg",
+      "h2a": "Ook in Hasselt en Haspengouw",
+      "h2b": "bouwden we websites.",
+      "alineas": [
+        "Op de pagina over Limburg zie je al onze klanten samen op één kaart."
+      ],
+      "regio_kort": "Vijf klanten, drie streken, één kaart."
+    }
+  ],
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Vragen uit Lommel",
+    "h2b": "en het noorden van Limburg.",
+    "items": [
+      {
+        "q": "Wat kost een website laten maken in Lommel?",
+        "a": "Een vaste maandprijs: €150, excl. btw, voor de site, het boekingssysteem en de automatische mails. Opstartkosten zijn er niet, en je zit nergens aan vast: opzeggen kan elke maand."
+      },
+      {
+        "q": "Kunnen klanten bij het boeken een extra kiezen?",
+        "a": "Ja. Bij Bambine voeg je bij een sessie een wasmomentje toe, en een verwensessie boek je meteen voor een tweede kind. In het boekingssysteem kan elke extra een eigen prijs en extra tijd krijgen."
+      },
+      {
+        "q": "Kan ik cadeaubonnen online verkopen?",
+        "a": "Ja. Bij Bambine koop je een cadeaubon meteen digitaal. In de demo bekijken we of dat ook bij jouw zaak past."
+      },
+      {
+        "q": "Kan ik zelf mijn uren aanpassen?",
+        "a": "Ja. Je beschikbaarheid beheer je zelf in ons platform. Ine van Bambine doet dat ook zelf."
+      },
+      {
+        "q": "Kan een klant zelf verplaatsen of annuleren?",
+        "a": "Dat kies je zelf. Wil je het, dan staan in de bevestiging en de herinnering links om te verplaatsen of te annuleren, zoals bij Clinic3D. Bij Bambine niet: daar zeg je telefonisch af, minstens 24 uur op voorhand. Verplaatst Ine een afspraak, dan krijgt de klant meteen een mail met het nieuwe moment."
+      },
+      {
+        "q": "Komen jullie langs in Lommel?",
+        "a": "Nee, we werken volledig online. De demo loopt via Teams, en ook daarna regelen we alles op afstand. Je feedback stuur je per mail of via WhatsApp."
+      },
+      {
+        "q": "Mijn webshop draait al apart. Moet die weg?",
+        "a": "Nee. Bambine heeft een aparte webshop, en die bleef gewoon bestaan: de nieuwe site linkt ernaar vanuit het menu."
+      },
+      {
+        "q": "Wat als ik stop?",
+        "a": "Online groeien is maandelijks opzegbaar. Wil je stoppen, dan dragen we alles aan je over: je website en al je gegevens gaan naar jou."
+      }
+    ]
+  },
+  "cta": {
+    "h2a": "Een zaak in het noorden",
+    "h2b": "van Limburg?",
+    "text": "Plan een gratis demo van 30 minuten via Teams. We tonen hoe klanten bij jou online boeken, met de extra's die bij je zaak passen.",
+    "btn": "Plan een gratis demo",
+    "demo": "Of vraag je demo aan via het formulier",
+    "demo_href": "Gratis%20Demo",
+    "badges": [
+      "Gratis en vrijblijvend",
+      "30 minuten via Teams",
+      "Meestal live binnen 14 dagen"
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "type": "stad",
+  "klaar": true,
+  "volgorde": 4,
+  "slug": "sint-truiden",
+  "naam": "Sint-Truiden",
+  "crumb": "Sint-Truiden",
+  "plaats": "sint-truiden",
+  "kort": "Mett-U: een contactformulier dat zelf opvolgt.",
+  "bronnen": {
+    "zoekvraag": "Rapport 03, cluster B: 'website laten maken sint-truiden' = laag (Google- en Bing-autocomplete), google.be 15/10/2026.",
+    "klant": "Mett-U: Portfolio (scripts/paginas/portfolio/nl.json, 'Website + Automatisering & CRM'), ai-team/kennis/martijn/claudecode-15 (pagina's, regel 'teksten hetzelfde', mails) en -05 (opbouw klantmail en interne mail). 't Kleinhof: claudecode-15."
+  },
+  "meta": {
+    "title": "Website laten maken in Sint-Truiden | EM Launchpad",
+    "ogtitle": "Website laten maken in Sint-Truiden: een site die aanvragen opvolgt",
+    "desc": "Website laten maken in Sint-Truiden? Wij zitten in Heers. Een site die aanvragen zelf opvolgt, zoals bij Mett-U. €150 per maand, excl. btw.",
+    "service": "Website laten maken in Sint-Truiden",
+    "areaServed": {"@type": "City", "name": "Sint-Truiden", "containedInPlace": {"@type": "AdministrativeArea", "name": "Limburg"}}
+  },
+  "hero": {
+    "eyebrow": "Sint-Truiden",
+    "h1a": "Website laten maken in Sint-Truiden,",
+    "h1b": "en de twee dichtste punten op onze kaart.",
+    "lede": "Een website laten maken in Sint-Truiden? In de stad zelf hebben we nog geen klant. Wel twee in Heers, in hetzelfde stuk Haspengouw, waar ook ons kantoor staat. Hier tonen we wat we voor een van hen bouwden: een site die niet alleen vertelt wie je bent, maar ook opvolgt wat er binnenkomt.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Zo volgt de site op",
+    "cta2_href": "#opvolging",
+    "feiten": ["Nog geen klant in Sint-Truiden", "Twee klanten in Heers", "Formulier met opvolging en CRM", "€150 per maand, excl. btw"]
+  },
+  "kaart": {
+    "titel": "Sint-Truiden, en onze klanten in Heers",
+    "alt": "Vereenvoudigde kaart van het zuiden van Limburg met Sint-Truiden in het vet, en in Heers twee genummerde punten: Mett-U in Heks en 't Kleinhof in Vechmaal, naast ons kantoor.",
+    "zoom": 1.5,
+    "focus": [50.8, 5.27],
+    "punten": [
+      {"klant": "mettu", "href": "#mettu", "soort": "vereniging, formulier met opvolging"},
+      {"klant": "kleinhof", "href": "#haspengouw"},
+      {"klant": "thuis"}
+    ],
+    "steden": ["sint-truiden", "heers", "gingelom", "borgloon", "herk-de-stad", "tongeren"],
+    "streken": [],
+    "bijschrift": "Vereenvoudigde kaart van het zuiden van Limburg. In Sint-Truiden zelf staat nog geen punt."
+  },
+  "secties": [
+    {
+      "type": "case",
+      "id": "mettu",
+      "eyebrow": "De dichtste case",
+      "h2a": "Website laten maken in Sint-Truiden:",
+      "h2b": "leer van een vereniging uit Heks.",
+      "alineas": [
+        "Mett-U VZW komt uit Heks en Vechmaal, twee dorpen van Heers. De vereniging heeft een pluktuin in Heks en begon met bijen. Op haar site lees je wat ze doet en voor wie, en je vindt er pagina's om vrijwilliger of lid te worden, of om te doneren.",
+        "We gaven die site een nieuw ontwerp, met de teksten die de vereniging zelf geschreven had. Het meeste werk zie je niet: de website hangt vast aan automatische opvolging en een CRM. Een bericht via het contactformulier komt zo op een vaste plek terecht, en de afzender hoort meteen iets terug.",
+        "Dat is een ander soort site dan die van een kliniek of een sauna. Er wordt niets geboekt en niets betaald. Toch moet er iets gebeuren met wie zich meldt, en dat gebeurt nu vanzelf, zonder dat een vrijwilliger eraan moet denken."
+      ],
+      "beeld": {
+        "src": "assets/werk/mettu-lang-1200.webp",
+        "sizes": "(max-width: 760px) 92vw, 520px",
+        "w": 1200,
+        "h": 1625,
+        "domein": "mett-u.be",
+        "alt": "De startpagina van mett-u.be op een computer: een groen vlak met de naam VZW Mett-U, de zin over een duurzame natuur- en voedselvoorziening en twee knoppen, Lid worden of doneren en Galerij."
+      },
+      "links": [
+        {"label": "Bekijk mett-u.be", "href": "https://mett-u.be"},
+        {"label": "Mett-U in ons portfolio", "href": "Portfolio"}
+      ]
+    },
+    {
+      "type": "tijdlijn",
+      "id": "opvolging",
+      "eyebrow": "Na het formulier",
+      "h2a": "Eén bericht,",
+      "h2b": "twee mails en een vaste plek.",
+      "lede": "Zo loopt het bij Mett-U, vanaf het moment dat iemand op verzenden klikt.",
+      "items": [
+        ["Het formulier", "Iemand vult op de contactpagina zijn naam, zijn gegevens en een bericht in, en verstuurt het."],
+        ["Mail naar de afzender", "Die krijgt meteen een bedankje met zijn voornaam erin, een kopie van wat hij stuurde en een knop terug naar de website. Ondertekend door het team van de vereniging, met hun logo bovenaan."],
+        ["Melding voor de vereniging", "Tegelijk komt er een interne mail binnen: een nieuwe contactaanvraag, met het label actie nodig. Gegevens en bericht staan erin, met een knop om te antwoorden en een knop om te bellen."],
+        ["In het CRM", "De aanvraag belandt in het klantenbestand. Zo ziet de vereniging wie zich meldde en wanneer, ook als de mail al lang uit beeld is."]
+      ],
+      "alineas": [
+        "Een detail dat telt: de melding gaat naar het algemene mailadres van de vereniging, niet naar de privémailbox van één bestuurslid. En het bericht zelf staat in die melding apart in de kijker, met een gekleurde rand, zodat niemand eerst door een rij gegevens moet scrollen.",
+        "Werk je in Sint-Truiden met offertes, inschrijvingen of aanvragen in plaats van afspraken? Denk aan een aannemer, een tuinaanlegger, een cursus of een vereniging. Dan past deze opbouw bij jou. De mails schrijven we in jouw toon, met jouw naam eronder."
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "haspengouw",
+      "eyebrow": "Waar we zitten",
+      "h2a": "Van Vechmaal naar Sint-Truiden",
+      "h2b": "is niet ver. We werken toch online.",
+      "alineas": [
+        "Sint-Truiden en Heers liggen allebei in Haspengouw, de fruitstreek in het zuiden van Limburg. Ons kantoor staat in Vechmaal. Dicht genoeg om de streek te kennen, maar bij ons verloopt alles online.",
+        "De gratis demo duurt een halfuur en doen we via Teams. Jij vertelt wat je zaak doet en hoe aanvragen nu binnenkomen: per mail, aan de telefoon, via Facebook of via een formulier dat al jaren hetzelfde is. Wij tonen hoe dat er bij ons uitziet. Daarna bouwen we, en meestal staat je site binnen 14 dagen online.",
+        "Wie dan je aanspreekpunt is? Ebert voert het gesprek en volgt op, Martijn bouwt en past aan. Twee broers, zonder tussenpersoon.",
+        "Naast Mett-U zit ook 't Kleinhof in Heers, een bio- en zorgboerderij in onze straat. Daar ging het minder om opvolging en meer om het verhaal: hoe je een boerderij online toont zoals ze is. Dat lees je op de [pagina over Heers](website-laten-maken-heers)."
+      ],
+      "kader": {
+        "k": "Dichtstbij",
+        "tekst": [
+          "Mett-U VZW, Heks (Heers)",
+          "'t Kleinhof, Vechmaal (Heers)",
+          "EM Launchpad, Brugstraat 2A, Vechmaal",
+          "[ebert@emlaunchpad.com](mailto:ebert@emlaunchpad.com)"
+        ]
+      }
+    },
+    {
+      "type": "prijs",
+      "id": "prijs",
+      "eyebrow": "Wat het kost",
+      "h2a": "Een site die zelf opvolgt,",
+      "h2b": "voor een vast bedrag per maand.",
+      "lede": "Opvolging en een CRM zijn geen extra's. Ze zitten in hetzelfde pakket als de website: Online groeien.",
+      "pakket": "Online groeien",
+      "per": "per maand, excl. btw",
+      "voorwaarden": "Zonder opstartkost, per maand opzegbaar",
+      "rijen": [
+        "Een nieuwe website, vlot leesbaar op elke gsm",
+        "Formulieren met een automatische bevestiging",
+        "Een interne melding bij elke nieuwe aanvraag",
+        "Een CRM waarin elk contact bewaard blijft",
+        "Mail- en sms-campagnes naar je eigen contacten",
+        "Je Google-bedrijfsprofiel, volledig in orde",
+        "Hosting, beheer en support"
+      ],
+      "extra": "Wil je toch ook afspraken laten boeken of online laten betalen? Dat kan binnen hetzelfde pakket. Een AI-chatbot die vragen beantwoordt, komt erbij voor €50 per maand. Prijzen excl. btw.",
+      "links": [
+        {"label": "Wat er nog in Online groeien zit", "href": "Diensten"},
+        {"label": "Vind je pakket met de pakketkiezer", "href": "Pakketkiezer"}
+      ]
+    },
+    {
+      "type": "buren",
+      "id": "meer",
+      "eyebrow": "Elders in Limburg",
+      "h2a": "Andere steden,",
+      "h2b": "andere verhalen.",
+      "alineas": [
+        "Alle klanten samen vind je op de kaart van Limburg, ook de twee in Heers."
+      ],
+      "regio_kort": "Alle vijf de klanten, per streek."
+    }
+  ],
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Vragen uit Sint-Truiden,",
+    "h2b": "en wat we erop antwoorden.",
+    "items": [
+      {"q": "Wat kost een website laten maken in Sint-Truiden?", "a": "Bij ons €150 per maand, excl. btw. Dat is het pakket Online groeien: de website, de formulieren met opvolging, je CRM en het beheer. Opstartkosten rekenen we niet aan, en je kunt per maand opzeggen."},
+      {"q": "Hebben jullie klanten in Sint-Truiden?", "a": "We hebben nog geen klant in Sint-Truiden. De dichtste zitten in Heers: Mett-U in Heks en 't Kleinhof in Vechmaal. Hun sites staan online, dus je kunt zelf gaan kijken."},
+      {"q": "Mijn zaak werkt niet met afspraken. Heb ik hier iets aan?", "a": "Ja. Ook bij Mett-U wordt niets geboekt. Daar draait het om berichten via een formulier: de afzender krijgt een bevestiging, de vereniging een melding, en alles komt in het CRM."},
+      {"q": "Wat is een CRM eigenlijk?", "a": "Een klantenbestand dat meer doet dan een lijst. Elke aanvraag komt erin met naam en gegevens, en je ziet wie zich wanneer meldde. Zo hoef je geen mailbox te doorzoeken om iemand terug te vinden."},
+      {"q": "Kunnen de mails in mijn eigen stijl?", "a": "Ja. Bij Mett-U dragen ze het logo van de vereniging en sluiten ze af met het team van Mett-U. Bij jou staan jouw naam, jouw kleuren en jouw manier van praten erin."},
+      {"q": "Moet ik voor de demo naar Heers komen?", "a": "Nee. De demo doen we via Teams, en ook de rest regelen we online. Je teksten, foto's en vragen stuur je per mail of via WhatsApp."},
+      {"q": "Wat als ik stop?", "a": "Online groeien kun je elke maand opzeggen. We dragen alles aan je over: je website en al je gegevens gaan naar jou."}
+    ]
+  },
+  "cta": {
+    "h2a": "Komen er bij jou aanvragen",
+    "h2b": "binnen die opvolging vragen?",
+    "text": "Plan een gratis demo van 30 minuten via Teams. We tonen hoe een formulier met opvolging er voor jouw zaak uitziet.",
+    "btn": "Plan een gratis demo",
+    "demo": "Of vraag je demo aan via het formulier",
+    "demo_href": "Gratis%20Demo",
+    "badges": ["Gratis en vrijblijvend", "Via Teams, vanuit Heers", "Meestal live binnen 14 dagen"]
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "type": "stad",
+  "klaar": true,
+  "volgorde": 1,
+  "slug": "hasselt",
+  "naam": "Hasselt",
+  "crumb": "Hasselt",
+  "plaats": "hasselt",
+  "kort": "Clinic3D: 650 van 681 afspraken bevestigd, 0 no-shows.",
+  "bronnen": {
+    "zoekvraag": "Rapport 03, cluster B: 'website laten maken hasselt / webdesign hasselt' = middel (Google- en Bing-autocomplete), google.be 15/10/2026.",
+    "klant": "Clinic3D: Portfolio (scripts/paginas/portfolio/nl.json), Clinic3D.html, ai-team/kennis/martijn/claudecode-12 en -05 (mails)."
+  },
+  "meta": {
+    "title": "Website laten maken in Hasselt | EM Launchpad",
+    "ogtitle": "Website laten maken in Hasselt: zo begon het bij Clinic3D",
+    "desc": "Website laten maken in Hasselt? Voor Clinic3D bouwden we site, online agenda en mails: 650 afspraken bevestigd, 0 no-shows. €150 per maand, excl. btw.",
+    "service": "Website laten maken in Hasselt",
+    "areaServed": {
+      "@type": "City",
+      "name": "Hasselt",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Limburg"
+      }
+    }
+  },
+  "hero": {
+    "eyebrow": "Hasselt",
+    "h1a": "Website laten maken in Hasselt,",
+    "h1b": "waar ons eerste punt op de kaart staat.",
+    "lede": "Een website laten maken in Hasselt? Daar begon het voor ons. Clinic3D, een medisch-esthetische kliniek aan de Luikersteenweg, was onze allereerste klant. Hier lees je wat we voor de kliniek bouwden en wat het opleverde, met de cijfers uit hun eigen systeem.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Bekijk wat het opleverde",
+    "cta2_href": "#clinic3d",
+    "feiten": [
+      "Klant in Hasselt: Clinic3D",
+      "650 van 681 afspraken bevestigd",
+      "0 no-shows in 263 dagen",
+      "€150 per maand, excl. btw"
+    ]
+  },
+  "kaart": {
+    "titel": "Clinic3D in Hasselt, en wij in Vechmaal",
+    "alt": "Vereenvoudigde kaart van het midden en zuiden van Limburg: Clinic3D in Hasselt als genummerd punt, en ons kantoor in Vechmaal.",
+    "zoom": 1.3,
+    "focus": [
+      50.86,
+      5.4
+    ],
+    "punten": [
+      {
+        "klant": "clinic3d",
+        "href": "#clinic3d",
+        "soort": "medisch-esthetische kliniek, onze eerste klant"
+      },
+      {
+        "klant": "thuis",
+        "href": "#afstand"
+      }
+    ],
+    "steden": [
+      "hasselt",
+      "genk",
+      "diepenbeek",
+      "zonhoven",
+      "sint-truiden",
+      "tongeren",
+      "bilzen",
+      "herk-de-stad"
+    ],
+    "streken": [],
+    "bijschrift": "Vereenvoudigde kaart, ingezoomd op het midden en het zuiden van Limburg."
+  },
+  "secties": [
+    {
+      "type": "case",
+      "id": "clinic3d",
+      "eyebrow": "Onze eerste klant",
+      "h2a": "Website laten maken in Hasselt:",
+      "h2b": "het verhaal van Clinic3D.",
+      "alineas": [
+        "Clinic3D is een medisch-esthetische kliniek in Hasselt, met één vestiging en één arts: Dr. Kenis. Het was de eerste zaak die met ons in zee ging.",
+        "We bouwden drie dingen die in elkaar haken. De website, waarop elke groep behandelingen een eigen pagina heeft. De online agenda, waarin patiënten zelf een moment kiezen, met voor elke behandeling haar eigen duur. En de mails die daarna vanzelf vertrekken, van de bevestiging tot de vraag om een review.",
+        "Op de pagina's van clinic3d.be staat rechtsonder een knop om een afspraak te boeken. Die opent de agenda meteen, zonder dat je de pagina verlaat. Wie geboekt heeft, komt op een eigen bedankpagina terecht, en de kliniek ziet de aanvraag binnenkomen.",
+        "Daarnaast schreven we artikels over de behandelingen voor de blog van de kliniek, zodat mensen met een vraag over een behandeling op hun site terechtkomen. De kliniek stuurt haar feedback via WhatsApp. Wij passen het aan en kijken het na op de live site voor we zeggen dat het klaar is."
+      ],
+      "cijfers": {
+        "rijen": [
+          [
+            "650 van 681",
+            "afspraken bevestigd"
+          ],
+          [
+            "0",
+            "no-shows"
+          ],
+          [
+            "3.250",
+            "automatische e-mails"
+          ],
+          [
+            "2.090",
+            "geopend (64%)"
+          ],
+          [
+            "40.280",
+            "websiteweergaven"
+          ],
+          [
+            "39",
+            "telefoontjes"
+          ]
+        ],
+        "noot": "Gemeten van 1 januari tot 20 september 2026, dat is 263 dagen. De cijfers komen uit het systeem van de kliniek zelf."
+      },
+      "citaat": {
+        "tekst": "227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.",
+        "wie": "Dr. Kenis, eigenaar Clinic3D, na 104 dagen"
+      },
+      "beeld": {
+        "src": "assets/werk/clinic3d-desk-960.webp",
+        "srcset": "assets/werk/clinic3d-desk-960.webp 960w, assets/werk/clinic3d-desk-1440.webp 1440w",
+        "sizes": "(max-width: 760px) 92vw, 520px",
+        "w": 1440,
+        "h": 900,
+        "domein": "clinic3d.be",
+        "alt": "De startpagina van clinic3d.be op een computer: een lichte site met een foto van de arts aan de balie en een knop om een gratis consult te boeken."
+      },
+      "links": [
+        {
+          "label": "Lees de volledige case",
+          "href": "Clinic3D"
+        },
+        {
+          "label": "Bekijk clinic3d.be",
+          "href": "https://clinic3d.be"
+        }
+      ]
+    },
+    {
+      "type": "tijdlijn",
+      "id": "mails",
+      "eyebrow": "Wat er vanzelf loopt",
+      "h2a": "Zes mails die niemand",
+      "h2b": "nog met de hand verstuurt.",
+      "lede": "Een patiënt van Clinic3D merkt er weinig van, en dat is de bedoeling. Dit gebeurt er vanaf het moment dat iemand een afspraak aanvraagt.",
+      "items": [
+        [
+          "Bij het boeken",
+          "De patiënt krijgt meteen bericht dat zijn aanvraag binnen is. De kliniek krijgt een melding om de afspraak te bevestigen."
+        ],
+        [
+          "Bevestigd",
+          "Zodra de kliniek bevestigt, vertrekt de bevestiging. Met een knop om de route te plannen en links om te verplaatsen of te annuleren."
+        ],
+        [
+          "Vooraf",
+          "Een herinnering, zodat niemand de afspraak vergeet."
+        ],
+        [
+          "Verplaatst of geannuleerd",
+          "Wie verplaatst, krijgt het nieuwe moment in de mailbox. Wie annuleert, krijgt bevestiging, en het moment komt weer vrij."
+        ],
+        [
+          "Na het bezoek",
+          "Een korte vraag: hoe was je bezoek aan Clinic3D? Met een link om een review achter te laten."
+        ]
+      ],
+      "alineas": [
+        "Werkt jouw zaak in Hasselt ook met afspraken, als kinesist, schoonheidsspecialist, kapper of garage? Dan loopt het bij jou op dezelfde manier. Alleen je diensten, je teksten en je kleuren zijn anders."
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "afstand",
+      "eyebrow": "Hoe we werken",
+      "h2a": "Hasselt is dichtbij.",
+      "h2b": "Toch werken we volledig online.",
+      "alineas": [
+        "Ons kantoor staat in Vechmaal, in Haspengouw. Voor een zaak in Hasselt maakt dat weinig uit, want we werken volledig online. De gratis demo duurt dertig minuten en loopt via Teams. Je hoeft niets voor te bereiden: je vertelt wat je doet, en wij tonen hoe een site met online agenda er voor jou uitziet.",
+        "Daarna gaat alles op afstand. Je bezorgt je foto's, je teksten en je prijzen, en wij bouwen. Feedback geef je zoals het jou past: per mail, aan de telefoon of via WhatsApp. Ebert volgt op, Martijn past aan.",
+        "Reviews van klanten hebben we nog niet. Daarom tonen we liever wat je zelf kunt nagaan: de site van Clinic3D staat online, en de cijfers op deze pagina komen uit het systeem van de kliniek, niet uit een schatting."
+      ],
+      "kader": {
+        "k": "Clinic3D",
+        "tekst": [
+          "Medisch-esthetische kliniek",
+          "Luikersteenweg, Hasselt",
+          "Klant van EM Launchpad: website, online agenda, automatische mails en blog",
+          "[clinic3d.be](https://clinic3d.be)"
+        ]
+      }
+    },
+    {
+      "type": "prijs",
+      "id": "prijs",
+      "eyebrow": "Wat het kost",
+      "h2a": "Een site met online agenda",
+      "h2b": "voor een vaste maandprijs.",
+      "lede": "Het pakket heet Online groeien. Hierin zit wat een zaak met afspraken nodig heeft om klanten zelf te laten boeken.",
+      "pakket": "Online groeien",
+      "per": "per maand, excl. btw",
+      "voorwaarden": "Zonder opstartkost, maandelijks opzegbaar",
+      "rijen": [
+        "Een website die vlot laadt op de gsm en die Google goed kan lezen",
+        "Online boeken, met voor elke dienst de juiste duur",
+        "Bevestiging en herinnering per mail of sms",
+        "Een reviewverzoek na elke afspraak",
+        "Je Google-bedrijfsprofiel, ingevuld en bijgehouden",
+        "Online betalen en facturen",
+        "Eén inbox voor WhatsApp, Instagram, mail, sms en telefoon"
+      ],
+      "extra": "Bellen je klanten liever? Dan neemt een AI-receptioniste de telefoon op: eenmalig €750 en daarna €150 per maand, met 300 belminuten. Een AI-chatbot op je site kost €50 per maand extra. Prijzen excl. btw.",
+      "links": [
+        {
+          "label": "Bekijk alle diensten en prijzen",
+          "href": "Diensten"
+        },
+        {
+          "label": "Welk pakket past? Doe de pakketkiezer",
+          "href": "Pakketkiezer"
+        }
+      ]
+    },
+    {
+      "type": "buren",
+      "id": "meer",
+      "eyebrow": "Elders in Limburg",
+      "h2a": "Niet in Hasselt?",
+      "h2b": "Kijk op de kaart van Limburg.",
+      "alineas": [
+        "Op de pagina over Limburg staan al onze klanten per streek, van de Nederlandse grens tot ons eigen dorp in Haspengouw."
+      ],
+      "regio_kort": "Alle klanten op één kaart, per streek."
+    }
+  ],
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Vragen uit Hasselt,",
+    "h2b": "eerlijk beantwoord.",
+    "items": [
+      {
+        "q": "Wat kost een website laten maken in Hasselt?",
+        "a": "Bij ons is dat geen eenmalig bedrag maar een vaste maandprijs: €150, excl. btw. Daarvoor bouwen en beheren we je site, met online agenda, Google-bedrijfsprofiel en reviewverzoeken. Er is geen opstartkost en je kunt elke maand stoppen."
+      },
+      {
+        "q": "Hebben jullie een kantoor in Hasselt?",
+        "a": "Nee. We zitten in Vechmaal, een deelgemeente van Heers. We werken volledig online, dus voor een zaak in Hasselt verandert dat niets: de demo loopt via Teams, de rest per mail, telefoon of WhatsApp."
+      },
+      {
+        "q": "Werkt een online agenda ook met één arts of therapeut?",
+        "a": "Ja. Bij Clinic3D werkt één arts. Elke behandeling heeft in de agenda haar eigen duur, en patiënten kiezen zelf een vrij moment. Werk je met meer mensen, dan bekijken we in de demo hoe jouw agenda eruit moet zien."
+      },
+      {
+        "q": "Krijgen klanten een herinnering per sms?",
+        "a": "Dat kan, per mail en per sms. Bij Clinic3D vertrekken de bevestiging en de herinnering per mail, met links om te verplaatsen of te annuleren."
+      },
+      {
+        "q": "Waar komen de cijfers van Clinic3D vandaan?",
+        "a": "Uit het systeem van de kliniek zelf, gemeten van 1 januari tot 20 september 2026. In die 263 dagen werden 650 van de 681 afspraken bevestigd, zonder één no-show. De uitleg per cijfer staat op de pagina van de [case](Clinic3D)."
+      },
+      {
+        "q": "Ik heb al een website. Kan de online agenda daarop?",
+        "a": "Ja. We zetten het boekingssysteem op je bestaande site met een stukje code, of je gebruikt een eigen boekingslink. Een nieuwe site is dus niet verplicht."
+      },
+      {
+        "q": "Wat als ik stop?",
+        "a": "Online groeien is maandelijks opzegbaar. Stop je, dan dragen we alles aan je over: je website en al je gegevens gaan naar jou."
+      }
+    ]
+  },
+  "cta": {
+    "h2a": "Benieuwd hoe dat",
+    "h2b": "voor jouw zaak werkt?",
+    "text": "Plan een gratis demo van 30 minuten via Teams. We tonen je een online agenda zoals die van Clinic3D, maar dan met jouw diensten.",
+    "btn": "Plan een gratis demo",
+    "demo": "Of vraag je demo aan via het formulier",
+    "demo_href": "Gratis%20Demo",
+    "badges": [
+      "Gratis en vrijblijvend",
+      "30 minuten via Teams",
+      "Geen voorbereiding nodig"
+    ]
+  }
+}

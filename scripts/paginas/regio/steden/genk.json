@@ -1,0 +1,191 @@
+{
+  "type": "stad",
+  "klaar": true,
+  "volgorde": 6,
+  "slug": "genk",
+  "naam": "Genk",
+  "crumb": "Genk",
+  "plaats": "genk",
+  "kort": "Geen klant in Genk, wel 39 telefoontjes tegenover 681 afspraken.",
+  "bronnen": {
+    "zoekvraag": "Rapport 03, cluster B: 'website laten maken genk / webdesign genk' = laag tot middel (Google- en Bing-autocomplete), google.be 15/10/2026.",
+    "klant": "Clinic3D: Clinic3D.html (rapport 1/1 tot 20/9/2026: 681 ingepland, 650 bevestigd, 39 oproepen, 31 beantwoord, 52m 36s beltijd, 64% geopend), ai-team/kennis/martijn/claudecode-12 (reviewmail met één knop, landingspagina's per behandeling, blog, feedback via WhatsApp). Branchepagina's: website-voor-praktijken, -schoonheidssalons, -kappers."
+  },
+  "meta": {
+    "title": "Website laten maken in Genk | EM Launchpad",
+    "ogtitle": "Website laten maken in Genk: eerlijk, met een case uit Hasselt",
+    "desc": "Website laten maken in Genk? Nog geen klant in Genk, wel een kliniek in Hasselt waar patiënten zelf online boeken. €150 per maand, excl. btw.",
+    "service": "Website laten maken in Genk",
+    "areaServed": {"@type": "City", "name": "Genk", "containedInPlace": {"@type": "AdministrativeArea", "name": "Limburg"}}
+  },
+  "hero": {
+    "eyebrow": "Genk",
+    "h1a": "Website laten maken in Genk,",
+    "h1b": "met het dichtste punt in Hasselt.",
+    "lede": "Een website laten maken in Genk? Eerlijk is eerlijk: we hebben nog geen klant in Genk. Ons dichtste werk staat in Hasselt, bij Clinic3D. Hier lees je één kant van die case: hoe patiënten daar zelf online boeken, en hoeveel er nog gebeld werd.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Bekijk de cijfers",
+    "cta2_href": "#bereikbaar",
+    "feiten": ["Nog geen klant in Genk", "Dichtste case: Clinic3D, Hasselt", "681 afspraken, 39 telefoontjes", "€150 per maand, excl. btw"]
+  },
+  "kaart": {
+    "titel": "Genk, en onze klant in Hasselt",
+    "alt": "Vereenvoudigde kaart van het midden van Limburg met Genk in het vet en Clinic3D in Hasselt als genummerd punt.",
+    "zoom": 1.5,
+    "focus": [50.95, 5.45],
+    "punten": [
+      {"klant": "clinic3d", "href": "#bereikbaar", "soort": "medisch-esthetische kliniek, de dichtste case"}
+    ],
+    "steden": ["genk", "hasselt", "as", "zonhoven", "diepenbeek", "bilzen", "houthalen-helchteren"],
+    "streken": [],
+    "bijschrift": "Vereenvoudigde kaart van het midden van Limburg. In Genk zelf staat nog geen punt."
+  },
+  "secties": [
+    {
+      "type": "tekst",
+      "id": "eerlijk",
+      "eyebrow": "Eerst dit",
+      "h2a": "Website laten maken in Genk:",
+      "h2b": "zonder klant in Genk, wel met cijfers uit Hasselt.",
+      "alineas": [
+        "Je zou op deze plek een rij namen uit Genk verwachten. Die hebben we niet, en we gaan ze ook niet verzinnen. Onze vijf klanten zitten in Hasselt, Lommel, Hamont-Achel en Heers. De dichtste bij Genk is de kliniek van Dr. Kenis in Hasselt: Clinic3D, medisch-esthetisch, met één arts.",
+        "Is dat een probleem? Voor hoe we werken niet. Alles loopt online, ook bij Clinic3D. De demo doen we via Teams, en de feedback van de kliniek komt via WhatsApp binnen. Een zaak in Genk merkt van de afstand dus even weinig als een zaak in Hasselt.",
+        "Wat we wel kunnen tonen, zijn cijfers uit het systeem van een echte zaak. Die gaan hieronder over één vraag: hoe raakt een zaak met afspraken gevonden, geboekt en aanbevolen, zonder de hele dag aan de telefoon te hangen?"
+      ],
+      "kader": {
+        "k": "Dichtste case",
+        "tekst": [
+          "Clinic3D",
+          "Medisch-esthetische kliniek, Hasselt",
+          "Site, agenda, mails en reviewverzoeken",
+          "[Lees de volledige case](Clinic3D)"
+        ]
+      }
+    },
+    {
+      "type": "case",
+      "id": "bereikbaar",
+      "eyebrow": "Bereikbaarheid",
+      "h2a": "681 afspraken,",
+      "h2b": "en maar 39 telefoontjes.",
+      "alineas": [
+        "In 263 dagen werden er bij Clinic3D 681 afspraken ingepland. Patiënten kunnen daarvoor zelf een moment kiezen in de online agenda, ook als de kliniek dicht is. Via ons platform kwamen er in diezelfde periode 39 oproepen binnen, samen nog geen uur beltijd.",
+        "Voor een zaak met één arts maakt dat verschil. Een behandeling leg je niet stil om op te nemen. Van de 39 oproepen werden er 31 beantwoord. Wie online boekt, hoeft niet te wachten tot er iemand vrij is, en krijgt daarna vanzelf een bevestiging en een herinnering.",
+        "Na het bezoek vertrekt er nog een korte mail, met één knop: schrijf een review. Die leidt rechtstreeks naar Google, en de patiënt krijgt er niets voor in ruil. Zo vraagt de kliniek om een beoordeling zonder er zelf aan te moeten denken."
+      ],
+      "cijfers": {
+        "rijen": [
+          ["681", "afspraken ingepland"],
+          ["650", "daarvan bevestigd"],
+          ["39", "telefoontjes"],
+          ["31", "daarvan beantwoord"],
+          ["52m 36s", "beltijd in totaal"],
+          ["64%", "van de mails geopend"]
+        ],
+        "noot": "Clinic3D, Hasselt, van 1 januari tot 20 september 2026 (263 dagen). Alle cijfers komen uit het eigen systeem van de kliniek."
+      },
+      "beeld": {
+        "src": "assets/werk/clinic3d-gsm-780.webp",
+        "srcset": "assets/werk/clinic3d-gsm-390.webp 390w, assets/werk/clinic3d-gsm-780.webp 780w",
+        "sizes": "260px",
+        "w": 780,
+        "h": 1688,
+        "vorm": "gsm",
+        "alt": "De startpagina van clinic3d.be op een gsm: de kop Natuurlijke schoonheid, wetenschappelijk onderbouwd, een knop om een afspraak te boeken, de Google-beoordeling en een foto van de arts aan zijn bureau."
+      },
+      "links": [
+        {"label": "Alle cijfers in de case", "href": "Clinic3D"},
+        {"label": "Bekijk clinic3d.be", "href": "https://clinic3d.be"}
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "gevonden",
+      "eyebrow": "Gevonden worden",
+      "h2a": "Voor iemand boekt,",
+      "h2b": "moet hij je eerst vinden.",
+      "alineas": [
+        "Veel mensen zoeken een zaak eerst op Google, en zien daar je bedrijfsprofiel nog voor je website. Daarom zit dat profiel in het pakket. We vullen het volledig in en houden het bij, met je diensten, je gegevens en de link naar je site.",
+        "Ook je site zelf telt. Clinic3D kreeg aparte pagina's per groep behandelingen, sommige met de naam van de stad erin, en artikels op de blog over vragen die patiënten zich stellen, zoals wat een behandeling kost of hoe de nazorg verloopt.",
+        "Een belofte dat je bovenaan komt te staan, doen we niet. Wel bouwen we een site die snel laadt, die Google goed kan lezen en die meteen zegt waar je zit en wat je doet."
+      ],
+      "lijst": [
+        "Je Google-bedrijfsprofiel, ingevuld en bijgehouden",
+        "Na de afspraak een reviewvraag met één knop",
+        "Pagina's per dienst, zodat je op meer dan je naam gevonden wordt",
+        "Een online agenda die openstaat als jij dicht bent"
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "sectoren",
+      "eyebrow": "Voor wie",
+      "h2a": "Voor welke zaken",
+      "h2b": "in Genk dit werkt.",
+      "alineas": [
+        "Wat we voor Clinic3D bouwden, past bij zaken die met afspraken werken. Denk aan een [praktijk](website-voor-praktijken) van een kinesist of een psycholoog, een [schoonheidssalon](website-voor-schoonheidssalons) of een [kapsalon](website-voor-kappers). Een kapperszaak hebben we nog niet als klant. De opbouw is wel dezelfde: diensten met hun eigen duur, zelf een moment kiezen, een herinnering vooraf.",
+        "Werk je niet met afspraken maar met aanvragen, dan kijken we naar onze andere klanten. Een vereniging in Heers volgt haar contactformulier automatisch op; dat lees je op de [pagina over Sint-Truiden](website-laten-maken-sint-truiden). Een privésauna in Hamont-Achel laat gasten meteen online betalen. In de demo zoeken we samen het voorbeeld dat het dichtst bij jouw zaak ligt.",
+        "Zo'n demo duurt een halfuur, via Teams. Voorbereiden is niet nodig. Ebert stelt de vragen, Martijn bouwt daarna. Meestal staat je site binnen 14 dagen online."
+      ]
+    },
+    {
+      "type": "prijs",
+      "id": "prijs",
+      "eyebrow": "Wat het kost",
+      "h2a": "Alles op deze pagina,",
+      "h2b": "voor één prijs per maand.",
+      "lede": "Alles op deze pagina zit in het pakket Online groeien. Er komt geen opstartkost bij.",
+      "pakket": "Online groeien",
+      "per": "per maand, excl. btw",
+      "voorwaarden": "Maandelijks opzegbaar, zonder opstartkost",
+      "rijen": [
+        "Een site die op de gsm snel laadt",
+        "Online boeken met de juiste duur per dienst",
+        "Een herinnering per mail of sms voor de afspraak",
+        "Een vraag om een Google-review na het bezoek",
+        "Je bedrijfsprofiel op Google, ingevuld en up-to-date",
+        "Landingspagina's voor je belangrijkste diensten",
+        "Berichten uit WhatsApp, Instagram en mail in één inbox"
+      ],
+      "extra": "Mis je toch veel telefoontjes terwijl je met een klant bezig bent? Een AI-receptioniste neemt op voor €750 eenmalig en €150 per maand, met 300 belminuten inbegrepen. Prijzen excl. btw.",
+      "links": [
+        {"label": "Diensten en prijzen", "href": "Diensten"},
+        {"label": "Kies je pakket met de pakketkiezer", "href": "Pakketkiezer"}
+      ]
+    },
+    {
+      "type": "buren",
+      "id": "meer",
+      "eyebrow": "Elders in Limburg",
+      "h2a": "Wel klanten",
+      "h2b": "in de rest van Limburg.",
+      "alineas": [
+        "Clinic3D in Hasselt is de dichtste. Op de kaart van Limburg zie je waar de andere vier zitten."
+      ],
+      "regio_kort": "Vijf klanten in Limburg, en waar ze zitten."
+    }
+  ],
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Vragen uit Genk,",
+    "h2b": "zonder omwegen beantwoord.",
+    "items": [
+      {"q": "Wat kost een website laten maken in Genk?", "a": "€150 per maand, excl. btw. Daarvoor krijg je de site, online boeken, het beheer van je Google-profiel en een reviewvraag na elke afspraak. Er is geen opstartkost."},
+      {"q": "Hebben jullie klanten in Genk?", "a": "Nee, nog niet. De dichtste klant is Clinic3D in Hasselt. Je kunt de site van de kliniek zelf bekijken, en op de pagina van de [case](Clinic3D) staan alle cijfers met hun bron."},
+      {"q": "Hoeveel werd er bij Clinic3D nog gebeld?", "a": "Over 263 dagen kwamen er via ons platform 39 telefoontjes binnen, tegenover 681 ingeplande afspraken. Patiënten kunnen zelf online boeken en krijgen daarna vanzelf een bevestiging en een herinnering."},
+      {"q": "Hoe krijg ik meer reviews op Google?", "a": "Door erom te vragen op het juiste moment. Na een afspraak krijgt je klant vanzelf een mail met één knop naar het reviewvenster van Google. Hoeveel reviews dat oplevert, kunnen we niet beloven."},
+      {"q": "Moet ik naar Hasselt of Heers komen?", "a": "Nee. We werken volledig online. De demo doen we via Teams en duurt een halfuur. Alles daarna, van je foto's tot je feedback, loopt per mail, telefoon of WhatsApp."},
+      {"q": "Ik heb een kapsalon. Hebben jullie daar ervaring mee?", "a": "Een kapperszaak hebben we nog niet als klant. Het systeem achter een kapsalon is wel hetzelfde als bij Clinic3D: diensten met hun eigen duur, zelf boeken en een herinnering vooraf. Op de pagina over [websites voor kappers](website-voor-kappers) lees je hoe dat eruitziet."},
+      {"q": "Wat als ik stop?", "a": "Je kunt Online groeien elke maand stopzetten. We dragen alles aan je over: je website en al je gegevens gaan naar jou."}
+    ]
+  },
+  "cta": {
+    "h2a": "Een zaak in Genk",
+    "h2b": "die minder wil bellen?",
+    "text": "Plan een gratis demo van een halfuur via Teams. We tonen hoe online boeken en reviewverzoeken voor jouw diensten werken.",
+    "btn": "Plan een gratis demo",
+    "demo": "Of vraag je demo aan via het formulier",
+    "demo_href": "Gratis%20Demo",
+    "badges": ["Gratis en vrijblijvend", "Een halfuur, via Teams", "Meestal live binnen 14 dagen"]
+  }
+}

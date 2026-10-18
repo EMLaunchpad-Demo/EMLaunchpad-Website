@@ -1,0 +1,191 @@
+{
+  "type": "regio",
+  "slug": "limburg",
+  "naam": "Limburg",
+  "crumb": "Limburg",
+  "plaats": null,
+  "meta": {
+    "title": "Website laten maken in Limburg | EM Launchpad",
+    "ogtitle": "Website laten maken in Limburg, door twee broers uit Vechmaal",
+    "desc": "Webbureau uit Vechmaal (Heers) met klanten in Hasselt, Lommel, Hamont-Achel en Heers. Website met online boeken vanaf €150 per maand, excl. btw.",
+    "service": "Website laten maken in Limburg",
+    "areaServed": {"@type": "AdministrativeArea", "name": "Limburg", "containedInPlace": {"@type": "Country", "name": "België"}}
+  },
+  "hero": {
+    "eyebrow": "Limburg",
+    "h1a": "Website laten maken in Limburg,",
+    "h1b": "door twee broers uit Vechmaal.",
+    "lede": "Een website laten maken in Limburg doe je bij ons rechtstreeks met de makers: Ebert en Martijn Vanbrabant, vanuit Vechmaal in Haspengouw. Op de kaart zie je waar onze klanten zitten, van een kliniek in Hasselt tot een privésauna aan de Nederlandse grens.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Bekijk de klanten per streek",
+    "cta2_href": "#streken",
+    "feiten": ["Vechmaal (Heers)", "Vijf klanten in Limburg", "€150 per maand, excl. btw", "Meestal live binnen 14 dagen"]
+  },
+  "kaart": {
+    "titel": "Onze klanten in Limburg",
+    "alt": "Vereenvoudigde kaart van Limburg met vijf klanten als punten: Clinic3D in Hasselt, Amakhosi Sauna in Hamont-Achel, Bambine in Lommel, 't Kleinhof en Mett-U in Heers, en ons kantoor in Vechmaal.",
+    "zoom": 1,
+    "punten": [
+      {"klant": "clinic3d", "href": "#k-clinic3d"},
+      {"klant": "amakhosi", "href": "#k-amakhosi"},
+      {"klant": "bambine", "href": "#k-bambine"},
+      {"klant": "kleinhof", "href": "#k-kleinhof"},
+      {"klant": "mettu", "href": "#k-mettu"},
+      {"klant": "thuis", "href": "#vechmaal"}
+    ],
+    "steden": ["hasselt", "genk", "lommel", "sint-truiden", "tongeren", "maasmechelen", "beringen", "maaseik"],
+    "streken": [
+      {"t": "Noord-Limburg", "plaats": [51.165, 5.335]},
+      {"t": "Maasland", "plaats": [51.035, 5.635]},
+      {"t": "Haspengouw", "plaats": [50.728, 5.17]}
+    ],
+    "bijschrift": "Vereenvoudigde kaart. Elk genummerd punt is een zaak waarvoor we de website bouwden."
+  },
+  "secties": [
+    {
+      "type": "streken",
+      "id": "streken",
+      "eyebrow": "Per streek",
+      "h2a": "Website laten maken in Limburg:",
+      "h2b": "vijf zaken die je zelf kunt bekijken.",
+      "lede": "Geen muur met logo's, wel vijf zaken in drie streken. Hun websites staan vandaag online. Klik door en kijk zelf, op je computer of op je gsm.",
+      "streken": [
+        {
+          "id": "streek-hasselt",
+          "naam": "Hasselt",
+          "sub": "onze eerste klant",
+          "klanten": [
+            {
+              "klant": "clinic3d",
+              "tekst": "Clinic3D is een medisch-esthetische kliniek in Hasselt, met één arts: Dr. Kenis. Het was de eerste zaak die met ons in zee ging. We maakten de website, de online agenda en de mails die vanzelf vertrekken. Gemeten over 263 dagen: 650 van de 681 afspraken bevestigd, en 0 no-shows.",
+              "beeld": {"src": "assets/werk/clinic3d-desk-960.webp", "srcset": "assets/werk/clinic3d-desk-960.webp 960w, assets/werk/clinic3d-desk-1440.webp 1440w", "sizes": "(max-width: 760px) 92vw, 420px", "w": 1440, "h": 900, "domein": "clinic3d.be", "alt": "Startpagina van clinic3d.be: een lichte site met een foto van de arts aan de balie en de knop om een gratis consult te boeken."},
+              "links": [{"label": "Lees de case", "href": "Clinic3D"}]
+            }
+          ]
+        },
+        {
+          "id": "streek-noord",
+          "naam": "Noord-Limburg",
+          "sub": "Lommel en Hamont-Achel, tegen de grens",
+          "klanten": [
+            {
+              "klant": "amakhosi",
+              "tekst": "In Hamont-Achel, vlak bij de Nederlandse grens, ligt Amakhosi Sauna: een privésauna waar gasten de hele wellness voor zich alleen hebben. Op de nieuwe site kiezen ze een moment of een overnachting en betalen ze meteen. Bevestiging, herinnering en opvolging komen vanzelf in hun mailbox.",
+              "beeld": {"src": "assets/werk/amakhosi2-desk-960.webp", "srcset": "assets/werk/amakhosi2-desk-960.webp 960w, assets/werk/amakhosi2-desk-1440.webp 1440w", "sizes": "(max-width: 760px) 92vw, 420px", "w": 1440, "h": 900, "domein": "amakhosi.be", "alt": "Startpagina van amakhosi.be in espresso en goud, met de kop Koninklijk genieten en een knop om te reserveren."},
+              "links": [{"label": "Bekijk amakhosi.be", "href": "https://amakhosi.be"}]
+            },
+            {
+              "klant": "bambine",
+              "tekst": "Bambine in Lommel is babywellness en mamazorg, in galerij Vivaldi. Ine werkt er één op één. Ouders boeken op de nieuwe site zelf een moment, nemen er een extra bij en kopen een cadeaubon meteen digitaal.",
+              "beeld": {"src": "assets/werk/bambine-gsm-780.webp", "sizes": "200px", "w": 780, "h": 1688, "vorm": "gsm", "alt": "Startpagina van bambine.be op een gsm: een baby onder een witte handdoek en de kop Een warm bad voor de allerkleinsten."},
+              "links": [{"label": "Bekijk bambine.be", "href": "https://bambine.be"}]
+            }
+          ]
+        },
+        {
+          "id": "streek-haspengouw",
+          "naam": "Haspengouw",
+          "sub": "ons eigen dorp en het dorp ernaast",
+          "klanten": [
+            {
+              "klant": "kleinhof",
+              "tekst": "'t Kleinhof is de bio- en zorgboerderij van Liesbeth en Gert in Vechmaal, in dezelfde straat als ons kantoor. Hun nieuwe website vertelt wie ze zijn en wat ze telen: eieren, aardappelen, vlees, groenten en fruit. Met het groen van hun eigen velden.",
+              "beeld": {"src": "assets/werk/kleinhof-desk-960.webp", "srcset": "assets/werk/kleinhof-desk-960.webp 960w, assets/werk/kleinhof-desk-1440.webp 1440w", "sizes": "(max-width: 760px) 92vw, 420px", "w": 1440, "h": 900, "domein": "kleinhof.be", "alt": "Startpagina van kleinhof.be: een graanveld met de kop Biologisch kleinschalig en twee blokken, Bio-boerderij en Zorg-boerderij."},
+              "links": [{"label": "Bekijk kleinhof.be", "href": "https://kleinhof.be"}]
+            },
+            {
+              "klant": "mettu",
+              "tekst": "Mett-U is een vereniging uit Heks en Vechmaal, met een pluktuin in Heks. Ze begon met bijen. Hun website hangt vast aan automatische opvolging en een CRM: wie het formulier invult, krijgt meteen een bevestiging, en de vereniging krijgt een melding.",
+              "beeld": {"src": "assets/werk/mettu-desk-960.webp", "srcset": "assets/werk/mettu-desk-960.webp 960w, assets/werk/mettu-desk-1440.webp 1440w", "sizes": "(max-width: 760px) 92vw, 420px", "w": 1440, "h": 900, "domein": "mett-u.be", "alt": "Startpagina van mett-u.be: een groene kop VZW Mett-U en een foto van vrijwilligers in de moestuin."},
+              "links": [{"label": "Bekijk mett-u.be", "href": "https://mett-u.be"}]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tekst",
+      "id": "vechmaal",
+      "eyebrow": "Waar we zitten",
+      "h2a": "Een dorp in Haspengouw,",
+      "h2b": "en een kaart vol punten.",
+      "alineas": [
+        "EM Launchpad zit in de Brugstraat in Vechmaal, een deelgemeente van Heers. Achter de naam zitten twee broers. Ebert praat met je: de gratis demo, je vragen, de opvolging. Martijn bouwt: je website, je online agenda en alles wat daarachter vanzelf moet lopen. Je praat dus met iemand die je zaak kent.",
+        "We begonnen in juli 2025. Onze vijf klanten zitten vandaag allemaal in Limburg, maar de afstand tot je zaak speelt geen rol. We werken volledig online: de demo loopt via Teams, en je foto's, teksten en feedback stuur je door zoals het jou past, per mail of via WhatsApp.",
+        "Bij elke zaak volgen we de stijl van de klant, niet die van ons. Bij 't Kleinhof bleef de inhoud zoals ze was: hun eigen verhaal, hun eigen producten. Alleen het ontwerp werd nieuw, landelijk en met meer groen. Bij Amakhosi werd het espresso en goud, met de Afrikaanse sfeer van de sauna."
+      ],
+      "kader": {
+        "k": "Adres",
+        "tekst": ["EM Launchpad", "Brugstraat 2A, 3870 Vechmaal", "[+32 476 01 54 51](tel:+32476015451)", "[ebert@emlaunchpad.com](mailto:ebert@emlaunchpad.com)", "[Over ons](Over%20ons) · [Contact](Contact)"]
+      }
+    },
+    {
+      "type": "stappen",
+      "id": "zo-werkt-het",
+      "eyebrow": "Zo loopt het",
+      "h2a": "Van eerste gesprek tot live,",
+      "h2b": "zonder dat iemand de baan op moet.",
+      "lede": "Meestal staat je site binnen 14 dagen online. Jij levert je verhaal aan, wij doen de rest.",
+      "items": [
+        ["Gratis demo via Teams", "Dertig minuten, vrijblijvend. Je vertelt wat je zaak doet en wat een bezoeker moet kunnen: een afspraak boeken, betalen of een vraag stellen."],
+        ["Ontwerp in jouw stijl", "Met jouw foto's, jouw teksten en jouw kleuren. Geen sjabloon met jouw naam erop."],
+        ["Bouwen en koppelen", "De online agenda, formulieren, betalingen en je klantenbestand. Ook je Google-bedrijfsprofiel zetten we in orde."],
+        ["Live, en wij beheren", "Na de oplevering blijven we aan boord. Wijzigingen en vragen gaan rechtstreeks naar Ebert of Martijn."]
+      ]
+    },
+    {
+      "type": "prijs",
+      "id": "prijs",
+      "eyebrow": "Wat het kost",
+      "h2a": "Overal in Limburg",
+      "h2b": "dezelfde prijs.",
+      "lede": "Geen offerte per pagina en geen opstartkost. Je website zit in het pakket Online groeien, samen met wat erachter moet draaien.",
+      "pakket": "Online groeien",
+      "per": "per maand, excl. btw",
+      "voorwaarden": "Maandelijks opzegbaar",
+      "rijen": [
+        "Je website, eerst voor de gsm ontworpen en snel",
+        "Een online agenda waarin klanten zelf boeken",
+        "Formulieren, en online betalen met Bancontact, iDEAL, Visa of Apple Pay",
+        "Je Google-bedrijfsprofiel, volledig ingevuld en bijgehouden",
+        "Na elke afspraak vanzelf een reviewverzoek",
+        "Al je berichten op één plek: WhatsApp, Instagram, e-mail, sms en telefoon",
+        "Mail- en sms-campagnes, en het beheer van alles door ons"
+      ],
+      "extra": "Wil je er iets bij? Een AI-chatbot die vragen beantwoordt, kost €50 per maand extra. Een AI-receptioniste die je telefoon opneemt, kost eenmalig €750 en daarna €150 per maand, met 300 belminuten. Alle prijzen excl. btw.",
+      "links": [{"label": "Alle diensten en prijzen", "href": "Diensten"}, {"label": "Twijfel je? Doe de pakketkiezer", "href": "Pakketkiezer"}]
+    },
+    {
+      "type": "steden",
+      "id": "steden",
+      "eyebrow": "Per stad",
+      "h2a": "Zoek je iemand",
+      "h2b": "dicht bij jouw stad?",
+      "lede": "Per stad vertellen we wat we daar al deden, of eerlijk dat we er nog geen klant hebben."
+    }
+  ],
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Wat je wil weten",
+    "h2b": "voor je een demo plant.",
+    "items": [
+      {"q": "Wat kost een website laten maken in Limburg?", "a": "Bij ons €150 per maand, excl. btw, waar in Limburg je zaak ook staat. Er is geen opstartkost en je kunt elke maand opzeggen. Je website, je online agenda, je Google-bedrijfsprofiel en de reviewverzoeken zitten erin."},
+      {"q": "Komen jullie langs?", "a": "Nee. We werken volledig online. De gratis demo duurt 30 minuten en loopt via Teams, en ook daarna regelen we alles op afstand. Zo maakt het niet uit of je zaak in Lommel, Hasselt of Sint-Truiden staat."},
+      {"q": "Hoe lang duurt het voor mijn site online staat?", "a": "Meestal binnen 14 dagen. Hoe sneller we je foto's en teksten hebben, hoe sneller het gaat."},
+      {"q": "Kan ik zelf iets aanpassen?", "a": "Je agenda en je beschikbaarheid beheer je zelf in ons platform. Ine van Bambine in Lommel doet dat ook zo. Teksten, foto's en prijzen op je site passen wij voor je aan: een berichtje volstaat."},
+      {"q": "Wat gebeurt er na de oplevering?", "a": "Wij blijven je site beheren. Je Google-bedrijfsprofiel houden we bij, en na een afspraak vertrekt vanzelf een reviewverzoek naar je klant. Heb je een vraag, dan krijg je Ebert of Martijn aan de lijn."},
+      {"q": "Van wie is mijn website als ik stop?", "a": "Van jou. Online groeien is maandelijks opzegbaar. Stop je, dan dragen we alles aan je over: je website en al je gegevens gaan naar jou."},
+      {"q": "Werken jullie alleen in Limburg?", "a": "Nee. We zitten in Limburg en onze vijf klanten ook, maar we werken voor zaken in heel België. Omdat alles online loopt, maakt de afstand niet uit."},
+      {"q": "Hebben jullie reviews?", "a": "Nog niet. Daarom tonen we vijf zaken die je zelf kunt gaan bekijken, met hun gemeente erbij. Op de pagina van [Clinic3D](Clinic3D) staan de cijfers uit het systeem van de kliniek zelf."}
+    ]
+  },
+  "cta": {
+    "h2a": "Jouw zaak als zesde punt",
+    "h2b": "op de kaart?",
+    "text": "Plan een gratis demo van 30 minuten via Teams. Vrijblijvend. Daarna weet je wat je site moet kunnen en wat het kost.",
+    "btn": "Plan een gratis demo",
+    "demo": "Of vraag je demo aan via het formulier",
+    "demo_href": "Gratis%20Demo",
+    "badges": ["Gratis en vrijblijvend", "30 minuten via Teams", "Meestal live binnen 14 dagen"]
+  }
+}
