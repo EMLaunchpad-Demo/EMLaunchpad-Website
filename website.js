@@ -876,12 +876,15 @@
           if (on[id]) anim(row, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], { duration: 450, easing: 'cubic-bezier(.6,.05,.2,1)' });
         }
         if (msite) msite.classList.toggle(id === 'cb' ? 'has-cb' : 'has-rc', !!on[id]);
-        var t = D.base; btns.forEach(function (x) { if (on[x.getAttribute('data-ws-add')]) t += +x.getAttribute('data-price'); });
+        /* maandprijs; een eenmalig bedrag (data-once, bv. de AI-receptioniste) telt niet mee en staat als aparte regel eronder */
+        var t = D.base, o = 0;
+        btns.forEach(function (x) { if (on[x.getAttribute('data-ws-add')]) { t += +x.getAttribute('data-price'); o += +x.getAttribute('data-once') || 0; } });
         R.set(t, false); if (amtSr) amtSr.textContent = String(t);
         var any = t !== D.base;
         if (per) per.textContent = any ? U.per_sum : U.per;
         if (tbp) tbp.textContent = (D.lang === 'fr' ? t + ' €' : '€' + t) + ' / ' + U.per.replace(/^\S+\s/, '');
-        if (totSr) totSr.textContent = fill(U.total_sr, { t: t });
+        $$('[data-ws-once]', sec).forEach(function (p) { p.hidden = !on[p.getAttribute('data-ws-once')]; });
+        if (totSr) totSr.textContent = fill(U.total_sr, { t: t }) + (o ? ', + ' + (D.lang === 'fr' ? o + ' €' : '€' + o) + ' ' + (U.once_word || '') : '');
       });
     });
     sl.classList.add('is-js');

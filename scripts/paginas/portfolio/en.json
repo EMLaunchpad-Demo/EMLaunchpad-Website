@@ -1,11 +1,66 @@
 {
   "lang": "en",
   "tone": "blauw",
-  "skyKeys": [{"p": 0, "ax": 72, "ay": 40, "bx": 10, "by": 100, "ao": 0.95, "bo": 0.4}, {"p": 0.25, "ax": 24, "ay": 48, "bx": 84, "by": 72, "ao": 0.85, "bo": 0.6}, {"p": 0.44, "ax": 78, "ay": 50, "bx": 16, "by": 30, "ao": 0.85, "bo": 0.6}, {"p": 0.585, "ax": 24, "ay": 52, "bx": 80, "by": 62, "ao": 0.8, "bo": 0.9}, {"p": 0.735, "ax": 78, "ay": 50, "bx": 18, "by": 34, "ao": 0.85, "bo": 0.6}, {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}],
+  "skyKeys": [
+    {
+      "p": 0,
+      "ax": 72,
+      "ay": 40,
+      "bx": 10,
+      "by": 100,
+      "ao": 0.95,
+      "bo": 0.4
+    },
+    {
+      "p": 0.25,
+      "ax": 24,
+      "ay": 48,
+      "bx": 84,
+      "by": 72,
+      "ao": 0.85,
+      "bo": 0.6
+    },
+    {
+      "p": 0.44,
+      "ax": 78,
+      "ay": 50,
+      "bx": 16,
+      "by": 30,
+      "ao": 0.85,
+      "bo": 0.6
+    },
+    {
+      "p": 0.585,
+      "ax": 24,
+      "ay": 52,
+      "bx": 80,
+      "by": 62,
+      "ao": 0.8,
+      "bo": 0.9
+    },
+    {
+      "p": 0.735,
+      "ax": 78,
+      "ay": 50,
+      "bx": 18,
+      "by": 34,
+      "ao": 0.85,
+      "bo": 0.6
+    },
+    {
+      "p": 1,
+      "ax": 46,
+      "ay": 36,
+      "bx": 56,
+      "by": 42,
+      "ao": 1,
+      "bo": 1
+    }
+  ],
   "meta": {
-    "title": "Portfolio: websites and AI for Belgian businesses | EM Launchpad",
+    "title": "Portfolio: websites and AI from Limburg | EM Launchpad",
     "ogtitle": "Portfolio: real businesses, real work | EM Launchpad",
-    "desc": "See the work of EM Launchpad: the new website of Amakhosi Sauna, the booking system of Clinic3D, and the sites of Mett-U VZW, 't Kleinhof and Bambine. Real Belgian businesses, real results.",
+    "desc": "See our work: Amakhosi Sauna, Clinic3D, Mett-U, 't Kleinhof and Bambine. Five businesses from Limburg, five websites that are online today.",
     "service": "Work by EM Launchpad"
   },
   "hero": {
@@ -14,7 +69,10 @@
     "h1b": "Real work.",
     "lede": "Five businesses from Limburg. Five websites that are online today. Feel free to look inside, on desktop and on mobile.",
     "spring_label": "On this page",
-    "feiten": ["Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel", "Built in Vechmaal · Usually live within 14 days"],
+    "feiten": [
+      "Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel",
+      "Built in Vechmaal · Usually live within 14 days"
+    ],
     "glas_aria": "The homepage of amakhosi.be on a computer, as a visitor sees it. The image slowly scrolls from top to bottom.",
     "caps_label": "What you see",
     "caps": [
@@ -23,12 +81,15 @@
       "Serif headings, espresso and gold. The style of the business runs through every section.",
       "The photo grid: whirlpool, Finnish sauna, walk-in shower, lounge and fireplace, bedroom suite."
     ],
-    "live": "Just launched",
+    "live": "Live",
     "pauze": "Pause",
     "verder": "Resume",
     "pauze_sr": "Pause the moving example",
     "open": "Open {d}",
-    "img": {"lang": "amakhosi2-lang-1200.webp", "glang": "amakhosi2-glang-468.webp"}
+    "img": {
+      "lang": "amakhosi2-lang-1200.webp",
+      "glang": "amakhosi2-glang-468.webp"
+    }
   },
   "labels": {
     "zaak": "Business",
@@ -45,94 +106,268 @@
   },
   "cases": [
     {
-      "id": "amakhosi", "slug": "amakhosi2", "naam": "Amakhosi Sauna", "url": "https://amakhosi.be", "domein": "amakhosi.be",
-      "index": ["01 / 05", "Just launched", "Hamont-Achel"],
-      "kop_a": "A private sauna you", "kop_b": "book and pay for online.",
-      "kort": "New website for a private sauna and wellness in Hamont-Achel, with online booking and payment, email flow and SEO.",
+      "id": "amakhosi",
+      "slug": "amakhosi2",
+      "naam": "Amakhosi Sauna",
+      "url": "https://amakhosi.be",
+      "domein": "amakhosi.be",
+      "index": [
+        "01 / 05",
+        "Live",
+        "Hamont-Achel"
+      ],
+      "kop_a": "A private sauna you",
+      "kop_b": "book and pay for online.",
+      "kort": "New website for a private sauna and wellness in Hamont-Achel, with online booking and payment, automatic emails and a site Google reads well.",
       "soort": "Private sauna and wellness · Hamont-Achel",
-      "gemaakt": "Website · Online booking and payment · Email flow · SEO",
+      "gemaakt": "Website · Online booking and payment · Automatic emails · Easy to find on Google",
       "logo": null,
       "beats": [
-        ["The business", "A luxury private sauna and wellness in Hamont-Achel. Guests have the whole wellness to themselves."],
-        ["What we built", "A new website in espresso and gold, with serif headings, a hero with the whirlpool in an arch, a running ribbon of amenities and a photo grid of the rooms. Online booking with immediate payment. An email flow with confirmation, reminder and follow-up. SEO."],
-        ["What changed", "A guest picks a moment, pays straight away and gets confirmation, reminder and follow-up in their inbox automatically."]
-      ]
+        [
+          "The business",
+          "A luxury private sauna and wellness in Hamont-Achel. Guests have the whole wellness to themselves."
+        ],
+        [
+          "What we built",
+          "A new website in espresso and gold, with serif headings, an opening image with the whirlpool in an arch, a running ribbon of amenities and a photo grid of the rooms. Online booking with immediate payment. Automatic emails with confirmation, reminder and follow-up. And built so Google reads the site well."
+        ],
+        [
+          "What changed",
+          "A guest picks a moment, pays straight away and gets confirmation, reminder and follow-up in their inbox automatically."
+        ]
+      ],
+      "dienst": {
+        "label": "More about websites with online booking",
+        "href": "Websites"
+      }
     },
     {
-      "id": "clinic3d", "slug": "clinic3d", "naam": "Clinic3D", "url": "https://clinic3d.be", "domein": "clinic3d.be", "case": "Clinic3D", "side": "links",
-      "index": ["02 / 05", "Measured over 263 days", "Hasselt"],
-      "kop_a": "Patients book", "kop_b": "themselves.",
-      "kort": "Website, online calendar and email flow for an aesthetic clinic in Hasselt. Over 263 days: 650 of 681 appointments confirmed, 0 no-shows.",
+      "id": "clinic3d",
+      "slug": "clinic3d",
+      "naam": "Clinic3D",
+      "url": "https://clinic3d.be",
+      "domein": "clinic3d.be",
+      "case": "Clinic3D",
+      "side": "links",
+      "index": [
+        "02 / 05",
+        "Measured over 263 days",
+        "Hasselt"
+      ],
+      "kop_a": "Patients book",
+      "kop_b": "themselves.",
+      "kort": "Website, online calendar and automatic emails for an aesthetic clinic in Hasselt. Over 263 days: 650 of 681 appointments confirmed, 0 no-shows.",
       "alt": "Homepage of clinic3d.be: a light site with the headline Natuurlijke schoonheid, wetenschappelijk onderbouwd, a photo of the doctor at the desk and the button Boek je gratis consult.",
       "soort": "Aesthetic clinic · Hasselt · Dr. Kenis",
-      "gemaakt": "Website · Online calendar · Email flow",
-      "logo": {"src": "https://assets.cdn.filesafe.space/U08LkHeoQdx8yNxCQvps/media/69525c5573a5e0065b9027d4.png", "w": 500, "h": 500, "alt": "Clinic3D logo", "dark": false},
+      "gemaakt": "Website · Online calendar · Automatic emails",
+      "logo": {
+        "src": "https://assets.cdn.filesafe.space/U08LkHeoQdx8yNxCQvps/media/69525c5573a5e0065b9027d4.png",
+        "w": 500,
+        "h": 500,
+        "alt": "Clinic3D logo",
+        "dark": false
+      },
       "beats": [
-        ["The business", "Aesthetic clinic in Hasselt, led by Dr. Kenis."],
-        ["What we built", "The website, the online calendar and the email flow. Patients pick a moment themselves. Confirmation and reminder go out automatically."],
-        ["What changed", "Measured over 263 days: 650 of the 681 appointments confirmed and not a single no-show."]
+        [
+          "The business",
+          "Aesthetic clinic in Hasselt, led by Dr. Kenis."
+        ],
+        [
+          "What we built",
+          "The website, the online calendar and the automatic emails. Patients pick a moment themselves. Confirmation and reminder go out automatically."
+        ],
+        [
+          "What changed",
+          "Measured over 263 days: 650 of the 681 appointments confirmed and not a single no-show."
+        ]
       ],
-      "meet": [["650 of 681", "appointments confirmed"], ["0", "no-shows"], ["3,250", "automated emails"], ["2,090", "opened (64%)"], ["40,280", "website views"], ["39", "phone calls"]],
+      "meet": [
+        [
+          "650 of 681",
+          "appointments confirmed"
+        ],
+        [
+          "0",
+          "no-shows"
+        ],
+        [
+          "3,250",
+          "automated emails"
+        ],
+        [
+          "2,090",
+          "opened (64%)"
+        ],
+        [
+          "40,280",
+          "website views"
+        ],
+        [
+          "39",
+          "phone calls"
+        ]
+      ],
       "meet_noot": "Measured over 263 days. The figures come from the system itself.",
-      "quote": {"text": "227 appointments in 104 days, not a single no-show, and my calendar is fuller than ever. My clients book themselves now — I don't have to do a thing.", "cite": "Dr. Kenis, owner of Clinic3D"}
+      "quote": {
+        "text": "227 appointments in 104 days, not a single no-show, and my calendar is fuller than ever. My clients book themselves now. I don't have to do a thing.",
+        "cite": "Dr. Kenis, owner of Clinic3D"
+      },
+      "dienst": {
+        "label": "More about the booking system",
+        "href": "Afsprakensysteem"
+      }
     },
     {
-      "id": "mett-u", "slug": "mettu", "naam": "Mett-U VZW", "url": "https://mett-u.be", "domein": "mett-u.be", "side": "rechts",
-      "index": ["03 / 05", "", "Heers"],
-      "kop_a": "One website,", "kop_b": "one CRM.",
+      "id": "mett-u",
+      "slug": "mettu",
+      "naam": "Mett-U VZW",
+      "url": "https://mett-u.be",
+      "domein": "mett-u.be",
+      "side": "rechts",
+      "index": [
+        "03 / 05",
+        "",
+        "Heers"
+      ],
+      "kop_a": "One website,",
+      "kop_b": "one CRM.",
       "kort": "New website for a non-profit in Heers, connected to automated follow-up and a central CRM.",
       "alt": "Homepage of mett-u.be: a green header VZW Mett-U with two buttons and a photo of volunteers in the vegetable garden.",
       "soort": "Non-profit · Heers",
       "gemaakt": "Website · Automated follow-up · CRM",
-      "logo": {"src": "https://assets.cdn.filesafe.space/YFfKOg7Am0tTMiZxOYIM/media/6a42356a3a7f0c54687855fb.png", "w": 550, "h": 180, "alt": "Mett-U VZW logo", "dark": true},
+      "logo": {
+        "src": "https://assets.cdn.filesafe.space/YFfKOg7Am0tTMiZxOYIM/media/6a42356a3a7f0c54687855fb.png",
+        "w": 550,
+        "h": 180,
+        "alt": "Mett-U VZW logo",
+        "dark": true
+      },
       "beats": [
-        ["The business", "A non-profit in Heers."],
-        ["What we built", "A new website, connected to automated follow-up and a central CRM."],
-        ["What changed", "The site does not stand alone: the follow-up and the CRM are attached to it."]
+        [
+          "The business",
+          "A non-profit in Heers."
+        ],
+        [
+          "What we built",
+          "A new website, connected to automated follow-up and a central CRM."
+        ],
+        [
+          "What changed",
+          "The site does not stand alone: the follow-up and the CRM are attached to it."
+        ]
       ],
-      "schema": ["Website", "Follow-up", "CRM"]
+      "schema": [
+        "Website",
+        "Follow-up",
+        "CRM"
+      ],
+      "dienst": {
+        "label": "More about automated follow-up",
+        "href": "AI-Automatisering"
+      }
     },
     {
-      "id": "kleinhof", "slug": "kleinhof", "naam": "'t Kleinhof", "url": "https://kleinhof.be", "domein": "kleinhof.be", "side": "links",
-      "index": ["04 / 05", "our own village", "Vechmaal"],
-      "kop_a": "The story of", "kop_b": "Liesbeth and Gert.",
+      "id": "kleinhof",
+      "slug": "kleinhof",
+      "naam": "'t Kleinhof",
+      "url": "https://kleinhof.be",
+      "domein": "kleinhof.be",
+      "side": "links",
+      "index": [
+        "04 / 05",
+        "our own village",
+        "Vechmaal"
+      ],
+      "kop_a": "The story of",
+      "kop_b": "Liesbeth and Gert.",
       "kort": "New website for an organic and care farm in Vechmaal, with their story and their produce.",
       "alt": "Homepage of kleinhof.be: a grain field with the headline Biologisch kleinschalig and two blocks Bio-boerderij and Zorg-boerderij.",
       "soort": "Organic and care farm · Vechmaal · Liesbeth and Gert",
       "gemaakt": "Website",
       "logo": null,
       "beats": [
-        ["The business", "A small-scale organic and care farm in Vechmaal, the same village as EM Launchpad."],
-        ["What we built", "A new website with their story, the organic farm and the care farm, and their produce."],
-        ["What changed", "Anyone looking for them sees straight away who they are and what they grow."]
+        [
+          "The business",
+          "A small-scale organic and care farm in Vechmaal, the same village as EM Launchpad."
+        ],
+        [
+          "What we built",
+          "A new website with their story, the organic farm and the care farm, and their produce."
+        ],
+        [
+          "What changed",
+          "Anyone looking for them sees straight away who they are and what they grow."
+        ]
       ],
-      "producten": ["Eggs", "Potatoes", "Meat", "Vegetables", "Fruit"]
+      "producten": [
+        "Eggs",
+        "Potatoes",
+        "Meat",
+        "Vegetables",
+        "Fruit"
+      ],
+      "dienst": {
+        "label": "More about websites",
+        "href": "Websites"
+      }
     },
     {
-      "id": "bambine", "slug": "bambine", "naam": "Bambine", "url": "https://bambine.be", "domein": "bambine.be", "side": "rechts",
-      "index": ["05 / 05", "", "Lommel"],
-      "kop_a": "A warm bath,", "kop_b": "booked online.",
+      "id": "bambine",
+      "slug": "bambine",
+      "naam": "Bambine",
+      "url": "https://bambine.be",
+      "domein": "bambine.be",
+      "side": "rechts",
+      "index": [
+        "05 / 05",
+        "",
+        "Lommel"
+      ],
+      "kop_a": "A warm bath,",
+      "kop_b": "booked online.",
       "kort": "New website for baby wellness and care for mums in Lommel, with the booking system and add-ons, a digital gift card and automatic emails.",
       "alt": "Homepage of bambine.be: a baby peeking out from under a white towel, with the headline Een warm bad voor de allerkleinsten and the buttons Reserveer jullie moment and Bekijk de cadeaubonnen.",
       "soort": "Baby wellness and care for mums · Lommel · Ine",
       "gemaakt": "Website · Booking system with add-ons · Digital gift card · Automatic emails",
       "logo": null,
       "beats": [
-        ["The business", "Baby wellness, care for mums and pampering moments in the Vivaldi gallery in Lommel. Ine works one on one."],
-        ["What we built", "A new website in gold, light brown and white, with arched images and the prices laid out like a menu. Plus the booking system with add-ons, a digital gift card and automatic emails."],
-        ["What changed", "Parents book a moment online themselves and can add an extra, such as a gentle wash. A gift card can be bought straight away in digital form."]
+        [
+          "The business",
+          "Baby wellness, care for mums and pampering moments in the Vivaldi gallery in Lommel. Ine works one on one."
+        ],
+        [
+          "What we built",
+          "A new website in gold, light brown and white, with arched images and the prices laid out like a menu. Plus the booking system with add-ons, a digital gift card and automatic emails."
+        ],
+        [
+          "What changed",
+          "Parents book a moment online themselves and can add an extra, such as a gentle wash. A gift card can be bought straight away in digital form."
+        ]
       ],
-      "producten": ["Baby wellness", "Mum & woman", "Kids"]
+      "producten": [
+        "Baby wellness",
+        "Mum & woman",
+        "Kids"
+      ],
+      "dienst": {
+        "label": "More about the booking system",
+        "href": "Afsprakensysteem"
+      }
     }
   ],
   "eerlijk": {
     "text": "We have no reviews yet. We do have five businesses you can look into yourself.",
-    "sub": "Free 30-minute call · Usually live within 14 days"
+    "sub": "Free 30-minute demo · Usually live within 14 days"
   },
   "cta": {
-    "h2a": "Will your business be", "h2b": "the sixth?",
-    "text": "Book a free 30-minute call. No obligation. Your site is usually live within 14 days.",
-    "btn": "Book a free call",
-    "badges": ["Free and no obligation", "30 minutes", "Usually live within 14 days"]
+    "h2a": "Will your business be",
+    "h2b": "the sixth?",
+    "text": "Book a free 30-minute demo. No obligation. Your site is usually live within 14 days.",
+    "btn": "Book a free demo",
+    "badges": [
+      "Free and no obligation",
+      "30 minutes",
+      "Usually live within 14 days"
+    ]
   }
 }

@@ -50,11 +50,11 @@
   }
  ],
  "meta": {
-  "title": "Websites die klanten laten boeken | EM Launchpad",
-  "desc": "Wij bouwen en beheren je website: snel, gemaakt voor de gsm, SEO-klaar, met afsprakenplanner, leadformulieren en online betalen. In Digitale groei, €150 per maand.",
-  "ogtitle": "Websites die klanten laten boeken | EM Launchpad",
+  "title": "Website laten maken in Limburg, online boekbaar | EM Launchpad",
+  "desc": "Wij ontwerpen, bouwen en beheren je website: snel op de gsm, met online boeken, formulieren en betalen. In Online groeien, €150 per maand, excl. btw.",
+  "ogtitle": "Website laten maken in Limburg, online boekbaar | EM Launchpad",
   "service": "Websites",
-  "offer": "Inbegrepen in het pakket Digitale groei"
+  "offer": "Inbegrepen in het pakket Online groeien"
  },
  "crumbs": [
   "Home",
@@ -67,8 +67,8 @@
   "eyebrow": "Websites",
   "h1a": "Van een leeg blad",
   "h1b": "tot een zaak die boekt.",
-  "lede": "Wij ontwerpen je website rond jouw zaak, bouwen hem en beheren hem. Klanten vinden je, zien meteen wie je bent en boeken, betalen of vragen iets aan. Ook als jij al dicht bent.",
-  "cta": "Plan een gratis gesprek",
+  "lede": "Een website laten maken bij ons, een webbureau uit Limburg, betekent: wij ontwerpen hem rond jouw zaak, bouwen hem en beheren hem. Klanten vinden je, zien meteen wie je bent en boeken, betalen of vragen iets aan. Ook als jij al dicht bent.",
+  "cta": "Plan een gratis demo",
   "cta2": "Bekijk echt werk",
   "pick": "Bekijk het voor een",
   "name_btn": "Zet je eigen naam erop",
@@ -84,7 +84,7 @@
   "chapters_label": "Hoofdstukken",
   "caption": "Voorbeeld. Je echte site ontwerpen we samen met jou: jouw foto's, jouw teksten, jouw kleuren. Wij bouwen en beheren hem.",
   "foot": [
-   "Zit in Digitale groei, €150 per maand",
+   "Zit in Online groeien, €150 per maand, excl. btw",
    "Wij bouwen en beheren hem",
    "Meestal live binnen 14 dagen"
   ],
@@ -199,11 +199,13 @@
   "slider_none": "Nog niets doorgelicht",
   "desk": "Computer",
   "gsm": "Gsm",
-  "total_sr": "Samen: €{t} per maand",
+  "total_sr": "Samen: €{t} per maand, excl. btw",
   "per_sum": "per maand, samen",
   "per": "per maand",
   "picks": "neemt op",
-  "measured_at": "gemeten om {t}"
+  "measured_at": "gemeten om {t}",
+  "once_word": "eenmalig",
+  "once_line": "+ {once} eenmalig ({label})"
  },
  "vak": [
   {
@@ -349,8 +351,8 @@
  ],
  "doet": {
   "eyebrow": "Wat je site voor je doet",
-  "h2a": "Vier dingen doet een goede site.",
-  "h2b": "Elke dag, ook zonder jou.",
+  "h2a": "Een website laten maken in Limburg?",
+  "h2b": "Vier dingen doet een goede site, ook zonder jou.",
   "lede": "Kies er één. Je ziet het meteen op het voorbeeld van hierboven.",
   "group": "Wat je site doet",
   "lenses": [
@@ -358,7 +360,7 @@
     "id": "gevonden",
     "part": "logo",
     "titel": "Gevonden worden",
-    "tekst": "Wie een {vak} in de buurt zoekt, moet jou vinden. We bouwen je site snel en SEO-klaar, en je Google-profiel vullen we volledig in en houden we up-to-date. Een plek bovenaan belooft niemand eerlijk. Een site die Google goed kan lezen, die bouwen we wel."
+    "tekst": "Wie een {vak} in de buurt zoekt, moet jou vinden. We bouwen je site snel en zo dat Google hem goed kan lezen, en je Google-profiel vullen we volledig in en houden we up-to-date. Een plek bovenaan belooft niemand eerlijk. Een site die Google goed begrijpt, die bouwen we wel."
    },
    {
     "id": "vertrouwen",
@@ -371,8 +373,8 @@
     "part": "knop",
     "titel": "Laten boeken en betalen",
     "titel_offerte": "Laten aanvragen",
-    "tekst": "Met één tik op {cta} boekt je klant meteen. De afsprakenplanner en de leadformulieren zitten erin, en betalen kan online met Bancontact, iDEAL, Visa of Apple Pay.",
-    "tekst_offerte": "Met één tik op {cta} vult je klant zijn aanvraag in. Het leadformulier zit erin, en de aanvraag komt meteen in je CRM."
+    "tekst": "Met één tik op {cta} boekt je klant meteen. De afsprakenplanner en de formulieren zitten erin, en betalen kan online met Bancontact, iDEAL, Visa of Apple Pay.",
+    "tekst_offerte": "Met één tik op {cta} vult je klant zijn aanvraag in. Het aanvraagformulier zit erin, en de aanvraag komt meteen in je CRM."
    },
    {
     "id": "alles",
@@ -387,7 +389,7 @@
     "href": "Afsprakensysteem"
    },
    {
-    "label": "Ook 's avonds antwoorden op vragen? Dat is de AI-chatbot, + €50 per maand",
+    "label": "Ook 's avonds antwoorden op vragen? Dat is de AI-chatbot, + €50 per maand, excl. btw",
     "href": "AI%20Chatbots"
    }
   ]
@@ -404,8 +406,8 @@
   "tags": [
    "Website",
    "Online reserveren en betalen",
-   "Mailflow",
-   "SEO"
+   "Automatische mails",
+   "Goed vindbaar in Google"
   ],
   "visit": "Bekijk amakhosi.be",
   "newtab": "(opent in een nieuw venster)",
@@ -585,7 +587,7 @@
    {
     "k": "WERK 02 · HASSELT",
     "t": "Clinic3D",
-    "txt": "Esthetische kliniek. Website met online afsprakensysteem, automatische mailflow en reviewopvolging.",
+    "txt": "Esthetische kliniek. Website met online afsprakensysteem, automatische mails en reviewopvolging.",
     "nums": [
      [
       "40.280",
@@ -601,7 +603,7 @@
      ]
     ],
     "note": "Afspraken gemeten van 1 januari tot 20 september 2026 (263 dagen).",
-    "quote": "Mijn klanten boeken nu zelf — ik moet niets meer doen.",
+    "quote": "Mijn klanten boeken nu zelf. Ik moet niets meer doen.",
     "cite": "Dr. Kenis, Clinic3D",
     "link": "Lees de case",
     "href": "Clinic3D"
@@ -615,7 +617,9 @@
      "alt": "Logo van Mett-U VZW",
      "w": 550,
      "h": 180
-    }
+    },
+    "link": "Bekijk op Portfolio",
+    "href": "Portfolio#mett-u"
    },
    {
     "k": "WERK 04 · VECHMAAL",
@@ -627,8 +631,8 @@
      "w": 400,
      "h": 400
     },
-    "link": "Bekijk kleinhof.be",
-    "href": "https://kleinhof.be"
+    "link": "Bekijk op Portfolio",
+    "href": "Portfolio#kleinhof"
    },
    {
     "k": "WERK 05 · LOMMEL",
@@ -643,7 +647,7 @@
    {
     "k": "WERK 06 · DEZE SITE",
     "t": "emlaunchpad.com",
-    "txt": "Drietalig, statisch gebouwd en snel. Hoe snel bij jou? Dat meet je hieronder.",
+    "txt": "Drietalig, door ons gebouwd en snel. Hoe snel bij jou? Dat meet je hieronder.",
     "link": "Naar de meting",
     "href": "#gemeten",
     "site": true
@@ -697,28 +701,28 @@
   "v_bg": "Deze pagina ging open in een ander tabblad. Dan meet je browser niet eerlijk. Herlaad ze om het te zien.",
   "wait": "Even meten…",
   "reload": "Herlaad en meet opnieuw",
-  "foot": "Gemeten in je eigen browser, met de meetpunten die Google gebruikt voor snelheid en stabiliteit (Core Web Vitals). Er gaat niets naar ons of naar iemand anders. Een ander toestel of een andere verbinding geeft andere cijfers. De grenzen komen van Google (web.dev).",
-  "slot": "emlaunchpad.com is drietalig en statisch, en we bouwden het zelf. Met dezelfde zorg bouwen we de jouwe.",
+  "foot": "Gemeten in je eigen browser, met de meetpunten die Google gebruikt voor snelheid en stabiliteit. Er gaat niets naar ons of naar iemand anders. Een ander toestel of een andere verbinding geeft andere cijfers. De grenzen komen van Google (web.dev).",
+  "slot": "emlaunchpad.com is drietalig, en we bouwden het zelf. Met dezelfde zorg bouwen we de jouwe.",
   "sr": "Deze pagina stond er bij jou na {x}.",
   "chip": "Deze pagina stond er bij jou na {x}"
  },
  "prijs": {
   "eyebrow": "Wat het kost",
   "h2a": "Geen apart prijskaartje.",
-  "h2b": "Je website zit in Digitale groei.",
-  "lede": "€150 per maand, maandelijks opzegbaar. Wij bouwen en beheren je volledige digitale werking. Je website is daar het begin van.",
-  "head": "STUKLIJST · DIGITALE GROEI",
+  "h2b": "Je website zit in Online groeien.",
+  "lede": "€150 per maand, excl. btw en maandelijks opzegbaar. Wij bouwen en beheren je volledige digitale werking. Je website is daar het begin van.",
+  "head": "STUKLIJST · ONLINE GROEIEN",
   "rows": [
    [
     "Website",
-    "Een professionele, snelle website die van bezoekers klanten maakt. Eerst voor de gsm ontworpen, geoptimaliseerd voor Core Web Vitals, SEO-klaar, met een ingebouwde afsprakenplanner en leadformulieren."
+    "Een professionele website die van bezoekers klanten maakt. Eerst voor de gsm ontworpen, snel, en zo gebouwd dat Google hem goed kan lezen. Met een ingebouwde afsprakenplanner en formulieren."
    ],
    [
-    "Google-profiel en lokale zichtbaarheid",
+    "Google-profiel en zichtbaarheid",
     "Volledig ingevuld en up-to-date."
    ],
    [
-    "Reputatiebeheer",
+    "Reviews op Google",
     "2 uur na een afspraak vertrekt vanzelf een reviewverzoek."
    ],
    [
@@ -726,30 +730,30 @@
     "WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
    ],
    [
-    "Campagnes per e-mail en sms",
+    "E-mail- en sms-campagnes",
     ""
    ],
    [
-    "Funnels en landingspagina's",
-    ""
+    "Landingspagina's",
+    "Eén pagina voor één actie, zoals een promo of een advertentie. Wie invult, staat meteen in je klantenbestand."
    ],
    [
-    "Online betalen en facturatie",
+    "Online betalen en facturen",
     "Via Stripe, met Bancontact, iDEAL, Visa en Apple Pay."
    ],
    [
-    "AI-automatisering en workflows",
+    "Slimme workflows",
     ""
    ],
    [
-    "Toegang tot het platform",
+    "Toegang tot ons platform",
     ""
    ]
   ],
   "tb": [
    [
     "PAKKET",
-    "DIGITALE GROEI"
+    "ONLINE GROEIEN"
    ],
    [
     "PRIJS",
@@ -777,27 +781,28 @@
    {
     "id": "rc",
     "label": "AI-receptioniste",
-    "price": 125,
+    "price": 150,
     "txt": "Neemt je telefoon op.",
     "row": "AI-receptioniste",
-    "href": "AI%20Voice%20Agents"
+    "href": "AI%20Voice%20Agents",
+    "once": 750
    }
   ],
-  "total_label": "Jouw maandprijs",
-  "cons": "AI tot in je interne processen? Dat is AI Consulting, op aanvraag.",
+  "total_label": "Jouw maandprijs (excl. btw)",
+  "cons": "Zelf leren werken met AI? Dat is AI Consulting, €200 per maand (introductieprijs).",
   "cons_link": "Bekijk de pakketten",
-  "cta": "Plan een gratis gesprek",
+  "cta": "Plan een gratis demo",
   "cta2": "Bekijk het pakket"
  },
  "stappen": {
   "eyebrow": "Zo komt hij er",
-  "h2a": "Van een gesprek",
+  "h2a": "Van een gratis demo",
   "h2b": "tot een site die boekt.",
   "lede": "Meestal live binnen 14 dagen. Jij hoeft niets te bouwen of te koppelen.",
   "items": [
    [
-    "Gratis gesprek",
-    "Dertig minuten. Wat doe je, voor wie, en wat moet een bezoeker kunnen: boeken, betalen of iets aanvragen?"
+    "Gratis demo",
+    "Dertig minuten via Teams. Wat doe je, voor wie, en wat moet een bezoeker kunnen: boeken, betalen of iets aanvragen?"
    ],
    [
     "Wij ontwerpen",
@@ -819,8 +824,12 @@
   "h2b": "voor we beginnen te tekenen.",
   "items": [
    {
-    "q": "Wat kost een website bij jullie?",
-    "a": "Er is geen apart prijskaartje. Je website zit in Digitale groei: €150 per maand, maandelijks opzegbaar. Daarin zitten ook je Google-profiel, reviewverzoeken, je CRM en online betalen."
+    "q": "Wat kost een website laten maken?",
+    "a": "Bij ons is er geen apart prijskaartje en geen opstartkost. Je website zit in Online groeien: €150 per maand, excl. btw en maandelijks opzegbaar. Daarin zitten ook je Google-profiel, reviewverzoeken, je CRM en online betalen."
+   },
+   {
+    "q": "Hoeveel kost een website per jaar?",
+    "a": "Twaalf keer €150, dus €1.800 per jaar, excl. btw. Daar zitten het ontwerp, het bouwen, de hosting en het beheer al in. Je betaalt per maand en kunt elke maand stoppen."
    },
    {
     "q": "Hoe snel staat mijn site online?",
@@ -828,35 +837,51 @@
    },
    {
     "q": "Kunnen klanten online boeken en betalen?",
-    "a": "Ja. De afsprakenplanner en de leadformulieren zitten erin. Betalen gaat via Stripe, met Bancontact, iDEAL, Visa of Apple Pay."
+    "a": "Ja. De afsprakenplanner en de formulieren zitten erin. Betalen gaat via Stripe, met Bancontact, iDEAL, Visa of Apple Pay."
    },
    {
     "q": "Zit er een chatbot bij?",
-    "a": "Niet standaard. De AI-chatbot is een uitbreiding van €50 per maand. Wil je dat er ook iemand je telefoon opneemt? Dat is de AI-receptioniste, voor €125 per maand."
+    "a": "Niet standaard. De AI-chatbot is een uitbreiding van €50 per maand. Wil je dat er ook iemand je telefoon opneemt? Dat is de AI-receptioniste: €150 per maand en eenmalig €750. Alle prijzen excl. btw."
+   },
+   {
+    "q": "Ik heb al een site. Moet die weg?",
+    "a": "Nee. Wil je vooral online boeken, dan plaatsen we de boekingsmodule op je bestaande site, of je gebruikt een eigen boekingslink. Wil je toch een nieuwe site, dan bouwen we die rond jouw zaak."
    },
    {
     "q": "Sta ik dan bovenaan in Google?",
-    "a": "Dat kan niemand eerlijk beloven. Wij bouwen je site snel en SEO-klaar, en we vullen je Google-profiel volledig in en houden het up-to-date."
+    "a": "Dat kan niemand eerlijk beloven. Wij bouwen je site snel en zo dat Google hem goed kan lezen, en we vullen je Google-profiel volledig in en houden het up-to-date."
    },
    {
     "q": "Wie beheert mijn website?",
     "a": "Wij. We bouwen en beheren je volledige digitale werking, en je website hoort daarbij."
+   },
+   {
+    "q": "Wat als ik stop?",
+    "a": "Online groeien is maandelijks opzegbaar. Stop je, dan dragen we alles aan je over: je website en al je gegevens gaan naar jou."
    }
   ],
   "more_label": "Lees ook:",
   "more": [
    {
-    "title": "Waarom je website traag is",
+    "title": "Waarom je website traag is (en wat het je kost)",
     "href": "emtimes/websites/waarom-je-website-traag-is/"
+   },
+   {
+    "title": "Wat kost een website laten maken in België?",
+    "href": "emtimes/websites/wat-kost-een-website-laten-maken/"
+   },
+   {
+    "title": "Website voor je lokale zaak: 10 dingen die erop moeten",
+    "href": "emtimes/websites/website-lokale-zaak-checklist/"
    }
   ]
  },
  "cta": {
   "h2a": "Het eerste lijntje",
   "h2b": "trekken we samen.",
-  "text": "Plan een gratis gesprek van 30 minuten. We bekijken wat jouw site moet doen. Daarna ontwerpen we het eerste blad.",
-  "btn": "Plan een gratis gesprek",
-  "demo": "Of vraag een gratis demo aan",
+  "text": "Plan een gratis demo van 30 minuten. We bekijken wat jouw site moet doen. Daarna ontwerpen we het eerste blad.",
+  "btn": "Plan een gratis demo",
+  "demo": "Of vraag je demo aan via het formulier",
   "demo_href": "Gratis%20Demo",
   "micro": "Deze pagina stond er bij jou na {x}. Met dezelfde zorg bouwen we de jouwe.",
   "micro_fb": "Met dezelfde zorg als deze pagina bouwen we de jouwe.",

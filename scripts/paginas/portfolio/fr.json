@@ -58,9 +58,9 @@
     }
   ],
   "meta": {
-    "title": "Portfolio : sites web et IA pour entreprises belges | EM Launchpad",
+    "title": "Portfolio : sites web et IA au Limbourg | EM Launchpad",
     "ogtitle": "Portfolio : de vraies entreprises, du vrai travail | EM Launchpad",
-    "desc": "Découvrez le travail d'EM Launchpad : le nouveau site d'Amakhosi Sauna, le système de rendez-vous de Clinic3D, et les sites de Mett-U VZW, 't Kleinhof et Bambine. De vraies entreprises belges, de vrais résultats.",
+    "desc": "Découvrez notre travail : Amakhosi Sauna, Clinic3D, Mett-U, 't Kleinhof et Bambine. Cinq entreprises du Limbourg, cinq sites web en ligne aujourd'hui.",
     "service": "Travail d'EM Launchpad"
   },
   "hero": {
@@ -81,7 +81,7 @@
       "Titres en serif, espresso et or. Le style de l'établissement se retrouve dans chaque section.",
       "La grille de photos : whirlpool, sauna finlandais, douche à l'italienne, lounge et feu d'ambiance, suite avec chambre."
     ],
-    "live": "Tout juste en ligne",
+    "live": "En ligne",
     "pauze": "Pause",
     "verder": "Reprendre",
     "pauze_sr": "Mettre en pause l'exemple animé",
@@ -113,14 +113,14 @@
       "domein": "amakhosi.be",
       "index": [
         "01 / 05",
-        "Tout juste en ligne",
+        "En ligne",
         "Hamont-Achel"
       ],
       "kop_a": "Un sauna privé que l'on",
       "kop_b": "réserve et paie en ligne.",
-      "kort": "Nouveau site web pour un sauna privé et wellness à Hamont-Achel, avec réservation et paiement en ligne, flux d'e-mails et SEO.",
+      "kort": "Nouveau site web pour un sauna privé et wellness à Hamont-Achel, avec réservation et paiement en ligne, e-mails automatiques et un site que Google lit facilement.",
       "soort": "Sauna privé et wellness · Hamont-Achel",
-      "gemaakt": "Site web · Réservation et paiement en ligne · Flux d'e-mails · SEO",
+      "gemaakt": "Site web · Réservation et paiement en ligne · E-mails automatiques · Facile à trouver sur Google",
       "logo": null,
       "beats": [
         [
@@ -129,13 +129,17 @@
         ],
         [
           "Ce que nous avons réalisé",
-          "Un nouveau site web en espresso et or, avec des titres en serif, un hero avec le whirlpool dans une arche, un bandeau défilant des équipements et une grille de photos des espaces. Réservation en ligne avec paiement immédiat. Un flux d'e-mails avec confirmation, rappel et suivi. SEO."
+          "Un nouveau site web en espresso et or, avec des titres en serif, une image d'ouverture avec le whirlpool dans une arche, un bandeau défilant des équipements et une grille de photos des espaces. Réservation en ligne avec paiement immédiat. Des e-mails automatiques avec confirmation, rappel et suivi. Et un site construit pour que Google le lise facilement."
         ],
         [
           "Ce qui a changé",
           "Le client choisit son moment, paie tout de suite et reçoit automatiquement confirmation, rappel et suivi dans sa boîte mail."
         ]
-      ]
+      ],
+      "dienst": {
+        "label": "En savoir plus sur les sites web avec réservation en ligne",
+        "href": "Websites"
+      }
     },
     {
       "id": "clinic3d",
@@ -152,10 +156,10 @@
       ],
       "kop_a": "Les patients réservent",
       "kop_b": "eux-mêmes.",
-      "kort": "Site web, agenda en ligne et flux d'e-mails pour une clinique esthétique à Hasselt. Sur 263 jours : 650 rendez-vous sur 681 confirmés, 0 no-show.",
+      "kort": "Site web, agenda en ligne et e-mails automatiques pour une clinique esthétique à Hasselt. Sur 263 jours : 650 rendez-vous sur 681 confirmés, 0 no-show.",
       "alt": "Page d'accueil de clinic3d.be : un site clair avec le titre Natuurlijke schoonheid, wetenschappelijk onderbouwd, une photo du médecin au comptoir et le bouton Boek je gratis consult.",
       "soort": "Clinique esthétique · Hasselt · Dr Kenis",
-      "gemaakt": "Site web · Agenda en ligne · Flux d'e-mails",
+      "gemaakt": "Site web · Agenda en ligne · E-mails automatiques",
       "logo": {
         "src": "https://assets.cdn.filesafe.space/U08LkHeoQdx8yNxCQvps/media/69525c5573a5e0065b9027d4.png",
         "w": 500,
@@ -170,7 +174,7 @@
         ],
         [
           "Ce que nous avons réalisé",
-          "Le site web, l'agenda en ligne et le flux d'e-mails. Les patients choisissent eux-mêmes un moment. La confirmation et le rappel partent automatiquement."
+          "Le site web, l'agenda en ligne et les e-mails automatiques. Les patients choisissent eux-mêmes un moment. La confirmation et le rappel partent automatiquement."
         ],
         [
           "Ce qui a changé",
@@ -205,8 +209,12 @@
       ],
       "meet_noot": "Mesuré sur 263 jours. Les chiffres viennent du système lui-même.",
       "quote": {
-        "text": "227 rendez-vous en 104 jours, pas un seul no-show, et mon agenda est plus rempli que jamais. Mes clients réservent désormais eux-mêmes — je n'ai plus rien à faire.",
+        "text": "227 rendez-vous en 104 jours, pas un seul no-show, et mon agenda est plus rempli que jamais. Mes clients réservent désormais eux-mêmes. Je n'ai plus rien à faire.",
         "cite": "Dr Kenis, propriétaire de Clinic3D"
+      },
+      "dienst": {
+        "label": "En savoir plus sur la prise de rendez-vous en ligne",
+        "href": "Afsprakensysteem"
       }
     },
     {
@@ -252,7 +260,11 @@
         "Site web",
         "Suivi",
         "CRM"
-      ]
+      ],
+      "dienst": {
+        "label": "En savoir plus sur le suivi automatisé",
+        "href": "AI-Automatisering"
+      }
     },
     {
       "id": "kleinhof",
@@ -293,7 +305,11 @@
         "Viande",
         "Légumes",
         "Fruits"
-      ]
+      ],
+      "dienst": {
+        "label": "En savoir plus sur les sites web",
+        "href": "Websites"
+      }
     },
     {
       "id": "bambine",
@@ -332,18 +348,22 @@
         "Bien-être bébé",
         "Maman & femme",
         "Enfants"
-      ]
+      ],
+      "dienst": {
+        "label": "En savoir plus sur la prise de rendez-vous en ligne",
+        "href": "Afsprakensysteem"
+      }
     }
   ],
   "eerlijk": {
     "text": "Nous n'avons pas encore d'avis. Mais cinq entreprises où vous pouvez regarder vous-même.",
-    "sub": "Appel gratuit de 30 minutes · En ligne en général sous 14 jours"
+    "sub": "Démo gratuite de 30 minutes · En ligne en général sous 14 jours"
   },
   "cta": {
     "h2a": "Votre entreprise sera-t-elle",
     "h2b": "la sixième ?",
-    "text": "Réservez un appel gratuit de 30 minutes. Sans engagement. Votre site est en général en ligne sous 14 jours.",
-    "btn": "Réserver un appel gratuit",
+    "text": "Réservez une démo gratuite de 30 minutes. Sans engagement. Votre site est en général en ligne sous 14 jours.",
+    "btn": "Planifier une démo gratuite",
     "badges": [
       "Gratuit et sans engagement",
       "30 minutes",

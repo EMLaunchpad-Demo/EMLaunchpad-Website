@@ -99,11 +99,16 @@ def body(L, lang, pre):
     # ---------------- PRIJS ----------------
     prow = ''.join('<li><span class="ws-pos">%02d</span><div><b>%s</b>%s</div></li>' % (i + 1, esc(r[0]), ('<span>%s</span>' % esc(r[1])) if r[1] else '')
                    for i, r in enumerate(pr['rows']))
-    extra = ''.join('<li class="ws-extra" data-ws-row="%s" hidden=""><span class="ws-pos">%02d</span><div><b>%s</b><span>%s / %s</span></div></li>'
-                    % (a['id'], len(pr['rows']) + 1 + i, esc(a['row']), eur(a['price']), esc(re.sub(r'^\S+\s', '', u['per']))) for i, a in enumerate(pr['addons']))
+    # een uitbreiding kan een eenmalig bedrag hebben (once); dat telt niet mee in de maandprijs
+    once_s = lambda a: (' + %s %s' % (eur(a['once']), esc(u['once_word']))) if a.get('once') else ''
+    extra = ''.join('<li class="ws-extra" data-ws-row="%s" hidden=""><span class="ws-pos">%02d</span><div><b>%s</b><span>%s / %s%s</span></div></li>'
+                    % (a['id'], len(pr['rows']) + 1 + i, esc(a['row']), eur(a['price']), esc(re.sub(r'^\S+\s', '', u['per'])), once_s(a)) for i, a in enumerate(pr['addons']))
     tb = ''.join('<div><dt>%s</dt><dd%s>%s</dd></div>' % (esc(a), ' data-ws-tbp=""' if i == 1 else '', esc(b)) for i, (a, b) in enumerate(pr['tb']))
-    addons = ''.join('<button aria-pressed="false" class="ws-addon" data-price="%d" data-ws-add="%s" type="button"><span class="ws-plus" aria-hidden="true"></span><b>%s</b><span class="ws-ap">+ %s %s</span><span class="ws-at">%s</span></button>'
-                     % (a['price'], a['id'], esc(a['label']), eur(a['price']), esc(u['per']), esc(a['txt'])) for a in pr['addons'])
+    addons = ''.join('<button aria-pressed="false" class="ws-addon" data-once="%d" data-price="%d" data-ws-add="%s" type="button"><span class="ws-plus" aria-hidden="true"></span><b>%s</b><span class="ws-ap">+ %s %s%s</span><span class="ws-at">%s</span></button>'
+                     % (a.get('once', 0), a['price'], a['id'], esc(a['label']), eur(a['price']), esc(u['per']),
+                        (', %s %s' % (eur(a['once']), esc(u['once_word']))) if a.get('once') else '', esc(a['txt'])) for a in pr['addons'])
+    onces = ''.join('<p class="ws-once" data-ws-once="%s" hidden="">%s</p>' % (a['id'], esc(fill(u['once_line'], {'once': eur(a['once']), 'label': a['label']})))
+                    for a in pr['addons'] if a.get('once'))
 
     # ---------------- STAPPEN ----------------
     SK = [
@@ -279,6 +284,7 @@ def body(L, lang, pre):
 <p class="ws-addl">{esc(pr['addons_label'])}</p>
 <div aria-label="{attr(pr['addons_label'])}" class="ws-addons" role="group">{addons}</div>
 <div class="ws-total"><span>{esc(pr['total_label'])}</span><b>{'' if lang == 'fr' else '<span class="ws-eur">€</span>'}<span class="ws-amt" data-ws-amt=""><span aria-hidden="true" class="ws-amt-d">150</span><span class="sr-only">150</span></span>{'<span class="ws-eur">€</span>' if lang == 'fr' else ''}</b><em data-ws-per="">{esc(u['per'])}</em></div>
+{onces}
 <p aria-live="polite" class="sr-only" data-ws-totsr=""></p>
 </div>
 </div>

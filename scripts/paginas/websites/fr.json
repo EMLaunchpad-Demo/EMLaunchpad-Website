@@ -50,11 +50,11 @@
   }
  ],
  "meta": {
-  "title": "Sites web où vos clients réservent en ligne | EM Launchpad",
-  "desc": "Nous créons et gérons votre site web : rapide, pensé pour le smartphone, prêt pour le SEO, avec prise de rendez-vous et paiement en ligne. 150 € par mois.",
-  "ogtitle": "Sites web où vos clients réservent en ligne | EM Launchpad",
+  "title": "Création de site web au Limbourg | EM Launchpad",
+  "desc": "Nous créons et gérons votre site : rapide sur smartphone, avec réservation, formulaires et paiement en ligne. Croissance en ligne, 150 € par mois HTVA.",
+  "ogtitle": "Création de site web au Limbourg | EM Launchpad",
   "service": "Sites web",
-  "offer": "Inclus dans le pack Croissance digitale"
+  "offer": "Inclus dans le pack Croissance en ligne"
  },
  "crumbs": [
   "Accueil",
@@ -67,8 +67,8 @@
   "eyebrow": "Sites web",
   "h1a": "D'une page blanche",
   "h1b": "à des clients qui réservent.",
-  "lede": "Nous concevons votre site web autour de votre commerce, nous le construisons et nous le gérons. Vos clients vous trouvent, voient tout de suite qui vous êtes, et réservent, paient ou font une demande. Même quand vous avez déjà fermé.",
-  "cta": "Planifiez un appel gratuit",
+  "lede": "Faire créer votre site web chez nous, une agence web du Limbourg, c'est : nous le concevons autour de votre commerce, nous le construisons et nous le gérons. Vos clients vous trouvent, voient tout de suite qui vous êtes, et réservent, paient ou font une demande. Même quand vous avez déjà fermé.",
+  "cta": "Planifier une démo gratuite",
   "cta2": "Voir nos réalisations",
   "pick": "Choisissez votre secteur",
   "name_btn": "Essayez avec votre nom",
@@ -84,7 +84,7 @@
   "chapters_label": "Chapitres",
   "caption": "Exemple. Votre vrai site, nous le concevons avec vous : vos photos, vos textes, vos couleurs. Nous le construisons et le gérons.",
   "foot": [
-   "Inclus dans Croissance digitale, 150 € par mois",
+   "Inclus dans Croissance en ligne, 150 € par mois HTVA",
    "Nous le construisons et le gérons",
    "En général en ligne dans les 14 jours"
   ],
@@ -199,11 +199,13 @@
   "slider_none": "Rien n'est encore passé à la loupe",
   "desk": "Ordinateur",
   "gsm": "Smartphone",
-  "total_sr": "Au total : {t} € par mois",
+  "total_sr": "Au total : {t} € par mois HTVA",
   "per_sum": "par mois, au total",
   "per": "par mois",
   "picks": "décroche",
-  "measured_at": "mesuré à {t}"
+  "measured_at": "mesuré à {t}",
+  "once_word": "une fois",
+  "once_line": "+ {once} une fois ({label})"
  },
  "vak": [
   {
@@ -336,7 +338,7 @@
    "foto": {
     "id": "photo-1570172619644-dfd03ed5d881",
     "pos": "50% 40%",
-    "alt": "Soin du visage dans une clinique de la peau : un masque appliqué au pinceau"
+    "alt": "Soin du visage dans une clinique de la peau : un masque appliqué au pinceau"
    },
    "pal": {
     "bg": "#efebe6",
@@ -349,8 +351,8 @@
  ],
  "doet": {
   "eyebrow": "Ce que votre site fait pour vous",
-  "h2a": "Un bon site fait quatre choses.",
-  "h2b": "Chaque jour, même sans vous.",
+  "h2a": "Faire créer un site web au Limbourg ?",
+  "h2b": "Un bon site fait quatre choses, même sans vous.",
   "lede": "Choisissez-en une. Vous la voyez tout de suite sur l'exemple ci-dessus.",
   "group": "Ce que fait votre site",
   "lenses": [
@@ -358,7 +360,7 @@
     "id": "gevonden",
     "part": "logo",
     "titel": "Être trouvé",
-    "tekst": "Quand quelqu'un cherche « {vak} » près de chez lui, c'est vous qu'il doit trouver. Nous construisons un site rapide et prêt pour le SEO, et nous complétons entièrement votre profil Google, que nous tenons à jour. Une place en tête de Google, personne ne peut honnêtement la promettre. Un site que Google lit facilement, ça, nous le construisons."
+    "tekst": "Quand quelqu'un cherche « {vak} » près de chez lui, c'est vous qu'il doit trouver. Nous construisons un site rapide, que Google lit facilement, et nous complétons entièrement votre profil Google, que nous tenons à jour. Une place en tête de Google, personne ne peut honnêtement la promettre. Un site que Google comprend bien, ça, nous le construisons."
    },
    {
     "id": "vertrouwen",
@@ -387,7 +389,7 @@
     "href": "Afsprakensysteem"
    },
    {
-    "label": "Répondre aux questions, même le soir ? C'est le chatbot IA, + 50 € par mois",
+    "label": "Répondre aux questions, même le soir ? C'est le chatbot IA, + 50 € par mois HTVA",
     "href": "AI%20Chatbots"
    }
   ]
@@ -404,8 +406,8 @@
   "tags": [
    "Site web",
    "Réservation et paiement en ligne",
-   "Flux d'e-mails",
-   "SEO"
+   "E-mails automatiques",
+   "Facile à trouver sur Google"
   ],
   "visit": "Voir amakhosi.be",
   "newtab": "(s'ouvre dans une nouvelle fenêtre)",
@@ -585,7 +587,7 @@
    {
     "k": "PROJET 02 · HASSELT",
     "t": "Clinic3D",
-    "txt": "Clinique esthétique. Site web avec prise de rendez-vous en ligne, flux d'e-mails automatique et suivi des avis.",
+    "txt": "Clinique esthétique. Site web avec prise de rendez-vous en ligne, e-mails automatiques et suivi des avis.",
     "nums": [
      [
       "40 280",
@@ -601,7 +603,7 @@
      ]
     ],
     "note": "Rendez-vous mesurés du 1er janvier au 20 septembre 2026 (263 jours).",
-    "quote": "Mes clients réservent désormais eux-mêmes — je n'ai plus rien à faire.",
+    "quote": "Mes clients réservent désormais eux-mêmes. Je n'ai plus rien à faire.",
     "cite": "Dr. Kenis, Clinic3D",
     "link": "Lire l'étude de cas",
     "href": "Clinic3D"
@@ -615,7 +617,9 @@
      "alt": "Logo de Mett-U VZW",
      "w": 550,
      "h": 180
-    }
+    },
+    "link": "Voir sur Portfolio",
+    "href": "Portfolio#mett-u"
    },
    {
     "k": "PROJET 04 · VECHMAAL",
@@ -627,8 +631,8 @@
      "w": 400,
      "h": 400
     },
-    "link": "Voir kleinhof.be",
-    "href": "https://kleinhof.be"
+    "link": "Voir sur Portfolio",
+    "href": "Portfolio#kleinhof"
    },
    {
     "k": "PROJET 05 · LOMMEL",
@@ -643,7 +647,7 @@
    {
     "k": "PROJET 06 · CE SITE",
     "t": "emlaunchpad.com",
-    "txt": "Trilingue, statique et rapide. Et chez vous, à quelle vitesse ? Vous le mesurez juste en dessous.",
+    "txt": "Trilingue, construit par nous et rapide. Et chez vous, à quelle vitesse ? Vous le mesurez juste en dessous.",
     "link": "Voir la mesure",
     "href": "#gemeten",
     "site": true
@@ -697,28 +701,28 @@
   "v_bg": "Cette page s'est ouverte dans un autre onglet. Dans ce cas, votre navigateur ne mesure pas correctement. Rechargez-la pour voir le résultat.",
   "wait": "Mesure en cours…",
   "reload": "Recharger et mesurer à nouveau",
-  "foot": "Mesuré dans votre propre navigateur, avec les indicateurs que Google utilise pour la vitesse et la stabilité (Core Web Vitals). Rien n'est envoyé, ni à nous ni à personne d'autre. Un autre appareil ou une autre connexion donne d'autres chiffres. Les seuils viennent de Google (web.dev).",
-  "slot": "emlaunchpad.com est trilingue et statique, et nous l'avons construit nous-mêmes. Nous construisons le vôtre avec le même soin.",
+  "foot": "Mesuré dans votre propre navigateur, avec les indicateurs que Google utilise pour la vitesse et la stabilité. Rien n'est envoyé, ni à nous ni à personne d'autre. Un autre appareil ou une autre connexion donne d'autres chiffres. Les seuils viennent de Google (web.dev).",
+  "slot": "emlaunchpad.com est trilingue, et nous l'avons construit nous-mêmes. Nous construisons le vôtre avec le même soin.",
   "sr": "Cette page s'est affichée chez vous en {x}.",
   "chip": "Cette page s'est affichée chez vous en {x}"
  },
  "prijs": {
   "eyebrow": "Ce que ça coûte",
   "h2a": "Pas de prix à part.",
-  "h2b": "Votre site est inclus dans Croissance digitale.",
-  "lede": "150 € par mois, résiliable chaque mois. Nous construisons et gérons toute votre activité digitale. Votre site web en est le point de départ.",
-  "head": "NOMENCLATURE · CROISSANCE DIGITALE",
+  "h2b": "Votre site est inclus dans Croissance en ligne.",
+  "lede": "150 € par mois HTVA, résiliable chaque mois. Nous construisons et gérons toute votre activité digitale. Votre site web en est le point de départ.",
+  "head": "NOMENCLATURE · CROISSANCE EN LIGNE",
   "rows": [
    [
     "Site web",
-    "Un site web professionnel et rapide qui transforme vos visiteurs en clients. Conçu d'abord pour le smartphone, optimisé pour les Core Web Vitals, prêt pour le SEO, avec un agenda de réservation intégré et des formulaires de contact."
+    "Un site web professionnel qui transforme vos visiteurs en clients. Conçu d'abord pour le smartphone, rapide, et construit pour que Google le lise facilement. Avec un agenda de réservation intégré et des formulaires."
    ],
    [
-    "Profil Google et visibilité locale",
+    "Profil Google et visibilité",
     "Entièrement complété et à jour."
    ],
    [
-    "Gestion de la réputation",
+    "Avis sur Google",
     "2 heures après un rendez-vous, une demande d'avis part automatiquement."
    ],
    [
@@ -726,30 +730,30 @@
     "WhatsApp, Instagram, e-mail, SMS et téléphone dans une seule boîte de réception."
    ],
    [
-    "Campagnes par e-mail et SMS",
+    "Campagnes e-mail et SMS",
     ""
    ],
    [
-    "Funnels et landing pages",
-    ""
+    "Landing pages",
+    "Une page pour une action, comme une promotion ou une publicité. Celui qui remplit le formulaire est aussitôt dans votre fichier clients."
    ],
    [
-    "Paiement en ligne et facturation",
+    "Paiements en ligne et factures",
     "Via Stripe, avec Bancontact, iDEAL, Visa et Apple Pay."
    ],
    [
-    "Automatisation IA et workflows",
+    "Workflows intelligents",
     ""
    ],
    [
-    "Accès à la plateforme",
+    "Accès à notre plateforme",
     ""
    ]
   ],
   "tb": [
    [
     "PACK",
-    "CROISSANCE DIGITALE"
+    "CROISSANCE EN LIGNE"
    ],
    [
     "PRIX",
@@ -777,27 +781,28 @@
    {
     "id": "rc",
     "label": "Réceptionniste IA",
-    "price": 125,
+    "price": 150,
     "txt": "Répond à votre téléphone.",
     "row": "Réceptionniste IA",
-    "href": "AI%20Voice%20Agents"
+    "href": "AI%20Voice%20Agents",
+    "once": 750
    }
   ],
-  "total_label": "Votre prix mensuel",
-  "cons": "L'IA jusque dans vos processus internes ? C'est le Consulting IA, sur demande.",
+  "total_label": "Votre prix mensuel (HTVA)",
+  "cons": "Envie d'apprendre à travailler avec l'IA ? C'est le Consulting IA, 200 € par mois (prix d'introduction).",
   "cons_link": "Voir les packs",
-  "cta": "Planifiez un appel gratuit",
+  "cta": "Planifier une démo gratuite",
   "cta2": "Voir le pack"
  },
  "stappen": {
   "eyebrow": "Comment votre site voit le jour",
-  "h2a": "D'un premier appel",
+  "h2a": "D'une démo gratuite",
   "h2b": "à un site qui prend des réservations.",
   "lede": "En général en ligne dans les 14 jours. Vous n'avez rien à construire ni à connecter.",
   "items": [
    [
-    "Appel gratuit",
-    "Trente minutes. Que faites-vous, pour qui, et que doit pouvoir faire un visiteur : réserver, payer ou faire une demande ?"
+    "Démo gratuite",
+    "Trente minutes via Teams. Que faites-vous, pour qui, et que doit pouvoir faire un visiteur : réserver, payer ou faire une demande ?"
    ],
    [
     "Nous concevons",
@@ -819,8 +824,12 @@
   "h2b": "avant de commencer à dessiner.",
   "items": [
    {
-    "q": "Combien coûte un site web chez vous ?",
-    "a": "Il n'y a pas de prix à part. Votre site est inclus dans Croissance digitale : 150 € par mois, résiliable chaque mois. Votre profil Google, les demandes d'avis, votre CRM et le paiement en ligne sont aussi compris."
+    "q": "Combien coûte la création d'un site web ?",
+    "a": "Chez nous, il n'y a pas de prix à part ni de frais de démarrage. Votre site est inclus dans Croissance en ligne : 150 € par mois HTVA, résiliable chaque mois. Votre profil Google, les demandes d'avis, votre CRM et le paiement en ligne sont aussi compris."
+   },
+   {
+    "q": "Combien coûte un site web par an ?",
+    "a": "Douze fois 150 €, soit 1 800 € par an HTVA. La conception, la construction, l'hébergement et la gestion sont déjà compris. Vous payez par mois et pouvez arrêter chaque mois."
    },
    {
     "q": "En combien de temps mon site est-il en ligne ?",
@@ -832,31 +841,47 @@
    },
    {
     "q": "Un chatbot est-il inclus ?",
-    "a": "Pas par défaut. Le chatbot IA est une option à 50 € par mois. Vous voulez aussi que quelqu'un réponde à votre téléphone ? C'est la réceptionniste IA, pour 125 € par mois."
+    "a": "Pas par défaut. Le chatbot IA est une option à 50 € par mois. Vous voulez aussi que quelqu'un réponde au téléphone ? C'est la réceptionniste IA : 150 € par mois et 750 € une fois. Tous les prix HTVA."
+   },
+   {
+    "q": "J'ai déjà un site. Doit-il disparaître ?",
+    "a": "Non. Si c'est surtout la réservation en ligne qui vous intéresse, nous plaçons le module de réservation sur votre site actuel, ou vous utilisez votre propre lien de réservation. Si vous voulez quand même un nouveau site, nous le construisons autour de votre commerce."
    },
    {
     "q": "Est-ce que j'apparaîtrai en tête de Google ?",
-    "a": "Personne ne peut honnêtement le promettre. Nous construisons un site rapide et prêt pour le SEO, et nous complétons entièrement votre profil Google, que nous tenons à jour."
+    "a": "Personne ne peut honnêtement le promettre. Nous construisons un site rapide, que Google lit facilement, et nous complétons entièrement votre profil Google, que nous tenons à jour."
    },
    {
     "q": "Qui gère mon site web ?",
     "a": "Nous. Nous construisons et gérons toute votre activité digitale, et votre site web en fait partie."
+   },
+   {
+    "q": "Et si j'arrête ?",
+    "a": "Croissance en ligne est résiliable chaque mois. Si vous arrêtez, nous vous transmettons tout : votre site web et toutes vos données vous reviennent."
    }
   ],
-  "more_label": "À lire aussi :",
+  "more_label": "À lire aussi (en néerlandais) :",
   "more": [
    {
-    "title": "Pourquoi votre site est lent",
+    "title": "Pourquoi votre site est lent (et ce que ça vous coûte)",
     "href": "emtimes/websites/waarom-je-website-traag-is/"
+   },
+   {
+    "title": "Combien coûte la création d'un site web en Belgique ?",
+    "href": "emtimes/websites/wat-kost-een-website-laten-maken/"
+   },
+   {
+    "title": "Site web pour votre commerce : 10 éléments indispensables",
+    "href": "emtimes/websites/website-lokale-zaak-checklist/"
    }
   ]
  },
  "cta": {
   "h2a": "Le premier trait,",
   "h2b": "traçons-le ensemble.",
-  "text": "Planifiez un appel gratuit de 30 minutes. Nous regardons ensemble ce que votre site doit faire. Ensuite, nous dessinons la première ébauche.",
-  "btn": "Planifiez un appel gratuit",
-  "demo": "Ou demandez une démo gratuite",
+  "text": "Réservez une démo gratuite de 30 minutes. Nous regardons ce que votre site doit faire. Ensuite, nous dessinons la première ébauche.",
+  "btn": "Planifier une démo gratuite",
+  "demo": "Ou demandez votre démo via le formulaire",
   "demo_href": "Gratis%20Demo",
   "micro": "Cette page s'est affichée chez vous en {x}. Nous construirons votre site avec le même soin.",
   "micro_fb": "Nous construirons votre site avec le même soin que cette page.",

@@ -162,10 +162,14 @@ def body(L, lang, pre):
 
     # ---------------- PRIJS ----------------
     checks = ''.join('<li>%s<span>%s</span></li>' % (CHECK, esc(x)) for x in pr['list'])
+    # een uitbreiding kan een eenmalig bedrag hebben (once); dat telt niet mee in de maandprijs
     addons = ''.join(
-        '<button aria-pressed="false" class="am-addon" data-am-add="%s" data-price="%d" type="button"><span class="am-plus" aria-hidden="true"></span>'
-        '<span class="am-aname">%s</span><span class="am-aprice">+ %s %s</span></button>'
-        % (a['id'], a['price'], esc(a['label']), eur(a['price']), esc(u['per'])) for a in pr['addons'])
+        '<button aria-pressed="false" class="am-addon" data-am-add="%s" data-once="%d" data-price="%d" type="button"><span class="am-plus" aria-hidden="true"></span>'
+        '<span class="am-aname">%s</span><span class="am-aprice">+ %s %s%s</span></button>'
+        % (a['id'], a.get('once', 0), a['price'], esc(a['label']), eur(a['price']), esc(u['per']),
+           (', %s %s' % (eur(a['once']), esc(u['once_word']))) if a.get('once') else '') for a in pr['addons'])
+    onces = ''.join('<p class="am-once" data-am-once="%s" hidden="">%s</p>' % (a['id'], esc(fill(u['once_line'], {'once': eur(a['once']), 'label': a['label']})))
+                    for a in pr['addons'] if a.get('once'))
     alinks = ' '.join('<a href="%s%s">%s %s</a>' % (rel, a['href'], esc(a['more']), ARROW) for a in pr['addons'])
     kast_ticks = arc_ticks(210, 210, 160, 0, 354, 59, 5)
     KAST = f'''<svg class="am-kast-svg" viewBox="0 0 420 420">
@@ -335,12 +339,13 @@ def body(L, lang, pre):
 <p aria-live="polite" class="sr-only" data-am-total=""></p>
 <p class="am-addon-l">{esc(pr['addons_label'])}</p>
 <div class="am-addons">{addons}</div>
+{onces}
 <p class="am-alinks">{alinks}</p>
 </div>
 </div>
 <div class="am-cons">
 <div><span class="eyebrow">{esc(pr['cons_eyebrow'])}</span><h3>{esc(pr['cons_h'])}</h3></div>
-<div><p>{esc(pr['cons_txt'])}</p><a class="am-link" href="{rel}Diensten#pakket-2">{esc(pr['cons_link'])} {ARROW}</a></div>
+<div><p>{esc(pr['cons_txt'])}</p><p class="am-cons-links"><a class="btn" data-book="" href="{rel}Contact">{esc(pr['cons_cta'])} {ARROW}</a><a class="am-link" href="{rel}Diensten#pakket-2">{esc(pr['cons_link'])} {ARROW}</a></p></div>
 </div>
 </div>
 </section>

@@ -1158,12 +1158,14 @@
     var R = new Roll(amtD, D.base, 0);
     var btns = $$('.am-addon', sec), on = {};
     function update() {
-      var t = D.base, any = false;
-      btns.forEach(function (b) { if (on[b.getAttribute('data-am-add')]) { t += +b.getAttribute('data-price'); any = true; } });
+      /* maandprijs; een eenmalig bedrag (data-once, bv. de AI-receptioniste) telt niet mee en staat als aparte regel onder de kast */
+      var t = D.base, o = 0, any = false;
+      btns.forEach(function (b) { if (on[b.getAttribute('data-am-add')]) { t += +b.getAttribute('data-price'); o += +b.getAttribute('data-once') || 0; any = true; } });
       R.set(t, false, 500);
       amtSr.textContent = String(t);
       per.textContent = any ? U.per_sum : U.per;
-      if (total) total.textContent = fill(U.total_sr, { t: t });
+      $$('[data-am-once]', sec).forEach(function (p) { p.hidden = !on[p.getAttribute('data-am-once')]; });
+      if (total) total.textContent = fill(U.total_sr, { t: t }) + (o ? ', + ' + (D.lang === 'fr' ? o + ' €' : '€' + o) + ' ' + (U.once_word || '') : '');
     }
     btns.forEach(function (b) {
       b.addEventListener('click', function () {

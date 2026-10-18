@@ -49,11 +49,11 @@
   }
  ],
  "meta": {
-  "title": "AI-automatisering: het saaie werk loopt vanzelf | EM Launchpad",
-  "desc": "Bevestigingen, herinneringen, facturen, reviewverzoeken en opvolging die vanzelf vertrekken, op het juiste moment. Wij bouwen en onderhouden de workflows. Inbegrepen in Digitale groei.",
-  "ogtitle": "AI-automatisering: het saaie werk loopt vanzelf",
+  "title": "AI-automatisering voor kmo's in België | EM Launchpad",
+  "desc": "Bevestigen, herinneren, factureren en om een review vragen: wij bouwen de workflows die dat vanzelf doen. In Online groeien, €150 per maand, excl. btw.",
+  "ogtitle": "AI-automatisering voor kmo's in België | EM Launchpad",
   "service": "AI-automatisering",
-  "offer": "Inbegrepen in het pakket Digitale groei"
+  "offer": "Inbegrepen in het pakket Online groeien"
  },
  "crumbs": [
   "Home",
@@ -66,13 +66,13 @@
   "eyebrow": "AI-automatisering",
   "h1a": "Eén klant boekt.",
   "h1b": "De rest loopt als een uurwerk.",
-  "lede": "Bevestigen, herinneren, factureren, om een review vragen. Wij bouwen de workflows die dat saaie werk vanzelf doen, telkens op het juiste moment. Jij werkt gewoon verder.",
-  "cta": "Plan een gratis gesprek",
+  "lede": "AI-automatisering voor je kmo: bevestigen, herinneren, factureren, om een review vragen. Wij bouwen de workflows die dat saaie werk vanzelf doen, telkens op het juiste moment. Jij werkt gewoon verder.",
+  "cta": "Plan een gratis demo",
   "cta2": "Wat zit erin",
   "label": "Kies wat er gebeurt",
   "read_label": "Wat er net vanzelf gebeurde",
   "foot": [
-   "Zit in Digitale groei, €150 per maand",
+   "Zit in Online groeien, €150 per maand, excl. btw",
    "Wij bouwen en onderhouden de workflows",
    "Meestal live binnen 14 dagen"
   ],
@@ -103,12 +103,14 @@
   },
   "nogeens": "Nog eens",
   "sr_how": "gebeurt vanzelf:",
-  "total_sr": "Samen: €{t} per maand",
+  "total_sr": "Samen: €{t} per maand, excl. btw",
   "per": "per maand",
   "per_sum": "per maand, samen",
   "tab_label": "Kies je vak",
   "next": "Volgend moment",
-  "finish": "Afronden"
+  "finish": "Afronden",
+  "once_word": "eenmalig",
+  "once_line": "+ {once} eenmalig ({label})"
  },
  "geo": {
   "p": 11,
@@ -203,31 +205,14 @@
      "win": "Za 12:30",
      "jij": "Jij: bij de volgende klant",
      "kop": "Reviewverzoek, 2 uur na de afspraak",
-     "msg": "Bedankt voor je bezoek, {naam}. Hoe was het?",
+     "msg": "Bedankt voor je bezoek, {naam}. Hoe was het? Laat het ons weten op Google.",
      "tools": [
       "sms",
-      "mail"
+      "mail",
+      "google"
      ],
      "sr": "Twee uur na de afspraak: reviewverzoek verstuurd.",
-     "fork": {
-      "q": "Hoe was het voor {naam}?",
-      "def": 0,
-      "opts": [
-       {
-        "label": "Tevreden",
-        "grav": "NAAR GOOGLE",
-        "res": "{zij} krijgt de link naar je Google-profiel.",
-        "tools": [
-         "google"
-        ]
-       },
-       {
-        "label": "Niet tevreden",
-        "grav": "EERST PRIVÉ",
-        "res": "{haar} reactie komt eerst bij jou terecht, niet op Google."
-       }
-      ]
-     }
+     "extra": "Met één klik naar je Google-profiel. Elke klant krijgt dezelfde vraag."
     },
     {
      "w": 5,
@@ -393,7 +378,7 @@
      "win": "Zo 20:15",
      "jij": "Jij: aan tafel",
      "kop": "In je CRM, bij de juiste persoon",
-     "txt": "Nieuwe aanvraag van Sarah via je website. Tags: offerte, website. Doorgestuurd naar wie de offertes maakt.",
+     "txt": "Nieuwe aanvraag van Sarah via je website. Labels: offerte, website. Doorgestuurd naar wie de offertes maakt.",
      "tools": [
       "crm"
      ],
@@ -427,13 +412,13 @@
           "grav": "IN GESPREK",
           "win": "Ma 08:40",
           "jij": "Jij: nog niet eens begonnen",
-          "kop": "Pipeline bijgewerkt",
+          "kop": "Klantfase bijgewerkt",
           "txt": "Sarah staat nu op 'in gesprek'. Haar antwoord zit in je inbox.",
           "tools": [
            "crm",
            "inbox"
           ],
-          "sr": "Pipeline bijgewerkt: in gesprek."
+          "sr": "Klantfase bijgewerkt: in gesprek."
          }
         ]
        }
@@ -448,8 +433,8 @@
  },
  "lijst": {
   "eyebrow": "Het briefje naast de kassa",
-  "h2a": "Je lijstje van vandaag.",
-  "h2b": "Het streept zichzelf door.",
+  "h2a": "Automatiseren met AI als kmo:",
+  "h2b": "je lijstje streept zichzelf door.",
   "lede": "Terugbellen, herinneren, een factuur sturen, om een review vragen. Kies je vak en kijk wat er van je lijstje overblijft.",
   "head": "Nog te doen",
   "caption": "Voorbeeld. Wat vanzelf loopt en wanneer, stemmen we samen af.",
@@ -583,7 +568,7 @@
     "w": 0,
     "label": "CRM",
     "kop": "Alles op één plek",
-    "txt": "WhatsApp, Instagram, e-mail, sms en telefoongesprekken in één inbox. Klantgeschiedenis, notities, tags en pipeline-status worden vanzelf bijgewerkt."
+    "txt": "WhatsApp, Instagram, e-mail, sms en telefoongesprekken in één inbox. Klantgeschiedenis, notities en labels worden vanzelf bijgewerkt, en je ziet in welke fase elke klant zit."
    },
    {
     "w": 1,
@@ -601,7 +586,7 @@
     "w": 3,
     "label": "Reviews",
     "kop": "Vanzelf om een review vragen",
-    "txt": "2 uur na elke afspraak vertrekt een reviewverzoek per sms of e-mail. Tevreden klanten gaan naar Google. Wie niet tevreden is, komt eerst bij jou terecht."
+    "txt": "2 uur na elke afspraak vertrekt een reviewverzoek per sms of e-mail, met één klik naar je Google-profiel. Elke klant krijgt dezelfde vraag."
    },
    {
     "w": 4,
@@ -633,7 +618,7 @@
   "h2a": "3.250 e-mails in 263 dagen.",
   "h2b": "Allemaal vanzelf verstuurd.",
   "lede": "Bij Clinic3D, een esthetische kliniek in Hasselt, vertrekken bevestigingen, herinneringen en opvolging volledig automatisch. 2.090 van die e-mails werden geopend. En de teller van de no-shows bleef op nul staan.",
-  "quote": "Mijn klanten boeken nu zelf — ik moet niets meer doen.",
+  "quote": "Mijn klanten boeken nu zelf. Ik moet niets meer doen.",
   "cite": "Dr. Kenis, eigenaar Clinic3D",
   "note": "Gemeten van 1 januari tot 20 september 2026 (263 dagen). Dr. Kenis deed zijn uitspraak na 104 dagen.",
   "link": "Lees de volledige case",
@@ -695,22 +680,22 @@
  "prijs": {
   "eyebrow": "Wat het kost",
   "h2a": "Geen apart prijskaartje.",
-  "h2b": "Het zit in Digitale groei.",
-  "lede": "Automatisering hoort bij het pakket Digitale groei: €150 per maand, maandelijks opzegbaar. Daarin zit ook alles waar de workflows mee werken.",
+  "h2b": "Het zit in Online groeien.",
+  "lede": "Automatisering hoort bij het pakket Online groeien: €150 per maand, excl. btw en maandelijks opzegbaar. Daarin zit ook alles waar de workflows mee werken.",
   "list": [
-   "AI-automatisering en workflows",
+   "Slimme workflows",
    "Website",
-   "Google Business en lokale zichtbaarheid",
-   "Reputatiebeheer",
+   "Google-profiel en zichtbaarheid",
+   "Reviews op Google",
    "CRM en klantendashboard",
    "E-mail- en sms-campagnes",
-   "Funnels en landingspagina's",
-   "Online betalingen en facturatie",
+   "Landingspagina's",
+   "Online betalen en facturen",
    "Toegang tot ons platform"
   ],
-  "rim": "DIGITALE GROEI · MAANDELIJKS OPZEGBAAR · WIJ BOUWEN EN ONDERHOUDEN · AUTOMATISERING INBEGREPEN · ",
+  "rim": "ONLINE GROEIEN · MAANDELIJKS OPZEGBAAR · WIJ BOUWEN EN ONDERHOUDEN · AUTOMATISERING INBEGREPEN · ",
   "arc": "AUTOMATISERING INBEGREPEN",
-  "cancel": "maandelijks opzegbaar",
+  "cancel": "maandelijks opzegbaar · excl. btw",
   "addons_label": "Wil je er iets bij?",
   "addons": [
    {
@@ -724,29 +709,31 @@
    {
     "id": "receptie",
     "label": "AI-receptioniste",
-    "price": 125,
+    "price": 150,
     "ring": "AI-RECEPTIONISTE",
     "href": "AI%20Voice%20Agents",
-    "more": "Wat doet de AI-receptioniste?"
+    "more": "Wat doet de AI-receptioniste?",
+    "once": 750
    }
   ],
-  "cta": "Plan een gratis gesprek",
+  "cta": "Plan een gratis demo",
   "cta2": "Bekijk het pakket",
   "cons_eyebrow": "Voor wie verder wil",
-  "cons_h": "AI tot in je interne processen? Dat is AI Consulting.",
-  "cons_txt": "Een volledige analyse van je werking, een AI-implementatieplan op maat, begeleiding bij de opzet en maandelijkse optimalisatie. Op aanvraag en bewust beperkt beschikbaar.",
-  "cons_link": "Vraag een persoonlijk gesprek aan"
+  "cons_h": "Zelf leren werken met AI? Dat is AI Consulting.",
+  "cons_txt": "Ongeveer twee sessies per maand, support via WhatsApp en elk kwartaal een plan. Wij implementeren niet zelf: we leren jou AI gebruiken in je eigen werk. Introductieprijs: €200 per maand (excl. btw), die binnenkort omhoog gaat.",
+  "cons_link": "Meer over AI Consulting",
+  "cons_cta": "Plan een gratis demo"
  },
  "stappen": {
   "eyebrow": "Zo gaat het lopen",
-  "h2a": "Van een gesprek",
+  "h2a": "Van een demo",
   "h2b": "tot een uurwerk dat loopt.",
   "lede": "Meestal live binnen 14 dagen. Jij hoeft niets zelf te bouwen.",
   "items": [
    {
-    "lab": "GESPREK",
-    "kop": "Gratis gesprek",
-    "txt": "Dertig minuten. We overlopen je dag: wat je telkens opnieuw doet en wat je liever niet meer zelf doet."
+    "lab": "DEMO",
+    "kop": "Gratis demo",
+    "txt": "Dertig minuten via Teams. We overlopen je dag: wat je telkens opnieuw doet en wat je liever niet meer zelf doet."
    },
    {
     "lab": "BOUWEN",
@@ -775,8 +762,8 @@
     "a": "Nee. Wij bouwen de workflows en onderhouden ze. Jij keurt alleen de momenten en de teksten goed."
    },
    {
-    "q": "Wat kost het?",
-    "a": "Automatisering heeft geen aparte prijs. Ze zit in Digitale groei: €150 per maand, maandelijks opzegbaar. Wil je er een AI-chatbot of een AI-receptioniste bij, dan komt daar €50 of €125 per maand bij."
+    "q": "Wat kost AI-automatisering?",
+    "a": "Automatisering heeft geen aparte prijs. Ze zit in Online groeien: €150 per maand (excl. btw), maandelijks opzegbaar. Wil je er een AI-chatbot bij, dan komt daar €50 per maand bij. De AI-receptioniste kost €150 per maand en eenmalig €750."
    },
    {
     "q": "Wat kan er vanzelf lopen?",
@@ -785,6 +772,10 @@
    {
     "q": "Kan ik zelf kiezen wat er vertrekt, en wanneer?",
     "a": "Ja. De momenten en de teksten stemmen we samen af op jouw zaak."
+   },
+   {
+    "q": "Wat als een klant geen sms of mail wil?",
+    "a": "Dan krijgt hij ze niet. Onder elke mail staat een afmeldlink: wie zich afmeldt, krijgt niets meer. Wil een klant geen sms, dan zetten we die voor hem uit. Zo hoort het ook volgens de privacywet (GDPR)."
    },
    {
     "q": "Werkt het met mijn agenda en met online betalingen?",
@@ -802,7 +793,7 @@
     "href": "emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/"
    },
    {
-    "title": "Leads automatisch opvolgen",
+    "title": "Leads automatisch opvolgen: geen aanvraag meer kwijt",
     "href": "emtimes/automatisering/leads-automatisch-opvolgen/"
    },
    {
@@ -813,10 +804,10 @@
  },
  "cta": {
   "h2a": "Eén ding doe je nog zelf.",
-  "h2b": "Een gesprek plannen.",
-  "text": "Dertig minuten, gratis. We overlopen je dag en kijken welk werk vanzelf kan lopen.",
-  "btn": "Plan een gratis gesprek",
-  "demo": "Of vraag een gratis demo aan",
+  "h2b": "Een demo plannen.",
+  "text": "Dertig minuten, gratis, via Teams. We overlopen je dag en kijken welk werk vanzelf kan lopen.",
+  "btn": "Plan een gratis demo",
+  "demo": "Of vraag je demo aan via het formulier",
   "demo_href": "Gratis%20Demo",
   "micro": "Daarna zetten wij het uurwerk in gang.",
   "badges": [

@@ -50,11 +50,11 @@
   }
  ],
  "meta": {
-  "title": "Websites that let customers book | EM Launchpad",
-  "desc": "We build and manage your website: fast, made for phones, SEO-ready, with online booking, lead forms and payments. Included in Digital Growth, €150 per month.",
-  "ogtitle": "Websites that let customers book | EM Launchpad",
+  "title": "Website design in Limburg, with online booking | EM Launchpad",
+  "desc": "We design, build and manage your website: fast on mobile, with online booking, forms and payments. Part of Online Growth, €150 a month, excl. VAT.",
+  "ogtitle": "Website design in Limburg, with online booking | EM Launchpad",
   "service": "Websites",
-  "offer": "Included in the Digital Growth package"
+  "offer": "Included in the Online Growth package"
  },
  "crumbs": [
   "Home",
@@ -67,8 +67,8 @@
   "eyebrow": "Websites",
   "h1a": "From a blank sheet",
   "h1b": "to a business that takes bookings.",
-  "lede": "We design your website around your business, build it and manage it. Customers find you, see straight away who you are, and book, pay or send a request. Even when you've already closed.",
-  "cta": "Book a free call",
+  "lede": "Getting a website made by us, a web agency from Limburg, means: we design it around your business, build it and manage it. Customers find you, see straight away who you are, and book, pay or send a request. Even when you've already closed.",
+  "cta": "Book a free demo",
   "cta2": "See real work",
   "pick": "See it for a",
   "name_btn": "Put your own name on it",
@@ -84,7 +84,7 @@
   "chapters_label": "Chapters",
   "caption": "Example. We design your real site together with you: your photos, your words, your colours. We build it and manage it.",
   "foot": [
-   "Included in Digital Growth, €150 per month",
+   "Included in Online Growth, €150 a month, excl. VAT",
    "We build and manage it",
    "Usually live within 14 days"
   ],
@@ -199,11 +199,13 @@
   "slider_none": "Nothing revealed yet",
   "desk": "Computer",
   "gsm": "Phone",
-  "total_sr": "Total: €{t} per month",
+  "total_sr": "Total: €{t} a month, excl. VAT",
   "per_sum": "per month, in total",
   "per": "per month",
   "picks": "picks up",
-  "measured_at": "measured at {t}"
+  "measured_at": "measured at {t}",
+  "once_word": "one-off",
+  "once_line": "+ {once} one-off ({label})"
  },
  "vak": [
   {
@@ -349,8 +351,8 @@
  ],
  "doet": {
   "eyebrow": "What your site does for you",
-  "h2a": "A good site does four things.",
-  "h2b": "Every day, even without you.",
+  "h2a": "Getting a website made in Limburg?",
+  "h2b": "A good site does four things, even without you.",
   "lede": "Pick one. You'll see it straight away on the example above.",
   "group": "What your site does",
   "lenses": [
@@ -358,7 +360,7 @@
     "id": "gevonden",
     "part": "logo",
     "titel": "Getting found",
-    "tekst": "Anyone looking for a {vak} nearby should find you. We build your site fast and SEO-ready, and we fill in your Google profile completely and keep it up to date. Nobody can honestly promise you the top spot. What we can build is a site Google reads well."
+    "tekst": "Anyone looking for a {vak} nearby should find you. We build your site fast and in a way Google reads well, and we fill in your Google profile completely and keep it up to date. Nobody can honestly promise you the top spot. What we can build is a site Google understands."
    },
    {
     "id": "vertrouwen",
@@ -371,8 +373,8 @@
     "part": "knop",
     "titel": "Taking bookings and payments",
     "titel_offerte": "Taking requests",
-    "tekst": "One tap on {cta} and your customer has booked. The appointment planner and lead forms are built in, and customers can pay online with Bancontact, iDEAL, Visa or Apple Pay.",
-    "tekst_offerte": "With one tap on {cta}, your customer fills in their request. The lead form is built in, and the request goes straight into your CRM."
+    "tekst": "One tap on {cta} and your customer has booked. The appointment planner and forms are built in, and customers can pay online with Bancontact, iDEAL, Visa or Apple Pay.",
+    "tekst_offerte": "With one tap on {cta}, your customer fills in their request. The request form is built in, and the request goes straight into your CRM."
    },
    {
     "id": "alles",
@@ -387,7 +389,7 @@
     "href": "Afsprakensysteem"
    },
    {
-    "label": "Answering questions in the evening too? That's the AI chatbot, + €50 per month",
+    "label": "Answering questions in the evening too? That's the AI chatbot, + €50 per month, excl. VAT",
     "href": "AI%20Chatbots"
    }
   ]
@@ -404,8 +406,8 @@
   "tags": [
    "Website",
    "Online booking and payment",
-   "Email flow",
-   "SEO"
+   "Automatic emails",
+   "Easy to find on Google"
   ],
   "visit": "Visit amakhosi.be",
   "newtab": "(opens in a new window)",
@@ -585,7 +587,7 @@
    {
     "k": "WORK 02 · HASSELT",
     "t": "Clinic3D",
-    "txt": "Aesthetic clinic. Website with an online booking system, automated email flow and review follow-up.",
+    "txt": "Aesthetic clinic. Website with an online booking system, automatic emails and review follow-up.",
     "nums": [
      [
       "40,280",
@@ -601,7 +603,7 @@
      ]
     ],
     "note": "Appointments measured from 1 January to 20 September 2026 (263 days).",
-    "quote": "My clients now book by themselves — I don't have to do a thing.",
+    "quote": "My clients now book by themselves. I don't have to do a thing.",
     "cite": "Dr. Kenis, Clinic3D",
     "link": "Read the case",
     "href": "Clinic3D"
@@ -615,7 +617,9 @@
      "alt": "Mett-U VZW logo",
      "w": 550,
      "h": 180
-    }
+    },
+    "link": "See it on Portfolio",
+    "href": "Portfolio#mett-u"
    },
    {
     "k": "WORK 04 · VECHMAAL",
@@ -627,8 +631,8 @@
      "w": 400,
      "h": 400
     },
-    "link": "Visit kleinhof.be",
-    "href": "https://kleinhof.be"
+    "link": "See it on Portfolio",
+    "href": "Portfolio#kleinhof"
    },
    {
     "k": "WORK 05 · LOMMEL",
@@ -643,7 +647,7 @@
    {
     "k": "WORK 06 · THIS SITE",
     "t": "emlaunchpad.com",
-    "txt": "Trilingual, statically built and fast. How fast is it for you? You can measure that below.",
+    "txt": "Trilingual, built by us and fast. How fast is it for you? You can measure that below.",
     "link": "See the measurement",
     "href": "#gemeten",
     "site": true
@@ -697,28 +701,28 @@
   "v_bg": "This page opened in another tab, so your browser can't measure it fairly. Reload the page to see the figures.",
   "wait": "Measuring…",
   "reload": "Reload and measure again",
-  "foot": "Measured in your own browser, using the metrics Google uses for speed and stability (Core Web Vitals). Nothing is sent to us or to anyone else. A different device or connection gives different figures. The thresholds come from Google (web.dev).",
-  "slot": "emlaunchpad.com is trilingual and static, and we built it ourselves. We'll build yours with the same care.",
+  "foot": "Measured in your own browser, using the metrics Google uses for speed and stability. Nothing is sent to us or to anyone else. A different device or connection gives different figures. The thresholds come from Google (web.dev).",
+  "slot": "emlaunchpad.com is trilingual, and we built it ourselves. We'll build yours with the same care.",
   "sr": "This page reached your screen in {x}.",
   "chip": "This page reached your screen in {x}"
  },
  "prijs": {
   "eyebrow": "What it costs",
   "h2a": "No separate price tag.",
-  "h2b": "Your website is included in Digital Growth.",
-  "lede": "€150 per month, cancellable monthly. We build and manage your entire digital operation. Your website is where it starts.",
-  "head": "PARTS LIST · DIGITAL GROWTH",
+  "h2b": "Your website is included in Online Growth.",
+  "lede": "€150 a month, excl. VAT and cancellable monthly. We build and manage your entire digital operation. Your website is where it starts.",
+  "head": "PARTS LIST · ONLINE GROWTH",
   "rows": [
    [
     "Website",
-    "A professional, fast website that turns visitors into customers. Designed for phones first, optimised for Core Web Vitals, SEO-ready, with a built-in appointment planner and lead forms."
+    "A professional website that turns visitors into customers. Designed for phones first, fast, and built so Google reads it well. With a built-in appointment planner and forms."
    ],
    [
-    "Google profile and local visibility",
+    "Google profile and visibility",
     "Fully filled in and up to date."
    ],
    [
-    "Reputation management",
+    "Reviews on Google",
     "2 hours after an appointment, a review request goes out automatically."
    ],
    [
@@ -730,26 +734,26 @@
     ""
    ],
    [
-    "Funnels and landing pages",
-    ""
+    "Landing pages",
+    "One page for one action, such as a promotion or an ad. Whoever fills it in is immediately in your customer base."
    ],
    [
-    "Online payments and invoicing",
+    "Online payments and invoices",
     "Via Stripe, with Bancontact, iDEAL, Visa and Apple Pay."
    ],
    [
-    "AI automation and workflows",
+    "Smart workflows",
     ""
    ],
    [
-    "Access to the platform",
+    "Access to our platform",
     ""
    ]
   ],
   "tb": [
    [
     "PACKAGE",
-    "DIGITAL GROWTH"
+    "ONLINE GROWTH"
    ],
    [
     "PRICE",
@@ -777,27 +781,28 @@
    {
     "id": "rc",
     "label": "AI receptionist",
-    "price": 125,
+    "price": 150,
     "txt": "Answers your phone.",
     "row": "AI receptionist",
-    "href": "AI%20Voice%20Agents"
+    "href": "AI%20Voice%20Agents",
+    "once": 750
    }
   ],
-  "total_label": "Your monthly price",
-  "cons": "AI all the way into your internal processes? That's AI Consulting, on request.",
+  "total_label": "Your monthly price (excl. VAT)",
+  "cons": "Want to learn to work with AI yourself? That's AI Consulting, €200 a month (introductory price).",
   "cons_link": "View the packages",
-  "cta": "Book a free call",
+  "cta": "Book a free demo",
   "cta2": "View the package"
  },
  "stappen": {
   "eyebrow": "How it comes together",
-  "h2a": "From a conversation",
+  "h2a": "From a free demo",
   "h2b": "to a site that takes bookings.",
   "lede": "Usually live within 14 days. You don't have to build or connect a thing.",
   "items": [
    [
-    "Free call",
-    "Thirty minutes. What do you do, for whom, and what should a visitor be able to do: book, pay or send a request?"
+    "Free demo",
+    "Thirty minutes via Teams. What do you do, for whom, and what should a visitor be able to do: book, pay or send a request?"
    ],
    [
     "We design",
@@ -819,8 +824,12 @@
   "h2b": "before we start drawing.",
   "items": [
    {
-    "q": "How much does a website from you cost?",
-    "a": "There's no separate price tag. Your website is included in Digital Growth: €150 per month, cancellable monthly. That also covers your Google profile, review requests, your CRM and online payments."
+    "q": "How much does it cost to get a website made?",
+    "a": "With us there's no separate price tag and no setup fee. Your website is part of Online Growth: €150 a month, excl. VAT and cancellable monthly. That also covers your Google profile, review requests, your CRM and online payments."
+   },
+   {
+    "q": "How much does a website cost per year?",
+    "a": "Twelve times €150, so €1,800 a year, excl. VAT. That already includes the design, the build, hosting and management. You pay monthly and can stop any month."
    },
    {
     "q": "How soon will my site be online?",
@@ -828,35 +837,51 @@
    },
    {
     "q": "Can customers book and pay online?",
-    "a": "Yes. The appointment planner and lead forms are built in. Payments go through Stripe, with Bancontact, iDEAL, Visa or Apple Pay."
+    "a": "Yes. The appointment planner and forms are built in. Payments go through Stripe, with Bancontact, iDEAL, Visa or Apple Pay."
    },
    {
     "q": "Does it come with a chatbot?",
-    "a": "Not as standard. The AI chatbot is an add-on for €50 per month. Want someone to answer your phone too? That's the AI receptionist, for €125 per month."
+    "a": "Not by default. The AI chatbot is an add-on at €50 a month. Want someone to answer your phone too? That's the AI receptionist: €150 a month plus €750 one-off. All prices excl. VAT."
+   },
+   {
+    "q": "I already have a site. Does it have to go?",
+    "a": "No. If online booking is what you're after, we add the booking module to your existing site, or you use your own booking link. If you do want a new site, we build it around your business."
    },
    {
     "q": "Will I be at the top of Google?",
-    "a": "Nobody can honestly promise that. We build your site fast and SEO-ready, and we fill in your Google profile completely and keep it up to date."
+    "a": "Nobody can honestly promise that. We build your site fast and in a way Google reads well, and we fill in your Google profile completely and keep it up to date."
    },
    {
     "q": "Who manages my website?",
     "a": "We do. We build and manage your entire digital operation, and your website is part of that."
+   },
+   {
+    "q": "What if I stop?",
+    "a": "Online Growth is cancellable monthly. If you stop, we hand everything over to you: your website and all your data go to you."
    }
   ],
-  "more_label": "Also worth reading:",
+  "more_label": "Also worth reading (in Dutch):",
   "more": [
    {
-    "title": "Why your website is slow",
+    "title": "Why your website is slow (and what it costs you)",
     "href": "emtimes/websites/waarom-je-website-traag-is/"
+   },
+   {
+    "title": "What does it cost to get a website made in Belgium?",
+    "href": "emtimes/websites/wat-kost-een-website-laten-maken/"
+   },
+   {
+    "title": "Website for your business: 10 things it needs",
+    "href": "emtimes/websites/website-lokale-zaak-checklist/"
    }
   ]
  },
  "cta": {
   "h2a": "We'll draw the first line",
   "h2b": "together.",
-  "text": "Book a free 30-minute call. We'll look at what your site needs to do. Then we design the first sheet.",
-  "btn": "Book a free call",
-  "demo": "Or request a free demo",
+  "text": "Book a free 30-minute demo. We'll look at what your site needs to do. Then we design the first sheet.",
+  "btn": "Book a free demo",
+  "demo": "Or request your demo via the form",
   "demo_href": "Gratis%20Demo",
   "micro": "This page reached your screen in {x}. We'll build yours with the same care.",
   "micro_fb": "We'll build yours with the same care as this page.",

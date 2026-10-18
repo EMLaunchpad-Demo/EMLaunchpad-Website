@@ -49,11 +49,11 @@
   }
  ],
  "meta": {
-  "title": "AI automation: the boring work runs itself | EM Launchpad",
-  "desc": "Confirmations, reminders, invoices, review requests and follow-up that send themselves, right on time. We build and maintain it all. Part of Digital Growth.",
-  "ogtitle": "AI automation: the boring work runs itself",
+  "title": "AI automation for SMEs in Belgium | EM Launchpad",
+  "desc": "Confirm, remind, invoice and ask for a review: we build the workflows that do it by themselves. Part of Online Growth, €150 a month, excl. VAT.",
+  "ogtitle": "AI automation for SMEs in Belgium | EM Launchpad",
   "service": "AI automation",
-  "offer": "Included in the Digital Growth package"
+  "offer": "Included in the Online Growth package"
  },
  "crumbs": [
   "Home",
@@ -66,13 +66,13 @@
   "eyebrow": "AI automation",
   "h1a": "One customer books.",
   "h1b": "The rest runs like clockwork.",
-  "lede": "Confirming, reminding, invoicing, asking for a review. We build the workflows that do that boring work for you, every time at the right moment. You just carry on working.",
-  "cta": "Book a free call",
+  "lede": "AI automation for your SME: confirming, reminding, invoicing, asking for a review. We build the workflows that do that boring work by themselves, every time at the right moment. You just carry on working.",
+  "cta": "Book a free demo",
   "cta2": "What's included",
   "label": "Choose what happens",
   "read_label": "What just happened by itself",
   "foot": [
-   "Part of Digital Growth, €150 per month",
+   "Part of Online Growth, €150 a month, excl. VAT",
    "We build and maintain the workflows",
    "Usually live within 14 days"
   ],
@@ -103,12 +103,14 @@
   },
   "nogeens": "Once more",
   "sr_how": "happens by itself:",
-  "total_sr": "Together: €{t} per month",
+  "total_sr": "Total: €{t} a month, excl. VAT",
   "per": "per month",
   "per_sum": "per month, in total",
   "tab_label": "Choose your trade",
   "next": "Next moment",
-  "finish": "Finish"
+  "finish": "Finish",
+  "once_word": "one-off",
+  "once_line": "+ {once} one-off ({label})"
  },
  "geo": {
   "p": 11,
@@ -203,31 +205,14 @@
      "win": "Sat 12:30",
      "jij": "You: with the next customer",
      "kop": "Review request, 2 hours after the appointment",
-     "msg": "Thanks for your visit, {naam}. How was it?",
+     "msg": "Thanks for your visit, {naam}. How was it? Let us know on Google.",
      "tools": [
       "sms",
-      "mail"
+      "mail",
+      "google"
      ],
      "sr": "Two hours after the appointment: review request sent.",
-     "fork": {
-      "q": "How was it for {naam}?",
-      "def": 0,
-      "opts": [
-       {
-        "label": "Happy",
-        "grav": "TO GOOGLE",
-        "res": "{zij} gets the link to your Google profile.",
-        "tools": [
-         "google"
-        ]
-       },
-       {
-        "label": "Not happy",
-        "grav": "PRIVATE FIRST",
-        "res": "{haar} feedback comes to you first, not to Google."
-       }
-      ]
-     }
+     "extra": "One click to your Google profile. Every customer gets the same request."
     },
     {
      "w": 5,
@@ -393,7 +378,7 @@
      "win": "Sun 20:15",
      "jij": "You: at dinner",
      "kop": "In your CRM, with the right person",
-     "txt": "New enquiry from Sarah via your website. Tags: quote, website. Passed on to whoever does the quotes.",
+     "txt": "New enquiry from Sarah via your website. Labels: quote, website. Passed on to whoever does the quotes.",
      "tools": [
       "crm"
      ],
@@ -427,13 +412,13 @@
           "grav": "IN TALKS",
           "win": "Mon 08:40",
           "jij": "You: not even started yet",
-          "kop": "Pipeline updated",
+          "kop": "Customer stage updated",
           "txt": "Sarah is now marked 'in talks'. Her reply is in your inbox.",
           "tools": [
            "crm",
            "inbox"
           ],
-          "sr": "Pipeline updated: in talks."
+          "sr": "Customer stage updated: in talks."
          }
         ]
        }
@@ -448,8 +433,8 @@
  },
  "lijst": {
   "eyebrow": "The note next to the till",
-  "h2a": "Your to-do list for today.",
-  "h2b": "It crosses itself off.",
+  "h2a": "Automating with AI as an SME:",
+  "h2b": "your to-do list crosses itself off.",
   "lede": "Calling back, reminding, sending an invoice, asking for a review. Choose your trade and see what's left of your list.",
   "head": "Still to do",
   "caption": "Example. Together, we agree what runs by itself, and when.",
@@ -583,7 +568,7 @@
     "w": 0,
     "label": "CRM",
     "kop": "Everything in one place",
-    "txt": "WhatsApp, Instagram, email, SMS and phone calls in one inbox. Customer history, notes, tags and pipeline status update by themselves."
+    "txt": "WhatsApp, Instagram, email, SMS and phone calls in one inbox. Customer history, notes and labels update by themselves, and you see which stage every customer is at."
    },
    {
     "w": 1,
@@ -601,7 +586,7 @@
     "w": 3,
     "label": "Reviews",
     "kop": "Asking for reviews, automatically",
-    "txt": "2 hours after every appointment, a review request goes out by SMS or email. Happy customers go to Google. Anyone who isn't happy comes to you first."
+    "txt": "2 hours after every appointment, a review request goes out by SMS or email, with one click to your Google profile. Every customer gets the same request."
    },
    {
     "w": 4,
@@ -633,7 +618,7 @@
   "h2a": "3,250 emails in 263 days.",
   "h2b": "All sent automatically.",
   "lede": "At Clinic3D, an aesthetic clinic in Hasselt, confirmations, reminders and follow-up go out fully automatically. 2,090 of those emails were opened. And the no-show counter stayed at zero.",
-  "quote": "My clients now book by themselves — I don't have to do a thing.",
+  "quote": "My clients now book by themselves. I don't have to do a thing.",
   "cite": "Dr. Kenis, owner of Clinic3D",
   "note": "Measured from 1 January to 20 September 2026 (263 days). Dr. Kenis said this after 104 days.",
   "link": "Read the full case",
@@ -695,22 +680,22 @@
  "prijs": {
   "eyebrow": "What it costs",
   "h2a": "No separate price tag.",
-  "h2b": "It's part of Digital Growth.",
-  "lede": "Automation is part of the Digital Growth package: €150 per month, cancellable monthly. It also covers everything the workflows run on.",
+  "h2b": "It's part of Online Growth.",
+  "lede": "Automation is part of the Online Growth package: €150 a month, excl. VAT and cancellable monthly. It also covers everything the workflows run on.",
   "list": [
-   "AI automation and workflows",
+   "Smart workflows",
    "Website",
-   "Google Business and local visibility",
-   "Reputation management",
+   "Google profile and visibility",
+   "Reviews on Google",
    "CRM and customer dashboard",
    "Email and SMS campaigns",
-   "Funnels and landing pages",
-   "Online payments and invoicing",
+   "Landing pages",
+   "Online payments and invoices",
    "Access to our platform"
   ],
-  "rim": "DIGITAL GROWTH · CANCELLABLE MONTHLY · WE BUILD AND MAINTAIN · AUTOMATION INCLUDED · ",
+  "rim": "ONLINE GROWTH · CANCELLABLE MONTHLY · WE BUILD AND MAINTAIN · AUTOMATION INCLUDED · ",
   "arc": "AUTOMATION INCLUDED",
-  "cancel": "cancellable monthly",
+  "cancel": "cancellable monthly · excl. VAT",
   "addons_label": "Want something extra?",
   "addons": [
    {
@@ -724,29 +709,31 @@
    {
     "id": "receptie",
     "label": "AI receptionist",
-    "price": 125,
+    "price": 150,
     "ring": "AI RECEPTIONIST",
     "href": "AI%20Voice%20Agents",
-    "more": "What does the AI receptionist do?"
+    "more": "What does the AI receptionist do?",
+    "once": 750
    }
   ],
-  "cta": "Book a free call",
+  "cta": "Book a free demo",
   "cta2": "View the package",
   "cons_eyebrow": "For those who want to go further",
-  "cons_h": "AI right into your internal processes? That's AI Consulting.",
-  "cons_txt": "A full analysis of how you work, a personalised AI implementation plan, guidance during setup and monthly optimisation. On request, with deliberately limited places.",
-  "cons_link": "Request a personal call"
+  "cons_h": "Want to learn to work with AI yourself? That's AI Consulting.",
+  "cons_txt": "About two sessions a month, support via WhatsApp and a plan every quarter. We don't implement it for you: we teach you to use AI in your own work. Introductory price: €200 a month (excl. VAT), going up soon.",
+  "cons_link": "More about AI Consulting",
+  "cons_cta": "Book a free demo"
  },
  "stappen": {
   "eyebrow": "How it gets going",
-  "h2a": "From one conversation",
+  "h2a": "From a demo",
   "h2b": "to clockwork that runs.",
   "lede": "Usually live within 14 days. You don't have to build a thing yourself.",
   "items": [
    {
-    "lab": "CALL",
-    "kop": "Free call",
-    "txt": "Thirty minutes. We go through your day: what you do over and over again, and what you'd rather stop doing yourself."
+    "lab": "DEMO",
+    "kop": "Free demo",
+    "txt": "Thirty minutes via Teams. We go through your day: what you do over and over again, and what you'd rather stop doing yourself."
    },
    {
     "lab": "BUILD",
@@ -775,8 +762,8 @@
     "a": "No. We build the workflows and maintain them. You only approve the moments and the wording."
    },
    {
-    "q": "What does it cost?",
-    "a": "Automation has no separate price. It's part of Digital Growth: €150 per month, cancellable monthly. If you'd also like an AI chatbot or an AI receptionist, that's an extra €50 or €125 per month."
+    "q": "What does AI automation cost?",
+    "a": "Automation has no separate price. It's part of Online Growth: €150 a month (excl. VAT), cancellable monthly. Want an AI chatbot as well? That's €50 a month extra. The AI receptionist costs €150 a month plus €750 one-off."
    },
    {
     "q": "What can run by itself?",
@@ -785,6 +772,10 @@
    {
     "q": "Can I choose what goes out, and when?",
     "a": "Yes. Together, we tailor the moments and the wording to your business."
+   },
+   {
+    "q": "What if a customer doesn't want SMS or email?",
+    "a": "Then they don't get them. Every email has an unsubscribe link: anyone who unsubscribes gets nothing more. If a customer doesn't want text messages, we switch them off for that customer. That's how privacy law (GDPR) wants it too."
    },
    {
     "q": "Does it work with my calendar and with online payments?",
@@ -802,7 +793,7 @@
     "href": "emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/"
    },
    {
-    "title": "Following up leads automatically",
+    "title": "Following up leads automatically: never lose an enquiry again",
     "href": "emtimes/automatisering/leads-automatisch-opvolgen/"
    },
    {
@@ -813,10 +804,10 @@
  },
  "cta": {
   "h2a": "One thing you still do yourself.",
-  "h2b": "Booking a call.",
-  "text": "Thirty minutes, free. We go through your day and look at which work can run by itself.",
-  "btn": "Book a free call",
-  "demo": "Or request a free demo",
+  "h2b": "Booking a demo.",
+  "text": "Thirty minutes, free, via Teams. We go through your day and look at which work can run by itself.",
+  "btn": "Book a free demo",
+  "demo": "Or request your demo via the form",
   "demo_href": "Gratis%20Demo",
   "micro": "Then we set the clockwork in motion.",
   "badges": [

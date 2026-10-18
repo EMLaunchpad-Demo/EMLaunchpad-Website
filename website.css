@@ -417,6 +417,8 @@ body[data-tone="blauw"] .ws-werk{background:rgba(6,12,24,.3);border-top:1px soli
 .ws-roll > span{display:block}
 .ws-roll > span > i{display:block;font-style:normal;height:1.1em}
 .ws-total em{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--mid)}
+.ws-once{margin:10px 0 0;font-family:var(--mono);font-size:12px;line-height:1.5;color:#7fd8a8}
+.ws-once[hidden]{display:none}
 .ws-prijs-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .ws-cons{margin:30px 0 0;padding-top:22px;border-top:1px solid var(--line);font-size:15.5px;color:var(--mid)}
 .ws-cons .ws-link{margin:0 0 0 8px}

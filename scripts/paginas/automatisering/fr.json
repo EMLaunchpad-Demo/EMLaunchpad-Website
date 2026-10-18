@@ -49,11 +49,11 @@
   }
  ],
  "meta": {
-  "title": "Automatisation IA : la routine tourne toute seule | EM Launchpad",
-  "desc": "Confirmations, rappels, factures, demandes d'avis et suivi partent tout seuls, au bon moment. Nous gérons les workflows. Inclus dans Croissance digitale.",
-  "ogtitle": "Automatisation IA : la routine tourne toute seule",
+  "title": "Automatisation IA pour PME en Belgique | EM Launchpad",
+  "desc": "Confirmer, rappeler, facturer et demander un avis : nous construisons les workflows qui le font tout seuls. Dans Croissance en ligne, 150 € par mois HTVA.",
+  "ogtitle": "Automatisation IA pour PME en Belgique | EM Launchpad",
   "service": "Automatisation IA",
-  "offer": "Inclus dans le pack Croissance digitale"
+  "offer": "Inclus dans le pack Croissance en ligne"
  },
  "crumbs": [
   "Accueil",
@@ -66,13 +66,13 @@
   "eyebrow": "Automatisation IA",
   "h1a": "Un client réserve.",
   "h1b": "Le reste est réglé comme une horloge.",
-  "lede": "Confirmer, rappeler, facturer, demander un avis. Nous construisons les workflows qui font ce travail ennuyeux tout seuls, chaque fois au bon moment. Vous, vous continuez à travailler.",
-  "cta": "Planifiez un appel gratuit",
+  "lede": "L'automatisation IA pour votre PME : confirmer, rappeler, facturer, demander un avis. Nous construisons les workflows qui font ce travail ennuyeux tout seuls, chaque fois au bon moment. Vous, vous continuez à travailler.",
+  "cta": "Planifier une démo gratuite",
   "cta2": "Ce qu'il y a dedans",
   "label": "Choisissez ce qui se passe",
   "read_label": "Ce qui vient de se passer tout seul",
   "foot": [
-   "Inclus dans Croissance digitale, 150 € par mois",
+   "Inclus dans Croissance en ligne, 150 € par mois HTVA",
    "Nous construisons et maintenons les workflows",
    "En général en ligne dans les 14 jours"
   ],
@@ -103,12 +103,14 @@
   },
   "nogeens": "Encore une fois",
   "sr_how": "se fait tout seul :",
-  "total_sr": "Total : {t} € par mois",
+  "total_sr": "Au total : {t} € par mois HTVA",
   "per": "par mois",
   "per_sum": "par mois, au total",
   "tab_label": "Choisissez votre métier",
   "next": "Moment suivant",
-  "finish": "Terminer"
+  "finish": "Terminer",
+  "once_word": "une fois",
+  "once_line": "+ {once} une fois ({label})"
  },
  "geo": {
   "p": 11,
@@ -203,31 +205,14 @@
      "win": "Sam. 12:30",
      "jij": "Vous : avec le client suivant",
      "kop": "Demande d'avis, 2 heures après le rendez-vous",
-     "msg": "Merci pour votre visite, {naam}. Comment ça s'est passé ?",
+     "msg": "Merci pour votre visite, {naam}. Comment c'était ? Dites-le-nous sur Google.",
      "tools": [
       "sms",
-      "mail"
+      "mail",
+      "google"
      ],
      "sr": "Deux heures après le rendez-vous : demande d'avis envoyée.",
-     "fork": {
-      "q": "Comment ça s'est passé pour {naam} ?",
-      "def": 0,
-      "opts": [
-       {
-        "label": "Très bien",
-        "grav": "VERS GOOGLE",
-        "res": "{zij} reçoit le lien vers votre fiche Google.",
-        "tools": [
-         "google"
-        ]
-       },
-       {
-        "label": "Pas bien",
-        "grav": "D'ABORD EN PRIVÉ",
-        "res": "{haar} avis arrive d'abord chez vous, pas sur Google."
-       }
-      ]
-     }
+     "extra": "Un clic vers votre profil Google. Chaque client reçoit la même demande."
     },
     {
      "w": 5,
@@ -393,7 +378,7 @@
      "win": "Dim. 20:15",
      "jij": "Vous : à table",
      "kop": "Dans votre CRM, chez la bonne personne",
-     "txt": "Nouvelle demande de Sarah via votre site web. Tags : devis, site web. Transmise à la personne qui fait les devis.",
+     "txt": "Nouvelle demande de Sarah via votre site web. Étiquettes : devis, site web. Transmise à la personne qui fait les devis.",
      "tools": [
       "crm"
      ],
@@ -427,13 +412,13 @@
           "grav": "EN DISCUSSION",
           "win": "Lun. 08:40",
           "jij": "Vous : pas encore au travail",
-          "kop": "Pipeline mis à jour",
+          "kop": "Étape du client mise à jour",
           "txt": "Sarah est maintenant à l'étape « en discussion ». Sa réponse est dans votre boîte de réception.",
           "tools": [
            "crm",
            "inbox"
           ],
-          "sr": "Pipeline mis à jour : en discussion."
+          "sr": "Étape du client mise à jour : en discussion."
          }
         ]
        }
@@ -448,8 +433,8 @@
  },
  "lijst": {
   "eyebrow": "Le pense-bête près de la caisse",
-  "h2a": "Votre liste du jour.",
-  "h2b": "Elle se raye toute seule.",
+  "h2a": "Automatiser avec l'IA en tant que PME :",
+  "h2b": "votre liste se barre toute seule.",
   "lede": "Rappeler un client, envoyer un rappel, une facture, demander un avis. Choisissez votre métier et voyez ce qu'il reste de votre liste.",
   "head": "À faire",
   "caption": "Exemple. Ce qui tourne tout seul, et quand, nous le décidons ensemble.",
@@ -583,7 +568,7 @@
     "w": 0,
     "label": "CRM",
     "kop": "Tout au même endroit",
-    "txt": "WhatsApp, Instagram, e-mail, SMS et appels téléphoniques dans une seule boîte de réception. L'historique client, les notes, les tags et le statut du pipeline se mettent à jour tout seuls."
+    "txt": "WhatsApp, Instagram, e-mail, SMS et appels téléphoniques dans une seule boîte de réception. L'historique client, les notes et les étiquettes se mettent à jour tout seuls, et vous voyez à quelle étape en est chaque client."
    },
    {
     "w": 1,
@@ -601,7 +586,7 @@
     "w": 3,
     "label": "Avis",
     "kop": "Demander un avis sans y penser",
-    "txt": "2 heures après chaque rendez-vous, une demande d'avis part par SMS ou e-mail. Les clients satisfaits vont vers Google. Ceux qui ne le sont pas arrivent d'abord chez vous."
+    "txt": "2 heures après chaque rendez-vous, une demande d'avis part par SMS ou e-mail, avec un clic vers votre profil Google. Chaque client reçoit la même demande."
    },
    {
     "w": 4,
@@ -633,7 +618,7 @@
   "h2a": "3 250 e-mails en 263 jours.",
   "h2b": "Tous partis tout seuls.",
   "lede": "Chez Clinic3D, une clinique esthétique à Hasselt, les confirmations, les rappels et le suivi partent de façon entièrement automatique. 2 090 de ces e-mails ont été ouverts. Et le compteur de no-shows est resté à zéro.",
-  "quote": "Mes clients réservent désormais eux-mêmes — je n'ai plus rien à faire.",
+  "quote": "Mes clients réservent désormais eux-mêmes. Je n'ai plus rien à faire.",
   "cite": "Dr. Kenis, propriétaire de Clinic3D",
   "note": "Mesuré du 1er janvier au 20 septembre 2026 (263 jours). Le Dr Kenis a tenu ces propos après 104 jours.",
   "link": "Lire l'étude de cas complète",
@@ -695,22 +680,22 @@
  "prijs": {
   "eyebrow": "Ce que ça coûte",
   "h2a": "Pas de prix à part.",
-  "h2b": "C'est inclus dans Croissance digitale.",
-  "lede": "L'automatisation fait partie du pack Croissance digitale : 150 € par mois, résiliable chaque mois. Le pack comprend aussi tout ce dont les workflows ont besoin pour travailler.",
+  "h2b": "C'est inclus dans Croissance en ligne.",
+  "lede": "L'automatisation fait partie du pack Croissance en ligne : 150 € par mois HTVA, résiliable chaque mois. Le pack comprend aussi tout ce dont les workflows ont besoin pour travailler.",
   "list": [
-   "Automatisation IA et workflows",
+   "Workflows intelligents",
    "Site web",
-   "Google Business et visibilité locale",
-   "Gestion de la réputation",
+   "Profil Google et visibilité",
+   "Avis sur Google",
    "CRM et tableau de bord clients",
    "Campagnes e-mail et SMS",
-   "Funnels et landing pages",
-   "Paiements en ligne et facturation",
+   "Landing pages",
+   "Paiements en ligne et factures",
    "Accès à notre plateforme"
   ],
-  "rim": "CROISSANCE DIGITALE · RÉSILIABLE CHAQUE MOIS · NOUS CRÉONS ET MAINTENONS · AUTOMATISATION INCLUSE · ",
+  "rim": "CROISSANCE EN LIGNE · RÉSILIABLE CHAQUE MOIS · NOUS CRÉONS ET MAINTENONS · AUTOMATISATION INCLUSE · ",
   "arc": "AUTOMATISATION INCLUSE",
-  "cancel": "résiliable chaque mois",
+  "cancel": "résiliable chaque mois · HTVA",
   "addons_label": "Envie d'ajouter quelque chose ?",
   "addons": [
    {
@@ -724,29 +709,31 @@
    {
     "id": "receptie",
     "label": "Réceptionniste IA",
-    "price": 125,
+    "price": 150,
     "ring": "RÉCEPTIONNISTE IA",
     "href": "AI%20Voice%20Agents",
-    "more": "Que fait la réceptionniste IA ?"
+    "more": "Que fait la réceptionniste IA ?",
+    "once": 750
    }
   ],
-  "cta": "Planifiez un appel gratuit",
+  "cta": "Planifier une démo gratuite",
   "cta2": "Voir le pack",
   "cons_eyebrow": "Pour aller plus loin",
-  "cons_h": "L'IA jusque dans vos processus internes ? C'est AI Consulting.",
-  "cons_txt": "Une analyse complète de votre fonctionnement, un plan d'implémentation IA sur mesure, un accompagnement lors de la mise en place et une optimisation mensuelle. Sur demande, et volontairement limité.",
-  "cons_link": "Demander un entretien personnel"
+  "cons_h": "Envie d'apprendre à travailler avec l'IA ? C'est le Consulting IA.",
+  "cons_txt": "Environ deux séances par mois, un support via WhatsApp et un plan chaque trimestre. Nous ne mettons rien en place à votre place : nous vous apprenons à utiliser l'IA dans votre propre travail. Prix d'introduction : 200 € par mois HTVA, qui augmentera bientôt.",
+  "cons_link": "En savoir plus sur le Consulting IA",
+  "cons_cta": "Planifier une démo gratuite"
  },
  "stappen": {
   "eyebrow": "Comment ça se met en route",
-  "h2a": "D'un simple appel",
+  "h2a": "D'une démo",
   "h2b": "à un mécanisme qui tourne.",
   "lede": "En général en ligne dans les 14 jours. Vous n'avez rien à construire vous-même.",
   "items": [
    {
-    "lab": "APPEL",
-    "kop": "Appel gratuit",
-    "txt": "Trente minutes. Nous passons votre journée en revue : ce que vous refaites sans cesse et ce que vous préférez ne plus faire vous-même."
+    "lab": "DÉMO",
+    "kop": "Démo gratuite",
+    "txt": "Trente minutes via Teams. Nous passons votre journée en revue : ce que vous refaites sans cesse et ce que vous préférez ne plus faire vous-même."
    },
    {
     "lab": "CRÉATION",
@@ -775,8 +762,8 @@
     "a": "Non. Nous construisons les workflows et nous les maintenons. Vous validez seulement les moments et les textes."
    },
    {
-    "q": "Combien ça coûte ?",
-    "a": "L'automatisation n'a pas de prix à part. Elle est incluse dans Croissance digitale : 150 € par mois, résiliable chaque mois. Vous voulez en plus un chatbot IA ou une réceptionniste IA ? Comptez 50 € ou 125 € de plus par mois."
+    "q": "Combien coûte l'automatisation IA ?",
+    "a": "L'automatisation n'a pas de prix séparé. Elle fait partie de Croissance en ligne : 150 € par mois HTVA, résiliable chaque mois. Vous voulez aussi un chatbot IA ? Comptez 50 € par mois en plus. La réceptionniste IA coûte 150 € par mois et 750 € une fois."
    },
    {
     "q": "Qu'est-ce qui peut tourner tout seul ?",
@@ -785,6 +772,10 @@
    {
     "q": "Puis-je choisir moi-même ce qui part, et quand ?",
     "a": "Oui. Les moments et les textes, nous les adaptons ensemble à votre commerce."
+   },
+   {
+    "q": "Et si un client ne veut pas de SMS ni d'e-mail ?",
+    "a": "Alors il ne les reçoit pas. Chaque e-mail contient un lien de désinscription : qui se désinscrit ne reçoit plus rien. Si un client ne veut pas de SMS, nous les désactivons pour lui. C'est aussi ce que demande la loi sur la vie privée (RGPD)."
    },
    {
     "q": "Est-ce que ça fonctionne avec mon agenda et les paiements en ligne ?",
@@ -802,7 +793,7 @@
     "href": "emtimes/automatisering/5-taken-die-elke-kmo-kan-automatiseren/"
    },
    {
-    "title": "Suivre ses leads automatiquement",
+    "title": "Suivre ses leads automatiquement : plus aucune demande perdue",
     "href": "emtimes/automatisering/leads-automatisch-opvolgen/"
    },
    {
@@ -813,10 +804,10 @@
  },
  "cta": {
   "h2a": "Il ne vous reste qu'une chose à faire.",
-  "h2b": "Planifier un appel.",
-  "text": "Trente minutes, gratuitement. Nous passons votre journée en revue et voyons quel travail peut tourner tout seul.",
-  "btn": "Planifiez un appel gratuit",
-  "demo": "Ou demandez une démo gratuite",
+  "h2b": "Planifier une démo.",
+  "text": "Trente minutes, gratuitement, via Teams. Nous passons votre journée en revue et voyons quel travail peut tourner tout seul.",
+  "btn": "Planifier une démo gratuite",
+  "demo": "Ou demandez votre démo via le formulaire",
   "demo_href": "Gratis%20Demo",
   "micro": "Ensuite, c'est nous qui mettons le mécanisme en marche.",
   "badges": [

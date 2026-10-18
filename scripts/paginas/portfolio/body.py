@@ -55,6 +55,13 @@ def naambord(c, lb, newtab):
 def beats(items):
     return '<dl class="pf-beats">' + ''.join('<dt>%s</dt><dd>%s</dd>' % (esc(a), esc(b)) for a, b in items) + '</dl>'
 
+def dienst(c, rel):
+    """per zaak een link naar de dienst die erbij hoort (Websites, Afsprakensysteem, AI-Automatisering)"""
+    d = c.get('dienst')
+    if not d:
+        return ''
+    return '<p class="pf-dienst"><a href="%s%s">%s %s</a></p>' % (rel, d['href'], esc(d['label']), ARROW)
+
 def index_line(c):
     pre, b, post = c['index']
     mid = ' · <b>%s</b>' % esc(b) if b else ''
@@ -106,7 +113,7 @@ def body(L, lang, pre):
 {naambord(a0, lb, nt)}
 </div>
 <div class="pf-voet-kol">{beats(a0['beats'][:2])}</div>
-<div class="pf-voet-kol">{beats(a0['beats'][2:])}{ext_link(a0['url'], fill(lb['open'], {'d': a0['domein']}), nt, 'btn-ghost pf-ghost')}</div>
+<div class="pf-voet-kol">{beats(a0['beats'][2:])}{dienst(a0, rel)}{ext_link(a0['url'], fill(lb['open'], {'d': a0['domein']}), nt, 'btn-ghost pf-ghost')}</div>
 </div>
 </section>
 </header>
@@ -144,6 +151,7 @@ def body(L, lang, pre):
 {naambord(c, lb, nt)}
 {beats(c['beats'])}
 {extra}
+{dienst(c, rel)}
 </div>
 {meet}
 {quote}
