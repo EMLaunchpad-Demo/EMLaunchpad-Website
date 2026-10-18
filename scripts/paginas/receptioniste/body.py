@@ -31,6 +31,11 @@ IC = {
     'hand': '<path d="M4 12h12M12 6l6 6-6 6"></path>',
     'note': '<path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5M9 12h7M9 16h5"></path>',
     'phone': '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path>',
+    # sectoren (fase 2)
+    'scissors': '<circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M8.1 8.1L12 12M20 4L8.1 15.9M14.8 14.8L20 20"></path>',
+    'leaf': '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"></path><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"></path>',
+    'steth': '<path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1M5 2v2M11 2v2"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle>',
+    'wrench': '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"></path>',
 }
 
 # ---------- tijdlijn (zelfde formule als compile() in receptioniste.js) ----------
@@ -132,6 +137,23 @@ def body(L, lang, pre):
         '<div class="rc-row rc-row-wide" data-f="samenvatting"><dt>%s</dt><dd data-sum="">%s</dd></div>' % (esc(F['samenvatting']), esc(df['samenvatting'])) +
         '<div class="rc-row rc-row-wide" data-f="transcript"><dt>%s</dt><dd><details class="rc-ftr"><summary>%s</summary><ol data-ftr="">%s</ol></details></dd></div>'
         % (esc(F['transcript']), esc(fi['transcript_open']), tr_items(default, d_vars)))
+
+    # ---------------- SECTOREN (fase 2) ----------------
+    # Vier blokken (kapsalon, schoonheidssalon, praktijk, garage). Links met "nl": true gaan naar een NL-pagina
+    # (branchepagina's en regiopagina bestaan alleen in het Nederlands); vanuit en/ en fr/ dus met ../
+    sc = L['sectoren']
+    def sc_href(it):
+        return attr((pre + it['href']) if it.get('nl') else it['href'])
+    sc_cards = ''
+    for it in sc['items']:
+        dos = ''.join('<li>%s</li>' % esc(d) for d in it['do'])
+        sc_cards += ('<article class="rc-sector" data-reveal="" id="sector-%s"><span class="rc-sector-k"><span class="rc-sector-ic">%s</span>%s</span>'
+                     '<h3>%s</h3><p class="rc-sector-q"><span>%s</span> <q>%s</q></p><ul class="rc-sector-l">%s</ul>'
+                     '<a class="rc-link" href="%s">%s %s</a></article>'
+                     % (it['k'], I(IC[it['ic']]), esc(it['label']), esc(it['h']), esc(sc['q_label']), esc(it['q']), dos,
+                        sc_href(it['link']), esc(it['link']['t']), ARROW))
+    rg = sc['region']
+    sc_region = '%s<a href="%s">%s</a>%s' % (esc(rg['pre']), sc_href(rg), esc(rg['t']), esc(rg.get('post', '')))
 
     # ---------------- BEWIJS ----------------
     H = [.72, .9, .62, 1, .8, .68, .94, .76, .6, .88, .7, .98, .66, .84, .74, .92, .64, .86, .78, 1, .7, .9, .62, .82, .96, .68, .8, .72, .9, .64, .86,
@@ -280,6 +302,19 @@ def body(L, lang, pre):
 <dl class="rc-dl">{fiche_rows}</dl>
 <a class="rc-flink" data-again="" href="#luister">{AGAIN}<span>{esc(fi['again'])}</span></a>
 </article>
+</div>
+</section>
+<!-- ════════ PER SECTOR ════════ -->
+<section class="sec rc-sectoren" id="sectoren">
+<div class="wrap">
+<div class="sec-head" data-reveal="">
+<span class="eyebrow">{esc(sc['eyebrow'])}</span>
+<h2 class="h2">{esc(sc['h2a'])}<br/> <span class="grad">{esc(sc['h2b'])}</span></h2>
+<p class="lead">{esc(sc['lede'])}</p>
+</div>
+<div class="rc-sectors" data-reveal-group="">{sc_cards}</div>
+<p class="rc-sector-note">{esc(sc['note'])}</p>
+<p class="rc-more rc-sector-region">{sc_region}</p>
 </div>
 </section>
 <!-- ════════ BEWIJS ════════ -->

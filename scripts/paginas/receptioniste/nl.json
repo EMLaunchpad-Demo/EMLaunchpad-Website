@@ -6,7 +6,11 @@
     "service": "AI-receptioniste (voice agent)",
     "offer": "AI-receptioniste",
     "offer_setup": "Setup (eenmalig)",
-    "offer_month": "Per maand"
+    "offer_month": "Per maand",
+    "alt_names": [
+      "AI-telefoniste",
+      "AI-telefoonassistent"
+    ]
   },
   "tone": "blauw",
   "skyKeys": [
@@ -738,8 +742,16 @@
     "h2b": "voor ze opneemt.",
     "items": [
       {
+        "q": "Wat is een AI-telefoonassistent?",
+        "a": "Een AI-telefoonassistent is een digitale assistente die voor je zaak de telefoon opneemt, met een mensachtige stem. Je hoort ook AI-receptioniste of AI-telefoniste: dat is hetzelfde. Ze beantwoordt vragen over je zaak, plant afspraken in je agenda en verbindt door naar jou als het nodig is. Na elk gesprek staat er een samenvatting in je CRM."
+      },
+      {
         "q": "Hoort een beller dat hij met AI praat?",
-        "a": "Wij stellen haar zo in dat ze zich voorstelt als digitale assistente van je zaak, zoals in de voorbeelden op deze pagina. Zo weet de beller meteen waar hij aan toe is. Ze heeft wel een mensachtige stem. Dat is ook wat de Europese AI-verordening (AI Act) vraagt: wie met AI praat, moet dat weten."
+        "a": "Ja. Wij stellen haar zo in dat ze zich meteen voorstelt als digitale assistente van je zaak, zoals in de voorbeelden op deze pagina. Dat vraagt ook de Europese AI-verordening (AI Act): wie met AI praat, moet dat weten. Zo weet de beller waar hij aan toe is, ook al heeft ze een mensachtige stem."
+      },
+      {
+        "q": "Wat kost een AI-receptioniste?",
+        "a": "€750 eenmalig en €150 per maand, als uitbreiding op het pakket Online groeien (€150 per maand, maandelijks opzegbaar). In de maandprijs zitten 300 belminuten; elke extra minuut kost €0,35. Alle prijzen excl. btw."
       },
       {
         "q": "Werkt het op mijn bestaande nummer?",
@@ -759,7 +771,11 @@
       },
       {
         "q": "Kan ze afspraken in mijn agenda zetten?",
-        "a": "Ja. Ze stelt vrije momenten voor, plant de afspraak in je agenda en de beller krijgt een bevestiging per sms."
+        "a": "In een gewone agenda wel: ze stelt vrije momenten voor, plant de afspraak en de beller krijgt een bevestiging per sms. Werk je met een dienstenmenu, dan kan ze daar nog niet zelf in boeken. Ze stuurt de beller dan per sms de link om zelf te boeken."
+      },
+      {
+        "q": "Voor welke zaken is een AI-telefoniste geschikt?",
+        "a": "Voor zaken die met afspraken werken en vaak gebeld worden terwijl je met een klant bezig bent: een kapsalon, een schoonheidssalon, een praktijk of een garage, bijvoorbeeld. Wat ze in elk van die zaken doet, lees je in de blokken per sector op deze pagina."
       },
       {
         "q": "Wat gebeurt er met het gesprek?",
@@ -768,10 +784,6 @@
       {
         "q": "Hoor ik op deze pagina haar echte stem?",
         "a": "Nee. Met geluid aan hoor je de voorleesstem van je eigen toestel, en die klinkt op elk toestel anders. Je receptioniste zelf heeft een mensachtige stem."
-      },
-      {
-        "q": "Wat kost een AI-receptioniste?",
-        "a": "€750 eenmalig en €150 per maand, als uitbreiding op het pakket Online groeien (€150 per maand, maandelijks opzegbaar). In de maandprijs zitten 300 belminuten; elke extra minuut kost €0,35. Alle prijzen excl. btw."
       },
       {
         "q": "Hoe snel staat ze live?",
@@ -796,6 +808,12 @@
         "t": "AI-automatisering",
         "href": "AI-Automatisering",
         "post": "."
+      },
+      {
+        "pre": "· Twijfel je wat je zaak nodig heeft? Doe de ",
+        "t": "Pakketkiezer",
+        "href": "Pakketkiezer",
+        "post": "."
       }
     ]
   },
@@ -816,5 +834,89 @@
     "Home",
     "Diensten",
     "AI Voice Agents"
-  ]
+  ],
+  "sectoren": {
+    "eyebrow": "Per sector",
+    "h2a": "Een AI-telefoniste voor jouw zaak.",
+    "h2b": "Van kapsalon tot garage.",
+    "lede": "In een kapsalon krijgt ze andere vragen dan in een garage. Daarom stellen we haar in op jouw zaak: je diensten, je agenda en wat ze aan jou overlaat. Zo kan dat eruitzien.",
+    "q_label": "Bijvoorbeeld",
+    "items": [
+      {
+        "k": "kapsalon",
+        "ic": "scissors",
+        "label": "Kapsalon",
+        "h": "Jij knipt. Zij neemt de telefoon op.",
+        "q": "Kan ik zaterdag nog komen voor kleuren en knippen?",
+        "do": [
+          "Werk je met een gewone agenda, dan zegt ze welke momenten vrij zijn en zet ze de afspraak erin. Met een dienstenmenu, waarin je klant zelf de kapper en de behandeling kiest, stuurt ze hem de link per sms.",
+          "Ze beantwoordt vragen over je prijzen en openingsuren, zoals ze op je website staan.",
+          "Wil iemand een afspraak verzetten of annuleren? Dan noteert ze dat en verwittigt ze je. Jij past het aan."
+        ],
+        "link": {
+          "t": "Website voor kappers met online boeken",
+          "href": "website-voor-kappers",
+          "nl": true
+        }
+      },
+      {
+        "k": "schoonheidssalon",
+        "ic": "leaf",
+        "label": "Schoonheidssalon",
+        "h": "Jij bent bezig met een behandeling. Zij beantwoordt de vragen.",
+        "q": "Hoe lang duurt een gelaatsverzorging, en wat kost die?",
+        "do": [
+          "Ze legt uit wat een behandeling inhoudt, hoe lang ze duurt en wat ze kost, zoals jij het op je website of in je prijslijst zet.",
+          "Werk je met een gewone agenda, dan plant ze de behandeling in en krijgt de klant een sms ter bevestiging. Met een dienstenmenu stuurt ze de link om zelf te reserveren.",
+          "Een vraag die jouw advies nodig heeft, zoals over een huidprobleem, laat ze aan jou: ze verbindt door of ze noteert de vraag voor je."
+        ],
+        "link": {
+          "t": "Website voor schoonheidssalons",
+          "href": "website-voor-schoonheidssalons",
+          "nl": true
+        }
+      },
+      {
+        "k": "praktijk",
+        "ic": "steth",
+        "label": "Praktijk",
+        "h": "Jij bent bij een patiënt. Zij neemt de telefoon.",
+        "q": "Hebben jullie volgende week nog plaats voor een eerste consultatie?",
+        "do": [
+          "Werk je met een gewone agenda, dan plant ze de consultatie in en krijgt de patiënt een sms ter bevestiging. Met een dienstenmenu stuurt ze de link om zelf te boeken.",
+          "Ze beantwoordt praktische vragen, zoals je adres, je uren of wat een patiënt moet meebrengen, als jij dat in haar info zet.",
+          "Medisch advies geeft ze niet. Wie daarnaar vraagt, verbindt ze door met jou, of ze noteert de vraag voor je."
+        ],
+        "link": {
+          "t": "Website voor praktijken",
+          "href": "website-voor-praktijken",
+          "nl": true
+        }
+      },
+      {
+        "k": "garage",
+        "ic": "wrench",
+        "label": "Garage",
+        "h": "Jij staat aan de brug. Zij plant het onderhoud in.",
+        "q": "Mijn wagen moet binnen voor een onderhoud. Wanneer kan dat?",
+        "do": [
+          "Ze vraagt wat jij moet weten, zoals het merk en de nummerplaat, en zet dat bij de klant in je CRM.",
+          "Ze plant het onderhoud of de bandenwissel in je agenda, met een sms ter bevestiging.",
+          "Vraagt iemand of zijn wagen al klaar is? Dat weet ze niet. Ze verbindt door met jou, of ze noteert de vraag en verwittigt je."
+        ],
+        "link": {
+          "t": "Bekijk het voor je garage in een gratis demo",
+          "href": "Gratis%20Demo"
+        }
+      }
+    ],
+    "note": "Dit zijn voorbeelden, geen klantverhalen. Je eigen receptioniste stellen we in met jouw diensten, je agenda en de vragen die bij jou binnenkomen.",
+    "region": {
+      "pre": "We zitten in Vechmaal (Heers) en werken volledig online, voor zaken in heel België. Zit je in Limburg? Lees dan over ",
+      "t": "een website laten maken in Limburg",
+      "href": "website-laten-maken-limburg",
+      "nl": true,
+      "post": "."
+    }
+  }
 }

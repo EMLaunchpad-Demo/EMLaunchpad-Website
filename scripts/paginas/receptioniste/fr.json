@@ -1,12 +1,16 @@
 {
   "meta": {
-    "title": "Réceptionniste IA pour entreprises belges | EM Launchpad",
-    "desc": "Une réceptionniste IA répond jour et nuit, planifie vos rendez-vous et transfère l'appel en cas de doute. En français, néerlandais et anglais.",
+    "title": "Réceptionniste IA en Belgique, jour et nuit | EM Launchpad",
+    "desc": "Réceptionniste IA en Belgique : un standard téléphonique IA qui répond jour et nuit, planifie vos rendez-vous et transfère l'appel en cas de doute.",
     "ogtitle": "Votre téléphone sonne. Votre réceptionniste IA décroche.",
     "service": "Réceptionniste IA (agent vocal)",
     "offer": "Réceptionniste IA",
     "offer_setup": "Installation (une fois)",
-    "offer_month": "Par mois"
+    "offer_month": "Par mois",
+    "alt_names": [
+      "Standard téléphonique IA",
+      "Accueil téléphonique IA"
+    ]
   },
   "tone": "blauw",
   "skyKeys": [
@@ -62,7 +66,7 @@
     "eyebrow": "Réceptionniste IA · standard téléphonique IA",
     "h1a": "Votre téléphone sonne.",
     "h1b": "Votre réceptionniste IA décroche.",
-    "lede": "Une réceptionniste IA, ou standard téléphonique IA, à la voix naturelle, proche d'une voix humaine. Elle répond à votre téléphone jour et nuit, planifie les rendez-vous dans votre agenda et vous passe l'appel quand elle a un doute. Vous, vous continuez à travailler.",
+    "lede": "Une réceptionniste IA pour votre entreprise en Belgique, à la voix naturelle, proche d'une voix humaine. Comme un standard téléphonique IA, elle répond à votre téléphone jour et nuit, planifie les rendez-vous dans votre agenda et vous passe l'appel quand elle a un doute. Vous, vous continuez à travailler.",
     "cta": "Planifier une démo gratuite",
     "listen": "Écouter",
     "listen_off": "Couper le son",
@@ -744,8 +748,16 @@
     "h2b": "avant qu'elle décroche.",
     "items": [
       {
+        "q": "Qu'est-ce qu'un standard téléphonique IA ?",
+        "a": "Un standard téléphonique IA, c'est une assistante numérique qui répond au téléphone pour votre entreprise, avec une voix naturelle. On parle aussi de réceptionniste IA : c'est la même chose. Elle répond aux questions sur votre commerce, planifie les rendez-vous dans votre agenda et vous passe l'appel quand c'est nécessaire. Après chaque appel, un résumé arrive dans votre CRM."
+      },
+      {
         "q": "L'appelant entend-il qu'il parle à une IA ?",
-        "a": "Nous la configurons pour qu'elle se présente comme l'assistante numérique de votre commerce, comme dans les exemples de cette page. Ainsi, l'appelant sait tout de suite à quoi s'en tenir. Elle a bien une voix naturelle, proche d'une voix humaine. C'est aussi ce que demande le règlement européen sur l'IA (AI Act) : qui parle à une IA doit le savoir."
+        "a": "Oui. Nous la configurons pour qu'elle se présente tout de suite comme l'assistante numérique de votre commerce, comme dans les exemples de cette page. C'est aussi ce que demande le règlement européen sur l'IA (AI Act) : qui parle à une IA doit le savoir. Ainsi, l'appelant sait à quoi s'en tenir, même si elle a une voix naturelle, proche d'une voix humaine."
+      },
+      {
+        "q": "Combien coûte une réceptionniste IA en Belgique ?",
+        "a": "750 € une fois et 150 € par mois, en complément du pack Croissance en ligne (150 € par mois, résiliable chaque mois). Le prix mensuel comprend 300 minutes d'appel ; chaque minute supplémentaire coûte 0,35 €. Tous les prix HTVA."
       },
       {
         "q": "Est-ce que ça fonctionne avec mon numéro actuel ?",
@@ -765,7 +777,11 @@
       },
       {
         "q": "Peut-elle ajouter des rendez-vous dans mon agenda ?",
-        "a": "Oui. Elle propose des créneaux libres, planifie le rendez-vous dans votre agenda et l'appelant reçoit une confirmation par SMS."
+        "a": "Dans un agenda classique, oui : elle propose des créneaux libres, planifie le rendez-vous et l'appelant reçoit une confirmation par SMS. Si vous travaillez avec un menu de services, elle ne peut pas encore y réserver elle-même. Elle envoie alors à l'appelant, par SMS, le lien pour réserver lui-même."
+      },
+      {
+        "q": "Pour quels commerces un standard téléphonique IA convient-il ?",
+        "a": "Pour les commerces qui travaillent sur rendez-vous et reçoivent souvent des appels pendant que vous êtes avec un client : un salon de coiffure, un institut de beauté, un cabinet ou un garage, par exemple. Ce qu'elle fait dans chacun d'eux, vous le lisez dans les blocs par secteur de cette page."
       },
       {
         "q": "Que devient la conversation ?",
@@ -774,10 +790,6 @@
       {
         "q": "Est-ce que j'entends sa vraie voix sur cette page ?",
         "a": "Non. Avec le son activé, vous entendez la voix de synthèse de votre propre appareil, et elle sonne différemment sur chaque appareil. Votre réceptionniste, elle, a une voix naturelle, proche d'une voix humaine."
-      },
-      {
-        "q": "Combien coûte une réceptionniste IA ?",
-        "a": "750 € une fois et 150 € par mois, en complément du pack Croissance en ligne (150 € par mois, résiliable chaque mois). Le prix mensuel comprend 300 minutes d'appel ; chaque minute supplémentaire coûte 0,35 €. Tous les prix HTVA."
       },
       {
         "q": "En combien de temps est-elle en ligne ?",
@@ -802,6 +814,12 @@
         "t": "automatisation IA",
         "href": "AI-Automatisering",
         "post": "."
+      },
+      {
+        "pre": "· Vous hésitez sur ce dont votre commerce a besoin ? Passez par le ",
+        "t": "Choix du pack",
+        "href": "Pakketkiezer",
+        "post": "."
       }
     ]
   },
@@ -822,5 +840,89 @@
     "Home",
     "Services",
     "AI Voice Agents"
-  ]
+  ],
+  "sectoren": {
+    "eyebrow": "Par secteur",
+    "h2a": "Un standard téléphonique IA pour votre commerce.",
+    "h2b": "Du salon de coiffure au garage.",
+    "lede": "Dans un salon de coiffure, elle reçoit d'autres questions que dans un garage. C'est pourquoi nous la configurons pour votre commerce : vos services, votre agenda et ce qu'elle vous laisse. Voici à quoi cela peut ressembler.",
+    "q_label": "Par exemple",
+    "items": [
+      {
+        "k": "kapsalon",
+        "ic": "scissors",
+        "label": "Salon de coiffure",
+        "h": "Vous coupez. Elle répond au téléphone.",
+        "q": "Est-ce que je peux encore venir samedi pour une couleur et une coupe ?",
+        "do": [
+          "Avec un agenda classique, elle indique les créneaux libres et y ajoute le rendez-vous. Avec un menu de services, où votre client choisit lui-même le coiffeur et la prestation, elle lui envoie le lien par SMS.",
+          "Elle répond aux questions sur vos prix et vos heures d'ouverture, comme ils figurent sur votre site.",
+          "Quelqu'un veut déplacer ou annuler un rendez-vous ? Elle le note et vous prévient. C'est vous qui faites le changement."
+        ],
+        "link": {
+          "t": "Site web pour coiffeurs avec réservation en ligne (en néerlandais)",
+          "href": "website-voor-kappers",
+          "nl": true
+        }
+      },
+      {
+        "k": "schoonheidssalon",
+        "ic": "leaf",
+        "label": "Institut de beauté",
+        "h": "Vous faites un soin. Elle répond aux questions.",
+        "q": "Combien de temps dure un soin du visage, et combien ça coûte ?",
+        "do": [
+          "Elle explique en quoi consiste un soin, combien de temps il dure et ce qu'il coûte, tel que vous l'indiquez sur votre site ou dans votre liste de prix.",
+          "Avec un agenda classique, elle planifie le soin et la cliente reçoit une confirmation par SMS. Avec un menu de services, elle envoie le lien pour réserver en ligne.",
+          "Une question qui demande votre avis, comme un problème de peau, elle vous la laisse : elle vous passe l'appel ou note la question pour vous."
+        ],
+        "link": {
+          "t": "Site web pour instituts de beauté (en néerlandais)",
+          "href": "website-voor-schoonheidssalons",
+          "nl": true
+        }
+      },
+      {
+        "k": "praktijk",
+        "ic": "steth",
+        "label": "Cabinet",
+        "h": "Vous êtes avec un patient. Elle prend le téléphone.",
+        "q": "Avez-vous encore de la place la semaine prochaine pour une première consultation ?",
+        "do": [
+          "Avec un agenda classique, elle planifie la consultation et le patient reçoit une confirmation par SMS. Avec un menu de services, elle envoie le lien pour réserver en ligne.",
+          "Elle répond aux questions pratiques, comme votre adresse, vos horaires ou ce qu'un patient doit apporter, si vous l'indiquez dans ses informations.",
+          "Elle ne donne pas d'avis médical. Si quelqu'un en demande, elle vous passe l'appel ou note la question pour vous."
+        ],
+        "link": {
+          "t": "Site web pour cabinets (en néerlandais)",
+          "href": "website-voor-praktijken",
+          "nl": true
+        }
+      },
+      {
+        "k": "garage",
+        "ic": "wrench",
+        "label": "Garage",
+        "h": "Vous êtes sous une voiture. Elle planifie l'entretien.",
+        "q": "Ma voiture doit passer à l'entretien. Quand est-ce possible ?",
+        "do": [
+          "Elle demande ce dont vous avez besoin, comme la marque et la plaque d'immatriculation, et l'ajoute à la fiche du client dans votre CRM.",
+          "Elle planifie l'entretien ou le changement de pneus dans votre agenda, avec une confirmation par SMS.",
+          "Quelqu'un demande si sa voiture est prête ? Elle ne le sait pas. Elle vous passe l'appel, ou elle note la question et vous prévient."
+        ],
+        "link": {
+          "t": "Voyez-le pour votre garage dans une démo gratuite",
+          "href": "Gratis%20Demo"
+        }
+      }
+    ],
+    "note": "Ce sont des exemples, pas des témoignages de clients. Votre propre réceptionniste, nous la configurons avec vos services, votre agenda et les questions que vous recevez.",
+    "region": {
+      "pre": "Nous sommes à Vechmaal (Heers) et travaillons entièrement en ligne, pour des entreprises de toute la Belgique. Vous êtes au Limbourg ? Lisez notre page ",
+      "t": "création de site web au Limbourg",
+      "href": "website-laten-maken-limburg",
+      "nl": true,
+      "post": " (en néerlandais)."
+    }
+  }
 }

@@ -596,3 +596,31 @@ body[data-skin="v2"] .rc-bill .is-sum .grad{transition:background-size .6s cubic
 .rc-plus+.rc-plus{margin-top:4px}
 /* fase 1: de langere notitieregels (belminuten, excl. btw) mogen afbreken, anders duwen ze de pagina breder dan de gsm */
 .rc-bl.is-note span{flex:1 1 auto;min-width:0;line-height:1.5}
+
+/* ─────────────────────────── PER SECTOR (fase 2) ───────────────────────────
+   Vier rustige kaarten: wat ze doet in een kapsalon, schoonheidssalon, praktijk en garage.
+   Geen eigen beweging (de lijn bovenaan blijft het enige bewegende object); alleen de gewone reveal. */
+.rc-sectors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+.rc-sector{
+  display:flex;flex-direction:column;min-width:0;padding:26px;border-radius:22px;border:1px solid var(--line-2);
+  background:linear-gradient(170deg,rgba(47,116,224,.07),transparent 55%),var(--ink-2);
+}
+.rc-sector-k{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+.rc-sector-ic{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;border:1px solid var(--line-2);color:var(--hi)}
+.rc-sector-ic svg{width:17px;height:17px}
+.rc-sector h3{margin:16px 0 0;font-size:clamp(19px,1.9vw,22px);line-height:1.25;font-weight:800;letter-spacing:-.015em;color:var(--hi)}
+.rc-sector-q{margin:12px 0 0;font-size:15px;line-height:1.5;color:var(--rc-caller)}
+.rc-sector-q span{display:block;margin-bottom:2px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.rc-sector-q q{quotes:"\201C" "\201D"}
+html[lang="fr"] .rc-sector-q q{quotes:"\00AB\00A0" "\00A0\00BB"}
+.rc-sector-l{list-style:none;margin:16px 0 22px;padding:0;display:grid;gap:10px}
+.rc-sector-l li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.55;color:var(--mid)}
+.rc-sector-l li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--uline)}
+.rc-sector .rc-link{align-self:flex-start;margin-top:auto;max-width:100%;line-height:1.4}
+.rc-sector-note{margin:18px 0 0;font-family:var(--mono);font-size:11.5px;line-height:1.55;color:var(--dim);max-width:70ch}
+.rc-sector-region{margin-top:12px;max-width:80ch}
+.rc-sector a:focus-visible,.rc-sector-region a:focus-visible{outline:2px solid var(--rc-focus);outline-offset:2px}
+@media (max-width:760px){
+  .rc-sectors{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:26px}
+  .rc-sector{padding:20px}
+}

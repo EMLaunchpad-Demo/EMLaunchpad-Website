@@ -9,7 +9,7 @@ import io, re, json, html, sys, os
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20261018a', '20261011a'
+V_CSS, V_JS = '20261019a', '20261011a'
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261016a'
 FILE = 'AI Voice Agents.html'
@@ -59,14 +59,17 @@ def head(L, lang, pre, s):
         {'@type': 'ListItem', 'position': 1, 'name': bc[0], 'item': home},
         {'@type': 'ListItem', 'position': 2, 'name': bc[1], 'item': home + 'Diensten'},
         {'@type': 'ListItem', 'position': 3, 'name': bc[2], 'item': base}]})
-    g.append({'@type': 'Service', '@id': base + '#service', 'name': m['service'], 'serviceType': 'AI voice agent', 'url': base,
+    svc = {'@type': 'Service', '@id': base + '#service', 'name': m['service']}
+    if m.get('alt_names'):                # fase 2: synoniemen (AI-telefoniste, standard téléphonique IA)
+        svc['alternateName'] = m['alt_names']
+    g.append(dict(svc, **{'serviceType': 'AI voice agent', 'url': base,
               'description': m['desc'], 'provider': {'@id': site + '#business'},
               'areaServed': {'@type': 'Country', 'name': 'Belgium'},
               'offers': {'@type': 'Offer', 'name': m['offer'], 'priceCurrency': 'EUR', 'url': base,
                          'eligibleRegion': {'@type': 'Country', 'name': 'BE'},
                          'priceSpecification': [
                              {'@type': 'UnitPriceSpecification', 'price': '750', 'priceCurrency': 'EUR', 'name': m['offer_setup'], 'valueAddedTaxIncluded': False},
-                             {'@type': 'UnitPriceSpecification', 'price': '150', 'priceCurrency': 'EUR', 'unitCode': 'MON', 'name': m['offer_month'], 'valueAddedTaxIncluded': False}]}})
+                             {'@type': 'UnitPriceSpecification', 'price': '150', 'priceCurrency': 'EUR', 'unitCode': 'MON', 'name': m['offer_month'], 'valueAddedTaxIncluded': False}]}}))
     g.append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q['q'], 'acceptedAnswer': {'@type': 'Answer', 'text': q['a']}}
                                                  for q in L['faq']['items']]})
     data['@graph'] = g
@@ -74,9 +77,9 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261018a"></script>
-<script src="{pre}i18n-pages.js?v=20261018a"></script>
-<script src="{pre}site.js?v=20261018a"></script>
+<script src="{pre}i18n.js?v=20261019a"></script>
+<script src="{pre}i18n-pages.js?v=20261019a"></script>
+<script src="{pre}site.js?v=20261019a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}receptioniste.js?v={V_JS}"></script>

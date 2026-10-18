@@ -6,7 +6,11 @@
     "service": "AI receptionist (voice agent)",
     "offer": "AI receptionist",
     "offer_setup": "Setup (one-off)",
-    "offer_month": "Per month"
+    "offer_month": "Per month",
+    "alt_names": [
+      "AI phone assistant",
+      "AI telephone receptionist"
+    ]
   },
   "tone": "blauw",
   "skyKeys": [
@@ -754,8 +758,16 @@
     "h2b": "before she picks up.",
     "items": [
       {
+        "q": "What is an AI phone assistant?",
+        "a": "An AI phone assistant is a digital assistant that answers the phone for your business, with a human-like voice. You will also hear AI receptionist: it is the same thing. She answers questions about your business, books appointments in your calendar and puts the call through to you when needed. After every call, a summary is in your CRM."
+      },
+      {
         "q": "Can a caller tell they're talking to AI?",
-        "a": "We set her up to introduce herself as your business's digital assistant, as in the examples on this page. That way the caller knows right away where they stand. She does have a human-like voice. That's also what the European AI Act requires: anyone talking to AI must know it."
+        "a": "Yes. We set her up to introduce herself straight away as your business's digital assistant, as in the examples on this page. That is also what the European AI Act requires: anyone talking to AI must know it. So the caller knows where they stand, even though she has a human-like voice."
+      },
+      {
+        "q": "What does an AI receptionist cost?",
+        "a": "€750 one-off and €150 a month, as an add-on to the Online Growth package (€150 a month, cancellable monthly). The monthly price includes 300 call minutes; each extra minute costs €0.35. All prices excl. VAT."
       },
       {
         "q": "Does it work on my existing number?",
@@ -775,7 +787,11 @@
       },
       {
         "q": "Can she put appointments in my calendar?",
-        "a": "Yes. She suggests free slots, books the appointment in your calendar and the caller gets a confirmation by SMS."
+        "a": "In a regular calendar, yes: she suggests free slots, books the appointment and the caller gets a confirmation by SMS. If you work with a service menu, she can't book in it herself yet. She then texts the caller the link to book themselves."
+      },
+      {
+        "q": "Which businesses is an AI phone assistant suitable for?",
+        "a": "For businesses that work with appointments and often get calls while you are busy with a customer: a hair salon, a beauty salon, a practice or a garage, for example. What she does in each of those, you can read in the sector blocks on this page."
       },
       {
         "q": "What happens to the call?",
@@ -784,10 +800,6 @@
       {
         "q": "Do I hear her real voice on this page?",
         "a": "No. With the sound on, you hear your own device's built-in reading voice, and that sounds different on every device. Your receptionist herself has a human-like voice."
-      },
-      {
-        "q": "What does an AI receptionist cost?",
-        "a": "€750 one-off and €150 a month, as an add-on to the Online Growth package (€150 a month, cancellable monthly). The monthly price includes 300 call minutes; each extra minute costs €0.35. All prices excl. VAT."
       },
       {
         "q": "How soon can she go live?",
@@ -812,6 +824,12 @@
         "t": "AI automation",
         "href": "AI-Automatisering",
         "post": "."
+      },
+      {
+        "pre": "· Not sure what your business needs? Try the ",
+        "t": "Package finder",
+        "href": "Pakketkiezer",
+        "post": "."
       }
     ]
   },
@@ -832,5 +850,89 @@
     "Home",
     "Services",
     "AI Voice Agents"
-  ]
+  ],
+  "sectoren": {
+    "eyebrow": "By sector",
+    "h2a": "An AI phone assistant for your business.",
+    "h2b": "From hair salon to garage.",
+    "lede": "In a hair salon she gets different questions than in a garage. That is why we set her up for your business: your services, your calendar and what she leaves to you. This is what that can look like.",
+    "q_label": "For example",
+    "items": [
+      {
+        "k": "kapsalon",
+        "ic": "scissors",
+        "label": "Hair salon",
+        "h": "You cut. She answers the phone.",
+        "q": "Can I still come in on Saturday for a colour and a cut?",
+        "do": [
+          "With a regular calendar, she tells the caller which slots are free and books the appointment. With a service menu, where your customer picks the stylist and the treatment, she texts them the link.",
+          "She answers questions about your prices and opening hours, as they are on your website.",
+          "Someone wants to move or cancel an appointment? She notes it down and lets you know. You make the change."
+        ],
+        "link": {
+          "t": "Website for hair salons with online booking (in Dutch)",
+          "href": "website-voor-kappers",
+          "nl": true
+        }
+      },
+      {
+        "k": "schoonheidssalon",
+        "ic": "leaf",
+        "label": "Beauty salon",
+        "h": "You are with a client. She answers the questions.",
+        "q": "How long does a facial take, and what does it cost?",
+        "do": [
+          "She explains what a treatment involves, how long it takes and what it costs, as you put it on your website or in your price list.",
+          "With a regular calendar, she books the treatment and the client gets a confirmation by text. With a service menu, she texts the link to book online.",
+          "A question that needs your advice, such as a skin problem, she leaves to you: she puts the call through or notes the question for you."
+        ],
+        "link": {
+          "t": "Website for beauty salons (in Dutch)",
+          "href": "website-voor-schoonheidssalons",
+          "nl": true
+        }
+      },
+      {
+        "k": "praktijk",
+        "ic": "steth",
+        "label": "Practice",
+        "h": "You are with a patient. She takes the phone.",
+        "q": "Do you still have room next week for a first consultation?",
+        "do": [
+          "With a regular calendar, she books the consultation and the patient gets a confirmation by text. With a service menu, she texts the link to book online.",
+          "She answers practical questions, such as your address, your hours or what a patient should bring, if you put that in her information.",
+          "She does not give medical advice. If someone asks for it, she puts the call through to you or notes the question for you."
+        ],
+        "link": {
+          "t": "Website for practices (in Dutch)",
+          "href": "website-voor-praktijken",
+          "nl": true
+        }
+      },
+      {
+        "k": "garage",
+        "ic": "wrench",
+        "label": "Garage",
+        "h": "You are under a car. She books the service.",
+        "q": "My car is due for a service. When can I bring it in?",
+        "do": [
+          "She asks what you need to know, such as the make and the number plate, and adds it to the customer in your CRM.",
+          "She books the service or the tyre change in your calendar, with a confirmation by text.",
+          "Someone asks whether their car is ready? She does not know that. She puts the call through to you, or notes the question and lets you know."
+        ],
+        "link": {
+          "t": "See it for your garage in a free demo",
+          "href": "Gratis%20Demo"
+        }
+      }
+    ],
+    "note": "These are examples, not customer stories. We set up your own receptionist with your services, your calendar and the questions you get.",
+    "region": {
+      "pre": "We are based in Vechmaal (Heers) and work fully online, for businesses all over Belgium. Based in Limburg? Read about ",
+      "t": "having a website built in Limburg",
+      "href": "website-laten-maken-limburg",
+      "nl": true,
+      "post": " (in Dutch)."
+    }
+  }
 }
