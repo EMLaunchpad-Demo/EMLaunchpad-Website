@@ -612,7 +612,7 @@
       {
         "ic": "hand",
         "t": "Not sure? Then it's over to you.",
-        "d": "She puts the call through, or notes the question and lets you know. We set her up not to guess.",
+        "d": "She puts the caller through to you. If you don't pick up, she has already noted the question and let you know. We set her up not to guess.",
         "load": "m1005",
         "hl": [
           "uitkomst"
@@ -763,7 +763,7 @@
       },
       {
         "q": "What if she doesn't know the answer?",
-        "a": "Then she puts the caller through, or she notes the question and lets you know. You call back whenever it suits you. We set her up not to guess: when in doubt, it comes to you."
+        "a": "If she doesn't know the answer, she puts the caller through to you. If you don't pick up, she has already noted the question and let you know, so you can call back. We set her up not to guess: when in doubt, it comes to you."
       },
       {
         "q": "Which languages does she speak?",

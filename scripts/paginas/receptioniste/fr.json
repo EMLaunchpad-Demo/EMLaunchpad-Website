@@ -602,7 +602,7 @@
       {
         "ic": "hand",
         "t": "Elle hésite ? Alors c'est pour vous.",
-        "d": "Elle transfère l'appel, ou elle note la question et vous prévient. Nous la configurons pour qu'elle ne réponde pas au hasard.",
+        "d": "Elle transfère l'appel vers vous. Si vous ne décrochez pas, elle a déjà noté la question et vous a envoyé une notification. Nous la configurons pour qu'elle ne réponde pas au hasard.",
         "load": "m1005",
         "hl": [
           "uitkomst"
@@ -753,7 +753,7 @@
       },
       {
         "q": "Et si elle ne connaît pas la réponse ?",
-        "a": "Elle transfère alors l'appel, ou elle note la question et vous prévient. Vous rappelez quand ça vous arrange. Nous la configurons pour qu'elle ne réponde pas au hasard : en cas de doute, c'est pour vous."
+        "a": "Si elle ne connaît pas la réponse, elle transfère l'appel vers vous. Si vous ne décrochez pas, elle a déjà noté la question et vous a envoyé une notification, pour que vous puissiez rappeler. Nous la configurons pour qu'elle ne réponde pas au hasard : en cas de doute, c'est pour vous."
       },
       {
         "q": "Quelles langues parle-t-elle ?",

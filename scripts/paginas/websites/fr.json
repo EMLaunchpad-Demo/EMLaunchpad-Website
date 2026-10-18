@@ -845,7 +845,7 @@
    },
    {
     "q": "J'ai déjà un site. Doit-il disparaître ?",
-    "a": "Non. Si c'est surtout la réservation en ligne qui vous intéresse, nous plaçons le module de réservation sur votre site actuel, ou vous utilisez votre propre lien de réservation. Si vous voulez quand même un nouveau site, nous le construisons autour de votre commerce."
+    "a": "Non. Si c'est surtout la réservation en ligne qui vous intéresse, nous intégrons le système de réservation à votre site actuel avec un code d'intégration. Vous pouvez aussi utiliser votre propre lien de réservation. Si vous voulez quand même un nouveau site, nous le construisons autour de votre commerce."
    },
    {
     "q": "Est-ce que j'apparaîtrai en tête de Google ?",

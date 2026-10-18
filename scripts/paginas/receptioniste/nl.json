@@ -596,7 +596,7 @@
       {
         "ic": "hand",
         "t": "Twijfelt ze? Dan komt het bij jou.",
-        "d": "Ze verbindt door, of ze noteert de vraag en verwittigt je. We stellen haar zo in dat ze niet gokt.",
+        "d": "Ze verbindt de beller door met jou. Neem je niet op, dan heeft ze de vraag al genoteerd en je verwittigd. We stellen haar zo in dat ze niet gokt.",
         "load": "m1005",
         "hl": [
           "uitkomst"
@@ -747,7 +747,7 @@
       },
       {
         "q": "Wat als ze het antwoord niet weet?",
-        "a": "Dan verbindt ze de beller door, of ze noteert de vraag en verwittigt je. Jij belt terug wanneer het jou past. We stellen haar zo in dat ze niet gokt: bij twijfel komt het bij jou."
+        "a": "Weet ze het antwoord niet, dan verbindt ze de beller door met jou. Neem je niet op, dan heeft ze de vraag al genoteerd en je verwittigd, zodat jij kan terugbellen. We stellen haar zo in dat ze niet gokt: bij twijfel komt het bij jou."
       },
       {
         "q": "In welke talen spreekt ze?",

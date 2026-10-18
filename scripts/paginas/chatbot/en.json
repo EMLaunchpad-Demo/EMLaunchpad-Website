@@ -441,6 +441,10 @@
         "a": "Yes. It shows your free slots and books the appointment straight into your calendar. Your customer gets a confirmation right away."
       },
       {
+        "q": "Can a chatbot do more than answer questions?",
+        "a": "Yes. As a digital assistant, it can also ask questions itself and give advice based on the answers. At Clinic3D in Hasselt, the chatbot worked as a treatment guide: it asked customers what they were looking for and suggested the treatment that suited them best."
+      },
+      {
         "q": "How much does an AI chatbot cost?",
         "a": "€50 a month, as an add-on to the Online Growth package (€150 a month, cancellable monthly). The extra cost covers the AI credits your chatbot uses. All prices excl. VAT."
       },

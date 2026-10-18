@@ -441,6 +441,10 @@
         "a": "Oui. Il montre vos créneaux libres et planifie le rendez-vous directement dans votre agenda. Votre client reçoit tout de suite une confirmation."
       },
       {
+        "q": "Un chatbot peut-il faire plus que répondre aux questions ?",
+        "a": "Oui. En tant qu'assistant numérique, il peut aussi poser lui-même des questions et donner un conseil à partir des réponses. Chez Clinic3D à Hasselt, le chatbot servait de guide des traitements : il demandait au client ce qu'il souhaitait et proposait le traitement le plus adapté."
+      },
+      {
         "q": "Combien coûte un chatbot IA ?",
         "a": "50 € par mois, en complément du pack Croissance en ligne (150 € par mois, résiliable chaque mois). Le coût supplémentaire couvre les crédits IA utilisés par votre chatbot. Tous les prix HTVA."
       },
