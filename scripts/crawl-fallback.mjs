@@ -23,9 +23,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SKIP_DIRS = new Set([".git", ".github", ".claude", "node_modules", "scripts", "assets", "demo"]);
 
 const LABELS = {
-  nl: { nav: "Sitemap", home: "Home", services: "Diensten", pk: "Pakketkiezer", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI-automatisering", s5: "Online afsprakensysteem", portfolio: "Portfolio", case: "Case: Clinic3D", about: "Over ons", contact: "Contact", demo: "Gratis demo", privacy: "Privacy", emtimes: "EM Times (blog)" },
-  en: { nav: "Sitemap", home: "Home", services: "Services", pk: "Package finder", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI automation", s5: "Online booking system", portfolio: "Portfolio", case: "Case: Clinic3D", about: "About us", contact: "Contact", demo: "Free demo", privacy: "Privacy" },
-  fr: { nav: "Plan du site", home: "Accueil", services: "Services", pk: "Choix du pack", s1: "Chatbots IA", s2: "Agents vocaux IA", s3: "Sites web", s4: "Automatisation IA", s5: "Prise de rendez-vous en ligne", portfolio: "Portfolio", case: "Étude de cas : Clinic3D", about: "À propos", contact: "Contact", demo: "Démo gratuite", privacy: "Confidentialité" },
+  nl: { nav: "Sitemap", home: "Home", services: "Diensten", pk: "Pakketkiezer", eml: "EML AI Team", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI-automatisering", s5: "Online afsprakensysteem", portfolio: "Portfolio", case: "Case: Clinic3D", about: "Over ons", contact: "Contact", demo: "Gratis demo", privacy: "Privacy", emtimes: "EM Times (blog)" },
+  en: { nav: "Sitemap", home: "Home", services: "Services", pk: "Package finder", eml: "EML AI Team", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI automation", s5: "Online booking system", portfolio: "Portfolio", case: "Case: Clinic3D", about: "About us", contact: "Contact", demo: "Free demo", privacy: "Privacy" },
+  fr: { nav: "Plan du site", home: "Accueil", services: "Services", pk: "Choix du pack", eml: "EML AI Team", s1: "Chatbots IA", s2: "Agents vocaux IA", s3: "Sites web", s4: "Automatisation IA", s5: "Prise de rendez-vous en ligne", portfolio: "Portfolio", case: "Étude de cas : Clinic3D", about: "À propos", contact: "Contact", demo: "Démo gratuite", privacy: "Confidentialité" },
 };
 const LANG_NAMES = { nl: "Nederlands", en: "English", fr: "Français" };
 /** NAP (naam, adres, telefoon) zoals in de footer van site.js; zo staat het ook zonder JavaScript op elke pagina. */
@@ -38,7 +38,7 @@ export function staticFooter(lang = "nl", alternates = {}) {
   const T = LABELS[lang] || LABELS.nl;
   const pre = lang === "nl" ? "/" : `/${lang}/`;
   const links = [
-    [pre, T.home], [`${pre}Diensten`, T.services], [`${pre}Pakketkiezer`, T.pk], [`${pre}AI%20Chatbots`, T.s1], [`${pre}AI%20Voice%20Agents`, T.s2],
+    [pre, T.home], [`${pre}Diensten`, T.services], [`${pre}Pakketkiezer`, T.pk], [`${pre}eml-ai-team`, T.eml], [`${pre}AI%20Chatbots`, T.s1], [`${pre}AI%20Voice%20Agents`, T.s2],
     [`${pre}Websites`, T.s3], [`${pre}AI-Automatisering`, T.s4], [`${pre}Afsprakensysteem`, T.s5], [`${pre}Portfolio`, T.portfolio],
     [`${pre}Clinic3D`, T.case], [`${pre}Over%20ons`, T.about], [`${pre}Contact`, T.contact], [`${pre}Gratis%20Demo`, T.demo],
   ];

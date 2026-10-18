@@ -257,6 +257,7 @@ html{scroll-padding-top:100px}
 .nv-acc-packs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
 .nv-acc-packs .nv-pack{margin:0}
 .nv-acc-packs .nv-pack small{display:none}
+.nv-acc-packs .nv-pack:nth-child(3){grid-column:1/-1} /* derde kaart (EML AI Team) over de volle breedte in het gsm-menu */
 .nv-sheet .nv-sols a{padding:9px 6px}
 .nv-sheet .nv-all{margin:10px 0 0 6px}
 .nv-sheet-foot{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:auto;padding-top:28px}
@@ -287,6 +288,8 @@ html{scroll-padding-top:100px}
   .nv-cta{height:40px;padding:0 14px;font-size:13.5px}
 }
 @media (max-width:360px){.nv-bar .nv-cta svg{display:none}}
+/* smalle gsm: een lange knoptekst (FR "Planifier une démo gratuite") loopt over twee regels in plaats van de menuknop uit beeld te duwen */
+@media (max-width:400px){.nv-bar .nv-right{min-width:0}.nv-bar .nv-cta{flex:0 1 auto;min-width:0;white-space:normal;line-height:1.15;text-align:center;padding:0 12px}.nv-bar .nv-cta svg{display:none}}
 @media (max-height:700px){.nv-sheet-links > a,.nv-acc-btn{padding:14px 6px;font-size:21px}}
 @media (prefers-reduced-motion:reduce){
   .nv,.nv-bar,.nv-ind,.nv-mega,.nv-dim,.nv-lang-menu,.nv-sheet,.nv-sheet-links > a,.nv-acc-btn,.nv-acc-panel,.nv-cta,.nv-cta::after{transition:none!important}
@@ -395,3 +398,15 @@ html.emld-off .emld{display:none!important}
 .ghl-note{margin:0;padding:10px 18px;border-bottom:1px solid var(--line);background:rgba(47,116,224,.12);color:var(--hi);font-size:13.5px;line-height:1.45}
 .ghl-note[hidden]{display:none}
 .cta-band .row{flex-wrap:wrap}
+/* DRIE DIENSTEN (home #drie-diensten) */
+.dd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+.dd-grid .dd-card{grid-column:auto;color:inherit;text-decoration:none}
+.dd-card .svc-desc{flex:1}
+.dd-price{font-family:var(--mono);font-size:13px;line-height:1.5;color:var(--hi);padding-top:12px;border-top:1px solid var(--line)}
+.dd-foot{margin:26px 0 0;color:var(--mid);font-size:14.5px;line-height:1.6}
+.dd .lead a,.dd-foot a{color:var(--hi);text-decoration:underline;text-decoration-color:rgba(238,244,246,.45);text-underline-offset:3px;transition:text-decoration-color .2s ease}
+.dd .lead a:hover,.dd-foot a:hover{text-decoration-color:var(--hi)}
+@media (max-width:1080px){.dd-grid{grid-template-columns:repeat(2,1fr)}.dd-grid .dd-card:last-child{grid-column:span 2}}
+@media (max-width:680px){.dd-grid{grid-template-columns:1fr;margin-top:36px}.dd-grid .dd-card:last-child{grid-column:auto}}
+/* FAQ zonder JavaScript: antwoorden open (site.js zet html.js) */
+html:not(.js) .faq-a{max-height:none}
