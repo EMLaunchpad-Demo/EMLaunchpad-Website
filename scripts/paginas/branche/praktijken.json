@@ -1,0 +1,137 @@
+{
+ "slug": "website-voor-praktijken",
+ "fallback": "Afsprakensysteem.html",
+ "skyKeys": [{"p":0,"ax":62,"ay":30,"bx":18,"by":98,"ao":0.9,"bo":0.45},{"p":0.3,"ax":20,"ay":46,"bx":84,"by":66,"ao":0.6,"bo":0.7},{"p":0.6,"ax":80,"ay":52,"bx":24,"by":34,"ao":0.7,"bo":0.6},{"p":1,"ax":46,"ay":36,"bx":56,"by":42,"ao":1,"bo":1}],
+ "meta": {
+  "title": "Website voor praktijken met online afspraken | EM Launchpad",
+  "desc": "Een website met online afspraken en herinneringen voor je praktijk: kinesist, osteopaat, kliniek. Zoals Clinic3D in Hasselt: 650 afspraken, 0 no-shows.",
+  "ogtitle": "Een praktijk die zelf haar agenda vult | EM Launchpad",
+  "service": "Website met online afsprakensysteem voor praktijken",
+  "serviceType": "Website met online afsprakensysteem",
+  "audience": "Praktijken en klinieken: kinesisten, osteopaten, klinieken",
+  "offers": [
+   {"name": "Online groeien: website en online afsprakensysteem", "desc": "Website, online afspraken met herinneringen, Google-profiel, reviews, CRM en automatische opvolging. Maandelijks opzegbaar.", "month": 150},
+   {"name": "AI-chatbot (uitbreiding)", "desc": "Bovenop Online groeien.", "month": 50},
+   {"name": "AI-receptioniste (uitbreiding)", "desc": "Bovenop Online groeien, met 300 belminuten per maand.", "month": 150, "once": 750}
+  ]
+ },
+ "hero": {
+  "crumb": "Praktijken",
+  "eyebrow": "Website voor praktijken",
+  "h1a": "Een praktijk die",
+  "h1b": "zelf haar agenda vult.",
+  "lede": "Een website laten maken voor je praktijk, met een online afsprakensysteem erin: patiënten boeken zelf een consult of behandeling, krijgen vanzelf een bevestiging en een herinnering, en jij houdt je handen vrij voor wie voor je zit.",
+  "cta2": "Kies je pakket in zes vragen",
+  "cta2_href": "Pakketkiezer",
+  "feiten": ["€150 per maand, excl. btw", "Clinic3D: 650 afspraken, 0 no-shows", "Meestal live binnen 14 dagen"],
+  "img": {
+   "base": "praktijk-clinic3d-afspraak",
+   "sizes": "(max-width: 960px) calc(100vw - 32px), 560px",
+   "alt": "Twee gsm-schermen van clinic3d.be: links de startpagina met de knop Boek je gratis consult, rechts de online agenda met Verken onze diensten en de rubrieken Gratis Consultatie, Biostimulators en Fillers.",
+   "cap": "Clinic3D in Hasselt op de gsm: links de startpagina, rechts de online agenda waarin patiënten zelf een behandeling kiezen. Schermafbeeldingen van oktober 2026."
+  }
+ },
+ "dag": {
+  "eyebrow": "Een dag in de zaak",
+  "h2a": "Een afsprakensysteem voor je praktijk",
+  "h2b": "dat doorwerkt na de laatste patiënt.",
+  "lede": "In een praktijk telt elk uur in de agenda. Zo loopt een dinsdag als de agenda zichzelf bijhoudt.",
+  "label": "een dinsdag in een praktijk, van 8 tot 22 uur",
+  "momenten": [
+   {"t": "08:00", "soort": "dag", "kop": "De agenda staat klaar", "tekst": "Afspraken van gisteravond en vannacht staan er al tussen, met naam, behandeling en duur."},
+   {"t": "08:45", "soort": "herinner", "kop": "Herinneringen voor morgen", "tekst": "Wie morgen komt, krijgt dag, uur en adres in een mail of sms. Wie het vergeten was, weet het nu weer."},
+   {"t": "10:20", "soort": "bel", "kop": "Telefoon tijdens een behandeling", "tekst": "De AI-receptioniste neemt op. Een praktische vraag beantwoordt ze; een medische vraag noteert ze voor jou."},
+   {"t": "12:10", "soort": "boek", "kop": "Een nieuwe patiënt", "tekst": "Iemand boekt zelf een eerste afspraak via de website en beantwoordt meteen de vragen die jij vooraf wil stellen."},
+   {"t": "14:30", "soort": "vrij", "kop": "Netjes afgezegd", "tekst": "Een patiënt annuleert met de link in zijn herinnering. Het uur staat meteen weer vrij voor iemand anders."},
+   {"t": "17:45", "soort": "review", "kop": "Na de behandeling", "tekst": "Een korte bedankmail met één knop naar je Google-reviews. De patiënt beslist zelf of hij iets schrijft."},
+   {"t": "21:15", "soort": "boek", "kop": "Geboekt vanuit de zetel", "tekst": "Een afspraak voor volgende week, geboekt na sluitingstijd. De bevestiging vertrekt meteen."}
+  ],
+  "noot": "Een voorbeeld, geen meting. De echte cijfers van Clinic3D staan hieronder."
+ },
+ "case": {
+  "eyebrow": "Echt werk",
+  "h2a": "Clinic3D in Hasselt:",
+  "h2b": "650 afspraken, 0 no-shows.",
+  "lede": "Clinic3D is een medisch-esthetische kliniek in Hasselt en onze eerste klant. We bouwden de website, de online agenda en de automatische mails. Patiënten boeken sindsdien zelf.",
+  "cijfers": [["650 van 681", "afspraken bevestigd"], ["0", "no-shows"], ["31", "netjes op voorhand geannuleerd"], ["3.250", "automatische e-mails"]],
+  "cijfers_noot": "Gemeten van 1 januari tot 20 september 2026 (263 dagen). De cijfers komen uit het systeem zelf.",
+  "quote": {"text": "227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.", "cite": "Dr. Kenis, eigenaar Clinic3D, na 104 dagen"},
+  "slot": "Clinic3D is een kliniek, geen kinepraktijk. Een kinesist of osteopaat hebben we nog niet als klant. Maar de vraag is dezelfde: hoe raakt de agenda vol zonder dat jij de hele dag aan de telefoon hangt? En nul no-shows beloven we niet: wat bij Clinic3D lukte, is gemeten, geen garantie.",
+  "links": [{"t": "Lees de volledige case Clinic3D", "href": "Clinic3D"}, {"t": "clinic3d.be", "href": "https://clinic3d.be"}]
+ },
+ "bouwstenen": {
+  "eyebrow": "Vier bouwstenen",
+  "h2a": "Wat je praktijk krijgt,",
+  "h2b": "en wat je ervoor betaalt.",
+  "lede": "Website en online afsprakensysteem zitten samen in Online groeien. Chatbot en receptioniste zijn uitbreidingen: neem ze pas als je praktijk ze nodig heeft.",
+  "items": [
+   {"naam": "Website", "prijs": "€150", "per": "per maand", "noot": "Pakket Online groeien, zonder opstartkost", "tekst": "Wie je bent, welke behandelingen je doet en wat ze kosten, en hoe patiënten je praktijk vinden. Rustig en duidelijk, zonder beloftes over resultaten.", "link": {"t": "Meer over websites", "href": "Websites"}},
+   {"naam": "Online afsprakensysteem", "prijs": "Inbegrepen", "per": "in de €150", "noot": "Zelfde pakket", "tekst": "Patiënten kiezen zelf een consult of behandeling met de juiste duur. Bevestiging, herinnering en opvolging vertrekken automatisch. Een voorschot bij langere behandelingen kan ook.", "link": {"t": "Meer over het afsprakensysteem", "href": "Afsprakensysteem"}},
+   {"naam": "AI-chatbot", "prijs": "+ €50", "per": "per maand", "noot": "Bovenop Online groeien", "tekst": "Beantwoordt praktische vragen op je website, WhatsApp, Instagram en Messenger: hoe lang een eerste afspraak duurt, wat iemand meebrengt, waar de praktijk is. We stellen hem zo in dat hij bij medische vragen naar jou verwijst.", "link": {"t": "Meer over de AI-chatbot", "href": "AI%20Chatbots"}},
+   {"naam": "AI-receptioniste", "prijs": "+ €150", "per": "per maand", "eenmalig": "+ €750 eenmalig", "noot": "300 belminuten inbegrepen, daarna €0,35 per minuut", "tekst": "Neemt op als jij in behandeling bent. Ze beantwoordt praktische vragen, stuurt de link om een afspraak te maken per sms en noteert wie teruggebeld wil worden. Medisch advies geeft ze niet.", "link": {"t": "Meer over de AI-receptioniste", "href": "AI%20Voice%20Agents"}}
+  ],
+  "som": [["Website en online afspraken", "€150 per maand"], ["Met chatbot", "€200 per maand"], ["Met receptioniste", "€300 per maand + €750 eenmalig"], ["Met chatbot en receptioniste", "€350 per maand + €750 eenmalig"]],
+  "voet": "Prijzen excl. btw. Online groeien zeg je maandelijks op."
+ },
+ "gesprek": {
+  "eyebrow": "De receptioniste aan de lijn",
+  "h2a": "Jij behandelt.",
+  "h2b": "Zij neemt de telefoon op.",
+  "lede": "Een voorbeeld met Kinepraktijk De Linde, een verzonnen praktijk uit onze blauwdruk. Zo kan een gesprek lopen met een nieuwe patiënt.",
+  "titel": "Inkomende oproep, 10:20",
+  "sub": "Kinepraktijk De Linde (voorbeeld), tijdens een behandeling",
+  "wie_ai": "Receptioniste",
+  "wie_beller": "Beller",
+  "lijnen": [
+   ["ai", "Goeiemorgen, Kinepraktijk De Linde, je spreekt met de digitale assistente. Waarmee kan ik je helpen?"],
+   ["beller", "Ik heb een voorschrift van mijn huisarts voor kine. Hoe maak ik een eerste afspraak?"],
+   ["ai", "Een eerste afspraak maak je zelf in onze online agenda. Ik stuur je de link per sms. Breng je voorschrift mee naar de eerste behandeling."],
+   ["beller", "En mag ik met mijn knie al sporten tot dan?"],
+   ["ai", "Daar kan ik je geen advies over geven, dat bespreek je best met de kinesist. Ik noteer je vraag, dan belt de praktijk je terug."],
+   ["actie", "Sms met de link naar de online agenda verstuurd. Vraag en terugbelverzoek genoteerd in het CRM."]
+  ],
+  "daarna_kop": "Wat er daarna gebeurt",
+  "daarna": ["In het CRM staat wie belde, met de vraag en een korte samenvatting.", "De patiënt boekt zelf zijn eerste afspraak en krijgt bevestiging en herinnering.", "Jij belt terug over de medische vraag, wanneer het jou past."],
+  "niet_kop": "Wat ze niet doet",
+  "niet": ["Ze geeft geen medisch advies en stelt geen diagnose: die vragen noteert ze voor jou.", "Ze annuleert of verplaatst geen afspraken; dat loopt via de link in de mail of via jou.", "Ze heeft geen eigen Belgisch nummer: je huidige nummer schakelt naar haar door."],
+  "link": {"t": "Alles over de AI-receptioniste", "href": "AI%20Voice%20Agents"}
+ },
+ "extra": {
+  "id": "privacy",
+  "eyebrow": "Privacy en GDPR",
+  "h2a": "Gegevens van patiënten",
+  "h2b": "vragen zorg.",
+  "lede": "Een praktijk werkt met gegevens die je niet zomaar laat rondslingeren. Dit doen we standaard, en dit laten we aan een jurist.",
+  "alineas": [
+   "In het boekingsformulier vragen we alleen wat nodig is om een afspraak te maken. Bij het vak voor opmerkingen staat dat je patiënt er geen medische gegevens in zet: die bespreek je in de praktijk. Het vakje om nieuws of aanbiedingen te krijgen staat standaard uit en is niet nodig om te boeken.",
+   "De automatische mails en sms'en gaan over de afspraak: bevestiging, herinnering en opvolging. Wie geen berichten meer wil, laat het weten of schrijft zich uit, en dan stopt het. Statistieken, een kaart en een reviewblok op je site laden pas na toestemming via de cookiemelding, zoals op de site van Clinic3D.",
+   "Wat we niet doen: we zijn geen juristen en we beloven niet dat je praktijk daarmee in orde is met de GDPR. Laat je privacyverklaring en voorwaarden nakijken door een jurist; wij zetten ze op je site en linken ze in het boekingsformulier. Welke diensten wij zelf gebruiken om gegevens te verwerken, staat in onze privacyverklaring."
+  ]
+ },
+ "faq": {
+  "eyebrow": "Veelgestelde vragen",
+  "h2a": "Wat praktijken ons vragen,",
+  "h2b": "eerlijk beantwoord.",
+  "items": [
+   {"q": "Wat kost een website met online afspraken voor een praktijk?", "a": "€150 per maand, excl. btw, in het pakket Online groeien: website, online afsprakensysteem met herinneringen, Google-profiel, reviews, CRM en automatische opvolging, met hosting, beheer en support. Geen opstartkost, maandelijks opzegbaar."},
+   {"q": "Werkt het ook voor een kinesist of osteopaat?", "a": "Ja. Het systeem werkt voor elke praktijk met afspraken: je zet je behandelingen erin met hun duur, je uren en eventueel meerdere therapeuten met elk hun eigen agenda. Eerlijk gezegd: onze praktijkcase is een medisch-esthetische kliniek, Clinic3D. Een kinepraktijk of osteopaat hebben we nog niet als klant."},
+   {"q": "Helpen herinneringen echt tegen no-shows?", "a": "Bij Clinic3D werden over 263 dagen 650 van de 681 ingeplande afspraken bevestigd, 31 werden op voorhand geannuleerd en er was geen enkele no-show. Patiënten kregen een bevestiging, een herinnering en achteraf een opvolging. Dat is een meting bij één praktijk, geen belofte voor de jouwe."},
+   {"q": "Kan ik een voorschot vragen?", "a": "Ja. Bij Clinic3D betaalt een patiënt €25 voorschot voor behandelingen van 45 minuten of langer, zodat er minder geannuleerd wordt. Of en wanneer je een voorschot vraagt, beslis je zelf. Betalen gaat online."},
+   {"q": "Hoe zit het met de GDPR?", "a": "In het formulier vragen we alleen wat nodig is voor de afspraak, met de vraag om er geen medische gegevens in te zetten. Het vakje voor nieuws staat standaard uit. Wie geen berichten meer wil, krijgt ze niet meer. Je privacyverklaring en voorwaarden laat je nakijken door een jurist; wij zetten ze op je site."},
+   {"q": "Mag een patiënt medische info in het formulier zetten?", "a": "Liever niet, en dat staat er ook bij. Bij het vak voor opmerkingen staat dat medische gegevens besproken worden tijdens de afspraak, niet in een formulier. Zo komen ze niet in mails of in je CRM terecht."},
+   {"q": "Wat doet de AI-receptioniste bij een medische vraag?", "a": "Ze geeft geen advies. Ze zegt dat ze die vraag niet kan beantwoorden, noteert ze met het nummer van de beller, en jij belt terug. Of ze verbindt door met de praktijk. Praktische vragen beantwoordt ze uit wat jij haar meegeeft. Prijs: €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
+   {"q": "Kunnen patiënten zelf annuleren of verplaatsen?", "a": "Ja, als je dat wil. In de bevestiging en de herinnering staat dan een link om te annuleren of te verplaatsen, zoals bij Clinic3D. Het vrijgekomen uur staat meteen weer open voor een andere patiënt."},
+   {"q": "Wat als ik stop?", "a": "Je zegt Online groeien maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou, ook de afspraken en contactgegevens van je patiënten."},
+   {"q": "Hoe snel staat mijn praktijkwebsite online?", "a": "Meestal binnen 14 dagen. We hebben je behandelingen nodig met duur en prijs, je uren en wie er in de praktijk werkt. Teksten over behandelingen keur je zelf goed: wij zetten geen medische beloftes op je site."}
+  ],
+  "meer_label": "Lees ook:",
+  "meer": [{"t": "Alle diensten en prijzen", "href": "Diensten"}, {"t": "Pakketkiezer", "href": "Pakketkiezer"}, {"t": "Gratis demo", "href": "Gratis%20Demo"}, {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"}, {"t": "Case Clinic3D", "href": "Clinic3D"}, {"t": "Onze privacyverklaring", "href": "privacy"}]
+ },
+ "cta": {
+  "h2a": "Zien hoe het werkt",
+  "h2b": "voor jouw praktijk?",
+  "tekst": "In een gratis demo van 30 minuten via Teams tonen we je de online agenda, de herinneringen en de opvolging zoals ze bij Clinic3D lopen. Zonder verplichtingen.",
+  "demo": "Wat je ziet in de demo",
+  "badges": ["Gratis en vrijblijvend", "30 minuten via Teams", "Belgisch bedrijf, BE1024.977.818"]
+ }
+}

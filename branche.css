@@ -1,0 +1,177 @@
+/* =============================================================
+   EM Launchpad: branchepagina's ("Een dag in de zaak")
+   website-voor-schoonheidssalons, website-voor-kappers, website-voor-praktijken.
+   Eén bewegend object: de tijdlijn van 8 tot 22 uur. Ze speelt één keer met CSS
+   zodra site.js de klasse "in" zet (html.reveal-ready); zonder JavaScript of met
+   prefers-reduced-motion staat ze stil met alle momenten zichtbaar.
+   Bovenop de v2-skin (home-redesign.css), data-tone="blauw". Klassen met br-.
+   Alleen opacity en transform in beweging. Nergens position:sticky.
+   ============================================================= */
+
+body[data-skin="v2"]{--br-hair:rgba(226,236,255,.2);--br-card:rgba(12,26,49,.72);--br-out:cubic-bezier(.2,.7,.2,1);--br-focus:#9dbcf0;--br-blue:#4b8df0}
+.br-main:focus{outline:none}
+.br-main a:focus-visible{outline:2px solid var(--br-focus);outline-offset:3px}
+.br-tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hi);padding:3px 9px;border:1px solid var(--br-hair);border-radius:999px;background:rgba(12,26,49,.86);white-space:nowrap}
+.br-link{display:inline-flex;align-items:center;gap:8px;color:var(--hi);font-weight:600;text-decoration:underline;text-decoration-color:var(--br-hair);text-underline-offset:4px;transition:text-decoration-color .2s ease}
+.br-link:hover{text-decoration-color:var(--hi)}
+.br-link svg{width:14px;height:14px;flex:none}
+.br-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px}
+.br-small{margin:14px 0 0;font-size:13px;color:var(--dim);max-width:70ch}
+
+/* ─────────────── HERO ─────────────── */
+.br-hero{position:relative;padding:18px 0 40px}
+.br-dagsec{padding-top:56px}
+.br-main .cta-inner .row{gap:12px}
+.br-hero-grid{display:grid;grid-template-columns:minmax(0,5.2fr) minmax(0,6.8fr);gap:48px;align-items:center}
+.br-crumb{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:14px}
+.br-crumb a{color:var(--mid);text-decoration:none}
+.br-crumb a:hover{color:var(--hi)}
+.br-crumb span{margin:0 3px}
+.br-h1{margin:14px 0 0;font-weight:800;font-size:clamp(36px,3.6vw,52px);line-height:1.04;letter-spacing:-.04em;color:var(--hi);text-wrap:balance}
+.br-lede{max-width:46ch;margin-top:18px}
+.br-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.br-feiten{display:flex;flex-wrap:wrap;gap:8px 18px;margin:26px 0 0;padding:0;list-style:none;font-family:var(--mono);font-size:12px;color:var(--mid)}
+.br-feiten li{display:flex;align-items:center;gap:8px}
+.br-feiten li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.br-fig{margin:0;min-width:0}
+.br-frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-2);background:#0b1526;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.br-frame .br-tag{position:absolute;bottom:14px;left:14px;z-index:1}
+.br-img{display:block;width:100%;height:auto;aspect-ratio:4/3}
+.br-fig figcaption,.br-demo-fig figcaption{margin-top:12px;font-size:13px;line-height:1.5;color:var(--dim)}
+
+/* ─────────────── EEN DAG IN DE ZAAK ─────────────── */
+.br-day{margin-top:36px;padding:26px 26px 22px;border:1px solid var(--line-2);border-radius:20px;background:linear-gradient(180deg,rgba(14,28,50,.78),rgba(10,20,38,.82))}
+.br-day-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;font-family:var(--mono);font-size:12px;color:var(--mid)}
+.br-track{position:relative;height:56px;margin:22px 8px 6px}
+.br-rail,.br-prog{position:absolute;left:0;right:0;top:14px;height:2px;border-radius:2px}
+.br-rail{background:var(--line-2)}
+.br-prog{background:var(--uline);transform-origin:0 50%}
+.br-dot{position:absolute;top:8px;left:calc(var(--p) * 100%);width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#0c1a31;border:2px solid var(--br-blue)}
+.br-dot.is-boek,.br-dot.is-betaal{border-color:var(--acc)}
+.br-dot.is-review{border-color:#e7c25b}
+.br-hours{position:absolute;left:0;right:0;top:30px}
+.br-hours span{position:absolute;left:calc(var(--p) * 100%);transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--dim)}
+.br-evs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0 0;padding:0;list-style:none}
+.br-ev{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-content:start;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--br-card)}
+.br-ev-ic{grid-row:span 2;display:grid;place-items:center;width:34px;height:34px;border-radius:10px;border:1px solid var(--line-2);color:var(--br-blue)}
+.br-ev.is-boek .br-ev-ic,.br-ev.is-betaal .br-ev-ic{color:var(--acc)}
+.br-ev.is-review .br-ev-ic{color:#e7c25b}
+.br-ev-ic svg{width:18px;height:18px}
+.br-ev time{font-family:var(--mono);font-size:12px;color:var(--mid)}
+.br-ev b{font-size:15px;line-height:1.3;color:var(--hi)}
+.br-ev-t{grid-column:1/-1;font-size:14px;line-height:1.5;color:var(--mid);margin-top:4px}
+.br-day-note{margin:16px 0 0;font-size:13px;color:var(--dim)}
+/* de beweging: één keer, ±5 s, alleen als site.js reveal-ready zet (nooit bij reduced motion) */
+@keyframes brProg{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes brOn{from{opacity:.18;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes brDot{from{opacity:.25;transform:scale(.6)}to{opacity:1;transform:none}}
+html.reveal-ready .br-day:not(.in) .br-prog{transform:scaleX(0)}
+html.reveal-ready .br-day:not(.in) .br-ev{opacity:.18}
+html.reveal-ready .br-day:not(.in) .br-dot{opacity:.25}
+html.reveal-ready .br-day.in .br-prog{animation:brProg 5s linear .3s both}
+html.reveal-ready .br-day.in .br-ev{animation:brOn .5s var(--br-out) both;animation-delay:calc(.3s + var(--p) * 5s)}
+html.reveal-ready .br-day.in .br-dot{animation:brDot .4s var(--br-out) both;animation-delay:calc(.3s + var(--p) * 5s)}
+@media (prefers-reduced-motion:reduce){.br-prog,.br-ev,.br-dot{animation:none!important;opacity:1!important;transform:none!important}}
+
+/* ─────────────── ECHT WERK / DEMO ─────────────── */
+.br-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:36px}
+.br-case{padding:26px;border:1px solid var(--line-2);border-radius:20px;background:var(--br-card)}
+.br-case-where{margin:0;font-family:var(--mono);font-size:12px;color:var(--mid)}
+.br-case h3{margin:8px 0 0;font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--hi)}
+.br-beats{margin:18px 0 0}
+.br-beat{padding:12px 0;border-top:1px solid var(--line)}
+.br-beat dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.br-beat dd{margin:6px 0 0;color:var(--mid);line-height:1.6}
+.br-case-slot{margin:26px 0 0;max-width:70ch;color:var(--mid);line-height:1.65}
+.br-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:36px 0 0;padding:0;list-style:none}
+.br-stats li{padding:20px;border:1px solid var(--line-2);border-radius:16px;background:var(--br-card)}
+.br-stats b{display:block;font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.03em;color:var(--hi);font-variant-numeric:tabular-nums}
+.br-stats span{display:block;margin-top:6px;font-size:14px;color:var(--mid)}
+.br-quote{margin:26px 0 0;padding:22px 26px;border-left:2px solid var(--acc);background:rgba(12,26,49,.5);border-radius:0 14px 14px 0;max-width:760px}
+.br-quote p{margin:0;font-size:18px;line-height:1.55;color:var(--hi)}
+.br-quote footer{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--mid)}
+.br-demo{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:36px}
+.br-demo-fig{margin:0;min-width:0}
+.br-demo-txt h3{margin:0;font-size:22px;font-weight:800;color:var(--hi)}
+.br-flow{margin:16px 0 0;padding:0;list-style:none;counter-reset:br}
+.br-flow li{counter-increment:br;position:relative;padding:12px 0 12px 44px;border-top:1px solid var(--line);color:var(--mid);line-height:1.55}
+.br-flow li::before{content:counter(br,decimal-leading-zero);position:absolute;left:0;top:12px;font-family:var(--mono);font-size:12px;color:var(--acc)}
+.br-flow b{color:var(--hi)}
+
+/* ─────────────── VIER BOUWSTENEN ─────────────── */
+.br-blocks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px}
+.br-block{display:flex;flex-direction:column;padding:22px;border:1px solid var(--line-2);border-radius:18px;background:var(--br-card)}
+.br-bnum{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.br-block h3{margin:8px 0 0;font-size:19px;font-weight:800;color:var(--hi)}
+.br-price{margin:12px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.br-price b{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--hi)}
+.br-price small{font-size:13px;color:var(--mid)}
+.br-once{flex-basis:100%;font-size:13px;color:var(--hi);font-weight:600}
+.br-pnote{margin:4px 0 0;font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--dim)}
+.br-block>p:not(.br-price):not(.br-pnote){margin:14px 0 16px;font-size:14.5px;line-height:1.6;color:var(--mid);flex:1}
+.br-sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 32px;align-items:end;margin-top:18px;padding:20px 22px;border:1px dashed var(--line-2);border-radius:16px}
+.br-sum ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px}
+.br-sum li{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--mid);border-bottom:1px solid var(--line);padding-bottom:6px}
+.br-sum li b{color:var(--hi);text-align:right}
+.br-sum p{margin:0;font-size:13px;color:var(--dim);max-width:30ch}
+
+/* ─────────────── VOORBEELDGESPREK ─────────────── */
+.br-g-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:start;margin-top:36px}
+.br-call{border:1px solid var(--line-2);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,rgba(14,28,50,.9),rgba(10,20,38,.92))}
+.br-call-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.br-call-top b{color:var(--hi);font-size:15px}
+.br-call-top span:last-child{flex-basis:100%;font-size:13px;color:var(--dim)}
+.br-lines{margin:0;padding:18px;list-style:none;display:grid;gap:12px}
+.br-line{max-width:88%;padding:11px 14px;border-radius:14px;border:1px solid var(--line)}
+.br-line p{margin:4px 0 0;line-height:1.55;color:var(--hi);font-size:15px}
+.br-who{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.br-line.is-ai{background:rgba(47,116,224,.12);border-color:rgba(75,141,240,.3)}
+.br-line.is-beller{justify-self:end;background:rgba(255,255,255,.04)}
+.br-line.is-actie{max-width:none;justify-self:stretch;border-style:dashed;background:transparent}
+.br-line.is-actie p{margin:0;font-family:var(--mono);font-size:12.5px;color:var(--acc)}
+.br-g-side h3{margin:0 0 10px;font-size:17px;font-weight:800;color:var(--hi)}
+.br-g-side ul{margin:0 0 24px;padding:0;list-style:none;display:grid;gap:10px}
+.br-g-side li{position:relative;padding-left:26px;color:var(--mid);line-height:1.55;font-size:15px}
+.br-checks li::before{content:"";position:absolute;left:2px;top:8px;width:10px;height:6px;border-left:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:rotate(-45deg)}
+.br-nots li::before{content:"";position:absolute;left:2px;top:11px;width:12px;height:2px;background:var(--dim)}
+
+/* ─────────────── EIGEN SECTIE ─────────────── */
+.br-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:36px 0 0;padding:0;list-style:none}
+.br-items li{padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--br-card)}
+.br-items h3{margin:0;font-size:17px;font-weight:800;color:var(--hi)}
+.br-items p{margin:8px 0 0;font-size:14.5px;line-height:1.6;color:var(--mid)}
+.br-paras{margin-top:30px;max-width:72ch}
+.br-paras p{color:var(--mid);line-height:1.7;margin:0 0 16px}
+
+/* ─────────────── FAQ + CTA ─────────────── */
+.br-faq .faq-list{margin-top:32px}
+.br-more{margin:22px 0 0;color:var(--mid);font-size:14px;line-height:1.8}
+.br-more a,.br-cta-links a{color:var(--hi);text-decoration:underline;text-decoration-color:var(--br-hair);text-underline-offset:4px}
+.br-more a:hover,.br-cta-links a:hover{text-decoration-color:var(--hi)}
+.br-cta-links{margin:18px 0 0;font-size:14px;color:var(--mid)}
+
+/* ─────────────── KLEINERE SCHERMEN ─────────────── */
+@media (max-width:1100px){
+  .br-blocks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .br-items{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .br-evs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:960px){
+  .br-hero-grid,.br-demo,.br-g-grid{grid-template-columns:minmax(0,1fr);gap:32px}
+  .br-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .br-sum{grid-template-columns:minmax(0,1fr)}
+  .br-sum p{max-width:none}
+}
+@media (max-width:640px){
+  .br-hero{padding-bottom:16px}
+  .br-day{padding:18px 14px 16px}
+  .br-track{display:none}
+  .br-evs{grid-template-columns:minmax(0,1fr);gap:10px}
+  .br-cases,.br-blocks,.br-items,.br-sum ul{grid-template-columns:minmax(0,1fr)}
+  .br-case,.br-block,.br-items li{padding:18px}
+  .br-stats li{padding:16px}
+  .br-line{max-width:100%}
+  .br-lines{padding:14px}
+  .br-quote{padding:18px}
+  .br-quote p{font-size:16px}
+}

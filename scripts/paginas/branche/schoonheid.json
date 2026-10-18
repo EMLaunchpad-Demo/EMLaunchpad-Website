@@ -1,0 +1,158 @@
+{
+ "slug": "website-voor-schoonheidssalons",
+ "fallback": "Websites.html",
+ "skyKeys": [{"p":0,"ax":70,"ay":36,"bx":12,"by":96,"ao":0.9,"bo":0.4},{"p":0.3,"ax":26,"ay":42,"bx":80,"by":70,"ao":0.6,"bo":0.7},{"p":0.6,"ax":76,"ay":56,"bx":20,"by":30,"ao":0.7,"bo":0.6},{"p":1,"ax":46,"ay":36,"bx":56,"by":42,"ao":1,"bo":1}],
+ "meta": {
+  "title": "Website voor schoonheidssalon en wellness | EM Launchpad",
+  "desc": "Een website waar klanten zelf reserveren voor je schoonheidssalon, sauna of wellness, zoals bij Amakhosi en Bambine. €150 per maand, excl. btw.",
+  "ogtitle": "Een website waar je klanten zelf reserveren | EM Launchpad",
+  "service": "Website voor schoonheidssalons en wellness",
+  "serviceType": "Website met online reserveren",
+  "audience": "Schoonheidssalons, sauna's en wellness",
+  "offers": [
+   {"name": "Online groeien: website en online agenda", "desc": "Website, online reserveren, Google-profiel, reviews, CRM en automatische opvolging. Maandelijks opzegbaar.", "month": 150},
+   {"name": "AI-chatbot (uitbreiding)", "desc": "Bovenop Online groeien.", "month": 50},
+   {"name": "AI-receptioniste (uitbreiding)", "desc": "Bovenop Online groeien, met 300 belminuten per maand.", "month": 150, "once": 750}
+  ]
+ },
+ "hero": {
+  "crumb": "Schoonheid en wellness",
+  "eyebrow": "Website voor schoonheidssalons en wellness",
+  "h1a": "Een website waar je klanten zelf reserveren.",
+  "h1b": "Ook om 22:00.",
+  "lede": "Een website voor je schoonheidssalon, sauna of wellness waarop klanten zelf een behandeling en een moment kiezen, meteen betalen als jij dat wil, en vanzelf een bevestiging en herinnering krijgen. Wij bouwen en beheren hem. Jij blijft bij je klant.",
+  "cta2": "Welk pakket past bij je salon?",
+  "cta2_href": "Pakketkiezer",
+  "feiten": ["€150 per maand, excl. btw", "Maandelijks opzegbaar", "Meestal live binnen 14 dagen"],
+  "img": {
+   "base": "schoonheid-amakhosi-bambine",
+   "sizes": "(max-width: 960px) calc(100vw - 32px), 560px",
+   "alt": "Twee gsm-schermen: links amakhosi.be met de kop Schenk een koninklijk moment en de knop Bestel een cadeaubon, rechts bambine.be met de online agenda en de diensten Wellness Kinderen, Babywellness en Mama massage.",
+   "cap": "Twee sites die we bouwden, op de gsm: de cadeaubonpagina van amakhosi.be en de online agenda van bambine.be. Schermafbeeldingen van oktober 2026."
+  }
+ },
+ "dag": {
+  "eyebrow": "Een dag in de zaak",
+  "h2a": "Een website voor je schoonheidssalon",
+  "h2b": "die de hele dag meewerkt.",
+  "lede": "Jij staat bij een klant, met je handen vol olie of crème. Ondertussen loopt dit vanzelf. Zo kan een gewone dinsdag eruitzien.",
+  "label": "een dinsdag in een salon, van 8 tot 22 uur",
+  "momenten": [
+   {"t": "08:10", "soort": "boek", "kop": "Twee reservaties van gisteravond", "tekst": "Ze staan al in je agenda, met de behandeling en het uur. Je hoefde niets over te typen."},
+   {"t": "09:30", "soort": "herinner", "kop": "Herinnering voor morgen", "tekst": "Wie morgen komt, krijgt een mail of sms met de dag, het uur en het adres."},
+   {"t": "11:45", "soort": "cadeau", "kop": "Een cadeaubon verkocht", "tekst": "Iemand koopt online een bon voor een verjaardag en betaalt meteen. De bon komt in de mailbox."},
+   {"t": "13:20", "soort": "bel", "kop": "Telefoon tijdens een behandeling", "tekst": "De AI-receptioniste neemt op, beantwoordt de vraag of noteert ze voor jou."},
+   {"t": "16:50", "soort": "review", "kop": "Vraag om een review", "tekst": "Na de behandeling krijgt je klant een bedankje met één knop naar je Google-reviews."},
+   {"t": "19:15", "soort": "chat", "kop": "Een vraag via Instagram", "tekst": "De chatbot legt uit hoe lang een gezichtsverzorging duurt en stuurt de link om te reserveren."},
+   {"t": "21:40", "soort": "betaal", "kop": "Gereserveerd en betaald", "tekst": "Een klant boekt voor zaterdag en betaalt online. De bevestiging vertrekt meteen."}
+  ],
+  "noot": "Een voorbeeld, geen meting. Welke mails en sms'en vertrekken, en wanneer, stel je samen met ons in."
+ },
+ "case": {
+  "eyebrow": "Echt werk",
+  "h2a": "Twee zaken die nu",
+  "h2b": "online reserveren.",
+  "lede": "Amakhosi en Bambine zijn klanten van ons. Hun sites staan vandaag online: kijk gerust zelf binnen.",
+  "kaarten": [
+   {
+    "naam": "Amakhosi Sauna",
+    "waar": "Privésauna en wellness · Hamont-Achel",
+    "beats": [
+     ["De zaak", "Een luxe privésauna en wellness. Gasten hebben de hele wellness voor zichzelf, voor een paar uur of voor een overnachting."],
+     ["Wat we maakten", "Een nieuwe website in espresso en goud, online reserveren met meteen betalen, automatische mails van bevestiging tot opvolging, en een pagina om cadeaubonnen te bestellen."],
+     ["Wat de gast doet", "Hij kiest een arrangement en een moment, betaalt online en krijgt alles daarna vanzelf in zijn mailbox. Een cadeaubon bestelt en betaalt hij ook online; die komt met een unieke code per mail."]
+    ],
+    "links": [{"t": "amakhosi.be", "href": "https://amakhosi.be"}, {"t": "Bekijk de case in ons portfolio", "href": "Portfolio"}]
+   },
+   {
+    "naam": "Bambine",
+    "waar": "Babywellness en mamazorg · Lommel",
+    "beats": [
+     ["De zaak", "Babywellness, mamazorg en verwenmomenten voor kinderen. Ine werkt er één op één."],
+     ["Wat we maakten", "Een nieuwe website met de tarieven als menukaart, het boekingssysteem met extra's, een digitale cadeaubon en automatische mails."],
+     ["Wat de ouder doet", "Ouders boeken zelf een moment en nemen er een extra bij als ze willen. Een cadeaubon koop je digitaal en betaal je meteen; een echte bon vraag je aan via een formulier."]
+    ],
+    "links": [{"t": "bambine.be", "href": "https://bambine.be"}, {"t": "Bekijk de case in ons portfolio", "href": "Portfolio"}]
+   }
+  ],
+  "slot": "Bij Amakhosi betaalt de gast meteen bij het reserveren. Bij Bambine wordt ter plaatse betaald en gaat afzeggen telefonisch. Hoe betalen en afzeggen werkt, stellen we in zoals jij het wil."
+ },
+ "bouwstenen": {
+  "eyebrow": "Vier bouwstenen",
+  "h2a": "Wat je salon krijgt,",
+  "h2b": "en wat het kost.",
+  "lede": "De website en de online agenda zitten samen in het pakket Online groeien. De chatbot en de receptioniste neem je erbij als je ze nodig hebt.",
+  "items": [
+   {"naam": "Website", "prijs": "€150", "per": "per maand", "noot": "Pakket Online groeien, zonder opstartkost", "tekst": "Je behandelingen en prijzen als een overzichtelijke kaart, foto's van je ruimte en één duidelijke knop om te reserveren. Snel op de gsm en goed te lezen voor Google.", "link": {"t": "Meer over websites", "href": "Websites"}},
+   {"naam": "Online agenda", "prijs": "Inbegrepen", "per": "in de €150", "noot": "Zelfde pakket, geen meerprijs", "tekst": "Klanten kiezen zelf behandeling, dag en uur, en boeken extra's in één keer mee. Bevestiging, herinnering en de vraag om een review vertrekken vanzelf, per mail of sms.", "link": {"t": "Meer over het afsprakensysteem", "href": "Afsprakensysteem"}},
+   {"naam": "AI-chatbot", "prijs": "+ €50", "per": "per maand", "noot": "Bovenop Online groeien", "tekst": "Antwoordt op je website, WhatsApp, Instagram en Messenger, ook 's avonds, en helpt je klant meteen naar een vrij moment. Hij weet wat jij hem leert: je behandelingen, prijzen en praktische info.", "link": {"t": "Meer over de AI-chatbot", "href": "AI%20Chatbots"}},
+   {"naam": "AI-receptioniste", "prijs": "+ €150", "per": "per maand", "eenmalig": "+ €750 eenmalig", "noot": "300 belminuten inbegrepen, daarna €0,35 per minuut", "tekst": "Neemt de telefoon op als jij met een klant bezig bent. Ze beantwoordt vragen, stuurt de link om te reserveren per sms en noteert wat ze niet zelf kan regelen, zodat jij later terugbelt.", "link": {"t": "Meer over de AI-receptioniste", "href": "AI%20Voice%20Agents"}}
+  ],
+  "som": [["Website en online agenda", "€150 per maand"], ["Met de AI-chatbot", "€200 per maand"], ["Met de AI-receptioniste", "€300 per maand + €750 eenmalig"], ["Met allebei", "€350 per maand + €750 eenmalig"]],
+  "voet": "Alle prijzen excl. btw. Online groeien is maandelijks opzegbaar."
+ },
+ "gesprek": {
+  "eyebrow": "De receptioniste aan de lijn",
+  "h2a": "Terwijl jij een behandeling doet,",
+  "h2b": "neemt zij de telefoon op.",
+  "lede": "Een voorbeeld van hoe een gesprek kan lopen. De echte receptioniste stellen we in met de info van jouw salon, en ze stelt zich voor als digitale assistente.",
+  "titel": "Inkomende oproep, 13:20",
+  "sub": "Een salon, terwijl de eigenaar met een klant bezig is",
+  "wie_ai": "Receptioniste",
+  "wie_beller": "Beller",
+  "lijnen": [
+   ["ai", "Goeiemiddag, je spreekt met de digitale assistente van het salon. Waarmee kan ik je helpen?"],
+   ["beller", "Ik wil mijn mama een cadeaubon geven voor haar verjaardag. Kan dat?"],
+   ["ai", "Zeker. Een cadeaubon koop je op onze website en je betaalt meteen online. Zal ik je de link per sms sturen?"],
+   ["beller", "Graag. En nog iets: ik ben zwanger. Mag ik dan een gezichtsverzorging krijgen?"],
+   ["ai", "Daar geef ik liever geen fout antwoord op. Ik noteer je vraag en je naam, en de eigenaar belt je terug."],
+   ["actie", "Sms met de link naar de cadeaubonnen verstuurd. Vraag en terugbelverzoek genoteerd in het CRM."],
+   ["beller", "Super, dank je."]
+  ],
+  "daarna_kop": "Wat er daarna gebeurt",
+  "daarna": ["Je ziet de vraag en het nummer van de beller in je CRM, met een korte samenvatting van het gesprek.", "Je belt terug wanneer het jou past, tussen twee klanten door.", "De link naar de cadeaubonnen ging tijdens het gesprek al per sms naar de beller."],
+  "niet_kop": "Wat ze niet doet",
+  "niet": ["Ze geeft geen advies over behandelingen of over iemands gezondheid: dat blijft bij jou.", "Ze annuleert of verplaatst geen afspraken. Ze noteert de vraag, of verbindt door met jou.", "Ze heeft geen eigen Belgisch nummer: ze neemt op via een doorschakeling van je huidige nummer."],
+  "link": {"t": "Alles over de AI-receptioniste", "href": "AI%20Voice%20Agents"}
+ },
+ "extra": {
+  "id": "reserveren",
+  "eyebrow": "Reserveren en betalen",
+  "h2a": "Jouw regels,",
+  "h2b": "in het systeem.",
+  "lede": "Een privésauna werkt anders dan een babywellness, en een nagelstudio weer anders. Daarom stellen we de agenda in zoals jouw zaak werkt.",
+  "items": [
+   ["Betalen bij het reserveren", "Je kiest of je klant meteen alles betaalt, een voorschot betaalt of ter plaatse afrekent."],
+   ["Arrangementen en overnachtingen", "Een arrangement van enkele uren of een hele nacht. Bij Amakhosi blokkeert het systeem na een overnachting ook de ochtend erna, zodat er niemand dubbel geboekt wordt."],
+   ["Extra's bij een behandeling", "Bij Bambine nemen ouders er iets bij, zoals een tweede kind of een wasmomentje. Je klant ziet meteen wat de extra kost en hoelang alles duurt."],
+   ["Cadeaubonnen", "Een digitale bon die je klant online koopt en meteen betaalt. Bij Bambine kan het ook als echte bon, aan te vragen via een formulier."],
+   ["Afzeggen volgens jouw afspraken", "Wil je dat klanten zelf annuleren met een link in de mail, dan zetten we die erin. Bij Bambine kan afzeggen alleen telefonisch, dus daar laten we die link bewust weg."],
+   ["Je eigen stijl", "Amakhosi kreeg espresso en goud, Bambine goud, lichtbruin en wit. Je site lijkt op je zaak, niet op een sjabloon."]
+  ]
+ },
+ "faq": {
+  "eyebrow": "Veelgestelde vragen",
+  "h2a": "Wat salons ons vragen,",
+  "h2b": "voor ze starten.",
+  "items": [
+   {"q": "Wat kost een website voor een schoonheidssalon?", "a": "€150 per maand, excl. btw, in het pakket Online groeien. Daarin zitten je website, de online agenda, je Google-profiel, reviews, je CRM en de automatische opvolging, plus hosting, beheer en support. Er is geen opstartkost en je zegt maandelijks op."},
+   {"q": "Kunnen klanten online reserveren en meteen betalen?", "a": "Ja. Je klant kiest een behandeling en een moment en betaalt meteen online. Zo werkt het bij Amakhosi: wie een arrangement reserveert, betaalt het meteen. Wil je liever dat er ter plaatse betaald wordt, zoals bij Bambine, dan kan dat ook."},
+   {"q": "Kan ik een voorschot vragen bij een reservatie?", "a": "Ja. In plaats van het volledige bedrag kan je klant bij het boeken een voorschot betalen. Bij welke behandelingen en hoeveel, beslis je zelf. Clinic3D, een kliniek in Hasselt, vraagt zo een voorschot bij de langere behandelingen."},
+   {"q": "Hoe annuleert een klant een reservatie?", "a": "Zoals jij het wil. In de bevestiging en de herinnering kan een link staan om te annuleren of te verplaatsen; het vrijgekomen moment staat dan weer open in je agenda. Wil je dat klanten bellen om af te zeggen, zoals bij Bambine, dan laten we die link weg en zetten we je afspraken in de mail."},
+   {"q": "Kan ik cadeaubonnen online verkopen?", "a": "Ja. Bij Amakhosi kies je een bon voor een arrangement, je betaalt online en de bon komt met een unieke code per mail. Bij Bambine koop je een digitale bon met een vast bedrag, of vraag je een echte bon aan via een formulier."},
+   {"q": "Werkt dit ook voor een privésauna of wellness?", "a": "Ja, Amakhosi is een privésauna in Hamont-Achel. Gasten boeken er arrangementen van enkele uren of een overnachting, en na een overnachting blokkeert het systeem de ochtend erna. Ze krijgen een bevestiging, een herinnering en achteraf een bedankje."},
+   {"q": "Neemt de AI-receptioniste op als ik met een klant bezig ben?", "a": "Ja. Je laat je huidige nummer doorschakelen en kiest of ze altijd opneemt of alleen als jij niet opneemt. Ze stelt zich voor als digitale assistente, beantwoordt vragen uit wat jij haar leert, stuurt de link om te reserveren per sms en noteert de rest. Ze kost €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
+   {"q": "Hoe snel staat mijn website online?", "a": "Meestal binnen 14 dagen. We hebben je behandelingen nodig met prijs en duur, je openingsuren en foto's van je zaak. We ontwerpen de site samen met jou: jouw foto's, jouw teksten, jouw kleuren."},
+   {"q": "Wat als ik stop?", "a": "Online groeien zeg je maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou. Ook je klantenlijst blijft dus van jou."}
+  ],
+  "meer_label": "Lees ook:",
+  "meer": [{"t": "Alle diensten en prijzen", "href": "Diensten"}, {"t": "Pakketkiezer", "href": "Pakketkiezer"}, {"t": "Gratis demo", "href": "Gratis%20Demo"}, {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"}, {"t": "Portfolio", "href": "Portfolio"}]
+ },
+ "cta": {
+  "h2a": "Benieuwd hoe dat eruitziet",
+  "h2b": "voor jouw salon?",
+  "tekst": "In een gratis demo van 30 minuten via Teams tonen we je hoe reserveren, betalen en de cadeaubon werken voor een zaak zoals de jouwe. Vrijblijvend.",
+  "demo": "Wat je ziet in de demo",
+  "badges": ["Gratis en vrijblijvend", "30 minuten via Teams", "Belgisch bedrijf, BE1024.977.818"]
+ }
+}

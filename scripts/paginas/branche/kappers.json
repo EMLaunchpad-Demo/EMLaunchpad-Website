@@ -1,0 +1,155 @@
+{
+ "slug": "website-voor-kappers",
+ "fallback": "Websites.html",
+ "skyKeys": [{"p":0,"ax":24,"ay":34,"bx":84,"by":92,"ao":0.85,"bo":0.45},{"p":0.3,"ax":76,"ay":44,"bx":16,"by":70,"ao":0.65,"bo":0.7},{"p":0.6,"ax":22,"ay":58,"bx":78,"by":28,"ao":0.7,"bo":0.6},{"p":1,"ax":46,"ay":36,"bx":56,"by":42,"ao":1,"bo":1}],
+ "meta": {
+  "title": "Website voor kappers met online boeken | EM Launchpad",
+  "desc": "Een kapperswebsite waarin klanten zelf boeken, per kapper, met herinnering en reviewverzoek. €150 per maand, excl. btw, meestal live binnen 14 dagen.",
+  "ogtitle": "Je agenda vol, zonder de telefoon op te nemen | EM Launchpad",
+  "service": "Website voor kappers met online boeken",
+  "serviceType": "Kapperswebsite met boekingssysteem",
+  "audience": "Kappers en kapsalons",
+  "offers": [
+   {"name": "Online groeien: website en online agenda per kapper", "desc": "Website, online boeken, Google-profiel, reviews, CRM en automatische opvolging. Maandelijks opzegbaar.", "month": 150},
+   {"name": "AI-chatbot (uitbreiding)", "desc": "Bovenop Online groeien.", "month": 50},
+   {"name": "AI-receptioniste (uitbreiding)", "desc": "Bovenop Online groeien, met 300 belminuten per maand.", "month": 150, "once": 750}
+  ]
+ },
+ "hero": {
+  "crumb": "Kappers",
+  "eyebrow": "Website voor kappers",
+  "h1a": "Je agenda vol,",
+  "h1b": "zonder de telefoon op te nemen.",
+  "lede": "Een kapperswebsite laten maken bij ons betekent: je klant boekt zelf, bij de kapper van zijn keuze, en krijgt vanzelf een herinnering en achteraf een vraag om een review. Jij blijft knippen.",
+  "cta2": "Bekijk welk pakket past",
+  "cta2_href": "Pakketkiezer",
+  "feiten": ["€150 per maand, excl. btw", "Boeken per kapper", "Meestal live binnen 14 dagen"],
+  "img": {
+   "base": "kapper-voorbeeld-avond",
+   "tag": "Voorbeeld",
+   "sizes": "(max-width: 960px) calc(100vw - 32px), 560px",
+   "alt": "Tekenblad met de voorbeeldsite van Kapsalon Mira op een gsm. Een melding zegt: nieuwe boeking via je website, dinsdag 10:00, knippen, bevestigd. Ernaast de klok op zondag 20:52, de zaak is dicht.",
+   "cap": "Voorbeeld uit onze blauwdruk. Kapsalon Mira bestaat niet: zondag 20:52, de zaak is dicht en er komt een boeking binnen voor dinsdag 10:00."
+  }
+ },
+ "dag": {
+  "eyebrow": "Een dag in de zaak",
+  "h2a": "Een website voor kappers",
+  "h2b": "die boekt terwijl jij knipt.",
+  "lede": "Bij een kapper gaat de telefoon vaak op het slechtste moment: met de schaar in de hand en een klant in de stoel. Zo kan een zaterdag lopen als je website het boeken overneemt.",
+  "label": "een zaterdag in een kapsalon, van 8 tot 22 uur",
+  "momenten": [
+   {"t": "08:30", "soort": "dag", "kop": "De dag staat klaar", "tekst": "Per kapper zie je wie er komt en voor welke behandeling. Wat 's nachts geboekt is, staat er al tussen."},
+   {"t": "09:40", "soort": "herinner", "kop": "Niemand vergeten", "tekst": "Wie vandaag komt, kreeg gisteren een sms of mail met het uur en de naam van zijn kapper."},
+   {"t": "10:15", "soort": "bel", "kop": "Telefoon met de schaar in de hand", "tekst": "De AI-receptioniste neemt op, beantwoordt de vraag of noteert ze, en stuurt de boekingslink per sms."},
+   {"t": "12:30", "soort": "vrij", "kop": "Een uur komt vrij", "tekst": "Een klant annuleert met de link in zijn herinnering. Het uur staat meteen weer open voor iemand anders."},
+   {"t": "15:10", "soort": "review", "kop": "Na het knippen", "tekst": "Je klant krijgt een bedankje met één knop naar je Google-reviews."},
+   {"t": "18:00", "soort": "chat", "kop": "Een vraag via WhatsApp", "tekst": "Iemand vraagt of je ook baarden doet. De chatbot antwoordt en wijst een vrij moment aan voor volgende week."},
+   {"t": "20:52", "soort": "boek", "kop": "Boeking terwijl je dicht bent", "tekst": "Dinsdag 10:00, knippen bij Sofie. De bevestiging vertrekt meteen; jij ziet het morgen."}
+  ],
+  "noot": "Een voorbeeld, geen meting. De namen en uren zijn verzonnen. Welke berichten vertrekken en wanneer, stel je samen met ons in."
+ },
+ "case": {
+  "eyebrow": "Eerlijk gezegd",
+  "h2a": "Nog geen kapperszaak als klant.",
+  "h2b": "Wel de demo.",
+  "lede": "We hebben vandaag nog geen kapsalon als klant. Daarom tonen we geen verzonnen case, maar de voorbeeldsite uit onze blauwdruk: Kapsalon Mira. De agenda, de mails en de opvolging erachter draaien wel al bij onze klanten in andere sectoren.",
+  "demo": {
+   "img": {
+    "base": "kapper-voorbeeld-site",
+    "sizes": "(max-width: 960px) calc(100vw - 32px), 520px",
+    "alt": "Voorbeeldsite van Kapsalon Mira op een computer: de kop Knippen en kleuren in Hasselt, een foto van een salon met drie stoelen, de knop Boek nu en blokken met openingsuren, een review en het adres.",
+    "cap": "Voorbeeld: de site van Kapsalon Mira op een computer, zoals hij zich tekent op onze pagina Websites. De zaak, de review en het adres zijn verzonnen."
+   },
+   "kop": "Van boeking tot review, in vijf stappen",
+   "stappen": [
+    ["Boeken.", "Je klant kiest de behandeling, de kapper en een vrij uur, op zijn gsm of computer."],
+    ["Bevestigen.", "Meteen daarna krijgt hij een bevestiging met het uur, de kapper en het adres."],
+    ["Herinneren.", "Voor de afspraak volgt een herinnering per mail of sms, op het moment dat jij kiest."],
+    ["Knippen.", "Jij ziet in je agenda wie er komt. Niets overtypen uit een schriftje."],
+    ["Om een review vragen.", "Achteraf krijgt je klant een bedankje met één knop naar je Google-reviews."]
+   ],
+   "link": {"t": "Bekijk de blauwdruk op de pagina Websites", "href": "Websites"}
+  },
+  "slot": "Wat wel echt is: Clinic3D in Hasselt boekt met hetzelfde afsprakensysteem. Over 263 dagen werden daar 650 afspraken bevestigd, zonder één no-show. Een kliniek is geen kapsalon, maar de agenda, de herinneringen en de reviewvraag werken op dezelfde manier.",
+  "links": [{"t": "Lees de case Clinic3D", "href": "Clinic3D"}]
+ },
+ "bouwstenen": {
+  "eyebrow": "Vier bouwstenen",
+  "h2a": "Wat je kapsalon krijgt,",
+  "h2b": "met de prijs erbij.",
+  "lede": "Website en agenda zitten in Online groeien. Wil je minder aan de telefoon hangen, dan komen de chatbot of de receptioniste erbij.",
+  "items": [
+   {"naam": "Website", "prijs": "€150", "per": "per maand", "noot": "Pakket Online groeien, geen opstartkost", "tekst": "Je team met foto, je prijslijst voor knippen, kleuren en brushen, en bovenaan een knop om te boeken die op elke gsm meteen werkt. Ook je openingsuren en je adres vind je in één oogopslag.", "link": {"t": "Meer over websites", "href": "Websites"}},
+   {"naam": "Agenda per kapper", "prijs": "Inbegrepen", "per": "in de €150", "noot": "Zelfde pakket", "tekst": "Elke kapper krijgt eigen werkuren en de behandelingen die hij of zij doet. Je klant kiest bij wie hij boekt. Herinnering en reviewvraag vertrekken vanzelf.", "link": {"t": "Meer over het afsprakensysteem", "href": "Afsprakensysteem"}},
+   {"naam": "AI-chatbot", "prijs": "+ €50", "per": "per maand", "noot": "Bovenop Online groeien", "tekst": "Voor klanten die liever een berichtje sturen dan bellen. De chatbot antwoordt op WhatsApp, Instagram, Messenger en je website, ook na sluitingstijd, en helpt meteen naar een vrij uur.", "link": {"t": "Meer over de AI-chatbot", "href": "AI%20Chatbots"}},
+   {"naam": "AI-receptioniste", "prijs": "+ €150", "per": "per maand", "eenmalig": "+ €750 eenmalig", "noot": "300 belminuten inbegrepen, daarna €0,35 per minuut", "tekst": "Voor de oproepen die toch binnenkomen terwijl je knipt. Ze beantwoordt vragen over prijzen en uren, stuurt de boekingslink per sms en noteert wie teruggebeld wil worden.", "link": {"t": "Meer over de AI-receptioniste", "href": "AI%20Voice%20Agents"}}
+  ],
+  "som": [["Website en agenda per kapper", "€150 per maand"], ["Plus de AI-chatbot", "€200 per maand"], ["Plus de AI-receptioniste", "€300 per maand + €750 eenmalig"], ["Plus allebei", "€350 per maand + €750 eenmalig"]],
+  "voet": "Alles excl. btw. Je zegt Online groeien maandelijks op."
+ },
+ "gesprek": {
+  "eyebrow": "De receptioniste aan de lijn",
+  "h2a": "De telefoon gaat",
+  "h2b": "terwijl je aan het knippen bent.",
+  "lede": "Een voorbeeld met Kapsalon Mira, de verzonnen zaak uit onze blauwdruk. Zo kan een gesprek lopen als je receptioniste opneemt.",
+  "titel": "Inkomende oproep, 10:15",
+  "sub": "Kapsalon Mira (voorbeeld), zaterdagvoormiddag",
+  "wie_ai": "Receptioniste",
+  "wie_beller": "Beller",
+  "lijnen": [
+   ["ai", "Goeiemorgen, Kapsalon Mira, je spreekt met de digitale assistente. Waarmee kan ik helpen?"],
+   ["beller", "Hebben jullie volgende week nog plaats bij Sofie? Knippen en baard."],
+   ["ai", "De vrije uren per kapper zie je in de online agenda. Ik stuur je de link per sms: daar kies je Sofie, de behandeling en het uur, en je krijgt meteen een bevestiging."],
+   ["beller", "Oké. En mijn afspraak van vanmiddag, kan die naar later?"],
+   ["ai", "Een afspraak verplaatsen doe ik niet zelf. Ik noteer je vraag en het salon belt je terug, of ik verbind je nu door. Wat heb je liever?"],
+   ["beller", "Bel me maar terug."],
+   ["actie", "Sms met de boekingslink verstuurd. Terugbelvraag genoteerd in het CRM, met naam en nummer."]
+  ],
+  "daarna_kop": "Wat er daarna gebeurt",
+  "daarna": ["Tussen twee klanten zie je wie belde en waarom, met een korte samenvatting.", "Jij beslist of de afspraak kan schuiven en belt de klant terug.", "De nieuwe boeking bij Sofie komt binnen via de link, met bevestiging en herinnering erbij."],
+  "niet_kop": "Wat ze niet doet",
+  "niet": ["Ze verplaatst of annuleert geen afspraken: ze noteert de vraag of verbindt door.", "Ze boekt niet zelf aan de telefoon. Je klant boekt via de link, bij de kapper van zijn keuze.", "Ze heeft geen eigen Belgisch nummer. Je laat je huidige nummer naar haar doorschakelen."],
+  "link": {"t": "Alles over de AI-receptioniste", "href": "AI%20Voice%20Agents"}
+ },
+ "extra": {
+  "id": "per-kapper",
+  "eyebrow": "Per kapper boeken",
+  "h2a": "Elke kapper",
+  "h2b": "zijn eigen agenda.",
+  "lede": "In een salon met meerdere stoelen boekt niet iedereen bij dezelfde persoon. Ons afsprakensysteem werkt met medewerkers: elke kapper krijgt eigen uren en eigen behandelingen.",
+  "items": [
+   ["Eigen werkuren", "Werkt Sofie niet op maandag en Tom alleen 's avonds? Dan staan alleen hun echte uren open. Een vrije dag of verlof zet je zelf in de agenda."],
+   ["Eigen behandelingen", "Doet niet iedereen kleuren of baarden, dan koppel je per kapper alleen wat hij of zij doet. Je klant kan niets kiezen wat niet kan."],
+   ["De naam in de bevestiging", "In de bevestiging en de herinnering staat bij wie je klant geboekt heeft. Zo weet hij wie hem verwacht."],
+   ["Duur per behandeling", "Een korte knipbeurt of een kleuring: elke behandeling krijgt de duur die jij invult, zodat er geen twee klanten op hetzelfde uur in één stoel zitten."],
+   ["Een salon met één stoel", "Werk je alleen, dan is het dezelfde agenda met één kapper. Komt er later iemand bij, dan voegen we die toe."]
+  ],
+  "noot": "Bij Bambine in Lommel staat de zaakvoerder zo als medewerker in de agenda en past ze zelf haar uren aan. Een kapsalon met meerdere kappers hebben we nog niet als klant."
+ },
+ "faq": {
+  "eyebrow": "Veelgestelde vragen",
+  "h2a": "Wat kappers willen weten",
+  "h2b": "voor ze overstappen.",
+  "items": [
+   {"q": "Wat kost een kapperswebsite?", "a": "Je betaalt €150 per maand, excl. btw, voor het pakket Online groeien: de website, de online agenda met een agenda per kapper, je Google-profiel, reviews, je CRM en de automatische opvolging. Hosting, beheer en support zitten erin. Je betaalt geen opstartkost en zegt maandelijks op."},
+   {"q": "Kan mijn klant zelf boeken bij zijn vaste kapper?", "a": "Ja. Elke kapper staat als medewerker in het systeem, met eigen uren en eigen behandelingen. Je klant kiest de behandeling en de kapper, en ziet alleen de uren waarop die kapper echt vrij is."},
+   {"q": "Krijgt mijn klant een herinnering?", "a": "Ja, per mail en als je wil ook per sms, met het uur, de kapper en het adres. Wanneer de herinnering vertrekt, kies je zelf. In de bevestiging kan ook een link staan om te annuleren, zodat een vrij uur meteen terug openstaat."},
+   {"q": "Hoe vraag ik een review na een knipbeurt?", "a": "Dat gebeurt vanzelf. Na de afspraak krijgt je klant een korte bedankmail met één knop naar je Google-reviews. Je vraagt het aan elke klant, zonder iets in ruil te beloven."},
+   {"q": "Ik werk al met een boekingsprogramma voor kappers. Moet dat weg?", "a": "Niet per se. In de gratis demo bekijken we wat je nu gebruikt en wat je zou winnen of verliezen. Wat je moet weten: de herinneringen, de reviewvraag en de chatbot werken met de agenda in ons platform. Blijf je bij je huidige programma, dan hangen die er niet aan vast."},
+   {"q": "Wat doet de AI-receptioniste als ik aan het knippen ben?", "a": "Ze neemt op via een doorschakeling van je nummer, altijd of alleen als jij niet opneemt. Ze beantwoordt vragen uit wat jij haar leert, stuurt de boekingslink per sms en noteert wie teruggebeld wil worden. Verplaatsen of annuleren doet ze niet. Prijs: €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
+   {"q": "Hebben jullie al kappers als klant?", "a": "Nog niet. Onze klanten zijn een kliniek, een privésauna, een babywellness, een boerderij en een vereniging. Daarom tonen we hier een voorbeeld en geen case. In de demo zie je hoe het voor een kapsalon zou werken."},
+   {"q": "Hoe snel is mijn kapperswebsite live?", "a": "Meestal binnen 14 dagen. We hebben je prijslijst nodig met de duur per behandeling, de kappers met hun uren en een paar foto's van je zaak en je team."},
+   {"q": "Wat als ik stop?", "a": "Je zegt maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou, je klantenlijst inbegrepen."}
+  ],
+  "meer_label": "Lees ook:",
+  "meer": [{"t": "Alle diensten en prijzen", "href": "Diensten"}, {"t": "Pakketkiezer", "href": "Pakketkiezer"}, {"t": "Gratis demo", "href": "Gratis%20Demo"}, {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"}, {"t": "AI-automatisering", "href": "AI-Automatisering"}]
+ },
+ "cta": {
+  "h2a": "Zien hoe boeken per kapper",
+  "h2b": "in de praktijk werkt?",
+  "tekst": "Plan een gratis demo van 30 minuten via Teams. We tonen hoe boeken, herinneren en de reviewvraag werken, en jij beslist of het past bij je salon.",
+  "demo": "Wat je ziet in de demo",
+  "badges": ["Gratis en vrijblijvend", "30 minuten via Teams", "Belgisch bedrijf, BE1024.977.818"]
+ }
+}
