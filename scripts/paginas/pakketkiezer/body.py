@@ -63,7 +63,7 @@ def scale_svg(L, u):
     ticks = ''.join('<path class="pk-aux" d="M%.2f %.2fL%.2f %.2f"></path>' % (ang(p, 58) + ang(p, 62 if p else 66)) for p in (-18, -12, -6, 0, 6, 12, 18))
     pan = lambda cx: ('<path class="pk-ln" d="M%d 150V130"></path><path class="pk-ln" d="M%d 128H%d"></path><path class="pk-aux" d="M%d 128Q%d 142 %d 128"></path>'
                       % (cx, cx - 80, cx + 80, cx - 80, cx, cx + 80))
-    eur50, eur125 = fill(L['eur'], {'n': 50}), fill(L['eur'], {'n': 125})
+    eur50, eur150 = fill(L['eur'], {'n': 50}), fill(L['eur'], {'n': 150})
     chat = pot(20, 17, 14, (2.5, 2.5), 2.8, '<path class="pk-ico pk-ico-s" d="M-4.5 -11h9v5h-5l-2.5 2v-2h-1.5z"></path>')
     recep = pot(30, 25, 24, (3.5, 3), 4.5, '<path class="pk-ico" d="M-5 -17c0 5.5 4.5 10 10 10l1.4-2.4-2.8-1.6-1.3 1.3a5.6 5.6 0 01-3.4-3.4l1.3-1.3-1.6-2.8z"></path>')
     return f'''<svg aria-hidden="true" class="pk-svg" data-pk-svg="" focusable="false" viewBox="0 0 560 344">
@@ -82,7 +82,8 @@ def scale_svg(L, u):
 <circle class="pk-ln pk-pivot" cx="280" cy="150" r="4.5"></circle>
 <g data-pk-pan="L">{pan(100)}</g>
 <g data-pk-pan="R">{pan(460)}</g>
-<g class="pk-cons" data-pk-cons="" opacity="0"><rect class="pk-aux" height="26" rx="4" width="130" x="40" y="296"></rect><text class="pk-tag" x="105" y="313">{esc(u['tag_cons'])}</text></g>
+<g class="pk-cons" data-pk-cons="" opacity="0"><rect class="pk-aux" height="26" rx="4" width="174" x="18" y="296"></rect><text class="pk-tag" x="105" y="313">{esc(u['tag_cons'])}</text></g>
+<g class="pk-cons pk-eml" data-pk-eml="" opacity="0"><rect class="pk-aux" height="26" rx="4" width="174" x="18" y="296"></rect><text class="pk-tag" x="105" y="313">{esc(u['tag_eml'])}</text></g>
 <text class="pk-hand" data-pk-note="count" opacity="0" x="62" y="288">? {esc(u['note_count'])}</text>
 <g data-pk-layer="">
 {weights_left()}
@@ -90,7 +91,7 @@ def scale_svg(L, u):
 <g class="pk-piece" data-pk-piece="chat" transform="translate(492 326)"><g class="pk-sq">{chat.replace('class="pk-body"', 'class="pk-body pk-ours"')}</g></g>
 <g class="pk-piece" data-pk-piece="recep" transform="translate(526 326)"><g class="pk-sq">{recep.replace('class="pk-body"', 'class="pk-body pk-ours"')}</g></g>
 </g>
-<text class="pk-tag pk-wide" x="428" y="341">{esc(u['tag_dg'])}</text><text class="pk-tag pk-wide" x="492" y="341">+{esc(eur50)}</text><text class="pk-tag pk-wide" x="526" y="341">+{esc(eur125)}</text>
+<text class="pk-tag pk-wide" x="428" y="341">{esc(u['tag_dg'])}</text><text class="pk-tag pk-wide" x="492" y="341">+{esc(eur50)}</text><text class="pk-tag pk-wide" x="526" y="341">+{esc(eur150)}</text>
 </svg>'''
 
 # ---------------- de vragen ----------------
@@ -121,18 +122,23 @@ def body(L, lang, pre):
 
     prog = ''.join('<li><span class="sr-only">%s</span></li>' % esc(fill(u['q_of'], {'n': i + 1, 't': len(L['q'])})) for i in range(len(L['q'])))
     incl = ''.join('<li data-pk-rib="%d"><span>%s</span> <em class="pk-tagx" hidden="">%s</em></li>' % (i + 1, esc(t), esc(u['for_you'])) for i, t in enumerate(L['ribs']))
-    sw = ''.join('<button aria-pressed="false" class="pk-k" data-pk-k="%s" type="button"><span class="pk-k-dot" aria-hidden="true"></span><b>%s</b><span class="pk-k-p">%s</span></button>'
-                 % (k, esc(cap(u[k])), esc(p)) for k, p in (('dg', eur(150)), ('chat', '+' + eur(50)), ('recep', '+' + eur(125))))
+    # de receptioniste kost ook €750 eenmalig: aparte vermelding, niet in de maandprijs
+    sw = ''.join('<button aria-pressed="false" class="pk-k" data-pk-k="%s" type="button"><span class="pk-k-dot" aria-hidden="true"></span><b>%s</b><span class="pk-k-p">%s</span>%s</button>'
+                 % (k, esc(cap(u[k])), esc(p), '<span class="pk-k-p pk-k-once">%s</span>' % esc(u['once']) if k == 'recep' else '')
+                 for k, p in (('dg', eur(150)), ('chat', '+' + eur(50)), ('recep', '+' + eur(150))))
 
     # ---- secties ----
     def links(it):
         return ''.join('<a class="pk-link" href="%s%s">%s %s</a>' % (rel, h_, esc(t), ARROW) for h_, t in it.get('links', []))
     g1 = ''.join('<li class="pk-wrow" data-pk-row="rib-%d"><span class="pk-wn">%02d</span><div><b>%s</b><p>%s</p>%s</div><em class="pk-tagx" hidden=""></em></li>'
                  % (i + 1, i + 1, esc(it['t']), esc(it['d']), links(it)) for i, it in enumerate(W['items']))
-    g2 = ''.join('<li class="pk-wrow" data-pk-row="%s"><span class="pk-wn">+%s</span><div><b>%s</b><p>%s</p><a class="pk-link" href="%s%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
-                 % (k, esc(eur(p)), esc(cap(u[k])), esc(W[k + '_d']), rel, W[k + '_href'], esc(W[k + '_more']), ARROW) for k, p in (('chat', 50), ('recep', 125)))
-    g3 = ('<li class="pk-wrow" data-pk-row="cons"><span class="pk-wn">%s</span><div><b>%s</b><p>%s</p><a class="pk-link" href="%s%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
-          % (esc(u['on_request']), esc(u['cons']), esc(W['cons_d']), rel, W['cons_href'], esc(W['cons_more']), ARROW))
+    g2 = ''.join('<li class="pk-wrow" data-pk-row="%s"><span class="pk-wn">+%s%s</span><div><b>%s</b><p>%s</p><a class="pk-link" href="%s%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
+                 % (k, esc(eur(p)), '<span class="pk-wonce">%s</span>' % esc(u['once']) if k == 'recep' else '', esc(cap(u[k])), esc(W[k + '_d']), rel, W[k + '_href'], esc(W[k + '_more']), ARROW)
+                 for k, p in (('chat', 50), ('recep', 150)))
+    # naast de schaal: AI Consulting (€200 per maand) en EML AI Team (vanaf €3.500); het prijslabel staat boven de naam
+    g3 = ''.join('<li class="pk-wrow pk-wrow-side" data-pk-row="%s"><div><span class="pk-wn">%s</span><b>%s</b><p>%s</p><a class="pk-link" href="%s%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
+                 % (k, esc(u[lbl]), esc(u[k]), esc(W[k + '_d']), rel, W[k + '_href'], esc(W[k + '_more']), ARROW)
+                 for k, lbl in (('cons', 'on_request'), ('eml', 'eml_from')))
     rules = ''.join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (esc(a), esc(b)) for a, b in RU['rows'])
     prices = ''.join('<li class="pk-pw" data-pk-pw="%d"><span class="pk-pw-win">%s</span><span class="pk-pw-t">%s</span><em class="pk-tagx" hidden="">%s</em></li>'
                      % (it['p'], esc(eur(it['p'])), esc(it['t']), esc(u['your_advice'])) for it in PR['items'])
@@ -176,10 +182,12 @@ def body(L, lang, pre):
 <div class="pk-pricebox">
 <p class="pk-mode" data-pk-mode="">{esc(r['advice_label'])}</p>
 <p class="pk-big" data-pk-big=""></p>
+<p class="pk-once" data-pk-once="" hidden=""></p>
 <p class="pk-opb" data-pk-opb=""></p>
 <p class="pk-mono" data-pk-mono="">{esc(r['mono'])}</p>
 <div class="pk-alt" data-pk-alt=""></div>
 <p class="pk-ptxt" data-pk-ptxt=""></p>
+<a class="pk-link" data-pk-elink="" hidden="" href="{rel}{r['eml_href']}">{esc(r['eml_link'])} {ARROW}</a>
 </div>
 <div class="pk-acts"><a class="btn pk-book" data-book="" href="{rel}Contact">{esc(r['book'])} {ARROW}</a><a class="btn-ghost pk-wa" data-pk-wa="" href="{wa_generic}" rel="noopener" target="_blank">{WA}{esc(r['wa'])}</a></div>
 <p class="pk-micro">{esc(r['book_micro'])} {esc(r['wa_micro'])}</p>
@@ -257,6 +265,7 @@ def body(L, lang, pre):
 </div>
 <ul class="pk-pws">{prices}</ul>
 <p class="pk-pcons">{esc(PR['cons'])}</p>
+<p class="pk-pcons">{esc(PR['eml'])}</p>
 </div>
 </section>
 <!-- ════════ BEWIJS ════════ -->

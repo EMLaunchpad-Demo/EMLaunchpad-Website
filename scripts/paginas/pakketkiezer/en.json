@@ -51,9 +51,9 @@
   ],
   "eur": "€{n}",
   "meta": {
-    "title": "Package finder: which package fits your business? | EM Launchpad",
+    "title": "Package finder: which package fits you? | EM Launchpad",
     "ogtitle": "Package finder: weighed up honestly | EM Launchpad",
-    "desc": "Six short questions about your business and you get honest advice: Digital Growth (€150 per month), with the AI chatbot or AI receptionist only if you need them. Including what we don't recommend, and why."
+    "desc": "Six short questions and honest advice: Online Growth from €150 a month (excl. VAT), AI Consulting, or EML AI Team for businesses with a team."
   },
   "crumbs": [
     "Home",
@@ -68,7 +68,7 @@
     "h1b": "Weighed up honestly.",
     "lede": "Six short questions about your business. With every answer you see what we put on the other side, what we leave out and what it costs per month.",
     "facts": "Six questions · no email address needed · your answers stay on your device",
-    "figcap": "A shop counter scale. On the left your business puts what it needs; on the right we put what covers it: Digital Growth (€150 per month) and, only when it's needed, the AI chatbot (+€50) or the AI receptionist (+€125).",
+    "figcap": "A shop counter scale. On the left your business puts what it needs; on the right we put what covers it: Online Growth (€150 per month) and, only when it's needed, the AI chatbot (+€50) or the AI receptionist (+€150, plus €750 one-off). Prices excl. VAT.",
     "noscript": "Without JavaScript the scale doesn't move. For every answer you can still read what it means, and below you'll find exactly how we weigh.",
     "start": "Answer, and watch what happens."
   },
@@ -83,7 +83,7 @@
     "off_h": "Not on the scale",
     "empty": "Nothing yet.",
     "per_month": "per month",
-    "per_month_caps": "PER MONTH",
+    "per_month_caps": "PER MONTH · EXCL. VAT",
     "zit_erin": "INCLUDED",
     "dash": "—",
     "sum": "On the scale: {n} · {p}",
@@ -91,13 +91,13 @@
     "welcome_q": "Welcome back, you were at question {n}.",
     "welcome_r": "Welcome back, your advice is ready.",
     "restart": "Start over",
-    "dg": "Digital Growth",
+    "dg": "Online Growth",
     "chat": "AI chatbot",
     "recep": "AI receptionist",
     "cons": "AI Consulting",
-    "on_request": "on request",
-    "tag_dg": "DIGITAL GROWTH",
-    "tag_cons": "AI CONSULTING · ON REQUEST",
+    "on_request": "€200 a month (introductory price)",
+    "tag_dg": "ONLINE GROWTH",
+    "tag_cons": "AI CONSULTING · €200 A MONTH",
     "note_count": "count your missed calls for a week",
     "note_leave": "we leave this out",
     "note_talk": "we'll discuss",
@@ -108,16 +108,21 @@
     "catch_dg_sub": "For you: {ribs}",
     "catch_dg_base": "All nine parts are included.",
     "catch_maybe": "possibly {p}",
-    "off_recep": "AI receptionist · we leave this out (saves {p})",
+    "off_recep": "AI receptionist · we leave this out (saves {p} per month and €750 one-off)",
     "off_chat": "AI chatbot · we leave this out (saves {p})",
     "off_cons": "AI Consulting · doesn't go on the scale",
-    "cons_side": "AI Consulting · on request, next to the scale",
+    "cons_side": "AI Consulting · €200 a month, beside the scale",
     "total_live": "Total: {p} per month.",
     "total_none": "Nothing in the price yet.",
     "euro_word": "euros",
     "plus_word": "plus",
     "chat_le": "AI chatbot",
-    "recep_le": "AI receptionist"
+    "recep_le": "AI receptionist",
+    "once": "+ €750 one-off",
+    "eml": "EML AI Team",
+    "tag_eml": "EML AI TEAM · FROM €3,500",
+    "eml_side": "EML AI Team · free analysis, beside the scale",
+    "eml_from": "from €3,500"
   },
   "gen": {
     "woord": "business",
@@ -189,19 +194,19 @@
           "c": "bel",
           "label": "They call",
           "kort": "they call",
-          "eff": "Appointments by phone. On the other side: Digital Growth, with an online calendar in your website and reminders that go out by themselves."
+          "eff": "Appointments by phone. On the other side: Online Growth, with an online calendar in your website and reminders that go out by themselves."
         },
         {
           "c": "bericht",
           "label": "By message (WhatsApp, Instagram, Messenger or email)",
           "kort": "by message",
-          "eff": "Appointments by message. On the other side: Digital Growth, with an online calendar and one inbox for WhatsApp, Instagram, email and text."
+          "eff": "Appointments by message. On the other side: Online Growth, with an online calendar and one inbox for WhatsApp, Instagram, email and text."
         },
         {
           "c": "online",
           "label": "Online, through a calendar I already have",
           "kort": "online, own calendar",
-          "eff": "Your calendar is already running. That doesn't count; in the call we'll look at what you want to do with it."
+          "eff": "Your calendar is already running. That doesn't count; in the demo we'll look at what you want to do with it."
         },
         {
           "c": "binnen",
@@ -221,7 +226,7 @@
           "c": "dag",
           "label": "Every day, now and then",
           "kort": "every day, now and then",
-          "eff": "On the other side we put the AI receptionist: +€125 per month, on top of Digital Growth. She answers every call, day and night."
+          "eff": "Against that we put the AI receptionist: +€150 a month on top of Online Growth, plus €750 one-off. She answers your phone, day and night."
         },
         {
           "c": "week",
@@ -233,13 +238,13 @@
           "c": "zelden",
           "label": "Hardly ever",
           "kort": "hardly ever",
-          "eff": "No AI receptionist needed. Saves €125 per month."
+          "eff": "No AI receptionist needed. Saves you €150 a month and €750 one-off."
         },
         {
           "c": "onbekend",
           "label": "No idea",
           "kort": "no idea",
-          "eff": "Then we don't count them. Before the call, try counting your missed calls for a week."
+          "eff": "Then we don't count them. Before the demo, try counting your missed calls for a week."
         }
       ]
     },
@@ -285,25 +290,25 @@
           "c": "reviews",
           "label": "Asking for a review",
           "kort": "asking for a review",
-          "eff": "Included in Digital Growth: 2 hours after every appointment a review request goes out by text or email, automatically."
+          "eff": "Included in Online Growth: 2 hours after every appointment a review request goes out by text or email, automatically."
         },
         {
           "c": "facturen",
           "label": "Making invoices and chasing payments",
           "kort": "invoices and payments",
-          "eff": "Included in Digital Growth: online payments, an automatic invoice after every payment, and reminders for unpaid invoices."
+          "eff": "Included in Online Growth: online payments, an automatic invoice after every payment, and reminders for unpaid invoices."
         },
         {
           "c": "herinneren",
           "label": "Reminding customers of their appointment",
           "kort": "reminding customers",
-          "eff": "Included in Digital Growth: follow-up and reminders run by themselves through your workflows."
+          "eff": "Included in Online Growth: follow-up and reminders run by themselves through your workflows."
         },
         {
           "c": "kanalen",
           "label": "Following up WhatsApp, Instagram and email separately",
           "kort": "messages on separate channels",
-          "eff": "Included in Digital Growth: WhatsApp, Instagram, email, text and phone in one inbox."
+          "eff": "Included in Online Growth: WhatsApp, Instagram, email, text and phone in one inbox."
         },
         {
           "c": "niets",
@@ -323,25 +328,31 @@
           "c": "klanten",
           "label": "More customers who find me and book",
           "kort": "more customers who find me and book",
-          "eff": "Included in Digital Growth: a fast website, your Google profile, campaigns and landing pages."
+          "eff": "Included in Online Growth: a fast website, your Google profile, campaigns and landing pages."
         },
         {
           "c": "eenplek",
           "label": "Everything in one place, fewer separate tools",
           "kort": "everything in one place",
-          "eff": "Included in Digital Growth: website, calendar, inbox, campaigns and payments on one platform, for one monthly price."
+          "eff": "Included in Online Growth: website, calendar, inbox, campaigns and payments on one platform, for one monthly price."
         },
         {
           "c": "intern",
-          "label": "My business runs well: I want AI in how we work internally",
-          "kort": "AI in how we work internally",
-          "eff": "That's AI Consulting: tailored, on request. It doesn't go on the scale."
+          "label": "My business runs well: I want to learn to use AI myself",
+          "kort": "learn to use AI myself",
+          "eff": "That's AI Consulting: we teach you to use AI in your own work, for €200 a month (introductory price). It doesn't go on the scale."
+        },
+        {
+          "c": "team",
+          "label": "My business has a team: I want AI employees who share the work",
+          "kort": "AI employees for my team",
+          "eff": "That is EML AI Team: a custom AI team, starting with a free analysis. Packages from €3,500 + €750 a month. It does not go on the scale."
         },
         {
           "c": "horen",
           "label": "First hear what's possible",
           "kort": "first hear what's possible",
-          "eff": "No rush. The call is free and without obligation."
+          "eff": "No rush. The demo is free and without obligation."
         }
       ]
     }
@@ -365,28 +376,29 @@
   },
   "fb": {
     "vak": "Your trade doesn't change the advice, only the examples.",
-    "boek_bel": "On the scale: appointments by phone. On the other side: Digital Growth, with an online calendar in your website.",
-    "boek_bericht": "On the scale: appointments by message. On the other side: Digital Growth, with an online calendar and one inbox.",
+    "boek_bel": "On the scale: appointments by phone. On the other side: Online Growth, with an online calendar in your website.",
+    "boek_bericht": "On the scale: appointments by message. On the other side: Online Growth, with an online calendar and one inbox.",
     "boek_online": "Your calendar is already running. Doesn't count.",
     "boek_binnen": "No appointments needed. Doesn't count.",
-    "opr_dag": "On the scale: missed calls every day {werk}. On the other side: the AI receptionist, +€125 per month.",
+    "opr_dag": "On the scale: missed calls every day {werk}. On the other side: the AI receptionist, +€150 per month, plus €750 one-off.",
     "opr_week_bel": "On the edge: your customers call and you miss a call now and then. We'll discuss the AI receptionist together; not in the price.",
-    "opr_week": "No AI receptionist: your phone is part of your inbox, next to WhatsApp, Instagram, email and text. Saves €125 per month.",
-    "opr_zelden": "No AI receptionist: you hardly ever miss a call. Saves €125 per month.",
+    "opr_week": "No AI receptionist: your phone is part of your inbox, next to WhatsApp, Instagram, email and text. Saves you €150 a month and €750 one-off.",
+    "opr_zelden": "No AI receptionist: you hardly ever miss a call. Saves you €150 a month and €750 one-off.",
     "opr_onbekend": "Nothing on the scale. Tip: count your missed calls for a week.",
     "ber_avond": "On the scale: questions while you're closed. On the other side: the AI chatbot, +€50 per month.",
     "ber_werk_bericht": "On the scale: messages every day while you work. On the other side: the AI chatbot, +€50 per month.",
     "ber_werk": "On the edge: messages every day, mostly during the day. We'll discuss the AI chatbot together; not in the price.",
     "ber_paar": "You answer those yourself from one inbox. No AI chatbot needed. Saves €50 per month.",
     "ber_zelden": "No AI chatbot: few messages come in. Saves €50 per month.",
-    "inb_on": "On the scale: {need}. Included in Digital Growth, at no extra cost.",
+    "inb_on": "On the scale: {need}. Included in Online Growth, at no extra cost.",
     "inb_off": "Off the scale: {need}.",
     "inb_niets": "Nothing, that's already fine. Doesn't count.",
     "inb_cleared": "Nothing, that's already fine. The other ticks have been cleared.",
-    "doel_klanten": "On the scale: more customers who find you. Included in Digital Growth: website, Google profile, campaigns and landing pages.",
-    "doel_eenplek": "On the scale: too many separate tools. Digital Growth puts everything on one platform.",
-    "doel_intern": "AI Consulting doesn't go on the scale: it's tailored work, on request.",
-    "doel_horen": "No rush. The call is without obligation."
+    "doel_klanten": "On the scale: more customers who find you. Included in Online Growth: website, Google profile, campaigns and landing pages.",
+    "doel_eenplek": "On the scale: too many separate tools. Online Growth puts everything on one platform.",
+    "doel_intern": "AI Consulting doesn't go on the scale: it's guidance, not a package. Introductory price: €200 a month.",
+    "doel_horen": "No rush. The demo is without obligation.",
+    "doel_team": "EML AI Team does not go on the scale: it is a custom AI team with fixed packages."
   },
   "ribs": [
     "Website",
@@ -394,7 +406,7 @@
     "Reputation",
     "CRM & inbox",
     "Campaigns",
-    "Funnels",
+    "Landing pages",
     "Payments",
     "Automation",
     "Platform"
@@ -404,61 +416,71 @@
     "h": {
       "C": [
         "Our advice: ",
-        "Digital Growth",
+        "Online Growth",
         "."
       ],
       "C_chat": [
         "Our advice: ",
-        "Digital Growth",
+        "Online Growth",
         " with the AI chatbot."
       ],
       "C_recep": [
         "Our advice: ",
-        "Digital Growth",
+        "Online Growth",
         " with the AI receptionist."
       ],
       "C_both": [
         "Our advice: ",
-        "Digital Growth",
+        "Online Growth",
         " with the AI chatbot and the AI receptionist."
       ],
       "A": [
         "Our advice: ",
         "AI Consulting",
-        ", on request."
+        "."
       ],
       "B": [
         "Our advice: start with ",
         "AI Consulting",
-        ". Digital Growth for the front of house."
+        ". Online Growth for the front of house."
       ],
       "D": [
         "Weighed up honestly: you don't need us ",
         "right now",
         "."
+      ],
+      "E": [
+        "Our advice: ",
+        "EML AI Team",
+        ", starting with a free analysis."
+      ],
+      "F": [
+        "Our advice: start with ",
+        "EML AI Team",
+        ". Online Growth for the front end."
       ]
     },
     "voor": "For your {woord}",
     "voor_naam": "For {naam}",
-    "opbouw_dg": "{p} Digital Growth",
+    "opbouw_dg": "{p} Online Growth",
     "opbouw_chat": "{p} AI chatbot",
     "opbouw_recep": "{p} AI receptionist",
-    "opbouw_cons": "AI Consulting on request",
+    "opbouw_cons": "AI Consulting, €200 a month",
     "mono": "cancellable monthly · usually live within 14 days",
     "alt": "or {p} per month if we decide together that the {x} is needed",
-    "on_request": "On request",
-    "cons_txt": "No standard package. We analyse how you work, make a personal AI plan, guide the set-up and optimise every month. Deliberately limited availability.",
-    "b_txt": "Your answers also show work at the front of house ({needs}). For that: {list}, {p} per month. What comes first, we'll look at in the same call.",
-    "d_txt": "Your answers don't ask for anything you don't already have. Keep your {p} per month. Still want to take a look together? The call is free and without obligation.",
+    "on_request": "€200 a month (introductory price)",
+    "cons_txt": "About two sessions a month, support via WhatsApp and a plan every quarter. We don't implement it for you: we teach you to use AI in your own work. Introductory price: €200 a month (excl. VAT), cancellable monthly. We've just launched AI Consulting: this price only applies for a short time and will go up soon.",
+    "b_txt": "Your answers also show work at the front of house ({needs}). For that: {list}, {p} per month{once}. What comes first, we'll look at in the same demo.",
+    "d_txt": "Your answers don't ask for anything you don't already have. Keep your {p} per month. Still want to take a look together? The demo is free and without obligation.",
     "why_h": "Why this",
     "not_h": "What we don't recommend",
     "talk_h": "To discuss",
     "said": "You said:",
     "proof_pre": "Measured at Clinic3D in Hasselt, over 263 days:",
     "proof_link": "Read the case",
-    "incl_h": "Also in Digital Growth, at no extra cost",
+    "incl_h": "Also in Online Growth, at no extra cost",
     "try_h": "Try it yourself",
-    "try_txt": "Add or remove something yourself. The scale and the price follow.",
+    "try_txt": "Add or remove something yourself. The scale and the price follow, excl. VAT.",
     "advice_label": "Our advice",
     "own_label": "Your choice",
     "dev": "You're going against our advice. No problem, we'll talk it through.",
@@ -466,8 +488,8 @@
     "heavy": "Heavier than your business needs: {p} per month that we don't recommend.",
     "light": "Lighter than your business needs: then work gets left undone.",
     "doubt_on": "Possible. We'll discuss it.",
-    "talk_cta_h": "Your call, prepared",
-    "book": "Book your free call (30 min)",
+    "talk_cta_h": "Your demo, prepared",
+    "book": "Book your free demo (30 min)",
     "book_micro": "We'll put your weighing slip on your clipboard. Feel free to paste it into your booking, or send it on WhatsApp.",
     "wa": "Send your slip on WhatsApp",
     "wa_micro": "You send it yourself. Until then we see nothing.",
@@ -481,12 +503,18 @@
     "edit_h": "Change your answers",
     "again": "Weigh again",
     "popup_note": "Your weighing slip is on your clipboard · {advies}",
-    "popup_note_fail": "You can also send your weighing slip on WhatsApp."
+    "popup_note_fail": "You can also send your weighing slip on WhatsApp.",
+    "opbouw_eml": "EML AI Team: free analysis",
+    "eml_price": "From €3,500 + €750 a month",
+    "eml_txt": "A custom AI team, with AI employees per department that you steer via Telegram. First a free analysis of your processes, then a proposal with the right package. Fixed 12-month contract, prices excl. VAT.",
+    "eml_link": "See EML AI Team and the packages",
+    "eml_href": "eml-ai-team",
+    "vat": "excl. VAT"
   },
   "why": {
     "recep": [
       "You miss a call every day {werk}.",
-      "The AI receptionist answers every call, day and night, books appointments into your calendar and introduces herself as a digital assistant."
+      "The AI receptionist answers your phone day and night, books appointments into your calendar and introduces herself as a digital assistant."
     ],
     "chat_avond": [
       "Messages come in every day, also in the evening and at weekends.",
@@ -530,7 +558,7 @@
     ],
     "klanten": [
       "You mainly want more customers who find you and book.",
-      "A fast, mobile, SEO-ready website, your Google Business Profile and local visibility, plus email and text campaigns and landing pages."
+      "A fast website that Google can read well, your Google profile and your visibility, plus email and text campaigns and landing pages."
     ],
     "eenplek": [
       "You want everything in one place.",
@@ -538,26 +566,28 @@
     ]
   },
   "not": {
-    "recep_zelden": "AI receptionist: you hardly ever miss a call. Saves {p} per month.",
-    "recep_week": "AI receptionist: you miss a call now and then, but your customers don't mainly book by phone. Your phone is part of your inbox. Saves {p} per month.",
+    "recep_zelden": "AI receptionist: you hardly ever miss a call. Saves {p} per month and €750 one-off.",
+    "recep_week": "AI receptionist: you miss a call now and then, but your customers don't mainly book by phone. Your phone is part of your inbox. Saves {p} per month and €750 one-off.",
     "recep_onbekend": "AI receptionist: we'll only know once you've counted your missed calls for a week. Not counted for now.",
     "chat_zelden": "AI chatbot: few messages come in. Saves {p} per month.",
     "chat_paar": "AI chatbot: you answer a few messages a week yourself from one inbox. Saves {p} per month.",
-    "cons": "AI Consulting: meant for businesses that already run well and want AI in how they work internally. That's not what you chose."
+    "cons": "AI Consulting: meant for businesses that already run well and want to learn to use AI themselves. That's not what you chose."
   },
   "talk": {
-    "recep": "AI receptionist: your customers call and you miss a few calls a week. Whether that's worth {p} per month, we'll decide together.",
+    "recep": "AI receptionist: your customers call and you miss a few calls a week. Whether that's worth {p} per month and €750 one-off, we'll decide together.",
     "chat": "AI chatbot: messages every day, mostly during opening hours. During the day you can also answer them later from your inbox. Whether the chatbot makes the difference, we'll look at together.",
-    "tel": "Count your missed calls for a week before the call.",
+    "tel": "Count your missed calls for a week before the demo.",
     "agenda": "Which calendar do you use now, and what do we do with it?",
-    "volgorde": "What comes first: AI Consulting or Digital Growth."
+    "volgorde": "What comes first: AI Consulting or Online Growth.",
+    "volgorde_eml": "What comes first: EML AI Team or Online Growth."
   },
   "talk_short": {
     "recep": "AI receptionist",
     "chat": "AI chatbot",
     "tel": "counting missed calls",
     "agenda": "current calendar",
-    "volgorde": "order of AI Consulting and Digital Growth"
+    "volgorde": "order of AI Consulting and Online Growth",
+    "volgorde_eml": "order of EML AI Team and Online Growth"
   },
   "proof": {
     "afspraken": "650 of 681 appointments confirmed, 0 no-shows.",
@@ -578,16 +608,19 @@
     "zelf": "Own adjustment: {v} ({p} per month)",
     "adv_C": "{list}, {p} per month",
     "adv_doubt": " ({x} to discuss)",
-    "adv_A": "AI Consulting (on request)",
-    "adv_B": "AI Consulting (on request) + Digital Growth, {p} per month",
+    "adv_A": "AI Consulting (€200 a month, introductory price)",
+    "adv_B": "AI Consulting (€200 a month) + Online Growth, {p} a month",
     "adv_D": "nothing right now",
-    "and": " + "
+    "and": " + ",
+    "adv_E": "EML AI Team (free analysis, packages from €3,500 + €750 a month)",
+    "adv_F": "EML AI Team (free analysis) + Online Growth, {p} a month"
   },
   "wa": {
     "hallo": "Hello EM Launchpad, I did the package finder on your site.",
-    "slot": "Can we have a 30-minute call?",
-    "slot_cons": "I'm interested in AI Consulting. Can we have a 30-minute call?",
-    "generic": "Hello EM Launchpad, I have a question about your packages."
+    "slot": "Can we book a free demo?",
+    "slot_cons": "I'm interested in AI Consulting. Can we book a free demo?",
+    "generic": "Hello EM Launchpad, I have a question about your packages.",
+    "slot_eml": "I'm interested in EML AI Team. Can we book a free demo?"
   },
   "sections": {
     "weights": {
@@ -595,12 +628,12 @@
       "h2a": "What can go on",
       "h2b": "the scale.",
       "lede": "One block and two separate weights. What we put against your answers always comes from this list.",
-      "g1": "Digital Growth",
-      "g1_sub": "One block, nine ribs. €150 per month, cancellable monthly.",
+      "g1": "Online Growth",
+      "g1_sub": "One block, nine ribs. €150 per month, excl. VAT, cancellable monthly.",
       "items": [
         {
           "t": "Website",
-          "d": "Fast, mobile and SEO-ready, with an online booking system (calendar) and forms.",
+          "d": "Fast on mobile and built so Google can read it well, with an online booking system (calendar) and forms.",
           "links": [
             [
               "Websites",
@@ -613,15 +646,15 @@
           ]
         },
         {
-          "t": "Google Business Profile",
+          "t": "Google profile and visibility",
           "d": "Fully filled in and kept up to date, for local visibility."
         },
         {
-          "t": "Reputation management",
+          "t": "Reviews on Google",
           "d": "2 hours after every appointment a review request goes out by text or email, automatically."
         },
         {
-          "t": "CRM & customer dashboard",
+          "t": "CRM and customer dashboard",
           "d": "WhatsApp, Instagram, email, text and phone in one inbox."
         },
         {
@@ -629,15 +662,15 @@
           "d": "Targeted campaigns to your own customer list."
         },
         {
-          "t": "Funnels and landing pages",
+          "t": "Landing pages",
           "d": "Pages for a promotion or an ad, linked straight to your CRM."
         },
         {
-          "t": "Online payments and invoicing",
+          "t": "Online payments and invoices",
           "d": "Stripe, Bancontact, iDEAL, Visa and Apple Pay. An automatic invoice after every payment, and reminders for unpaid invoices."
         },
         {
-          "t": "AI automation and workflows",
+          "t": "Smart workflows",
           "d": "Follow-up, reminders, review requests and CRM updates run by themselves.",
           "links": [
             [
@@ -647,22 +680,25 @@
           ]
         },
         {
-          "t": "Access to the platform",
+          "t": "Access to our platform",
           "d": "Everything in one dashboard, without separate subscriptions."
         }
       ],
       "g2": "Two separate weights",
-      "g2_sub": "Only when your business needs them. Always on top of Digital Growth.",
+      "g2_sub": "Only when your business needs them. Always on top of Online Growth.",
       "chat_d": "Answers questions and books appointments, 24/7, on your website, WhatsApp, Instagram and Messenger.",
       "chat_href": "AI%20Chatbots",
       "chat_more": "More about the AI chatbot",
-      "recep_d": "Answers every call, day and night, books appointments into your calendar and introduces herself as a digital assistant.",
+      "recep_d": "Answers your phone day and night, books appointments into your calendar and introduces herself as a digital assistant.",
       "recep_href": "AI%20Voice%20Agents",
       "recep_more": "More about the AI receptionist",
       "g3": "Doesn't go on the scale",
-      "cons_d": "On request and deliberately limited. For businesses that already run well and want AI in how they work internally: an analysis, a personal AI plan, guidance with the set-up and monthly optimisation.",
+      "cons_d": "Introductory price: €200 a month (excl. VAT), cancellable monthly. We've just launched AI Consulting: this price only applies for a short time and will go up soon. About two sessions a month, support via WhatsApp and a plan every quarter. We don't implement it for you: we teach you to use AI in your own work.",
       "cons_href": "Diensten#pakket-2",
-      "cons_more": "More about AI Consulting"
+      "cons_more": "More about AI Consulting",
+      "eml_d": "A custom AI team for businesses with a team: AI employees per department, steered via Telegram. Free analysis, packages from €3,500 + €750 a month, fixed 12-month contract.",
+      "eml_href": "eml-ai-team",
+      "eml_more": "More about EML AI Team"
     },
     "rules": {
       "eyebrow": "How we weigh",
@@ -678,11 +714,11 @@
         ],
         [
           "Customers book by phone or by message",
-          "Digital Growth: an online calendar in your website and one inbox."
+          "Online Growth: an online calendar in your website and one inbox."
         ],
         [
           "You miss a call every day",
-          "AI receptionist, +€125 per month."
+          "AI receptionist, +€150 a month and €750 one-off."
         ],
         [
           "You miss a few calls a week and your customers mostly call",
@@ -718,11 +754,15 @@
         ],
         [
           "Reviews, invoices, reminders or separate channels slip through",
-          "Included in Digital Growth, at no extra cost."
+          "Included in Online Growth, at no extra cost."
         ],
         [
-          "You want AI in how you work internally",
-          "AI Consulting, on request."
+          "You want to learn to use AI yourself",
+          "AI Consulting, €200 a month (introductory price)."
+        ],
+        [
+          "Your business has a team and you want AI employees",
+          "EML AI Team, beside the scale: free analysis, packages from €3,500 + €750 a month."
         ],
         [
           "None of the above",
@@ -730,7 +770,7 @@
         ],
         [
           "Always",
-          "An add-on comes on top of Digital Growth."
+          "An add-on comes on top of Online Growth."
         ]
       ]
     },
@@ -738,26 +778,27 @@
       "eyebrow": "Four prices",
       "h2a": "Four prices,",
       "h2b": "nothing more.",
-      "lede": "Per month and cancellable monthly. AI Consulting is on request.",
+      "lede": "Per month, excl. VAT and cancellable monthly. With the AI receptionist there's a one-off €750 on top. AI Consulting: €200 a month (introductory price).",
       "items": [
         {
           "p": 150,
-          "t": "Digital Growth"
+          "t": "Online Growth"
         },
         {
           "p": 200,
           "t": "with the AI chatbot"
         },
         {
-          "p": 275,
-          "t": "with the AI receptionist"
+          "p": 300,
+          "t": "with the AI receptionist (+ €750 one-off)"
         },
         {
-          "p": 325,
-          "t": "with both"
+          "p": 350,
+          "t": "with both (+ €750 one-off)"
         }
       ],
-      "cons": "AI Consulting: on request."
+      "cons": "AI Consulting: €200 a month, introductory price.",
+      "eml": "EML AI Team: from €3,500 + €750 a month, with a free analysis. Fixed 12-month contract."
     },
     "proof": {
       "eyebrow": "Weighed in practice",
@@ -798,7 +839,7 @@
       "h2b": "next.",
       "items": [
         [
-          "A free call",
+          "A free demo",
           "30 minutes, without obligation. Bring your weighing slip and we'll start where you left off."
         ],
         [
@@ -818,19 +859,19 @@
       "items": [
         {
           "q": "Do I have to take everything?",
-          "a": "Digital Growth is one package with all nine parts, for €150 per month. We only recommend the AI chatbot and the AI receptionist when your answers call for them."
+          "a": "Online Growth is one package with all nine parts, for €150 per month, excl. VAT. We only recommend the AI chatbot and the AI receptionist when your answers call for them."
         },
         {
-          "q": "Can I take an add-on without Digital Growth?",
-          "a": "No. The AI chatbot and the AI receptionist always come on top of Digital Growth. That's why there are only four prices: €150, €200, €275 and €325 per month."
+          "q": "Can I take an add-on without Online Growth?",
+          "a": "No. The AI chatbot and the AI receptionist always come on top of Online Growth. That's why there are only four prices: €150, €200, €300 and €350 a month, excl. VAT. With the AI receptionist there's a one-off €750 on top."
         },
         {
           "q": "What if I don't need anything?",
-          "a": "Then we'll say so. Sometimes our advice is: nothing right now. The call stays free and without obligation."
+          "a": "Then we'll say so. Sometimes our advice is: nothing right now. The demo stays free and without obligation."
         },
         {
           "q": "Is the advice binding?",
-          "a": "No. It's a first estimate based on your answers. In the free 30-minute call we look at it together."
+          "a": "No. It's a first estimate based on your answers. In the free 30-minute demo we look at it together."
         },
         {
           "q": "Where are your reviews?",
@@ -842,7 +883,11 @@
         },
         {
           "q": "How quickly is everything up and running?",
-          "a": "You're usually live within 14 days. Digital Growth is cancellable monthly."
+          "a": "You're usually live within 14 days. Online Growth is cancellable monthly."
+        },
+        {
+          "q": "And if my business has a team?",
+          "a": "Then EML AI Team may fit: a custom AI team, with AI employees per department. The analysis is free. Packages start at €3,500 one-off + €750 a month, excl. VAT, with a fixed 12-month contract. At the last question, choose: AI employees for my team."
         }
       ]
     },
@@ -851,8 +896,8 @@
       "h2b": "together?",
       "h2a_r": "Your slip is",
       "h2b_r": "ready.",
-      "text": "A free 30-minute call. Without obligation, and you don't need to prepare anything.",
-      "btn": "Book a free call",
+      "text": "A free 30-minute demo. Without obligation, and you don't need to prepare anything.",
+      "btn": "Book a free demo",
       "wa": "Send a WhatsApp",
       "badges": [
         "30 minutes",

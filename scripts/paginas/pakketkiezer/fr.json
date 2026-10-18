@@ -51,9 +51,9 @@
   ],
   "eur": "{n} €",
   "meta": {
-    "title": "Choix du pack : quel pack pour votre entreprise ? | EM Launchpad",
+    "title": "Choix du pack : quel pack vous convient ? | EM Launchpad",
     "ogtitle": "Choix du pack : pesé honnêtement | EM Launchpad",
-    "desc": "Six questions courtes sur votre entreprise, et vous recevez un conseil honnête : Croissance digitale (150 € par mois), avec le chatbot IA ou la réceptionniste IA seulement si c'est utile. Avec ce que nous ne conseillons pas, et pourquoi."
+    "desc": "Six questions et un conseil honnête : Croissance en ligne dès 150 € par mois HTVA, Consulting IA, ou EML AI Team pour les entreprises avec une équipe."
   },
   "crumbs": [
     "Accueil",
@@ -68,7 +68,7 @@
     "h1b": "Pesé honnêtement.",
     "lede": "Six questions courtes sur votre entreprise. À chaque réponse, vous voyez ce que nous mettons en face, ce que nous laissons de côté et ce que cela coûte par mois.",
     "facts": "Six questions · pas d'adresse e-mail · vos réponses restent sur votre appareil",
-    "figcap": "Une balance de comptoir. À gauche, votre entreprise pose ce dont elle a besoin ; à droite, nous mettons ce qui y répond : Croissance digitale (150 € par mois) et, seulement si c'est nécessaire, le chatbot IA (+50 €) ou la réceptionniste IA (+125 €).",
+    "figcap": "Une balance de comptoir. À gauche, votre entreprise pose ce dont elle a besoin ; à droite, nous mettons ce qui y répond : Croissance en ligne (150 € par mois) et, seulement si c'est nécessaire, le chatbot IA (+50 €) ou la réceptionniste IA (+150 €, plus 750 € une fois). Prix HTVA.",
     "noscript": "Sans JavaScript, la balance ne bouge pas. Pour chaque réponse, vous lisez quand même ce qu'elle signifie, et vous trouverez plus bas exactement comment nous pesons.",
     "start": "Répondez, et regardez ce qui se passe."
   },
@@ -83,7 +83,7 @@
     "off_h": "Pas sur la balance",
     "empty": "Rien pour l'instant.",
     "per_month": "par mois",
-    "per_month_caps": "PAR MOIS",
+    "per_month_caps": "PAR MOIS · HTVA",
     "zit_erin": "INCLUS",
     "dash": "—",
     "sum": "Sur la balance : {n} · {p}",
@@ -91,13 +91,13 @@
     "welcome_q": "Bon retour, vous étiez à la question {n}.",
     "welcome_r": "Bon retour, votre conseil est prêt.",
     "restart": "Recommencer",
-    "dg": "Croissance digitale",
+    "dg": "Croissance en ligne",
     "chat": "chatbot IA",
     "recep": "réceptionniste IA",
     "cons": "Consulting IA",
-    "on_request": "sur demande",
-    "tag_dg": "CROISSANCE DIGITALE",
-    "tag_cons": "CONSULTING IA · SUR DEMANDE",
+    "on_request": "200 € par mois (prix d'introduction)",
+    "tag_dg": "CROISSANCE EN LIGNE",
+    "tag_cons": "CONSULTING IA · 200 € PAR MOIS",
     "note_count": "comptez vos appels manqués une semaine",
     "note_leave": "on laisse de côté",
     "note_talk": "on en parle",
@@ -108,16 +108,21 @@
     "catch_dg_sub": "Pour vous : {ribs}",
     "catch_dg_base": "Les neuf éléments sont inclus.",
     "catch_maybe": "éventuellement {p}",
-    "off_recep": "Réceptionniste IA · on laisse de côté (vous économisez {p})",
+    "off_recep": "Réceptionniste IA · on laisse de côté (vous économisez {p} par mois et 750 € une fois)",
     "off_chat": "Chatbot IA · on laisse de côté (vous économisez {p})",
     "off_cons": "Consulting IA · ne va pas sur la balance",
-    "cons_side": "Consulting IA · sur demande, à côté de la balance",
+    "cons_side": "Consulting IA · 200 € par mois, à côté de la balance",
     "total_live": "Total : {p} par mois.",
     "total_none": "Rien dans le prix pour l'instant.",
     "euro_word": "euros",
     "plus_word": "plus",
     "chat_le": "le chatbot IA",
-    "recep_le": "la réceptionniste IA"
+    "recep_le": "la réceptionniste IA",
+    "once": "+ 750 € une fois",
+    "eml": "EML AI Team",
+    "tag_eml": "EML AI TEAM · DÈS 3 500 €",
+    "eml_side": "EML AI Team · analyse gratuite, à côté de la balance",
+    "eml_from": "dès 3 500 €"
   },
   "gen": {
     "woord": "entreprise",
@@ -189,19 +194,19 @@
           "c": "bel",
           "label": "Ils appellent",
           "kort": "ils appellent",
-          "eff": "Des rendez-vous par téléphone. En face : Croissance digitale, avec un agenda en ligne sur votre site et des rappels qui partent tout seuls."
+          "eff": "Des rendez-vous par téléphone. En face : Croissance en ligne, avec un agenda en ligne sur votre site et des rappels qui partent tout seuls."
         },
         {
           "c": "bericht",
           "label": "Par message (WhatsApp, Instagram, Messenger ou e-mail)",
           "kort": "par message",
-          "eff": "Des rendez-vous par message. En face : Croissance digitale, avec un agenda en ligne et une seule boîte de réception pour WhatsApp, Instagram, e-mail et SMS."
+          "eff": "Des rendez-vous par message. En face : Croissance en ligne, avec un agenda en ligne et une seule boîte de réception pour WhatsApp, Instagram, e-mail et SMS."
         },
         {
           "c": "online",
           "label": "En ligne, via un agenda que j'ai déjà",
           "kort": "en ligne, agenda existant",
-          "eff": "Votre agenda tourne déjà. Cela ne compte pas ; pendant l'appel, nous verrons ce que vous voulez en faire."
+          "eff": "Votre agenda tourne déjà. Cela ne compte pas ; pendant la démo, nous verrons ce que vous voulez en faire."
         },
         {
           "c": "binnen",
@@ -221,7 +226,7 @@
           "c": "dag",
           "label": "Tous les jours, de temps en temps",
           "kort": "tous les jours, de temps en temps",
-          "eff": "En face, nous mettons la réceptionniste IA : +125 € par mois, en plus de Croissance digitale. Elle répond à chaque appel, jour et nuit."
+          "eff": "En face, nous mettons la réceptionniste IA : +150 € par mois en plus de Croissance en ligne, plus 750 € une fois. Elle répond au téléphone pour vous, jour et nuit."
         },
         {
           "c": "week",
@@ -233,13 +238,13 @@
           "c": "zelden",
           "label": "Presque jamais",
           "kort": "presque jamais",
-          "eff": "Pas besoin de réceptionniste IA. Vous économisez 125 € par mois."
+          "eff": "Pas besoin de réceptionniste IA. Vous économisez 150 € par mois et 750 € une fois."
         },
         {
           "c": "onbekend",
           "label": "Aucune idée",
           "kort": "aucune idée",
-          "eff": "Alors nous ne les comptons pas. Avant l'appel, comptez vos appels manqués pendant une semaine."
+          "eff": "Alors nous ne les comptons pas. Avant la démo, comptez vos appels manqués pendant une semaine."
         }
       ]
     },
@@ -285,25 +290,25 @@
           "c": "reviews",
           "label": "Demander un avis",
           "kort": "demander un avis",
-          "eff": "Inclus dans Croissance digitale : 2 heures après chaque rendez-vous, une demande d'avis part automatiquement par SMS ou e-mail."
+          "eff": "Inclus dans Croissance en ligne : 2 heures après chaque rendez-vous, une demande d'avis part automatiquement par SMS ou e-mail."
         },
         {
           "c": "facturen",
           "label": "Faire les factures et relancer les paiements",
           "kort": "factures et paiements",
-          "eff": "Inclus dans Croissance digitale : paiement en ligne, une facture automatique après chaque paiement, et des rappels pour les factures impayées."
+          "eff": "Inclus dans Croissance en ligne : paiement en ligne, une facture automatique après chaque paiement, et des rappels pour les factures impayées."
         },
         {
           "c": "herinneren",
           "label": "Rappeler leur rendez-vous aux clients",
           "kort": "rappeler les clients",
-          "eff": "Inclus dans Croissance digitale : le suivi et les rappels tournent tout seuls grâce à vos workflows."
+          "eff": "Inclus dans Croissance en ligne : le suivi et les rappels tournent tout seuls grâce à vos workflows."
         },
         {
           "c": "kanalen",
           "label": "Suivre WhatsApp, Instagram et l'e-mail séparément",
           "kort": "messages sur des canaux séparés",
-          "eff": "Inclus dans Croissance digitale : WhatsApp, Instagram, e-mail, SMS et téléphone dans une seule boîte de réception."
+          "eff": "Inclus dans Croissance en ligne : WhatsApp, Instagram, e-mail, SMS et téléphone dans une seule boîte de réception."
         },
         {
           "c": "niets",
@@ -323,25 +328,31 @@
           "c": "klanten",
           "label": "Plus de clients qui me trouvent et réservent",
           "kort": "plus de clients qui me trouvent et réservent",
-          "eff": "Inclus dans Croissance digitale : un site rapide, votre profil Google, des campagnes et des landing pages."
+          "eff": "Inclus dans Croissance en ligne : un site rapide, votre profil Google, des campagnes et des landing pages."
         },
         {
           "c": "eenplek",
           "label": "Tout au même endroit, moins d'outils séparés",
           "kort": "tout au même endroit",
-          "eff": "Inclus dans Croissance digitale : site, agenda, boîte de réception, campagnes et paiements sur une seule plateforme, pour un seul prix mensuel."
+          "eff": "Inclus dans Croissance en ligne : site, agenda, boîte de réception, campagnes et paiements sur une seule plateforme, pour un seul prix mensuel."
         },
         {
           "c": "intern",
-          "label": "Mon entreprise tourne bien : je veux de l'IA dans mon fonctionnement interne",
-          "kort": "de l'IA dans mon fonctionnement interne",
-          "eff": "C'est le Consulting IA : du sur-mesure, sur demande. Il ne va pas sur la balance."
+          "label": "Mon entreprise tourne bien : je veux apprendre à utiliser l'IA moi-même",
+          "kort": "apprendre à utiliser l'IA moi-même",
+          "eff": "C'est le Consulting IA : nous vous apprenons à utiliser l'IA dans votre propre travail, pour 200 € par mois (prix d'introduction). Il ne va pas sur la balance."
+        },
+        {
+          "c": "team",
+          "label": "Mon entreprise a une équipe : je veux des employés IA qui partagent le travail",
+          "kort": "des employés IA pour mon équipe",
+          "eff": "C'est EML AI Team : une équipe IA sur mesure, avec une analyse gratuite. Packs à partir de 3 500 € + 750 € par mois. Elle ne va pas sur la balance."
         },
         {
           "c": "horen",
           "label": "D'abord savoir ce qui est possible",
           "kort": "d'abord savoir ce qui est possible",
-          "eff": "Rien ne presse. L'appel est gratuit et sans engagement."
+          "eff": "Rien ne presse. La démo est gratuite et sans engagement."
         }
       ]
     }
@@ -365,28 +376,29 @@
   },
   "fb": {
     "vak": "Votre métier ne change pas le conseil, seulement les exemples.",
-    "boek_bel": "Sur la balance : des rendez-vous par téléphone. En face : Croissance digitale, avec un agenda en ligne sur votre site.",
-    "boek_bericht": "Sur la balance : des rendez-vous par message. En face : Croissance digitale, avec un agenda en ligne et une seule boîte de réception.",
+    "boek_bel": "Sur la balance : des rendez-vous par téléphone. En face : Croissance en ligne, avec un agenda en ligne sur votre site.",
+    "boek_bericht": "Sur la balance : des rendez-vous par message. En face : Croissance en ligne, avec un agenda en ligne et une seule boîte de réception.",
     "boek_online": "Votre agenda tourne déjà. Cela ne compte pas.",
     "boek_binnen": "Pas besoin de rendez-vous. Cela ne compte pas.",
-    "opr_dag": "Sur la balance : des appels manqués tous les jours {werk}. En face : la réceptionniste IA, +125 € par mois.",
+    "opr_dag": "Sur la balance : des appels manqués tous les jours {werk}. En face : la réceptionniste IA, +150 € par mois, plus 750 € une fois.",
     "opr_week_bel": "À la limite : vos clients appellent et vous manquez parfois un appel. Nous parlons ensemble de la réceptionniste IA ; pas dans le prix.",
-    "opr_week": "Pas de réceptionniste IA : votre téléphone fait partie de votre boîte de réception, avec WhatsApp, Instagram, e-mail et SMS. Vous économisez 125 € par mois.",
-    "opr_zelden": "Pas de réceptionniste IA : vous ne manquez presque jamais un appel. Vous économisez 125 € par mois.",
+    "opr_week": "Pas de réceptionniste IA : votre téléphone fait partie de votre boîte de réception, avec WhatsApp, Instagram, e-mail et SMS. Vous économisez 150 € par mois et 750 € une fois.",
+    "opr_zelden": "Pas de réceptionniste IA : vous ne manquez presque jamais un appel. Vous économisez 150 € par mois et 750 € une fois.",
     "opr_onbekend": "Rien sur la balance. Astuce : comptez vos appels manqués pendant une semaine.",
     "ber_avond": "Sur la balance : des questions quand vous êtes fermé. En face : le chatbot IA, +50 € par mois.",
     "ber_werk_bericht": "Sur la balance : des messages tous les jours pendant que vous travaillez. En face : le chatbot IA, +50 € par mois.",
     "ber_werk": "À la limite : des messages tous les jours, surtout en journée. Nous parlons ensemble du chatbot IA ; pas dans le prix.",
     "ber_paar": "Vous y répondez vous-même depuis une seule boîte de réception. Pas besoin de chatbot IA. Vous économisez 50 € par mois.",
     "ber_zelden": "Pas de chatbot IA : vous recevez peu de messages. Vous économisez 50 € par mois.",
-    "inb_on": "Sur la balance : {need}. Inclus dans Croissance digitale, sans supplément.",
+    "inb_on": "Sur la balance : {need}. Inclus dans Croissance en ligne, sans supplément.",
     "inb_off": "Retiré de la balance : {need}.",
     "inb_niets": "Rien, ça roule déjà. Cela ne compte pas.",
     "inb_cleared": "Rien, ça roule déjà. Les autres cases ont été décochées.",
-    "doel_klanten": "Sur la balance : plus de clients qui vous trouvent. Inclus dans Croissance digitale : site, profil Google, campagnes et landing pages.",
-    "doel_eenplek": "Sur la balance : trop d'outils séparés. Croissance digitale met tout sur une seule plateforme.",
-    "doel_intern": "Le Consulting IA ne va pas sur la balance : c'est du sur-mesure, sur demande.",
-    "doel_horen": "Rien ne presse. L'appel est sans engagement."
+    "doel_klanten": "Sur la balance : plus de clients qui vous trouvent. Inclus dans Croissance en ligne : site, profil Google, campagnes et landing pages.",
+    "doel_eenplek": "Sur la balance : trop d'outils séparés. Croissance en ligne met tout sur une seule plateforme.",
+    "doel_intern": "Le Consulting IA ne va pas sur la balance : c'est un accompagnement, pas un pack. Prix d'introduction : 200 € par mois.",
+    "doel_horen": "Rien ne presse. La démo est sans engagement.",
+    "doel_team": "EML AI Team ne va pas sur la balance : c'est une équipe IA sur mesure, avec des packs fixes."
   },
   "ribs": [
     "Site web",
@@ -394,7 +406,7 @@
     "Réputation",
     "CRM et boîte",
     "Campagnes",
-    "Funnels",
+    "Landing pages",
     "Paiements",
     "Automatisation",
     "Plateforme"
@@ -404,61 +416,71 @@
     "h": {
       "C": [
         "Notre conseil : ",
-        "Croissance digitale",
+        "Croissance en ligne",
         "."
       ],
       "C_chat": [
         "Notre conseil : ",
-        "Croissance digitale",
+        "Croissance en ligne",
         " avec le chatbot IA."
       ],
       "C_recep": [
         "Notre conseil : ",
-        "Croissance digitale",
+        "Croissance en ligne",
         " avec la réceptionniste IA."
       ],
       "C_both": [
         "Notre conseil : ",
-        "Croissance digitale",
+        "Croissance en ligne",
         " avec le chatbot IA et la réceptionniste IA."
       ],
       "A": [
         "Notre conseil : ",
         "le Consulting IA",
-        ", sur demande."
+        "."
       ],
       "B": [
         "Notre conseil : commencez par ",
         "le Consulting IA",
-        ". Croissance digitale pour la vitrine."
+        ". Croissance en ligne pour la vitrine."
       ],
       "D": [
         "Pesé honnêtement : vous n'avez pas besoin de nous ",
         "pour l'instant",
         "."
+      ],
+      "E": [
+        "Notre conseil : ",
+        "EML AI Team",
+        ", en commençant par une analyse gratuite."
+      ],
+      "F": [
+        "Notre conseil : commencez par ",
+        "EML AI Team",
+        ". Croissance en ligne pour la vitrine."
       ]
     },
     "voor": "Pour votre {woord}",
     "voor_naam": "Pour {naam}",
-    "opbouw_dg": "{p} Croissance digitale",
+    "opbouw_dg": "{p} Croissance en ligne",
     "opbouw_chat": "{p} chatbot IA",
     "opbouw_recep": "{p} réceptionniste IA",
-    "opbouw_cons": "Consulting IA sur demande",
+    "opbouw_cons": "Consulting IA, 200 € par mois",
     "mono": "résiliable chaque mois · en ligne en général sous 14 jours",
     "alt": "ou {p} par mois si nous décidons ensemble que {x} est nécessaire",
-    "on_request": "Sur demande",
-    "cons_txt": "Pas de pack standard. Nous analysons votre fonctionnement, établissons un plan IA personnel, accompagnons la mise en place et optimisons chaque mois. Volontairement limité.",
-    "b_txt": "Vos réponses montrent aussi du travail en vitrine ({needs}). Pour cela : {list}, {p} par mois. Ce qui vient d'abord, nous le voyons pendant le même appel.",
-    "d_txt": "Vos réponses ne demandent rien que vous n'ayez déjà. Gardez vos {p} par mois. Vous voulez quand même regarder ensemble ? L'appel est gratuit et sans engagement.",
+    "on_request": "200 € par mois (prix d'introduction)",
+    "cons_txt": "Environ deux séances par mois, un support via WhatsApp et un plan chaque trimestre. Nous ne mettons rien en place à votre place : nous vous apprenons à utiliser l'IA dans votre propre travail. Prix d'introduction : 200 € par mois HTVA, résiliable chaque mois. Nous venons de lancer le Consulting IA : ce prix ne vaut que pour une courte période et augmentera bientôt.",
+    "b_txt": "Vos réponses montrent aussi du travail en vitrine ({needs}). Pour cela : {list}, {p} par mois{once}. Ce qui vient d'abord, nous le voyons pendant la même démo.",
+    "d_txt": "Vos réponses ne demandent rien que vous n'ayez déjà. Gardez vos {p} par mois. Vous voulez quand même regarder ensemble ? La démo est gratuite et sans engagement.",
     "why_h": "Pourquoi",
     "not_h": "Ce que nous ne conseillons pas",
     "talk_h": "À discuter",
     "said": "Vous avez dit :",
     "proof_pre": "Mesuré chez Clinic3D à Hasselt, sur 263 jours :",
     "proof_link": "Lire le cas",
-    "incl_h": "Aussi dans Croissance digitale, sans supplément",
+    "incl_h": "Aussi dans Croissance en ligne, sans supplément",
     "try_h": "Essayez vous-même",
-    "try_txt": "Ajoutez ou retirez quelque chose vous-même. La balance et le prix suivent.",
+    "try_txt": "Ajoutez ou retirez quelque chose vous-même. La balance et le prix suivent, HTVA.",
     "advice_label": "Notre conseil",
     "own_label": "Votre choix",
     "dev": "Vous vous écartez de notre conseil. Pas de souci, nous en parlons.",
@@ -466,8 +488,8 @@
     "heavy": "Plus lourd que ce que votre entreprise demande : {p} par mois que nous ne vous conseillons pas.",
     "light": "Plus léger que ce que votre entreprise demande : du travail reste alors en plan.",
     "doubt_on": "Possible. Nous en parlons.",
-    "talk_cta_h": "Votre appel, préparé",
-    "book": "Réservez votre appel gratuit (30 min)",
+    "talk_cta_h": "Votre démo, préparée",
+    "book": "Planifier une démo gratuite (30 min)",
     "book_micro": "Nous copions votre ticket de pesée dans votre presse-papiers. Collez-le dans votre réservation, ou envoyez-le par WhatsApp.",
     "wa": "Envoyer votre ticket par WhatsApp",
     "wa_micro": "C'est vous qui l'envoyez. D'ici là, nous ne voyons rien.",
@@ -481,12 +503,18 @@
     "edit_h": "Modifier vos réponses",
     "again": "Peser à nouveau",
     "popup_note": "Votre ticket de pesée est dans votre presse-papiers · {advies}",
-    "popup_note_fail": "Vous pouvez aussi envoyer votre ticket de pesée par WhatsApp."
+    "popup_note_fail": "Vous pouvez aussi envoyer votre ticket de pesée par WhatsApp.",
+    "opbouw_eml": "EML AI Team : analyse gratuite",
+    "eml_price": "À partir de 3 500 € + 750 € par mois",
+    "eml_txt": "Une équipe IA sur mesure, avec des employés IA par service que vous pilotez via Telegram. D'abord une analyse gratuite de vos processus, puis une proposition avec le bon pack. Contrat fixe de 12 mois, prix HTVA.",
+    "eml_link": "Voir EML AI Team et les packs",
+    "eml_href": "eml-ai-team",
+    "vat": "HTVA"
   },
   "why": {
     "recep": [
       "Vous manquez un appel tous les jours {werk}.",
-      "La réceptionniste IA répond à chaque appel, jour et nuit, planifie les rendez-vous dans votre agenda et se présente comme assistante numérique."
+      "La réceptionniste IA répond au téléphone jour et nuit, planifie les rendez-vous dans votre agenda et se présente comme assistante numérique."
     ],
     "chat_avond": [
       "Vous recevez des messages tous les jours, aussi le soir et le week-end.",
@@ -530,7 +558,7 @@
     ],
     "klanten": [
       "Vous voulez surtout plus de clients qui vous trouvent et réservent.",
-      "Un site rapide, mobile et prêt pour le SEO, votre profil Google Business et votre visibilité locale, plus des campagnes e-mail et SMS et des landing pages."
+      "Un site rapide que Google lit bien, votre profil Google et votre visibilité, plus des campagnes e-mail et SMS et des landing pages."
     ],
     "eenplek": [
       "Vous voulez tout au même endroit.",
@@ -538,26 +566,28 @@
     ]
   },
   "not": {
-    "recep_zelden": "Réceptionniste IA : vous ne manquez presque jamais un appel. Vous économisez {p} par mois.",
-    "recep_week": "Réceptionniste IA : vous manquez parfois un appel, mais vos clients ne réservent pas surtout par téléphone. Votre téléphone fait partie de votre boîte de réception. Vous économisez {p} par mois.",
+    "recep_zelden": "Réceptionniste IA : vous ne manquez presque jamais un appel. Vous économisez {p} par mois et 750 € une fois.",
+    "recep_week": "Réceptionniste IA : vous manquez parfois un appel, mais vos clients ne réservent pas surtout par téléphone. Votre téléphone fait partie de votre boîte de réception. Vous économisez {p} par mois et 750 € une fois.",
     "recep_onbekend": "Réceptionniste IA : nous le saurons quand vous aurez compté vos appels manqués pendant une semaine. Pas compté pour l'instant.",
     "chat_zelden": "Chatbot IA : vous recevez peu de messages. Vous économisez {p} par mois.",
     "chat_paar": "Chatbot IA : quelques messages par semaine, vous y répondez vous-même depuis une seule boîte de réception. Vous économisez {p} par mois.",
-    "cons": "Consulting IA : pensé pour les entreprises qui tournent déjà bien et veulent de l'IA dans leur fonctionnement interne. Ce n'est pas ce que vous avez choisi."
+    "cons": "Consulting IA : pensé pour les entreprises qui tournent déjà bien et veulent apprendre à utiliser l'IA elles-mêmes. Ce n'est pas ce que vous avez choisi."
   },
   "talk": {
-    "recep": "Réceptionniste IA : vos clients appellent et vous manquez quelques appels par semaine. Si cela vaut {p} par mois, nous le décidons ensemble.",
+    "recep": "Réceptionniste IA : vos clients appellent et vous manquez quelques appels par semaine. Si cela vaut {p} par mois et 750 € une fois, nous le décidons ensemble.",
     "chat": "Chatbot IA : des messages tous les jours, surtout pendant les heures d'ouverture. En journée, vous pouvez aussi y répondre plus tard depuis votre boîte de réception. Si le chatbot fait la différence, nous le voyons ensemble.",
-    "tel": "Comptez vos appels manqués pendant une semaine avant l'appel.",
+    "tel": "Comptez vos appels manqués pendant une semaine avant la démo.",
     "agenda": "Quel agenda utilisez-vous aujourd'hui, et qu'en faisons-nous ?",
-    "volgorde": "Ce qui vient d'abord : le Consulting IA ou Croissance digitale."
+    "volgorde": "Ce qui vient d'abord : le Consulting IA ou Croissance en ligne.",
+    "volgorde_eml": "Ce qui vient d'abord : EML AI Team ou Croissance en ligne."
   },
   "talk_short": {
     "recep": "réceptionniste IA",
     "chat": "chatbot IA",
     "tel": "compter les appels manqués",
     "agenda": "agenda actuel",
-    "volgorde": "ordre Consulting IA et Croissance digitale"
+    "volgorde": "ordre Consulting IA et Croissance en ligne",
+    "volgorde_eml": "ordre EML AI Team et Croissance en ligne"
   },
   "proof": {
     "afspraken": "650 rendez-vous confirmés sur 681, 0 no-show.",
@@ -578,16 +608,19 @@
     "zelf": "Ajusté soi-même : {v} ({p} par mois)",
     "adv_C": "{list}, {p} par mois",
     "adv_doubt": " ({x} à discuter)",
-    "adv_A": "Consulting IA (sur demande)",
-    "adv_B": "Consulting IA (sur demande) + Croissance digitale, {p} par mois",
+    "adv_A": "Consulting IA (200 € par mois, prix d'introduction)",
+    "adv_B": "Consulting IA (200 € par mois) + Croissance en ligne, {p} par mois",
     "adv_D": "rien pour l'instant",
-    "and": " + "
+    "and": " + ",
+    "adv_E": "EML AI Team (analyse gratuite, packs à partir de 3 500 € + 750 € par mois)",
+    "adv_F": "EML AI Team (analyse gratuite) + Croissance en ligne, {p} par mois"
   },
   "wa": {
     "hallo": "Bonjour EM Launchpad, j'ai fait le choix du pack sur votre site.",
-    "slot": "Pouvons-nous nous appeler 30 minutes ?",
-    "slot_cons": "Le Consulting IA m'intéresse. Pouvons-nous nous appeler 30 minutes ?",
-    "generic": "Bonjour EM Launchpad, j'ai une question sur vos packs."
+    "slot": "Pouvons-nous planifier une démo gratuite ?",
+    "slot_cons": "Le Consulting IA m'intéresse. Pouvons-nous planifier une démo gratuite ?",
+    "generic": "Bonjour EM Launchpad, j'ai une question sur vos packs.",
+    "slot_eml": "EML AI Team m'intéresse. Pouvons-nous planifier une démo gratuite ?"
   },
   "sections": {
     "weights": {
@@ -595,12 +628,12 @@
       "h2a": "Ce qui peut aller sur",
       "h2b": "la balance.",
       "lede": "Un bloc et deux poids séparés. Ce que nous mettons en face de vos réponses vient toujours de cette liste.",
-      "g1": "Croissance digitale",
-      "g1_sub": "Un bloc, neuf nervures. 150 € par mois, résiliable chaque mois.",
+      "g1": "Croissance en ligne",
+      "g1_sub": "Un bloc, neuf nervures. 150 € par mois HTVA, résiliable chaque mois.",
       "items": [
         {
           "t": "Site web",
-          "d": "Rapide, mobile et prêt pour le SEO, avec un système de prise de rendez-vous en ligne (agenda) et des formulaires.",
+          "d": "Rapide sur gsm et conçu pour que Google le lise bien, avec un système de prise de rendez-vous en ligne (agenda) et des formulaires.",
           "links": [
             [
               "Websites",
@@ -613,11 +646,11 @@
           ]
         },
         {
-          "t": "Profil Google Business",
+          "t": "Profil Google et visibilité",
           "d": "Complètement rempli et à jour, pour votre visibilité locale."
         },
         {
-          "t": "Gestion de la réputation",
+          "t": "Avis sur Google",
           "d": "2 heures après chaque rendez-vous, une demande d'avis part automatiquement par SMS ou e-mail."
         },
         {
@@ -629,15 +662,15 @@
           "d": "Des campagnes ciblées vers votre propre fichier clients."
         },
         {
-          "t": "Funnels et landing pages",
+          "t": "Landing pages",
           "d": "Des pages pour une action ou une publicité, reliées directement à votre CRM."
         },
         {
-          "t": "Paiements en ligne et facturation",
+          "t": "Paiements en ligne et factures",
           "d": "Stripe, Bancontact, iDEAL, Visa et Apple Pay. Une facture automatique après chaque paiement, et des rappels pour les factures impayées."
         },
         {
-          "t": "Automatisation IA et workflows",
+          "t": "Workflows intelligents",
           "d": "Le suivi, les rappels, les demandes d'avis et les mises à jour du CRM tournent tout seuls.",
           "links": [
             [
@@ -647,22 +680,25 @@
           ]
         },
         {
-          "t": "Accès à la plateforme",
+          "t": "Accès à notre plateforme",
           "d": "Tout dans un seul tableau de bord, sans abonnements séparés."
         }
       ],
       "g2": "Deux poids séparés",
-      "g2_sub": "Seulement si votre entreprise en a besoin. Toujours en plus de Croissance digitale.",
+      "g2_sub": "Seulement si votre entreprise en a besoin. Toujours en plus de Croissance en ligne.",
       "chat_d": "Répond aux questions et prend des rendez-vous, 24h/24 et 7j/7, sur votre site, WhatsApp, Instagram et Messenger.",
       "chat_href": "AI%20Chatbots",
       "chat_more": "En savoir plus sur le chatbot IA",
-      "recep_d": "Répond à chaque appel, jour et nuit, planifie les rendez-vous dans votre agenda et se présente comme assistante numérique.",
+      "recep_d": "Répond au téléphone jour et nuit, planifie les rendez-vous dans votre agenda et se présente comme assistante numérique.",
       "recep_href": "AI%20Voice%20Agents",
       "recep_more": "En savoir plus sur la réceptionniste IA",
       "g3": "Ne va pas sur la balance",
-      "cons_d": "Sur demande et volontairement limité. Pour les entreprises qui tournent déjà bien et veulent de l'IA dans leur fonctionnement interne : une analyse, un plan IA personnel, un accompagnement pour la mise en place et une optimisation mensuelle.",
+      "cons_d": "Prix d'introduction : 200 € par mois HTVA, résiliable chaque mois. Nous venons de lancer le Consulting IA : ce prix ne vaut que pour une courte période et augmentera bientôt. Environ deux séances par mois, un support via WhatsApp et un plan chaque trimestre. Nous ne mettons rien en place à votre place : nous vous apprenons à utiliser l'IA dans votre propre travail.",
       "cons_href": "Diensten#pakket-2",
-      "cons_more": "En savoir plus sur le Consulting IA"
+      "cons_more": "En savoir plus sur le Consulting IA",
+      "eml_d": "Une équipe IA sur mesure pour les entreprises qui ont une équipe : des employés IA par service, pilotés via Telegram. Analyse gratuite, packs à partir de 3 500 € + 750 € par mois, contrat fixe de 12 mois.",
+      "eml_href": "eml-ai-team",
+      "eml_more": "En savoir plus sur EML AI Team"
     },
     "rules": {
       "eyebrow": "Comment nous pesons",
@@ -678,11 +714,11 @@
         ],
         [
           "Vos clients réservent par téléphone ou par message",
-          "Croissance digitale : un agenda en ligne sur votre site et une seule boîte de réception."
+          "Croissance en ligne : un agenda en ligne sur votre site et une seule boîte de réception."
         ],
         [
           "Vous manquez un appel tous les jours",
-          "Réceptionniste IA, +125 € par mois."
+          "Réceptionniste IA, +150 € par mois et 750 € une fois."
         ],
         [
           "Vous manquez quelques appels par semaine et vos clients appellent surtout",
@@ -718,11 +754,15 @@
         ],
         [
           "Les avis, les factures, les rappels ou des canaux séparés passent à la trappe",
-          "Inclus dans Croissance digitale, sans supplément."
+          "Inclus dans Croissance en ligne, sans supplément."
         ],
         [
-          "Vous voulez de l'IA dans votre fonctionnement interne",
-          "Consulting IA, sur demande."
+          "Vous voulez apprendre à utiliser l'IA vous-même",
+          "Consulting IA, 200 € par mois (prix d'introduction)."
+        ],
+        [
+          "Votre entreprise a une équipe et vous voulez des employés IA",
+          "EML AI Team, à côté de la balance : analyse gratuite, packs à partir de 3 500 € + 750 € par mois."
         ],
         [
           "Rien de tout cela",
@@ -730,7 +770,7 @@
         ],
         [
           "Toujours",
-          "Une option vient en plus de Croissance digitale."
+          "Une option vient en plus de Croissance en ligne."
         ]
       ]
     },
@@ -738,26 +778,27 @@
       "eyebrow": "Quatre prix",
       "h2a": "Quatre prix,",
       "h2b": "pas plus.",
-      "lede": "Par mois et résiliable chaque mois. Le Consulting IA est sur demande.",
+      "lede": "Par mois, HTVA et résiliable chaque mois. Avec la réceptionniste IA s'ajoutent 750 € une fois. Consulting IA : 200 € par mois (prix d'introduction).",
       "items": [
         {
           "p": 150,
-          "t": "Croissance digitale"
+          "t": "Croissance en ligne"
         },
         {
           "p": 200,
           "t": "avec le chatbot IA"
         },
         {
-          "p": 275,
-          "t": "avec la réceptionniste IA"
+          "p": 300,
+          "t": "avec la réceptionniste IA (+ 750 € une fois)"
         },
         {
-          "p": 325,
-          "t": "avec les deux"
+          "p": 350,
+          "t": "avec les deux (+ 750 € une fois)"
         }
       ],
-      "cons": "Consulting IA : sur demande."
+      "cons": "Consulting IA : 200 € par mois, prix d'introduction.",
+      "eml": "EML AI Team : à partir de 3 500 € + 750 € par mois, avec une analyse gratuite. Contrat fixe de 12 mois."
     },
     "proof": {
       "eyebrow": "Pesé dans la pratique",
@@ -798,7 +839,7 @@
       "h2b": "simplement.",
       "items": [
         [
-          "Un appel gratuit",
+          "Une démo gratuite",
           "30 minutes, sans engagement. Apportez votre ticket de pesée, nous reprenons là où vous vous êtes arrêté."
         ],
         [
@@ -818,19 +859,19 @@
       "items": [
         {
           "q": "Dois-je tout prendre ?",
-          "a": "Croissance digitale est un seul pack avec les neuf éléments, pour 150 € par mois. Nous ne conseillons le chatbot IA et la réceptionniste IA que si vos réponses le demandent."
+          "a": "Croissance en ligne est un seul pack avec les neuf éléments, pour 150 € par mois HTVA. Nous ne conseillons le chatbot IA et la réceptionniste IA que si vos réponses le demandent."
         },
         {
-          "q": "Puis-je prendre une option sans Croissance digitale ?",
-          "a": "Non. Le chatbot IA et la réceptionniste IA viennent toujours en plus de Croissance digitale. C'est pourquoi il n'y a que quatre prix : 150 €, 200 €, 275 € et 325 € par mois."
+          "q": "Puis-je prendre une option sans Croissance en ligne ?",
+          "a": "Non. Le chatbot IA et la réceptionniste IA s'ajoutent toujours à Croissance en ligne. C'est pourquoi il n'y a que quatre prix : 150 €, 200 €, 300 € et 350 € par mois, HTVA. Avec la réceptionniste IA s'ajoutent 750 € une fois."
         },
         {
           "q": "Et si je n'ai besoin de rien ?",
-          "a": "Alors nous vous le disons. Parfois, notre conseil est : rien pour l'instant. L'appel reste gratuit et sans engagement."
+          "a": "Alors nous vous le disons. Parfois, notre conseil est : rien pour l'instant. La démo reste gratuite et sans engagement."
         },
         {
           "q": "Le conseil est-il contraignant ?",
-          "a": "Non. C'est une première estimation basée sur vos réponses. Pendant l'appel gratuit de 30 minutes, nous regardons cela ensemble."
+          "a": "Non. C'est une première estimation basée sur vos réponses. Lors de la démo gratuite de 30 minutes, nous regardons cela ensemble."
         },
         {
           "q": "Où sont vos avis ?",
@@ -842,7 +883,11 @@
         },
         {
           "q": "En combien de temps tout est-il en place ?",
-          "a": "En général, vous êtes en ligne sous 14 jours. Croissance digitale est résiliable chaque mois."
+          "a": "En général, vous êtes en ligne sous 14 jours. Croissance en ligne est résiliable chaque mois."
+        },
+        {
+          "q": "Et si mon entreprise a une équipe ?",
+          "a": "Alors EML AI Team peut convenir : une équipe IA sur mesure, avec des employés IA par service. L'analyse est gratuite. Les packs commencent à 3 500 € une fois + 750 € par mois HTVA, avec un contrat fixe de 12 mois. À la dernière question, choisissez : des employés IA pour mon équipe."
         }
       ]
     },
@@ -851,8 +896,8 @@
       "h2b": "ensemble ?",
       "h2a_r": "Votre ticket est",
       "h2b_r": "prêt.",
-      "text": "Un appel gratuit de 30 minutes. Sans engagement, et vous n'avez rien à préparer.",
-      "btn": "Réserver un appel gratuit",
+      "text": "Une démo gratuite de 30 minutes. Sans engagement, et vous n'avez rien à préparer.",
+      "btn": "Planifier une démo gratuite",
       "wa": "Envoyer un WhatsApp",
       "badges": [
         "30 minutes",

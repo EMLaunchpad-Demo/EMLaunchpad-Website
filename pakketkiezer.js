@@ -45,8 +45,10 @@ var PK = (function () {
     var dgNeeds = needs.filter(function (n) { return n.by === 'dg'; }).length;
     var DG = dgNeeds > 0 || R !== 'nee' || C !== 'nee';
     var CONS = a.doel === 'intern';
-    var outcome = CONS ? (DG ? 'B' : 'A') : (DG ? 'C' : 'D');
-    var price = (DG ? 150 : 0) + (C === 'ja' ? 50 : 0) + (R === 'ja' ? 125 : 0);
+    var EML = a.doel === 'team';
+    var outcome = CONS ? (DG ? 'B' : 'A') : EML ? (DG ? 'F' : 'E') : (DG ? 'C' : 'D');
+    /* maandprijs op de schaal; de €750 eenmalig van de receptioniste telt niet mee (aparte regel) */
+    var price = (DG ? 150 : 0) + (C === 'ja' ? 50 : 0) + (R === 'ja' ? 150 : 0);
 
     var ribs = [];
     needs.forEach(function (n) { n.ribs.forEach(function (r) { if (ribs.indexOf(r) < 0) ribs.push(r); }); });
@@ -73,6 +75,7 @@ var PK = (function () {
     if (a.opr === 'onbekend') talk.push('tel');
     if (a.boek === 'online') talk.push('agenda');
     if (outcome === 'B') talk.push('volgorde');
+    if (outcome === 'F') talk.push('volgorde_eml');
     talk = talk.slice(0, 3);
 
     var proof = null;
@@ -83,16 +86,16 @@ var PK = (function () {
       else proof = 'afspraken';
     }
     var alt = [];
-    if (R === 'twijfel') alt.push({ x: 'recep', p: price + 125 });
+    if (R === 'twijfel') alt.push({ x: 'recep', p: price + 150 });
     if (C === 'twijfel') alt.push({ x: 'chat', p: price + 50 });
 
-    return { needs: needs, R: R, C: C, DG: DG, CONS: CONS, outcome: outcome, price: price, ribs: ribs,
+    return { needs: needs, R: R, C: C, DG: DG, CONS: CONS, EML: EML, outcome: outcome, price: price, ribs: ribs,
              why: why, not: not, talk: talk, proof: proof, alt: alt,
              k: { dg: DG, c: C === 'ja', r: R === 'ja' } };
   }
 
-  /* prijs van een eigen keuze; een uitbreiding bestaat alleen bovenop Digitale groei */
-  function prijs(k) { return k && k.dg ? 150 + (k.c ? 50 : 0) + (k.r ? 125 : 0) : 0; }
+  /* maandprijs van een eigen keuze; een uitbreiding bestaat alleen bovenop Online groeien */
+  function prijs(k) { return k && k.dg ? 150 + (k.c ? 50 : 0) + (k.r ? 150 : 0) : 0; }
 
   return { advies: advies, prijs: prijs };
 })();
@@ -124,7 +127,7 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
   function lc(s) { return s ? s.charAt(0).toLowerCase() + s.slice(1) : s; }
   function uc(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
   function wide() { return window.matchMedia('(min-width: 960px)').matches; }
-  /* bedragen voluit voor de schermlezer: "+€125" -> "plus 125 euro" */
+  /* bedragen voluit voor de schermlezer: "+€150" -> "plus 150 euro" */
   function spoken(s) {
     return String(s).replace(/(\+\s?)?€\s?(\d[\d.]*)|(\+\s?)?(\d[\d.]*)[\s ]€/g, function (m, p1, n1, p3, n3) {
       return ((p1 || p3) ? U.plus_word + ' ' : '') + (n1 || n3) + ' ' + U.euro_word;
@@ -187,9 +190,9 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
   var beam = $('[data-pk-beam]', svg), needle = $('[data-pk-needle]', svg);
   var panL = $('[data-pk-pan="L"]', svg), panR = $('[data-pk-pan="R"]', svg);
   var priceEls = [$('[data-pk-price="a"]', svg), $('[data-pk-price="b"]', svg)], pi = 0, priceTxt = priceEls[0].textContent;
-  var plate = $('[data-pk-plate]', svg), consEl = $('[data-pk-cons]', svg), noteCount = $('[data-pk-note="count"]', svg);
+  var plate = $('[data-pk-plate]', svg), consEl = $('[data-pk-cons]', svg), emlEl = $('[data-pk-eml]', svg), noteCount = $('[data-pk-note="count"]', svg);
   var ribEls = $$('.pk-rib', svg);
-  var tags = $$('.pk-tag.pk-wide', svg);   /* DIGITALE GROEI, +€50, +€125 onder de stukken op de toonbank */
+  var tags = $$('.pk-tag.pk-wide', svg);   /* ONLINE GROEIEN, +€50, +€150 onder de stukken op de toonbank */
   var OFF = { K1: -54, K2: -22, K3: 10, S: 50, dg: -30, chat: 34, recep: 60 };
   var HOME = { dg: [428, 326], chat: [492, 326], recep: [526, 326] };
   var O = {};
@@ -362,7 +365,7 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
     var price = k ? PK.prijs(k) : A.price;
     var win = k ? eur(price) : A.DG ? eur(price) : (S.done && A.outcome === 'D') ? eur(0) : U.dash;
     return { A: A, k: k, pieces: pieces, left: left, discs: discs, ribs: pieces.dg !== 'counter' ? A.ribs : [], th: t, win: win,
-             cons: A.CONS, count: S.a.opr === 'onbekend' };
+             cons: A.CONS, eml: A.EML, count: S.a.opr === 'onbekend' };
   }
   function devTheta(A, k) {
     var t = 0, aC = A.C === 'ja', aR = A.R === 'ja';
@@ -381,6 +384,7 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
     gen++;
     var g = gen;
     consEl.classList.toggle('is-on', !!v.cons);
+    if (emlEl) emlEl.classList.toggle('is-on', !!v.eml);
     noteCount.classList.toggle('is-on', !!v.count);
     tags.forEach(function (el, j) { el.classList.toggle('is-away', v.pieces[['dg', 'chat', 'recep'][j]] !== 'counter'); });
     if (!animate || reduce || !visible || document.hidden) {
@@ -440,6 +444,7 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
     var o = O[ref];
     if (o) o.el.classList.toggle('is-hot', on);
     if (ref === 'cons') consEl.classList.toggle('is-hot', on);
+    if (ref === 'eml' && emlEl) emlEl.classList.toggle('is-hot', on);
   }
 
   /* ================= LIJSTEN ================= */
@@ -470,13 +475,15 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
       var names = A.ribs.slice().sort(function (a, b) { return a - b; }).map(function (r) { return D.ribs[r - 1]; });
       catchUl.appendChild(li(U.dg + ' · ' + eur(150), 'dg', names.length ? fill(U.catch_dg_sub, { ribs: names.join(', ') }) : U.catch_dg_base));
     }
-    [['chat', 50], ['recep', 125]].forEach(function (x) {
+    /* de receptioniste kost ook €750 eenmalig: altijd als aparte regel, nooit in de maandprijs */
+    [['chat', 50, ''], ['recep', 150, U.once]].forEach(function (x) {
       var m = v.pieces[x[0]];
-      if (m === 'pan') catchUl.appendChild(li(uc(U[x[0]]) + ' · +' + eur(x[1]), x[0]));
-      else if (m === 'float') catchUl.appendChild(li(uc(U[x[0]]) + ' · ' + U.talk, x[0], fill(U.catch_maybe, { p: '+' + eur(x[1]) })));
+      if (m === 'pan') catchUl.appendChild(li(uc(U[x[0]]) + ' · +' + eur(x[1]), x[0], x[2]));
+      else if (m === 'float') catchUl.appendChild(li(uc(U[x[0]]) + ' · ' + U.talk, x[0], fill(U.catch_maybe, { p: '+' + eur(x[1]) }) + (x[2] ? ', ' + x[2] : '')));
     });
     if (A.CONS) catchUl.appendChild(li(U.cons_side, 'cons'));
-    if (v.pieces.recep === 'counter' && S.a.opr) offUl.appendChild(li(fill(U.off_recep, { p: eur(125) }), 'recep'));
+    if (A.EML) catchUl.appendChild(li(U.eml_side, 'eml'));
+    if (v.pieces.recep === 'counter' && S.a.opr) offUl.appendChild(li(fill(U.off_recep, { p: eur(150) }), 'recep'));
     if (v.pieces.chat === 'counter' && S.a.ber) offUl.appendChild(li(fill(U.off_chat, { p: eur(50) }), 'chat'));
     if (S.a.doel && !A.CONS) offUl.appendChild(li(U.off_cons, 'cons'));
     var empty = !needsUl.children.length && !catchUl.children.length;
@@ -618,7 +625,7 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
 
   /* ================= HET WEEGBRIEFJE ================= */
   var T = {};
-  ['kick', 'rh', 'voor', 'mode', 'big', 'opb', 'mono', 'alt', 'ptxt', 'whyw', 'why', 'notw', 'not', 'talkw', 'talk', 'proof', 'proofv', 'dev', 'devt', 'pre', 'status', 'chips'].forEach(function (k) {
+  ['kick', 'rh', 'voor', 'mode', 'big', 'once', 'opb', 'mono', 'alt', 'ptxt', 'elink', 'whyw', 'why', 'notw', 'not', 'talkw', 'talk', 'proof', 'proofv', 'dev', 'devt', 'pre', 'status', 'chips'].forEach(function (k) {
     T[k] = $('[data-pk-' + k + ']', hero);
   });
   var kBtns = $$('[data-pk-k]', ticketB), nameIn = $('#pkName', ticketB), copyB = $('[data-pk-copy]', ticketB), shareB = $('[data-pk-share]', ticketB);
@@ -637,11 +644,15 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
     if (k.r) l.push(U.recep);
     return l;
   }
+  /* "(+ €750 eenmalig)" achter een prijs waarin de receptioniste zit */
+  function onceTxt(k) { return k && k.r ? ' (' + U.once + ')' : ''; }
   function adviesTxt(A) {
     if (A.outcome === 'A') return B.adv_A;
-    if (A.outcome === 'B') return fill(B.adv_B, { p: eur(A.price) });
+    if (A.outcome === 'B') return fill(B.adv_B, { p: eur(A.price) }) + onceTxt(A.k);
     if (A.outcome === 'D') return B.adv_D;
-    var s = fill(B.adv_C, { list: listOf(A.k).join(B.and), p: eur(A.price) });
+    if (A.outcome === 'E') return B.adv_E;
+    if (A.outcome === 'F') return fill(B.adv_F, { p: eur(A.price) }) + onceTxt(A.k);
+    var s = fill(B.adv_C, { list: listOf(A.k).join(B.and), p: eur(A.price) }) + onceTxt(A.k);
     A.alt.forEach(function (x) { s += fill(B.adv_doubt, { x: U[x.x] }); });
     return s;
   }
@@ -657,12 +668,12 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
     if (S.a.inb) L.push(fill(B.inb, { v: kortAns('inb') }));
     if (S.a.doel) L.push(fill(B.doel, { v: kortAns('doel') }));
     if (A.talk.length) L.push(fill(B.talk, { v: A.talk.map(function (x) { return D.talk_short[x]; }).join(', ') }));
-    if (S.k) L.push(fill(B.zelf, { v: listOf(S.k).join(B.and) || '—', p: eur(PK.prijs(S.k)) }));
+    if (S.k) L.push(fill(B.zelf, { v: listOf(S.k).join(B.and) || '—', p: eur(PK.prijs(S.k)) }) + onceTxt(S.k));
     return L.join('\n');
   }
   function waTxt() {
     var A = adv();
-    var s = D.wa.hallo + '\n\n' + briefTxt(false) + '\n\n' + (A.CONS ? D.wa.slot_cons : D.wa.slot);
+    var s = D.wa.hallo + '\n\n' + briefTxt(false) + '\n\n' + (A.CONS ? D.wa.slot_cons : A.EML ? D.wa.slot_eml : D.wa.slot);
     return s.length > 700 ? s.slice(0, 697) + '…' : s;
   }
   function waHref(txt) { return 'https://wa.me/' + D.wa_nr + '?text=' + encodeURIComponent(txt); }
@@ -689,41 +700,49 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
     if (hk === 'C') hk = A.C === 'ja' && A.R === 'ja' ? 'C_both' : A.C === 'ja' ? 'C_chat' : A.R === 'ja' ? 'C_recep' : 'C';
     heading(R.h[hk]);
     T.voor.textContent = S.n ? fill(R.voor_naam, { naam: S.n }) : fill(R.voor, { woord: vv.woord });
-    /* prijs */
-    T.mode.textContent = k ? R.own_label : R.advice_label;
+    /* prijs (excl. btw); A = AI Consulting alleen, E = EML AI Team alleen: niets op de schaal */
+    T.mode.textContent = (k ? R.own_label : R.advice_label) + ' · ' + R.vat;
     var p = k ? PK.prijs(k) : A.price;
-    var showPrice = k || A.outcome === 'B' || A.outcome === 'C' || A.outcome === 'D';
-    T.big.textContent = showPrice ? eur(p) + ' ' + U.per_month : R.on_request;
+    var showPrice = k || A.outcome === 'B' || A.outcome === 'C' || A.outcome === 'D' || A.outcome === 'F';
+    T.big.textContent = showPrice ? eur(p) + ' ' + U.per_month : A.outcome === 'E' ? R.eml_price : R.on_request;
+    /* de €750 eenmalig van de receptioniste: aparte regel, nooit in de maandprijs */
+    T.once.textContent = U.once;
+    T.once.hidden = !kk.r;
     var parts = [];
-    if (kk.dg && (k || A.outcome !== 'A' && A.outcome !== 'D')) {
+    if (kk.dg && (k || A.outcome !== 'A' && A.outcome !== 'D' && A.outcome !== 'E')) {
       parts.push(fill(R.opbouw_dg, { p: eur(150) }));
       if (kk.c) parts.push(fill(R.opbouw_chat, { p: eur(50) }));
-      if (kk.r) parts.push(fill(R.opbouw_recep, { p: eur(125) }));
+      if (kk.r) parts.push(fill(R.opbouw_recep, { p: eur(150) }));
     }
     if (A.outcome === 'B' && !k) parts.push(R.opbouw_cons);
+    if (A.outcome === 'F' && !k) parts.push(R.opbouw_eml);
     T.opb.textContent = parts.join(' + ');
     T.opb.hidden = !parts.length;
-    T.mono.hidden = !(kk.dg && (k || A.outcome === 'B' || A.outcome === 'C'));
+    T.mono.hidden = !(kk.dg && (k || A.outcome === 'B' || A.outcome === 'C' || A.outcome === 'F'));
     T.alt.textContent = '';
     if (!k) A.alt.forEach(function (x) {
       var el = document.createElement('p');
-      el.textContent = fill(R.alt, { p: eur(x.p), x: U[x.x + '_le'] || U[x.x] });
+      el.textContent = fill(R.alt, { p: eur(x.p), x: U[x.x + '_le'] || U[x.x] }) + (x.x === 'recep' ? ' (' + U.once + ')' : '');
       T.alt.appendChild(el);
     });
     T.alt.hidden = !T.alt.children.length;
     var pt = '';
     if (A.outcome === 'A') pt = R.cons_txt;
-    else if (A.outcome === 'B') {
+    else if (A.outcome === 'B' || A.outcome === 'F') {
       var ns = A.needs.slice(0, 3).map(function (n) { return lc(fill(D.needs[n.key], vv)); }).join(', ');
-      pt = R.cons_txt + ' ' + fill(R.b_txt, { needs: ns, list: listOf(A.k).join(' + '), p: eur(A.price) });
-    } else if (A.outcome === 'D') pt = fill(R.d_txt, { p: eur(150) });
+      pt = (A.outcome === 'B' ? R.cons_txt : R.eml_txt) + ' ' + fill(R.b_txt, { needs: ns, list: listOf(A.k).join(' + '), p: eur(A.price), once: onceTxt(A.k) });
+    } else if (A.outcome === 'E') pt = R.eml_txt;
+    else if (A.outcome === 'D') pt = fill(R.d_txt, { p: eur(150) });
     T.ptxt.textContent = pt; T.ptxt.hidden = !pt;
+    /* bij EML AI Team: link naar de dienstpagina */
+    var eml = A.outcome === 'E' || A.outcome === 'F';
+    if (T.elink) T.elink.hidden = !eml;
     /* waarom, niet, bespreken */
     lis(T.why, A.why.map(function (w) { return { b: R.said + ' ' + lc(fill(D.why[w][0], vv)), t: D.why[w][1] }; }));
     T.whyw.hidden = !A.why.length;
-    lis(T.not, A.not.map(function (n) { return { t: fill(D.not[n], { p: eur(n.indexOf('recep') === 0 ? 125 : 50) }) }; }));
+    lis(T.not, A.not.map(function (n) { return { t: fill(D.not[n], { p: eur(n.indexOf('recep') === 0 ? 150 : 50) }) }; }));
     T.notw.hidden = !A.not.length;
-    lis(T.talk, A.talk.map(function (x) { return { t: fill(D.talk[x], { p: eur(x === 'recep' ? 125 : 50) }) }; }));
+    lis(T.talk, A.talk.map(function (x) { return { t: fill(D.talk[x], { p: eur(x === 'recep' ? 150 : 50) }) }; }));
     T.talkw.hidden = !A.talk.length;
     T.proof.hidden = !A.proof;
     if (A.proof) T.proofv.textContent = D.proof[A.proof];
@@ -734,7 +753,7 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
     });
     T.dev.hidden = !k;
     if (k) T.devt.textContent = devTxt(A, k);
-    /* ook in Digitale groei */
+    /* ook in Online groeien */
     inclLis.forEach(function (el) {
       var on = kk.dg && A.ribs.indexOf(+el.getAttribute('data-pk-rib')) >= 0;
       el.classList.toggle('is-you', on);
@@ -751,7 +770,7 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
   function devTxt(A, k) {
     var extra = 0, doubtOn = false, less = false;
     if (k.c && A.C !== 'ja') { if (A.C === 'twijfel') doubtOn = true; else extra += 50; }
-    if (k.r && A.R !== 'ja') { if (A.R === 'twijfel') doubtOn = true; else extra += 125; }
+    if (k.r && A.R !== 'ja') { if (A.R === 'twijfel') doubtOn = true; else extra += 150; }
     if (k.dg && !A.DG) extra += 150;
     if ((!k.c && A.C === 'ja') || (!k.r && A.R === 'ja') || (!k.dg && A.DG)) less = true;
     var s = less ? R.light : extra ? fill(R.heavy, { p: eur(extra) }) : doubtOn ? R.doubt_on : '';
@@ -781,12 +800,13 @@ if (typeof module === 'object' && module.exports) module.exports = PK;
         else if (st === 'twijfel') { tag = U.talk; cls = 'is-talk'; }
         else if (asked) { tag = U.leave; cls = 'is-leave'; }
       } else if (r === 'cons' && S.a.doel) { if (A.CONS) { tag = U.for_you; cls = 'is-you'; } else { tag = U.leave; cls = 'is-leave'; } }
+      else if (r === 'eml' && S.a.doel) { if (A.EML) { tag = U.for_you; cls = 'is-you'; } else { tag = U.leave; cls = 'is-leave'; } }
       var em = $('.pk-tagx', el);
       em.textContent = tag; em.hidden = !tag;
       el.classList.remove('is-you', 'is-talk', 'is-leave');
       if (cls) el.classList.add(cls);
     });
-    var p = (A.outcome === 'B' || A.outcome === 'C') ? A.price : -1;
+    var p = (A.outcome === 'B' || A.outcome === 'C' || A.outcome === 'F') ? A.price : -1;
     pws.forEach(function (el) {
       var on = +el.getAttribute('data-pk-pw') === p;
       el.classList.toggle('is-you', on);

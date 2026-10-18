@@ -7,7 +7,7 @@ import io, re, json, html, sys, os
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20261002a', '20261002a'
+V_CSS, V_JS = '20261018a', '20261018a'
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261016a'
 PRELOAD = '<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>'
@@ -95,9 +95,9 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261016a"></script>
-<script src="{pre}i18n-pages.js?v=20261016a"></script>
-<script src="{pre}site.js?v=20261016a"></script>
+<script src="{pre}i18n.js?v=20261018a"></script>
+<script src="{pre}i18n-pages.js?v=20261018a"></script>
+<script src="{pre}site.js?v=20261018a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}pakketkiezer.js?v={V_JS}"></script>

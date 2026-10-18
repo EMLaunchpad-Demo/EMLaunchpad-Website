@@ -53,7 +53,7 @@
   "meta": {
     "title": "Pakketkiezer: welk pakket past bij je zaak? | EM Launchpad",
     "ogtitle": "Pakketkiezer: eerlijk gewogen | EM Launchpad",
-    "desc": "Zes korte vragen over je zaak, en je krijgt een eerlijk advies: Digitale groei (€150 per maand), eventueel met AI-chatbot of AI-receptioniste. Met wat we niet aanraden, en waarom."
+    "desc": "Zes korte vragen en een eerlijk advies: Online groeien vanaf €150 per maand (excl. btw), AI Consulting, of EML AI Team voor bedrijven met een team."
   },
   "crumbs": [
     "Home",
@@ -68,7 +68,7 @@
     "h1b": "Eerlijk gewogen.",
     "lede": "Zes korte vragen over je zaak. Bij elk antwoord zie je wat we ertegenover zetten, wat we laten liggen en wat het per maand kost.",
     "facts": "Zes vragen · geen e-mailadres nodig · je antwoorden blijven op je toestel",
-    "figcap": "Een toonbankweegschaal. Links legt je zaak wat ze vraagt, rechts zetten wij ertegenover wat dat opvangt: Digitale groei (€150 per maand) en, alleen als het nodig is, de AI-chatbot (+€50) of de AI-receptioniste (+€125).",
+    "figcap": "Een toonbankweegschaal. Links legt je zaak wat ze vraagt, rechts zetten wij ertegenover wat dat opvangt: Online groeien (€150 per maand) en, alleen als het nodig is, de AI-chatbot (+€50) of de AI-receptioniste (+€150, plus €750 eenmalig). Prijzen excl. btw.",
     "noscript": "Zonder JavaScript zie je de weegschaal niet bewegen. Bij elk antwoord lees je wel wat het betekent, en hieronder staat precies hoe we wegen.",
     "start": "Antwoord, en kijk wat er gebeurt."
   },
@@ -83,7 +83,7 @@
     "off_h": "Niet op de schaal",
     "empty": "Nog niets.",
     "per_month": "per maand",
-    "per_month_caps": "PER MAAND",
+    "per_month_caps": "PER MAAND · EXCL. BTW",
     "zit_erin": "ZIT ERIN",
     "dash": "—",
     "sum": "Op de schaal: {n} · {p}",
@@ -91,13 +91,13 @@
     "welcome_q": "Welkom terug, je was bij vraag {n}.",
     "welcome_r": "Welkom terug, je advies staat klaar.",
     "restart": "Opnieuw beginnen",
-    "dg": "Digitale groei",
+    "dg": "Online groeien",
     "chat": "AI-chatbot",
     "recep": "AI-receptioniste",
     "cons": "AI Consulting",
-    "on_request": "op aanvraag",
-    "tag_dg": "DIGITALE GROEI",
-    "tag_cons": "AI CONSULTING · OP AANVRAAG",
+    "on_request": "€200 per maand (introductieprijs)",
+    "tag_dg": "ONLINE GROEIEN",
+    "tag_cons": "AI CONSULTING · €200 PER MAAND",
     "note_count": "tel een week je gemiste oproepen",
     "note_leave": "laten we liggen",
     "note_talk": "bespreken we",
@@ -108,16 +108,21 @@
     "catch_dg_sub": "Voor jou: {ribs}",
     "catch_dg_base": "Alle negen onderdelen zitten erin.",
     "catch_maybe": "eventueel {p}",
-    "off_recep": "AI-receptioniste · laten we liggen (scheelt {p})",
+    "off_recep": "AI-receptioniste · laten we liggen (scheelt {p} per maand en €750 eenmalig)",
     "off_chat": "AI-chatbot · laten we liggen (scheelt {p})",
     "off_cons": "AI Consulting · past niet op de schaal",
-    "cons_side": "AI Consulting · op aanvraag, naast de schaal",
+    "cons_side": "AI Consulting · €200 per maand, naast de schaal",
     "total_live": "Totaal: {p} per maand.",
     "total_none": "Nog niets in de prijs.",
     "euro_word": "euro",
     "plus_word": "plus",
     "chat_le": "AI-chatbot",
-    "recep_le": "AI-receptioniste"
+    "recep_le": "AI-receptioniste",
+    "once": "+ €750 eenmalig",
+    "eml": "EML AI Team",
+    "tag_eml": "EML AI TEAM · VANAF €3.500",
+    "eml_side": "EML AI Team · gratis analyse, naast de schaal",
+    "eml_from": "vanaf €3.500"
   },
   "gen": {
     "woord": "zaak",
@@ -189,19 +194,19 @@
           "c": "bel",
           "label": "Ze bellen",
           "kort": "ze bellen",
-          "eff": "Afspraken via de telefoon. Daartegenover: Digitale groei, met een online agenda in je website en herinneringen die vanzelf vertrekken."
+          "eff": "Afspraken via de telefoon. Daartegenover: Online groeien, met een online agenda in je website en herinneringen die vanzelf vertrekken."
         },
         {
           "c": "bericht",
           "label": "Via een bericht (WhatsApp, Instagram, Messenger of mail)",
           "kort": "via berichten",
-          "eff": "Afspraken via berichten. Daartegenover: Digitale groei, met een online agenda en één inbox voor WhatsApp, Instagram, e-mail en sms."
+          "eff": "Afspraken via berichten. Daartegenover: Online groeien, met een online agenda en één inbox voor WhatsApp, Instagram, e-mail en sms."
         },
         {
           "c": "online",
           "label": "Online, via een agenda die ik al heb",
           "kort": "online, via een eigen agenda",
-          "eff": "Je agenda draait al. Dat telt niet mee; in het gesprek bekijken we wat je ermee wil."
+          "eff": "Je agenda draait al. Dat telt niet mee; in de demo bekijken we wat je ermee wil."
         },
         {
           "c": "binnen",
@@ -221,7 +226,7 @@
           "c": "dag",
           "label": "Elke dag wel eens",
           "kort": "elke dag wel eens",
-          "eff": "Daar zetten we de AI-receptioniste tegenover: +€125 per maand, bovenop Digitale groei. Ze neemt elke oproep aan, dag en nacht."
+          "eff": "Daar zetten we de AI-receptioniste tegenover: +€150 per maand bovenop Online groeien, plus €750 eenmalig. Ze neemt je telefoon op, dag en nacht."
         },
         {
           "c": "week",
@@ -233,13 +238,13 @@
           "c": "zelden",
           "label": "Bijna nooit",
           "kort": "bijna nooit",
-          "eff": "Geen AI-receptioniste nodig. Scheelt €125 per maand."
+          "eff": "Geen AI-receptioniste nodig. Scheelt €150 per maand en €750 eenmalig."
         },
         {
           "c": "onbekend",
           "label": "Geen idee",
           "kort": "geen idee",
-          "eff": "Dan rekenen we ze niet mee. Tel vóór het gesprek eens een week je gemiste oproepen."
+          "eff": "Dan rekenen we ze niet mee. Tel vóór de demo eens een week je gemiste oproepen."
         }
       ]
     },
@@ -285,25 +290,25 @@
           "c": "reviews",
           "label": "Om een review vragen",
           "kort": "om een review vragen",
-          "eff": "Zit in Digitale groei: 2 uur na elke afspraak vertrekt vanzelf een reviewverzoek via sms of e-mail."
+          "eff": "Zit in Online groeien: 2 uur na elke afspraak vertrekt vanzelf een reviewverzoek via sms of e-mail."
         },
         {
           "c": "facturen",
           "label": "Facturen maken en achter betalingen aan",
           "kort": "facturen en betalingen",
-          "eff": "Zit in Digitale groei: online betalen, na elke betaling automatisch een factuur, en herinneringen bij onbetaalde facturen."
+          "eff": "Zit in Online groeien: online betalen, na elke betaling automatisch een factuur, en herinneringen bij onbetaalde facturen."
         },
         {
           "c": "herinneren",
           "label": "Klanten herinneren aan hun afspraak",
           "kort": "klanten herinneren",
-          "eff": "Zit in Digitale groei: opvolging en herinneringen lopen vanzelf via je workflows."
+          "eff": "Zit in Online groeien: opvolging en herinneringen lopen vanzelf via je workflows."
         },
         {
           "c": "kanalen",
           "label": "Berichten op WhatsApp, Instagram en mail apart opvolgen",
           "kort": "berichten op losse kanalen",
-          "eff": "Zit in Digitale groei: WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
+          "eff": "Zit in Online groeien: WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
         },
         {
           "c": "niets",
@@ -323,25 +328,31 @@
           "c": "klanten",
           "label": "Meer klanten die me vinden en boeken",
           "kort": "meer klanten die me vinden en boeken",
-          "eff": "Zit in Digitale groei: een snelle website, je Google-profiel, campagnes en landingspagina's."
+          "eff": "Zit in Online groeien: een snelle website, je Google-profiel, campagnes en landingspagina's."
         },
         {
           "c": "eenplek",
           "label": "Alles op één plek, minder losse tools",
           "kort": "alles op één plek",
-          "eff": "Zit in Digitale groei: website, agenda, inbox, campagnes en betalingen op één platform, in één maandprijs."
+          "eff": "Zit in Online groeien: website, agenda, inbox, campagnes en betalingen op één platform, in één maandprijs."
         },
         {
           "c": "intern",
-          "label": "Mijn zaak draait goed: ik wil AI in mijn interne werking",
-          "kort": "AI in mijn interne werking",
-          "eff": "Dat is AI Consulting: maatwerk, op aanvraag. Het past niet op de schaal."
+          "label": "Mijn zaak draait goed: ik wil zelf AI leren gebruiken",
+          "kort": "zelf AI leren gebruiken",
+          "eff": "Dat is AI Consulting: we leren jou AI gebruiken in je eigen werk, voor €200 per maand (introductieprijs). Het past niet op de schaal."
+        },
+        {
+          "c": "team",
+          "label": "Mijn bedrijf heeft een team: ik wil AI-medewerkers die mee het werk doen",
+          "kort": "AI-medewerkers voor mijn team",
+          "eff": "Dat is EML AI Team: een AI-team op maat, met een gratis analyse. Pakketten vanaf €3.500 + €750 per maand. Het past niet op de schaal."
         },
         {
           "c": "horen",
           "label": "Eerst eens horen wat kan",
           "kort": "eerst eens horen wat kan",
-          "eff": "Geen haast. Het gesprek is gratis en vrijblijvend."
+          "eff": "Geen haast. De demo is gratis en vrijblijvend."
         }
       ]
     }
@@ -365,28 +376,29 @@
   },
   "fb": {
     "vak": "Je vak verandert het advies niet, alleen de voorbeelden.",
-    "boek_bel": "Op de schaal: afspraken via de telefoon. Daartegenover: Digitale groei, met een online agenda in je website.",
-    "boek_bericht": "Op de schaal: afspraken via berichten. Daartegenover: Digitale groei, met een online agenda en één inbox.",
+    "boek_bel": "Op de schaal: afspraken via de telefoon. Daartegenover: Online groeien, met een online agenda in je website.",
+    "boek_bericht": "Op de schaal: afspraken via berichten. Daartegenover: Online groeien, met een online agenda en één inbox.",
     "boek_online": "Je agenda draait al. Telt niet mee.",
     "boek_binnen": "Geen afspraken nodig. Telt niet mee.",
-    "opr_dag": "Op de schaal: elke dag gemiste oproepen {werk}. Daartegenover: de AI-receptioniste, +€125 per maand.",
+    "opr_dag": "Op de schaal: elke dag gemiste oproepen {werk}. Daartegenover: de AI-receptioniste, +€150 per maand, plus €750 eenmalig.",
     "opr_week_bel": "Op de rand: je klanten bellen en je mist soms een oproep. De AI-receptioniste bespreken we samen, niet in de prijs.",
-    "opr_week": "Geen AI-receptioniste: je telefoon zit mee in je inbox, naast WhatsApp, Instagram, e-mail en sms. Scheelt €125 per maand.",
-    "opr_zelden": "Geen AI-receptioniste: je mist bijna nooit een oproep. Scheelt €125 per maand.",
+    "opr_week": "Geen AI-receptioniste: je telefoon zit mee in je inbox, naast WhatsApp, Instagram, e-mail en sms. Scheelt €150 per maand en €750 eenmalig.",
+    "opr_zelden": "Geen AI-receptioniste: je mist bijna nooit een oproep. Scheelt €150 per maand en €750 eenmalig.",
     "opr_onbekend": "Niets op de schaal. Tip: tel eens een week je gemiste oproepen.",
     "ber_avond": "Op de schaal: vragen als je dicht bent. Daartegenover: de AI-chatbot, +€50 per maand.",
     "ber_werk_bericht": "Op de schaal: elke dag berichten terwijl je werkt. Daartegenover: de AI-chatbot, +€50 per maand.",
     "ber_werk": "Op de rand: elke dag berichten, vooral overdag. De AI-chatbot bespreken we samen, niet in de prijs.",
     "ber_paar": "Die beantwoord je zelf vanuit één inbox. Geen AI-chatbot nodig. Scheelt €50 per maand.",
     "ber_zelden": "Geen AI-chatbot: er komen weinig berichten binnen. Scheelt €50 per maand.",
-    "inb_on": "Op de schaal: {need}. Zit in Digitale groei, zonder meerprijs.",
+    "inb_on": "Op de schaal: {need}. Zit in Online groeien, zonder meerprijs.",
     "inb_off": "Van de schaal: {need}.",
     "inb_niets": "Niets, dat loopt al. Telt niet mee.",
     "inb_cleared": "Niets, dat loopt al. De andere vinkjes zijn uitgezet.",
-    "doel_klanten": "Op de schaal: meer klanten die je vinden. Zit in Digitale groei: website, Google-profiel, campagnes en landingspagina's.",
-    "doel_eenplek": "Op de schaal: te veel losse tools. Digitale groei zet alles op één platform.",
-    "doel_intern": "AI Consulting past niet op de schaal: het is maatwerk, op aanvraag.",
-    "doel_horen": "Geen haast. Het gesprek is vrijblijvend."
+    "doel_klanten": "Op de schaal: meer klanten die je vinden. Zit in Online groeien: website, Google-profiel, campagnes en landingspagina's.",
+    "doel_eenplek": "Op de schaal: te veel losse tools. Online groeien zet alles op één platform.",
+    "doel_intern": "AI Consulting past niet op de schaal: het is begeleiding, geen pakket. Introductieprijs: €200 per maand.",
+    "doel_horen": "Geen haast. De demo is vrijblijvend.",
+    "doel_team": "EML AI Team past niet op de schaal: het is een AI-team op maat, met vaste pakketten."
   },
   "ribs": [
     "Website",
@@ -394,7 +406,7 @@
     "Reputatiebeheer",
     "CRM & inbox",
     "Campagnes",
-    "Funnels",
+    "Landingspagina's",
     "Betalingen",
     "Automatisering",
     "Platform"
@@ -404,61 +416,71 @@
     "h": {
       "C": [
         "Ons advies: ",
-        "Digitale groei",
+        "Online groeien",
         "."
       ],
       "C_chat": [
         "Ons advies: ",
-        "Digitale groei",
+        "Online groeien",
         " met de AI-chatbot."
       ],
       "C_recep": [
         "Ons advies: ",
-        "Digitale groei",
+        "Online groeien",
         " met de AI-receptioniste."
       ],
       "C_both": [
         "Ons advies: ",
-        "Digitale groei",
+        "Online groeien",
         " met de AI-chatbot en de AI-receptioniste."
       ],
       "A": [
         "Ons advies: ",
         "AI Consulting",
-        ", op aanvraag."
+        "."
       ],
       "B": [
         "Ons advies: begin met ",
         "AI Consulting",
-        ". Digitale groei voor de voorkant."
+        ". Online groeien voor de voorkant."
       ],
       "D": [
         "Eerlijk gewogen: je hebt ons ",
         "nu niet",
         " nodig."
+      ],
+      "E": [
+        "Ons advies: ",
+        "EML AI Team",
+        ", te beginnen met een gratis analyse."
+      ],
+      "F": [
+        "Ons advies: begin met ",
+        "EML AI Team",
+        ". Online groeien voor de voorkant."
       ]
     },
     "voor": "Voor je {woord}",
     "voor_naam": "Voor {naam}",
-    "opbouw_dg": "{p} Digitale groei",
+    "opbouw_dg": "{p} Online groeien",
     "opbouw_chat": "{p} AI-chatbot",
     "opbouw_recep": "{p} AI-receptioniste",
-    "opbouw_cons": "AI Consulting op aanvraag",
+    "opbouw_cons": "AI Consulting, €200 per maand",
     "mono": "maandelijks opzegbaar · meestal live binnen 14 dagen",
     "alt": "of {p} per maand als we samen beslissen dat de {x} nodig is",
-    "on_request": "Op aanvraag",
-    "cons_txt": "Geen standaardpakket. We analyseren je werking, maken een persoonlijk AI-plan, begeleiden de opzet en optimaliseren elke maand. Bewust beperkt beschikbaar.",
-    "b_txt": "Je antwoorden tonen ook werk aan de voorkant ({needs}). Daarvoor: {list}, {p} per maand. Wat eerst komt, bekijken we in hetzelfde gesprek.",
-    "d_txt": "Je antwoorden vragen nu niets wat je niet al hebt. Hou je {p} per maand. Wil je toch eens samen kijken? Het gesprek is gratis en vrijblijvend.",
+    "on_request": "€200 per maand (introductieprijs)",
+    "cons_txt": "Ongeveer twee sessies per maand, support via WhatsApp en elk kwartaal een plan. Wij implementeren niet zelf: we leren jou AI gebruiken in je eigen werk. Introductieprijs: €200 per maand (excl. btw), maandelijks opzegbaar. We zijn net gestart met AI Consulting: deze prijs geldt maar voor korte tijd en gaat binnenkort omhoog.",
+    "b_txt": "Je antwoorden tonen ook werk aan de voorkant ({needs}). Daarvoor: {list}, {p} per maand{once}. Wat eerst komt, bekijken we in dezelfde demo.",
+    "d_txt": "Je antwoorden vragen nu niets wat je niet al hebt. Hou je {p} per maand. Wil je toch eens samen kijken? De demo is gratis en vrijblijvend.",
     "why_h": "Waarom dit",
     "not_h": "Wat we je niet aanraden",
     "talk_h": "Te bespreken",
     "said": "Je zei:",
     "proof_pre": "Gemeten bij Clinic3D in Hasselt, over 263 dagen:",
     "proof_link": "Lees de case",
-    "incl_h": "Ook in Digitale groei, zonder meerprijs",
+    "incl_h": "Ook in Online groeien, zonder meerprijs",
     "try_h": "Probeer zelf",
-    "try_txt": "Zet zelf iets bij of af. De schaal en de prijs volgen.",
+    "try_txt": "Zet zelf iets bij of af. De schaal en de prijs volgen, excl. btw.",
     "advice_label": "Ons advies",
     "own_label": "Jouw keuze",
     "dev": "Je wijkt af van ons advies. Geen probleem, we bespreken het.",
@@ -466,8 +488,8 @@
     "heavy": "Zwaarder dan je zaak vraagt: {p} per maand die we je niet aanraden.",
     "light": "Lichter dan je zaak vraagt: dan blijft er werk liggen.",
     "doubt_on": "Kan. Bespreken we.",
-    "talk_cta_h": "Je gesprek, voorbereid",
-    "book": "Plan je gratis gesprek (30 min)",
+    "talk_cta_h": "Je demo, voorbereid",
+    "book": "Plan je gratis demo (30 min)",
     "book_micro": "We zetten je weegbriefje op je klembord. Plak het gerust bij je boeking, of stuur het via WhatsApp.",
     "wa": "Stuur je briefje via WhatsApp",
     "wa_micro": "Je verstuurt het zelf. Tot dan zien wij niets.",
@@ -481,12 +503,18 @@
     "edit_h": "Antwoorden aanpassen",
     "again": "Opnieuw wegen",
     "popup_note": "Je weegbriefje staat op je klembord · {advies}",
-    "popup_note_fail": "Je weegbriefje kun je ook via WhatsApp sturen."
+    "popup_note_fail": "Je weegbriefje kun je ook via WhatsApp sturen.",
+    "opbouw_eml": "EML AI Team: gratis analyse",
+    "eml_price": "Vanaf €3.500 + €750 per maand",
+    "eml_txt": "Een AI-team op maat, met AI-medewerkers per afdeling die je via Telegram aanstuurt. Eerst een gratis analyse van je processen, dan een voorstel met het juiste pakket. Vast contract van 12 maanden, prijzen excl. btw.",
+    "eml_link": "Bekijk EML AI Team en de pakketten",
+    "eml_href": "eml-ai-team",
+    "vat": "excl. btw"
   },
   "why": {
     "recep": [
       "Je mist elke dag wel eens een oproep {werk}.",
-      "De AI-receptioniste neemt elke oproep aan, dag en nacht, plant afspraken in je agenda en stelt zich voor als digitale assistente."
+      "De AI-receptioniste neemt dag en nacht je telefoon op, plant afspraken in je agenda en stelt zich voor als digitale assistente."
     ],
     "chat_avond": [
       "Er komen elke dag berichten binnen, ook 's avonds en in het weekend.",
@@ -530,7 +558,7 @@
     ],
     "klanten": [
       "Je wil vooral meer klanten die je vinden en boeken.",
-      "Een snelle, mobiele, SEO-klare website, je Google Business-profiel en lokale zichtbaarheid, plus e-mail- en sms-campagnes en landingspagina's."
+      "Een snelle website die Google goed kan lezen, je Google-profiel en je zichtbaarheid, plus e-mail- en sms-campagnes en landingspagina's."
     ],
     "eenplek": [
       "Je wil alles op één plek.",
@@ -538,26 +566,28 @@
     ]
   },
   "not": {
-    "recep_zelden": "AI-receptioniste: je mist bijna nooit een oproep. Scheelt {p} per maand.",
-    "recep_week": "AI-receptioniste: je mist soms een oproep, maar je klanten boeken niet vooral per telefoon. Je telefoon zit mee in je inbox. Scheelt {p} per maand.",
+    "recep_zelden": "AI-receptioniste: je mist bijna nooit een oproep. Scheelt {p} per maand en €750 eenmalig.",
+    "recep_week": "AI-receptioniste: je mist soms een oproep, maar je klanten boeken niet vooral per telefoon. Je telefoon zit mee in je inbox. Scheelt {p} per maand en €750 eenmalig.",
     "recep_onbekend": "AI-receptioniste: dat weten we pas als je een week je gemiste oproepen telt. Nu niet meegerekend.",
     "chat_zelden": "AI-chatbot: er komen weinig berichten binnen. Scheelt {p} per maand.",
     "chat_paar": "AI-chatbot: een paar berichten per week beantwoord je zelf vanuit één inbox. Scheelt {p} per maand.",
-    "cons": "AI Consulting: bedoeld voor zaken die al goed draaien en AI in hun interne werking willen. Dat koos je niet."
+    "cons": "AI Consulting: bedoeld voor zaken die al goed draaien en zelf AI willen leren gebruiken. Dat koos je niet."
   },
   "talk": {
-    "recep": "AI-receptioniste: je klanten bellen en je mist een paar oproepen per week. Of dat {p} per maand waard is, beslissen we samen.",
+    "recep": "AI-receptioniste: je klanten bellen en je mist een paar oproepen per week. Of dat {p} per maand en €750 eenmalig waard is, beslissen we samen.",
     "chat": "AI-chatbot: elke dag berichten, vooral tijdens de openingsuren. Overdag kun je ze ook later beantwoorden vanuit je inbox. Of de chatbot het verschil maakt, bekijken we samen.",
-    "tel": "Tel vóór het gesprek een week je gemiste oproepen.",
+    "tel": "Tel vóór de demo een week je gemiste oproepen.",
     "agenda": "Welke agenda gebruik je nu, en wat doen we ermee?",
-    "volgorde": "Wat eerst komt: AI Consulting of Digitale groei."
+    "volgorde": "Wat eerst komt: AI Consulting of Online groeien.",
+    "volgorde_eml": "Wat eerst komt: EML AI Team of Online groeien."
   },
   "talk_short": {
     "recep": "AI-receptioniste",
     "chat": "AI-chatbot",
     "tel": "gemiste oproepen tellen",
     "agenda": "huidige agenda",
-    "volgorde": "volgorde AI Consulting en Digitale groei"
+    "volgorde": "volgorde AI Consulting en Online groeien",
+    "volgorde_eml": "volgorde EML AI Team en Online groeien"
   },
   "proof": {
     "afspraken": "650 van 681 afspraken bevestigd, 0 no-shows.",
@@ -578,16 +608,19 @@
     "zelf": "Zelf aangepast: {v} ({p} per maand)",
     "adv_C": "{list}, {p} per maand",
     "adv_doubt": " ({x} bespreken we)",
-    "adv_A": "AI Consulting (op aanvraag)",
-    "adv_B": "AI Consulting (op aanvraag) + Digitale groei, {p} per maand",
+    "adv_A": "AI Consulting (€200 per maand, introductieprijs)",
+    "adv_B": "AI Consulting (€200 per maand) + Online groeien, {p} per maand",
     "adv_D": "nu niets",
-    "and": " + "
+    "and": " + ",
+    "adv_E": "EML AI Team (gratis analyse, pakketten vanaf €3.500 + €750 per maand)",
+    "adv_F": "EML AI Team (gratis analyse) + Online groeien, {p} per maand"
   },
   "wa": {
     "hallo": "Hallo EM Launchpad, ik deed de pakketkiezer op jullie site.",
-    "slot": "Kunnen we 30 minuten bellen?",
-    "slot_cons": "Ik heb interesse in AI Consulting. Kunnen we 30 minuten bellen?",
-    "generic": "Hallo EM Launchpad, ik heb een vraag over jullie pakketten."
+    "slot": "Kunnen we een gratis demo plannen?",
+    "slot_cons": "Ik heb interesse in AI Consulting. Kunnen we een gratis demo plannen?",
+    "generic": "Hallo EM Launchpad, ik heb een vraag over jullie pakketten.",
+    "slot_eml": "Ik heb interesse in EML AI Team. Kunnen we een gratis demo plannen?"
   },
   "sections": {
     "weights": {
@@ -595,12 +628,12 @@
       "h2a": "Wat er op de schaal",
       "h2b": "kan.",
       "lede": "Eén blok en twee losse gewichten. Wat we tegenover je antwoorden zetten, komt altijd uit deze lijst.",
-      "g1": "Digitale groei",
-      "g1_sub": "Eén blok, negen ribbels. €150 per maand, maandelijks opzegbaar.",
+      "g1": "Online groeien",
+      "g1_sub": "Eén blok, negen ribbels. €150 per maand, excl. btw, maandelijks opzegbaar.",
       "items": [
         {
           "t": "Website",
-          "d": "Snel, mobiel en SEO-klaar, met een online afsprakensysteem (agenda) en formulieren.",
+          "d": "Snel op de gsm en zo gebouwd dat Google hem goed kan lezen, met een online afsprakensysteem (agenda) en formulieren.",
           "links": [
             [
               "Websites",
@@ -613,15 +646,15 @@
           ]
         },
         {
-          "t": "Google Business-profiel",
+          "t": "Google-profiel en zichtbaarheid",
           "d": "Volledig ingevuld en up-to-date, voor lokale zichtbaarheid."
         },
         {
-          "t": "Reputatiebeheer",
+          "t": "Reviews op Google",
           "d": "2 uur na elke afspraak vertrekt automatisch een reviewverzoek via sms of e-mail."
         },
         {
-          "t": "CRM & klantendashboard",
+          "t": "CRM en klantendashboard",
           "d": "WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
         },
         {
@@ -629,15 +662,15 @@
           "d": "Gerichte campagnes naar je eigen klantenbestand."
         },
         {
-          "t": "Funnels en landingspagina's",
+          "t": "Landingspagina's",
           "d": "Pagina's voor een actie of een advertentie, rechtstreeks gekoppeld aan je CRM."
         },
         {
-          "t": "Online betalingen en facturatie",
+          "t": "Online betalen en facturen",
           "d": "Stripe, Bancontact, iDEAL, Visa en Apple Pay. Na elke betaling automatisch een factuur, en herinneringen bij onbetaalde facturen."
         },
         {
-          "t": "AI-automatisering en workflows",
+          "t": "Slimme workflows",
           "d": "Opvolging, herinneringen, reviewverzoeken en CRM-updates lopen vanzelf.",
           "links": [
             [
@@ -647,22 +680,25 @@
           ]
         },
         {
-          "t": "Toegang tot het platform",
+          "t": "Toegang tot ons platform",
           "d": "Alles in één dashboard, zonder aparte abonnementen."
         }
       ],
       "g2": "Twee losse gewichten",
-      "g2_sub": "Alleen als je zaak erom vraagt. Altijd bovenop Digitale groei.",
+      "g2_sub": "Alleen als je zaak erom vraagt. Altijd bovenop Online groeien.",
       "chat_d": "Beantwoordt vragen en boekt afspraken, 24/7, op je website, WhatsApp, Instagram en Messenger.",
       "chat_href": "AI%20Chatbots",
       "chat_more": "Meer over de AI-chatbot",
-      "recep_d": "Neemt elke oproep aan, dag en nacht, plant afspraken in je agenda en stelt zich voor als digitale assistente.",
+      "recep_d": "Neemt dag en nacht je telefoon op, plant afspraken in je agenda en stelt zich voor als digitale assistente.",
       "recep_href": "AI%20Voice%20Agents",
       "recep_more": "Meer over de AI-receptioniste",
       "g3": "Past niet op de schaal",
-      "cons_d": "Op aanvraag en bewust beperkt. Voor zaken die al goed draaien en AI in hun interne werking willen: een analyse, een persoonlijk AI-plan, begeleiding bij de opzet en maandelijkse optimalisatie.",
+      "cons_d": "Introductieprijs: €200 per maand (excl. btw), maandelijks opzegbaar. We zijn net gestart met AI Consulting: deze prijs geldt maar voor korte tijd en gaat binnenkort omhoog. Ongeveer twee sessies per maand, support via WhatsApp en elk kwartaal een plan. Wij implementeren niet zelf: we leren jou AI gebruiken in je eigen werk.",
       "cons_href": "Diensten#pakket-2",
-      "cons_more": "Meer over AI Consulting"
+      "cons_more": "Meer over AI Consulting",
+      "eml_d": "Een AI-team op maat voor bedrijven met een team: AI-medewerkers per afdeling, aangestuurd via Telegram. Gratis analyse, pakketten vanaf €3.500 + €750 per maand, vast contract van 12 maanden.",
+      "eml_href": "eml-ai-team",
+      "eml_more": "Meer over EML AI Team"
     },
     "rules": {
       "eyebrow": "Zo wegen we",
@@ -678,11 +714,11 @@
         ],
         [
           "Klanten boeken via de telefoon of via berichten",
-          "Digitale groei: een online agenda in je website en één inbox."
+          "Online groeien: een online agenda in je website en één inbox."
         ],
         [
           "Je mist elke dag wel eens een oproep",
-          "AI-receptioniste, +€125 per maand."
+          "AI-receptioniste, +€150 per maand en €750 eenmalig."
         ],
         [
           "Je mist een paar oproepen per week en je klanten bellen vooral",
@@ -718,11 +754,15 @@
         ],
         [
           "Reviews, facturen, herinneringen of losse kanalen schieten erbij in",
-          "Zit in Digitale groei, zonder meerprijs."
+          "Zit in Online groeien, zonder meerprijs."
         ],
         [
-          "Je wil AI in je interne werking",
-          "AI Consulting, op aanvraag."
+          "Je wil zelf AI leren gebruiken",
+          "AI Consulting, €200 per maand (introductieprijs)."
+        ],
+        [
+          "Je bedrijf heeft een team en je wil AI-medewerkers",
+          "EML AI Team, naast de schaal: gratis analyse, pakketten vanaf €3.500 + €750 per maand."
         ],
         [
           "Niets van dit alles",
@@ -730,7 +770,7 @@
         ],
         [
           "Altijd",
-          "Een uitbreiding komt bovenop Digitale groei."
+          "Een uitbreiding komt bovenop Online groeien."
         ]
       ]
     },
@@ -738,26 +778,27 @@
       "eyebrow": "Vier prijzen",
       "h2a": "Vier prijzen,",
       "h2b": "meer niet.",
-      "lede": "Per maand en maandelijks opzegbaar. AI Consulting is op aanvraag.",
+      "lede": "Per maand, excl. btw en maandelijks opzegbaar. Met de AI-receptioniste komt er eenmalig €750 bij. AI Consulting: €200 per maand (introductieprijs).",
       "items": [
         {
           "p": 150,
-          "t": "Digitale groei"
+          "t": "Online groeien"
         },
         {
           "p": 200,
           "t": "met de AI-chatbot"
         },
         {
-          "p": 275,
-          "t": "met de AI-receptioniste"
+          "p": 300,
+          "t": "met de AI-receptioniste (+ €750 eenmalig)"
         },
         {
-          "p": 325,
-          "t": "met allebei"
+          "p": 350,
+          "t": "met allebei (+ €750 eenmalig)"
         }
       ],
-      "cons": "AI Consulting: op aanvraag."
+      "cons": "AI Consulting: €200 per maand, introductieprijs.",
+      "eml": "EML AI Team: vanaf €3.500 + €750 per maand, met een gratis analyse. Vast contract van 12 maanden."
     },
     "proof": {
       "eyebrow": "Gewogen in de praktijk",
@@ -798,7 +839,7 @@
       "h2b": "verder.",
       "items": [
         [
-          "Een gratis gesprek",
+          "Een gratis demo",
           "30 minuten, vrijblijvend. Neem je weegbriefje mee, dan beginnen we waar jij gebleven bent."
         ],
         [
@@ -818,19 +859,19 @@
       "items": [
         {
           "q": "Moet ik alles nemen?",
-          "a": "Digitale groei is één pakket met alle negen onderdelen, voor €150 per maand. De AI-chatbot en de AI-receptioniste raden we alleen aan als je antwoorden erom vragen."
+          "a": "Online groeien is één pakket met alle negen onderdelen, voor €150 per maand, excl. btw. De AI-chatbot en de AI-receptioniste raden we alleen aan als je antwoorden erom vragen."
         },
         {
-          "q": "Kan ik een uitbreiding nemen zonder Digitale groei?",
-          "a": "Nee. De AI-chatbot en de AI-receptioniste komen altijd bovenop Digitale groei. Daarom zijn er maar vier prijzen: €150, €200, €275 en €325 per maand."
+          "q": "Kan ik een uitbreiding nemen zonder Online groeien?",
+          "a": "Nee. De AI-chatbot en de AI-receptioniste komen altijd bovenop Online groeien. Daarom zijn er maar vier prijzen: €150, €200, €300 en €350 per maand, excl. btw. Met de AI-receptioniste komt er eenmalig €750 bij."
         },
         {
           "q": "Wat als ik niets nodig heb?",
-          "a": "Dan zeggen we dat. Soms is ons advies: nu niets. Het gesprek blijft gratis en vrijblijvend."
+          "a": "Dan zeggen we dat. Soms is ons advies: nu niets. De demo blijft gratis en vrijblijvend."
         },
         {
           "q": "Is het advies bindend?",
-          "a": "Nee. Het is een eerste inschatting op basis van je antwoorden. In het gratis gesprek van 30 minuten bekijken we het samen."
+          "a": "Nee. Het is een eerste inschatting op basis van je antwoorden. In de gratis demo van 30 minuten bekijken we het samen."
         },
         {
           "q": "Waar zijn jullie reviews?",
@@ -842,7 +883,11 @@
         },
         {
           "q": "Hoe snel staat alles er?",
-          "a": "Meestal ben je binnen 14 dagen live. Digitale groei is maandelijks opzegbaar."
+          "a": "Meestal ben je binnen 14 dagen live. Online groeien is maandelijks opzegbaar."
+        },
+        {
+          "q": "En als mijn bedrijf een team heeft?",
+          "a": "Dan kan EML AI Team passen: een AI-team op maat, met AI-medewerkers per afdeling. De analyse is gratis. De pakketten beginnen bij €3.500 eenmalig + €750 per maand, excl. btw, met een vast contract van 12 maanden. Kies bij de laatste vraag: AI-medewerkers voor mijn team."
         }
       ]
     },
@@ -851,8 +896,8 @@
       "h2b": "samen?",
       "h2a_r": "Je briefje ligt",
       "h2b_r": "klaar.",
-      "text": "Een gratis gesprek van 30 minuten. Vrijblijvend, en je hoeft niets voor te bereiden.",
-      "btn": "Plan een gratis gesprek",
+      "text": "Een gratis demo van 30 minuten. Vrijblijvend, en je hoeft niets voor te bereiden.",
+      "btn": "Plan een gratis demo",
       "wa": "Stuur een WhatsApp",
       "badges": [
         "30 minuten",
