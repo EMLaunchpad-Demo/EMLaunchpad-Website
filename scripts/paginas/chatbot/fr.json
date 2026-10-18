@@ -423,6 +423,11 @@
     "eyebrow": "Questions fréquentes",
     "h2a": "Bon à savoir",
     "h2b": "avant de commencer.",
+    "cost": {
+      "label": "Ce que ça coûte :",
+      "text": "50 € par mois en plus de Croissance en ligne (150 € par mois). Ensemble 200 € par mois, résiliable chaque mois. Tous les prix HTVA.",
+      "link": "Tous les tarifs en un coup d’œil"
+    },
     "items": [
       {
         "q": "Le bot ne risque-t-il pas de paraître robotique ?",

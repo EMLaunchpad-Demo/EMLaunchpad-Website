@@ -423,6 +423,11 @@
     "eyebrow": "Veelgestelde vragen",
     "h2a": "Goed om te weten",
     "h2b": "voor je start.",
+    "cost": {
+      "label": "Wat het kost:",
+      "text": "€50 per maand bovenop Online groeien (€150 per maand). Samen €200 per maand, maandelijks opzegbaar. Alle prijzen excl. btw.",
+      "link": "Alle prijzen op een rij"
+    },
     "items": [
       {
         "q": "Klinkt de bot niet robotachtig?",
@@ -464,6 +469,22 @@
         "pre": "Bellen je klanten liever? Dan is er de ",
         "t": "AI-receptioniste",
         "href": "AI%20Voice%20Agents",
+        "post": "."
+      },
+      {
+        "pre": "Per vak: bekijk het voor ",
+        "t": "schoonheidssalons",
+        "href": "website-voor-schoonheidssalons",
+        "post": ","
+      },
+      {
+        "t": "kappers",
+        "href": "website-voor-kappers",
+        "post": " en"
+      },
+      {
+        "t": "praktijken",
+        "href": "website-voor-praktijken",
         "post": "."
       }
     ]

@@ -60,7 +60,8 @@ def dienst(c, rel):
     d = c.get('dienst')
     if not d:
         return ''
-    return '<p class="pf-dienst"><a href="%s%s">%s %s</a></p>' % (rel, d['href'], esc(d['label']), ARROW)
+    # fase 2: extra links naar de branche- of stadspagina (alleen in het NL, die pagina's bestaan alleen daar)
+    return ''.join('<p class="pf-dienst"><a href="%s%s">%s %s</a></p>' % (rel, x['href'], esc(x['label']), ARROW) for x in [d] + c.get('ook', []))
 
 def index_line(c):
     pre, b, post = c['index']

@@ -756,6 +756,12 @@
   "eyebrow": "Questions fréquentes",
   "h2a": "Bon à savoir",
   "h2b": "avant que ça se mette à tourner.",
+  "kost": {
+   "label": "Ce que ça coûte :",
+   "text": "L'automatisation n'a pas de prix séparé. Elle fait partie de Croissance en ligne : 150 € par mois, résiliable chaque mois. Tous les prix HTVA.",
+   "link": "Tous les tarifs en un coup d’œil",
+   "href": "Diensten#prijzen"
+  },
   "items": [
    {
     "q": "Dois-je construire quelque chose moi-même ?",
@@ -763,7 +769,7 @@
    },
    {
     "q": "Combien coûte l'automatisation IA ?",
-    "a": "L'automatisation n'a pas de prix séparé. Elle fait partie de Croissance en ligne : 150 € par mois HTVA, résiliable chaque mois. Vous voulez aussi un chatbot IA ? Comptez 50 € par mois en plus. La réceptionniste IA coûte 150 € par mois et 750 € une fois."
+    "a": "L'automatisation n'a pas de prix séparé. Elle fait partie de Croissance en ligne : 150 € par mois, résiliable chaque mois. Vous voulez aussi un chatbot IA ? Comptez 50 € par mois en plus. La réceptionniste IA coûte 150 € par mois et 750 € une fois. Tous les prix HTVA."
    },
    {
     "q": "Qu'est-ce qui peut tourner tout seul ?",

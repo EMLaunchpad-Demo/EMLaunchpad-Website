@@ -78,6 +78,10 @@ def body(L, lang, pre):
     faqs = ''.join('<div class="faq-item"><button class="faq-q" type="button">%s<span class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 16 16"><path d="M8 3v10M3 8h10"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner">%s</div></div></div>'
                    % (esc(q['q']), esc(q['a'])) for q in fq['items'])
     more = links_par(fq.get('more', []), 'cb-more')
+    # Regel "Wat het kost" bovenaan de FAQ (masterplan 2.4): vaste prijs, excl. btw, link naar de prijstabel op Diensten.
+    kc = fq.get('cost')
+    cost = ('<p class="lead cb-cost"><b>%s</b> %s <a href="Diensten#prijzen" style="text-decoration:underline;text-underline-offset:3px">%s</a></p>\n'
+            % (esc(kc['label']), esc(kc['text']), esc(kc['link']))) if kc else ''
     badges = ''.join('<span>%s</span>' % esc(b) for b in ct['badges'])
     return f'''<!-- ════════ HERO ════════ -->
 <header class="cb-hero" id="main" tabindex="-1">
@@ -188,7 +192,7 @@ def body(L, lang, pre):
 <div class="sec-head" data-reveal="">
 <span class="eyebrow">{esc(fq['eyebrow'])}</span>
 <h2 class="h2">{esc(fq['h2a'])} <span class="grad">{esc(fq['h2b'])}</span></h2>
-</div>
+{cost}</div>
 <div class="faq-list" data-reveal="">{faqs}</div>
 {more}</div>
 </section>

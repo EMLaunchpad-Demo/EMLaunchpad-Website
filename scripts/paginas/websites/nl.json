@@ -50,9 +50,9 @@
   }
  ],
  "meta": {
-  "title": "Website laten maken in Limburg, online boekbaar | EM Launchpad",
+  "title": "Website laten maken met online boeken | EM Launchpad",
   "desc": "Wij ontwerpen, bouwen en beheren je website: snel op de gsm, met online boeken, formulieren en betalen. In Online groeien, €150 per maand, excl. btw.",
-  "ogtitle": "Website laten maken in Limburg, online boekbaar | EM Launchpad",
+  "ogtitle": "Website laten maken met online boeken | EM Launchpad",
   "service": "Websites",
   "offer": "Inbegrepen in het pakket Online groeien"
  },
@@ -67,7 +67,7 @@
   "eyebrow": "Websites",
   "h1a": "Van een leeg blad",
   "h1b": "tot een zaak die boekt.",
-  "lede": "Een website laten maken bij ons, een webbureau uit Limburg, betekent: wij ontwerpen hem rond jouw zaak, bouwen hem en beheren hem. Klanten vinden je, zien meteen wie je bent en boeken, betalen of vragen iets aan. Ook als jij al dicht bent.",
+  "lede": "Een website laten maken bij ons betekent: wij ontwerpen hem rond jouw zaak, bouwen hem en beheren hem. Klanten vinden je, zien meteen wie je bent en boeken, betalen of vragen iets aan, ook als jij al dicht bent. Zit je in Limburg? Bekijk dan [onze klanten per streek](website-laten-maken-limburg).",
   "cta": "Plan een gratis demo",
   "cta2": "Bekijk echt werk",
   "pick": "Bekijk het voor een",
@@ -351,7 +351,7 @@
  ],
  "doet": {
   "eyebrow": "Wat je site voor je doet",
-  "h2a": "Een website laten maken in Limburg?",
+  "h2a": "Waarom een website laten maken?",
   "h2b": "Vier dingen doet een goede site, ook zonder jou.",
   "lede": "Kies er één. Je ziet het meteen op het voorbeeld van hierboven.",
   "group": "Wat je site doet",
@@ -391,6 +391,22 @@
    {
     "label": "Ook 's avonds antwoorden op vragen? Dat is de AI-chatbot, + €50 per maand, excl. btw",
     "href": "AI%20Chatbots"
+   },
+   {
+    "label": "Je zaak ligt in Limburg? Bekijk onze klanten per streek",
+    "href": "website-laten-maken-limburg"
+   },
+   {
+    "label": "Website voor kappers",
+    "href": "website-voor-kappers"
+   },
+   {
+    "label": "Website voor schoonheidssalons en wellness",
+    "href": "website-voor-schoonheidssalons"
+   },
+   {
+    "label": "Website voor praktijken",
+    "href": "website-voor-praktijken"
    }
   ]
  },

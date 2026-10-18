@@ -756,6 +756,12 @@
   "eyebrow": "Veelgestelde vragen",
   "h2a": "Goed om te weten",
   "h2b": "voor het begint te lopen.",
+  "kost": {
+   "label": "Wat het kost:",
+   "text": "Automatisering heeft geen aparte prijs. Ze zit in Online groeien: €150 per maand, maandelijks opzegbaar. Alle prijzen excl. btw.",
+   "link": "Alle prijzen op een rij",
+   "href": "Diensten#prijzen"
+  },
   "items": [
    {
     "q": "Moet ik zelf iets bouwen?",
@@ -763,7 +769,7 @@
    },
    {
     "q": "Wat kost AI-automatisering?",
-    "a": "Automatisering heeft geen aparte prijs. Ze zit in Online groeien: €150 per maand (excl. btw), maandelijks opzegbaar. Wil je er een AI-chatbot bij, dan komt daar €50 per maand bij. De AI-receptioniste kost €150 per maand en eenmalig €750."
+    "a": "Automatisering heeft geen aparte prijs. Ze zit in Online groeien: €150 per maand, maandelijks opzegbaar. Wil je er een AI-chatbot bij, dan komt daar €50 per maand bij. De AI-receptioniste kost €150 per maand en eenmalig €750. Alle prijzen excl. btw."
    },
    {
     "q": "Wat kan er vanzelf lopen?",

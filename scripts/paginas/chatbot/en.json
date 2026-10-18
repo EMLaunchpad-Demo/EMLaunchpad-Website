@@ -423,6 +423,11 @@
     "eyebrow": "Frequently asked questions",
     "h2a": "Good to know",
     "h2b": "before you start.",
+    "cost": {
+      "label": "What it costs:",
+      "text": "€50 a month on top of Online Growth (€150 a month). Together €200 a month, cancellable monthly. All prices excl. VAT.",
+      "link": "All prices at a glance"
+    },
     "items": [
       {
         "q": "Won't the bot sound robotic?",

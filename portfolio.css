@@ -153,6 +153,7 @@ body[data-page="portfolio"] .pf-pijl::after{content:"";position:absolute;right:0
 body[data-page="portfolio"] .pf-producten{margin:22px 0 0;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--hi)}
 /* per zaak een link naar de dienst die erbij hoort */
 body[data-page="portfolio"] .pf-dienst{margin:20px 0 0}
+body[data-page="portfolio"] .pf-dienst+.pf-dienst{margin-top:6px}
 body[data-page="portfolio"] .pf-dienst a{display:inline-flex;align-items:center;gap:8px;min-height:24px;font-size:14.5px;font-weight:600;color:var(--hi);text-decoration:none}
 body[data-page="portfolio"] .pf-dienst a:hover{text-decoration:underline;text-underline-offset:4px}
 body[data-page="portfolio"] .pf-dienst svg{width:14px;height:14px;flex:none}

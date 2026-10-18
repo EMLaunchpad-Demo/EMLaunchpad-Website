@@ -61,6 +61,8 @@ def body(L, lang, pre):
     lenses = ''.join('<button aria-pressed="%s" class="ws-lensb" data-ws-lens="%d" type="button"><b>%s</b><span class="ws-lens-t">%s</span><i aria-hidden="true"></i></button>'
                      % ('true' if i == 0 else 'false', i, esc(x['titel']), esc(fill(x['tekst'], {'vak': v0['chip'].lower(), 'cta': v0['cta']})))
                      for i, x in enumerate(dt['lenses']))
+    # Lede: [label](href) wordt een link (fase 2: link naar de regiopagina, die alleen in het NL bestaat).
+    lede = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', lambda m: '<a href="%s%s" style="text-decoration:underline;text-underline-offset:3px">%s</a>' % (rel, m.group(2), m.group(1)), esc(h['lede']))
     dlinks = ''.join('<a href="%s%s">%s %s</a>' % (rel, x['href'], esc(x['label']), ARROW) for x in dt['links'])
 
     # ---------------- WERK ----------------
@@ -140,7 +142,7 @@ def body(L, lang, pre):
 <div class="ws-crumb"><a href="{rel}Diensten">{esc(h['crumb_home'])}</a> <span>/</span> <span>{esc(h['crumb'])}</span></div>
 <span class="eyebrow">{esc(h['eyebrow'])}</span>
 <h1 class="ws-h1">{esc(h['h1a'])}<br/> <span class="grad">{esc(h['h1b'])}</span></h1>
-<p class="lead ws-lede">{esc(h['lede'])}</p>
+<p class="lead ws-lede">{lede}</p>
 <div class="ws-cta"><a class="btn" data-book="" href="{rel}Contact">{esc(h['cta'])} {ARROW}</a><a class="btn-ghost" href="#werk">{esc(h['cta2'])}</a></div>
 <div class="ws-pick">
 <p class="ws-label" id="wsPickL">{esc(h['pick'])}</p>

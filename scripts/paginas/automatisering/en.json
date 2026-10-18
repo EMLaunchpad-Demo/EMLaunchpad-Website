@@ -756,6 +756,12 @@
   "eyebrow": "Frequently asked questions",
   "h2a": "Good to know",
   "h2b": "before it starts running.",
+  "kost": {
+   "label": "What it costs:",
+   "text": "Automation has no separate price. It's part of Online Growth: €150 a month, cancellable monthly. All prices excl. VAT.",
+   "link": "All prices at a glance",
+   "href": "Diensten#prijzen"
+  },
   "items": [
    {
     "q": "Do I have to build anything myself?",
@@ -763,7 +769,7 @@
    },
    {
     "q": "What does AI automation cost?",
-    "a": "Automation has no separate price. It's part of Online Growth: €150 a month (excl. VAT), cancellable monthly. Want an AI chatbot as well? That's €50 a month extra. The AI receptionist costs €150 a month plus €750 one-off."
+    "a": "Automation has no separate price. It's part of Online Growth: €150 a month, cancellable monthly. Want an AI chatbot as well? That's €50 a month extra. The AI receptionist costs €150 a month plus €750 one-off. All prices excl. VAT."
    },
    {
     "q": "What can run by itself?",

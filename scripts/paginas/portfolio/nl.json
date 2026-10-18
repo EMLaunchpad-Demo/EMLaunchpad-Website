@@ -139,7 +139,10 @@
       "dienst": {
         "label": "Meer over websites met online boeken",
         "href": "Websites"
-      }
+      },
+      "ook": [
+       {"label": "Website voor schoonheidssalons en wellness", "href": "website-voor-schoonheidssalons"}
+      ]
     },
     {
       "id": "clinic3d",
@@ -215,7 +218,11 @@
       "dienst": {
         "label": "Meer over het afsprakensysteem",
         "href": "Afsprakensysteem"
-      }
+      },
+      "ook": [
+       {"label": "Website voor praktijken", "href": "website-voor-praktijken"},
+       {"label": "Website laten maken in Hasselt", "href": "website-laten-maken-hasselt"}
+      ]
     },
     {
       "id": "mett-u",
@@ -264,7 +271,10 @@
       "dienst": {
         "label": "Meer over automatische opvolging",
         "href": "AI-Automatisering"
-      }
+      },
+      "ook": [
+       {"label": "Website laten maken in Heers", "href": "website-laten-maken-heers"}
+      ]
     },
     {
       "id": "kleinhof",
@@ -309,7 +319,10 @@
       "dienst": {
         "label": "Meer over websites",
         "href": "Websites"
-      }
+      },
+      "ook": [
+       {"label": "Website laten maken in Heers", "href": "website-laten-maken-heers"}
+      ]
     },
     {
       "id": "bambine",
@@ -352,7 +365,11 @@
       "dienst": {
         "label": "Meer over het afsprakensysteem",
         "href": "Afsprakensysteem"
-      }
+      },
+      "ook": [
+       {"label": "Website voor schoonheidssalons en wellness", "href": "website-voor-schoonheidssalons"},
+       {"label": "Website laten maken in Lommel", "href": "website-laten-maken-lommel"}
+      ]
     }
   ],
   "eerlijk": {
