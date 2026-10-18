@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "title": "Chatbot IA pour votre entreprise | EM Launchpad",
+    "ogtitle": "Chatbot IA : chaque question a sa réponse, même à 23:47",
+    "desc": "Un chatbot IA qui répond et prend des rendez-vous sur votre site, WhatsApp, Instagram et Messenger. +50 € par mois en plus de Croissance en ligne, HTVA.",
+    "service": "Chatbots IA",
+    "offer": "Chatbot IA (par mois)",
+    "offer_unit": "Par mois"
+  },
+  "hero": {
+    "crumb_parent": "Services",
+    "crumb": "Chatbots IA",
+    "live_now": "Maintenant",
+    "live_post": "votre chatbot est en ligne",
+    "live_static": "Votre chatbot est en ligne, 24/7",
+    "h1a": "Chaque question a sa réponse.",
+    "h1b": "Même à 23:47.",
+    "lede": "Un chatbot IA pour votre entreprise ? Il aide vos clients sur votre site, WhatsApp, Instagram et Messenger : il connaît vos services et vos prix, prend les rendez-vous directement dans votre agenda et vous transmet les questions difficiles.",
+    "chips": [
+      "Disponible 24/7",
+      "NL · FR · EN",
+      "Prend les rendez-vous"
+    ],
+    "cta1": "Planifier une démo gratuite",
+    "cta2": "Essayez la démo"
+  },
+  "inbox": {
+    "title": "Conversations",
+    "sub": "cette nuit, pendant que vous dormiez",
+    "tag": "Exemple",
+    "typing": "le bot écrit…",
+    "rows": [
+      {
+        "ch": "whatsapp",
+        "who": "Sarah",
+        "time": "22:14",
+        "msg": "Vous avez encore de la place demain ?",
+        "status": "Rendez-vous pris",
+        "kind": "book"
+      },
+      {
+        "ch": "instagram",
+        "who": "Tom",
+        "time": "22:51",
+        "msg": "Combien coûte un balayage ?",
+        "status": "Répondu",
+        "kind": "ok"
+      },
+      {
+        "ch": "web",
+        "who": "Visiteur",
+        "time": "23:30",
+        "msg": "Je peux payer avec Bancontact ?",
+        "status": "Répondu",
+        "kind": "ok"
+      },
+      {
+        "ch": "messenger",
+        "who": "Eva",
+        "time": "23:47",
+        "msg": "Vous faites aussi les coiffures de mariée à domicile ?",
+        "status": "Transféré vers vous",
+        "kind": "hand"
+      }
+    ],
+    "sum": "4 conversations · 1 rendez-vous · 1 question pour vous"
+  },
+  "demo": {
+    "eyebrow": "Essayez vous-même",
+    "h2a": "Un chatbot IA pour votre site web,",
+    "h2b": "WhatsApp, Instagram et Messenger.",
+    "lede": "Parlez à un exemple. Choisissez un secteur, un ton et un canal, posez une question et voyez ce qu'il règle pendant ce temps.",
+    "lbl_sector": "Secteur",
+    "lbl_tone": "Ton",
+    "lbl_channel": "Canal",
+    "tones": [
+      {
+        "key": "je",
+        "label": "Amical · tu"
+      },
+      {
+        "key": "u",
+        "label": "Formel · vous"
+      }
+    ],
+    "channels": [
+      {
+        "key": "web",
+        "label": "Site web"
+      },
+      {
+        "key": "whatsapp",
+        "label": "WhatsApp"
+      },
+      {
+        "key": "instagram",
+        "label": "Instagram"
+      },
+      {
+        "key": "messenger",
+        "label": "Messenger"
+      }
+    ],
+    "online": "répond tout de suite",
+    "input": "Choisissez une question ci-dessous",
+    "restart": "Recommencer",
+    "you": "Vous",
+    "note": "Démo avec des questions prédéfinies. Votre vrai bot comprend les questions tapées librement et connaît vos services, vos prix et votre ton.",
+    "log_title": "Ce qui se passe pendant ce temps",
+    "log_empty": "Posez une question. Ici, vous voyez ce que le bot règle pour vous.",
+    "log_now": "à l'instant",
+    "log_book": [
+      {
+        "k": "cal",
+        "t": "Rendez-vous dans votre agenda : {day} à {time}"
+      },
+      {
+        "k": "sms",
+        "t": "Confirmation envoyée par SMS"
+      },
+      {
+        "k": "crm",
+        "t": "Nouveau contact dans votre CRM : {name}"
+      }
+    ],
+    "sectors": [
+      {
+        "key": "kapper",
+        "label": "Salon de coiffure",
+        "biz": "Votre salon",
+        "greet": "{Salut !|Bonjour.} Je suis l'assistant du salon. Comment puis-je {t'aider|vous aider} ?",
+        "intents": [
+          {
+            "q": "Combien coûte une coupe-brushing ?",
+            "a": [
+              "Une coupe-brushing coûte 45 € avec un styliste et 38 € avec un styliste junior."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Prix repris de votre liste de prix"
+              }
+            ],
+            "follow": "Oui, volontiers",
+            "offer": "{Tu veux que je te cherche|Voulez-vous que je vous cherche} un créneau tout de suite ?"
+          },
+          {
+            "q": "Je peux passer samedi pour une coupe-brushing ?",
+            "flow": "book"
+          },
+          {
+            "q": "Je peux payer avec Bancontact ?",
+            "a": [
+              "Bien sûr. Chez nous, {tu peux|vous pouvez} payer par Bancontact, Payconiq ou en liquide."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Réponse tirée de vos questions fréquentes"
+              }
+            ]
+          },
+          {
+            "q": "Vous faites aussi les coiffures de mariée à domicile ?",
+            "a": [
+              "Bonne question ! Notre responsable préfère s'en occuper personnellement.",
+              "Je transmets {ta|votre} question tout de suite. Le responsable {te rappelle|vous rappelle}."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Question transmise · notification sur votre GSM"
+              },
+              {
+                "k": "crm",
+                "t": "Demande de rappel dans votre CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "Samedi, il reste de la place à 10:00 et à 14:30. Quelle heure {te convient|vous convient} ?",
+          "slots": [
+            "10:00",
+            "14:30"
+          ],
+          "day": "samedi",
+          "name_q": "À quel nom puis-je noter le rendez-vous ?",
+          "name": "Sarah Peeters",
+          "done": "Parfait, {Sarah|Madame Peeters} ! {Ton|Votre} rendez-vous est fixé samedi à {time} pour une coupe-brushing. {Tu reçois|Vous recevez} tout de suite une confirmation par SMS, avec un lien pour le déplacer."
+        }
+      },
+      {
+        "key": "kine",
+        "label": "Kiné",
+        "biz": "Votre cabinet",
+        "greet": "{Salut !|Bonjour.} Je suis l'assistant du cabinet. Comment puis-je {t'aider|vous aider} ?",
+        "intents": [
+          {
+            "q": "Combien coûte une séance ?",
+            "a": [
+              "Une séance de 30 minutes coûte 38 €.",
+              "Avec une prescription de {ton|votre} médecin, la mutuelle rembourse une partie."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Prix repris de votre liste de prix"
+              }
+            ],
+            "follow": "Oui, volontiers",
+            "offer": "{Tu veux que je te cherche|Voulez-vous que je vous cherche} un créneau ?"
+          },
+          {
+            "q": "Il reste de la place cette semaine pour une première séance ?",
+            "flow": "book"
+          },
+          {
+            "q": "Qu'est-ce que je dois apporter ?",
+            "a": [
+              "Pour la première séance, {apporte ta|apportez votre} prescription et {ta|votre} carte d'identité.",
+              "{Mets|Mettez} des vêtements confortables, comme ça on peut commencer tout de suite."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Réponse tirée de vos questions fréquentes"
+              }
+            ]
+          },
+          {
+            "q": "J'ai mal après une opération. Vous pouvez m'aider ?",
+            "a": [
+              "Notre kiné préfère examiner ça personnellement, pour que {tu aies|vous ayez} le bon suivi.",
+              "Je transmets {ta|votre} question. Le kiné {te rappelle|vous rappelle}."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Question transmise · notification sur votre GSM"
+              },
+              {
+                "k": "crm",
+                "t": "Demande de rappel dans votre CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "Jeudi, il reste de la place à 08:00 et à 17:30. Quelle heure {te convient|vous convient} ?",
+          "slots": [
+            "08:00",
+            "17:30"
+          ],
+          "day": "jeudi",
+          "name_q": "À quel nom puis-je noter le rendez-vous ?",
+          "name": "Tom Janssens",
+          "done": "Très bien, {Tom|Monsieur Janssens} ! {Ton|Votre} rendez-vous est fixé jeudi à {time} pour une première séance. {Tu reçois|Vous recevez} tout de suite une confirmation par SMS, avec un lien pour le déplacer."
+        }
+      },
+      {
+        "key": "garage",
+        "label": "Garage",
+        "biz": "Votre garage",
+        "greet": "{Bonjour !|Bonjour.} Je suis l'assistant du garage. Comment puis-je {t'aider|vous aider} ?",
+        "intents": [
+          {
+            "q": "Combien coûte un entretien ?",
+            "a": [
+              "Un petit entretien coûte à partir de 149 €, huile et filtre compris.",
+              "Le prix exact dépend de {ta|votre} voiture."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Prix repris de votre liste de prix"
+              }
+            ],
+            "follow": "Oui, volontiers",
+            "offer": "{Tu veux que je te réserve|Voulez-vous que je vous réserve} un créneau tout de suite ?"
+          },
+          {
+            "q": "Je peux déposer ma voiture lundi pour un entretien ?",
+            "flow": "book"
+          },
+          {
+            "q": "Vous avez une voiture de remplacement ?",
+            "a": [
+              "Oui, une voiture de remplacement coûte 15 € par jour.",
+              "Je peux {t'en|vous en} réserver une avec {ton|votre} rendez-vous."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Réponse tirée de vos questions fréquentes"
+              }
+            ]
+          },
+          {
+            "q": "Mon témoin moteur est allumé. C'est grave ?",
+            "a": [
+              "Je ne peux pas évaluer ça de façon fiable sans voir {ta|votre} voiture, et je ne veux pas {te raconter|vous raconter} n'importe quoi.",
+              "Je transmets {ta|votre} question à l'atelier. Ils {te rappellent|vous rappellent}."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Question transmise · notification sur votre GSM"
+              },
+              {
+                "k": "crm",
+                "t": "Demande de rappel dans votre CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "Lundi, {tu peux|vous pouvez} venir à 08:00 ou à 13:00. Quelle heure {te convient|vous convient} ?",
+          "slots": [
+            "08:00",
+            "13:00"
+          ],
+          "day": "lundi",
+          "name_q": "À quel nom puis-je noter le rendez-vous ?",
+          "name": "Els Maes",
+          "done": "C'est noté, {Els|Madame Maes} ! {Ton|Votre} rendez-vous est fixé lundi à {time} pour un entretien. {Tu reçois|Vous recevez} tout de suite une confirmation par SMS, avec un lien pour le déplacer."
+        }
+      }
+    ],
+    "chat_label": "Conversation"
+  },
+  "proof": {
+    "eyebrow": "Mesuré, pas promis",
+    "h2a": "Clinic3D, Hasselt :",
+    "h2b": "650 rendez-vous, 0 no-show.",
+    "text": "En 263 jours, Clinic3D a enregistré 650 rendez-vous confirmés sans un seul no-show. Les confirmations et les rappels sont partis automatiquement : 3 250 e-mails, sans travail manuel.",
+    "bar_a": "Rendez-vous confirmés",
+    "bar_b": "No-shows",
+    "note": "Mesuré du 1er janvier au 20 septembre 2026 (263 jours).",
+    "link": "Lire l'étude de cas complète",
+    "bar_a_n": 650,
+    "bar_b_n": 0,
+    "bar_b_w": "0%"
+  },
+  "feats": {
+    "eyebrow": "Ce qu'il fait",
+    "h2a": "Bien plus que répondre aux questions.",
+    "h2b": "Il vous aide à grandir.",
+    "hint": "Survolez une carte pour voir un exemple.",
+    "items": [
+      {
+        "t": "Répondre aux questions",
+        "d": "Horaires, prix, disponibilités et services. Rapide et correct, jour et nuit.",
+        "ex": "Samedi, nous sommes ouverts de 9 h à 16 h."
+      },
+      {
+        "t": "Qualifier les leads",
+        "d": "Pose les bonnes questions, repère l'intention d'achat et envoie les leads chauds vers votre CRM.",
+        "ex": "Pour quand en avez-vous besoin, et quel est votre budget approximatif ?"
+      },
+      {
+        "t": "Prendre des rendez-vous",
+        "d": "Propose les créneaux libres et planifie directement dans votre agenda.",
+        "ex": "Jeudi à 14:00, c'est encore libre. Je le réserve ?"
+      },
+      {
+        "t": "Passer le relais à un humain",
+        "d": "Question complexe ? Le bot transmet la conversation à votre équipe ou directement à vous.",
+        "ex": "Notre responsable préfère s'en occuper personnellement. Je transmets votre question."
+      },
+      {
+        "t": "Multilingue",
+        "d": "Répond en néerlandais, français ou anglais, dans la langue de votre client.",
+        "ex": "Natuurlijk! Zaterdag om 10 uur, past dat voor u?"
+      },
+      {
+        "t": "Entraîné sur votre entreprise",
+        "d": "Pas un bot générique. Il connaît vos services, vos prix, votre ton et vos questions fréquentes.",
+        "ex": "Notre balayage coûte 95 €, soin compris."
+      }
+    ],
+    "channels_lbl": "Un seul cerveau, tous vos canaux"
+  },
+  "price": {
+    "eyebrow": "Ce que ça coûte",
+    "h2a": "Votre chatbot en plus :",
+    "h2b": "+ 50 € par mois.",
+    "text": "En complément du pack Croissance en ligne (150 € par mois, résiliable chaque mois). Le coût supplémentaire couvre les crédits IA utilisés par votre chatbot. Tous les prix HTVA.",
+    "amount": "50 €",
+    "per": "/ mois",
+    "plus": "en plus de Croissance en ligne · HTVA",
+    "points": [
+      "Site web, WhatsApp, Instagram et Messenger",
+      "Entraîné sur votre entreprise et votre ton",
+      "Prend les rendez-vous dans votre agenda",
+      "Vous transmet les questions difficiles"
+    ],
+    "cta": "Voir le pack",
+    "cta2": "Planifier une démo gratuite"
+  },
+  "how": {
+    "h": "Du briefing à la mise en ligne, en général en 14 jours",
+    "steps": [
+      {
+        "t": "Briefing & entraînement",
+        "d": "Nous nourrissons le bot avec vos services, vos prix, vos questions fréquentes et votre ton, pour qu'il parle comme votre entreprise."
+      },
+      {
+        "t": "Connexion des canaux",
+        "d": "Site web, WhatsApp, Instagram et Messenger sont reliés à un seul cerveau, avec les mêmes connaissances et le même ton."
+      },
+      {
+        "t": "Tests & ajustements",
+        "d": "Nous rejouons des scénarios réels et affinons les réponses jusqu'à ce que chaque conversation soit naturelle et correcte."
+      },
+      {
+        "t": "Mise en ligne & optimisation",
+        "d": "Le bot est mis en ligne, puis ajusté chaque mois à partir de vraies conversations et de nouvelles questions."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "h2a": "Bon à savoir",
+    "h2b": "avant de commencer.",
+    "items": [
+      {
+        "q": "Le bot ne risque-t-il pas de paraître robotique ?",
+        "a": "Non. Nous entraînons le bot sur votre ton et votre style d'écriture. Il comprend les phrases de tous les jours, sans menus à choix rigides."
+      },
+      {
+        "q": "Et si le bot ne sait pas quelque chose ?",
+        "a": "Il transmet alors la conversation à votre équipe ou directement à vous, et note la question pour que vous puissiez répondre quand ça vous arrange. Nous le configurons pour qu'il n'invente pas de réponses : s'il n'est pas sûr de quelque chose, il le dit."
+      },
+      {
+        "q": "Sur quels canaux fonctionne-t-il ?",
+        "a": "Sur votre site web, WhatsApp, Instagram et Facebook Messenger. Tous pilotés par le même cerveau, avec les mêmes connaissances et le même ton."
+      },
+      {
+        "q": "Peut-il ajouter des rendez-vous dans mon agenda ?",
+        "a": "Oui. Il montre vos créneaux libres et planifie le rendez-vous directement dans votre agenda. Votre client reçoit tout de suite une confirmation."
+      },
+      {
+        "q": "Combien coûte un chatbot IA ?",
+        "a": "50 € par mois, en complément du pack Croissance en ligne (150 € par mois, résiliable chaque mois). Le coût supplémentaire couvre les crédits IA utilisés par votre chatbot. Tous les prix HTVA."
+      },
+      {
+        "q": "En combien de temps le bot est-il en ligne ?",
+        "a": "Après le briefing et l'entraînement, nous testons à fond, puis nous mettons le bot en ligne. En général dans les 14 jours."
+      }
+    ],
+    "more": [
+      {
+        "pre": "Il réserve dans votre agenda ? C'est le ",
+        "t": "système de rendez-vous en ligne",
+        "href": "Afsprakensysteem",
+        "post": "."
+      },
+      {
+        "pre": "Vos clients préfèrent appeler ? Il y a la ",
+        "t": "réceptionniste IA",
+        "href": "AI%20Voice%20Agents",
+        "post": "."
+      }
+    ]
+  },
+  "cta": {
+    "h2a": "Prêt pour un assistant qui",
+    "h2b": "répond tout de suite à vos clients ?",
+    "text": "Planifiez une démo gratuite de 30 minutes. Nous construisons votre bot sur mesure et le mettons en ligne sur tous vos canaux.",
+    "btn": "Planifier une démo gratuite",
+    "badges": [
+      "Gratuit et sans engagement",
+      "30 minutes",
+      "Clarté immédiate"
+    ]
+  },
+  "crumbs": [
+    "Home",
+    "Services",
+    "AI Chatbots"
+  ]
+}

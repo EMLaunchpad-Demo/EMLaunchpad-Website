@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "title": "AI-chatbot laten maken voor je zaak | EM Launchpad",
+    "ogtitle": "AI-chatbot: elke vraag beantwoord, ook om 23:47",
+    "desc": "Een AI-chatbot die vragen beantwoordt en afspraken boekt op je website, WhatsApp, Instagram en Messenger. +€50 per maand bovenop Online groeien, excl. btw.",
+    "service": "AI-chatbots",
+    "offer": "AI-chatbot (per maand)",
+    "offer_unit": "Per maand"
+  },
+  "hero": {
+    "crumb_parent": "Diensten",
+    "crumb": "AI-chatbots",
+    "live_now": "Nu",
+    "live_post": "je chatbot is online",
+    "live_static": "Je chatbot is online, 24/7",
+    "h1a": "Elke vraag beantwoord.",
+    "h1b": "Ook om 23:47.",
+    "lede": "Een AI-chatbot laten maken voor je zaak? Hij helpt je klanten op je website, WhatsApp, Instagram en Messenger: hij kent je diensten en prijzen, boekt afspraken rechtstreeks in je agenda en geeft moeilijke vragen door aan jou.",
+    "chips": [
+      "24/7 bereikbaar",
+      "NL · FR · EN",
+      "Boekt afspraken"
+    ],
+    "cta1": "Plan een gratis demo",
+    "cta2": "Probeer de demo"
+  },
+  "inbox": {
+    "title": "Gesprekken",
+    "sub": "vannacht, terwijl jij sliep",
+    "tag": "Voorbeeld",
+    "typing": "bot typt…",
+    "rows": [
+      {
+        "ch": "whatsapp",
+        "who": "Sarah",
+        "time": "22:14",
+        "msg": "Hebben jullie morgen nog plaats?",
+        "status": "Afspraak geboekt",
+        "kind": "book"
+      },
+      {
+        "ch": "instagram",
+        "who": "Tom",
+        "time": "22:51",
+        "msg": "Wat kost een balayage?",
+        "status": "Beantwoord",
+        "kind": "ok"
+      },
+      {
+        "ch": "web",
+        "who": "Bezoeker",
+        "time": "23:30",
+        "msg": "Kan ik met Bancontact betalen?",
+        "status": "Beantwoord",
+        "kind": "ok"
+      },
+      {
+        "ch": "messenger",
+        "who": "Eva",
+        "time": "23:47",
+        "msg": "Doen jullie ook bruidskapsels aan huis?",
+        "status": "Doorgegeven aan jou",
+        "kind": "hand"
+      }
+    ],
+    "sum": "4 gesprekken · 1 afspraak · 1 vraag voor jou"
+  },
+  "demo": {
+    "eyebrow": "Probeer het zelf",
+    "h2a": "Een AI-chatbot voor je website,",
+    "h2b": "WhatsApp, Instagram en Messenger.",
+    "lede": "Praat met een voorbeeld. Kies een sector, een toon en een kanaal, stel een vraag en zie wat hij intussen regelt.",
+    "lbl_sector": "Sector",
+    "lbl_tone": "Toon",
+    "lbl_channel": "Kanaal",
+    "tones": [
+      {
+        "key": "je",
+        "label": "Vriendelijk · je"
+      },
+      {
+        "key": "u",
+        "label": "Formeel · u"
+      }
+    ],
+    "channels": [
+      {
+        "key": "web",
+        "label": "Website"
+      },
+      {
+        "key": "whatsapp",
+        "label": "WhatsApp"
+      },
+      {
+        "key": "instagram",
+        "label": "Instagram"
+      },
+      {
+        "key": "messenger",
+        "label": "Messenger"
+      }
+    ],
+    "online": "antwoordt meteen",
+    "input": "Kies een vraag hieronder",
+    "restart": "Opnieuw beginnen",
+    "you": "Jij",
+    "note": "Demo met vaste voorbeeldvragen. Je echte bot begrijpt vrij getypte vragen en kent jouw diensten, prijzen en toon.",
+    "log_title": "Wat er intussen gebeurt",
+    "log_empty": "Stel een vraag. Hier zie je wat de bot voor je regelt.",
+    "log_now": "nu",
+    "log_book": [
+      {
+        "k": "cal",
+        "t": "Afspraak in je agenda: {day} om {time}"
+      },
+      {
+        "k": "sms",
+        "t": "Bevestiging per sms verstuurd"
+      },
+      {
+        "k": "crm",
+        "t": "Nieuwe klant in je CRM: {name}"
+      }
+    ],
+    "sectors": [
+      {
+        "key": "kapper",
+        "label": "Kapsalon",
+        "biz": "Jouw kapsalon",
+        "greet": "{Hoi!|Goedendag.} Ik ben de assistent van het kapsalon. Waarmee kan ik {je|u} helpen?",
+        "intents": [
+          {
+            "q": "Wat kost knippen en brushen?",
+            "a": [
+              "Knippen en brushen kost €45 bij een stylist en €38 bij een junior stylist."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Prijs gehaald uit je prijslijst"
+              }
+            ],
+            "follow": "Ja, graag",
+            "offer": "Zal ik meteen een moment voor {je|u} zoeken?"
+          },
+          {
+            "q": "Kan ik zaterdag langskomen voor knippen en brushen?",
+            "flow": "book"
+          },
+          {
+            "q": "Kan ik met Bancontact betalen?",
+            "a": [
+              "Zeker. {Je|U} kunt bij ons betalen met Bancontact, Payconiq of cash."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Antwoord uit je veelgestelde vragen"
+              }
+            ]
+          },
+          {
+            "q": "Doen jullie ook bruidskapsels aan huis?",
+            "a": [
+              "Goede vraag! Dat bekijkt de zaakvoerder graag zelf.",
+              "Ik geef {je|uw} vraag meteen door. De zaakvoerder belt {je|u} terug."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Doorgegeven aan jou · melding op je gsm"
+              },
+              {
+                "k": "crm",
+                "t": "Terugbelverzoek in je CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "Zaterdag is er nog plaats om 10:00 en om 14:30. Welk moment past {jou|u} het best?",
+          "slots": [
+            "10:00",
+            "14:30"
+          ],
+          "day": "zaterdag",
+          "name_q": "Op welke naam mag ik de afspraak zetten?",
+          "name": "Sarah Peeters",
+          "done": "{Top, Sarah|Prima, mevrouw Peeters}! {Je|U} staat ingepland op zaterdag om {time} voor knippen en brushen. {Je|U} krijgt zo een bevestiging per sms, met een link om te verplaatsen."
+        }
+      },
+      {
+        "key": "kine",
+        "label": "Kinesist",
+        "biz": "Jouw praktijk",
+        "greet": "{Hoi!|Goedendag.} Ik ben de assistent van de praktijk. Waarmee kan ik {je|u} helpen?",
+        "intents": [
+          {
+            "q": "Wat kost een sessie?",
+            "a": [
+              "Een sessie van 30 minuten kost €38.",
+              "Met een voorschrift van {je|uw} arts betaalt het ziekenfonds een deel terug."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Prijs gehaald uit je prijslijst"
+              }
+            ],
+            "follow": "Ja, graag",
+            "offer": "Zal ik een moment voor {je|u} zoeken?"
+          },
+          {
+            "q": "Is er deze week nog plaats voor een eerste sessie?",
+            "flow": "book"
+          },
+          {
+            "q": "Wat moet ik meebrengen?",
+            "a": [
+              "Breng {je|uw} voorschrift en {je|uw} identiteitskaart mee naar de eerste sessie.",
+              "Draag makkelijke kleren, dan kunnen we meteen aan de slag."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Antwoord uit je veelgestelde vragen"
+              }
+            ]
+          },
+          {
+            "q": "Ik heb pijn na een operatie. Kunnen jullie helpen?",
+            "a": [
+              "Daar kijkt de kinesist graag zelf naar, zodat {je|u} de juiste begeleiding krijgt.",
+              "Ik geef {je|uw} vraag door. De kinesist belt {je|u} terug."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Doorgegeven aan jou · melding op je gsm"
+              },
+              {
+                "k": "crm",
+                "t": "Terugbelverzoek in je CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "Donderdag is er nog plaats om 08:00 en om 17:30. Welk moment past {jou|u} het best?",
+          "slots": [
+            "08:00",
+            "17:30"
+          ],
+          "day": "donderdag",
+          "name_q": "Op welke naam mag ik de afspraak zetten?",
+          "name": "Tom Janssens",
+          "done": "Prima, {Tom|meneer Janssens}! {Je|U} staat ingepland op donderdag om {time} voor een eerste sessie. {Je|U} krijgt zo een bevestiging per sms, met een link om te verplaatsen."
+        }
+      },
+      {
+        "key": "garage",
+        "label": "Garage",
+        "biz": "Jouw garage",
+        "greet": "{Hallo!|Goedendag.} Ik ben de assistent van de garage. Waarmee kan ik {je|u} helpen?",
+        "intents": [
+          {
+            "q": "Wat kost een onderhoudsbeurt?",
+            "a": [
+              "Een kleine onderhoudsbeurt kost vanaf €149, olie en filter inbegrepen.",
+              "De exacte prijs hangt af van {je|uw} wagen."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Prijs gehaald uit je prijslijst"
+              }
+            ],
+            "follow": "Ja, graag",
+            "offer": "Zal ik meteen een moment voor {je|u} vastleggen?"
+          },
+          {
+            "q": "Kan ik mijn auto maandag binnenbrengen voor onderhoud?",
+            "flow": "book"
+          },
+          {
+            "q": "Hebben jullie een vervangwagen?",
+            "a": [
+              "Ja, een vervangwagen kost €15 per dag.",
+              "Ik kan er een voor {je|u} reserveren bij {je|uw} afspraak."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Antwoord uit je veelgestelde vragen"
+              }
+            ]
+          },
+          {
+            "q": "Mijn motorlampje brandt. Is dat erg?",
+            "a": [
+              "Dat kan ik niet veilig inschatten zonder {je|uw} wagen te zien, en ik wil {je|u} niets wijsmaken.",
+              "Ik geef {je|uw} vraag door aan de werkplaats. Zij bellen {je|u} terug."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Doorgegeven aan jou · melding op je gsm"
+              },
+              {
+                "k": "crm",
+                "t": "Terugbelverzoek in je CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "Maandag {kun je|kunt u} binnenrijden om 08:00 of om 13:00. Welk moment past {jou|u} het best?",
+          "slots": [
+            "08:00",
+            "13:00"
+          ],
+          "day": "maandag",
+          "name_q": "Op welke naam mag ik de afspraak zetten?",
+          "name": "Els Maes",
+          "done": "Genoteerd, {Els|mevrouw Maes}! {Je|U} staat ingepland op maandag om {time} voor een onderhoudsbeurt. {Je|U} krijgt zo een bevestiging per sms, met een link om te verplaatsen."
+        }
+      }
+    ],
+    "chat_label": "Chatgesprek"
+  },
+  "proof": {
+    "eyebrow": "Gemeten, niet beloofd",
+    "h2a": "Clinic3D, Hasselt:",
+    "h2b": "650 afspraken, 0 no-shows.",
+    "text": "In 263 dagen boekte Clinic3D 650 bevestigde afspraken, zonder één no-show. De bevestigingen en herinneringen vertrokken automatisch: 3.250 e-mails, zonder handmatig werk.",
+    "bar_a": "Bevestigde afspraken",
+    "bar_b": "No-shows",
+    "note": "Gemeten van 1 januari tot 20 september 2026 (263 dagen).",
+    "link": "Lees de volledige case",
+    "bar_a_n": 650,
+    "bar_b_n": 0,
+    "bar_b_w": "0%"
+  },
+  "feats": {
+    "eyebrow": "Wat hij doet",
+    "h2a": "Meer dan vragen beantwoorden.",
+    "h2b": "Hij laat je groeien.",
+    "hint": "Beweeg over een kaart en zie een voorbeeld.",
+    "items": [
+      {
+        "t": "Vragen beantwoorden",
+        "d": "Openingsuren, prijzen, beschikbaarheid en diensten. Direct en correct, dag en nacht.",
+        "ex": "We zijn zaterdag open van 9 tot 16 uur."
+      },
+      {
+        "t": "Leads kwalificeren",
+        "d": "Stelt de juiste vragen, herkent koopintentie en stuurt warme leads naar je CRM.",
+        "ex": "Voor wanneer zoek je iets, en wat is ongeveer je budget?"
+      },
+      {
+        "t": "Afspraken boeken",
+        "d": "Toont vrije momenten en plant rechtstreeks in je agenda.",
+        "ex": "Donderdag om 14:00 is nog vrij. Zal ik het vastleggen?"
+      },
+      {
+        "t": "Doorgeven aan een mens",
+        "d": "Complexe vraag? De bot geeft het gesprek door aan jou of je team.",
+        "ex": "Dat bekijkt de zaakvoerder graag zelf. Ik geef je vraag door."
+      },
+      {
+        "t": "Meertalig",
+        "d": "Antwoordt in het Nederlands, Frans of Engels, in de taal van je klant.",
+        "ex": "Bien sûr ! Samedi à 10 h, ça vous convient ?"
+      },
+      {
+        "t": "Getraind op jouw bedrijf",
+        "d": "Geen generieke bot. Hij kent jouw diensten, prijzen, toon en veelgestelde vragen.",
+        "ex": "Onze balayage kost €95, verzorging inbegrepen."
+      }
+    ],
+    "channels_lbl": "Eén brein, al je kanalen"
+  },
+  "price": {
+    "eyebrow": "Wat het kost",
+    "h2a": "Je chatbot erbij:",
+    "h2b": "+ €50 per maand.",
+    "text": "Als uitbreiding op het pakket Online groeien (€150 per maand, maandelijks opzegbaar). De extra kost dekt de AI-credits die je chatbot gebruikt. Alle prijzen excl. btw.",
+    "amount": "€50",
+    "per": "/ maand",
+    "plus": "bovenop Online groeien · excl. btw",
+    "points": [
+      "Website, WhatsApp, Instagram en Messenger",
+      "Getraind op jouw bedrijf en jouw toon",
+      "Boekt afspraken in je agenda",
+      "Geeft moeilijke vragen door aan jou"
+    ],
+    "cta": "Bekijk het pakket",
+    "cta2": "Plan een gratis demo"
+  },
+  "how": {
+    "h": "Van briefing tot live, meestal binnen 14 dagen",
+    "steps": [
+      {
+        "t": "Intake & training",
+        "d": "We voeden de bot met je diensten, prijzen, veelgestelde vragen en toon, zodat hij klinkt als jouw bedrijf."
+      },
+      {
+        "t": "Kanalen koppelen",
+        "d": "Website, WhatsApp, Instagram en Messenger worden aangesloten op één brein, met dezelfde kennis en toon."
+      },
+      {
+        "t": "Testen & finetunen",
+        "d": "We spelen echte scenario's na en verfijnen de antwoorden tot elk gesprek natuurlijk en correct verloopt."
+      },
+      {
+        "t": "Live & optimaliseren",
+        "d": "De bot gaat live en wordt maandelijks bijgestuurd op basis van echte gesprekken en nieuwe vragen."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Goed om te weten",
+    "h2b": "voor je start.",
+    "items": [
+      {
+        "q": "Klinkt de bot niet robotachtig?",
+        "a": "Nee. We trainen de bot op jouw toon en schrijfstijl. Hij begrijpt gewone zinnen, zonder starre keuzemenu's."
+      },
+      {
+        "q": "Wat als de bot iets niet weet?",
+        "a": "Dan geeft hij het gesprek door aan jou of je team en noteert hij de vraag, zodat jij kunt antwoorden wanneer het jou past. We stellen hem zo in dat hij geen antwoorden verzint: weet hij iets niet zeker, dan zegt hij dat."
+      },
+      {
+        "q": "Op welke kanalen werkt het?",
+        "a": "Op je website, WhatsApp, Instagram en Facebook Messenger. Allemaal aangestuurd door hetzelfde brein, met dezelfde kennis en toon."
+      },
+      {
+        "q": "Kan hij afspraken in mijn agenda zetten?",
+        "a": "Ja. Hij toont je vrije momenten en plant de afspraak rechtstreeks in je agenda. Je klant krijgt meteen een bevestiging."
+      },
+      {
+        "q": "Wat kost een AI-chatbot?",
+        "a": "€50 per maand, als uitbreiding op het pakket Online groeien (€150 per maand, maandelijks opzegbaar). De extra kost dekt de AI-credits die je chatbot gebruikt. Alle prijzen excl. btw."
+      },
+      {
+        "q": "Hoe snel staat de bot live?",
+        "a": "Na de intake en training testen we grondig en gaan we online. Meestal binnen 14 dagen."
+      }
+    ],
+    "more": [
+      {
+        "pre": "Boekt hij in je agenda? Dat is het ",
+        "t": "online afsprakensysteem",
+        "href": "Afsprakensysteem",
+        "post": "."
+      },
+      {
+        "pre": "Bellen je klanten liever? Dan is er de ",
+        "t": "AI-receptioniste",
+        "href": "AI%20Voice%20Agents",
+        "post": "."
+      }
+    ]
+  },
+  "cta": {
+    "h2a": "Klaar voor een assistent die",
+    "h2b": "je klanten meteen antwoordt?",
+    "text": "Plan een gratis demo van 30 minuten. We bouwen je bot op maat en zetten hem live op al je kanalen.",
+    "btn": "Plan een gratis demo",
+    "badges": [
+      "Gratis en vrijblijvend",
+      "30 minuten",
+      "Direct duidelijkheid"
+    ]
+  },
+  "crumbs": [
+    "Home",
+    "Diensten",
+    "AI Chatbots"
+  ]
+}

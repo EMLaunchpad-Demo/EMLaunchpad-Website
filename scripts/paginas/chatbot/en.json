@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "title": "AI chatbot for your business | EM Launchpad",
+    "ogtitle": "AI chatbot: every question answered, even at 23:47",
+    "desc": "An AI chatbot that answers questions and books appointments on your website, WhatsApp, Instagram and Messenger. +€50 a month with Online Growth, excl. VAT.",
+    "service": "AI chatbots",
+    "offer": "AI chatbot (per month)",
+    "offer_unit": "Per month"
+  },
+  "hero": {
+    "crumb_parent": "Services",
+    "crumb": "AI chatbots",
+    "live_now": "Now",
+    "live_post": "your chatbot is online",
+    "live_static": "Your chatbot is online, 24/7",
+    "h1a": "Every question answered.",
+    "h1b": "Even at 23:47.",
+    "lede": "Want an AI chatbot for your business? It helps your customers on your website, WhatsApp, Instagram and Messenger: it knows your services and prices, books appointments straight into your calendar and passes tricky questions on to you.",
+    "chips": [
+      "Available 24/7",
+      "NL · FR · EN",
+      "Books appointments"
+    ],
+    "cta1": "Book a free demo",
+    "cta2": "Try the demo"
+  },
+  "inbox": {
+    "title": "Conversations",
+    "sub": "last night, while you were asleep",
+    "tag": "Example",
+    "typing": "bot is typing…",
+    "rows": [
+      {
+        "ch": "whatsapp",
+        "who": "Sarah",
+        "time": "22:14",
+        "msg": "Have you got anything free tomorrow?",
+        "status": "Appointment booked",
+        "kind": "book"
+      },
+      {
+        "ch": "instagram",
+        "who": "Tom",
+        "time": "22:51",
+        "msg": "How much is a balayage?",
+        "status": "Answered",
+        "kind": "ok"
+      },
+      {
+        "ch": "web",
+        "who": "Visitor",
+        "time": "23:30",
+        "msg": "Can I pay with Bancontact?",
+        "status": "Answered",
+        "kind": "ok"
+      },
+      {
+        "ch": "messenger",
+        "who": "Eva",
+        "time": "23:47",
+        "msg": "Do you also do bridal hair at home?",
+        "status": "Passed on to you",
+        "kind": "hand"
+      }
+    ],
+    "sum": "4 conversations · 1 appointment · 1 question for you"
+  },
+  "demo": {
+    "eyebrow": "Try it yourself",
+    "h2a": "An AI chatbot for your website,",
+    "h2b": "WhatsApp, Instagram and Messenger.",
+    "lede": "Chat with an example. Pick a sector, a tone and a channel, ask a question and see what it takes care of in the meantime.",
+    "lbl_sector": "Sector",
+    "lbl_tone": "Tone",
+    "lbl_channel": "Channel",
+    "tones": [
+      {
+        "key": "je",
+        "label": "Friendly"
+      },
+      {
+        "key": "u",
+        "label": "Formal"
+      }
+    ],
+    "channels": [
+      {
+        "key": "web",
+        "label": "Website"
+      },
+      {
+        "key": "whatsapp",
+        "label": "WhatsApp"
+      },
+      {
+        "key": "instagram",
+        "label": "Instagram"
+      },
+      {
+        "key": "messenger",
+        "label": "Messenger"
+      }
+    ],
+    "online": "replies instantly",
+    "input": "Choose a question below",
+    "restart": "Start over",
+    "you": "You",
+    "note": "Demo with preset questions. Your real bot understands freely typed questions and knows your services, prices and tone.",
+    "log_title": "What happens in the meantime",
+    "log_empty": "Ask a question. This is where you'll see what the bot takes care of for you.",
+    "log_now": "now",
+    "log_book": [
+      {
+        "k": "cal",
+        "t": "Appointment in your calendar: {day} at {time}"
+      },
+      {
+        "k": "sms",
+        "t": "Confirmation sent by text"
+      },
+      {
+        "k": "crm",
+        "t": "New customer in your CRM: {name}"
+      }
+    ],
+    "sectors": [
+      {
+        "key": "kapper",
+        "label": "Hair salon",
+        "biz": "Your hair salon",
+        "greet": "{Hi!|Hello.} I'm the salon's assistant. How can I help you?",
+        "intents": [
+          {
+            "q": "How much is a cut and blow-dry?",
+            "a": [
+              "A cut and blow-dry is €45 with a stylist and €38 with a junior stylist."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Price taken from your price list"
+              }
+            ],
+            "follow": "Yes, please",
+            "offer": "Shall I find a slot for you right away?"
+          },
+          {
+            "q": "Can I come in on Saturday for a cut and blow-dry?",
+            "flow": "book"
+          },
+          {
+            "q": "Can I pay with Bancontact?",
+            "a": [
+              "Of course. You can pay with Bancontact, Payconiq or cash."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Answer from your FAQs"
+              }
+            ]
+          },
+          {
+            "q": "Do you also do bridal hair at home?",
+            "a": [
+              "Good question! The owner prefers to handle that personally.",
+              "I'll pass your question on right away. The owner will call you back."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Passed on to you · notification on your phone"
+              },
+              {
+                "k": "crm",
+                "t": "Callback request in your CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "On Saturday there's still space at 10:00 and 14:30. Which time suits you?",
+          "slots": [
+            "10:00",
+            "14:30"
+          ],
+          "day": "Saturday",
+          "name_q": "What name shall I put the appointment under?",
+          "name": "Sarah Peeters",
+          "done": "Great, {Sarah|Ms Peeters}! You're booked in on Saturday at {time} for a cut and blow-dry. You'll get a confirmation by text shortly, with a link to reschedule."
+        }
+      },
+      {
+        "key": "kine",
+        "label": "Physiotherapist",
+        "biz": "Your practice",
+        "greet": "{Hi!|Hello.} I'm the practice's assistant. How can I help you?",
+        "intents": [
+          {
+            "q": "How much is a session?",
+            "a": [
+              "A 30-minute session costs €38.",
+              "With a prescription from your doctor, your health insurer refunds part of it."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Price taken from your price list"
+              }
+            ],
+            "follow": "Yes, please",
+            "offer": "Shall I find a slot for you?"
+          },
+          {
+            "q": "Do you have any availability this week for a first session?",
+            "flow": "book"
+          },
+          {
+            "q": "What should I bring?",
+            "a": [
+              "Bring your prescription and your ID card to the first session.",
+              "Wear comfortable clothes so we can get started straight away."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Answer from your FAQs"
+              }
+            ]
+          },
+          {
+            "q": "I'm in pain after an operation. Can you help?",
+            "a": [
+              "The physiotherapist would like to look at that personally, so you get the right care.",
+              "I'll pass your question on. The physiotherapist will call you back."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Passed on to you · notification on your phone"
+              },
+              {
+                "k": "crm",
+                "t": "Callback request in your CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "On Thursday there's still space at 08:00 and 17:30. Which time suits you?",
+          "slots": [
+            "08:00",
+            "17:30"
+          ],
+          "day": "Thursday",
+          "name_q": "What name shall I put the appointment under?",
+          "name": "Tom Janssens",
+          "done": "Perfect, {Tom|Mr Janssens}! You're booked in on Thursday at {time} for a first session. You'll get a confirmation by text shortly, with a link to reschedule."
+        }
+      },
+      {
+        "key": "garage",
+        "label": "Garage",
+        "biz": "Your garage",
+        "greet": "{Hi there!|Hello.} I'm the garage's assistant. How can I help you?",
+        "intents": [
+          {
+            "q": "How much is a service?",
+            "a": [
+              "A minor service starts at €149, oil and filter included.",
+              "The exact price depends on your car."
+            ],
+            "log": [
+              {
+                "k": "price",
+                "t": "Price taken from your price list"
+              }
+            ],
+            "follow": "Yes, please",
+            "offer": "Shall I book a slot for you right away?"
+          },
+          {
+            "q": "Can I bring my car in for a service on Monday?",
+            "flow": "book"
+          },
+          {
+            "q": "Do you have a replacement car?",
+            "a": [
+              "Yes, a replacement car costs €15 a day.",
+              "I can reserve one for you with your appointment."
+            ],
+            "log": [
+              {
+                "k": "ok",
+                "t": "Answer from your FAQs"
+              }
+            ]
+          },
+          {
+            "q": "My engine warning light is on. Is that bad?",
+            "a": [
+              "I can't judge that safely without seeing your car, and I don't want to mislead you.",
+              "I'll pass your question on to the workshop. They'll call you back."
+            ],
+            "log": [
+              {
+                "k": "hand",
+                "t": "Passed on to you · notification on your phone"
+              },
+              {
+                "k": "crm",
+                "t": "Callback request in your CRM"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "ask": "On Monday you can bring your car in at 08:00 or 13:00. Which time suits you?",
+          "slots": [
+            "08:00",
+            "13:00"
+          ],
+          "day": "Monday",
+          "name_q": "What name shall I put the appointment under?",
+          "name": "Els Maes",
+          "done": "Noted, {Els|Ms Maes}! You're booked in on Monday at {time} for a service. You'll get a confirmation by text shortly, with a link to reschedule."
+        }
+      }
+    ],
+    "chat_label": "Chat conversation"
+  },
+  "proof": {
+    "eyebrow": "Measured, not promised",
+    "h2a": "Clinic3D, Hasselt:",
+    "h2b": "650 appointments, 0 no-shows.",
+    "text": "In 263 days, Clinic3D booked 650 confirmed appointments without a single no-show. Confirmations and reminders went out automatically: 3,250 emails, with no manual work.",
+    "bar_a": "Confirmed appointments",
+    "bar_b": "No-shows",
+    "note": "Measured from 1 January to 20 September 2026 (263 days).",
+    "link": "Read the full case study",
+    "bar_a_n": 650,
+    "bar_b_n": 0,
+    "bar_b_w": "0%"
+  },
+  "feats": {
+    "eyebrow": "What it does",
+    "h2a": "More than answering questions.",
+    "h2b": "It helps you grow.",
+    "hint": "Hover over a card to see an example.",
+    "items": [
+      {
+        "t": "Answering questions",
+        "d": "Opening hours, prices, availability and services. Instant and accurate, day and night.",
+        "ex": "We're open on Saturday from 9:00 to 16:00."
+      },
+      {
+        "t": "Qualifying leads",
+        "d": "Asks the right questions, spots buying intent and sends warm leads to your CRM.",
+        "ex": "When do you need it by, and roughly what's your budget?"
+      },
+      {
+        "t": "Booking appointments",
+        "d": "Shows free slots and books straight into your calendar.",
+        "ex": "Thursday at 14:00 is still free. Shall I book it for you?"
+      },
+      {
+        "t": "Handing over to a human",
+        "d": "Complex question? The bot passes the conversation on to you or your team.",
+        "ex": "The owner prefers to handle that personally. I'll pass your question on."
+      },
+      {
+        "t": "Multilingual",
+        "d": "Answers in Dutch, French or English, in your customer's language.",
+        "ex": "Bien sûr ! Samedi à 10 h, ça vous convient ?"
+      },
+      {
+        "t": "Trained on your business",
+        "d": "Not a generic bot. It knows your services, prices, tone and FAQs.",
+        "ex": "Our balayage costs €95, conditioning treatment included."
+      }
+    ],
+    "channels_lbl": "One brain, all your channels"
+  },
+  "price": {
+    "eyebrow": "What it costs",
+    "h2a": "Add your chatbot:",
+    "h2b": "+ €50 a month.",
+    "text": "As an add-on to the Online Growth package (€150 a month, cancellable monthly). The extra cost covers the AI credits your chatbot uses. All prices excl. VAT.",
+    "amount": "€50",
+    "per": "/ month",
+    "plus": "on top of Online Growth · excl. VAT",
+    "points": [
+      "Website, WhatsApp, Instagram and Messenger",
+      "Trained on your business and your tone",
+      "Books appointments in your calendar",
+      "Passes tricky questions on to you"
+    ],
+    "cta": "View the package",
+    "cta2": "Book a free demo"
+  },
+  "how": {
+    "h": "From briefing to live, usually within 14 days",
+    "steps": [
+      {
+        "t": "Intake & training",
+        "d": "We feed the bot your services, prices, FAQs and tone, so it sounds like your business."
+      },
+      {
+        "t": "Connecting channels",
+        "d": "Your website, WhatsApp, Instagram and Messenger are connected to one brain, with the same knowledge and tone."
+      },
+      {
+        "t": "Testing & fine-tuning",
+        "d": "We run through real scenarios and refine the answers until every conversation feels natural and accurate."
+      },
+      {
+        "t": "Live & optimising",
+        "d": "The bot goes live and is fine-tuned every month based on real conversations and new questions."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "h2a": "Good to know",
+    "h2b": "before you start.",
+    "items": [
+      {
+        "q": "Won't the bot sound robotic?",
+        "a": "No. We train the bot on your tone and writing style. It understands everyday sentences, with no rigid option menus."
+      },
+      {
+        "q": "What if the bot doesn't know something?",
+        "a": "Then it passes the conversation on to you or your team and notes the question, so you can answer whenever it suits you. We set it up not to make up answers: if it isn't sure about something, it says so."
+      },
+      {
+        "q": "Which channels does it work on?",
+        "a": "Your website, WhatsApp, Instagram and Facebook Messenger. All run by the same brain, with the same knowledge and tone."
+      },
+      {
+        "q": "Can it put appointments in my calendar?",
+        "a": "Yes. It shows your free slots and books the appointment straight into your calendar. Your customer gets a confirmation right away."
+      },
+      {
+        "q": "How much does an AI chatbot cost?",
+        "a": "€50 a month, as an add-on to the Online Growth package (€150 a month, cancellable monthly). The extra cost covers the AI credits your chatbot uses. All prices excl. VAT."
+      },
+      {
+        "q": "How soon can the bot go live?",
+        "a": "After the intake and training, we test thoroughly and go live. Usually within 14 days."
+      }
+    ],
+    "more": [
+      {
+        "pre": "Does it book in your calendar? That's the ",
+        "t": "online booking system",
+        "href": "Afsprakensysteem",
+        "post": "."
+      },
+      {
+        "pre": "Would your customers rather call? Then there's the ",
+        "t": "AI receptionist",
+        "href": "AI%20Voice%20Agents",
+        "post": "."
+      }
+    ]
+  },
+  "cta": {
+    "h2a": "Ready for an assistant that",
+    "h2b": "answers your customers right away?",
+    "text": "Book a free 30-minute demo. We'll build a bot tailored to your business and launch it on all your channels.",
+    "btn": "Book a free demo",
+    "badges": [
+      "Free and no obligation",
+      "30 minutes",
+      "Immediate clarity"
+    ]
+  },
+  "crumbs": [
+    "Home",
+    "Services",
+    "AI Chatbots"
+  ]
+}

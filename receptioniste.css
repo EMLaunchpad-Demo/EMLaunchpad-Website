@@ -591,3 +591,8 @@ body[data-skin="v2"] .rc-bill .is-sum .grad{transition:background-size .6s cubic
   .cta-band .row .rc-demo{margin:10px 0 0}
   .rc-fsub .rc-prev{display:none}
 }
+
+/* fase 1: eenmalig bedrag als tweede regel onder de maandprijs */
+.rc-plus+.rc-plus{margin-top:4px}
+/* fase 1: de langere notitieregels (belminuten, excl. btw) mogen afbreken, anders duwen ze de pagina breder dan de gsm */
+.rc-bl.is-note span{flex:1 1 auto;min-width:0;line-height:1.5}

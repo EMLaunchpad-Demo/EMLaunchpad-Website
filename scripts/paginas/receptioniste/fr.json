@@ -1,0 +1,826 @@
+{
+  "meta": {
+    "title": "Réceptionniste IA pour entreprises belges | EM Launchpad",
+    "desc": "Une réceptionniste IA répond jour et nuit, planifie vos rendez-vous et transfère l'appel en cas de doute. En français, néerlandais et anglais.",
+    "ogtitle": "Votre téléphone sonne. Votre réceptionniste IA décroche.",
+    "service": "Réceptionniste IA (agent vocal)",
+    "offer": "Réceptionniste IA",
+    "offer_setup": "Installation (une fois)",
+    "offer_month": "Par mois"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {
+      "p": 0,
+      "ax": 74,
+      "ay": 30,
+      "bx": 8,
+      "by": 104,
+      "ao": 0.9,
+      "bo": 0.45
+    },
+    {
+      "p": 0.25,
+      "ax": 20,
+      "ay": 60,
+      "bx": 86,
+      "by": 30,
+      "ao": 0.7,
+      "bo": 0.6
+    },
+    {
+      "p": 0.45,
+      "ax": 84,
+      "ay": 70,
+      "bx": 14,
+      "by": 24,
+      "ao": 0.9,
+      "bo": 0.8
+    },
+    {
+      "p": 0.75,
+      "ax": 30,
+      "ay": 40,
+      "bx": 72,
+      "by": 60,
+      "ao": 0.7,
+      "bo": 0.8
+    },
+    {
+      "p": 1,
+      "ax": 44,
+      "ay": 36,
+      "bx": 58,
+      "by": 42,
+      "ao": 1,
+      "bo": 1
+    }
+  ],
+  "hero": {
+    "crumb_parent": "Services",
+    "crumb": "Réceptionniste IA",
+    "eyebrow": "Réceptionniste IA · standard téléphonique IA",
+    "h1a": "Votre téléphone sonne.",
+    "h1b": "Votre réceptionniste IA décroche.",
+    "lede": "Une réceptionniste IA, ou standard téléphonique IA, à la voix naturelle, proche d'une voix humaine. Elle répond à votre téléphone jour et nuit, planifie les rendez-vous dans votre agenda et vous passe l'appel quand elle a un doute. Vous, vous continuez à travailler.",
+    "cta": "Planifier une démo gratuite",
+    "listen": "Écouter",
+    "listen_off": "Couper le son",
+    "voice_note": "Voix de synthèse de votre appareil, pas sa vraie voix",
+    "play_static": "Lancer la conversation",
+    "foot": [
+      "NL · FR · EN",
+      "Fonctionne avec votre numéro actuel",
+      "En général en ligne dans les 14 jours",
+      "150 € par mois + 750 € une fois, en plus de Croissance en ligne"
+    ],
+    "sr_title": "Exemple de conversation",
+    "dock_label": "Ce qu'elle règle pendant ce temps"
+  },
+  "ui": {
+    "now": "Maintenant",
+    "incoming": "Appel entrant",
+    "live": "En communication",
+    "done": "Terminé",
+    "booked": "rendez-vous planifié",
+    "closed": "Fermé · elle décroche",
+    "pause": "Mettre l'exemple en pause",
+    "resume": "Reprendre",
+    "again": "Réécouter la conversation",
+    "who_r": "Réceptionniste",
+    "who_b": "Appelant",
+    "play": "Lecture",
+    "pause_btn": "Pause",
+    "restart": "Recommencer",
+    "sound_on": "Activer le son",
+    "sound_off": "Couper le son",
+    "transcript": "Lire toute la conversation",
+    "to_fiche": "Voir la fiche d'appel",
+    "goto": "Aller à : {k}, {t}",
+    "of": "sur",
+    "seek": "Position dans la conversation",
+    "no_voice": "Cet appareil n'a pas de bonne voix de synthèse pour cette langue. Vous n'entendez que la sonnerie. Suivez simplement le texte.",
+    "tr": "Traduction",
+    "slot": {
+      "cal": "agenda",
+      "sms": "sms",
+      "crm": "crm",
+      "call": "rappel",
+      "lead": "demande",
+      "lang": "langue"
+    }
+  },
+  "greet": [
+    [
+      0,
+      "Bonjour"
+    ],
+    [
+      12,
+      "Bonjour"
+    ],
+    [
+      18,
+      "Bonsoir"
+    ]
+  ],
+  "open": [
+    9,
+    18
+  ],
+  "zaak_named": "{naam}, l'assistante numérique à l'appareil",
+  "zaak_anon": "ici l'assistante numérique {x}",
+  "voices": {
+    "her": [
+      "Colette",
+      "Ellen",
+      "Dena",
+      "Fenna",
+      "Claire",
+      "Charline",
+      "Denise",
+      "Amélie",
+      "Sylvie",
+      "Julie",
+      "Audrey",
+      "Aurélie",
+      "Marie",
+      "Virginie"
+    ],
+    "allow": "Natural|Neural|Online|Premium|Enhanced|Google",
+    "him": [
+      "Bart",
+      "Frank",
+      "Arnaud",
+      "Maarten",
+      "Xander",
+      "Guy",
+      "Henri",
+      "Paul",
+      "Thomas",
+      "Daniel",
+      "Claude",
+      "Gerard",
+      "Remy",
+      "Jean",
+      "Davis",
+      "Tony",
+      "Jacob",
+      "Eric",
+      "Brian",
+      "Christopher",
+      "Andrew",
+      "Roger",
+      "Steffan",
+      "Fabrice",
+      "Antoine",
+      "Jérôme",
+      "Gérard",
+      "Rémy"
+    ]
+  },
+  "heroCall": {
+    "lines": [
+      {
+        "who": "r",
+        "t": "{groet}, ici l'assistante numérique du salon de coiffure. Comment puis-je vous aider ?",
+        "t_closed": "{groet}, ici l'assistante numérique du salon de coiffure. Le salon est fermé pour le moment, mais je vous aide volontiers."
+      },
+      {
+        "who": "b",
+        "t": "Bonjour ! Je peux encore passer pour une coupe cette semaine ?"
+      },
+      {
+        "who": "r",
+        "t": "Bien sûr. Vendredi, c'est possible à dix heures ou à seize heures. Qu'est-ce qui vous arrange le mieux ?"
+      },
+      {
+        "who": "b",
+        "t": "Seize heures, ça me va. Au nom de Tom."
+      },
+      {
+        "who": "r",
+        "t": "C'est noté, Tom. Vendredi à seize heures. Vous allez recevoir un SMS de confirmation. À vendredi !"
+      }
+    ],
+    "events": [
+      {
+        "line": 4,
+        "word": "noté",
+        "k": "cal",
+        "title": "Dans votre agenda",
+        "sub": "Ven. 16:00 · Coupe · Tom"
+      },
+      {
+        "line": 4,
+        "word": "SMS",
+        "k": "sms",
+        "title": "SMS de confirmation envoyé",
+        "sub": "À l'appelant"
+      },
+      {
+        "end": true,
+        "k": "crm",
+        "title": "Résumé dans votre CRM",
+        "sub": "Nouveau rendez-vous"
+      }
+    ]
+  },
+  "moments": [
+    {
+      "id": "m1005",
+      "time": "10:05",
+      "min": 605,
+      "title": "Une question qu'elle vous laisse",
+      "you": "Vous : en plein soin",
+      "noName": "du cabinet",
+      "night": 0,
+      "photo": {
+        "id": "photo-1519824145371-296894a0daa9",
+        "alt": "Kinésithérapeute qui soigne le dos d'un patient",
+        "pos": "50% 40%",
+        "posM": "45% 45%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Bonjour, {zaak}. Comment puis-je vous aider ?",
+          "note": "Elle dit d'emblée qu'elle est une assistante numérique."
+        },
+        {
+          "who": "b",
+          "t": "Je suis venu hier pour mon dos. Maintenant, j'ai plus mal qu'avant. C'est normal ?"
+        },
+        {
+          "who": "r",
+          "t": "C'est embêtant. Je ne peux pas juger si c'est normal, et je ne veux rien vous dire de faux.",
+          "note": "Elle n'invente pas de réponse."
+        },
+        {
+          "who": "r",
+          "t": "Je peux vous passer la kiné maintenant, ou je note votre question et elle vous rappelle. Que préférez-vous ?"
+        },
+        {
+          "who": "b",
+          "t": "Qu'elle me rappelle, alors."
+        },
+        {
+          "who": "r",
+          "t": "Très bien. Je note votre question et je préviens la kiné. Elle vous rappelle à ce numéro, et vous recevez un SMS confirmant que votre question est notée. À tout à l'heure."
+        }
+      ],
+      "events": [
+        {
+          "line": 5,
+          "word": "Très",
+          "k": "call",
+          "title": "Demande de rappel notée",
+          "sub": "Pour la kiné"
+        },
+        {
+          "line": 5,
+          "word": "SMS",
+          "k": "sms",
+          "title": "SMS envoyé",
+          "sub": "Question notée"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Résumé dans votre CRM",
+          "sub": "Avec transcription"
+        }
+      ],
+      "fiche": {
+        "beller": "0478 •• •• 31",
+        "taal": "Français",
+        "uitkomst": "Demande de rappel pour la kiné",
+        "sms": "Question notée",
+        "samenvatting": "Traité hier pour le dos. A plus mal qu'avant. Souhaite un rappel de la kiné."
+      }
+    },
+    {
+      "id": "m1412",
+      "time": "14:12",
+      "min": 852,
+      "title": "Un nouveau rendez-vous",
+      "you": "Vous : en plein rasage",
+      "noName": "du barbier",
+      "night": 0,
+      "photo": {
+        "id": "photo-1503951914875-452162b0f3f1",
+        "alt": "Un barbier rase un client dans un salon sombre",
+        "pos": "60% 30%",
+        "posM": "62% 35%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Bonjour, {zaak}. Comment puis-je vous aider ?"
+        },
+        {
+          "who": "b",
+          "t": "Bonjour ! J'aimerais faire couper mes cheveux et tailler ma barbe. C'est possible quand ?"
+        },
+        {
+          "who": "r",
+          "t": "Jeudi, j'ai encore de la place à quatorze heures trente ou à dix-sept heures. Qu'est-ce qui vous arrange le mieux ?",
+          "note": "Elle regarde ce qui est libre dans votre agenda."
+        },
+        {
+          "who": "b",
+          "t": "Dix-sept heures, c'est parfait."
+        },
+        {
+          "who": "r",
+          "t": "Super. C'est à quel nom ?"
+        },
+        {
+          "who": "b",
+          "t": "Jonas Claes."
+        },
+        {
+          "who": "r",
+          "t": "C'est noté, Jonas. Jeudi à dix-sept heures, coupe et barbe. Vous allez recevoir un SMS de confirmation. À jeudi !"
+        }
+      ],
+      "events": [
+        {
+          "line": 6,
+          "word": "noté",
+          "k": "cal",
+          "title": "Dans votre agenda",
+          "sub": "Jeu. 17:00 · Coupe et barbe"
+        },
+        {
+          "line": 6,
+          "word": "SMS",
+          "k": "sms",
+          "title": "SMS de confirmation envoyé",
+          "sub": "À l'appelant"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Nouveau client dans votre CRM",
+          "sub": "Avec résumé"
+        }
+      ],
+      "fiche": {
+        "beller": "Jonas Claes · 0496 •• •• 08",
+        "taal": "Français",
+        "uitkomst": "Rendez-vous jeu. 17:00 · coupe et barbe",
+        "sms": "Confirmation envoyée",
+        "samenvatting": "Nouveau client. Veut une coupe et la barbe. Planifié jeudi à 17:00."
+      }
+    },
+    {
+      "id": "m1630",
+      "time": "16:30",
+      "min": 990,
+      "title": "Un client qui parle néerlandais",
+      "you": "Vous : sous une voiture",
+      "noName": "du garage",
+      "night": 0,
+      "photo": {
+        "id": "photo-1702146713858-8e7d1cc29fe8",
+        "alt": "Un mécanicien couché sous une voiture sur cric",
+        "pos": "50% 45%",
+        "posM": "62% 50%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Bonjour, goeiemiddag, {zaak}."
+        },
+        {
+          "who": "b",
+          "lang": "nl",
+          "t": "Goeiedag, spreekt u Nederlands? Mijn auto moet binnen voor onderhoud.",
+          "tr": "Bonjour, vous parlez néerlandais ? Ma voiture doit passer à l'entretien."
+        },
+        {
+          "who": "r",
+          "lang": "nl",
+          "t": "Een ogenblik, ik geef u door aan mijn Nederlandstalige collega.",
+          "tr": "Un instant, je vous passe ma collègue néerlandophone.",
+          "note": "Elle passe le relais à sa collègue assistante néerlandophone."
+        },
+        {
+          "who": "r",
+          "lang": "nl",
+          "t": "Goeiedag, hier de Nederlandstalige digitale assistente van de garage. Maandag kan om acht uur of om één uur. Wat past u het best?",
+          "tr": "Bonjour, ici l'assistante numérique néerlandophone du garage. Lundi, c'est possible à huit heures ou à treize heures. Qu'est-ce qui vous convient le mieux ?"
+        },
+        {
+          "who": "b",
+          "lang": "nl",
+          "t": "Acht uur is perfect. Op naam van Dubois.",
+          "tr": "Huit heures, c'est parfait. Au nom de Dubois."
+        },
+        {
+          "who": "r",
+          "lang": "nl",
+          "t": "Genoteerd, meneer Dubois. Maandag om acht uur, voor het onderhoud. U krijgt zo een sms ter bevestiging. Nog een fijne dag!",
+          "tr": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous allez recevoir un SMS de confirmation. Bonne fin de journée !"
+        }
+      ],
+      "events": [
+        {
+          "line": 2,
+          "k": "lang",
+          "title": "Relais en néerlandais",
+          "sub": "Par l'assistante néerlandophone"
+        },
+        {
+          "line": 5,
+          "word": "Genoteerd",
+          "k": "cal",
+          "title": "Dans votre agenda",
+          "sub": "Lun. 08:00 · Entretien"
+        },
+        {
+          "line": 5,
+          "word": "sms",
+          "k": "sms",
+          "title": "SMS de confirmation envoyé",
+          "sub": "À l'appelant"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Résumé dans votre CRM",
+          "sub": "Avec transcription"
+        }
+      ],
+      "fiche": {
+        "beller": "M. Dubois · 0472 •• •• 56",
+        "taal": "Néerlandais",
+        "uitkomst": "Rendez-vous lun. 08:00 · entretien",
+        "sms": "Confirmation envoyée",
+        "samenvatting": "Veut faire entretenir sa voiture. Planifié lundi à 08:00."
+      }
+    },
+    {
+      "id": "m2140",
+      "time": "21:40",
+      "min": 1300,
+      "title": "Un nouveau client après la fermeture",
+      "you": "Vous : à la maison depuis longtemps",
+      "noName": "du barbier",
+      "night": 1,
+      "photo": {
+        "id": "photo-1585747860715-2ba37e788b70",
+        "alt": "Un salon de barbier vide après la fermeture, les lampes encore allumées",
+        "pos": "50% 45%",
+        "posM": "50% 50%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Bonsoir, {zaak}. Nous sommes fermés pour le moment, mais je vous aide volontiers.",
+          "note": "Après la fermeture, elle décroche quand même."
+        },
+        {
+          "who": "b",
+          "t": "Ah, super. Je me marie en juin et je cherche quelqu'un pour moi et mes quatre témoins. Vous faites ça ?"
+        },
+        {
+          "who": "r",
+          "t": "Félicitations ! Pour un groupe, le gérant préfère faire lui-même une proposition.",
+          "note": "Ce dont elle n'est pas sûre, elle vous le laisse."
+        },
+        {
+          "who": "r",
+          "t": "Je note votre question et je la transmets au gérant. Il vous rappelle à ce numéro. Puis-je avoir votre nom ?"
+        },
+        {
+          "who": "b",
+          "t": "Oui, volontiers. Je m'appelle Wout Maes."
+        },
+        {
+          "who": "r",
+          "t": "Merci, Wout. Vous allez recevoir un SMS confirmant que votre question est notée. Bonne soirée !"
+        }
+      ],
+      "events": [
+        {
+          "line": 1,
+          "after": true,
+          "k": "lead",
+          "title": "Nouvelle demande",
+          "sub": "Mariage en juin · 5 personnes"
+        },
+        {
+          "line": 3,
+          "word": "note",
+          "k": "call",
+          "title": "Demande de rappel notée",
+          "sub": "Pour le gérant"
+        },
+        {
+          "line": 5,
+          "word": "SMS",
+          "k": "sms",
+          "title": "SMS envoyé",
+          "sub": "Question notée"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Résumé dans votre CRM",
+          "sub": "Lead : à rappeler"
+        }
+      ],
+      "fiche": {
+        "beller": "Wout Maes · 0491 •• •• 12",
+        "taal": "Français",
+        "uitkomst": "Demande de rappel pour le gérant",
+        "sms": "Question notée",
+        "samenvatting": "Se marie en juin. Cherche un rendez-vous de groupe pour 5 personnes. Veut une proposition du gérant ; à rappeler."
+      }
+    }
+  ],
+  "luister": {
+    "eyebrow": "Une journée au bout du fil",
+    "h2a": "Quatre appels pour votre réceptionniste IA.",
+    "h2b": "Vous n'avez pas à décrocher.",
+    "lede": "Choisissez un moment. Vous lisez ce qu'elle dit et vous voyez ce qu'elle règle pour vous pendant ce temps. Le son, c'est vous qui l'activez.",
+    "axis_hours": "Vos heures d'ouverture (exemple)",
+    "axis_her": "Elle : jour et nuit",
+    "group": "Choisissez un moment",
+    "name_h": "Personnalisez-la",
+    "name_label": "Nom de votre commerce (facultatif)",
+    "name_ph": "P. ex. le nom sur votre façade",
+    "name_hint": "Elle utilise ce nom quand elle décroche. Le nom reste sur votre appareil et n'est envoyé nulle part.",
+    "name_preview": "{groet}, {zaak}.",
+    "name_default": "de votre commerce",
+    "caption": "Exemples de conversations. Votre propre réceptionniste, nous la configurons avec vos services, vos heures d'ouverture et votre agenda. Avec le son, vous entendez la voix de synthèse de votre appareil, pas la voix de votre réceptionniste."
+  },
+  "fiche": {
+    "eyebrow": "Après l'appel",
+    "h2a": "L'appel est terminé.",
+    "h2b": "Tout est déjà prêt.",
+    "lede": "La transcription et un court résumé arrivent dans votre fichier clients (CRM). Le rendez-vous est dans votre agenda et l'appelant a reçu son SMS. Vous lisez tout quand ça vous arrange.",
+    "caps": [
+      {
+        "ic": "clock",
+        "t": "Répond jour et nuit",
+        "d": "Même quand vous êtes avec un client ou déjà à la maison.",
+        "hl": [
+          "tijd"
+        ]
+      },
+      {
+        "ic": "cal",
+        "t": "Planifie les rendez-vous dans votre agenda",
+        "d": "Elle propose des créneaux libres et enregistre le rendez-vous.",
+        "load": "m1412",
+        "hl": [
+          "uitkomst"
+        ]
+      },
+      {
+        "ic": "moon",
+        "t": "Capte les leads en dehors de vos heures d'ouverture",
+        "d": "Qui appelle le soir obtient quand même une réponse.",
+        "load": "m2140",
+        "hl": [
+          "tijd",
+          "uitkomst"
+        ]
+      },
+      {
+        "ic": "lang",
+        "t": "Parle trois langues",
+        "d": "Néerlandais, français et anglais.",
+        "load": "m1630",
+        "hl": [
+          "taal"
+        ]
+      },
+      {
+        "ic": "hand",
+        "t": "Elle hésite ? Alors c'est pour vous.",
+        "d": "Elle transfère l'appel, ou elle note la question et vous prévient. Nous la configurons pour qu'elle ne réponde pas au hasard.",
+        "load": "m1005",
+        "hl": [
+          "uitkomst"
+        ]
+      },
+      {
+        "ic": "sms",
+        "t": "Confirme par SMS",
+        "d": "L'appelant reçoit tout de suite une confirmation.",
+        "hl": [
+          "sms"
+        ]
+      },
+      {
+        "ic": "note",
+        "t": "Note tout",
+        "d": "Transcription et résumé dans votre CRM.",
+        "hl": [
+          "samenvatting",
+          "transcript"
+        ]
+      },
+      {
+        "ic": "phone",
+        "t": "Sur votre numéro actuel",
+        "d": "Grâce à un renvoi d'appel. Vos clients appellent comme d'habitude.",
+        "hl": [
+          "beller"
+        ]
+      }
+    ],
+    "head": "Fiche d'appel",
+    "tag": "Exemple",
+    "sub": "De l'appel de {tijd}",
+    "fields": {
+      "tijd": "Heure",
+      "duur": "Durée",
+      "beller": "Appelant",
+      "taal": "Langue",
+      "uitkomst": "Résultat",
+      "sms": "SMS",
+      "samenvatting": "Résumé",
+      "transcript": "Transcription"
+    },
+    "transcript_open": "Lire la transcription",
+    "again": "Réécouter l'appel",
+    "announce": "Maintenant : appel de {tijd}",
+    "today": "Aujourd'hui"
+  },
+  "bewijs": {
+    "eyebrow": "Mesuré chez Clinic3D, sans réceptionniste IA",
+    "h2a": "31 appels sur 39 décrochés.",
+    "h2b": "8 sont restés sans réponse.",
+    "lede": "Chez Clinic3D à Hasselt, les patients réservent en ligne : 650 rendez-vous confirmés et 0 no‑show en 263 jours. Au téléphone, 39 appels sont arrivés. 31 ont été décrochés, 6 manqués et 2 sont tombés sur la messagerie vocale.",
+    "kern": "Ce n'est pas beaucoup. Mais derrière chacun de ces appels manqués, il y a quelqu'un qui voulait joindre le cabinet.",
+    "strip_label": "39 appels : 31 décrochés, 6 manqués, 2 vers la messagerie vocale",
+    "leg_a": "décrochés",
+    "leg_m": "manqués",
+    "leg_v": "vers la messagerie",
+    "leg_time": "52 min 36 s de temps d'appel au total",
+    "caption": "Chaque trait est un appel, groupé par type.",
+    "note": "Mesuré du 1er janvier au 20 septembre 2026 (263 jours), sans réceptionniste IA.",
+    "link": "Lire l'étude de cas complète"
+  },
+  "prijs": {
+    "eyebrow": "Ce que ça coûte",
+    "h2a": "Votre réceptionniste en plus.",
+    "h2b": "Pour un montant fixe par mois.",
+    "lede": "En complément du pack Croissance en ligne (150 € par mois, résiliable chaque mois). Le prix mensuel couvre les coûts supplémentaires d'IA et d'intégrations, avec 300 minutes d'appel par mois incluses.",
+    "amount": "150 €",
+    "per": "/ mois",
+    "plus": "en plus de Croissance en ligne",
+    "bill": [
+      [
+        "Croissance en ligne",
+        "150 € / mois"
+      ],
+      [
+        "Réceptionniste IA",
+        "+ 150 € / mois"
+      ],
+      [
+        "Total",
+        "300 € / mois"
+      ],
+      [
+        "Une fois",
+        "750 €"
+      ],
+      [
+        "300 minutes d'appel par mois incluses, ensuite 0,35 € la minute",
+        ""
+      ],
+      [
+        "Tous les prix HTVA · résiliable chaque mois",
+        ""
+      ]
+    ],
+    "points": [
+      "Répond à votre téléphone, jour et nuit",
+      "Planifie les rendez-vous dans votre agenda",
+      "Capte les leads en dehors de vos heures d'ouverture",
+      "Néerlandais, français et anglais",
+      "Confirmation par SMS, résumé dans votre CRM",
+      "Fonctionne avec votre numéro actuel"
+    ],
+    "cta": "Planifier une démo gratuite",
+    "cta2": "Voir le pack",
+    "once": "+ 750 € une fois"
+  },
+  "live": {
+    "eyebrow": "Sa mise en ligne",
+    "h2a": "De la démo gratuite",
+    "h2b": "au premier appel.",
+    "sub": "En général en ligne dans les 14 jours.",
+    "steps": [
+      {
+        "t": "Démo gratuite",
+        "d": "Trente minutes. Nous vous montrons comment elle décroche et passons en revue vos services, vos heures d'ouverture et les cas où elle doit vous passer l'appel."
+      },
+      {
+        "t": "Nous la configurons",
+        "d": "Avec vos services, vos heures d'ouverture et votre ton. Nous connectons votre agenda et votre CRM."
+      },
+      {
+        "t": "Vous l'appelez",
+        "d": "Vous l'appelez d'abord vous-même. Ce qui ne va pas, nous l'ajustons."
+      },
+      {
+        "t": "Renvoi d'appel et mise en ligne",
+        "d": "Nous mettons en place un renvoi d'appel sur votre numéro actuel. Vos clients appellent comme d'habitude."
+      }
+    ],
+    "live_label": "En ligne"
+  },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "h2a": "Bon à savoir",
+    "h2b": "avant qu'elle décroche.",
+    "items": [
+      {
+        "q": "L'appelant entend-il qu'il parle à une IA ?",
+        "a": "Nous la configurons pour qu'elle se présente comme l'assistante numérique de votre commerce, comme dans les exemples de cette page. Ainsi, l'appelant sait tout de suite à quoi s'en tenir. Elle a bien une voix naturelle, proche d'une voix humaine. C'est aussi ce que demande le règlement européen sur l'IA (AI Act) : qui parle à une IA doit le savoir."
+      },
+      {
+        "q": "Est-ce que ça fonctionne avec mon numéro actuel ?",
+        "a": "Oui. Nous mettons en place un renvoi d'appel sur votre numéro actuel. Vos clients appellent simplement comme d'habitude."
+      },
+      {
+        "q": "Et si elle ne connaît pas la réponse ?",
+        "a": "Elle transfère alors l'appel, ou elle note la question et vous prévient. Vous rappelez quand ça vous arrange. Nous la configurons pour qu'elle ne réponde pas au hasard : en cas de doute, c'est pour vous."
+      },
+      {
+        "q": "Quelles langues parle-t-elle ?",
+        "a": "Néerlandais, français et anglais."
+      },
+      {
+        "q": "Comprend-elle mes clients, même avec un accent ?",
+        "a": "Vous le testez vous-même : avant la mise en ligne, vous l'appelez d'abord. Si elle ne comprend pas quelque chose, elle redemande ou transfère l'appel. Ce qui ne va pas, nous l'ajustons."
+      },
+      {
+        "q": "Peut-elle ajouter des rendez-vous dans mon agenda ?",
+        "a": "Oui. Elle propose des créneaux libres, planifie le rendez-vous dans votre agenda et l'appelant reçoit une confirmation par SMS."
+      },
+      {
+        "q": "Que devient la conversation ?",
+        "a": "La transcription et un court résumé arrivent dans votre CRM. Vous pouvez ainsi relire plus tard qui a appelé et ce qui a été réglé."
+      },
+      {
+        "q": "Est-ce que j'entends sa vraie voix sur cette page ?",
+        "a": "Non. Avec le son activé, vous entendez la voix de synthèse de votre propre appareil, et elle sonne différemment sur chaque appareil. Votre réceptionniste, elle, a une voix naturelle, proche d'une voix humaine."
+      },
+      {
+        "q": "Combien coûte une réceptionniste IA ?",
+        "a": "750 € une fois et 150 € par mois, en complément du pack Croissance en ligne (150 € par mois, résiliable chaque mois). Le prix mensuel comprend 300 minutes d'appel ; chaque minute supplémentaire coûte 0,35 €. Tous les prix HTVA."
+      },
+      {
+        "q": "En combien de temps est-elle en ligne ?",
+        "a": "En général dans les 14 jours."
+      }
+    ],
+    "more_label": "À lire aussi (en néerlandais) :",
+    "more": [
+      {
+        "t": "Voice agents: laat AI de telefoon opnemen",
+        "href": "emtimes/ai/voice-agents-laat-ai-de-telefoon-opnemen/",
+        "ext": true
+      },
+      {
+        "pre": "· L'agenda dans lequel elle réserve : ",
+        "t": "système de rendez-vous en ligne",
+        "href": "Afsprakensysteem",
+        "post": "."
+      },
+      {
+        "pre": "· Un appel manqué reçoit automatiquement un SMS : ",
+        "t": "automatisation IA",
+        "href": "AI-Automatisering",
+        "post": "."
+      }
+    ]
+  },
+  "cta": {
+    "h2a": "Le prochain appel,",
+    "h2b": "c'est elle qui le prend.",
+    "text": "Planifiez une démo gratuite de 30 minutes. Nous regardons ensemble quels appels elle peut prendre pour vous.",
+    "btn": "Planifier une démo gratuite",
+    "badges": [
+      "Gratuit et sans engagement",
+      "30 minutes",
+      "En général en ligne dans les 14 jours"
+    ],
+    "demo": "Voir tous les services et les prix",
+    "demo_href": "Diensten"
+  },
+  "crumbs": [
+    "Home",
+    "Services",
+    "AI Voice Agents"
+  ]
+}

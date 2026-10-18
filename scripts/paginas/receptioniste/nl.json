@@ -1,0 +1,820 @@
+{
+  "meta": {
+    "title": "AI-receptioniste voor je zaak, dag en nacht | EM Launchpad",
+    "desc": "Een AI-receptioniste (AI-telefoniste) neemt dag en nacht je telefoon op, plant afspraken in je agenda en verbindt door als ze twijfelt. NL, FR en EN.",
+    "ogtitle": "Je telefoon gaat. Je AI-receptioniste neemt op.",
+    "service": "AI-receptioniste (voice agent)",
+    "offer": "AI-receptioniste",
+    "offer_setup": "Setup (eenmalig)",
+    "offer_month": "Per maand"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {
+      "p": 0,
+      "ax": 74,
+      "ay": 30,
+      "bx": 8,
+      "by": 104,
+      "ao": 0.9,
+      "bo": 0.45
+    },
+    {
+      "p": 0.25,
+      "ax": 20,
+      "ay": 60,
+      "bx": 86,
+      "by": 30,
+      "ao": 0.7,
+      "bo": 0.6
+    },
+    {
+      "p": 0.45,
+      "ax": 84,
+      "ay": 70,
+      "bx": 14,
+      "by": 24,
+      "ao": 0.9,
+      "bo": 0.8
+    },
+    {
+      "p": 0.75,
+      "ax": 30,
+      "ay": 40,
+      "bx": 72,
+      "by": 60,
+      "ao": 0.7,
+      "bo": 0.8
+    },
+    {
+      "p": 1,
+      "ax": 44,
+      "ay": 36,
+      "bx": 58,
+      "by": 42,
+      "ao": 1,
+      "bo": 1
+    }
+  ],
+  "hero": {
+    "crumb_parent": "Diensten",
+    "crumb": "AI-receptioniste",
+    "eyebrow": "AI-receptioniste · AI-telefoniste",
+    "h1a": "Je telefoon gaat.",
+    "h1b": "Je AI-receptioniste neemt op.",
+    "lede": "Een AI-receptioniste, ook wel AI-telefoniste, met een mensachtige stem. Ze neemt dag en nacht je telefoon op, plant afspraken in je agenda en verbindt door als ze twijfelt. Jij werkt gewoon verder.",
+    "cta": "Plan een gratis demo",
+    "listen": "Luister mee",
+    "listen_off": "Geluid uit",
+    "voice_note": "Voorleesstem van je toestel, niet haar echte stem",
+    "play_static": "Speel het gesprek af",
+    "foot": [
+      "NL · FR · EN",
+      "Werkt op je bestaande nummer",
+      "Meestal live binnen 14 dagen",
+      "€150 per maand + €750 eenmalig, bovenop Online groeien"
+    ],
+    "sr_title": "Voorbeeldgesprek",
+    "dock_label": "Wat ze intussen regelt"
+  },
+  "ui": {
+    "now": "Nu",
+    "incoming": "Inkomende oproep",
+    "live": "In gesprek",
+    "done": "Afgerond",
+    "booked": "afspraak ingepland",
+    "closed": "Zaak dicht · zij neemt op",
+    "pause": "Pauzeer het voorbeeldgesprek",
+    "resume": "Speel verder",
+    "again": "Speel het gesprek nog eens",
+    "who_r": "Receptioniste",
+    "who_b": "Beller",
+    "play": "Speel af",
+    "pause_btn": "Pauzeer",
+    "restart": "Opnieuw",
+    "sound_on": "Geluid aan",
+    "sound_off": "Geluid uit",
+    "transcript": "Lees het hele gesprek",
+    "to_fiche": "Bekijk de gespreksfiche",
+    "goto": "Ga naar: {k}, {t}",
+    "of": "van",
+    "seek": "Positie in het gesprek",
+    "no_voice": "Op dit toestel is geen goede voorleesstem voor deze taal. Je hoort alleen de beltoon. Lees gewoon mee.",
+    "tr": "Vertaling",
+    "slot": {
+      "cal": "agenda",
+      "sms": "sms",
+      "crm": "crm",
+      "call": "terugbellen",
+      "lead": "aanvraag",
+      "lang": "taal"
+    }
+  },
+  "greet": [
+    [
+      0,
+      "Goeiemorgen"
+    ],
+    [
+      12,
+      "Goeiemiddag"
+    ],
+    [
+      18,
+      "Goeienavond"
+    ]
+  ],
+  "open": [
+    9,
+    18
+  ],
+  "zaak_named": "{naam}, met de digitale assistente",
+  "zaak_anon": "met de digitale assistente van {x}",
+  "voices": {
+    "her": [
+      "Colette",
+      "Ellen",
+      "Dena",
+      "Fenna",
+      "Claire",
+      "Charline",
+      "Denise",
+      "Amélie",
+      "Sylvie",
+      "Julie"
+    ],
+    "allow": "Natural|Neural|Online|Premium|Enhanced|Google",
+    "him": [
+      "Bart",
+      "Frank",
+      "Arnaud",
+      "Maarten",
+      "Xander",
+      "Guy",
+      "Henri",
+      "Paul",
+      "Thomas",
+      "Daniel",
+      "Claude",
+      "Gerard",
+      "Remy",
+      "Jean",
+      "Davis",
+      "Tony",
+      "Jacob",
+      "Eric",
+      "Brian",
+      "Christopher",
+      "Andrew",
+      "Roger",
+      "Steffan",
+      "Fabrice",
+      "Antoine",
+      "Jérôme"
+    ]
+  },
+  "heroCall": {
+    "lines": [
+      {
+        "who": "r",
+        "t": "{groet}, met de digitale assistente van het kapsalon. Waarmee kan ik je helpen?",
+        "t_closed": "{groet}, met de digitale assistente van het kapsalon. De zaak is nu dicht, maar ik help je graag verder."
+      },
+      {
+        "who": "b",
+        "t": "Hallo! Kan ik deze week nog komen knippen?"
+      },
+      {
+        "who": "r",
+        "t": "Zeker. Vrijdag kan om tien uur of om vier uur. Wat past je het best?"
+      },
+      {
+        "who": "b",
+        "t": "Vier uur is goed. Op naam van Tom."
+      },
+      {
+        "who": "r",
+        "t": "Genoteerd, Tom. Vrijdag om vier uur. Je krijgt zo een sms ter bevestiging. Tot vrijdag!"
+      }
+    ],
+    "events": [
+      {
+        "line": 4,
+        "word": "Genoteerd",
+        "k": "cal",
+        "title": "In je agenda",
+        "sub": "Vr 16:00 · Knippen · Tom"
+      },
+      {
+        "line": 4,
+        "word": "sms",
+        "k": "sms",
+        "title": "Sms-bevestiging verstuurd",
+        "sub": "Naar de beller"
+      },
+      {
+        "end": true,
+        "k": "crm",
+        "title": "Samenvatting in je CRM",
+        "sub": "Nieuwe afspraak"
+      }
+    ]
+  },
+  "moments": [
+    {
+      "id": "m1005",
+      "time": "10:05",
+      "min": 605,
+      "title": "Een vraag die ze aan jou overlaat",
+      "you": "Jij: midden in een behandeling",
+      "noName": "de praktijk",
+      "night": 0,
+      "photo": {
+        "id": "photo-1519824145371-296894a0daa9",
+        "alt": "Kinesitherapeut behandelt de rug van een patiënt",
+        "pos": "50% 40%",
+        "posM": "45% 45%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Goeiemorgen, {zaak}. Waarmee kan ik u helpen?",
+          "note": "Ze zegt meteen dat ze digitaal is."
+        },
+        {
+          "who": "b",
+          "t": "Ik was gisteren bij jullie voor mijn rug. Nu doet het meer pijn dan ervoor. Is dat normaal?"
+        },
+        {
+          "who": "r",
+          "t": "Dat is vervelend. Of dat normaal is, kan ik niet inschatten, en ik wil u niets verkeerds vertellen.",
+          "note": "Ze verzint geen antwoord."
+        },
+        {
+          "who": "r",
+          "t": "Ik kan u nu doorverbinden, of ik noteer uw vraag en de kinesitherapeut belt u terug. Wat heeft u liever?"
+        },
+        {
+          "who": "b",
+          "t": "Laat haar maar terugbellen."
+        },
+        {
+          "who": "r",
+          "t": "Goed. Ik noteer uw vraag en verwittig de kinesitherapeut. Ze belt u terug op dit nummer, en u krijgt een sms dat uw vraag genoteerd is. Tot straks."
+        }
+      ],
+      "events": [
+        {
+          "line": 5,
+          "word": "Goed",
+          "k": "call",
+          "title": "Terugbelverzoek genoteerd",
+          "sub": "Voor de kinesitherapeut"
+        },
+        {
+          "line": 5,
+          "word": "sms",
+          "k": "sms",
+          "title": "Sms verstuurd",
+          "sub": "Vraag genoteerd"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Samenvatting in je CRM",
+          "sub": "Met transcript"
+        }
+      ],
+      "fiche": {
+        "beller": "0478 •• •• 31",
+        "taal": "Nederlands",
+        "uitkomst": "Terugbelverzoek voor de kinesitherapeut",
+        "sms": "Vraag genoteerd",
+        "samenvatting": "Gisteren behandeld voor de rug. Heeft nu meer pijn dan ervoor. Wil teruggebeld worden door de kinesitherapeut."
+      }
+    },
+    {
+      "id": "m1412",
+      "time": "14:12",
+      "min": 852,
+      "title": "Een nieuwe afspraak",
+      "you": "Jij: midden in een scheerbeurt",
+      "noName": "de barbier",
+      "night": 0,
+      "photo": {
+        "id": "photo-1503951914875-452162b0f3f1",
+        "alt": "Barbier scheert een klant in een donkere barbershop",
+        "pos": "60% 30%",
+        "posM": "62% 35%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Goeiemiddag, {zaak}. Waarmee kan ik je helpen?"
+        },
+        {
+          "who": "b",
+          "t": "Dag! Ik wil graag mijn haar en baard laten doen. Wanneer kan dat?"
+        },
+        {
+          "who": "r",
+          "t": "Donderdag heb ik nog plaats om half drie of om vijf uur. Wat past je het best?",
+          "note": "Ze kijkt in je agenda wat er vrij is."
+        },
+        {
+          "who": "b",
+          "t": "Vijf uur is perfect."
+        },
+        {
+          "who": "r",
+          "t": "Top. Op welke naam mag ik het zetten?"
+        },
+        {
+          "who": "b",
+          "t": "Jonas Claes."
+        },
+        {
+          "who": "r",
+          "t": "Genoteerd, Jonas. Donderdag om vijf uur, knippen en baard. Je krijgt zo een sms ter bevestiging. Tot donderdag!"
+        }
+      ],
+      "events": [
+        {
+          "line": 6,
+          "word": "Genoteerd",
+          "k": "cal",
+          "title": "In je agenda",
+          "sub": "Do 17:00 · Knippen en baard"
+        },
+        {
+          "line": 6,
+          "word": "sms",
+          "k": "sms",
+          "title": "Sms-bevestiging verstuurd",
+          "sub": "Naar de beller"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Nieuwe klant in je CRM",
+          "sub": "Met samenvatting"
+        }
+      ],
+      "fiche": {
+        "beller": "Jonas Claes · 0496 •• •• 08",
+        "taal": "Nederlands",
+        "uitkomst": "Afspraak do 17:00 · knippen en baard",
+        "sms": "Bevestiging verstuurd",
+        "samenvatting": "Nieuwe klant. Wil knippen en baard. Ingepland op donderdag om 17:00."
+      }
+    },
+    {
+      "id": "m1630",
+      "time": "16:30",
+      "min": 990,
+      "title": "Een klant die Frans spreekt",
+      "you": "Jij: onder een auto",
+      "noName": "de garage",
+      "night": 0,
+      "photo": {
+        "id": "photo-1702146713858-8e7d1cc29fe8",
+        "alt": "Mecanicien ligt onder een opgekrikte auto",
+        "pos": "50% 45%",
+        "posM": "62% 50%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Goeiemiddag, bonjour, {zaak}."
+        },
+        {
+          "who": "b",
+          "lang": "fr",
+          "t": "Bonjour, vous parlez français ? Ma voiture doit passer à l'entretien.",
+          "tr": "Goeiedag, spreekt u Frans? Mijn auto moet binnen voor onderhoud."
+        },
+        {
+          "who": "r",
+          "lang": "fr",
+          "t": "Un instant, je vous passe ma collègue francophone.",
+          "tr": "Een ogenblik, ik geef u door aan mijn Franstalige collega.",
+          "note": "Ze geeft door aan haar Franstalige collega-assistente."
+        },
+        {
+          "who": "r",
+          "lang": "fr",
+          "t": "Bonjour, ici l'assistante numérique francophone du garage. Lundi, je peux vous proposer huit heures ou treize heures. Qu'est-ce qui vous convient ?",
+          "tr": "Goeiedag, hier de Franstalige digitale assistente van de garage. Maandag kan ik u acht uur of één uur voorstellen. Wat past u?"
+        },
+        {
+          "who": "b",
+          "lang": "fr",
+          "t": "Huit heures, c'est parfait. Au nom de Dubois.",
+          "tr": "Acht uur is perfect. Op naam van Dubois."
+        },
+        {
+          "who": "r",
+          "lang": "fr",
+          "t": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous recevrez un SMS de confirmation. Bonne fin de journée !",
+          "tr": "Genoteerd, meneer Dubois. Maandag om acht uur, voor onderhoud. U krijgt een sms ter bevestiging. Nog een fijne dag!"
+        }
+      ],
+      "events": [
+        {
+          "line": 2,
+          "k": "lang",
+          "title": "Overgenomen in het Frans",
+          "sub": "Door de Franstalige assistente"
+        },
+        {
+          "line": 5,
+          "word": "noté",
+          "k": "cal",
+          "title": "In je agenda",
+          "sub": "Ma 08:00 · Onderhoud"
+        },
+        {
+          "line": 5,
+          "word": "SMS",
+          "k": "sms",
+          "title": "Sms-bevestiging verstuurd",
+          "sub": "Naar de beller"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Samenvatting in je CRM",
+          "sub": "Met transcript"
+        }
+      ],
+      "fiche": {
+        "beller": "M. Dubois · 0472 •• •• 56",
+        "taal": "Frans",
+        "uitkomst": "Afspraak ma 08:00 · onderhoud",
+        "sms": "Bevestiging verstuurd",
+        "samenvatting": "Wil zijn wagen laten onderhouden. Ingepland op maandag om 08:00."
+      }
+    },
+    {
+      "id": "m2140",
+      "time": "21:40",
+      "min": 1300,
+      "title": "Een nieuwe klant na sluitingstijd",
+      "you": "Jij: al lang thuis",
+      "noName": "de barbier",
+      "night": 1,
+      "photo": {
+        "id": "photo-1585747860715-2ba37e788b70",
+        "alt": "Lege barbershop na sluitingstijd, de lampen branden nog",
+        "pos": "50% 45%",
+        "posM": "50% 50%"
+      },
+      "lines": [
+        {
+          "who": "r",
+          "t": "Goeienavond, {zaak}. De zaak is nu dicht, maar ik help je graag verder.",
+          "note": "Na sluitingstijd neemt ze gewoon op."
+        },
+        {
+          "who": "b",
+          "t": "Ah, fijn. Ik trouw in juni en zoek iemand voor mij en mijn vier getuigen. Doen jullie dat?"
+        },
+        {
+          "who": "r",
+          "t": "Proficiat! Voor een groep maakt de zaakvoerder graag zelf een voorstel.",
+          "note": "Wat ze niet zeker weet, laat ze aan jou."
+        },
+        {
+          "who": "r",
+          "t": "Ik noteer je vraag en geef ze door aan de zaakvoerder. Hij belt je terug op dit nummer. Mag ik je naam?"
+        },
+        {
+          "who": "b",
+          "t": "Graag. Ik ben Wout Maes."
+        },
+        {
+          "who": "r",
+          "t": "Dank je, Wout. Je krijgt zo een sms dat je vraag genoteerd is. Nog een fijne avond!"
+        }
+      ],
+      "events": [
+        {
+          "line": 1,
+          "after": true,
+          "k": "lead",
+          "title": "Nieuwe aanvraag",
+          "sub": "Huwelijk in juni · 5 personen"
+        },
+        {
+          "line": 3,
+          "word": "noteer",
+          "k": "call",
+          "title": "Terugbelverzoek genoteerd",
+          "sub": "Voor de zaakvoerder"
+        },
+        {
+          "line": 5,
+          "word": "sms",
+          "k": "sms",
+          "title": "Sms verstuurd",
+          "sub": "Vraag genoteerd"
+        },
+        {
+          "end": true,
+          "k": "crm",
+          "title": "Samenvatting in je CRM",
+          "sub": "Lead: terugbellen"
+        }
+      ],
+      "fiche": {
+        "beller": "Wout Maes · 0491 •• •• 12",
+        "taal": "Nederlands",
+        "uitkomst": "Terugbelverzoek voor de zaakvoerder",
+        "sms": "Vraag genoteerd",
+        "samenvatting": "Trouwt in juni. Zoekt een groepsafspraak voor 5 personen. Wil een voorstel van de zaakvoerder; terugbellen."
+      }
+    }
+  ],
+  "luister": {
+    "eyebrow": "Een dag aan de lijn",
+    "h2a": "Vier telefoontjes voor je AI-receptioniste.",
+    "h2b": "Jij hoeft niet op te nemen.",
+    "lede": "Kies een moment. Je leest mee wat ze zegt en ziet wat ze intussen voor je regelt. Het geluid zet je zelf aan.",
+    "axis_hours": "Jouw openingsuren (voorbeeld)",
+    "axis_her": "Zij: dag en nacht",
+    "group": "Kies een moment",
+    "name_h": "Maak het van jou",
+    "name_label": "Naam van je zaak (optioneel)",
+    "name_ph": "Bv. de naam op je gevel",
+    "name_hint": "Ze gebruikt die naam als ze opneemt. De naam blijft op je toestel en gaat nergens heen.",
+    "name_preview": "{groet}, {zaak}.",
+    "name_default": "je zaak",
+    "caption": "Voorbeeldgesprekken. Je eigen receptioniste stellen we in met jouw diensten, openingsuren en agenda. Met geluid hoor je de voorleesstem van je toestel, niet de stem van je receptioniste."
+  },
+  "fiche": {
+    "eyebrow": "Na elk gesprek",
+    "h2a": "Het gesprek is voorbij.",
+    "h2b": "Alles staat al klaar.",
+    "lede": "Het transcript en een korte samenvatting komen in je klantenbestand (CRM). De afspraak staat in je agenda en de beller heeft zijn sms. Jij leest het wanneer het jou past.",
+    "caps": [
+      {
+        "ic": "clock",
+        "t": "Neemt op, dag en nacht",
+        "d": "Ook als jij bij een klant staat of al thuis bent.",
+        "hl": [
+          "tijd"
+        ]
+      },
+      {
+        "ic": "cal",
+        "t": "Plant afspraken in je agenda",
+        "d": "Ze stelt vrije momenten voor en legt de afspraak vast.",
+        "load": "m1412",
+        "hl": [
+          "uitkomst"
+        ]
+      },
+      {
+        "ic": "moon",
+        "t": "Vangt leads op buiten je openingsuren",
+        "d": "Wie 's avonds belt, krijgt toch een antwoord.",
+        "load": "m2140",
+        "hl": [
+          "tijd",
+          "uitkomst"
+        ]
+      },
+      {
+        "ic": "lang",
+        "t": "Spreekt drie talen",
+        "d": "Nederlands, Frans en Engels.",
+        "load": "m1630",
+        "hl": [
+          "taal"
+        ]
+      },
+      {
+        "ic": "hand",
+        "t": "Twijfelt ze? Dan komt het bij jou.",
+        "d": "Ze verbindt door, of ze noteert de vraag en verwittigt je. We stellen haar zo in dat ze niet gokt.",
+        "load": "m1005",
+        "hl": [
+          "uitkomst"
+        ]
+      },
+      {
+        "ic": "sms",
+        "t": "Bevestigt per sms",
+        "d": "De beller krijgt meteen een bevestiging.",
+        "hl": [
+          "sms"
+        ]
+      },
+      {
+        "ic": "note",
+        "t": "Schrijft alles op",
+        "d": "Transcript en samenvatting in je CRM.",
+        "hl": [
+          "samenvatting",
+          "transcript"
+        ]
+      },
+      {
+        "ic": "phone",
+        "t": "Op je bestaande nummer",
+        "d": "Via een doorschakeling. Je klanten bellen zoals altijd.",
+        "hl": [
+          "beller"
+        ]
+      }
+    ],
+    "head": "Gespreksfiche",
+    "tag": "Voorbeeld",
+    "sub": "Van het gesprek van {tijd}",
+    "fields": {
+      "tijd": "Tijdstip",
+      "duur": "Duur",
+      "beller": "Beller",
+      "taal": "Taal",
+      "uitkomst": "Uitkomst",
+      "sms": "Sms",
+      "samenvatting": "Samenvatting",
+      "transcript": "Transcript"
+    },
+    "transcript_open": "Lees het transcript",
+    "again": "Luister het gesprek opnieuw",
+    "announce": "Nu: gesprek van {tijd}",
+    "today": "Vandaag"
+  },
+  "bewijs": {
+    "eyebrow": "Gemeten bij Clinic3D, zonder AI-receptioniste",
+    "h2a": "31 van de 39 oproepen beantwoord.",
+    "h2b": "8 bleven onbeantwoord.",
+    "lede": "Bij Clinic3D in Hasselt boeken patiënten online: 650 bevestigde afspraken en 0 no‑shows in 263 dagen. Aan de telefoon kwamen 39 oproepen binnen. 31 werden beantwoord, 6 gemist en 2 gingen naar voicemail.",
+    "kern": "Het zijn er niet veel. Maar achter elke gemiste oproep zit iemand die de zaak wilde bereiken.",
+    "strip_label": "39 oproepen: 31 beantwoord, 6 gemist, 2 naar voicemail",
+    "leg_a": "beantwoord",
+    "leg_m": "gemist",
+    "leg_v": "naar voicemail",
+    "leg_time": "52 min 36 s totale beltijd",
+    "caption": "Elk streepje is één oproep, per soort gegroepeerd.",
+    "note": "Gemeten van 1 januari tot 20 september 2026 (263 dagen), zonder AI-receptioniste.",
+    "link": "Lees de volledige case"
+  },
+  "prijs": {
+    "eyebrow": "Wat het kost",
+    "h2a": "Je receptioniste erbij.",
+    "h2b": "Voor een vast bedrag per maand.",
+    "lede": "Als uitbreiding op het pakket Online groeien (€150 per maand, maandelijks opzegbaar). De maandprijs dekt de extra kosten voor AI en koppelingen, met 300 belminuten per maand inbegrepen.",
+    "amount": "€150",
+    "per": "/ maand",
+    "plus": "bovenop Online groeien",
+    "bill": [
+      [
+        "Online groeien",
+        "€150 / maand"
+      ],
+      [
+        "AI-receptioniste",
+        "+ €150 / maand"
+      ],
+      [
+        "Samen",
+        "€300 / maand"
+      ],
+      [
+        "Eenmalig",
+        "€750"
+      ],
+      [
+        "300 belminuten per maand inbegrepen, daarna €0,35 per minuut",
+        ""
+      ],
+      [
+        "Alle prijzen excl. btw · maandelijks opzegbaar",
+        ""
+      ]
+    ],
+    "points": [
+      "Neemt je telefoon op, dag en nacht",
+      "Plant afspraken in je agenda",
+      "Vangt leads op buiten je openingsuren",
+      "Nederlands, Frans en Engels",
+      "Bevestiging per sms, samenvatting in je CRM",
+      "Werkt op je bestaande nummer"
+    ],
+    "cta": "Plan een gratis demo",
+    "cta2": "Bekijk het pakket",
+    "once": "+ €750 eenmalig"
+  },
+  "live": {
+    "eyebrow": "Zo staat ze live",
+    "h2a": "Van gratis demo",
+    "h2b": "tot eerste telefoontje.",
+    "sub": "Meestal live binnen 14 dagen.",
+    "steps": [
+      {
+        "t": "Gratis demo",
+        "d": "Dertig minuten. We tonen je hoe ze opneemt en overlopen je diensten, je openingsuren en wanneer ze moet doorverbinden."
+      },
+      {
+        "t": "Wij stellen haar in",
+        "d": "Met jouw diensten, openingsuren en toon. We koppelen je agenda en je CRM."
+      },
+      {
+        "t": "Jij belt haar",
+        "d": "Je belt haar eerst zelf. Wat niet klopt, sturen we bij."
+      },
+      {
+        "t": "Doorschakelen en live",
+        "d": "We zetten een doorschakeling op je bestaande nummer. Je klanten bellen zoals altijd."
+      }
+    ],
+    "live_label": "Live"
+  },
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Goed om te weten",
+    "h2b": "voor ze opneemt.",
+    "items": [
+      {
+        "q": "Hoort een beller dat hij met AI praat?",
+        "a": "Wij stellen haar zo in dat ze zich voorstelt als digitale assistente van je zaak, zoals in de voorbeelden op deze pagina. Zo weet de beller meteen waar hij aan toe is. Ze heeft wel een mensachtige stem. Dat is ook wat de Europese AI-verordening (AI Act) vraagt: wie met AI praat, moet dat weten."
+      },
+      {
+        "q": "Werkt het op mijn bestaande nummer?",
+        "a": "Ja. We zetten een doorschakeling op je huidige nummer. Je klanten bellen gewoon zoals altijd."
+      },
+      {
+        "q": "Wat als ze het antwoord niet weet?",
+        "a": "Dan verbindt ze de beller door, of ze noteert de vraag en verwittigt je. Jij belt terug wanneer het jou past. We stellen haar zo in dat ze niet gokt: bij twijfel komt het bij jou."
+      },
+      {
+        "q": "In welke talen spreekt ze?",
+        "a": "Nederlands, Frans en Engels."
+      },
+      {
+        "q": "Verstaat ze mijn klanten, ook met een accent?",
+        "a": "Dat test je zelf: voor ze live gaat, bel je haar eerst. Verstaat ze iets niet, dan vraagt ze het opnieuw of verbindt ze door. Wat niet goed gaat, sturen we bij."
+      },
+      {
+        "q": "Kan ze afspraken in mijn agenda zetten?",
+        "a": "Ja. Ze stelt vrije momenten voor, plant de afspraak in je agenda en de beller krijgt een bevestiging per sms."
+      },
+      {
+        "q": "Wat gebeurt er met het gesprek?",
+        "a": "Het transcript en een korte samenvatting komen in je CRM. Zo lees je later na wie er belde en wat er geregeld is."
+      },
+      {
+        "q": "Hoor ik op deze pagina haar echte stem?",
+        "a": "Nee. Met geluid aan hoor je de voorleesstem van je eigen toestel, en die klinkt op elk toestel anders. Je receptioniste zelf heeft een mensachtige stem."
+      },
+      {
+        "q": "Wat kost een AI-receptioniste?",
+        "a": "€750 eenmalig en €150 per maand, als uitbreiding op het pakket Online groeien (€150 per maand, maandelijks opzegbaar). In de maandprijs zitten 300 belminuten; elke extra minuut kost €0,35. Alle prijzen excl. btw."
+      },
+      {
+        "q": "Hoe snel staat ze live?",
+        "a": "Meestal binnen 14 dagen."
+      }
+    ],
+    "more_label": "Lees ook:",
+    "more": [
+      {
+        "t": "Voice agents: laat AI de telefoon opnemen",
+        "href": "emtimes/ai/voice-agents-laat-ai-de-telefoon-opnemen/",
+        "ext": true
+      },
+      {
+        "pre": "· De agenda waarin ze boekt: ",
+        "t": "online afsprakensysteem",
+        "href": "Afsprakensysteem",
+        "post": "."
+      },
+      {
+        "pre": "· Een gemiste oproep krijgt automatisch een sms: ",
+        "t": "AI-automatisering",
+        "href": "AI-Automatisering",
+        "post": "."
+      }
+    ]
+  },
+  "cta": {
+    "h2a": "De volgende oproep",
+    "h2b": "neemt zij op.",
+    "text": "Plan een gratis demo van 30 minuten. We bekijken samen welke telefoontjes zij voor je kan opnemen.",
+    "btn": "Plan een gratis demo",
+    "badges": [
+      "Gratis en vrijblijvend",
+      "30 minuten",
+      "Meestal live binnen 14 dagen"
+    ],
+    "demo": "Bekijk alle diensten en prijzen",
+    "demo_href": "Diensten"
+  },
+  "crumbs": [
+    "Home",
+    "Diensten",
+    "AI Voice Agents"
+  ]
+}
