@@ -1,0 +1,729 @@
+{
+ "lang": "nl",
+ "tone": "blauw",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 74,
+   "ay": 34,
+   "bx": 10,
+   "by": 96,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.18,
+   "ax": 24,
+   "ay": 40,
+   "bx": 82,
+   "by": 70,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.4,
+   "ax": 78,
+   "ay": 58,
+   "bx": 18,
+   "by": 30,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.62,
+   "ax": 30,
+   "ay": 46,
+   "bx": 72,
+   "by": 60,
+   "ao": 0.8,
+   "bo": 0.6
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "slug": "eml-ai-team",
+ "meta": {
+  "title": "EML AI Team: AI-medewerkers op maat | EM Launchpad",
+  "desc": "Een AI-team op maat: AI-medewerkers per afdeling die je via Telegram aanstuurt. Gratis analyse, pakketten vanaf €3.500 + €750 per maand, excl. btw.",
+  "ogtitle": "EML AI Team: een AI-team op maat voor je bedrijf | EM Launchpad",
+  "service": "EML AI Team",
+  "serviceType": "AI-team op maat (AI-medewerkers per afdeling)",
+  "offer": "Gratis analyse, pakketten vanaf €3.500 setup + €750 per maand",
+  "offers": [
+   {
+    "id": "analyse",
+    "name": "EML AI Team · Analyse",
+    "desc": "Je processen in kaart en een voorstel van pakket en agentlijst. Altijd gratis.",
+    "setup": 0,
+    "month": null,
+    "from": false
+   },
+   {
+    "id": "start",
+    "name": "EML AI Team · Start",
+    "desc": "1 afdeling, 3 à 4 agents. Vast contract van 12 maanden.",
+    "setup": 3500,
+    "month": 750,
+    "from": false
+   },
+   {
+    "id": "groei",
+    "name": "EML AI Team · Groei",
+    "desc": "2 à 3 afdelingen, 6 à 10 agents, dashboard en Chief of Staff. Vast contract van 12 maanden.",
+    "setup": 7500,
+    "month": 1500,
+    "from": false
+   },
+   {
+    "id": "volledig",
+    "name": "EML AI Team · Volledig",
+    "desc": "4 à 5 afdelingen, integraties op maat. Vast contract van 12 maanden.",
+    "setup": 15000,
+    "month": 2500,
+    "from": true
+   }
+  ]
+ },
+ "hero": {
+  "crumb_home": "Diensten",
+  "crumb": "EML AI Team",
+  "eyebrow": "EML AI Team",
+  "h1a": "Je team krijgt er collega's bij.",
+  "h1b": "AI-medewerkers, op maat gebouwd.",
+  "lede": "We bouwen voor je bedrijf een AI-team op maat: AI-medewerkers per afdeling die marketing, opvolging, planning, administratie en klantcontact oppakken. Jij geeft taken door via Telegram en keurt goed wat ertoe doet.",
+  "cta": "Plan een gratis demo",
+  "cta2": "Bekijk de pakketten",
+  "cta2_href": "#pakketten",
+  "pick": "Bekijk het voor een",
+  "caption": "Voorbeeld. Je echte AI-team stellen we samen na de gratis analyse: jouw afdelingen, jouw taken, jouw toon. Chief of Staff en dashboard zitten vanaf het pakket Groei.",
+  "foot": [
+   "Gratis analyse",
+   "Pakketten vanaf €3.500 + €750 per maand",
+   "Excl. btw · contract van 12 maanden"
+  ]
+ },
+ "ui": {
+  "example": "Voorbeeld",
+  "pause": "Pauzeer",
+  "play": "Speel verder",
+  "again": "Opnieuw",
+  "pause_aria": "Pauzeer het voorbeeld",
+  "play_aria": "Speel het voorbeeld verder",
+  "again_aria": "Speel het voorbeeld opnieuw",
+  "group": "{bedrijf} · AI-team",
+  "members": "{n} agents en jij",
+  "you": "Jij",
+  "cos": "Chief of Staff",
+  "voice": "Spraakbericht",
+  "typing": "typt…",
+  "approve": "Goedkeuren",
+  "wait": "Wacht",
+  "approved": "Goedgekeurd",
+  "waiting": "Wacht op jou",
+  "sr_hero": "Voorbeeld: de Telegram-groep van het AI-team van {bedrijf}. De agents melden wat ze deden en vragen jouw akkoord voor {wat}.",
+  "from": "vanaf",
+  "free": "Gratis",
+  "setup": "eenmalig",
+  "per": "per maand",
+  "excl": "excl. btw",
+  "agents": "agents",
+  "dept": "afdeling",
+  "depts": "afdelingen",
+  "tab_label": "Kies een sector",
+  "org_owner": "Jij, de zaakvoerder",
+  "org_cos_tag": "vanaf Groei"
+ },
+ "niches": [
+  {
+   "id": "installateur",
+   "chip": "Installateur",
+   "bedrijf": "Installatiebedrijf Peeters",
+   "wat": "een planning en een offerte",
+   "afdelingen": [
+    {
+     "naam": "Sales",
+     "agents": [
+      [
+       "Offertemaker",
+       "Zet offertes klaar op basis van de aanvraag."
+      ],
+      [
+       "Premie-checker",
+       "Kijkt na welke premies bij een aanvraag kunnen passen."
+      ]
+     ]
+    },
+    {
+     "naam": "Planning en techniekers",
+     "agents": [
+      [
+       "Planner",
+       "Plant interventies in de agenda van je techniekers."
+      ],
+      [
+       "Ploegcoördinator",
+       "Bezorgt elke technieker zijn dagplanning."
+      ]
+     ]
+    },
+    {
+     "naam": "Service",
+     "agents": [
+      [
+       "Onderhoudsherinnering",
+       "Herinnert klanten aan hun jaarlijkse onderhoud."
+      ],
+      [
+       "Storingsdesk",
+       "Ontvangt storingsmeldingen via mail en berichten en zet ze klaar voor de planner."
+      ]
+     ]
+    },
+    {
+     "naam": "Financiën",
+     "agents": [
+      [
+       "Factuurjager",
+       "Volgt openstaande facturen op."
+      ]
+     ]
+    }
+   ],
+   "thread": [
+    {
+     "van": "agent",
+     "wie": "Storingsdesk",
+     "tekst": "Nieuwe storingsmelding via de website: de ketel valt uit. Staat klaar voor de planner."
+    },
+    {
+     "van": "agent",
+     "wie": "Planner",
+     "tekst": "Morgen om 10:00 past in de route van technieker 2. Zal ik het inplannen?",
+     "ask": true
+    },
+    {
+     "van": "owner",
+     "voice": "0:04",
+     "tekst": "Ja, doe maar."
+    },
+    {
+     "van": "agent",
+     "wie": "Offertemaker",
+     "tekst": "De offerte voor de warmtepomp van dinsdag staat klaar, met de premies die erbij kunnen passen. Wil je ze nalezen?",
+     "ask": true
+    },
+    {
+     "van": "cos",
+     "wie": "Chief of Staff",
+     "tekst": "Vandaag: twee onderhoudsbeurten ingepland en een factuur opgevolgd. Eén offerte wacht op jou."
+    }
+   ]
+  },
+  {
+   "id": "immo",
+   "chip": "Immo",
+   "bedrijf": "Immo Hendrickx",
+   "wat": "bezichtigingen en een herinnering",
+   "afdelingen": [
+    {
+     "naam": "Leads en kandidaat-kopers",
+     "agents": [
+      [
+       "Leadopvolger",
+       "Beantwoordt nieuwe aanvragen en vraagt wat ze zoeken."
+      ]
+     ]
+    },
+    {
+     "naam": "Bezichtigingen",
+     "agents": [
+      [
+       "Bezichtigingsplanner",
+       "Stelt momenten voor en zet bevestigde bezoeken in de agenda."
+      ]
+     ]
+    },
+    {
+     "naam": "Eigenaars",
+     "agents": [
+      [
+       "Schattingsopvolger",
+       "Volgt aanvragen voor een schatting op."
+      ]
+     ]
+    },
+    {
+     "naam": "Marketing",
+     "agents": [
+      [
+       "Zoekertje-schrijver",
+       "Schrijft de tekst voor een nieuw pand, in jullie toon."
+      ]
+     ]
+    },
+    {
+     "naam": "Dossiers",
+     "agents": [
+      [
+       "EPC- en keuringen-checker",
+       "Kijkt na of het EPC en de keuringen in het dossier zitten."
+      ]
+     ]
+    }
+   ],
+   "thread": [
+    {
+     "van": "agent",
+     "wie": "Leadopvolger",
+     "tekst": "Vier nieuwe aanvragen voor het appartement in de Stationsstraat. Ze kregen alle vier een antwoord met de vragenlijst."
+    },
+    {
+     "van": "agent",
+     "wie": "Bezichtigingsplanner",
+     "tekst": "Twee kandidaten kunnen zaterdag tussen 10 en 12 uur. Zal ik ze na elkaar inplannen?",
+     "ask": true
+    },
+    {
+     "van": "owner",
+     "tekst": "Ja, met een kwartier ertussen."
+    },
+    {
+     "van": "agent",
+     "wie": "EPC- en keuringen-checker",
+     "tekst": "In het dossier van de Kerkstraat ontbreekt het EPC nog. Zal ik de eigenaar een herinnering sturen?",
+     "ask": true
+    },
+    {
+     "van": "cos",
+     "wie": "Chief of Staff",
+     "tekst": "De tekst voor de nieuwe woning staat klaar om na te lezen. Eén herinnering wacht op jouw akkoord."
+    }
+   ]
+  },
+  {
+   "id": "webshop",
+   "chip": "Webshop",
+   "bedrijf": "Webshop Noor",
+   "wat": "een terugbetaling en een bestelling",
+   "afdelingen": [
+    {
+     "naam": "Klantenservice",
+     "agents": [
+      [
+       "Pakketvolger",
+       "Beantwoordt de vraag: waar is mijn pakket?"
+      ],
+      [
+       "Retour-afhandelaar",
+       "Handelt retours af en legt terugbetalingen voor."
+      ],
+      [
+       "Reviewvrager",
+       "Vraagt na een levering om een review."
+      ]
+     ]
+    },
+    {
+     "naam": "Marketing",
+     "agents": [
+      [
+       "E-mailschrijver",
+       "Schrijft je e-mailreeksen."
+      ],
+      [
+       "Advertentie-optimizer",
+       "Houdt je advertenties bij."
+      ]
+     ]
+    },
+    {
+     "naam": "Productbeheer",
+     "agents": [
+      [
+       "Productbeschrijver",
+       "Schrijft productteksten."
+      ],
+      [
+       "Voorraadwacht",
+       "Waarschuwt als een product bijna op is."
+      ]
+     ]
+    },
+    {
+     "naam": "Fulfilment",
+     "agents": [
+      [
+       "Verzendwacht",
+       "Volgt zendingen op die vastzitten."
+      ],
+      [
+       "Pakbonmaker",
+       "Maakt de pakbonnen klaar."
+      ]
+     ]
+    },
+    {
+     "naam": "Financiën",
+     "agents": [
+      [
+       "Marge-analist",
+       "Zet je marge per productgroep op een rij."
+      ]
+     ]
+    }
+   ],
+   "thread": [
+    {
+     "van": "agent",
+     "wie": "Verzendwacht",
+     "tekst": "Drie pakketten staan al vier dagen stil bij de vervoerder. De klanten kregen een update."
+    },
+    {
+     "van": "agent",
+     "wie": "Retour-afhandelaar",
+     "tekst": "Een retour is binnen en nagekeken. Zal ik terugbetalen?",
+     "ask": true
+    },
+    {
+     "van": "owner",
+     "tekst": "Ja."
+    },
+    {
+     "van": "agent",
+     "wie": "Voorraadwacht",
+     "tekst": "Van je bestseller zijn er nog 12. Zal ik een bestelling klaarzetten voor de leverancier?",
+     "ask": true
+    },
+    {
+     "van": "cos",
+     "wie": "Chief of Staff",
+     "tekst": "Het weekoverzicht van je marge per productgroep staat klaar. Eén bestelling wacht op jou."
+    }
+   ]
+  }
+ ],
+ "wat": {
+  "eyebrow": "Wat het is",
+  "h2a": "Geen losse AI-tool.",
+  "h2b": "Een team dat bij je bedrijf hoort.",
+  "lede": "EML AI Team is een volledig AI-team op maat, voor bedrijven met een team en werk dat blijft liggen. Elke AI-medewerker heeft een naam, een rol en een taak, en werkt in de toon van je bedrijf.",
+  "items": [
+   [
+    "AI-medewerkers per afdeling",
+    "Marketing, sales en opvolging, planning, administratie en klantcontact. Per afdeling een paar agents die elk één taak goed doen."
+   ],
+   [
+    "Jij stuurt via Telegram",
+    "Alle agents zitten in één Telegram-groep. Je geeft taken door met een tekst of een spraakbericht, en je keurt goed wat ertoe doet."
+   ],
+   [
+    "Een Chief of Staff",
+    "Vat samen wat er gebeurde en legt je de beslissingen voor: goedkeuren of wachten. Vanaf het pakket Groei."
+   ],
+   [
+    "Een dashboard",
+    "Wat de agents deden, je cijfers, je pipeline en je afdelingen op één scherm. Vanaf het pakket Groei."
+   ],
+   [
+    "Gekoppeld aan je systemen",
+    "Je klantenbestand, mailbox, agenda, offertes, reviews en boekhouding. Welke koppelingen je krijgt, hangt af van je pakket."
+   ]
+  ],
+  "note": "Geen bel-agents: je AI-team werkt met tekst, niet aan de telefoon."
+ },
+ "afdelingen": {
+  "eyebrow": "Wat het kan",
+  "h2a": "Per afdeling,",
+  "h2b": "met voorbeelden uit je sector.",
+  "lede": "Kies een sector. Je ziet welke afdelingen een AI-team daar kan krijgen en wat elke agent doet. Je eigen agentlijst maken we in de gratis analyse.",
+  "more": "We hebben ook voorbeeldteams voor schilderwerken, garages en huisartsenpraktijken. Vraag ernaar in je gratis demo."
+ },
+ "stappen": {
+  "eyebrow": "Hoe het werkt",
+  "h2a": "Vier stappen.",
+  "h2b": "De eerste twee zijn gratis.",
+  "lede": "Van een eerste kennismaking tot een team dat elke dag meewerkt.",
+  "items": [
+   [
+    "Gratis demo",
+    "We tonen je een AI-team uit jouw sector, zodat je ziet hoe het werkt."
+   ],
+   [
+    "Gratis analyse",
+    "We brengen je processen in kaart en stellen het juiste pakket en de lijst met agents voor."
+   ],
+   [
+    "Bouw",
+    "Na je akkoord bouwen we je AI-team: je eigen Anthropic-account, de server, de agents en de koppelingen. We testen voor we live gaan."
+   ],
+   [
+    "Livegang en beheer",
+    "Je team gaat aan het werk. Vanaf dan houden wij het live: hosting, onderhoud, updates, monitoring en support."
+   ]
+  ]
+ },
+ "pakketten": {
+  "eyebrow": "Pakketten en prijzen",
+  "h2a": "Vaste pakketten.",
+  "h2b": "Prijzen die je vooraf kent.",
+  "lede": "Alle prijzen exclusief btw. Welk pakket bij je past, weet je na de gratis analyse.",
+  "kies": "Hoeveel afdelingen wil je laten meewerken?",
+  "kies_opts": [
+   [
+    "1",
+    "start"
+   ],
+   [
+    "2 of 3",
+    "groei"
+   ],
+   [
+    "4 of 5",
+    "volledig"
+   ]
+  ],
+  "items": [
+   {
+    "id": "analyse",
+    "naam": "Analyse",
+    "voor": "Voor elk bedrijf dat wil starten",
+    "wat": [
+     "Je processen in kaart",
+     "Voorstel van pakket en agentlijst"
+    ],
+    "setup": 0,
+    "month": null,
+    "from": false,
+    "note": "Altijd gratis"
+   },
+   {
+    "id": "start",
+    "naam": "Start",
+    "voor": "Eén afdeling",
+    "wat": [
+     "1 afdeling",
+     "3 à 4 agents",
+     "Telegram-groep met je agents"
+    ],
+    "setup": 3500,
+    "month": 750,
+    "from": false
+   },
+   {
+    "id": "groei",
+    "naam": "Groei",
+    "voor": "Twee à drie afdelingen",
+    "wat": [
+     "2 à 3 afdelingen",
+     "6 à 10 agents",
+     "Dashboard",
+     "Chief of Staff",
+     "Telegram-groep met je agents"
+    ],
+    "setup": 7500,
+    "month": 1500,
+    "from": false
+   },
+   {
+    "id": "volledig",
+    "naam": "Volledig",
+    "voor": "Vier à vijf afdelingen",
+    "wat": [
+     "4 à 5 afdelingen",
+     "Integraties op maat",
+     "Dashboard en Chief of Staff",
+     "Telegram-groep met je agents"
+    ],
+    "setup": 15000,
+    "month": 2500,
+    "from": true
+   }
+  ],
+  "table": {
+   "head": [
+    "",
+    "Start",
+    "Groei",
+    "Volledig"
+   ],
+   "rows": [
+    [
+     "Afdelingen",
+     "1",
+     "2 à 3",
+     "4 à 5"
+    ],
+    [
+     "Agents",
+     "3 à 4",
+     "6 à 10",
+     "volgens de analyse"
+    ],
+    [
+     "Telegram-groep",
+     "ja",
+     "ja",
+     "ja"
+    ],
+    [
+     "Chief of Staff",
+     "nee",
+     "ja",
+     "ja"
+    ],
+    [
+     "Dashboard",
+     "nee",
+     "ja",
+     "ja"
+    ],
+    [
+     "Koppelingen met je systemen",
+     "afgesproken in de analyse",
+     "afgesproken in de analyse",
+     "op maat"
+    ],
+    [
+     "Setup (eenmalig)",
+     "€3.500",
+     "€7.500",
+     "vanaf €15.000"
+    ],
+    [
+     "Per maand",
+     "€750",
+     "€1.500",
+     "vanaf €2.500"
+    ]
+   ]
+  },
+  "foot": "Alle prijzen exclusief btw. Vast contract van 12 maanden. Het Claude-verbruik betaal je rechtstreeks aan Anthropic: dat zit niet in onze prijs.",
+  "cta": "Plan een gratis demo",
+  "small": "Kleinere zaak? Online groeien begint aan €150 per maand, maandelijks opzegbaar.",
+  "small_link": "Bekijk Online groeien",
+  "small_href": "Diensten#pakket-1"
+ },
+ "voorwaarden": {
+  "eyebrow": "Voorwaarden",
+  "h2a": "Wat je vooraf moet weten.",
+  "h2b": "Zwart op wit.",
+  "items": [
+   [
+    "Contract van 12 maanden",
+    "Elk pakket heeft een vast contract van 12 maanden. EML AI Team is niet maandelijks opzegbaar."
+   ],
+   [
+    "Setup in twee keer",
+    "50% van de setup betaal je bij de start, 50% bij de livegang. Vanaf de livegang loopt de maandprijs."
+   ],
+   [
+    "Na 12 maanden",
+    "Dan wordt het contract verlengd. Dat is nodig om je systeem live te houden."
+   ],
+   [
+    "Wat de maandprijs dekt",
+    "Je systeem live en werkend houden: hosting en beheer van de server, onderhoud en updates, monitoring, support en problemen oplossen."
+   ],
+   [
+    "Wat er niet in zit",
+    "Het Claude-verbruik: dat betaal je rechtstreeks aan Anthropic, via je eigen account. Ook abonnementen op je eigen tools betaal je zelf."
+   ],
+   [
+    "Iets extra willen",
+    "Nieuwe agents, koppelingen of verbeteringen zitten niet in de maandprijs. Wil je iets extra, dan maken we een voorstel met een eenmalige setupprijs, of stap je over naar een ander pakket."
+   ],
+   [
+    "Je gegevens",
+    "Je AI-team draait op een eigen server die wij beheren. Bij elk contract hoort een verwerkersovereenkomst."
+   ],
+   [
+    "Prijzen",
+    "Alle prijzen exclusief btw. Facturen betaal je binnen 14 dagen."
+   ]
+  ]
+ },
+ "faq": {
+  "eyebrow": "Veelgestelde vragen",
+  "h2a": "Goed om te weten",
+  "h2b": "voor je beslist.",
+  "items": [
+   {
+    "q": "Wat kost het Claude-verbruik?",
+    "a": "Dat hangt af van hoeveel werk je agents doen. Je betaalt het rechtstreeks aan Anthropic, via je eigen account, en je volgt het daar zelf op. Er komt dus niets van ons bovenop."
+   },
+   {
+    "q": "Wat gebeurt er met mijn gegevens?",
+    "a": "Je AI-team draait op een eigen server die wij beheren, en het verbruik loopt via je eigen Anthropic-account. Bij elk contract hoort een verwerkersovereenkomst, omdat de agents met gegevens van je bedrijf werken. Daarin staat hoe we met je gegevens omgaan, zoals de GDPR het vraagt. Je betaalgegevens bij Anthropic vragen we nooit."
+   },
+   {
+    "q": "Wat gebeurt er na 12 maanden?",
+    "a": "Dan wordt het contract verlengd. Dat is nodig om je systeem live te houden: de maandprijs dekt hosting, onderhoud en support."
+   },
+   {
+    "q": "Wat als ik later iets extra wil?",
+    "a": "Dan maken we een voorstel: een eenmalige setupprijs voor de nieuwe agents, koppelingen of verbeteringen, of een ander pakket. De maandprijs houdt je systeem live; nieuwe dingen bouwen zit er niet in."
+   },
+   {
+    "q": "Wat is het verschil met AI Consulting?",
+    "a": "Bij AI Consulting leer je zelf AI gebruiken, met onze begeleiding, en dat is maandelijks opzegbaar. Bij EML AI Team bouwen en beheren wij een AI-team voor je bedrijf. Dat is geen doorlopend traject: we bouwen wat in je pakket zit en houden het live."
+   },
+   {
+    "q": "Neemt het AI-team ook de telefoon op?",
+    "a": "Nee. De agents werken met tekst: berichten, mails, documenten en je systemen. Voor de telefoon is er de AI-receptioniste, een uitbreiding van Online groeien."
+   },
+   {
+    "q": "Moet ik technisch zijn?",
+    "a": "Nee. Wij bouwen, koppelen en beheren alles. Jij stuurt je team via Telegram, met een tekst of een spraakbericht."
+   },
+   {
+    "q": "Voor wie is EML AI Team?",
+    "a": "Voor bedrijven met een team en budget, die AI-medewerkers willen inzetten en niet enkel een AI-assistent. We kiezen zelf met welke bedrijven we samenwerken. In de gratis analyse bekijken we samen of het past."
+   }
+  ],
+  "more_label": "Lees ook:",
+  "more": [
+   {
+    "title": "Online groeien",
+    "href": "Diensten#pakket-1"
+   },
+   {
+    "title": "AI Consulting",
+    "href": "Diensten#pakket-2"
+   },
+   {
+    "title": "De pakketkiezer",
+    "href": "Pakketkiezer"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "Zie een AI-team",
+  "h2b": "aan het werk.",
+  "text": "Plan een gratis demo. We tonen je een AI-team uit jouw sector en bekijken samen of het bij je bedrijf past.",
+  "btn": "Plan een gratis demo",
+  "demo": "Meer over de gratis demo",
+  "demo_href": "Gratis%20Demo",
+  "badges": [
+   "Gratis demo",
+   "Gratis analyse",
+   "Prijzen excl. btw"
+  ]
+ },
+ "_te_beslissen": [
+  "[TE BESLISSEN] Richtbedrag Claude-verbruik per maand per pakket: staat nergens in de kennis. De FAQ noemt daarom geen bedrag.",
+  "[TE BESLISSEN] Doorlooptijd van de bouw (van akkoord tot livegang): niet beslist, staat niet op de pagina.",
+  "[TE BESLISSEN] Hosting (aanbieder, land, een server per klant of gedeeld): open bij Martijn. De pagina zegt alleen 'een eigen server die wij beheren'.",
+  "[TE BESLISSEN] Verlenging na 12 maanden: voor hoe lang en met welke opzegtermijn. De pagina zegt alleen dat het contract verlengd wordt om het systeem live te houden.",
+  "[TE BESLISSEN] Aantal koppelingen per pakket (Start en Groei). De pagina zegt 'afgesproken in de analyse' en 'op maat' bij Volledig.",
+  "[TE BESLISSEN] Wat er met het systeem en de gegevens gebeurt als een klant stopt: niet beslist, staat niet op de pagina.",
+  "[TE BESLISSEN] Engelse en Franse naam van 'Online groeien' (hier: Online Growth / Croissance en ligne). Volg CORRECTIES.md als die een andere naam kiest."
+ ],
+ "_bronnen": "Kennis 02 deel 4 en 03 (GOEDGEKEURD, bijgewerkt 11/10/2026), launchpad-os.md (niche-templates, CONCEPT), Notion Aanbod & prijzen en EML AI Team · Servicedocument, Notion-taak P1 met correctie Ebert 11/10. Sleutels met _ worden door het bouwscript genegeerd."
+}

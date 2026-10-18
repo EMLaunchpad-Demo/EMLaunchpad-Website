@@ -1,0 +1,306 @@
+/* =============================================================
+   EM Launchpad: EML AI Team ("Een kantoor vol")
+   Eén bewegend object: de Telegram-groep van een AI-team, waarin de
+   agents één voor één melden wat ze deden en jouw akkoord vragen.
+   Verderop het organigram per sector, de vier stappen, de pakketten,
+   de voorwaarden als contractblad en de FAQ.
+   Bovenop de v2-skin (home-redesign.css), gemaakt voor data-tone="blauw".
+   Klassen met et-. Beweging: eml-ai-team.js, alleen opacity en transform
+   (geen layout shift). Nergens position:sticky. Zonder JS staat alles open.
+   ============================================================= */
+
+body[data-skin="v2"]{
+  --et-paper:#0c1a31;
+  --et-hair:rgba(226,236,255,.62);
+  --et-hair-2:rgba(226,236,255,.2);
+  --et-out:cubic-bezier(.2,.7,.2,1);
+  --et-focus:#9dbcf0;
+}
+.et-main:focus{outline:none}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.et-hero [hidden],.et-pak [hidden],.et-org [hidden]{display:none!important}
+.et-hero button:focus-visible,.et-hero a:focus-visible,.et-org button:focus-visible,.et-pak button:focus-visible,.et-pak a:focus-visible,
+.et-faq a:focus-visible,.et-wat a:focus-visible{outline:2px solid var(--et-focus);outline-offset:3px}
+
+.et-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);padding:3px 9px;border:1px solid var(--et-hair-2);border-radius:999px;background:rgba(12,26,49,.8);white-space:nowrap}
+.et-label{margin:0 0 12px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mid)}
+.et-chips,.et-picks{display:flex;flex-wrap:wrap;gap:8px}
+.et-chip,.et-pick{min-height:44px;padding:0 17px;border-radius:999px;cursor:pointer;border:1px solid var(--line-2);background:var(--glass-2);color:var(--hi);
+  font-family:var(--font);font-weight:600;font-size:14px;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.et-chip:hover,.et-pick:hover{border-color:var(--faint);transform:translateY(-1px)}
+.et-chip[aria-pressed="true"],.et-pick[aria-pressed="true"]{border-color:rgba(75,141,240,.6);box-shadow:inset 0 0 0 1px rgba(75,141,240,.35);background:linear-gradient(160deg,rgba(47,116,224,.18),rgba(31,158,95,.08))}
+.et-link{display:inline-flex;align-items:center;gap:8px;color:var(--hi);font-weight:600;text-decoration:none;
+  background:var(--uline) no-repeat 0 100%/0% 1px;padding-bottom:3px;transition:background-size .4s var(--et-out)}
+.et-link:hover{background-size:100% 1px}
+.et-link svg,.et-foot svg{width:14px;height:14px;flex:none}
+.et-pbtn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:var(--hi);font-family:var(--font);font-weight:600;font-size:13.5px;transition:background .2s ease}
+.et-pbtn:hover{background:rgba(255,255,255,.08)}
+.et-pbtn svg{width:14px;height:14px;flex:none}
+.et-pbtn[data-state="playing"] .i-play{display:none}
+.et-pbtn:not([data-state="playing"]) .i-pause{display:none}
+/* zonder JavaScript: keuzeknoppen en afspeelknoppen hebben geen functie, dus weg; alle inhoud blijft */
+html:not(.et-js) .et-pick-wrap,html:not(.et-js) .et-ctrl,html:not(.et-js) .et-org .et-label,html:not(.et-js) .et-org .et-chips,html:not(.et-js) .et-kies{display:none}
+
+/* ─────────────────────────── HERO ─────────────────────────── */
+body[data-tone="blauw"] .et-hero{background:transparent}
+.et-hero{position:relative;padding:18px 0 0}
+.et-hero-grid{display:grid;grid-template-columns:minmax(0,5.4fr) minmax(0,6.6fr);gap:48px;align-items:start}
+.et-copy{padding-bottom:6px}
+.et-crumb{font-family:var(--mono);font-size:12px;color:var(--dim);margin-bottom:14px}
+.et-crumb a{color:var(--mid);text-decoration:none}
+.et-crumb a:hover{color:var(--hi)}
+.et-crumb span{margin:0 3px}
+.et-h1{margin:14px 0 0;font-weight:800;font-size:clamp(38px,3.7vw,54px);line-height:1.03;letter-spacing:-.04em;color:var(--hi);text-wrap:balance}
+.et-lede{max-width:44ch;margin-top:18px}
+.et-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.et-pick-wrap{margin-top:30px}
+
+/* de Telegram-groep */
+.et-phonecol{min-width:0}
+.et-phone{position:relative;width:100%;max-width:460px;margin:0 0 0 auto;border-radius:22px;border:1px solid var(--line-2);overflow:hidden;
+  background:radial-gradient(90% 60% at 80% 0%,rgba(47,116,224,.14),transparent 70%),linear-gradient(180deg,rgba(14,28,50,.92),rgba(10,20,38,.94));
+  box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.et-ph-top{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.et-ph-ico{position:relative;flex:none;width:38px;height:38px;border-radius:50%;background:linear-gradient(160deg,rgba(47,116,224,.7),rgba(31,158,95,.5))}
+.et-ph-ico::before,.et-ph-ico::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.92)}
+.et-ph-ico::before{left:50%;top:9px;width:9px;height:9px;margin-left:-4.5px}
+.et-ph-ico::after{left:50%;top:20px;width:16px;height:9px;margin-left:-8px;border-radius:8px 8px 3px 3px}
+.et-ph-t{display:grid;min-width:0;flex:1}
+.et-ph-t b{font-size:15px;color:var(--hi);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.et-ph-t span{font-size:12.5px;color:var(--mid)}
+.et-ph-status{display:flex;align-items:center;height:24px;margin:0;padding:0 16px;font-size:12px;font-style:italic;color:var(--mid)}
+.et-ph-status span{opacity:0;transition:opacity .2s ease}
+.et-ph-status.is-on span{opacity:1}
+html:not(.et-js) .et-ph-status{display:none}
+.et-threads{padding:0 14px 16px}
+.et-th-name{margin:12px 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+/* met JS: de drie groepen liggen op dezelfde plek; de telefoon heeft altijd de hoogte van de langste,
+   dus geen verschuiving bij het laden of bij het wisselen van sector. html.et-js staat al vóór de inhoud. */
+html.et-js .et-th-name{display:none}
+html.et-js .et-threads{display:grid}
+html.et-js .et-thread{grid-area:1 / 1}
+html.et-js .et-thread:not(.is-on){visibility:hidden}
+.et-msgs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.et-msg{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;align-items:end}
+.et-msg.is-owner{grid-template-columns:minmax(0,1fr) 30px}
+.et-msg.is-owner .et-av{order:2}
+.et-msg.is-owner .et-bubble{justify-self:end}
+.et-av{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid var(--line-2);
+  font-family:var(--mono);font-size:12px;font-weight:600;color:var(--hi)}
+.et-av svg{width:16px;height:16px}
+.et-av.is-cos{background:rgba(47,116,224,.2)}
+.et-av.is-you{background:linear-gradient(160deg,rgba(47,116,224,.55),rgba(31,158,95,.42))}
+.et-bubble{max-width:90%;padding:9px 12px 10px;border-radius:14px 14px 14px 4px;background:rgba(255,255,255,.055);border:1px solid var(--line)}
+.et-msg.is-owner .et-bubble{border-radius:14px 14px 4px 14px;background:rgba(47,116,224,.22);border-color:rgba(75,141,240,.35)}
+.et-msg.is-cos .et-bubble{background:rgba(12,26,49,.92);border-color:rgba(75,141,240,.32)}
+.et-who{display:block;margin-bottom:2px;font-size:12px;font-weight:600;color:var(--mid)}
+.et-msg.is-cos .et-who{color:#9dbcf0}
+.et-bubble p{margin:0;font-size:14px;line-height:1.5;color:var(--hi)}
+.et-voice{display:inline-flex;align-items:center;gap:8px;min-height:26px}
+.et-vbars{display:inline-flex;align-items:center;gap:2px;height:20px}
+.et-vbars i{display:block;width:2px;border-radius:2px;background:var(--hi);opacity:.85}
+.et-voice em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--hi)}
+.et-bubble .et-vtxt{margin-top:4px;font-size:13px;color:var(--mid)}
+.et-ask{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:34px;margin-top:10px}
+.et-ok,.et-wait,.et-done{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;border-radius:999px;font-family:var(--font);font-weight:600;font-size:13px;cursor:pointer}
+.et-ok{background:var(--acc);color:#06130d;border:0}
+.et-ok:hover{filter:brightness(1.06)}
+.et-wait{background:transparent;color:var(--hi);border:1px solid var(--line-2)}
+.et-wait:hover{background:rgba(255,255,255,.06)}
+.et-ok svg,.et-done svg{width:13px;height:13px}
+.et-done{cursor:default;color:var(--hi);border:1px solid var(--line-2);background:rgba(255,255,255,.04)}
+.et-done.is-ok{border-color:rgba(31,158,95,.5);color:#8fe0b4}
+.et-ask.is-done .et-ok,.et-ask.is-done .et-wait{display:none}
+/* onthulling: alleen opacity en transform, de berichten staan al op hun plaats (geen verschuiving) */
+html.et-js .et-msg{opacity:0;transform:translateY(8px);transition:opacity .45s var(--et-out),transform .45s var(--et-out)}
+html.et-js .et-msg.is-on{opacity:1;transform:none}
+.et-ctrl{display:flex;gap:8px;justify-content:flex-end;max-width:460px;margin:14px 0 0 auto}
+.et-cap{max-width:460px;margin:12px 0 0 auto;font-size:13.5px;line-height:1.55;color:var(--mid)}
+.et-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;margin-top:40px;padding:18px 0 26px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:12.5px;color:var(--mid)}
+.et-foot > span{display:inline-flex;align-items:center;gap:22px}
+.et-foot > span + span::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--faint)}
+
+/* ─────────────────────── WAT HET IS ─────────────────────── */
+.et-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;margin-top:40px}
+.et-wcard{grid-column:span 2;position:relative;padding:24px 22px 22px;border-radius:16px;border:1px solid var(--line);background:var(--glass)}
+.et-wcard:nth-child(4),.et-wcard:nth-child(5){grid-column:span 3}
+.et-cnum{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--dim)}
+.et-wcard h3{margin:10px 0 8px;font-size:19px;font-weight:600;color:var(--hi);letter-spacing:-.01em}
+.et-wcard p{margin:0;font-size:15px;line-height:1.55;color:var(--mid)}
+.et-note{display:flex;align-items:center;gap:10px;margin:22px 0 0;font-size:14.5px;color:var(--mid)}
+.et-note::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--uline)}
+
+/* ─────────────────── PER AFDELING: het organigram ─────────────────── */
+body[data-tone="blauw"] .et-org{background:rgba(6,12,24,.3);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.et-org .et-label{margin-top:34px}
+.et-charts{margin-top:30px}
+html.et-js .et-chart:not(.is-on){display:none}
+.et-chart + .et-chart{margin-top:48px}
+.et-chart-name{margin:0 0 22px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mid)}
+.et-tree{display:grid;justify-items:center}
+.et-node{position:relative;display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;border:1px solid var(--line-2);background:var(--glass-2);color:var(--hi);font-weight:600;font-size:14.5px}
+.et-node .et-av{width:30px;height:30px}
+.et-node.is-owner::after,.et-node.is-cos::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:26px;background:var(--et-hair-2)}
+.et-node.is-cos{margin-top:26px}
+.et-tagx{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);padding:3px 8px;border:1px solid var(--line);border-radius:999px}
+.et-depts{position:relative;display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:16px;width:100%;margin-top:26px;padding-top:26px}
+.et-depts::before{content:"";position:absolute;left:calc(100% / var(--n,4) / 2);right:calc(100% / var(--n,4) / 2);top:0;height:1px;background:var(--et-hair-2)}
+.et-dept{position:relative;padding:18px 16px;border-radius:16px;border:1px solid var(--line);background:var(--glass)}
+.et-dept::before{content:"";position:absolute;left:50%;top:-26px;width:1px;height:26px;background:var(--et-hair-2)}
+.et-dh{margin:0 0 12px;font-size:15px;font-weight:700;color:var(--hi);letter-spacing:-.01em}
+.et-dept ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.et-dept li{display:grid;gap:3px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.et-dept li b{font-size:14px;font-weight:600;color:var(--hi)}
+.et-dept li span{font-size:13px;line-height:1.5;color:var(--mid)}
+/* de agents komen aan: alleen opacity en transform */
+html.et-js .et-chart:not(.is-in) .et-dept li{opacity:0;transform:translateY(10px)}
+html.et-js .et-dept li{transition:opacity .5s var(--et-out),transform .5s var(--et-out)}
+.et-dept li:nth-child(2){transition-delay:.12s}
+.et-dept li:nth-child(3){transition-delay:.24s}
+.et-dept:nth-child(2) li{transition-delay:.08s}
+.et-dept:nth-child(2) li:nth-child(2){transition-delay:.2s}
+.et-dept:nth-child(2) li:nth-child(3){transition-delay:.32s}
+.et-dept:nth-child(3) li{transition-delay:.16s}
+.et-dept:nth-child(3) li:nth-child(2){transition-delay:.28s}
+.et-dept:nth-child(3) li:nth-child(3){transition-delay:.4s}
+.et-dept:nth-child(4) li{transition-delay:.24s}
+.et-dept:nth-child(4) li:nth-child(2){transition-delay:.36s}
+.et-dept:nth-child(5) li{transition-delay:.32s}
+.et-afmore{margin:28px 0 0;font-size:14.5px;line-height:1.55;color:var(--mid)}
+
+/* ─────────────────────── HOE HET WERKT ─────────────────────── */
+.et-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:44px 0 0;padding:28px 0 0;border-top:1px solid var(--et-hair-2)}
+.et-step{display:grid;gap:10px;align-content:start}
+.et-snum{font-family:var(--mono);font-size:13px;color:var(--mid)}
+.et-step h3{margin:0;font-size:19px;font-weight:600;color:var(--hi)}
+.et-step p{margin:0;font-size:15px;line-height:1.55;color:var(--mid)}
+
+/* ─────────────────────── PAKKETTEN ─────────────────────── */
+body[data-tone="blauw"] .et-pak{background:rgba(6,12,24,.3);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.et-kies{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:36px;padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:var(--glass-2)}
+.et-kies-q{margin:0;font-size:15.5px;font-weight:600;color:var(--hi)}
+.et-plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:22px}
+.et-plan{position:relative;display:grid;align-content:start;gap:12px;padding:24px 22px;border-radius:18px;border:1px solid var(--line);background:var(--glass);
+  transition:border-color .25s ease,box-shadow .25s ease,opacity .25s ease}
+.et-plan.is-pick{border-color:rgba(75,141,240,.6);box-shadow:inset 0 0 0 1px rgba(75,141,240,.35),0 20px 50px rgba(0,0,0,.25)}
+.et-plan.is-dim{opacity:.6}
+.et-plan h3{margin:0;font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--hi)}
+.et-voor{margin:0;font-size:13.5px;color:var(--mid)}
+.et-price{display:grid;gap:6px;margin:4px 0 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.et-price b{font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--hi)}
+.et-price small,.et-price em{font-size:12.5px;font-style:normal;color:var(--mid)}
+.et-plan ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.et-plan li{position:relative;padding-left:18px;font-size:14px;line-height:1.5;color:var(--mid)}
+.et-plan li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--uline)}
+.et-pnote{margin:0;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.et-table{margin-top:28px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--glass-2)}
+.et-table table{width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.5}
+.et-table th,.et-table td{padding:12px 18px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+.et-table thead th,.et-table thead td{border-top:0;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+.et-table tbody th{width:34%;font-weight:500;color:var(--hi)}
+.et-table td{color:var(--mid);transition:background .25s ease,color .25s ease}
+.et-table .is-pick{background:rgba(47,116,224,.12);color:var(--hi)}
+.et-tfoot{margin:16px 0 0;font-size:13.5px;line-height:1.55;color:var(--mid)}
+.et-pak-cta{margin-top:26px}
+.et-small{margin:18px 0 0;font-size:14.5px;line-height:1.6;color:var(--mid)}
+
+/* ─────────────────── VOORWAARDEN: zwart op wit ─────────────────── */
+.et-terms{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin:40px 0 0;padding:8px 32px;border:1px solid var(--line-2);border-radius:18px;background:rgba(12,26,49,.6)}
+.et-terms li{display:grid;grid-template-columns:40px minmax(0,1fr);align-content:start;gap:4px 14px;padding:20px 0;border-top:1px solid var(--line)}
+.et-terms li:nth-child(-n+2){border-top:0}
+.et-tnum{grid-row:1 / 3;padding-top:4px;font-family:var(--mono);font-size:12px;color:var(--dim)}
+.et-terms h3{margin:0;font-size:16px;font-weight:700;color:var(--hi)}
+.et-terms p{margin:0;font-size:14.5px;line-height:1.55;color:var(--mid)}
+
+/* ─────────────────────── FAQ + CTA ─────────────────────── */
+.et-faq .faq-list{margin-top:36px}
+html:not(.et-js) .et-faq .faq-a{max-height:none}
+.et-q{background:var(--uline) no-repeat 0 100%/0% 2px;padding-bottom:2px;transition:background-size .5s var(--et-out)}
+.et-faq .faq-item.open .et-q{background-size:100% 2px}
+.et-moreq{margin:26px 0 0;font-size:14.5px;color:var(--mid)}
+.et-moreq a{color:var(--hi);text-underline-offset:3px}
+.cta-band#contact .row{gap:12px;flex-wrap:wrap}
+
+/* ─────────────────────── MINDER BEWEGING ─────────────────────── */
+@media (prefers-reduced-motion:reduce){
+  .et-msg,.et-dept li,.et-plan,.et-table td,.et-ph-status span,.et-chip,.et-pick,.et-q,.et-link{transition:none!important}
+  html.et-js .et-msg{opacity:1;transform:none}
+  html.et-js .et-chart:not(.is-in) .et-dept li{opacity:1;transform:none}
+  .et-dh::after{transition:none!important}
+}
+
+/* ─────────────────────── TABLET ─────────────────────── */
+@media (max-width:1099px){
+  .et-hero-grid{grid-template-columns:1fr;gap:34px}
+  .et-phone,.et-ctrl,.et-cap{margin-left:auto;margin-right:auto}
+  .et-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .et-wcard,.et-wcard:nth-child(4),.et-wcard:nth-child(5){grid-column:auto}
+  .et-depts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .et-depts::before{display:none}
+  .et-depts{margin-top:22px;padding-top:0}
+  .et-dept::before{display:none}
+  .et-node.is-cos::after{display:none}
+  .et-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .et-plans{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ─────────────────────── GSM ─────────────────────── */
+@media (max-width:760px){
+  .et-h1{font-size:clamp(34px,9.6vw,42px)}
+  .et-lede{font-size:15.5px}
+  .et-cta{flex-direction:column;align-items:stretch}
+  .et-cta .btn,.et-cta .btn-ghost{justify-content:center}
+  .et-cta .btn{min-height:52px}
+  .et-chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .et-chip{padding:0 8px;font-size:13px}
+  .et-bubble{max-width:94%}
+  .et-ctrl{justify-content:flex-start}
+  .et-foot{flex-direction:column;align-items:flex-start;gap:8px}
+  .et-foot > span + span::before{display:none}
+  .et-cards{grid-template-columns:1fr}
+  .et-depts{grid-template-columns:1fr}
+  .et-tree{justify-items:start}
+  .et-node.is-owner::after{display:none}
+  .et-node.is-cos{margin-top:12px}
+  /* afdelingen open/dicht: de kop wordt een knop (JS), de toestand staat vanaf de eerste weergave vast */
+  html.et-js .et-dept{padding:0}
+  html.et-js .et-dh{position:relative;display:flex;align-items:center;min-height:52px;margin:0;padding:0 48px 0 16px}
+  html.et-js .et-dh::after{content:"";position:absolute;right:20px;top:50%;width:8px;height:8px;margin-top:-6px;border-right:2px solid var(--mid);border-bottom:2px solid var(--mid);transform:rotate(45deg);transition:transform .25s var(--et-out)}
+  html.et-js .et-dept.is-open .et-dh::after{transform:rotate(-135deg);margin-top:-2px}
+  html.et-js .et-dept ul{padding:0 12px 14px}
+  html.et-js .et-dept:not(.is-open) ul{display:none}
+  .et-dbtn{display:block;width:100%;margin:0;padding:0;border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-align:left;cursor:pointer}
+  .et-dbtn::before{content:"";position:absolute;inset:0;border-radius:16px}
+  .et-dbtn:focus-visible{outline:none}
+  .et-dbtn:focus-visible::before{outline:2px solid var(--et-focus);outline-offset:-2px}
+  .et-steps{grid-template-columns:1fr;gap:18px}
+  .et-step{grid-template-columns:40px 1fr;column-gap:14px}
+  .et-snum{grid-row:1 / 3}
+  .et-plans{grid-template-columns:1fr}
+  .et-picks{width:100%}
+  .et-pick{flex:1}
+  .et-table thead{display:none}
+  .et-table tr{display:block;padding:12px 16px;border-top:1px solid var(--line)}
+  .et-table tbody tr:first-child{border-top:0}
+  .et-table th,.et-table td{display:block;width:auto!important;padding:0;border:0}
+  .et-table tbody th{margin-bottom:6px}
+  .et-table td{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;margin-top:4px;padding:2px 6px;border-radius:6px}
+  .et-table td::before{content:attr(data-l);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding-top:3px}
+  .et-pak-cta .btn{width:100%;justify-content:center}
+  .et-terms{grid-template-columns:1fr;gap:0;padding:4px 20px}
+  .et-terms li:nth-child(2){border-top:1px solid var(--line)}
+}
+/* ─────────────── SMALLE GSM (320 px) ─────────────── */
+@media (max-width:359px){
+  .et-chips{grid-template-columns:1fr}
+  .et-ph-top{padding:12px}
+  .et-threads{padding:0 10px 12px}
+  .et-msg{grid-template-columns:26px minmax(0,1fr)}
+  .et-msg.is-owner{grid-template-columns:minmax(0,1fr) 26px}
+  .et-av{width:26px;height:26px}
+  .et-table td{grid-template-columns:80px minmax(0,1fr);gap:8px}
+  .et-table td::before{letter-spacing:.08em}
+  .et-plan{padding:20px 16px}
+}

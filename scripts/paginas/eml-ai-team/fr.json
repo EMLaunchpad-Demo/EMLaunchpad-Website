@@ -1,0 +1,729 @@
+{
+ "lang": "fr",
+ "tone": "blauw",
+ "skyKeys": [
+  {
+   "p": 0,
+   "ax": 74,
+   "ay": 34,
+   "bx": 10,
+   "by": 96,
+   "ao": 0.9,
+   "bo": 0.4
+  },
+  {
+   "p": 0.18,
+   "ax": 24,
+   "ay": 40,
+   "bx": 82,
+   "by": 70,
+   "ao": 0.6,
+   "bo": 0.7
+  },
+  {
+   "p": 0.4,
+   "ax": 78,
+   "ay": 58,
+   "bx": 18,
+   "by": 30,
+   "ao": 0.7,
+   "bo": 0.6
+  },
+  {
+   "p": 0.62,
+   "ax": 30,
+   "ay": 46,
+   "bx": 72,
+   "by": 60,
+   "ao": 0.8,
+   "bo": 0.6
+  },
+  {
+   "p": 1,
+   "ax": 46,
+   "ay": 36,
+   "bx": 56,
+   "by": 42,
+   "ao": 1,
+   "bo": 1
+  }
+ ],
+ "slug": "eml-ai-team",
+ "meta": {
+  "title": "EML AI Team : des employés IA sur mesure | EM Launchpad",
+  "desc": "Une équipe IA sur mesure : des employés IA par service, pilotés via Telegram. Analyse gratuite, packs dès 3 500 € + 750 € par mois, HTVA.",
+  "ogtitle": "EML AI Team : une équipe IA sur mesure pour votre entreprise | EM Launchpad",
+  "service": "EML AI Team",
+  "serviceType": "Équipe IA sur mesure (employés IA par service)",
+  "offer": "Analyse gratuite, packs à partir de 3 500 € de mise en place + 750 € par mois",
+  "offers": [
+   {
+    "id": "analyse",
+    "name": "EML AI Team · Analyse",
+    "desc": "Vos processus cartographiés et une proposition de pack et de liste d'agents. Toujours gratuite.",
+    "setup": 0,
+    "month": null,
+    "from": false
+   },
+   {
+    "id": "start",
+    "name": "EML AI Team · Start",
+    "desc": "1 service, 3 à 4 agents. Contrat fixe de 12 mois.",
+    "setup": 3500,
+    "month": 750,
+    "from": false
+   },
+   {
+    "id": "groei",
+    "name": "EML AI Team · Croissance",
+    "desc": "2 à 3 services, 6 à 10 agents, tableau de bord et Chief of Staff. Contrat fixe de 12 mois.",
+    "setup": 7500,
+    "month": 1500,
+    "from": false
+   },
+   {
+    "id": "volledig",
+    "name": "EML AI Team · Complet",
+    "desc": "4 à 5 services, intégrations sur mesure. Contrat fixe de 12 mois.",
+    "setup": 15000,
+    "month": 2500,
+    "from": true
+   }
+  ]
+ },
+ "hero": {
+  "crumb_home": "Services",
+  "crumb": "EML AI Team",
+  "eyebrow": "EML AI Team",
+  "h1a": "Votre équipe reçoit de nouveaux collègues.",
+  "h1b": "Des employés IA, construits sur mesure.",
+  "lede": "Nous construisons pour votre entreprise une équipe IA sur mesure : des employés IA par service qui prennent en charge le marketing, le suivi, le planning, l'administration et le contact client. Vous donnez les tâches via Telegram et vous validez ce qui compte.",
+  "cta": "Planifier une démo gratuite",
+  "cta2": "Voir les packs",
+  "cta2_href": "#pakketten",
+  "pick": "Voyez-le pour",
+  "caption": "Exemple. Votre vraie équipe IA, nous la composons après l'analyse gratuite : vos services, vos tâches, votre ton. Le Chief of Staff et le tableau de bord sont inclus à partir du pack Croissance.",
+  "foot": [
+   "Analyse gratuite",
+   "Packs à partir de 3 500 € + 750 € par mois",
+   "HTVA · contrat de 12 mois"
+  ]
+ },
+ "ui": {
+  "example": "Exemple",
+  "pause": "Pause",
+  "play": "Reprendre",
+  "again": "Rejouer",
+  "pause_aria": "Mettre l'exemple en pause",
+  "play_aria": "Reprendre l'exemple",
+  "again_aria": "Rejouer l'exemple",
+  "group": "{bedrijf} · équipe IA",
+  "members": "{n} agents et vous",
+  "you": "Vous",
+  "cos": "Chief of Staff",
+  "voice": "Message vocal",
+  "typing": "écrit…",
+  "approve": "Valider",
+  "wait": "Attendre",
+  "approved": "Validé",
+  "waiting": "Attend votre accord",
+  "sr_hero": "Exemple : le groupe Telegram de l'équipe IA de {bedrijf}. Les agents rapportent ce qu'ils ont fait et demandent votre accord pour {wat}.",
+  "from": "à partir de",
+  "free": "Gratuit",
+  "setup": "unique",
+  "per": "par mois",
+  "excl": "HTVA",
+  "agents": "agents",
+  "dept": "service",
+  "depts": "services",
+  "tab_label": "Choisissez un secteur",
+  "org_owner": "Vous, le gérant",
+  "org_cos_tag": "dès Croissance"
+ },
+ "niches": [
+  {
+   "id": "installateur",
+   "chip": "un installateur",
+   "bedrijf": "Installations Peeters",
+   "wat": "une intervention et un devis",
+   "afdelingen": [
+    {
+     "naam": "Ventes",
+     "agents": [
+      [
+       "Rédacteur de devis",
+       "Prépare les devis à partir de la demande."
+      ],
+      [
+       "Vérificateur de primes",
+       "Vérifie quelles primes peuvent correspondre à une demande."
+      ]
+     ]
+    },
+    {
+     "naam": "Planning et techniciens",
+     "agents": [
+      [
+       "Planificateur",
+       "Planifie les interventions dans l'agenda de vos techniciens."
+      ],
+      [
+       "Coordinateur d'équipe",
+       "Envoie à chaque technicien son planning du jour."
+      ]
+     ]
+    },
+    {
+     "naam": "Service",
+     "agents": [
+      [
+       "Rappel d'entretien",
+       "Rappelle aux clients leur entretien annuel."
+      ],
+      [
+       "Desk pannes",
+       "Reçoit les signalements de panne par e-mail et par message et les prépare pour le planificateur."
+      ]
+     ]
+    },
+    {
+     "naam": "Finances",
+     "agents": [
+      [
+       "Relance factures",
+       "Assure le suivi des factures impayées."
+      ]
+     ]
+    }
+   ],
+   "thread": [
+    {
+     "van": "agent",
+     "wie": "Desk pannes",
+     "tekst": "Nouveau signalement via le site : la chaudière se coupe. Prêt pour le planificateur."
+    },
+    {
+     "van": "agent",
+     "wie": "Planificateur",
+     "tekst": "Demain à 10 h, cela passe dans la tournée du technicien 2. Je planifie ?",
+     "ask": true
+    },
+    {
+     "van": "owner",
+     "voice": "0:04",
+     "tekst": "Oui, vas-y."
+    },
+    {
+     "van": "agent",
+     "wie": "Rédacteur de devis",
+     "tekst": "Le devis pour la pompe à chaleur de mardi est prêt, avec les primes qui peuvent s'appliquer. Vous le relisez ?",
+     "ask": true
+    },
+    {
+     "van": "cos",
+     "wie": "Chief of Staff",
+     "tekst": "Aujourd'hui : deux entretiens planifiés et une facture relancée. Un devis attend votre accord."
+    }
+   ]
+  },
+  {
+   "id": "immo",
+   "chip": "une agence immobilière",
+   "bedrijf": "Immo Hendrickx",
+   "wat": "des visites et un rappel",
+   "afdelingen": [
+    {
+     "naam": "Leads et candidats acheteurs",
+     "agents": [
+      [
+       "Suivi des leads",
+       "Répond aux nouvelles demandes et demande ce qu'ils cherchent."
+      ]
+     ]
+    },
+    {
+     "naam": "Visites",
+     "agents": [
+      [
+       "Planificateur de visites",
+       "Propose des créneaux et met les visites confirmées dans l'agenda."
+      ]
+     ]
+    },
+    {
+     "naam": "Propriétaires",
+     "agents": [
+      [
+       "Suivi des estimations",
+       "Assure le suivi des demandes d'estimation."
+      ]
+     ]
+    },
+    {
+     "naam": "Marketing",
+     "agents": [
+      [
+       "Rédacteur d'annonces",
+       "Rédige le texte d'un nouveau bien, dans votre ton."
+      ]
+     ]
+    },
+    {
+     "naam": "Dossiers",
+     "agents": [
+      [
+       "Vérificateur PEB et contrôles",
+       "Vérifie que le PEB et les contrôles sont dans le dossier."
+      ]
+     ]
+    }
+   ],
+   "thread": [
+    {
+     "van": "agent",
+     "wie": "Suivi des leads",
+     "tekst": "Quatre nouvelles demandes pour l'appartement de la Stationsstraat. Les quatre ont reçu une réponse avec le questionnaire."
+    },
+    {
+     "van": "agent",
+     "wie": "Planificateur de visites",
+     "tekst": "Deux candidats peuvent venir samedi entre 10 h et 12 h. Je les planifie l'un après l'autre ?",
+     "ask": true
+    },
+    {
+     "van": "owner",
+     "tekst": "Oui, avec un quart d'heure entre les deux."
+    },
+    {
+     "van": "agent",
+     "wie": "Vérificateur PEB et contrôles",
+     "tekst": "Dans le dossier de la Kerkstraat, le PEB manque encore. J'envoie un rappel au propriétaire ?",
+     "ask": true
+    },
+    {
+     "van": "cos",
+     "wie": "Chief of Staff",
+     "tekst": "Le texte de la nouvelle maison est prêt à relire. Un rappel attend votre accord."
+    }
+   ]
+  },
+  {
+   "id": "webshop",
+   "chip": "une boutique en ligne",
+   "bedrijf": "Boutique Noor",
+   "wat": "un remboursement et une commande",
+   "afdelingen": [
+    {
+     "naam": "Service client",
+     "agents": [
+      [
+       "Suivi des colis",
+       "Répond à la question : où est mon colis ?"
+      ],
+      [
+       "Gestion des retours",
+       "Traite les retours et vous soumet les remboursements."
+      ],
+      [
+       "Demande d'avis",
+       "Demande un avis après la livraison."
+      ]
+     ]
+    },
+    {
+     "naam": "Marketing",
+     "agents": [
+      [
+       "Rédacteur d'e-mails",
+       "Rédige vos séquences d'e-mails."
+      ],
+      [
+       "Optimiseur de publicités",
+       "Surveille vos publicités."
+      ]
+     ]
+    },
+    {
+     "naam": "Gestion des produits",
+     "agents": [
+      [
+       "Rédacteur de fiches produits",
+       "Rédige les textes produits."
+      ],
+      [
+       "Veille du stock",
+       "Vous prévient quand un produit est presque épuisé."
+      ]
+     ]
+    },
+    {
+     "naam": "Expédition",
+     "agents": [
+      [
+       "Veille des envois",
+       "Suit les envois bloqués."
+      ],
+      [
+       "Bons de livraison",
+       "Prépare les bons de livraison."
+      ]
+     ]
+    },
+    {
+     "naam": "Finances",
+     "agents": [
+      [
+       "Analyste des marges",
+       "Présente votre marge par groupe de produits."
+      ]
+     ]
+    }
+   ],
+   "thread": [
+    {
+     "van": "agent",
+     "wie": "Veille des envois",
+     "tekst": "Trois colis sont bloqués chez le transporteur depuis quatre jours. Les clients ont reçu une mise à jour."
+    },
+    {
+     "van": "agent",
+     "wie": "Gestion des retours",
+     "tekst": "Un retour est arrivé et a été vérifié. Je rembourse ?",
+     "ask": true
+    },
+    {
+     "van": "owner",
+     "tekst": "Oui."
+    },
+    {
+     "van": "agent",
+     "wie": "Veille du stock",
+     "tekst": "Il ne reste que 12 exemplaires de votre best-seller. Je prépare une commande pour le fournisseur ?",
+     "ask": true
+    },
+    {
+     "van": "cos",
+     "wie": "Chief of Staff",
+     "tekst": "L'aperçu hebdomadaire de votre marge par groupe de produits est prêt. Une commande attend votre accord."
+    }
+   ]
+  }
+ ],
+ "wat": {
+  "eyebrow": "Ce que c'est",
+  "h2a": "Pas un outil IA de plus.",
+  "h2b": "Une équipe qui fait partie de votre entreprise.",
+  "lede": "EML AI Team est une équipe IA complète et sur mesure, pour les entreprises qui ont une équipe et du travail qui s'accumule. Chaque employé IA a un nom, un rôle et une tâche, et travaille dans le ton de votre entreprise.",
+  "items": [
+   [
+    "Des employés IA par service",
+    "Marketing, ventes et suivi, planning, administration et contact client. Par service, quelques agents qui font chacun bien une tâche."
+   ],
+   [
+    "Vous pilotez via Telegram",
+    "Tous les agents sont dans un seul groupe Telegram. Vous donnez les tâches par texte ou par message vocal, et vous validez ce qui compte."
+   ],
+   [
+    "Un Chief of Staff",
+    "Résume ce qui s'est passé et vous soumet les décisions : valider ou attendre. À partir du pack Croissance."
+   ],
+   [
+    "Un tableau de bord",
+    "Ce que les agents ont fait, vos chiffres, votre pipeline et vos services sur un seul écran. À partir du pack Croissance."
+   ],
+   [
+    "Connecté à vos systèmes",
+    "Votre fichier clients, votre messagerie, votre agenda, vos devis, vos avis et votre comptabilité. Les connexions dépendent de votre pack."
+   ]
+  ],
+  "note": "Pas d'agents qui téléphonent : votre équipe IA travaille par écrit, pas au téléphone."
+ },
+ "afdelingen": {
+  "eyebrow": "Ce qu'elle peut faire",
+  "h2a": "Par service,",
+  "h2b": "avec des exemples de votre secteur.",
+  "lede": "Choisissez un secteur. Vous voyez quels services une équipe IA peut y avoir et ce que fait chaque agent. Votre propre liste d'agents, nous l'établissons lors de l'analyse gratuite.",
+  "more": "Nous avons aussi des équipes d'exemple pour les peintres, les garages et les cabinets de médecine générale. Demandez-les lors de votre démo gratuite."
+ },
+ "stappen": {
+  "eyebrow": "Comment ça marche",
+  "h2a": "Quatre étapes.",
+  "h2b": "Les deux premières sont gratuites.",
+  "lede": "D'une première rencontre à une équipe qui travaille avec vous chaque jour.",
+  "items": [
+   [
+    "Démo gratuite",
+    "Nous vous montrons une équipe IA de votre secteur, pour que vous voyiez comment elle fonctionne."
+   ],
+   [
+    "Analyse gratuite",
+    "Nous cartographions vos processus et proposons le bon pack et la liste d'agents."
+   ],
+   [
+    "Construction",
+    "Après votre accord, nous construisons votre équipe IA : votre propre compte Anthropic, le serveur, les agents et les connexions. Nous testons avant la mise en ligne."
+   ],
+   [
+    "Mise en ligne et gestion",
+    "Votre équipe se met au travail. Dès lors, nous la maintenons en ligne : hébergement, maintenance, mises à jour, surveillance et support."
+   ]
+  ]
+ },
+ "pakketten": {
+  "eyebrow": "Packs et tarifs",
+  "h2a": "Des packs fixes.",
+  "h2b": "Des prix connus d'avance.",
+  "lede": "Tous les prix s'entendent HTVA. Vous saurez quel pack vous convient après l'analyse gratuite.",
+  "kies": "Combien de services voulez-vous faire travailler avec vous ?",
+  "kies_opts": [
+   [
+    "1",
+    "start"
+   ],
+   [
+    "2 ou 3",
+    "groei"
+   ],
+   [
+    "4 ou 5",
+    "volledig"
+   ]
+  ],
+  "items": [
+   {
+    "id": "analyse",
+    "naam": "Analyse",
+    "voor": "Pour toute entreprise qui veut démarrer",
+    "wat": [
+     "Vos processus cartographiés",
+     "Proposition de pack et de liste d'agents"
+    ],
+    "setup": 0,
+    "month": null,
+    "from": false,
+    "note": "Toujours gratuite"
+   },
+   {
+    "id": "start",
+    "naam": "Start",
+    "voor": "Un service",
+    "wat": [
+     "1 service",
+     "3 à 4 agents",
+     "Groupe Telegram avec vos agents"
+    ],
+    "setup": 3500,
+    "month": 750,
+    "from": false
+   },
+   {
+    "id": "groei",
+    "naam": "Croissance",
+    "voor": "Deux à trois services",
+    "wat": [
+     "2 à 3 services",
+     "6 à 10 agents",
+     "Tableau de bord",
+     "Chief of Staff",
+     "Groupe Telegram avec vos agents"
+    ],
+    "setup": 7500,
+    "month": 1500,
+    "from": false
+   },
+   {
+    "id": "volledig",
+    "naam": "Complet",
+    "voor": "Quatre à cinq services",
+    "wat": [
+     "4 à 5 services",
+     "Intégrations sur mesure",
+     "Tableau de bord et Chief of Staff",
+     "Groupe Telegram avec vos agents"
+    ],
+    "setup": 15000,
+    "month": 2500,
+    "from": true
+   }
+  ],
+  "table": {
+   "head": [
+    "",
+    "Start",
+    "Croissance",
+    "Complet"
+   ],
+   "rows": [
+    [
+     "Services",
+     "1",
+     "2 à 3",
+     "4 à 5"
+    ],
+    [
+     "Agents",
+     "3 à 4",
+     "6 à 10",
+     "selon l'analyse"
+    ],
+    [
+     "Groupe Telegram",
+     "oui",
+     "oui",
+     "oui"
+    ],
+    [
+     "Chief of Staff",
+     "non",
+     "oui",
+     "oui"
+    ],
+    [
+     "Tableau de bord",
+     "non",
+     "oui",
+     "oui"
+    ],
+    [
+     "Connexions à vos systèmes",
+     "convenues lors de l'analyse",
+     "convenues lors de l'analyse",
+     "sur mesure"
+    ],
+    [
+     "Mise en place (unique)",
+     "3 500 €",
+     "7 500 €",
+     "à partir de 15 000 €"
+    ],
+    [
+     "Par mois",
+     "750 €",
+     "1 500 €",
+     "à partir de 2 500 €"
+    ]
+   ]
+  },
+  "foot": "Tous les prix s'entendent HTVA. Contrat fixe de 12 mois. La consommation de Claude, vous la payez directement à Anthropic : elle n'est pas comprise dans notre prix.",
+  "cta": "Planifier une démo gratuite",
+  "small": "Entreprise plus petite ? Croissance en ligne commence à 150 € par mois, résiliable chaque mois.",
+  "small_link": "Voir Croissance en ligne",
+  "small_href": "Diensten#pakket-1"
+ },
+ "voorwaarden": {
+  "eyebrow": "Conditions",
+  "h2a": "Ce qu'il faut savoir d'avance.",
+  "h2b": "Noir sur blanc.",
+  "items": [
+   [
+    "Contrat de 12 mois",
+    "Chaque pack a un contrat fixe de 12 mois. EML AI Team n'est pas résiliable chaque mois."
+   ],
+   [
+    "Mise en place en deux fois",
+    "Vous payez 50 % de la mise en place au démarrage et 50 % à la mise en ligne. Le prix mensuel court à partir de la mise en ligne."
+   ],
+   [
+    "Après 12 mois",
+    "Le contrat est prolongé. C'est nécessaire pour maintenir votre système en ligne."
+   ],
+   [
+    "Ce que couvre le prix mensuel",
+    "Maintenir votre système en ligne et opérationnel : hébergement et gestion du serveur, maintenance et mises à jour, surveillance, support et résolution des problèmes."
+   ],
+   [
+    "Ce qui n'est pas compris",
+    "La consommation de Claude : vous la payez directement à Anthropic, via votre propre compte. Les abonnements à vos propres outils sont aussi à votre charge."
+   ],
+   [
+    "Vouloir quelque chose en plus",
+    "De nouveaux agents, connexions ou améliorations ne sont pas compris dans le prix mensuel. Si vous voulez quelque chose en plus, nous faisons une proposition avec un prix de mise en place unique, ou vous passez à un autre pack."
+   ],
+   [
+    "Vos données",
+    "Votre équipe IA tourne sur un serveur dédié que nous gérons. Chaque contrat est accompagné d'un accord de sous-traitance des données."
+   ],
+   [
+    "Prix",
+    "Tous les prix s'entendent HTVA. Les factures sont payables dans les 14 jours."
+   ]
+  ]
+ },
+ "faq": {
+  "eyebrow": "Questions fréquentes",
+  "h2a": "Bon à savoir",
+  "h2b": "avant de décider.",
+  "items": [
+   {
+    "q": "Combien coûte la consommation de Claude ?",
+    "a": "Cela dépend de la quantité de travail de vos agents. Vous la payez directement à Anthropic, via votre propre compte, et vous la suivez vous-même. Nous n'ajoutons donc rien par-dessus."
+   },
+   {
+    "q": "Qu'advient-il de mes données ?",
+    "a": "Votre équipe IA tourne sur un serveur dédié que nous gérons, et la consommation passe par votre propre compte Anthropic. Chaque contrat est accompagné d'un accord de sous-traitance des données, car les agents travaillent avec les données de votre entreprise. Il précise comment nous traitons vos données, comme le demande le RGPD. Nous ne demandons jamais vos données de paiement chez Anthropic."
+   },
+   {
+    "q": "Que se passe-t-il après 12 mois ?",
+    "a": "Le contrat est prolongé. C'est nécessaire pour maintenir votre système en ligne : le prix mensuel couvre l'hébergement, la maintenance et le support."
+   },
+   {
+    "q": "Et si je veux quelque chose en plus plus tard ?",
+    "a": "Nous faisons alors une proposition : un prix de mise en place unique pour les nouveaux agents, connexions ou améliorations, ou un autre pack. Le prix mensuel maintient votre système en ligne ; construire de nouvelles choses n'y est pas compris."
+   },
+   {
+    "q": "Quelle différence avec le Consulting IA ?",
+    "a": "Avec le Consulting IA, vous apprenez vous-même à utiliser l'IA, avec notre accompagnement, et c'est résiliable chaque mois. Avec EML AI Team, nous construisons et gérons une équipe IA pour votre entreprise. Ce n'est pas un accompagnement continu : nous construisons ce qui est dans votre pack et nous le maintenons en ligne."
+   },
+   {
+    "q": "L'équipe IA répond-elle aussi au téléphone ?",
+    "a": "Non. Les agents travaillent par écrit : messages, e-mails, documents et vos systèmes. Pour le téléphone, il y a la réceptionniste IA, une option de Croissance en ligne."
+   },
+   {
+    "q": "Dois-je être technique ?",
+    "a": "Non. Nous construisons, connectons et gérons tout. Vous pilotez votre équipe via Telegram, par texte ou par message vocal."
+   },
+   {
+    "q": "À qui s'adresse EML AI Team ?",
+    "a": "Aux entreprises qui ont une équipe et un budget, et qui veulent des employés IA, pas seulement un assistant IA. Nous choisissons nous-mêmes les entreprises avec lesquelles nous travaillons. Lors de l'analyse gratuite, nous regardons ensemble si cela convient."
+   }
+  ],
+  "more_label": "À lire aussi :",
+  "more": [
+   {
+    "title": "Croissance en ligne",
+    "href": "Diensten#pakket-1"
+   },
+   {
+    "title": "Consulting IA",
+    "href": "Diensten#pakket-2"
+   },
+   {
+    "title": "Le choix du pack",
+    "href": "Pakketkiezer"
+   }
+  ]
+ },
+ "cta": {
+  "h2a": "Voyez une équipe IA",
+  "h2b": "au travail.",
+  "text": "Planifiez une démo gratuite. Nous vous montrons une équipe IA de votre secteur et regardons ensemble si elle convient à votre entreprise.",
+  "btn": "Planifier une démo gratuite",
+  "demo": "En savoir plus sur la démo gratuite",
+  "demo_href": "Gratis%20Demo",
+  "badges": [
+   "Démo gratuite",
+   "Analyse gratuite",
+   "Prix HTVA"
+  ]
+ },
+ "_te_beslissen": [
+  "[TE BESLISSEN] Richtbedrag Claude-verbruik per maand per pakket: staat nergens in de kennis. De FAQ noemt daarom geen bedrag.",
+  "[TE BESLISSEN] Doorlooptijd van de bouw (van akkoord tot livegang): niet beslist, staat niet op de pagina.",
+  "[TE BESLISSEN] Hosting (aanbieder, land, een server per klant of gedeeld): open bij Martijn. De pagina zegt alleen 'een eigen server die wij beheren'.",
+  "[TE BESLISSEN] Verlenging na 12 maanden: voor hoe lang en met welke opzegtermijn. De pagina zegt alleen dat het contract verlengd wordt om het systeem live te houden.",
+  "[TE BESLISSEN] Aantal koppelingen per pakket (Start en Groei). De pagina zegt 'afgesproken in de analyse' en 'op maat' bij Volledig.",
+  "[TE BESLISSEN] Wat er met het systeem en de gegevens gebeurt als een klant stopt: niet beslist, staat niet op de pagina.",
+  "[TE BESLISSEN] Engelse en Franse naam van 'Online groeien' (hier: Online Growth / Croissance en ligne). Volg CORRECTIES.md als die een andere naam kiest."
+ ],
+ "_bronnen": "Kennis 02 deel 4 en 03 (GOEDGEKEURD, bijgewerkt 11/10/2026), launchpad-os.md (niche-templates, CONCEPT), Notion Aanbod & prijzen en EML AI Team · Servicedocument, Notion-taak P1 met correctie Ebert 11/10. Sleutels met _ worden door het bouwscript genegeerd."
+}
