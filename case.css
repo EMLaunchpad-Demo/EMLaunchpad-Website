@@ -266,3 +266,12 @@ body[data-page="case"] .fn-pc{
   body[data-page="case"] .cs-bar .bl{font-size:13px}
   body[data-page="case"] .cs-sec{padding:58px 0}
 }
+
+/* ─────────────────────────── FASE 1 (2026-10): links naar de diensten ─────────────────────────── */
+body[data-page="case"] .cs-more{
+  display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  font-family:var(--mono);font-size:12px;color:var(--hi);text-decoration:none;
+  border-bottom:1px solid var(--acc);padding-bottom:1px;transition:color .2s ease;
+}
+body[data-page="case"] .cs-more:hover{color:var(--acc)}
+body[data-page="case"] .cs-more svg{width:12px;height:12px}

@@ -518,7 +518,7 @@
     var bars = { ns: $('[data-bar="ns"]', box), mc: $('[data-bar="mc"]', box) };
     var share = 1 / 3;
 
-    function eur(x) { return '€ ' + Math.round(x).toLocaleString(LOC); }
+    function eur(x) { var n = Math.round(x).toLocaleString(LOC); return LANG === 'fr' ? n + ' €' : '€' + n; }
     function one(x) { return x.toLocaleString(LOC, { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
 
     function fill(i) {

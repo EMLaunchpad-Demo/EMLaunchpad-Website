@@ -565,3 +565,12 @@ body[data-page="agenda"] .ag-faq-sec{background:var(--ink-1);border-top:1px soli
   body[data-page="agenda"] .ph-check svg{animation:none}
   body[data-page="agenda"] .ph-check svg{stroke-dashoffset:0}
 }
+
+/* ─────────────────────────── FASE 1 (2026-10): links en logo-namen ─────────────────────────── */
+body[data-page="agenda"] .ag-more{margin:22px 0 0;font-size:15.5px;line-height:1.6;color:var(--mid);max-width:52ch}
+body[data-page="agenda"] .ag-more a{color:var(--hi);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--acc)}
+body[data-page="agenda"] .ag-more a:hover{color:var(--acc)}
+body[data-page="agenda"] .ag-read{margin:16px 0 0;font-size:13.5px;line-height:1.6;color:var(--mid)}
+body[data-page="agenda"] .ag-read a{color:var(--hi);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--acc)}
+body[data-page="agenda"] .ag-read a:hover{color:var(--acc)}
+body[data-page="agenda"] .w-names{flex-basis:100%;text-align:center;font-size:13.5px;line-height:1.5;color:var(--mid)}
