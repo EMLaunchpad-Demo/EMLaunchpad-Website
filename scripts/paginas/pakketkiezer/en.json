@@ -590,7 +590,7 @@
     "volgorde_eml": "order of EML AI Team and Online Growth"
   },
   "proof": {
-    "afspraken": "650 of 681 appointments confirmed, 0 no-shows.",
+    "afspraken": "650 of 681 appointments confirmed.",
     "web": "40,280 website views.",
     "mails": "3,250 automatic emails, 2,090 opened (64%)."
   },
@@ -811,8 +811,8 @@
           "of 681 appointments confirmed"
         ],
         [
-          "0",
-          "no-shows"
+          "95.4%",
+          "confirmed"
         ],
         [
           "3,250",

@@ -156,7 +156,7 @@
       ],
       "kop_a": "Patients book",
       "kop_b": "themselves.",
-      "kort": "Website, online calendar and automatic emails for an aesthetic clinic in Hasselt. Over 263 days: 650 of 681 appointments confirmed, 0 no-shows.",
+      "kort": "Website, online calendar and automatic emails for an aesthetic clinic in Hasselt. Over 263 days: 650 of 681 appointments confirmed.",
       "alt": "Homepage of clinic3d.be: a light site with the headline Natuurlijke schoonheid, wetenschappelijk onderbouwd, a photo of the doctor at the desk and the button Boek je gratis consult.",
       "soort": "Aesthetic clinic · Hasselt · Dr. Kenis",
       "gemaakt": "Website · Online calendar · Automatic emails",
@@ -178,7 +178,7 @@
         ],
         [
           "What changed",
-          "Measured over 263 days: 650 of the 681 appointments confirmed and not a single no-show."
+          "Measured over 263 days: 650 of the 681 appointments confirmed."
         ]
       ],
       "meet": [
@@ -187,8 +187,8 @@
           "appointments confirmed"
         ],
         [
-          "0",
-          "no-shows"
+          "95.4%",
+          "confirmed"
         ],
         [
           "3,250",
@@ -209,7 +209,7 @@
       ],
       "meet_noot": "Measured over 263 days. The figures come from our platform's reporting.",
       "quote": {
-        "text": "227 appointments in 104 days, not a single no-show, and my calendar is fuller than ever. My clients book themselves now. I don't have to do a thing.",
+        "text": "227 appointments in 104 days, […] and my calendar is fuller than ever. My clients book themselves now. I don't have to do a thing.",
         "cite": "Dr. Kenis, owner of Clinic3D"
       },
       "dienst": {

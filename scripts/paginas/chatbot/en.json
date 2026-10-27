@@ -332,15 +332,15 @@
   "proof": {
     "eyebrow": "Measured, not promised",
     "h2a": "Clinic3D, Hasselt:",
-    "h2b": "650 appointments, 0 no-shows.",
-    "text": "In 263 days, Clinic3D booked 650 confirmed appointments without a single no-show. Confirmations and reminders went out automatically: 3,250 emails, with no manual work.",
+    "h2b": "650 of 681 appointments confirmed.",
+    "text": "In 263 days, Clinic3D booked 650 confirmed appointments. Confirmations and reminders went out automatically: 3,250 emails, with no manual work.",
     "bar_a": "Confirmed appointments",
-    "bar_b": "No-shows",
+    "bar_b": "Cancelled",
     "note": "Measured from 1 January to 20 September 2026 (263 days).",
     "link": "Read the full case study",
     "bar_a_n": 650,
-    "bar_b_n": 0,
-    "bar_b_w": "0%"
+    "bar_b_n": 31,
+    "bar_b_w": "4.8%"
   },
   "feats": {
     "eyebrow": "What it does",

@@ -332,15 +332,15 @@
   "proof": {
     "eyebrow": "Mesuré, pas promis",
     "h2a": "Clinic3D, Hasselt :",
-    "h2b": "650 rendez-vous, 0 no-show.",
-    "text": "En 263 jours, Clinic3D a enregistré 650 rendez-vous confirmés sans un seul no-show. Les confirmations et les rappels sont partis automatiquement : 3 250 e-mails, sans travail manuel.",
+    "h2b": "650 rendez-vous sur 681 confirmés.",
+    "text": "En 263 jours, Clinic3D a enregistré 650 rendez-vous confirmés. Les confirmations et les rappels sont partis automatiquement : 3 250 e-mails, sans travail manuel.",
     "bar_a": "Rendez-vous confirmés",
-    "bar_b": "No-shows",
+    "bar_b": "Annulés",
     "note": "Mesuré du 1er janvier au 20 septembre 2026 (263 jours).",
     "link": "Lire l'étude de cas complète",
     "bar_a_n": 650,
-    "bar_b_n": 0,
-    "bar_b_w": "0%"
+    "bar_b_n": 31,
+    "bar_b_w": "4.8%"
   },
   "feats": {
     "eyebrow": "Ce qu'il fait",

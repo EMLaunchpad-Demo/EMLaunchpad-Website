@@ -57,7 +57,7 @@
           "klanten": [
             {
               "klant": "clinic3d",
-              "tekst": "Clinic3D is een medisch-esthetische kliniek in Hasselt, met één arts: Dr. Kenis. Het was de eerste zaak die met ons in zee ging. We maakten de website, de online agenda en de mails die vanzelf vertrekken. Gemeten over 263 dagen: 650 van de 681 afspraken bevestigd, en 0 no-shows.",
+              "tekst": "Clinic3D is een medisch-esthetische kliniek in Hasselt, met één arts: Dr. Kenis. Het was de eerste zaak die met ons in zee ging. We maakten de website, de online agenda en de mails die vanzelf vertrekken. Gemeten over 263 dagen: 650 van de 681 afspraken bevestigd.",
               "beeld": {"src": "assets/werk/clinic3d-desk-960.webp", "srcset": "assets/werk/clinic3d-desk-960.webp 960w, assets/werk/clinic3d-desk-1440.webp 1440w", "sizes": "(max-width: 760px) 92vw, 420px", "w": 1440, "h": 900, "domein": "clinic3d.be", "alt": "Startpagina van clinic3d.be: een lichte site met een foto van de arts aan de balie en de knop om een gratis consult te boeken."},
               "links": [{"label": "Lees de case", "href": "Clinic3D"}]
             }

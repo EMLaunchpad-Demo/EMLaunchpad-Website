@@ -617,7 +617,7 @@
   "eyebrow": "Measured at Clinic3D, Hasselt",
   "h2a": "3,250 emails in 263 days.",
   "h2b": "All sent automatically.",
-  "lede": "At Clinic3D, an aesthetic clinic in Hasselt, confirmations, reminders and follow-up go out fully automatically. 2,090 of those emails were opened. And the no-show counter stayed at zero.",
+  "lede": "At Clinic3D, an aesthetic clinic in Hasselt, confirmations, reminders and follow-up go out fully automatically. 2,090 of those emails were opened.",
   "quote": "My clients now book by themselves. I don't have to do a thing.",
   "cite": "Dr. Kenis, owner of Clinic3D",
   "note": "Measured from 1 January to 20 September 2026 (263 days). Dr. Kenis said this after 104 days.",
@@ -662,9 +662,8 @@
     "label": "confirmed"
    },
    {
-    "n": 0,
-    "label": "no-shows",
-    "sub": "not a single one in 263 days"
+    "n": 31,
+    "label": "cancelled"
    }
   ],
   "report": [

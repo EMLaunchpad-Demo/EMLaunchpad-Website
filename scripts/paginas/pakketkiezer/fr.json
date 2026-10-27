@@ -590,7 +590,7 @@
     "volgorde_eml": "ordre EML AI Team et Croissance en ligne"
   },
   "proof": {
-    "afspraken": "650 rendez-vous confirmés sur 681, 0 no-show.",
+    "afspraken": "650 rendez-vous confirmés sur 681.",
     "web": "40 280 vues du site.",
     "mails": "3 250 e-mails automatiques, dont 2 090 ouverts (64 %)."
   },
@@ -811,8 +811,8 @@
           "rendez-vous confirmés sur 681"
         ],
         [
-          "0",
-          "no-show"
+          "95,4 %",
+          "confirmés"
         ],
         [
           "3 250",

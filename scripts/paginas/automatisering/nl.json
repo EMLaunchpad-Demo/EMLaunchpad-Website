@@ -617,7 +617,7 @@
   "eyebrow": "Gemeten bij Clinic3D, Hasselt",
   "h2a": "3.250 e-mails in 263 dagen.",
   "h2b": "Allemaal vanzelf verstuurd.",
-  "lede": "Bij Clinic3D, een esthetische kliniek in Hasselt, vertrekken bevestigingen, herinneringen en opvolging volledig automatisch. 2.090 van die e-mails werden geopend. En de teller van de no-shows bleef op nul staan.",
+  "lede": "Bij Clinic3D, een esthetische kliniek in Hasselt, vertrekken bevestigingen, herinneringen en opvolging volledig automatisch. 2.090 van die e-mails werden geopend.",
   "quote": "Mijn klanten boeken nu zelf. Ik moet niets meer doen.",
   "cite": "Dr. Kenis, eigenaar Clinic3D",
   "note": "Gemeten van 1 januari tot 20 september 2026 (263 dagen). Dr. Kenis deed zijn uitspraak na 104 dagen.",
@@ -662,9 +662,8 @@
     "label": "bevestigd"
    },
    {
-    "n": 0,
-    "label": "no-shows",
-    "sub": "geen enkele in 263 dagen"
+    "n": 31,
+    "label": "geannuleerd"
    }
   ],
   "report": [

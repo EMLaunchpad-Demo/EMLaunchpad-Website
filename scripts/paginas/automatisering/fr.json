@@ -617,7 +617,7 @@
   "eyebrow": "Mesuré chez Clinic3D, Hasselt",
   "h2a": "3 250 e-mails en 263 jours.",
   "h2b": "Tous partis tout seuls.",
-  "lede": "Chez Clinic3D, une clinique esthétique à Hasselt, les confirmations, les rappels et le suivi partent de façon entièrement automatique. 2 090 de ces e-mails ont été ouverts. Et le compteur de no-shows est resté à zéro.",
+  "lede": "Chez Clinic3D, une clinique esthétique à Hasselt, les confirmations, les rappels et le suivi partent de façon entièrement automatique. 2 090 de ces e-mails ont été ouverts.",
   "quote": "Mes clients réservent désormais eux-mêmes. Je n'ai plus rien à faire.",
   "cite": "Dr. Kenis, propriétaire de Clinic3D",
   "note": "Mesuré du 1er janvier au 20 septembre 2026 (263 jours). Le Dr Kenis a tenu ces propos après 104 jours.",
@@ -662,9 +662,8 @@
     "label": "confirmés"
    },
    {
-    "n": 0,
-    "label": "no-shows",
-    "sub": "pas un seul en 263 jours"
+    "n": 31,
+    "label": "annulés"
    }
   ],
   "report": [

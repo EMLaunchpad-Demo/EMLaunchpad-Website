@@ -6,7 +6,7 @@
   "naam": "Hasselt",
   "crumb": "Hasselt",
   "plaats": "hasselt",
-  "kort": "Clinic3D: 650 van 681 afspraken bevestigd, 0 no-shows.",
+  "kort": "Clinic3D: 650 van 681 afspraken bevestigd.",
   "bronnen": {
     "zoekvraag": "Rapport 03, cluster B: 'website laten maken hasselt / webdesign hasselt' = middel (Google- en Bing-autocomplete), google.be 15/10/2026.",
     "klant": "Clinic3D: Portfolio (scripts/paginas/portfolio/nl.json), Clinic3D.html, ai-team/kennis/martijn/claudecode-12 en -05 (mails)."
@@ -14,7 +14,7 @@
   "meta": {
     "title": "Website laten maken in Hasselt | EM Launchpad",
     "ogtitle": "Website laten maken in Hasselt: zo begon het bij Clinic3D",
-    "desc": "Website laten maken in Hasselt? Voor Clinic3D bouwden we site, online agenda en mails: 650 afspraken bevestigd, 0 no-shows. €150 per maand, excl. btw.",
+    "desc": "Website laten maken in Hasselt? Voor Clinic3D bouwden we site, online agenda en mails: 650 afspraken bevestigd. €150 per maand, excl. btw.",
     "service": "Website laten maken in Hasselt",
     "areaServed": {
       "@type": "City",
@@ -36,7 +36,7 @@
     "feiten": [
       "Klant in Hasselt: Clinic3D",
       "650 van 681 afspraken bevestigd",
-      "0 no-shows in 263 dagen",
+      "3.250 automatische e-mails",
       "€150 per maand, excl. btw"
     ]
   },
@@ -92,8 +92,8 @@
             "afspraken bevestigd"
           ],
           [
-            "0",
-            "no-shows"
+            "95,4%",
+            "bevestigd"
           ],
           [
             "3.250",
@@ -115,7 +115,7 @@
         "noot": "Gemeten van 1 januari tot 20 september 2026, dat is 263 dagen. De cijfers komen uit de rapportage van ons platform."
       },
       "citaat": {
-        "tekst": "227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.",
+        "tekst": "227 afspraken in 104 dagen, […] en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.",
         "wie": "Dr. Kenis, eigenaar Clinic3D, na 104 dagen"
       },
       "beeld": {
@@ -258,7 +258,7 @@
       },
       {
         "q": "Waar komen de cijfers van Clinic3D vandaan?",
-        "a": "Uit de rapportage van ons platform, gemeten van 1 januari tot 20 september 2026. In die 263 dagen werden 650 van de 681 afspraken bevestigd, zonder één no-show. De uitleg per cijfer staat op de pagina van de [case](Clinic3D)."
+        "a": "Uit de rapportage van ons platform, gemeten van 1 januari tot 20 september 2026. In die 263 dagen werden 650 van de 681 afspraken bevestigd. De uitleg per cijfer staat op de pagina van de [case](Clinic3D)."
       },
       {
         "q": "Ik heb al een website. Kan de online agenda daarop?",

@@ -4,7 +4,7 @@
  "skyKeys": [{"p":0,"ax":62,"ay":30,"bx":18,"by":98,"ao":0.9,"bo":0.45},{"p":0.3,"ax":20,"ay":46,"bx":84,"by":66,"ao":0.6,"bo":0.7},{"p":0.6,"ax":80,"ay":52,"bx":24,"by":34,"ao":0.7,"bo":0.6},{"p":1,"ax":46,"ay":36,"bx":56,"by":42,"ao":1,"bo":1}],
  "meta": {
   "title": "Website voor praktijken met online afspraken | EM Launchpad",
-  "desc": "Een website met online afspraken en herinneringen voor je praktijk: kinesist, osteopaat, kliniek. Zoals Clinic3D in Hasselt: 650 afspraken, 0 no-shows.",
+  "desc": "Een website met online afspraken en herinneringen voor je praktijk: kinesist, osteopaat, kliniek. Zoals Clinic3D in Hasselt: 650 bevestigde afspraken.",
   "ogtitle": "Een praktijk die zelf haar agenda vult | EM Launchpad",
   "service": "Website met online afsprakensysteem voor praktijken",
   "serviceType": "Website met online afsprakensysteem",
@@ -23,7 +23,7 @@
   "lede": "Een website laten maken voor je praktijk, met een online afsprakensysteem erin: patiënten boeken zelf een consult of behandeling, krijgen vanzelf een bevestiging en een herinnering, en jij houdt je handen vrij voor wie voor je zit.",
   "cta2": "Kies je pakket in zes vragen",
   "cta2_href": "Pakketkiezer",
-  "feiten": ["€150 per maand, excl. btw", "Clinic3D: 650 afspraken, 0 no-shows", "Meestal live binnen 14 dagen"],
+  "feiten": ["€150 per maand, excl. btw", "Clinic3D: 650 bevestigde afspraken", "Meestal live binnen 14 dagen"],
   "img": {
    "base": "praktijk-clinic3d-afspraak",
    "sizes": "(max-width: 960px) calc(100vw - 32px), 560px",
@@ -51,12 +51,12 @@
  "case": {
   "eyebrow": "Echt werk",
   "h2a": "Clinic3D in Hasselt:",
-  "h2b": "650 afspraken, 0 no-shows.",
+  "h2b": "650 van 681 afspraken bevestigd.",
   "lede": "Clinic3D is een medisch-esthetische kliniek in Hasselt en onze eerste klant. We bouwden de website, de online agenda en de automatische mails. Patiënten boeken sindsdien zelf.",
-  "cijfers": [["650 van 681", "afspraken bevestigd"], ["0", "no-shows"], ["31", "netjes op voorhand geannuleerd"], ["3.250", "automatische e-mails"]],
+  "cijfers": [["650 van 681", "afspraken bevestigd"], ["95,4%", "bevestigd"], ["31", "netjes op voorhand geannuleerd"], ["3.250", "automatische e-mails"]],
   "cijfers_noot": "Gemeten van 1 januari tot 20 september 2026 (263 dagen). De cijfers komen uit de rapportage van ons platform.",
-  "quote": {"text": "227 afspraken in 104 dagen, geen enkele no-show, en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.", "cite": "Dr. Kenis, eigenaar Clinic3D, na 104 dagen"},
-  "slot": "Clinic3D is een kliniek, geen kinepraktijk. Een kinesist of osteopaat hebben we nog niet als klant. Maar de vraag is dezelfde: hoe raakt de agenda vol zonder dat jij de hele dag aan de telefoon hangt? En nul no-shows beloven we niet: wat bij Clinic3D lukte, is gemeten, geen garantie.",
+  "quote": {"text": "227 afspraken in 104 dagen, […] en mijn agenda zit voller dan ooit. Mijn klanten boeken nu zelf. Ik moet niets meer doen.", "cite": "Dr. Kenis, eigenaar Clinic3D, na 104 dagen"},
+  "slot": "Clinic3D is een kliniek, geen kinepraktijk. Een kinesist of osteopaat hebben we nog niet als klant. Maar de vraag is dezelfde: hoe raakt de agenda vol zonder dat jij de hele dag aan de telefoon hangt? Wat bij Clinic3D lukte, is gemeten, geen garantie.",
   "links": [{"t": "Lees de volledige case Clinic3D", "href": "Clinic3D"}, {"t": "clinic3d.be", "href": "https://clinic3d.be"}]
  },
  "bouwstenen": {
@@ -115,7 +115,7 @@
   "items": [
    {"q": "Wat kost een website met online afspraken voor een praktijk?", "a": "€150 per maand, excl. btw, in het pakket Online groeien: website, online afsprakensysteem met herinneringen, Google-profiel, reviews, CRM en automatische opvolging, met hosting, beheer en support. Geen opstartkost, maandelijks opzegbaar."},
    {"q": "Werkt het ook voor een kinesist of osteopaat?", "a": "Ja. Het systeem werkt voor elke praktijk met afspraken: je zet je behandelingen erin met hun duur, je uren en eventueel meerdere therapeuten met elk hun eigen agenda. Eerlijk gezegd: onze praktijkcase is een medisch-esthetische kliniek, Clinic3D. Een kinepraktijk of osteopaat hebben we nog niet als klant."},
-   {"q": "Helpen herinneringen echt tegen no-shows?", "a": "Bij Clinic3D werden over 263 dagen 650 van de 681 ingeplande afspraken bevestigd, 31 werden op voorhand geannuleerd en er was geen enkele no-show. Patiënten kregen een bevestiging, een herinnering en achteraf een opvolging. Dat is een meting bij één praktijk, geen belofte voor de jouwe."},
+   {"q": "Helpen herinneringen echt tegen no-shows?", "a": "Een herinnering geeft de patiënt de kans om op tijd te verplaatsen of af te zeggen, in plaats van weg te blijven. Bij Clinic3D kregen patiënten een bevestiging, een herinnering en achteraf een opvolging. Over 263 dagen werden daar 650 van de 681 ingeplande afspraken bevestigd en 31 op voorhand geannuleerd. Dat is een meting bij één praktijk, geen belofte voor de jouwe."},
    {"q": "Kan ik een voorschot vragen?", "a": "Ja. Bij Clinic3D betaalt een patiënt €25 voorschot voor behandelingen van 45 minuten of langer, zodat er minder geannuleerd wordt. Of en wanneer je een voorschot vraagt, beslis je zelf. Betalen gaat online."},
    {"q": "Hoe zit het met de GDPR?", "a": "In het formulier vragen we alleen wat nodig is voor de afspraak, met de vraag om er geen medische gegevens in te zetten. Het vakje voor nieuws staat standaard uit. Wie geen berichten meer wil, krijgt ze niet meer. Je privacyverklaring en voorwaarden laat je nakijken door een jurist; wij zetten ze op je site."},
    {"q": "Mag een patiënt medische info in het formulier zetten?", "a": "Liever niet, en dat staat er ook bij. Bij het vak voor opmerkingen staat dat medische gegevens besproken worden tijdens de afspraak, niet in een formulier. Zo komen ze niet in mails of in je CRM terecht."},

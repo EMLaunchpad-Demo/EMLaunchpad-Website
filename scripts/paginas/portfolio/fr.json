@@ -156,7 +156,7 @@
       ],
       "kop_a": "Les patients réservent",
       "kop_b": "eux-mêmes.",
-      "kort": "Site web, agenda en ligne et e-mails automatiques pour une clinique esthétique à Hasselt. Sur 263 jours : 650 rendez-vous sur 681 confirmés, 0 no-show.",
+      "kort": "Site web, agenda en ligne et e-mails automatiques pour une clinique esthétique à Hasselt. Sur 263 jours : 650 rendez-vous sur 681 confirmés.",
       "alt": "Page d'accueil de clinic3d.be : un site clair avec le titre Natuurlijke schoonheid, wetenschappelijk onderbouwd, une photo du médecin au comptoir et le bouton Boek je gratis consult.",
       "soort": "Clinique esthétique · Hasselt · Dr Kenis",
       "gemaakt": "Site web · Agenda en ligne · E-mails automatiques",
@@ -178,7 +178,7 @@
         ],
         [
           "Ce qui a changé",
-          "Mesuré sur 263 jours : 650 rendez-vous sur 681 confirmés et pas un seul no-show."
+          "Mesuré sur 263 jours : 650 rendez-vous sur 681 confirmés."
         ]
       ],
       "meet": [
@@ -187,8 +187,8 @@
           "rendez-vous confirmés"
         ],
         [
-          "0",
-          "no-shows"
+          "95,4 %",
+          "confirmés"
         ],
         [
           "3 250",
@@ -209,7 +209,7 @@
       ],
       "meet_noot": "Mesuré sur 263 jours. Les chiffres viennent du rapport de notre plateforme.",
       "quote": {
-        "text": "227 rendez-vous en 104 jours, pas un seul no-show, et mon agenda est plus rempli que jamais. Mes clients réservent désormais eux-mêmes. Je n'ai plus rien à faire.",
+        "text": "227 rendez-vous en 104 jours, […] et mon agenda est plus rempli que jamais. Mes clients réservent désormais eux-mêmes. Je n'ai plus rien à faire.",
         "cite": "Dr Kenis, propriétaire de Clinic3D"
       },
       "dienst": {

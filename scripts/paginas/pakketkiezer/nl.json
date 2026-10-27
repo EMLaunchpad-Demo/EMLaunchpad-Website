@@ -590,7 +590,7 @@
     "volgorde_eml": "volgorde EML AI Team en Online groeien"
   },
   "proof": {
-    "afspraken": "650 van 681 afspraken bevestigd, 0 no-shows.",
+    "afspraken": "650 van 681 afspraken bevestigd.",
     "web": "40.280 websiteweergaven.",
     "mails": "3.250 automatische e-mails, 2.090 geopend (64%)."
   },
@@ -811,8 +811,8 @@
           "van 681 afspraken bevestigd"
         ],
         [
-          "0",
-          "no-shows"
+          "95,4%",
+          "bevestigd"
         ],
         [
           "3.250",

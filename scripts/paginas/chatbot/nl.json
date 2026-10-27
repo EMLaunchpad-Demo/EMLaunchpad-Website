@@ -332,15 +332,15 @@
   "proof": {
     "eyebrow": "Gemeten, niet beloofd",
     "h2a": "Clinic3D, Hasselt:",
-    "h2b": "650 afspraken, 0 no-shows.",
-    "text": "In 263 dagen boekte Clinic3D 650 bevestigde afspraken, zonder één no-show. De bevestigingen en herinneringen vertrokken automatisch: 3.250 e-mails, zonder handmatig werk.",
+    "h2b": "650 van 681 afspraken bevestigd.",
+    "text": "In 263 dagen boekte Clinic3D 650 bevestigde afspraken. De bevestigingen en herinneringen vertrokken automatisch: 3.250 e-mails, zonder handmatig werk.",
     "bar_a": "Bevestigde afspraken",
-    "bar_b": "No-shows",
+    "bar_b": "Geannuleerd",
     "note": "Gemeten van 1 januari tot 20 september 2026 (263 dagen).",
     "link": "Lees de volledige case",
     "bar_a_n": 650,
-    "bar_b_n": 0,
-    "bar_b_w": "0%"
+    "bar_b_n": 31,
+    "bar_b_w": "4.8%"
   },
   "feats": {
     "eyebrow": "Wat hij doet",
