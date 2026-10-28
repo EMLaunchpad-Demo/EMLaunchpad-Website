@@ -200,7 +200,7 @@
           "c": "bericht",
           "label": "By message (WhatsApp, Instagram, Messenger or email)",
           "kort": "by message",
-          "eff": "Appointments by message. On the other side: Online Growth, with an online calendar and one inbox for WhatsApp, Instagram, email and text."
+          "eff": "Appointments by message. On the other side: Online Growth, with an online calendar and one inbox for WhatsApp, Instagram and email."
         },
         {
           "c": "online",
@@ -290,7 +290,7 @@
           "c": "reviews",
           "label": "Asking for a review",
           "kort": "asking for a review",
-          "eff": "Included in Online Growth: 2 hours after every appointment a review request goes out by text or email, automatically."
+          "eff": "Included in Online Growth: 2 hours after every appointment a review request goes out by email, automatically."
         },
         {
           "c": "facturen",
@@ -308,7 +308,7 @@
           "c": "kanalen",
           "label": "Following up WhatsApp, Instagram and email separately",
           "kort": "messages on separate channels",
-          "eff": "Included in Online Growth: WhatsApp, Instagram, email, text and phone in one inbox."
+          "eff": "Included in Online Growth: WhatsApp, Instagram, email and phone in one inbox."
         },
         {
           "c": "niets",
@@ -382,7 +382,7 @@
     "boek_binnen": "No appointments needed. Doesn't count.",
     "opr_dag": "On the scale: missed calls every day {werk}. On the other side: the AI receptionist, +€150 per month, plus €750 one-off.",
     "opr_week_bel": "On the edge: your customers call and you miss a call now and then. We'll discuss the AI receptionist together; not in the price.",
-    "opr_week": "No AI receptionist: your phone is part of your inbox, next to WhatsApp, Instagram, email and text. Saves you €150 a month and €750 one-off.",
+    "opr_week": "No AI receptionist: your phone is part of your inbox, next to WhatsApp, Instagram and email. Saves you €150 a month and €750 one-off.",
     "opr_zelden": "No AI receptionist: you hardly ever miss a call. Saves you €150 a month and €750 one-off.",
     "opr_onbekend": "Nothing on the scale. Tip: count your missed calls for a week.",
     "ber_avond": "On the scale: questions while you're closed. On the other side: the AI chatbot, +€50 per month.",
@@ -534,7 +534,7 @@
     ],
     "reviews": [
       "Asking for a review slips through the cracks.",
-      "2 hours after every appointment a review request goes out by text or email, automatically."
+      "2 hours after every appointment a review request goes out by email, automatically."
     ],
     "facturen": [
       "Making invoices and chasing payments slips through the cracks.",
@@ -546,19 +546,19 @@
     ],
     "inbox_kanalen": [
       "Following up messages on separate channels slips through the cracks.",
-      "WhatsApp, Instagram, email, text and phone come together in one inbox."
+      "WhatsApp, Instagram, email and phone come together in one inbox."
     ],
     "inbox_opr": [
       "You miss a call now and then.",
-      "Your phone is part of one inbox, next to WhatsApp, Instagram, email and text."
+      "Your phone is part of one inbox, next to WhatsApp, Instagram and email."
     ],
     "inbox_ber": [
       "A few messages come in every week.",
-      "You answer them from one inbox, together with WhatsApp, Instagram, email, text and phone."
+      "You answer them from one inbox, together with WhatsApp, Instagram, email and phone."
     ],
     "klanten": [
       "You mainly want more customers who find you and book.",
-      "A fast website that Google can read well, your Google profile and your visibility, plus email and text campaigns and landing pages."
+      "A fast website that Google can read well, your Google profile and your visibility, plus email campaigns and landing pages."
     ],
     "eenplek": [
       "You want everything in one place.",
@@ -651,14 +651,14 @@
         },
         {
           "t": "Reviews on Google",
-          "d": "2 hours after every appointment a review request goes out by text or email, automatically."
+          "d": "2 hours after every appointment a review request goes out by email, automatically."
         },
         {
           "t": "CRM and customer dashboard",
-          "d": "WhatsApp, Instagram, email, text and phone in one inbox."
+          "d": "WhatsApp, Instagram, email and phone in one inbox."
         },
         {
-          "t": "Email and text campaigns",
+          "t": "Email campaigns",
           "d": "Targeted campaigns to your own customer list."
         },
         {

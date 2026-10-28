@@ -200,7 +200,7 @@
           "c": "bericht",
           "label": "Via een bericht (WhatsApp, Instagram, Messenger of mail)",
           "kort": "via berichten",
-          "eff": "Afspraken via berichten. Daartegenover: Online groeien, met een online agenda en één inbox voor WhatsApp, Instagram, e-mail en sms."
+          "eff": "Afspraken via berichten. Daartegenover: Online groeien, met een online agenda en één inbox voor WhatsApp, Instagram en e-mail."
         },
         {
           "c": "online",
@@ -290,7 +290,7 @@
           "c": "reviews",
           "label": "Om een review vragen",
           "kort": "om een review vragen",
-          "eff": "Zit in Online groeien: 2 uur na elke afspraak vertrekt vanzelf een reviewverzoek via sms of e-mail."
+          "eff": "Zit in Online groeien: 2 uur na elke afspraak vertrekt vanzelf een reviewverzoek per e-mail."
         },
         {
           "c": "facturen",
@@ -308,7 +308,7 @@
           "c": "kanalen",
           "label": "Berichten op WhatsApp, Instagram en mail apart opvolgen",
           "kort": "berichten op losse kanalen",
-          "eff": "Zit in Online groeien: WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
+          "eff": "Zit in Online groeien: WhatsApp, Instagram, e-mail en telefoon in één inbox."
         },
         {
           "c": "niets",
@@ -382,7 +382,7 @@
     "boek_binnen": "Geen afspraken nodig. Telt niet mee.",
     "opr_dag": "Op de schaal: elke dag gemiste oproepen {werk}. Daartegenover: de AI-receptioniste, +€150 per maand, plus €750 eenmalig.",
     "opr_week_bel": "Op de rand: je klanten bellen en je mist soms een oproep. De AI-receptioniste bespreken we samen, niet in de prijs.",
-    "opr_week": "Geen AI-receptioniste: je telefoon zit mee in je inbox, naast WhatsApp, Instagram, e-mail en sms. Scheelt €150 per maand en €750 eenmalig.",
+    "opr_week": "Geen AI-receptioniste: je telefoon zit mee in je inbox, naast WhatsApp, Instagram en e-mail. Scheelt €150 per maand en €750 eenmalig.",
     "opr_zelden": "Geen AI-receptioniste: je mist bijna nooit een oproep. Scheelt €150 per maand en €750 eenmalig.",
     "opr_onbekend": "Niets op de schaal. Tip: tel eens een week je gemiste oproepen.",
     "ber_avond": "Op de schaal: vragen als je dicht bent. Daartegenover: de AI-chatbot, +€50 per maand.",
@@ -534,7 +534,7 @@
     ],
     "reviews": [
       "Om een review vragen schiet erbij in.",
-      "2 uur na elke afspraak vertrekt vanzelf een reviewverzoek via sms of e-mail."
+      "2 uur na elke afspraak vertrekt vanzelf een reviewverzoek per e-mail."
     ],
     "facturen": [
       "Facturen maken en achter betalingen aan schiet erbij in.",
@@ -546,19 +546,19 @@
     ],
     "inbox_kanalen": [
       "Berichten op losse kanalen opvolgen schiet erbij in.",
-      "WhatsApp, Instagram, e-mail, sms en telefoon komen samen in één inbox."
+      "WhatsApp, Instagram, e-mail en telefoon komen samen in één inbox."
     ],
     "inbox_opr": [
       "Je mist soms een oproep.",
-      "Je telefoon zit mee in één inbox, naast WhatsApp, Instagram, e-mail en sms."
+      "Je telefoon zit mee in één inbox, naast WhatsApp, Instagram en e-mail."
     ],
     "inbox_ber": [
       "Er komen een paar berichten per week binnen.",
-      "Die beantwoord je vanuit één inbox, samen met WhatsApp, Instagram, e-mail, sms en telefoon."
+      "Die beantwoord je vanuit één inbox, samen met WhatsApp, Instagram, e-mail en telefoon."
     ],
     "klanten": [
       "Je wil vooral meer klanten die je vinden en boeken.",
-      "Een snelle website die Google goed kan lezen, je Google-profiel en je zichtbaarheid, plus e-mail- en sms-campagnes en landingspagina's."
+      "Een snelle website die Google goed kan lezen, je Google-profiel en je zichtbaarheid, plus e-mailcampagnes en landingspagina's."
     ],
     "eenplek": [
       "Je wil alles op één plek.",
@@ -651,14 +651,14 @@
         },
         {
           "t": "Reviews op Google",
-          "d": "2 uur na elke afspraak vertrekt automatisch een reviewverzoek via sms of e-mail."
+          "d": "2 uur na elke afspraak vertrekt automatisch een reviewverzoek per e-mail."
         },
         {
           "t": "CRM en klantendashboard",
-          "d": "WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
+          "d": "WhatsApp, Instagram, e-mail en telefoon in één inbox."
         },
         {
-          "t": "E-mail- en sms-campagnes",
+          "t": "E-mailcampagnes",
           "d": "Gerichte campagnes naar je eigen klantenbestand."
         },
         {

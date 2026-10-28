@@ -115,7 +115,7 @@ document.documentElement.classList.add('js');
               <a href="${P}AI%20Chatbots">ai chatbots</a><a href="${P}AI%20Voice%20Agents">ai voice agents</a>
               <a href="${P}Websites">websites</a><a href="${P}AI-Automatisering">ai-automatisering</a><a href="${P}Afsprakensysteem">online afspraken</a>
               <a href="${P}Diensten#pakket-1">reputatiebeheer</a><a href="${P}Diensten#pakket-1">crm &amp; dashboard</a>
-              <a href="${P}Diensten#pakket-1">email &amp; sms</a><a href="${P}Diensten#pakket-1">landingspagina's</a>
+              <a href="${P}Diensten#pakket-1">e-mailcampagnes</a><a href="${P}Diensten#pakket-1">landingspagina's</a>
             </div>
           </div>
           <div class="foot-cell one">

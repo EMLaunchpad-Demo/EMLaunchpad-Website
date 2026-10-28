@@ -94,7 +94,6 @@
   "done_sr": "Klaar.",
   "tools": {
    "mail": "E-mail",
-   "sms": "Sms",
    "agenda": "Google Agenda",
    "crm": "CRM",
    "stripe": "Stripe",
@@ -144,7 +143,6 @@
  "order": [
   "boekt",
   "factuur",
-  "oproep",
   "aanvraag"
  ],
  "events": {
@@ -163,16 +161,15 @@
      "grav": "METEEN",
      "win": "Di 21:40",
      "jij": "Jij: al lang thuis",
-     "kop": "Bevestiging per e-mail en sms",
+     "kop": "Bevestiging per e-mail",
      "msg": "Hoi {naam}, je afspraak staat vast: zaterdag om 10:00. Past het toch niet? Verplaats of annuleer met één klik.",
      "extra": "In je agenda gezet, ook in Google Agenda. {naam} staat in je CRM.",
      "tools": [
       "mail",
-      "sms",
       "agenda",
       "crm"
      ],
-     "sr": "Meteen: bevestiging per e-mail en sms verstuurd."
+     "sr": "Meteen: bevestiging per e-mail verstuurd."
     },
     {
      "w": 2,
@@ -182,8 +179,7 @@
      "kop": "Herinnering",
      "msg": "Hoi {naam}, morgen om 10:00 verwachten we je. Tot morgen!",
      "tools": [
-      "mail",
-      "sms"
+      "mail"
      ],
      "sr": "Eén dag vooraf: herinnering verstuurd."
     },
@@ -192,12 +188,12 @@
      "grav": "2 UUR VOORAF",
      "win": "Za 08:00",
      "jij": "Jij: koffie aan het zetten",
-     "kop": "Laatste sms, met je adres",
+     "kop": "Laatste herinnering, met je adres",
      "msg": "Tot straks, {naam}! We verwachten je om 10:00. Hier vind je ons adres.",
      "tools": [
-      "sms"
+      "mail"
      ],
-     "sr": "Twee uur vooraf: laatste sms met het adres verstuurd."
+     "sr": "Twee uur vooraf: laatste herinnering met het adres verstuurd."
     },
     {
      "w": 4,
@@ -207,7 +203,6 @@
      "kop": "Reviewverzoek, 2 uur na de afspraak",
      "msg": "Bedankt voor je bezoek, {naam}. Hoe was het? Laat het ons weten op Google.",
      "tools": [
-      "sms",
       "mail",
       "google"
      ],
@@ -302,71 +297,6 @@
     "note": "Na elke online betaling vertrekt ook de factuur vanzelf."
    }
   },
-  "oproep": {
-   "chip": "Je mist een oproep",
-   "h1": "Je mist een oproep.",
-   "icon": "call",
-   "steps": [
-    {
-     "w": 1,
-     "grav": "METEEN",
-     "win": "Wo 10:05",
-     "jij": "Jij: midden in een behandeling",
-     "kop": "Sms met je boekingslink",
-     "msg": "Sorry, we konden je net niet opnemen. Boek hier meteen een moment dat je past.",
-     "extra": "De oproep staat in je inbox.",
-     "tools": [
-      "sms",
-      "inbox"
-     ],
-     "sr": "Meteen: sms met je boekingslink verstuurd.",
-     "fork": {
-      "q": "Wat doet de beller?",
-      "def": 0,
-      "opts": [
-       {
-        "label": "Boekt via de link",
-        "res": "Dan begint alles van 'Een klant boekt'.",
-        "goto": "boekt",
-        "vars": {
-         "naam": "Sam",
-         "zij": "Hij",
-         "haar": "Zijn"
-        },
-        "first": {
-         "win": "Wo 10:12",
-         "jij": "Jij: nog in behandeling"
-        }
-       },
-       {
-        "label": "Boekt niet",
-        "then": [
-         {
-          "w": 2,
-          "grav": "IN JE INBOX",
-          "win": "Wo 12:30",
-          "jij": "Jij: middagpauze",
-          "kop": "Staat in je inbox",
-          "txt": "Zo zie je wie belde en bel je terug wanneer het jou past.",
-          "tools": [
-           "inbox"
-          ],
-          "sr": "De oproep staat in je inbox."
-         }
-        ]
-       }
-      ]
-     }
-    }
-   ],
-   "end": {
-    "txt": "Geen oproep die zomaar verdwijnt. Jij deed er niets voor.",
-    "link": {
-     "label": "Liever dat er meteen iemand opneemt? Bekijk de AI-receptioniste",
-     "href": "AI%20Voice%20Agents"
-    }
-   }
-  },
   "aanvraag": {
    "chip": "Er komt een aanvraag binnen",
    "h1": "Er komt een aanvraag binnen.",
@@ -435,7 +365,7 @@
   "eyebrow": "Het briefje naast de kassa",
   "h2a": "Automatiseren met AI als kmo:",
   "h2b": "je lijstje streept zichzelf door.",
-  "lede": "Terugbellen, herinneren, een factuur sturen, om een review vragen. Kies je vak en kijk wat er van je lijstje overblijft.",
+  "lede": "Bevestigen, herinneren, een factuur sturen, om een review vragen. Kies je vak en kijk wat er van je lijstje overblijft.",
   "head": "Nog te doen",
   "caption": "Voorbeeld. Wat vanzelf loopt en wanneer, stemmen we samen af.",
   "trades": [
@@ -456,8 +386,8 @@
       "how": "vanzelf · 1 dag vooraf"
      },
      {
-      "t": "Tom terugbellen voor een afspraak",
-      "how": "vanzelf · sms met je boekingslink"
+      "t": "De afspraak van Tom bevestigen",
+      "how": "vanzelf · meteen per e-mail"
      },
      {
       "t": "Mevrouw Peeters om een review vragen",
@@ -495,8 +425,8 @@
       "how": "vanzelf · 1 dag vooraf"
      },
      {
-      "t": "Gemiste oproep van 10:05 terugbellen",
-      "how": "vanzelf · sms met je boekingslink"
+      "t": "De afspraak van een nieuwe patiënt bevestigen",
+      "how": "vanzelf · meteen per e-mail"
      },
      {
       "t": "Openstaande factuur opvolgen",
@@ -534,7 +464,7 @@
       "how": "vanzelf · 1 dag vooraf"
      },
      {
-      "t": "Sms met het adres sturen",
+      "t": "Adres en route doorsturen",
       "how": "vanzelf · 2 uur vooraf"
      },
      {
@@ -546,8 +476,8 @@
       "how": "vanzelf · automatische herinnering"
      },
      {
-      "t": "Gemiste oproep terugbellen",
-      "how": "vanzelf · sms met je boekingslink"
+      "t": "Een afspraak voor een bandenwissel bevestigen",
+      "how": "vanzelf · meteen per e-mail"
      },
      {
       "t": "Offerteaanvraag doorgeven aan de juiste collega",
@@ -568,25 +498,25 @@
     "w": 0,
     "label": "CRM",
     "kop": "Alles op één plek",
-    "txt": "WhatsApp, Instagram, e-mail, sms en telefoongesprekken in één inbox. Klantgeschiedenis, notities en labels worden vanzelf bijgewerkt, en je ziet in welke fase elke klant zit."
+    "txt": "WhatsApp, Instagram, e-mail en telefoongesprekken in één inbox. Klantgeschiedenis, notities en labels worden vanzelf bijgewerkt, en je ziet in welke fase elke klant zit."
    },
    {
     "w": 1,
     "label": "Afspraken",
     "kop": "Bevestigen en herinneren",
-    "txt": "Meteen een bevestiging per e-mail en sms, een herinnering 1 dag vooraf en een laatste sms 2 uur vooraf met je adres. Na 6 weken een uitnodiging voor de volgende keer. Synchroniseert met Google Agenda."
+    "txt": "Meteen een bevestiging per e-mail, een herinnering 1 dag vooraf en een laatste herinnering 2 uur vooraf met je adres. Na 6 weken een uitnodiging voor de volgende keer. Synchroniseert met Google Agenda."
    },
    {
     "w": 2,
     "label": "Gemiste oproepen",
     "kop": "Niemand blijft hangen",
-    "txt": "Mis je een oproep? Dan krijgt de beller meteen een sms met je boekingslink."
+    "txt": "Wil je geen oproep meer missen? Dan neemt de AI-receptioniste op terwijl jij werkt, als uitbreiding op Online groeien."
    },
    {
     "w": 3,
     "label": "Reviews",
     "kop": "Vanzelf om een review vragen",
-    "txt": "2 uur na elke afspraak vertrekt een reviewverzoek per sms of e-mail, met één klik naar je Google-profiel. Elke klant krijgt dezelfde vraag."
+    "txt": "2 uur na elke afspraak vertrekt een reviewverzoek per e-mail, met één klik naar je Google-profiel. Elke klant krijgt dezelfde vraag."
    },
    {
     "w": 4,
@@ -598,7 +528,7 @@
     "w": 5,
     "label": "Aanvragen",
     "kop": "Opvolgen en doorsturen",
-    "txt": "Een nieuwe aanvraag komt bij de juiste persoon terecht en krijgt vanzelf opvolging. Campagnes per e-mail en sms starten op basis van wat je klant doet."
+    "txt": "Een nieuwe aanvraag komt bij de juiste persoon terecht en krijgt vanzelf opvolging. Campagnes per e-mail starten op basis van wat je klant doet."
    }
   ],
   "onrust": "In een uurwerk heet het tikkende wieltje de onrust. Die houden wij in beweging: wij bouwen je workflows en onderhouden ze. Zo zit de onrust bij ons, niet bij jou.",
@@ -687,7 +617,7 @@
    "Google-profiel en zichtbaarheid",
    "Reviews op Google",
    "CRM en klantendashboard",
-   "E-mail- en sms-campagnes",
+   "E-mailcampagnes",
    "Landingspagina's",
    "Online betalen en facturen",
    "Toegang tot ons platform"
@@ -772,15 +702,15 @@
    },
    {
     "q": "Wat kan er vanzelf lopen?",
-    "a": "Bevestigingen en herinneringen, reviewverzoeken, facturen na een betaling en herinneringen bij onbetaalde facturen, het doorsturen en opvolgen van aanvragen, campagnes per e-mail en sms, en updates in je CRM."
+    "a": "Bevestigingen en herinneringen, reviewverzoeken, facturen na een betaling en herinneringen bij onbetaalde facturen, het doorsturen en opvolgen van aanvragen, campagnes per e-mail, en updates in je CRM."
    },
    {
     "q": "Kan ik zelf kiezen wat er vertrekt, en wanneer?",
     "a": "Ja. De momenten en de teksten stemmen we samen af op jouw zaak."
    },
    {
-    "q": "Wat als een klant geen sms of mail wil?",
-    "a": "Dan krijgt hij ze niet. Onder elke mail staat een afmeldlink: wie zich afmeldt, krijgt niets meer. Wil een klant geen sms, dan zetten we die voor hem uit. Zo hoort het ook volgens de privacywet (GDPR)."
+    "q": "Wat als een klant geen mails wil?",
+    "a": "Dan krijgt hij ze niet. Onder elke mail staat een afmeldlink: wie zich afmeldt, krijgt niets meer. Zo hoort het ook volgens de privacywet (GDPR)."
    },
    {
     "q": "Werkt het met mijn agenda en met online betalingen?",
@@ -788,7 +718,7 @@
    },
    {
     "q": "Wat is een slimme workflow?",
-    "a": "Een reeks stappen die vanzelf loopt zodra er iets gebeurt: een boeking, een betaling, een gemiste oproep. Wij bouwen en onderhouden ze in je platform. Jij hoeft er niets van te kennen."
+    "a": "Een reeks stappen die vanzelf loopt zodra er iets gebeurt: een boeking, een betaling, een nieuwe aanvraag. Wij bouwen en onderhouden ze in je platform. Jij hoeft er niets van te kennen."
    }
   ],
   "more_label": "Lees ook:",

@@ -108,8 +108,8 @@ def head(L, s, fresh):
 # net als de regiopagina's. Scheelt een lange taak (Total Blocking Time) op de gsm.
 def tail(footer):
     return f'''{footer}
-<script src="i18n.js?v=20261027a"></script>
-<script src="site.js?v=20261027a"></script>
+<script src="i18n.js?v=20261028a"></script>
+<script src="site.js?v=20261028a"></script>
 <script src="fx.js?v={V_FX}"></script>
 </body>
 </html>

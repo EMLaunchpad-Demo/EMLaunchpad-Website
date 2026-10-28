@@ -21,7 +21,7 @@ CHECK = '<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-lineca
 # icoontjes voor kaartjes en de lijst in #fiche
 IC = {
     'cal': '<rect height="16" rx="2" width="18" x="3" y="5"></rect><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"></path>',
-    'sms': '<path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l1.9-5.7A8.4 8.4 0 1 1 21 11.5z"></path>',
+    'sms': '<rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="m3 7 9 6 9-6"></path>',
     'crm': '<circle cx="9" cy="8" r="3.2"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 8h4M17 12h4M18 16h3"></path>',
     'lead': '<path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8z"></path>',
     'call': '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path><path d="M15 3a6 6 0 0 1 6 6M15 7a2 2 0 0 1 2 2"></path>',

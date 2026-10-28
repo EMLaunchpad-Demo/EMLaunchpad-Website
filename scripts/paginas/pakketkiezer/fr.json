@@ -200,7 +200,7 @@
           "c": "bericht",
           "label": "Par message (WhatsApp, Instagram, Messenger ou e-mail)",
           "kort": "par message",
-          "eff": "Des rendez-vous par message. En face : Croissance en ligne, avec un agenda en ligne et une seule boîte de réception pour WhatsApp, Instagram, e-mail et SMS."
+          "eff": "Des rendez-vous par message. En face : Croissance en ligne, avec un agenda en ligne et une seule boîte de réception pour WhatsApp, Instagram et e-mail."
         },
         {
           "c": "online",
@@ -290,7 +290,7 @@
           "c": "reviews",
           "label": "Demander un avis",
           "kort": "demander un avis",
-          "eff": "Inclus dans Croissance en ligne : 2 heures après chaque rendez-vous, une demande d'avis part automatiquement par SMS ou e-mail."
+          "eff": "Inclus dans Croissance en ligne : 2 heures après chaque rendez-vous, une demande d'avis part automatiquement par e-mail."
         },
         {
           "c": "facturen",
@@ -308,7 +308,7 @@
           "c": "kanalen",
           "label": "Suivre WhatsApp, Instagram et l'e-mail séparément",
           "kort": "messages sur des canaux séparés",
-          "eff": "Inclus dans Croissance en ligne : WhatsApp, Instagram, e-mail, SMS et téléphone dans une seule boîte de réception."
+          "eff": "Inclus dans Croissance en ligne : WhatsApp, Instagram, e-mail et téléphone dans une seule boîte de réception."
         },
         {
           "c": "niets",
@@ -382,7 +382,7 @@
     "boek_binnen": "Pas besoin de rendez-vous. Cela ne compte pas.",
     "opr_dag": "Sur la balance : des appels manqués tous les jours {werk}. En face : la réceptionniste IA, +150 € par mois, plus 750 € une fois.",
     "opr_week_bel": "À la limite : vos clients appellent et vous manquez parfois un appel. Nous parlons ensemble de la réceptionniste IA ; pas dans le prix.",
-    "opr_week": "Pas de réceptionniste IA : votre téléphone fait partie de votre boîte de réception, avec WhatsApp, Instagram, e-mail et SMS. Vous économisez 150 € par mois et 750 € une fois.",
+    "opr_week": "Pas de réceptionniste IA : votre téléphone fait partie de votre boîte de réception, avec WhatsApp, Instagram et e-mail. Vous économisez 150 € par mois et 750 € une fois.",
     "opr_zelden": "Pas de réceptionniste IA : vous ne manquez presque jamais un appel. Vous économisez 150 € par mois et 750 € une fois.",
     "opr_onbekend": "Rien sur la balance. Astuce : comptez vos appels manqués pendant une semaine.",
     "ber_avond": "Sur la balance : des questions quand vous êtes fermé. En face : le chatbot IA, +50 € par mois.",
@@ -534,7 +534,7 @@
     ],
     "reviews": [
       "Demander un avis passe à la trappe.",
-      "2 heures après chaque rendez-vous, une demande d'avis part automatiquement par SMS ou e-mail."
+      "2 heures après chaque rendez-vous, une demande d'avis part automatiquement par e-mail."
     ],
     "facturen": [
       "Faire les factures et relancer les paiements passe à la trappe.",
@@ -546,19 +546,19 @@
     ],
     "inbox_kanalen": [
       "Suivre les messages sur des canaux séparés passe à la trappe.",
-      "WhatsApp, Instagram, e-mail, SMS et téléphone arrivent dans une seule boîte de réception."
+      "WhatsApp, Instagram, e-mail et téléphone arrivent dans une seule boîte de réception."
     ],
     "inbox_opr": [
       "Vous manquez un appel de temps en temps.",
-      "Votre téléphone fait partie d'une seule boîte de réception, avec WhatsApp, Instagram, e-mail et SMS."
+      "Votre téléphone fait partie d'une seule boîte de réception, avec WhatsApp, Instagram et e-mail."
     ],
     "inbox_ber": [
       "Vous recevez quelques messages par semaine.",
-      "Vous y répondez depuis une seule boîte de réception, avec WhatsApp, Instagram, e-mail, SMS et téléphone."
+      "Vous y répondez depuis une seule boîte de réception, avec WhatsApp, Instagram, e-mail et téléphone."
     ],
     "klanten": [
       "Vous voulez surtout plus de clients qui vous trouvent et réservent.",
-      "Un site rapide que Google lit bien, votre profil Google et votre visibilité, plus des campagnes e-mail et SMS et des landing pages."
+      "Un site rapide que Google lit bien, votre profil Google et votre visibilité, plus des campagnes e-mail et des landing pages."
     ],
     "eenplek": [
       "Vous voulez tout au même endroit.",
@@ -651,14 +651,14 @@
         },
         {
           "t": "Avis sur Google",
-          "d": "2 heures après chaque rendez-vous, une demande d'avis part automatiquement par SMS ou e-mail."
+          "d": "2 heures après chaque rendez-vous, une demande d'avis part automatiquement par e-mail."
         },
         {
           "t": "CRM et tableau de bord clients",
-          "d": "WhatsApp, Instagram, e-mail, SMS et téléphone dans une seule boîte de réception."
+          "d": "WhatsApp, Instagram, e-mail et téléphone dans une seule boîte de réception."
         },
         {
-          "t": "Campagnes e-mail et SMS",
+          "t": "Campagnes e-mail",
           "d": "Des campagnes ciblées vers votre propre fichier clients."
         },
         {

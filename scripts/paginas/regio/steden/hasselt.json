@@ -205,11 +205,11 @@
       "rijen": [
         "Een website die vlot laadt op de gsm en die Google goed kan lezen",
         "Online boeken, met voor elke dienst de juiste duur",
-        "Bevestiging en herinnering per mail of sms",
+        "Bevestiging en herinnering per mail",
         "Een reviewverzoek na elke afspraak",
         "Je Google-bedrijfsprofiel, ingevuld en bijgehouden",
         "Online betalen en facturen",
-        "Eén inbox voor WhatsApp, Instagram, mail, sms en telefoon"
+        "Eén inbox voor WhatsApp, Instagram, mail en telefoon"
       ],
       "extra": "Bellen je klanten liever? Dan neemt een AI-receptioniste de telefoon op: eenmalig €750 en daarna €150 per maand, met 300 belminuten. Een AI-chatbot op je site kost €50 per maand extra. Prijzen excl. btw.",
       "links": [
@@ -253,8 +253,8 @@
         "a": "Ja. Bij Clinic3D werkt één arts. Elke behandeling heeft in de agenda haar eigen duur, en patiënten kiezen zelf een vrij moment. Werk je met meer mensen, dan bekijken we in de demo hoe jouw agenda eruit moet zien."
       },
       {
-        "q": "Krijgen klanten een herinnering per sms?",
-        "a": "Dat kan, per mail en per sms. Bij Clinic3D vertrekken de bevestiging en de herinnering per mail, met links om te verplaatsen of te annuleren."
+        "q": "Hoe krijgen klanten een herinnering?",
+        "a": "Per mail. Bij Clinic3D vertrekken de bevestiging en de herinnering automatisch, met links om te verplaatsen of te annuleren."
       },
       {
         "q": "Waar komen de cijfers van Clinic3D vandaan?",

@@ -126,7 +126,7 @@ window.ET_ARTICLES = [
     read: "3 min",
     img: "assets/emtimes/leads-automatisch-opvolgen.jpg",
     alt: "Ondernemer die een laptop gebruikt in een lichte ruimte",
-    tags: ["leads","opvolging","offertes","crm","gemiste oproepen","sms","automatisering","verkoop","inbox","klantcontact","kmo","lokaal"]
+    tags: ["leads","opvolging","offertes","crm","gemiste oproepen","automatisering","verkoop","inbox","klantcontact","kmo","lokaal"]
   },
   {
     title: "ChatGPT of een eigen AI-chatbot: wat is het verschil?",

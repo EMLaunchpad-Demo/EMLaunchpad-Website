@@ -116,7 +116,7 @@
       },
       {
         "k": "sms",
-        "t": "Confirmation envoyée par SMS"
+        "t": "Confirmation envoyée par e-mail"
       },
       {
         "k": "crm",
@@ -187,7 +187,7 @@
           "day": "samedi",
           "name_q": "À quel nom puis-je noter le rendez-vous ?",
           "name": "Sarah Peeters",
-          "done": "Parfait, {Sarah|Madame Peeters} ! {Ton|Votre} rendez-vous est fixé samedi à {time} pour une coupe-brushing. {Tu reçois|Vous recevez} tout de suite une confirmation par SMS, avec un lien pour le déplacer."
+          "done": "Parfait, {Sarah|Madame Peeters} ! {Ton|Votre} rendez-vous est fixé samedi à {time} pour une coupe-brushing. {Tu reçois|Vous recevez} tout de suite une confirmation par e-mail, avec un lien pour le déplacer."
         }
       },
       {
@@ -255,7 +255,7 @@
           "day": "jeudi",
           "name_q": "À quel nom puis-je noter le rendez-vous ?",
           "name": "Tom Janssens",
-          "done": "Très bien, {Tom|Monsieur Janssens} ! {Ton|Votre} rendez-vous est fixé jeudi à {time} pour une première séance. {Tu reçois|Vous recevez} tout de suite une confirmation par SMS, avec un lien pour le déplacer."
+          "done": "Très bien, {Tom|Monsieur Janssens} ! {Ton|Votre} rendez-vous est fixé jeudi à {time} pour une première séance. {Tu reçois|Vous recevez} tout de suite une confirmation par e-mail, avec un lien pour le déplacer."
         }
       },
       {
@@ -323,7 +323,7 @@
           "day": "lundi",
           "name_q": "À quel nom puis-je noter le rendez-vous ?",
           "name": "Els Maes",
-          "done": "C'est noté, {Els|Madame Maes} ! {Ton|Votre} rendez-vous est fixé lundi à {time} pour un entretien. {Tu reçois|Vous recevez} tout de suite une confirmation par SMS, avec un lien pour le déplacer."
+          "done": "C'est noté, {Els|Madame Maes} ! {Ton|Votre} rendez-vous est fixé lundi à {time} pour un entretien. {Tu reçois|Vous recevez} tout de suite une confirmation par e-mail, avec un lien pour le déplacer."
         }
       }
     ],

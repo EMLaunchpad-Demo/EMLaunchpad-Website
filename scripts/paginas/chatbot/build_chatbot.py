@@ -9,7 +9,7 @@ import io, re, json, html, sys, os
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20261018a', '20260924d'
+V_CSS, V_JS = '20261018a', '20261028a'
 V_SKIN = '20260925a'          # home-redesign.css
 FILE = 'AI Chatbots.html'
 SLUG = 'AI%20Chatbots'
@@ -64,9 +64,9 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261027a"></script>
-<script src="{pre}i18n-pages.js?v=20261019a"></script>
-<script src="{pre}site.js?v=20261027a"></script>
+<script src="{pre}i18n.js?v=20261028a"></script>
+<script src="{pre}i18n-pages.js?v=20261028a"></script>
+<script src="{pre}site.js?v=20261028a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}ai-chatbot.js?v={V_JS}"></script>
 </body>

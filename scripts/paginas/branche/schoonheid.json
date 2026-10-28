@@ -39,14 +39,14 @@
   "label": "een dinsdag in een salon, van 8 tot 22 uur",
   "momenten": [
    {"t": "08:10", "soort": "boek", "kop": "Twee reservaties van gisteravond", "tekst": "Ze staan al in je agenda, met de behandeling en het uur. Je hoefde niets over te typen."},
-   {"t": "09:30", "soort": "herinner", "kop": "Herinnering voor morgen", "tekst": "Wie morgen komt, krijgt een mail of sms met de dag, het uur en het adres."},
+   {"t": "09:30", "soort": "herinner", "kop": "Herinnering voor morgen", "tekst": "Wie morgen komt, krijgt een mail met de dag, het uur en het adres."},
    {"t": "11:45", "soort": "cadeau", "kop": "Een cadeaubon verkocht", "tekst": "Iemand koopt online een bon voor een verjaardag en betaalt meteen. De bon komt in de mailbox."},
    {"t": "13:20", "soort": "bel", "kop": "Telefoon tijdens een behandeling", "tekst": "De AI-receptioniste neemt op, beantwoordt de vraag of noteert ze voor jou."},
    {"t": "16:50", "soort": "review", "kop": "Vraag om een review", "tekst": "Na de behandeling krijgt je klant een bedankje met één knop naar je Google-reviews."},
    {"t": "19:15", "soort": "chat", "kop": "Een vraag via Instagram", "tekst": "De chatbot legt uit hoe lang een gezichtsverzorging duurt en stuurt de link om te reserveren."},
    {"t": "21:40", "soort": "betaal", "kop": "Gereserveerd en betaald", "tekst": "Een klant boekt voor zaterdag en betaalt online. De bevestiging vertrekt meteen."}
   ],
-  "noot": "Een voorbeeld, geen meting. Welke mails en sms'en vertrekken, en wanneer, stel je samen met ons in."
+  "noot": "Een voorbeeld, geen meting. Welke mails vertrekken, en wanneer, stel je samen met ons in."
  },
  "case": {
   "eyebrow": "Echt werk",
@@ -84,9 +84,9 @@
   "lede": "De website en de online agenda zitten samen in het pakket Online groeien. De chatbot en de receptioniste neem je erbij als je ze nodig hebt.",
   "items": [
    {"naam": "Website", "prijs": "€150", "per": "per maand", "noot": "Pakket Online groeien, zonder opstartkost", "tekst": "Je behandelingen en prijzen als een overzichtelijke kaart, foto's van je ruimte en één duidelijke knop om te reserveren. Snel op de gsm en goed te lezen voor Google.", "link": {"t": "Meer over websites", "href": "Websites"}},
-   {"naam": "Online agenda", "prijs": "Inbegrepen", "per": "in de €150", "noot": "Zelfde pakket, geen meerprijs", "tekst": "Klanten kiezen zelf behandeling, dag en uur, en boeken extra's in één keer mee. Bevestiging, herinnering en de vraag om een review vertrekken vanzelf, per mail of sms.", "link": {"t": "Meer over het afsprakensysteem", "href": "Afsprakensysteem"}},
+   {"naam": "Online agenda", "prijs": "Inbegrepen", "per": "in de €150", "noot": "Zelfde pakket, geen meerprijs", "tekst": "Klanten kiezen zelf behandeling, dag en uur, en boeken extra's in één keer mee. Bevestiging, herinnering en de vraag om een review vertrekken vanzelf, per mail.", "link": {"t": "Meer over het afsprakensysteem", "href": "Afsprakensysteem"}},
    {"naam": "AI-chatbot", "prijs": "+ €50", "per": "per maand", "noot": "Bovenop Online groeien", "tekst": "Antwoordt op je website, WhatsApp, Instagram en Messenger, ook 's avonds, en helpt je klant meteen naar een vrij moment. Hij weet wat jij hem leert: je behandelingen, prijzen en praktische info.", "link": {"t": "Meer over de AI-chatbot", "href": "AI%20Chatbots"}},
-   {"naam": "AI-receptioniste", "prijs": "+ €150", "per": "per maand", "eenmalig": "+ €750 eenmalig", "noot": "300 belminuten inbegrepen, daarna €0,35 per minuut", "tekst": "Neemt de telefoon op als jij met een klant bezig bent. Ze beantwoordt vragen, stuurt de link om te reserveren per sms en noteert wat ze niet zelf kan regelen, zodat jij later terugbelt.", "link": {"t": "Meer over de AI-receptioniste", "href": "AI%20Voice%20Agents"}}
+   {"naam": "AI-receptioniste", "prijs": "+ €150", "per": "per maand", "eenmalig": "+ €750 eenmalig", "noot": "300 belminuten inbegrepen, daarna €0,35 per minuut", "tekst": "Neemt de telefoon op als jij met een klant bezig bent. Ze beantwoordt vragen, verwijst naar je online agenda om te reserveren en noteert wat ze niet zelf kan regelen, zodat jij later terugbelt.", "link": {"t": "Meer over de AI-receptioniste", "href": "AI%20Voice%20Agents"}}
   ],
   "som": [["Website en online agenda", "€150 per maand"], ["Met de AI-chatbot", "€200 per maand"], ["Met de AI-receptioniste", "€300 per maand + €750 eenmalig"], ["Met allebei", "€350 per maand + €750 eenmalig"]],
   "voet": "Alle prijzen excl. btw. Online groeien is maandelijks opzegbaar."
@@ -103,14 +103,14 @@
   "lijnen": [
    ["ai", "Goeiemiddag, je spreekt met de digitale assistente van het salon. Waarmee kan ik je helpen?"],
    ["beller", "Ik wil mijn mama een cadeaubon geven voor haar verjaardag. Kan dat?"],
-   ["ai", "Zeker. Een cadeaubon koop je op onze website en je betaalt meteen online. Zal ik je de link per sms sturen?"],
-   ["beller", "Graag. En nog iets: ik ben zwanger. Mag ik dan een gezichtsverzorging krijgen?"],
+   ["ai", "Zeker. Een cadeaubon koop je op onze website en je betaalt meteen online."],
+   ["beller", "Oké. En nog iets: ik ben zwanger. Mag ik dan een gezichtsverzorging krijgen?"],
    ["ai", "Daar geef ik liever geen fout antwoord op. Ik noteer je vraag en je naam, en de eigenaar belt je terug."],
-   ["actie", "Sms met de link naar de cadeaubonnen verstuurd. Vraag en terugbelverzoek genoteerd in het CRM."],
+   ["actie", "Vraag en terugbelverzoek genoteerd in het CRM."],
    ["beller", "Super, dank je."]
   ],
   "daarna_kop": "Wat er daarna gebeurt",
-  "daarna": ["Je ziet de vraag en het nummer van de beller in je CRM, met een korte samenvatting van het gesprek.", "Je belt terug wanneer het jou past, tussen twee klanten door.", "De link naar de cadeaubonnen ging tijdens het gesprek al per sms naar de beller."],
+  "daarna": ["Je ziet de vraag en het nummer van de beller in je CRM, met een korte samenvatting van het gesprek.", "Je belt terug wanneer het jou past, tussen twee klanten door.", "De beller vindt de cadeaubonnen zelf op je website en betaalt meteen online."],
   "niet_kop": "Wat ze niet doet",
   "niet": ["Ze geeft geen advies over behandelingen of over iemands gezondheid: dat blijft bij jou.", "Ze annuleert of verplaatst geen afspraken. Ze noteert de vraag, of verbindt door met jou.", "Ze heeft geen eigen Belgisch nummer: ze neemt op via een doorschakeling van je huidige nummer."],
   "link": {"t": "Alles over de AI-receptioniste", "href": "AI%20Voice%20Agents"}
@@ -141,7 +141,7 @@
    {"q": "Hoe annuleert een klant een reservatie?", "a": "Zoals jij het wil. In de bevestiging en de herinnering kan een link staan om te annuleren of te verplaatsen; het vrijgekomen moment staat dan weer open in je agenda. Wil je dat klanten bellen om af te zeggen, zoals bij Bambine, dan laten we die link weg en zetten we je afspraken in de mail."},
    {"q": "Kan ik cadeaubonnen online verkopen?", "a": "Ja. Bij Amakhosi kies je een bon voor een arrangement, je betaalt online en de bon komt met een unieke code per mail. Bij Bambine koop je een digitale bon met een vast bedrag, of vraag je een echte bon aan via een formulier."},
    {"q": "Werkt dit ook voor een privésauna of wellness?", "a": "Ja, Amakhosi is een privésauna in Hamont-Achel. Gasten boeken er arrangementen van enkele uren of een overnachting, en na een overnachting blokkeert het systeem de ochtend erna. Ze krijgen een bevestiging, een herinnering en achteraf een bedankje."},
-   {"q": "Neemt de AI-receptioniste op als ik met een klant bezig ben?", "a": "Ja. Je laat je huidige nummer doorschakelen en kiest of ze altijd opneemt of alleen als jij niet opneemt. Ze stelt zich voor zoals jij wilt, en we stellen haar zo in dat de beller weet dat hij met een AI-assistent praat. Ze beantwoordt vragen uit wat jij haar leert, stuurt de link om te reserveren per sms en noteert de rest. Ze kost €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
+   {"q": "Neemt de AI-receptioniste op als ik met een klant bezig ben?", "a": "Ja. Je laat je huidige nummer doorschakelen en kiest of ze altijd opneemt of alleen als jij niet opneemt. Ze stelt zich voor zoals jij wilt, en we stellen haar zo in dat de beller weet dat hij met een AI-assistent praat. Ze beantwoordt vragen uit wat jij haar leert, verwijst naar je online agenda om te reserveren en noteert de rest. Ze kost €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
    {"q": "Hoe snel staat mijn website online?", "a": "Meestal binnen 14 dagen. We hebben je behandelingen nodig met prijs en duur, je openingsuren en foto's van je zaak. We ontwerpen de site samen met jou: jouw foto's, jouw teksten, jouw kleuren."},
    {"q": "Wat als ik stop?", "a": "Online groeien zeg je maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou. Ook je klantenlijst blijft dus van jou."}
   ],

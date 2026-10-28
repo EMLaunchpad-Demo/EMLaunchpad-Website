@@ -185,11 +185,6 @@
     "Vraag over je prijzen"
    ],
    [
-    "sms",
-    "Sms",
-    "Ik ben wat later, sorry"
-   ],
-   [
     "tel",
     "Telefoon",
     "Gemiste oproep, 10:05"
@@ -380,7 +375,7 @@
     "id": "alles",
     "part": "",
     "titel": "Alles op één plek",
-    "tekst": "Elke boeking en elke aanvraag komt in je CRM. Berichten via WhatsApp, Instagram, e-mail, sms en telefoon staan samen in één inbox."
+    "tekst": "Elke boeking en elke aanvraag komt in je CRM. Berichten via WhatsApp, Instagram, e-mail en telefoon staan samen in één inbox."
    }
   ],
   "links": [
@@ -743,10 +738,10 @@
    ],
    [
     "CRM en klantendashboard",
-    "WhatsApp, Instagram, e-mail, sms en telefoon in één inbox."
+    "WhatsApp, Instagram, e-mail en telefoon in één inbox."
    ],
    [
-    "E-mail- en sms-campagnes",
+    "E-mailcampagnes",
     ""
    ],
    [

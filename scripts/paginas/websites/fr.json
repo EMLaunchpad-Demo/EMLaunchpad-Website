@@ -185,11 +185,6 @@
     "Question sur vos tarifs"
    ],
    [
-    "sms",
-    "SMS",
-    "J'ai un peu de retard, désolé"
-   ],
-   [
     "tel",
     "Téléphone",
     "Appel manqué, 10:05"
@@ -380,7 +375,7 @@
     "id": "alles",
     "part": "",
     "titel": "Tout au même endroit",
-    "tekst": "Chaque réservation et chaque demande arrive dans votre CRM. Les messages par WhatsApp, Instagram, e-mail, SMS et téléphone sont réunis dans une seule boîte de réception."
+    "tekst": "Chaque réservation et chaque demande arrive dans votre CRM. Les messages par WhatsApp, Instagram, e-mail et téléphone sont réunis dans une seule boîte de réception."
    }
   ],
   "links": [
@@ -727,10 +722,10 @@
    ],
    [
     "CRM et tableau de bord clients",
-    "WhatsApp, Instagram, e-mail, SMS et téléphone dans une seule boîte de réception."
+    "WhatsApp, Instagram, e-mail et téléphone dans une seule boîte de réception."
    ],
    [
-    "Campagnes e-mail et SMS",
+    "Campagnes e-mail",
     ""
    ],
    [

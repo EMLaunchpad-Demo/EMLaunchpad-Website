@@ -78,9 +78,9 @@ def head(L, lang, pre, s):
 
 def tail(pre, footer='<div id="footer-mount"></div>'):
     return f'''{footer}
-<script src="{pre}i18n.js?v=20261027a"></script>
-<script src="{pre}i18n-pages.js?v=20261019a"></script>
-<script src="{pre}site.js?v=20261027a"></script>
+<script src="{pre}i18n.js?v=20261028a"></script>
+<script src="{pre}i18n-pages.js?v=20261028a"></script>
+<script src="{pre}site.js?v=20261028a"></script>
 <script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}automatisering.js?v={V_JS}"></script>

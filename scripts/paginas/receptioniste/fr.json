@@ -107,7 +107,7 @@
     "tr": "Traduction",
     "slot": {
       "cal": "agenda",
-      "sms": "sms",
+      "sms": "e-mail",
       "crm": "crm",
       "call": "rappel",
       "lead": "demande",
@@ -204,7 +204,7 @@
       },
       {
         "who": "r",
-        "t": "C'est noté, Tom. Vendredi à seize heures. Vous allez recevoir un SMS de confirmation. À vendredi !"
+        "t": "C'est noté, Tom. Vendredi à seize heures. Vous allez recevoir un e-mail de confirmation. À vendredi !"
       }
     ],
     "events": [
@@ -217,9 +217,9 @@
       },
       {
         "line": 4,
-        "word": "SMS",
+        "word": "confirmation",
         "k": "sms",
-        "title": "SMS de confirmation envoyé",
+        "title": "E-mail de confirmation envoyé",
         "sub": "À l'appelant"
       },
       {
@@ -270,7 +270,7 @@
         },
         {
           "who": "r",
-          "t": "Très bien. Je note votre question et je préviens la kiné. Elle vous rappelle à ce numéro, et vous recevez un SMS confirmant que votre question est notée. À tout à l'heure."
+          "t": "Très bien. Je note votre question et je préviens la kiné. Elle vous rappelle à ce numéro. À tout à l'heure."
         }
       ],
       "events": [
@@ -280,13 +280,6 @@
           "k": "call",
           "title": "Demande de rappel notée",
           "sub": "Pour la kiné"
-        },
-        {
-          "line": 5,
-          "word": "SMS",
-          "k": "sms",
-          "title": "SMS envoyé",
-          "sub": "Question notée"
         },
         {
           "end": true,
@@ -299,7 +292,7 @@
         "beller": "0478 •• •• 31",
         "taal": "Français",
         "uitkomst": "Demande de rappel pour la kiné",
-        "sms": "Question notée",
+        "sms": "Oralement, pendant l'appel",
         "samenvatting": "Traité hier pour le dos. A plus mal qu'avant. Souhaite un rappel de la kiné."
       }
     },
@@ -345,7 +338,7 @@
         },
         {
           "who": "r",
-          "t": "C'est noté, Jonas. Jeudi à dix-sept heures, coupe et barbe. Vous allez recevoir un SMS de confirmation. À jeudi !"
+          "t": "C'est noté, Jonas. Jeudi à dix-sept heures, coupe et barbe. Vous allez recevoir un e-mail de confirmation. À jeudi !"
         }
       ],
       "events": [
@@ -358,9 +351,9 @@
         },
         {
           "line": 6,
-          "word": "SMS",
+          "word": "confirmation",
           "k": "sms",
-          "title": "SMS de confirmation envoyé",
+          "title": "E-mail de confirmation envoyé",
           "sub": "À l'appelant"
         },
         {
@@ -374,7 +367,7 @@
         "beller": "Jonas Claes · 0496 •• •• 08",
         "taal": "Français",
         "uitkomst": "Rendez-vous jeu. 17:00 · coupe et barbe",
-        "sms": "Confirmation envoyée",
+        "sms": "Envoyée par e-mail",
         "samenvatting": "Nouveau client. Veut une coupe et la barbe. Planifié jeudi à 17:00."
       }
     },
@@ -425,8 +418,8 @@
         {
           "who": "r",
           "lang": "nl",
-          "t": "Genoteerd, meneer Dubois. Maandag om acht uur, voor het onderhoud. U krijgt zo een sms ter bevestiging. Nog een fijne dag!",
-          "tr": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous allez recevoir un SMS de confirmation. Bonne fin de journée !"
+          "t": "Genoteerd, meneer Dubois. Maandag om acht uur, voor het onderhoud. U krijgt zo een bevestiging per mail. Nog een fijne dag!",
+          "tr": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous allez recevoir un e-mail de confirmation. Bonne fin de journée !"
         }
       ],
       "events": [
@@ -445,9 +438,9 @@
         },
         {
           "line": 5,
-          "word": "sms",
+          "word": "mail",
           "k": "sms",
-          "title": "SMS de confirmation envoyé",
+          "title": "E-mail de confirmation envoyé",
           "sub": "À l'appelant"
         },
         {
@@ -461,7 +454,7 @@
         "beller": "M. Dubois · 0472 •• •• 56",
         "taal": "Néerlandais",
         "uitkomst": "Rendez-vous lun. 08:00 · entretien",
-        "sms": "Confirmation envoyée",
+        "sms": "Envoyée par e-mail",
         "samenvatting": "Veut faire entretenir sa voiture. Planifié lundi à 08:00."
       }
     },
@@ -504,7 +497,7 @@
         },
         {
           "who": "r",
-          "t": "Merci, Wout. Vous allez recevoir un SMS confirmant que votre question est notée. Bonne soirée !"
+          "t": "Merci, Wout. Votre question est notée. Bonne soirée !"
         }
       ],
       "events": [
@@ -523,13 +516,6 @@
           "sub": "Pour le gérant"
         },
         {
-          "line": 5,
-          "word": "SMS",
-          "k": "sms",
-          "title": "SMS envoyé",
-          "sub": "Question notée"
-        },
-        {
           "end": true,
           "k": "crm",
           "title": "Résumé dans votre CRM",
@@ -540,7 +526,7 @@
         "beller": "Wout Maes · 0491 •• •• 12",
         "taal": "Français",
         "uitkomst": "Demande de rappel pour le gérant",
-        "sms": "Question notée",
+        "sms": "Oralement, pendant l'appel",
         "samenvatting": "Se marie en juin. Cherche un rendez-vous de groupe pour 5 personnes. Veut une proposition du gérant ; à rappeler."
       }
     }
@@ -565,7 +551,7 @@
     "eyebrow": "Après l'appel",
     "h2a": "L'appel est terminé.",
     "h2b": "Tout est déjà prêt.",
-    "lede": "La transcription et un court résumé arrivent dans votre fichier clients (CRM). Le rendez-vous est dans votre agenda et l'appelant a reçu son SMS. Vous lisez tout quand ça vous arrange.",
+    "lede": "La transcription et un court résumé arrivent dans votre fichier clients (CRM). Le rendez-vous est dans votre agenda et l'appelant a reçu sa confirmation. Vous lisez tout quand ça vous arrange.",
     "caps": [
       {
         "ic": "clock",
@@ -614,7 +600,7 @@
       },
       {
         "ic": "sms",
-        "t": "Confirme par SMS",
+        "t": "Confirme par e-mail",
         "d": "L'appelant reçoit tout de suite une confirmation.",
         "hl": [
           "sms"
@@ -647,7 +633,7 @@
       "beller": "Appelant",
       "taal": "Langue",
       "uitkomst": "Résultat",
-      "sms": "SMS",
+      "sms": "Confirmation",
       "samenvatting": "Résumé",
       "transcript": "Transcription"
     },
@@ -660,7 +646,7 @@
     "eyebrow": "Mesuré chez Clinic3D, sans réceptionniste IA",
     "h2a": "31 appels sur 39 décrochés.",
     "h2b": "8 sont restés sans réponse.",
-    "lede": "Chez Clinic3D à Hasselt, les patients réservent en ligne : 650 rendez-vous confirmés et 0 no‑show en 263 jours. Au téléphone, 39 appels sont arrivés. 31 ont été décrochés, 6 manqués et 2 sont tombés sur la messagerie vocale.",
+    "lede": "Chez Clinic3D à Hasselt, les patients réservent en ligne : 650 rendez-vous confirmés en 263 jours. Au téléphone, 39 appels sont arrivés. 31 ont été décrochés, 6 manqués et 2 sont tombés sur la messagerie vocale.",
     "kern": "Ce n'est pas beaucoup. Mais derrière chacun de ces appels manqués, il y a quelqu'un qui voulait joindre le cabinet.",
     "strip_label": "39 appels : 31 décrochés, 6 manqués, 2 vers la messagerie vocale",
     "leg_a": "décrochés",
@@ -710,7 +696,7 @@
       "Planifie les rendez-vous dans votre agenda",
       "Capte les leads en dehors de vos heures d'ouverture",
       "Néerlandais, français et anglais",
-      "Confirmation par SMS, résumé dans votre CRM",
+      "Confirmation par e-mail, résumé dans votre CRM",
       "Fonctionne avec votre numéro actuel"
     ],
     "cta": "Planifier une démo gratuite",
@@ -777,7 +763,7 @@
       },
       {
         "q": "Peut-elle ajouter des rendez-vous dans mon agenda ?",
-        "a": "Dans un agenda classique, oui : elle propose des créneaux libres, planifie le rendez-vous et l'appelant reçoit une confirmation par SMS. Si vous travaillez avec un menu de services, elle ne peut pas encore y réserver elle-même. Elle envoie alors à l'appelant, par SMS, le lien pour réserver lui-même."
+        "a": "Dans un agenda classique, oui : elle propose des créneaux libres, planifie le rendez-vous et l'appelant reçoit une confirmation par e-mail. Si vous travaillez avec un menu de services, elle ne peut pas encore y réserver elle-même. Elle oriente alors l'appelant vers votre agenda en ligne, où il réserve lui-même."
       },
       {
         "q": "Pour quels commerces un standard téléphonique IA convient-il ?",
@@ -810,7 +796,7 @@
         "post": "."
       },
       {
-        "pre": "· Un appel manqué reçoit automatiquement un SMS : ",
+        "pre": "· Des confirmations et des rappels qui partent tout seuls : ",
         "t": "automatisation IA",
         "href": "AI-Automatisering",
         "post": "."
@@ -855,7 +841,7 @@
         "h": "Vous coupez. Elle répond au téléphone.",
         "q": "Est-ce que je peux encore venir samedi pour une couleur et une coupe ?",
         "do": [
-          "Avec un agenda classique, elle indique les créneaux libres et y ajoute le rendez-vous. Avec un menu de services, où votre client choisit lui-même le coiffeur et la prestation, elle lui envoie le lien par SMS.",
+          "Avec un agenda classique, elle indique les créneaux libres et y ajoute le rendez-vous. Avec un menu de services, où votre client choisit lui-même le coiffeur et la prestation, elle l'oriente vers votre agenda en ligne.",
           "Elle répond aux questions sur vos prix et vos heures d'ouverture, comme ils figurent sur votre site.",
           "Quelqu'un veut déplacer ou annuler un rendez-vous ? Elle le note et vous prévient. C'est vous qui faites le changement."
         ],
@@ -873,7 +859,7 @@
         "q": "Combien de temps dure un soin du visage, et combien ça coûte ?",
         "do": [
           "Elle explique en quoi consiste un soin, combien de temps il dure et ce qu'il coûte, tel que vous l'indiquez sur votre site ou dans votre liste de prix.",
-          "Avec un agenda classique, elle planifie le soin et la cliente reçoit une confirmation par SMS. Avec un menu de services, elle envoie le lien pour réserver en ligne.",
+          "Avec un agenda classique, elle planifie le soin et la cliente reçoit une confirmation par e-mail. Avec un menu de services, elle oriente vers votre agenda en ligne pour réserver.",
           "Une question qui demande votre avis, comme un problème de peau, elle vous la laisse : elle vous passe l'appel ou note la question pour vous."
         ],
         "link": {
@@ -889,7 +875,7 @@
         "h": "Vous êtes avec un patient. Elle prend le téléphone.",
         "q": "Avez-vous encore de la place la semaine prochaine pour une première consultation ?",
         "do": [
-          "Avec un agenda classique, elle planifie la consultation et le patient reçoit une confirmation par SMS. Avec un menu de services, elle envoie le lien pour réserver en ligne.",
+          "Avec un agenda classique, elle planifie la consultation et le patient reçoit une confirmation par e-mail. Avec un menu de services, elle oriente vers votre agenda en ligne pour réserver.",
           "Elle répond aux questions pratiques, comme votre adresse, vos horaires ou ce qu'un patient doit apporter, si vous l'indiquez dans ses informations.",
           "Elle ne donne pas d'avis médical. Si quelqu'un en demande, elle vous passe l'appel ou note la question pour vous."
         ],
@@ -907,7 +893,7 @@
         "q": "Ma voiture doit passer à l'entretien. Quand est-ce possible ?",
         "do": [
           "Elle demande ce dont vous avez besoin, comme la marque et la plaque d'immatriculation, et l'ajoute à la fiche du client dans votre CRM.",
-          "Elle planifie l'entretien ou le changement de pneus dans votre agenda, avec une confirmation par SMS.",
+          "Elle planifie l'entretien ou le changement de pneus dans votre agenda, avec une confirmation par e-mail.",
           "Quelqu'un demande si sa voiture est prête ? Elle ne le sait pas. Elle vous passe l'appel, ou elle note la question et vous prévient."
         ],
         "link": {

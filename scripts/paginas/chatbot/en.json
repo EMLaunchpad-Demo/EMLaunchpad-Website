@@ -116,7 +116,7 @@
       },
       {
         "k": "sms",
-        "t": "Confirmation sent by text"
+        "t": "Confirmation sent by email"
       },
       {
         "k": "crm",
@@ -187,7 +187,7 @@
           "day": "Saturday",
           "name_q": "What name shall I put the appointment under?",
           "name": "Sarah Peeters",
-          "done": "Great, {Sarah|Ms Peeters}! You're booked in on Saturday at {time} for a cut and blow-dry. You'll get a confirmation by text shortly, with a link to reschedule."
+          "done": "Great, {Sarah|Ms Peeters}! You're booked in on Saturday at {time} for a cut and blow-dry. You'll get a confirmation by email shortly, with a link to reschedule."
         }
       },
       {
@@ -255,7 +255,7 @@
           "day": "Thursday",
           "name_q": "What name shall I put the appointment under?",
           "name": "Tom Janssens",
-          "done": "Perfect, {Tom|Mr Janssens}! You're booked in on Thursday at {time} for a first session. You'll get a confirmation by text shortly, with a link to reschedule."
+          "done": "Perfect, {Tom|Mr Janssens}! You're booked in on Thursday at {time} for a first session. You'll get a confirmation by email shortly, with a link to reschedule."
         }
       },
       {
@@ -323,7 +323,7 @@
           "day": "Monday",
           "name_q": "What name shall I put the appointment under?",
           "name": "Els Maes",
-          "done": "Noted, {Els|Ms Maes}! You're booked in on Monday at {time} for a service. You'll get a confirmation by text shortly, with a link to reschedule."
+          "done": "Noted, {Els|Ms Maes}! You're booked in on Monday at {time} for a service. You'll get a confirmation by email shortly, with a link to reschedule."
         }
       }
     ],

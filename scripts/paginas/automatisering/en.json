@@ -94,7 +94,6 @@
   "done_sr": "Done.",
   "tools": {
    "mail": "Email",
-   "sms": "SMS",
    "agenda": "Google Calendar",
    "crm": "CRM",
    "stripe": "Stripe",
@@ -144,7 +143,6 @@
  "order": [
   "boekt",
   "factuur",
-  "oproep",
   "aanvraag"
  ],
  "events": {
@@ -163,16 +161,15 @@
      "grav": "RIGHT AWAY",
      "win": "Tue 21:40",
      "jij": "You: home hours ago",
-     "kop": "Confirmation by email and SMS",
+     "kop": "Confirmation by email",
      "msg": "Hi {naam}, your appointment is booked: Saturday at 10:00. Can't make it after all? Reschedule or cancel in one click.",
      "extra": "Added to your calendar, and to Google Calendar too. {naam} is in your CRM.",
      "tools": [
       "mail",
-      "sms",
       "agenda",
       "crm"
      ],
-     "sr": "Right away: confirmation sent by email and SMS."
+     "sr": "Right away: confirmation sent by email."
     },
     {
      "w": 2,
@@ -182,8 +179,7 @@
      "kop": "Reminder",
      "msg": "Hi {naam}, we're expecting you tomorrow at 10:00. See you then!",
      "tools": [
-      "mail",
-      "sms"
+      "mail"
      ],
      "sr": "One day before: reminder sent."
     },
@@ -192,12 +188,12 @@
      "grav": "2 HOURS BEFORE",
      "win": "Sat 08:00",
      "jij": "You: making coffee",
-     "kop": "Final SMS, with your address",
+     "kop": "Final reminder, with your address",
      "msg": "See you soon, {naam}! We're expecting you at 10:00. Here's our address.",
      "tools": [
-      "sms"
+      "mail"
      ],
-     "sr": "Two hours before: final SMS with the address sent."
+     "sr": "Two hours before: final reminder with the address sent."
     },
     {
      "w": 4,
@@ -207,7 +203,6 @@
      "kop": "Review request, 2 hours after the appointment",
      "msg": "Thanks for your visit, {naam}. How was it? Let us know on Google.",
      "tools": [
-      "sms",
       "mail",
       "google"
      ],
@@ -302,71 +297,6 @@
     "note": "After every online payment, the invoice goes out by itself too."
    }
   },
-  "oproep": {
-   "chip": "You miss a call",
-   "h1": "You miss a call.",
-   "icon": "call",
-   "steps": [
-    {
-     "w": 1,
-     "grav": "RIGHT AWAY",
-     "win": "Wed 10:05",
-     "jij": "You: in the middle of a treatment",
-     "kop": "SMS with your booking link",
-     "msg": "Sorry, we couldn't pick up just now. Book a time that suits you, right here.",
-     "extra": "The call is in your inbox.",
-     "tools": [
-      "sms",
-      "inbox"
-     ],
-     "sr": "Right away: SMS with your booking link sent.",
-     "fork": {
-      "q": "What does the caller do?",
-      "def": 0,
-      "opts": [
-       {
-        "label": "Books via the link",
-        "res": "Then everything from 'A customer books' kicks in.",
-        "goto": "boekt",
-        "vars": {
-         "naam": "Sam",
-         "zij": "He",
-         "haar": "His"
-        },
-        "first": {
-         "win": "Wed 10:12",
-         "jij": "You: still mid-treatment"
-        }
-       },
-       {
-        "label": "Doesn't book",
-        "then": [
-         {
-          "w": 2,
-          "grav": "IN YOUR INBOX",
-          "win": "Wed 12:30",
-          "jij": "You: lunch break",
-          "kop": "In your inbox",
-          "txt": "So you can see who called and ring back when it suits you.",
-          "tools": [
-           "inbox"
-          ],
-          "sr": "The call is in your inbox."
-         }
-        ]
-       }
-      ]
-     }
-    }
-   ],
-   "end": {
-    "txt": "No call just disappears. You didn't lift a finger.",
-    "link": {
-     "label": "Rather have someone pick up straight away? See the AI receptionist",
-     "href": "AI%20Voice%20Agents"
-    }
-   }
-  },
   "aanvraag": {
    "chip": "An enquiry comes in",
    "h1": "An enquiry comes in.",
@@ -435,7 +365,7 @@
   "eyebrow": "The note next to the till",
   "h2a": "Automating with AI as an SME:",
   "h2b": "your to-do list crosses itself off.",
-  "lede": "Calling back, reminding, sending an invoice, asking for a review. Choose your trade and see what's left of your list.",
+  "lede": "Confirming, reminding, sending an invoice, asking for a review. Choose your trade and see what's left of your list.",
   "head": "Still to do",
   "caption": "Example. Together, we agree what runs by itself, and when.",
   "trades": [
@@ -456,8 +386,8 @@
       "how": "by itself · 1 day before"
      },
      {
-      "t": "Call Tom back about an appointment",
-      "how": "by itself · SMS with your booking link"
+      "t": "Confirm Tom's appointment",
+      "how": "by itself · straight away by email"
      },
      {
       "t": "Ask Mrs Peeters for a review",
@@ -495,8 +425,8 @@
       "how": "by itself · 1 day before"
      },
      {
-      "t": "Call back the missed call from 10:05",
-      "how": "by itself · SMS with your booking link"
+      "t": "Confirm a new patient's appointment",
+      "how": "by itself · straight away by email"
      },
      {
       "t": "Follow up an unpaid invoice",
@@ -534,7 +464,7 @@
       "how": "by itself · 1 day before"
      },
      {
-      "t": "Send an SMS with the address",
+      "t": "Send the address and directions",
       "how": "by itself · 2 hours before"
      },
      {
@@ -546,8 +476,8 @@
       "how": "by itself · automatic reminder"
      },
      {
-      "t": "Call back a missed call",
-      "how": "by itself · SMS with your booking link"
+      "t": "Confirm a tyre change appointment",
+      "how": "by itself · straight away by email"
      },
      {
       "t": "Pass a quote request to the right colleague",
@@ -568,25 +498,25 @@
     "w": 0,
     "label": "CRM",
     "kop": "Everything in one place",
-    "txt": "WhatsApp, Instagram, email, SMS and phone calls in one inbox. Customer history, notes and labels update by themselves, and you see which stage every customer is at."
+    "txt": "WhatsApp, Instagram, email and phone calls in one inbox. Customer history, notes and labels update by themselves, and you see which stage every customer is at."
    },
    {
     "w": 1,
     "label": "Appointments",
     "kop": "Confirm and remind",
-    "txt": "An instant confirmation by email and SMS, a reminder 1 day before and a final SMS 2 hours before with your address. After 6 weeks, an invitation for next time. Syncs with Google Calendar."
+    "txt": "An instant confirmation by email, a reminder 1 day before and a final reminder 2 hours before with your address. After 6 weeks, an invitation for next time. Syncs with Google Calendar."
    },
    {
     "w": 2,
     "label": "Missed calls",
     "kop": "Nobody left hanging",
-    "txt": "Miss a call? The caller gets an SMS with your booking link straight away."
+    "txt": "Don't want to miss another call? Then the AI receptionist picks up while you work, as an add-on to Online Growth."
    },
    {
     "w": 3,
     "label": "Reviews",
     "kop": "Asking for reviews, automatically",
-    "txt": "2 hours after every appointment, a review request goes out by SMS or email, with one click to your Google profile. Every customer gets the same request."
+    "txt": "2 hours after every appointment, a review request goes out by email, with one click to your Google profile. Every customer gets the same request."
    },
    {
     "w": 4,
@@ -598,7 +528,7 @@
     "w": 5,
     "label": "Enquiries",
     "kop": "Follow up and pass on",
-    "txt": "A new enquiry lands with the right person and gets followed up automatically. Email and SMS campaigns start based on what your customer does."
+    "txt": "A new enquiry lands with the right person and gets followed up automatically. Email campaigns start based on what your customer does."
    }
   ],
   "onrust": "In a watch, the little ticking wheel is called the balance wheel. We keep it moving: we build your workflows and maintain them. So keeping things in balance is our job, not yours.",
@@ -687,7 +617,7 @@
    "Google profile and visibility",
    "Reviews on Google",
    "CRM and customer dashboard",
-   "Email and SMS campaigns",
+   "Email campaigns",
    "Landing pages",
    "Online payments and invoices",
    "Access to our platform"
@@ -772,15 +702,15 @@
    },
    {
     "q": "What can run by itself?",
-    "a": "Confirmations and reminders, review requests, invoices after a payment and reminders for unpaid invoices, passing on and following up enquiries, email and SMS campaigns, and updates in your CRM."
+    "a": "Confirmations and reminders, review requests, invoices after a payment and reminders for unpaid invoices, passing on and following up enquiries, email campaigns, and updates in your CRM."
    },
    {
     "q": "Can I choose what goes out, and when?",
     "a": "Yes. Together, we tailor the moments and the wording to your business."
    },
    {
-    "q": "What if a customer doesn't want SMS or email?",
-    "a": "Then they don't get them. Every email has an unsubscribe link: anyone who unsubscribes gets nothing more. If a customer doesn't want text messages, we switch them off for that customer. That's how privacy law (GDPR) wants it too."
+    "q": "What if a customer doesn't want emails?",
+    "a": "Then they don't get them. Every email has an unsubscribe link: anyone who unsubscribes gets nothing more. That's how privacy law (GDPR) wants it too."
    },
    {
     "q": "Does it work with my calendar and with online payments?",
@@ -788,7 +718,7 @@
    },
    {
     "q": "What is a smart workflow?",
-    "a": "A series of steps that runs by itself as soon as something happens: a booking, a payment, a missed call. We build and maintain them in your platform. You don't need to know anything about it."
+    "a": "A series of steps that runs by itself as soon as something happens: a booking, a payment, a new enquiry. We build and maintain them in your platform. You don't need to know anything about it."
    }
   ],
   "more_label": "Also read (in Dutch):",

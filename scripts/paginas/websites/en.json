@@ -185,11 +185,6 @@
     "Question about your prices"
    ],
    [
-    "sms",
-    "SMS",
-    "Running a bit late, sorry"
-   ],
-   [
     "tel",
     "Phone",
     "Missed call, 10:05"
@@ -380,7 +375,7 @@
     "id": "alles",
     "part": "",
     "titel": "Everything in one place",
-    "tekst": "Every booking and every request lands in your CRM. Messages from WhatsApp, Instagram, email, SMS and phone sit together in one inbox."
+    "tekst": "Every booking and every request lands in your CRM. Messages from WhatsApp, Instagram, email and phone sit together in one inbox."
    }
   ],
   "links": [
@@ -727,10 +722,10 @@
    ],
    [
     "CRM and customer dashboard",
-    "WhatsApp, Instagram, email, SMS and phone in one inbox."
+    "WhatsApp, Instagram, email and phone in one inbox."
    ],
    [
-    "Email and SMS campaigns",
+    "Email campaigns",
     ""
    ],
    [

@@ -107,7 +107,7 @@
     "tr": "Translation",
     "slot": {
       "cal": "calendar",
-      "sms": "text",
+      "sms": "email",
       "crm": "crm",
       "call": "callback",
       "lead": "enquiry",
@@ -214,7 +214,7 @@
       },
       {
         "who": "r",
-        "t": "Noted, Tom. Friday at four o'clock. You'll get a text to confirm in a moment. See you Friday!"
+        "t": "Noted, Tom. Friday at four o'clock. You'll get a confirmation email in a moment. See you Friday!"
       }
     ],
     "events": [
@@ -227,9 +227,9 @@
       },
       {
         "line": 4,
-        "word": "text",
+        "word": "email",
         "k": "sms",
-        "title": "SMS confirmation sent",
+        "title": "Confirmation email sent",
         "sub": "To the caller"
       },
       {
@@ -280,7 +280,7 @@
         },
         {
           "who": "r",
-          "t": "Certainly. I'll note your question and let the physio know. She'll call you back on this number, and you'll get a text saying your question has been noted. Speak to you soon."
+          "t": "Certainly. I'll note your question and let the physio know. She'll call you back on this number. Speak to you soon."
         }
       ],
       "events": [
@@ -290,13 +290,6 @@
           "k": "call",
           "title": "Callback request noted",
           "sub": "For the physio"
-        },
-        {
-          "line": 5,
-          "word": "text",
-          "k": "sms",
-          "title": "SMS sent",
-          "sub": "Question noted"
         },
         {
           "end": true,
@@ -309,7 +302,7 @@
         "beller": "0478 •• •• 31",
         "taal": "English",
         "uitkomst": "Callback request for the physio",
-        "sms": "Question noted",
+        "sms": "Verbally, during the call",
         "samenvatting": "Treated for their back yesterday. Now in more pain than before. Wants a callback from the physio."
       }
     },
@@ -355,7 +348,7 @@
         },
         {
           "who": "r",
-          "t": "Noted, Jonas. Thursday at five o'clock, haircut and beard. You'll get a text to confirm in a moment. See you Thursday!"
+          "t": "Noted, Jonas. Thursday at five o'clock, haircut and beard. You'll get a confirmation email in a moment. See you Thursday!"
         }
       ],
       "events": [
@@ -368,9 +361,9 @@
         },
         {
           "line": 6,
-          "word": "text",
+          "word": "email",
           "k": "sms",
-          "title": "SMS confirmation sent",
+          "title": "Confirmation email sent",
           "sub": "To the caller"
         },
         {
@@ -384,7 +377,7 @@
         "beller": "Jonas Claes · 0496 •• •• 08",
         "taal": "English",
         "uitkomst": "Appointment Thu 17:00 · haircut and beard",
-        "sms": "Confirmation sent",
+        "sms": "Sent by email",
         "samenvatting": "New customer. Wants a haircut and beard trim. Booked for Thursday at 17:00."
       }
     },
@@ -435,8 +428,8 @@
         {
           "who": "r",
           "lang": "fr",
-          "t": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous recevrez un SMS de confirmation. Bonne fin de journée !",
-          "tr": "Noted, Mr Dubois. Monday at eight o'clock, for the service. You'll get a text to confirm. Have a nice rest of your day!"
+          "t": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous recevrez un e-mail de confirmation. Bonne fin de journée !",
+          "tr": "Noted, Mr Dubois. Monday at eight o'clock, for the service. You'll get a confirmation email. Have a nice rest of your day!"
         }
       ],
       "events": [
@@ -455,9 +448,9 @@
         },
         {
           "line": 5,
-          "word": "SMS",
+          "word": "confirmation",
           "k": "sms",
-          "title": "SMS confirmation sent",
+          "title": "Confirmation email sent",
           "sub": "To the caller"
         },
         {
@@ -471,7 +464,7 @@
         "beller": "M. Dubois · 0472 •• •• 56",
         "taal": "French",
         "uitkomst": "Appointment Mon 08:00 · service",
-        "sms": "Confirmation sent",
+        "sms": "Sent by email",
         "samenvatting": "Wants his car serviced. Booked for Monday at 08:00."
       }
     },
@@ -514,7 +507,7 @@
         },
         {
           "who": "r",
-          "t": "Thanks, Wout. You'll get a text in a moment saying your question has been noted. Have a lovely evening!"
+          "t": "Thanks, Wout. Your question has been noted. Have a lovely evening!"
         }
       ],
       "events": [
@@ -533,13 +526,6 @@
           "sub": "For the owner"
         },
         {
-          "line": 5,
-          "word": "text",
-          "k": "sms",
-          "title": "SMS sent",
-          "sub": "Question noted"
-        },
-        {
           "end": true,
           "k": "crm",
           "title": "Summary in your CRM",
@@ -550,7 +536,7 @@
         "beller": "Wout Maes · 0491 •• •• 12",
         "taal": "English",
         "uitkomst": "Callback request for the owner",
-        "sms": "Question noted",
+        "sms": "Verbally, during the call",
         "samenvatting": "Getting married in June. Looking for a group appointment for 5 people. Wants an offer from the owner; call back."
       }
     }
@@ -575,7 +561,7 @@
     "eyebrow": "After each call",
     "h2a": "The call is over.",
     "h2b": "Everything is ready.",
-    "lede": "The transcript and a short summary go into your customer records (CRM). The appointment is in your calendar and the caller has their text. You read it whenever it suits you.",
+    "lede": "The transcript and a short summary go into your customer records (CRM). The appointment is in your calendar and the caller has their confirmation. You read it whenever it suits you.",
     "caps": [
       {
         "ic": "clock",
@@ -624,7 +610,7 @@
       },
       {
         "ic": "sms",
-        "t": "Confirms by SMS",
+        "t": "Confirms by email",
         "d": "The caller gets a confirmation straight away.",
         "hl": [
           "sms"
@@ -657,7 +643,7 @@
       "beller": "Caller",
       "taal": "Language",
       "uitkomst": "Outcome",
-      "sms": "SMS",
+      "sms": "Confirmation",
       "samenvatting": "Summary",
       "transcript": "Transcript"
     },
@@ -670,7 +656,7 @@
     "eyebrow": "Measured at Clinic3D, without an AI receptionist",
     "h2a": "31 of 39 calls answered.",
     "h2b": "8 went unanswered.",
-    "lede": "At Clinic3D in Hasselt, patients book online: 650 confirmed appointments and 0 no‑shows in 263 days. On the phone, 39 calls came in. 31 were answered, 6 were missed and 2 went to voicemail.",
+    "lede": "At Clinic3D in Hasselt, patients book online: 650 confirmed appointments in 263 days. On the phone, 39 calls came in. 31 were answered, 6 were missed and 2 went to voicemail.",
     "kern": "That's not many. But behind each missed call is someone who wanted to reach the practice.",
     "strip_label": "39 calls: 31 answered, 6 missed, 2 to voicemail",
     "leg_a": "answered",
@@ -720,7 +706,7 @@
       "Books appointments in your calendar",
       "Catches leads outside your opening hours",
       "Dutch, French and English",
-      "Confirmation by SMS, summary in your CRM",
+      "Confirmation by email, summary in your CRM",
       "Works on your existing number"
     ],
     "cta": "Book a free demo",
@@ -787,7 +773,7 @@
       },
       {
         "q": "Can she put appointments in my calendar?",
-        "a": "In a regular calendar, yes: she suggests free slots, books the appointment and the caller gets a confirmation by SMS. If you work with a service menu, she can't book in it herself yet. She then texts the caller the link to book themselves."
+        "a": "In a regular calendar, yes: she suggests free slots, books the appointment and the caller gets a confirmation by email. If you work with a service menu, she can't book in it herself yet. She then points the caller to your online booking page, where they book themselves."
       },
       {
         "q": "Which businesses is an AI phone assistant suitable for?",
@@ -820,7 +806,7 @@
         "post": "."
       },
       {
-        "pre": "· A missed call automatically gets a text: ",
+        "pre": "· Confirmations and reminders that go out by themselves: ",
         "t": "AI automation",
         "href": "AI-Automatisering",
         "post": "."
@@ -865,7 +851,7 @@
         "h": "You cut. She answers the phone.",
         "q": "Can I still come in on Saturday for a colour and a cut?",
         "do": [
-          "With a regular calendar, she tells the caller which slots are free and books the appointment. With a service menu, where your customer picks the stylist and the treatment, she texts them the link.",
+          "With a regular calendar, she tells the caller which slots are free and books the appointment. With a service menu, where your customer picks the stylist and the treatment, she points them to your online booking page.",
           "She answers questions about your prices and opening hours, as they are on your website.",
           "Someone wants to move or cancel an appointment? She notes it down and lets you know. You make the change."
         ],
@@ -883,7 +869,7 @@
         "q": "How long does a facial take, and what does it cost?",
         "do": [
           "She explains what a treatment involves, how long it takes and what it costs, as you put it on your website or in your price list.",
-          "With a regular calendar, she books the treatment and the client gets a confirmation by text. With a service menu, she texts the link to book online.",
+          "With a regular calendar, she books the treatment and the client gets a confirmation by email. With a service menu, she points them to your online booking page.",
           "A question that needs your advice, such as a skin problem, she leaves to you: she puts the call through or notes the question for you."
         ],
         "link": {
@@ -899,7 +885,7 @@
         "h": "You are with a patient. She takes the phone.",
         "q": "Do you still have room next week for a first consultation?",
         "do": [
-          "With a regular calendar, she books the consultation and the patient gets a confirmation by text. With a service menu, she texts the link to book online.",
+          "With a regular calendar, she books the consultation and the patient gets a confirmation by email. With a service menu, she points them to your online booking page.",
           "She answers practical questions, such as your address, your hours or what a patient should bring, if you put that in her information.",
           "She does not give medical advice. If someone asks for it, she puts the call through to you or notes the question for you."
         ],
@@ -917,7 +903,7 @@
         "q": "My car is due for a service. When can I bring it in?",
         "do": [
           "She asks what you need to know, such as the make and the number plate, and adds it to the customer in your CRM.",
-          "She books the service or the tyre change in your calendar, with a confirmation by text.",
+          "She books the service or the tyre change in your calendar, with a confirmation by email.",
           "Someone asks whether their car is ready? She does not know that. She puts the call through to you, or notes the question and lets you know."
         ],
         "link": {

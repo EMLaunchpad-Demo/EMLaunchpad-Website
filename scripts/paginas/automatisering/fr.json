@@ -94,7 +94,6 @@
   "done_sr": "Terminé.",
   "tools": {
    "mail": "E-mail",
-   "sms": "SMS",
    "agenda": "Google Agenda",
    "crm": "CRM",
    "stripe": "Stripe",
@@ -144,7 +143,6 @@
  "order": [
   "boekt",
   "factuur",
-  "oproep",
   "aanvraag"
  ],
  "events": {
@@ -163,16 +161,15 @@
      "grav": "AUSSITÔT",
      "win": "Mar. 21:40",
      "jij": "Vous : à la maison depuis longtemps",
-     "kop": "Confirmation par e-mail et SMS",
+     "kop": "Confirmation par e-mail",
      "msg": "Bonjour {naam}, votre rendez-vous est confirmé : samedi à 10:00. Finalement, ça ne vous convient pas ? Déplacez ou annulez en un clic.",
      "extra": "Ajouté à votre agenda, y compris dans Google Agenda. {naam} figure dans votre CRM.",
      "tools": [
       "mail",
-      "sms",
       "agenda",
       "crm"
      ],
-     "sr": "Aussitôt : confirmation envoyée par e-mail et SMS."
+     "sr": "Aussitôt : confirmation envoyée par e-mail."
     },
     {
      "w": 2,
@@ -182,8 +179,7 @@
      "kop": "Rappel",
      "msg": "Bonjour {naam}, nous vous attendons demain à 10:00. À demain !",
      "tools": [
-      "mail",
-      "sms"
+      "mail"
      ],
      "sr": "Un jour avant : rappel envoyé."
     },
@@ -192,12 +188,12 @@
      "grav": "2 HEURES AVANT",
      "win": "Sam. 08:00",
      "jij": "Vous : en train de faire le café",
-     "kop": "Dernier SMS, avec votre adresse",
+     "kop": "Dernier rappel, avec votre adresse",
      "msg": "À tout à l'heure, {naam} ! Nous vous attendons à 10:00. Voici notre adresse.",
      "tools": [
-      "sms"
+      "mail"
      ],
-     "sr": "Deux heures avant : dernier SMS avec l'adresse envoyé."
+     "sr": "Deux heures avant : dernier rappel avec l'adresse envoyé."
     },
     {
      "w": 4,
@@ -207,7 +203,6 @@
      "kop": "Demande d'avis, 2 heures après le rendez-vous",
      "msg": "Merci pour votre visite, {naam}. Comment c'était ? Dites-le-nous sur Google.",
      "tools": [
-      "sms",
       "mail",
       "google"
      ],
@@ -302,71 +297,6 @@
     "note": "Après chaque paiement en ligne, la facture part aussi toute seule."
    }
   },
-  "oproep": {
-   "chip": "Vous manquez un appel",
-   "h1": "Vous manquez un appel.",
-   "icon": "call",
-   "steps": [
-    {
-     "w": 1,
-     "grav": "AUSSITÔT",
-     "win": "Mer. 10:05",
-     "jij": "Vous : en plein soin",
-     "kop": "SMS avec votre lien de réservation",
-     "msg": "Désolé, nous n'avons pas pu décrocher. Réservez ici tout de suite le créneau qui vous convient.",
-     "extra": "L'appel est dans votre boîte de réception.",
-     "tools": [
-      "sms",
-      "inbox"
-     ],
-     "sr": "Aussitôt : SMS avec votre lien de réservation envoyé.",
-     "fork": {
-      "q": "Que fait l'appelant ?",
-      "def": 0,
-      "opts": [
-       {
-        "label": "Réserve via le lien",
-        "res": "Alors tout se déroule comme dans « Un client réserve ».",
-        "goto": "boekt",
-        "vars": {
-         "naam": "Sam",
-         "zij": "Il",
-         "haar": "Son"
-        },
-        "first": {
-         "win": "Mer. 10:12",
-         "jij": "Vous : toujours en plein soin"
-        }
-       },
-       {
-        "label": "Ne réserve pas",
-        "then": [
-         {
-          "w": 2,
-          "grav": "À RAPPELER",
-          "win": "Mer. 12:30",
-          "jij": "Vous : pause de midi",
-          "kop": "Dans votre boîte de réception",
-          "txt": "Vous voyez qui a appelé et vous rappelez quand ça vous arrange.",
-          "tools": [
-           "inbox"
-          ],
-          "sr": "L'appel est dans votre boîte de réception."
-         }
-        ]
-       }
-      ]
-     }
-    }
-   ],
-   "end": {
-    "txt": "Aucun appel ne se perd. Vous n'avez rien eu à faire.",
-    "link": {
-     "label": "Vous préférez que quelqu'un décroche tout de suite ? Découvrez la réceptionniste IA",
-     "href": "AI%20Voice%20Agents"
-    }
-   }
-  },
   "aanvraag": {
    "chip": "Une demande arrive",
    "h1": "Une demande arrive.",
@@ -435,7 +365,7 @@
   "eyebrow": "Le pense-bête près de la caisse",
   "h2a": "Automatiser avec l'IA en tant que PME :",
   "h2b": "votre liste se barre toute seule.",
-  "lede": "Rappeler un client, envoyer un rappel, une facture, demander un avis. Choisissez votre métier et voyez ce qu'il reste de votre liste.",
+  "lede": "Confirmer un rendez-vous, envoyer un rappel, une facture, demander un avis. Choisissez votre métier et voyez ce qu'il reste de votre liste.",
   "head": "À faire",
   "caption": "Exemple. Ce qui tourne tout seul, et quand, nous le décidons ensemble.",
   "trades": [
@@ -456,8 +386,8 @@
       "how": "tout seul · 1 jour avant"
      },
      {
-      "t": "Rappeler Tom pour un rendez-vous",
-      "how": "tout seul · SMS avec votre lien de réservation"
+      "t": "Confirmer le rendez-vous de Tom",
+      "how": "tout seul · aussitôt par e-mail"
      },
      {
       "t": "Demander un avis à Madame Peeters",
@@ -495,8 +425,8 @@
       "how": "tout seul · 1 jour avant"
      },
      {
-      "t": "Rappeler la personne qui a appelé à 10:05",
-      "how": "tout seul · SMS avec votre lien de réservation"
+      "t": "Confirmer le rendez-vous d'un nouveau patient",
+      "how": "tout seul · aussitôt par e-mail"
      },
      {
       "t": "Relancer une facture impayée",
@@ -534,7 +464,7 @@
       "how": "tout seul · 1 jour avant"
      },
      {
-      "t": "Envoyer un SMS avec l'adresse",
+      "t": "Envoyer l'adresse et l'itinéraire",
       "how": "tout seul · 2 heures avant"
      },
      {
@@ -546,8 +476,8 @@
       "how": "tout seul · rappel automatique"
      },
      {
-      "t": "Rappeler après un appel manqué",
-      "how": "tout seul · SMS avec votre lien de réservation"
+      "t": "Confirmer un rendez-vous pour un changement de pneus",
+      "how": "tout seul · aussitôt par e-mail"
      },
      {
       "t": "Transmettre la demande de devis au bon collègue",
@@ -568,25 +498,25 @@
     "w": 0,
     "label": "CRM",
     "kop": "Tout au même endroit",
-    "txt": "WhatsApp, Instagram, e-mail, SMS et appels téléphoniques dans une seule boîte de réception. L'historique client, les notes et les étiquettes se mettent à jour tout seuls, et vous voyez à quelle étape en est chaque client."
+    "txt": "WhatsApp, Instagram, e-mail et appels téléphoniques dans une seule boîte de réception. L'historique client, les notes et les étiquettes se mettent à jour tout seuls, et vous voyez à quelle étape en est chaque client."
    },
    {
     "w": 1,
     "label": "Rendez-vous",
     "kop": "Confirmer et rappeler",
-    "txt": "Une confirmation immédiate par e-mail et SMS, un rappel 1 jour avant et un dernier SMS 2 heures avant, avec votre adresse. Après 6 semaines, une invitation pour la fois suivante. Se synchronise avec Google Agenda."
+    "txt": "Une confirmation immédiate par e-mail, un rappel 1 jour avant et un dernier rappel 2 heures avant, avec votre adresse. Après 6 semaines, une invitation pour la fois suivante. Se synchronise avec Google Agenda."
    },
    {
     "w": 2,
     "label": "Appels manqués",
     "kop": "Personne ne reste sans réponse",
-    "txt": "Vous manquez un appel ? L'appelant reçoit aussitôt un SMS avec votre lien de réservation."
+    "txt": "Vous ne voulez plus manquer d'appel ? La réceptionniste IA décroche pendant que vous travaillez, en option à Croissance en ligne."
    },
    {
     "w": 3,
     "label": "Avis",
     "kop": "Demander un avis sans y penser",
-    "txt": "2 heures après chaque rendez-vous, une demande d'avis part par SMS ou e-mail, avec un clic vers votre profil Google. Chaque client reçoit la même demande."
+    "txt": "2 heures après chaque rendez-vous, une demande d'avis part par e-mail, avec un clic vers votre profil Google. Chaque client reçoit la même demande."
    },
    {
     "w": 4,
@@ -598,7 +528,7 @@
     "w": 5,
     "label": "Demandes",
     "kop": "Suivre et transmettre",
-    "txt": "Une nouvelle demande arrive chez la bonne personne et reçoit un suivi automatique. Les campagnes par e-mail et SMS démarrent selon ce que fait votre client."
+    "txt": "Une nouvelle demande arrive chez la bonne personne et reçoit un suivi automatique. Les campagnes par e-mail démarrent selon ce que fait votre client."
    }
   ],
   "onrust": "Dans une montre, la petite roue qui fait tic-tac s'appelle le balancier. Nous le gardons en mouvement : nous construisons vos workflows et nous les maintenons. Les soucis restent chez nous, pas chez vous.",
@@ -687,7 +617,7 @@
    "Profil Google et visibilité",
    "Avis sur Google",
    "CRM et tableau de bord clients",
-   "Campagnes e-mail et SMS",
+   "Campagnes e-mail",
    "Landing pages",
    "Paiements en ligne et factures",
    "Accès à notre plateforme"
@@ -772,15 +702,15 @@
    },
    {
     "q": "Qu'est-ce qui peut tourner tout seul ?",
-    "a": "Les confirmations et les rappels, les demandes d'avis, les factures après un paiement et les rappels pour les factures impayées, la transmission et le suivi des demandes, les campagnes par e-mail et SMS, et les mises à jour de votre CRM."
+    "a": "Les confirmations et les rappels, les demandes d'avis, les factures après un paiement et les rappels pour les factures impayées, la transmission et le suivi des demandes, les campagnes par e-mail, et les mises à jour de votre CRM."
    },
    {
     "q": "Puis-je choisir moi-même ce qui part, et quand ?",
     "a": "Oui. Les moments et les textes, nous les adaptons ensemble à votre commerce."
    },
    {
-    "q": "Et si un client ne veut pas de SMS ni d'e-mail ?",
-    "a": "Alors il ne les reçoit pas. Chaque e-mail contient un lien de désinscription : qui se désinscrit ne reçoit plus rien. Si un client ne veut pas de SMS, nous les désactivons pour lui. C'est aussi ce que demande la loi sur la vie privée (RGPD)."
+    "q": "Et si un client ne veut pas d'e-mails ?",
+    "a": "Alors il ne les reçoit pas. Chaque e-mail contient un lien de désinscription : qui se désinscrit ne reçoit plus rien. C'est aussi ce que demande la loi sur la vie privée (RGPD)."
    },
    {
     "q": "Est-ce que ça fonctionne avec mon agenda et les paiements en ligne ?",
@@ -788,7 +718,7 @@
    },
    {
     "q": "C'est quoi, un workflow intelligent ?",
-    "a": "Une série d'étapes qui se déroule toute seule dès que quelque chose se passe : une réservation, un paiement, un appel manqué. Nous les construisons et les entretenons dans votre plateforme. Vous n'avez pas besoin de vous y connaître."
+    "a": "Une série d'étapes qui se déroule toute seule dès que quelque chose se passe : une réservation, un paiement, une nouvelle demande. Nous les construisons et les entretenons dans votre plateforme. Vous n'avez pas besoin de vous y connaître."
    }
   ],
   "more_label": "À lire aussi (en néerlandais) :",

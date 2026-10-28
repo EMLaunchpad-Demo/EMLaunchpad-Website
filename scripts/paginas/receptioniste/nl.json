@@ -107,7 +107,7 @@
     "tr": "Vertaling",
     "slot": {
       "cal": "agenda",
-      "sms": "sms",
+      "sms": "mail",
       "crm": "crm",
       "call": "terugbellen",
       "lead": "aanvraag",
@@ -198,7 +198,7 @@
       },
       {
         "who": "r",
-        "t": "Genoteerd, Tom. Vrijdag om vier uur. Je krijgt zo een sms ter bevestiging. Tot vrijdag!"
+        "t": "Genoteerd, Tom. Vrijdag om vier uur. Je krijgt zo een bevestiging per mail. Tot vrijdag!"
       }
     ],
     "events": [
@@ -211,9 +211,9 @@
       },
       {
         "line": 4,
-        "word": "sms",
+        "word": "mail",
         "k": "sms",
-        "title": "Sms-bevestiging verstuurd",
+        "title": "Bevestiging per mail verstuurd",
         "sub": "Naar de beller"
       },
       {
@@ -264,7 +264,7 @@
         },
         {
           "who": "r",
-          "t": "Goed. Ik noteer uw vraag en verwittig de kinesitherapeut. Ze belt u terug op dit nummer, en u krijgt een sms dat uw vraag genoteerd is. Tot straks."
+          "t": "Goed. Ik noteer uw vraag en verwittig de kinesitherapeut. Ze belt u terug op dit nummer. Tot straks."
         }
       ],
       "events": [
@@ -274,13 +274,6 @@
           "k": "call",
           "title": "Terugbelverzoek genoteerd",
           "sub": "Voor de kinesitherapeut"
-        },
-        {
-          "line": 5,
-          "word": "sms",
-          "k": "sms",
-          "title": "Sms verstuurd",
-          "sub": "Vraag genoteerd"
         },
         {
           "end": true,
@@ -293,7 +286,7 @@
         "beller": "0478 •• •• 31",
         "taal": "Nederlands",
         "uitkomst": "Terugbelverzoek voor de kinesitherapeut",
-        "sms": "Vraag genoteerd",
+        "sms": "Mondeling, tijdens het gesprek",
         "samenvatting": "Gisteren behandeld voor de rug. Heeft nu meer pijn dan ervoor. Wil teruggebeld worden door de kinesitherapeut."
       }
     },
@@ -339,7 +332,7 @@
         },
         {
           "who": "r",
-          "t": "Genoteerd, Jonas. Donderdag om vijf uur, knippen en baard. Je krijgt zo een sms ter bevestiging. Tot donderdag!"
+          "t": "Genoteerd, Jonas. Donderdag om vijf uur, knippen en baard. Je krijgt zo een bevestiging per mail. Tot donderdag!"
         }
       ],
       "events": [
@@ -352,9 +345,9 @@
         },
         {
           "line": 6,
-          "word": "sms",
+          "word": "mail",
           "k": "sms",
-          "title": "Sms-bevestiging verstuurd",
+          "title": "Bevestiging per mail verstuurd",
           "sub": "Naar de beller"
         },
         {
@@ -368,7 +361,7 @@
         "beller": "Jonas Claes · 0496 •• •• 08",
         "taal": "Nederlands",
         "uitkomst": "Afspraak do 17:00 · knippen en baard",
-        "sms": "Bevestiging verstuurd",
+        "sms": "Per mail verstuurd",
         "samenvatting": "Nieuwe klant. Wil knippen en baard. Ingepland op donderdag om 17:00."
       }
     },
@@ -419,8 +412,8 @@
         {
           "who": "r",
           "lang": "fr",
-          "t": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous recevrez un SMS de confirmation. Bonne fin de journée !",
-          "tr": "Genoteerd, meneer Dubois. Maandag om acht uur, voor onderhoud. U krijgt een sms ter bevestiging. Nog een fijne dag!"
+          "t": "C'est noté, monsieur Dubois. Lundi à huit heures, pour l'entretien. Vous recevrez un e-mail de confirmation. Bonne fin de journée !",
+          "tr": "Genoteerd, meneer Dubois. Maandag om acht uur, voor onderhoud. U krijgt een bevestiging per mail. Nog een fijne dag!"
         }
       ],
       "events": [
@@ -439,9 +432,9 @@
         },
         {
           "line": 5,
-          "word": "SMS",
+          "word": "confirmation",
           "k": "sms",
-          "title": "Sms-bevestiging verstuurd",
+          "title": "Bevestiging per mail verstuurd",
           "sub": "Naar de beller"
         },
         {
@@ -455,7 +448,7 @@
         "beller": "M. Dubois · 0472 •• •• 56",
         "taal": "Frans",
         "uitkomst": "Afspraak ma 08:00 · onderhoud",
-        "sms": "Bevestiging verstuurd",
+        "sms": "Per mail verstuurd",
         "samenvatting": "Wil zijn wagen laten onderhouden. Ingepland op maandag om 08:00."
       }
     },
@@ -498,7 +491,7 @@
         },
         {
           "who": "r",
-          "t": "Dank je, Wout. Je krijgt zo een sms dat je vraag genoteerd is. Nog een fijne avond!"
+          "t": "Dank je, Wout. Je vraag is genoteerd. Nog een fijne avond!"
         }
       ],
       "events": [
@@ -517,13 +510,6 @@
           "sub": "Voor de zaakvoerder"
         },
         {
-          "line": 5,
-          "word": "sms",
-          "k": "sms",
-          "title": "Sms verstuurd",
-          "sub": "Vraag genoteerd"
-        },
-        {
           "end": true,
           "k": "crm",
           "title": "Samenvatting in je CRM",
@@ -534,7 +520,7 @@
         "beller": "Wout Maes · 0491 •• •• 12",
         "taal": "Nederlands",
         "uitkomst": "Terugbelverzoek voor de zaakvoerder",
-        "sms": "Vraag genoteerd",
+        "sms": "Mondeling, tijdens het gesprek",
         "samenvatting": "Trouwt in juni. Zoekt een groepsafspraak voor 5 personen. Wil een voorstel van de zaakvoerder; terugbellen."
       }
     }
@@ -559,7 +545,7 @@
     "eyebrow": "Na elk gesprek",
     "h2a": "Het gesprek is voorbij.",
     "h2b": "Alles staat al klaar.",
-    "lede": "Het transcript en een korte samenvatting komen in je klantenbestand (CRM). De afspraak staat in je agenda en de beller heeft zijn sms. Jij leest het wanneer het jou past.",
+    "lede": "Het transcript en een korte samenvatting komen in je klantenbestand (CRM). De afspraak staat in je agenda en de beller heeft zijn bevestiging. Jij leest het wanneer het jou past.",
     "caps": [
       {
         "ic": "clock",
@@ -608,7 +594,7 @@
       },
       {
         "ic": "sms",
-        "t": "Bevestigt per sms",
+        "t": "Bevestigt per mail",
         "d": "De beller krijgt meteen een bevestiging.",
         "hl": [
           "sms"
@@ -641,7 +627,7 @@
       "beller": "Beller",
       "taal": "Taal",
       "uitkomst": "Uitkomst",
-      "sms": "Sms",
+      "sms": "Bevestiging",
       "samenvatting": "Samenvatting",
       "transcript": "Transcript"
     },
@@ -654,7 +640,7 @@
     "eyebrow": "Gemeten bij Clinic3D, zonder AI-receptioniste",
     "h2a": "31 van de 39 oproepen beantwoord.",
     "h2b": "8 bleven onbeantwoord.",
-    "lede": "Bij Clinic3D in Hasselt boeken patiënten online: 650 bevestigde afspraken en 0 no‑shows in 263 dagen. Aan de telefoon kwamen 39 oproepen binnen. 31 werden beantwoord, 6 gemist en 2 gingen naar voicemail.",
+    "lede": "Bij Clinic3D in Hasselt boeken patiënten online: 650 bevestigde afspraken in 263 dagen. Aan de telefoon kwamen 39 oproepen binnen. 31 werden beantwoord, 6 gemist en 2 gingen naar voicemail.",
     "kern": "Het zijn er niet veel. Maar achter elke gemiste oproep zit iemand die de zaak wilde bereiken.",
     "strip_label": "39 oproepen: 31 beantwoord, 6 gemist, 2 naar voicemail",
     "leg_a": "beantwoord",
@@ -704,7 +690,7 @@
       "Plant afspraken in je agenda",
       "Vangt leads op buiten je openingsuren",
       "Nederlands, Frans en Engels",
-      "Bevestiging per sms, samenvatting in je CRM",
+      "Bevestiging per mail, samenvatting in je CRM",
       "Werkt op je bestaande nummer"
     ],
     "cta": "Plan een gratis demo",
@@ -771,7 +757,7 @@
       },
       {
         "q": "Kan ze afspraken in mijn agenda zetten?",
-        "a": "In een gewone agenda wel: ze stelt vrije momenten voor, plant de afspraak en de beller krijgt een bevestiging per sms. Werk je met een dienstenmenu, dan kan ze daar nog niet zelf in boeken. Ze stuurt de beller dan per sms de link om zelf te boeken."
+        "a": "In een gewone agenda wel: ze stelt vrije momenten voor, plant de afspraak en de beller krijgt een bevestiging per mail. Werk je met een dienstenmenu, dan kan ze daar nog niet zelf in boeken. Ze verwijst de beller dan naar je online agenda, waar hij zelf boekt."
       },
       {
         "q": "Voor welke zaken is een AI-telefoniste geschikt?",
@@ -804,7 +790,7 @@
         "post": "."
       },
       {
-        "pre": "· Een gemiste oproep krijgt automatisch een sms: ",
+        "pre": "· Bevestigingen en herinneringen die vanzelf vertrekken: ",
         "t": "AI-automatisering",
         "href": "AI-Automatisering",
         "post": "."
@@ -849,7 +835,7 @@
         "h": "Jij knipt. Zij neemt de telefoon op.",
         "q": "Kan ik zaterdag nog komen voor kleuren en knippen?",
         "do": [
-          "Werk je met een gewone agenda, dan zegt ze welke momenten vrij zijn en zet ze de afspraak erin. Met een dienstenmenu, waarin je klant zelf de kapper en de behandeling kiest, stuurt ze hem de link per sms.",
+          "Werk je met een gewone agenda, dan zegt ze welke momenten vrij zijn en zet ze de afspraak erin. Met een dienstenmenu, waarin je klant zelf de kapper en de behandeling kiest, verwijst ze hem naar je online agenda.",
           "Ze beantwoordt vragen over je prijzen en openingsuren, zoals ze op je website staan.",
           "Wil iemand een afspraak verzetten of annuleren? Dan noteert ze dat en verwittigt ze je. Jij past het aan."
         ],
@@ -867,7 +853,7 @@
         "q": "Hoe lang duurt een gelaatsverzorging, en wat kost die?",
         "do": [
           "Ze legt uit wat een behandeling inhoudt, hoe lang ze duurt en wat ze kost, zoals jij het op je website of in je prijslijst zet.",
-          "Werk je met een gewone agenda, dan plant ze de behandeling in en krijgt de klant een sms ter bevestiging. Met een dienstenmenu stuurt ze de link om zelf te reserveren.",
+          "Werk je met een gewone agenda, dan plant ze de behandeling in en krijgt de klant een bevestiging per mail. Met een dienstenmenu verwijst ze naar je online agenda om zelf te reserveren.",
           "Een vraag die jouw advies nodig heeft, zoals over een huidprobleem, laat ze aan jou: ze verbindt door of ze noteert de vraag voor je."
         ],
         "link": {
@@ -883,7 +869,7 @@
         "h": "Jij bent bij een patiënt. Zij neemt de telefoon.",
         "q": "Hebben jullie volgende week nog plaats voor een eerste consultatie?",
         "do": [
-          "Werk je met een gewone agenda, dan plant ze de consultatie in en krijgt de patiënt een sms ter bevestiging. Met een dienstenmenu stuurt ze de link om zelf te boeken.",
+          "Werk je met een gewone agenda, dan plant ze de consultatie in en krijgt de patiënt een bevestiging per mail. Met een dienstenmenu verwijst ze naar je online agenda om zelf te boeken.",
           "Ze beantwoordt praktische vragen, zoals je adres, je uren of wat een patiënt moet meebrengen, als jij dat in haar info zet.",
           "Medisch advies geeft ze niet. Wie daarnaar vraagt, verbindt ze door met jou, of ze noteert de vraag voor je."
         ],
@@ -901,7 +887,7 @@
         "q": "Mijn wagen moet binnen voor een onderhoud. Wanneer kan dat?",
         "do": [
           "Ze vraagt wat jij moet weten, zoals het merk en de nummerplaat, en zet dat bij de klant in je CRM.",
-          "Ze plant het onderhoud of de bandenwissel in je agenda, met een sms ter bevestiging.",
+          "Ze plant het onderhoud of de bandenwissel in je agenda, met een bevestiging per mail.",
           "Vraagt iemand of zijn wagen al klaar is? Dat weet ze niet. Ze verbindt door met jou, of ze noteert de vraag en verwittigt je."
         ],
         "link": {

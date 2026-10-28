@@ -116,7 +116,7 @@
       },
       {
         "k": "sms",
-        "t": "Bevestiging per sms verstuurd"
+        "t": "Bevestiging per e-mail verstuurd"
       },
       {
         "k": "crm",
@@ -187,7 +187,7 @@
           "day": "zaterdag",
           "name_q": "Op welke naam mag ik de afspraak zetten?",
           "name": "Sarah Peeters",
-          "done": "{Top, Sarah|Prima, mevrouw Peeters}! {Je|U} staat ingepland op zaterdag om {time} voor knippen en brushen. {Je|U} krijgt zo een bevestiging per sms, met een link om te verplaatsen."
+          "done": "{Top, Sarah|Prima, mevrouw Peeters}! {Je|U} staat ingepland op zaterdag om {time} voor knippen en brushen. {Je|U} krijgt zo een bevestiging per e-mail, met een link om te verplaatsen."
         }
       },
       {
@@ -255,7 +255,7 @@
           "day": "donderdag",
           "name_q": "Op welke naam mag ik de afspraak zetten?",
           "name": "Tom Janssens",
-          "done": "Prima, {Tom|meneer Janssens}! {Je|U} staat ingepland op donderdag om {time} voor een eerste sessie. {Je|U} krijgt zo een bevestiging per sms, met een link om te verplaatsen."
+          "done": "Prima, {Tom|meneer Janssens}! {Je|U} staat ingepland op donderdag om {time} voor een eerste sessie. {Je|U} krijgt zo een bevestiging per e-mail, met een link om te verplaatsen."
         }
       },
       {
@@ -323,7 +323,7 @@
           "day": "maandag",
           "name_q": "Op welke naam mag ik de afspraak zetten?",
           "name": "Els Maes",
-          "done": "Genoteerd, {Els|mevrouw Maes}! {Je|U} staat ingepland op maandag om {time} voor een onderhoudsbeurt. {Je|U} krijgt zo een bevestiging per sms, met een link om te verplaatsen."
+          "done": "Genoteerd, {Els|mevrouw Maes}! {Je|U} staat ingepland op maandag om {time} voor een onderhoudsbeurt. {Je|U} krijgt zo een bevestiging per e-mail, met een link om te verplaatsen."
         }
       }
     ],

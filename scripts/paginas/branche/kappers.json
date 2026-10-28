@@ -40,8 +40,8 @@
   "label": "een zaterdag in een kapsalon, van 8 tot 22 uur",
   "momenten": [
    {"t": "08:30", "soort": "dag", "kop": "De dag staat klaar", "tekst": "Per kapper zie je wie er komt en voor welke behandeling. Wat 's nachts geboekt is, staat er al tussen."},
-   {"t": "09:40", "soort": "herinner", "kop": "Niemand vergeten", "tekst": "Wie vandaag komt, kreeg gisteren een sms of mail met het uur en de naam van zijn kapper."},
-   {"t": "10:15", "soort": "bel", "kop": "Telefoon met de schaar in de hand", "tekst": "De AI-receptioniste neemt op, beantwoordt de vraag of noteert ze, en stuurt de boekingslink per sms."},
+   {"t": "09:40", "soort": "herinner", "kop": "Niemand vergeten", "tekst": "Wie vandaag komt, kreeg gisteren een mail met het uur en de naam van zijn kapper."},
+   {"t": "10:15", "soort": "bel", "kop": "Telefoon met de schaar in de hand", "tekst": "De AI-receptioniste neemt op, beantwoordt de vraag of noteert ze, en verwijst naar je online agenda."},
    {"t": "12:30", "soort": "vrij", "kop": "Een uur komt vrij", "tekst": "Een klant annuleert met de link in zijn herinnering. Het uur staat meteen weer open voor iemand anders."},
    {"t": "15:10", "soort": "review", "kop": "Na het knippen", "tekst": "Je klant krijgt een bedankje met één knop naar je Google-reviews."},
    {"t": "18:00", "soort": "chat", "kop": "Een vraag via WhatsApp", "tekst": "Iemand vraagt of je ook baarden doet. De chatbot antwoordt en wijst een vrij moment aan voor volgende week."},
@@ -65,7 +65,7 @@
    "stappen": [
     ["Boeken.", "Je klant kiest de behandeling, de kapper en een vrij uur, op zijn gsm of computer."],
     ["Bevestigen.", "Meteen daarna krijgt hij een bevestiging met het uur, de kapper en het adres."],
-    ["Herinneren.", "Voor de afspraak volgt een herinnering per mail of sms, op het moment dat jij kiest."],
+    ["Herinneren.", "Voor de afspraak volgt een herinnering per mail, op het moment dat jij kiest."],
     ["Knippen.", "Jij ziet in je agenda wie er komt. Niets overtypen uit een schriftje."],
     ["Om een review vragen.", "Achteraf krijgt je klant een bedankje met één knop naar je Google-reviews."]
    ],
@@ -83,7 +83,7 @@
    {"naam": "Website", "prijs": "€150", "per": "per maand", "noot": "Pakket Online groeien, geen opstartkost", "tekst": "Je team met foto, je prijslijst voor knippen, kleuren en brushen, en bovenaan een knop om te boeken die op elke gsm meteen werkt. Ook je openingsuren en je adres vind je in één oogopslag.", "link": {"t": "Meer over websites", "href": "Websites"}},
    {"naam": "Agenda per kapper", "prijs": "Inbegrepen", "per": "in de €150", "noot": "Zelfde pakket", "tekst": "Elke kapper krijgt eigen werkuren en de behandelingen die hij of zij doet. Je klant kiest bij wie hij boekt. Herinnering en reviewvraag vertrekken vanzelf.", "link": {"t": "Meer over het afsprakensysteem", "href": "Afsprakensysteem"}},
    {"naam": "AI-chatbot", "prijs": "+ €50", "per": "per maand", "noot": "Bovenop Online groeien", "tekst": "Voor klanten die liever een berichtje sturen dan bellen. De chatbot antwoordt op WhatsApp, Instagram, Messenger en je website, ook na sluitingstijd, en helpt meteen naar een vrij uur.", "link": {"t": "Meer over de AI-chatbot", "href": "AI%20Chatbots"}},
-   {"naam": "AI-receptioniste", "prijs": "+ €150", "per": "per maand", "eenmalig": "+ €750 eenmalig", "noot": "300 belminuten inbegrepen, daarna €0,35 per minuut", "tekst": "Voor de oproepen die toch binnenkomen terwijl je knipt. Ze beantwoordt vragen over prijzen en uren, stuurt de boekingslink per sms en noteert wie teruggebeld wil worden.", "link": {"t": "Meer over de AI-receptioniste", "href": "AI%20Voice%20Agents"}}
+   {"naam": "AI-receptioniste", "prijs": "+ €150", "per": "per maand", "eenmalig": "+ €750 eenmalig", "noot": "300 belminuten inbegrepen, daarna €0,35 per minuut", "tekst": "Voor de oproepen die toch binnenkomen terwijl je knipt. Ze beantwoordt vragen over prijzen en uren, verwijst naar je online agenda en noteert wie teruggebeld wil worden.", "link": {"t": "Meer over de AI-receptioniste", "href": "AI%20Voice%20Agents"}}
   ],
   "som": [["Website en agenda per kapper", "€150 per maand"], ["Plus de AI-chatbot", "€200 per maand"], ["Plus de AI-receptioniste", "€300 per maand + €750 eenmalig"], ["Plus allebei", "€350 per maand + €750 eenmalig"]],
   "voet": "Alles excl. btw. Je zegt Online groeien maandelijks op."
@@ -100,14 +100,14 @@
   "lijnen": [
    ["ai", "Goeiemorgen, Kapsalon Mira, je spreekt met de digitale assistente. Waarmee kan ik helpen?"],
    ["beller", "Hebben jullie volgende week nog plaats bij Sofie? Knippen en baard."],
-   ["ai", "De vrije uren per kapper zie je in de online agenda. Ik stuur je de link per sms: daar kies je Sofie, de behandeling en het uur, en je krijgt meteen een bevestiging."],
+   ["ai", "De vrije uren per kapper zie je in de online agenda op onze website: daar kies je Sofie, de behandeling en het uur, en je krijgt meteen een bevestiging."],
    ["beller", "Oké. En mijn afspraak van vanmiddag, kan die naar later?"],
    ["ai", "Een afspraak verplaatsen doe ik niet zelf. Ik noteer je vraag en het salon belt je terug, of ik verbind je nu door. Wat heb je liever?"],
    ["beller", "Bel me maar terug."],
-   ["actie", "Sms met de boekingslink verstuurd. Terugbelvraag genoteerd in het CRM, met naam en nummer."]
+   ["actie", "Terugbelvraag genoteerd in het CRM, met naam en nummer."]
   ],
   "daarna_kop": "Wat er daarna gebeurt",
-  "daarna": ["Tussen twee klanten zie je wie belde en waarom, met een korte samenvatting.", "Jij beslist of de afspraak kan schuiven en belt de klant terug.", "De nieuwe boeking bij Sofie komt binnen via de link, met bevestiging en herinnering erbij."],
+  "daarna": ["Tussen twee klanten zie je wie belde en waarom, met een korte samenvatting.", "Jij beslist of de afspraak kan schuiven en belt de klant terug.", "De nieuwe boeking bij Sofie komt binnen via de online agenda, met bevestiging en herinnering erbij."],
   "niet_kop": "Wat ze niet doet",
   "niet": ["Ze verplaatst of annuleert geen afspraken: ze noteert de vraag of verbindt door.", "Ze boekt niet zelf aan de telefoon. Je klant boekt via de link, bij de kapper van zijn keuze.", "Ze heeft geen eigen Belgisch nummer. Je laat je huidige nummer naar haar doorschakelen."],
   "link": {"t": "Alles over de AI-receptioniste", "href": "AI%20Voice%20Agents"}
@@ -134,10 +134,10 @@
   "items": [
    {"q": "Wat kost een kapperswebsite?", "a": "Je betaalt €150 per maand, excl. btw, voor het pakket Online groeien: de website, de online agenda met een agenda per kapper, je Google-profiel, reviews, je CRM en de automatische opvolging. Hosting, beheer en support zitten erin. Je betaalt geen opstartkost en zegt maandelijks op."},
    {"q": "Kan mijn klant zelf boeken bij zijn vaste kapper?", "a": "Ja. Elke kapper staat als medewerker in het systeem, met eigen uren en eigen behandelingen. Je klant kiest de behandeling en de kapper, en ziet alleen de uren waarop die kapper echt vrij is."},
-   {"q": "Krijgt mijn klant een herinnering?", "a": "Ja, per mail en als je wil ook per sms, met het uur, de kapper en het adres. Wanneer de herinnering vertrekt, kies je zelf. In de bevestiging kan ook een link staan om te annuleren, zodat een vrij uur meteen terug openstaat."},
+   {"q": "Krijgt mijn klant een herinnering?", "a": "Ja, per mail, met het uur, de kapper en het adres. Wanneer de herinnering vertrekt, kies je zelf. In de bevestiging kan ook een link staan om te annuleren, zodat een vrij uur meteen terug openstaat."},
    {"q": "Hoe vraag ik een review na een knipbeurt?", "a": "Dat gebeurt vanzelf. Na de afspraak krijgt je klant een korte bedankmail met één knop naar je Google-reviews. Je vraagt het aan elke klant, zonder iets in ruil te beloven."},
    {"q": "Ik werk al met een boekingsprogramma voor kappers. Moet dat weg?", "a": "Niet per se. In de gratis demo bekijken we wat je nu gebruikt en wat je zou winnen of verliezen. Wat je moet weten: de herinneringen, de reviewvraag en de chatbot werken met de agenda in ons platform. Blijf je bij je huidige programma, dan hangen die er niet aan vast."},
-   {"q": "Wat doet de AI-receptioniste als ik aan het knippen ben?", "a": "Ze neemt op via een doorschakeling van je nummer, altijd of alleen als jij niet opneemt. Ze beantwoordt vragen uit wat jij haar leert, stuurt de boekingslink per sms en noteert wie teruggebeld wil worden. Verplaatsen of annuleren doet ze niet. Prijs: €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
+   {"q": "Wat doet de AI-receptioniste als ik aan het knippen ben?", "a": "Ze neemt op via een doorschakeling van je nummer, altijd of alleen als jij niet opneemt. Ze beantwoordt vragen uit wat jij haar leert, verwijst naar je online agenda en noteert wie teruggebeld wil worden. Verplaatsen of annuleren doet ze niet. Prijs: €150 per maand en €750 eenmalig bovenop Online groeien, excl. btw."},
    {"q": "Hebben jullie al kappers als klant?", "a": "Nog niet. Onze klanten zijn een kliniek, een privésauna, een babywellness, een boerderij en een vereniging. Daarom tonen we hier een voorbeeld en geen case. In de demo zie je hoe het voor een kapsalon zou werken."},
    {"q": "Hoe snel is mijn kapperswebsite live?", "a": "Meestal binnen 14 dagen. We hebben je prijslijst nodig met de duur per behandeling, de kappers met hun uren en een paar foto's van je zaak en je team."},
    {"q": "Wat als ik stop?", "a": "Je zegt maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou, je klantenlijst inbegrepen."}
