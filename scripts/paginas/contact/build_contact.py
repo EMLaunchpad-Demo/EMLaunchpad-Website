@@ -2,7 +2,7 @@
 # vier wegen (bellen, WhatsApp, mail, gratis demo) die allemaal bij ons uitkomen, de echte werkplekfoto,
 # het formulier (eigen GHL-formulier per taal), de FAQ en de slot-CTA. v2-skin met "blauw uur".
 # De <head> (laadscript, fonts-preload, #business-blok, canonical, hreflang) komt uit het bestaande bestand;
-# de inhoud komt uit <taal>.json + body.py (sjabloon). Model: scripts/paginas/eml-ai-team/build_eml.py.
+# de inhoud komt uit <taal>.json + body.py (sjabloon).
 # Gebruik: py build_contact.py nl [en fr]
 import io, re, json, html, sys, os
 
@@ -99,7 +99,7 @@ def tail(pre, footer='<div id="footer-mount"></div>'):
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 <script src="{pre}i18n.js?v=20261028a"></script>
 <script src="{pre}i18n-pages.js?v=20261028a"></script>
-<script src="{pre}site.js?v=20261028a"></script>
+<script src="{pre}site.js?v=20261102a"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}contact.js?v={V_JS}"></script>
 </body>

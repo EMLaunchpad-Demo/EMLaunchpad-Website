@@ -508,7 +508,7 @@
     "eml_price": "À partir de 3 500 € + 750 € par mois",
     "eml_txt": "Une équipe IA sur mesure, avec des employés IA par service que vous pilotez via Telegram. D'abord une analyse gratuite de vos processus, puis une proposition avec le bon pack. Contrat fixe de 12 mois, prix HTVA.",
     "eml_link": "Voir EML AI Team et les packs",
-    "eml_href": "eml-ai-team",
+    "eml_href": "https://NIEUW-EML-AI-TEAM-DOMEIN/",
     "vat": "HTVA"
   },
   "why": {
@@ -697,7 +697,7 @@
       "cons_href": "Diensten#pakket-2",
       "cons_more": "En savoir plus sur le Consulting IA",
       "eml_d": "Une équipe IA sur mesure pour les entreprises qui ont une équipe : des employés IA par service, pilotés via Telegram. Analyse gratuite, packs à partir de 3 500 € + 750 € par mois, contrat fixe de 12 mois.",
-      "eml_href": "eml-ai-team",
+      "eml_href": "https://NIEUW-EML-AI-TEAM-DOMEIN/",
       "eml_more": "En savoir plus sur EML AI Team"
     },
     "rules": {

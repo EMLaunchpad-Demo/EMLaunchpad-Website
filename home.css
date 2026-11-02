@@ -266,7 +266,6 @@ html{scroll-padding-top:100px}
 .nv-acc-packs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
 .nv-acc-packs .nv-pack{margin:0}
 .nv-acc-packs .nv-pack small{display:none}
-.nv-acc-packs .nv-pack:nth-child(3){grid-column:1/-1} /* derde kaart (EML AI Team) over de volle breedte in het gsm-menu */
 .nv-sheet .nv-sols a{padding:9px 6px}
 .nv-sheet .nv-all{margin:10px 0 0 6px}
 .nv-for-m{margin-top:12px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}

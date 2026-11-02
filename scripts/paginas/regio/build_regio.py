@@ -3,7 +3,8 @@
 #   limburg.json            -> website-laten-maken-limburg.html
 #   steden/<stad>.json      -> website-laten-maken-<stad>.html   (alleen met "klaar": true)
 # De <head> (laadscript, fonts-preload, #business-blok) komt uit het bestaande bestand, of bij een nieuwe pagina
-# uit eml-ai-team.html. Model: scripts/paginas/websites/build_ws.py en eml-ai-team/build_eml.py.
+# uit de regiopagina website-laten-maken-limburg.html (tot 2026-11-02 uit eml-ai-team.html, die nu op een eigen
+# site staat). Model: scripts/paginas/websites/build_ws.py.
 # Gebruik (vanuit deze map of de repo):
 #   py build_regio.py                 alles (regio + alle steden met "klaar": true)
 #   py build_regio.py limburg hasselt alleen die pagina's (de links tussen de pagina's komen altijd uit alle json's)
@@ -15,7 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 V_CSS, V_JS = '20261019a', '20261019a'
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261016a'
-TEMPLATE = 'eml-ai-team.html'   # bron van de <head> voor een pagina die nog niet bestaat
+TEMPLATE = 'website-laten-maken-limburg.html'   # bron van de <head> voor een pagina die nog niet bestaat
 SITE = 'https://emlaunchpad.com/'
 NOS = '<noscript><style>#loader{display:none!important}</style></noscript>\n'
 # lichtlaag voor data-tone="blauw" (zelfde verloop als EML AI Team)
@@ -97,7 +98,7 @@ def head(L, C, s):
 def tail(footer):
     return f'''{footer}
 <script src="i18n.js?v=20261028a"></script>
-<script src="site.js?v=20261028a"></script>
+<script src="site.js?v=20261102a"></script>
 <script src="fx.js?v={V_FX}"></script>
 <script src="regio.js?v={V_JS}"></script>
 </body>

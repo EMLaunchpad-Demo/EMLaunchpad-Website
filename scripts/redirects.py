@@ -17,17 +17,23 @@
 #      - /lokaal/ (en /lokaal, /lokaal/index.html) naar de regiopagina, plus de splat /lokaal/*.
 #      Per oude pagina drie bronnen: /lokaal/ai-<stad>, met .html en met slash. De map lokaal/
 #      telt dan niet meer mee voor de afgeleide regels, dus de bestanden mogen weg.
-#   4. De splats (/post/*, ...), want Cloudflare wil statische regels voor dynamische.
+#   4. Pagina's die naar een andere site verhuisden (vaste lijst EXTERN hieronder). Sinds 2026-11-02:
+#      /eml-ai-team, /en/eml-ai-team en /fr/eml-ai-team (ook met .html en met slash) naar de eigen site
+#      van EML AI Team. Het adres staat op één plek: EML_SITE in scripts/eml_ai_team_site.py.
+#   5. De splats (/post/*, ...), want Cloudflare wil statische regels voor dynamische.
 #
 # Cloudflare matcht hoofdlettergevoelig (de regel /diensten raakt /Diensten niet), stuurt
 # /Diensten.html zelf alleen met een tijdelijke 307 door, en Bing vraagt een 301 voor
 # blijvende adressen. Limieten: 2.000 statische en 100 dynamische regels.
 # Het script controleert: elke bestemming bestaat, geen bron is ook een bestemming
-# (dus geen lussen en geen kettingen), geen dubbele bronnen, binnen de limieten.
+# (dus geen lussen en geen kettingen), geen dubbele bronnen, binnen de limieten. Een externe
+# bestemming (https://...) wordt niet als bestand gecontroleerd; wel mag de bron dan geen pagina
+# meer zijn in de repo (anders is die pagina onbereikbaar, want Cloudflare volgt de regel altijd).
 #
 # Draai opnieuw na het toevoegen van pagina's:
 #   py scripts/redirects.py
 import os, sys, json, urllib.parse
+from eml_ai_team_site import EML_SITE
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 SKIP_DIRS = {'.git', '.github', '.claude', 'node_modules', 'scripts', 'assets', 'demo'}
@@ -76,6 +82,14 @@ OUD_SPLAT = [
 ]
 
 
+# Verhuisd naar een andere site: de vroegere pagina EML AI Team (nl, en, fr), telkens drie bronnen.
+EXTERN = [(pre + '/eml-ai-team' + suf, EML_SITE + '/') for pre in ('', '/en', '/fr') for suf in ('', '.html', '/')]
+
+
+def extern(dest):
+    return dest.startswith(('https://', 'http://'))
+
+
 # Oude map /lokaal/ (fase 2): de vaste lijst staat in stadspaginas.json, zodat de coördinator
 # de stadspagina's kan aanvullen zonder dit script aan te passen.
 LOKAAL_JSON = os.path.join(ROOT, 'scripts', 'stadspaginas.json')
@@ -119,7 +133,7 @@ def lokaal_regels(fouten, meldingen):
 
 
 def enc(path):
-    return urllib.parse.quote(path, safe="/-_.~'*")
+    return path if extern(path) else urllib.parse.quote(path, safe="/-_.~'*")
 
 
 def variants(clean):
@@ -165,7 +179,7 @@ for d, dirs, files in os.walk(ROOT):
 # Samenvoegen: afgeleide regels eerst, dan varianten, dan de oude URL's; dubbele bronnen
 # (bv. /diensten en /over-ons komen ook uit de varianten) tellen één keer.
 static, seen = [], set()
-for a, b in afgeleid + extra + OUD + LOKAAL:
+for a, b in afgeleid + extra + OUD + LOKAAL + EXTERN:
     if a in seen:
         continue
     seen.add(a)
@@ -179,12 +193,20 @@ for a, b in static + dynamic:
         fouten.append('bron en bestemming gelijk: %s' % a)
     if b in bronnen:
         fouten.append('bestemming %s is zelf een bron (lus of ketting): %s -> %s' % (b, a, b))
-    if not os.path.isfile(target_file(b)):
+    if extern(b):
+        if os.path.isfile(target_file(a.rstrip('/').removesuffix('.html'))):
+            fouten.append('bron %s gaat naar een andere site, maar de pagina staat nog in de repo' % a)
+    elif not os.path.isfile(target_file(b)):
         fouten.append('bestemming bestaat niet: %s -> %s' % (a, b))
+missend = [a for a, _ in EXTERN if (a, EML_SITE + '/') not in static]
+if missend:
+    fouten.append('deze bronnen gaan niet naar %s/ (dubbel met een andere regel?): %s' % (EML_SITE, ', '.join(missend)))
 if len(static) > MAX_STATIC:
     fouten.append('te veel statische regels: %d (max %d)' % (len(static), MAX_STATIC))
 if len(dynamic) > MAX_DYNAMIC:
     fouten.append('te veel dynamische regels: %d (max %d)' % (len(dynamic), MAX_DYNAMIC))
+if EML_SITE == 'https://' + 'NIEUW-EML-AI-TEAM-DOMEIN':
+    meldingen.append("EML AI Team: de 301's gaan nog naar de tijdelijke waarde %s (scripts/eml_ai_team_site.py), niet pushen" % EML_SITE)
 for m in meldingen:
     print('NB: ' + m)
 if fouten:
@@ -200,6 +222,7 @@ out += ['%s %s 301' % (enc(a), enc(b)) for a, b in dynamic]
 open(os.path.join(ROOT, '_redirects'), 'w', encoding='utf-8', newline='\n').write('\n'.join(out) + '\n')
 n_var = len({a for a, _ in extra} - {a for a, _ in afgeleid})
 n_lok = len(LOKAAL) + len(LOKAAL_SPLAT)
-n_oud = len(static) - len(afgeleid) - n_var + len(dynamic) - n_lok
-print('%d regels (%d statisch, %d dynamisch): %d afgeleid, %d varianten, %d oude URL\'s, %d lokaal' % (
-    len(static) + len(dynamic), len(static), len(dynamic), len(afgeleid), n_var, n_oud, n_lok))
+n_ext = len(EXTERN)
+n_oud = len(static) - len(afgeleid) - n_var + len(dynamic) - n_lok - n_ext
+print('%d regels (%d statisch, %d dynamisch): %d afgeleid, %d varianten, %d oude URL\'s, %d lokaal, %d naar een andere site' % (
+    len(static) + len(dynamic), len(static), len(dynamic), len(afgeleid), n_var, n_oud, n_lok, n_ext))

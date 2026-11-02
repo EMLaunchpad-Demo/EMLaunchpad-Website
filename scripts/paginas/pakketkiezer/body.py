@@ -17,6 +17,11 @@ def cap(s):
 def fill(s, v):
     return re.sub(r'\{(\w+)\}', lambda m: str(v.get(m.group(1), m.group(0))), s)
 
+def link(rel, href):
+    """Interne link in de taal van de pagina (rel = '' of '../'); een volledig adres (https://...) blijft zoals het is,
+    bv. de eigen site van EML AI Team (zie scripts/eml_ai_team_site.py)."""
+    return href if re.match(r'https?://', href) else rel + href
+
 def I(d, sw='1.8', vb='0 0 24 24'):
     return ('<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" '
             'stroke-width="%s" viewBox="%s">%s</svg>' % (sw, vb, d))
@@ -129,15 +134,15 @@ def body(L, lang, pre):
 
     # ---- secties ----
     def links(it):
-        return ''.join('<a class="pk-link" href="%s%s">%s %s</a>' % (rel, h_, esc(t), ARROW) for h_, t in it.get('links', []))
+        return ''.join('<a class="pk-link" href="%s">%s %s</a>' % (link(rel, h_), esc(t), ARROW) for h_, t in it.get('links', []))
     g1 = ''.join('<li class="pk-wrow" data-pk-row="rib-%d"><span class="pk-wn">%02d</span><div><b>%s</b><p>%s</p>%s</div><em class="pk-tagx" hidden=""></em></li>'
                  % (i + 1, i + 1, esc(it['t']), esc(it['d']), links(it)) for i, it in enumerate(W['items']))
-    g2 = ''.join('<li class="pk-wrow" data-pk-row="%s"><span class="pk-wn">+%s%s</span><div><b>%s</b><p>%s</p><a class="pk-link" href="%s%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
-                 % (k, esc(eur(p)), '<span class="pk-wonce">%s</span>' % esc(u['once']) if k == 'recep' else '', esc(cap(u[k])), esc(W[k + '_d']), rel, W[k + '_href'], esc(W[k + '_more']), ARROW)
+    g2 = ''.join('<li class="pk-wrow" data-pk-row="%s"><span class="pk-wn">+%s%s</span><div><b>%s</b><p>%s</p><a class="pk-link" href="%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
+                 % (k, esc(eur(p)), '<span class="pk-wonce">%s</span>' % esc(u['once']) if k == 'recep' else '', esc(cap(u[k])), esc(W[k + '_d']), link(rel, W[k + '_href']), esc(W[k + '_more']), ARROW)
                  for k, p in (('chat', 50), ('recep', 150)))
     # naast de schaal: AI Consulting (€200 per maand) en EML AI Team (vanaf €3.500); het prijslabel staat boven de naam
-    g3 = ''.join('<li class="pk-wrow pk-wrow-side" data-pk-row="%s"><div><span class="pk-wn">%s</span><b>%s</b><p>%s</p><a class="pk-link" href="%s%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
-                 % (k, esc(u[lbl]), esc(u[k]), esc(W[k + '_d']), rel, W[k + '_href'], esc(W[k + '_more']), ARROW)
+    g3 = ''.join('<li class="pk-wrow pk-wrow-side" data-pk-row="%s"><div><span class="pk-wn">%s</span><b>%s</b><p>%s</p><a class="pk-link" href="%s">%s %s</a></div><em class="pk-tagx" hidden=""></em></li>'
+                 % (k, esc(u[lbl]), esc(u[k]), esc(W[k + '_d']), link(rel, W[k + '_href']), esc(W[k + '_more']), ARROW)
                  for k, lbl in (('cons', 'on_request'), ('eml', 'eml_from')))
     rules = ''.join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (esc(a), esc(b)) for a, b in RU['rows'])
     prices = ''.join('<li class="pk-pw" data-pk-pw="%d"><span class="pk-pw-win">%s</span><span class="pk-pw-t">%s</span><em class="pk-tagx" hidden="">%s</em></li>'
@@ -187,7 +192,7 @@ def body(L, lang, pre):
 <p class="pk-mono" data-pk-mono="">{esc(r['mono'])}</p>
 <div class="pk-alt" data-pk-alt=""></div>
 <p class="pk-ptxt" data-pk-ptxt=""></p>
-<a class="pk-link" data-pk-elink="" hidden="" href="{rel}{r['eml_href']}">{esc(r['eml_link'])} {ARROW}</a>
+<a class="pk-link" data-pk-elink="" hidden="" href="{link(rel, r['eml_href'])}">{esc(r['eml_link'])} {ARROW}</a>
 </div>
 <div class="pk-acts"><a class="btn pk-book" data-book="" href="{rel}Contact">{esc(r['book'])} {ARROW}</a><a class="btn-ghost pk-wa" data-pk-wa="" href="{wa_generic}" rel="noopener" target="_blank">{WA}{esc(r['wa'])}</a></div>
 <p class="pk-micro">{esc(r['book_micro'])} {esc(r['wa_micro'])}</p>

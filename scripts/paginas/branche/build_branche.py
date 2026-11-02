@@ -4,8 +4,9 @@
 #   website-voor-praktijken.html          <- praktijken.json
 # Metafoor: "Een dag in de zaak" (één tijdlijn van 8 tot 22 uur, dezelfde component met andere data per branche).
 # De <head> (laadscript, fonts-preload, #business-blok) komt uit het bestaande bestand; bestaat dat nog niet,
-# dan uit eml-ai-team.html (canonical, hreflang en og:url worden dan voor deze pagina gezet).
-# De inhoud komt uit <branche>.json + body.py. Model: scripts/paginas/eml-ai-team/build_eml.py.
+# dan uit website-voor-kappers.html, een andere branchepagina (canonical, hreflang en og:url worden dan voor
+# deze pagina gezet). Tot 2026-11-02 was dat eml-ai-team.html; die pagina staat nu op een eigen site.
+# De inhoud komt uit <branche>.json + body.py. Model: scripts/paginas/contact/build_contact.py.
 # Gebruik: py build_branche.py [schoonheid kappers praktijken]
 import io, re, json, html, sys, os
 
@@ -15,7 +16,7 @@ V_CSS = '20261019a'           # branche.css (de coördinator zet de ?v= in de in
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261016a'
 SITE = 'https://emlaunchpad.com/'
-TEMPLATE = 'eml-ai-team.html'
+TEMPLATE = 'website-voor-kappers.html'   # bron van de <head> voor een branchepagina die nog niet bestaat
 ALL = ['schoonheid', 'kappers', 'praktijken']
 
 
@@ -109,7 +110,7 @@ def head(L, s, fresh):
 def tail(footer):
     return f'''{footer}
 <script src="i18n.js?v=20261028a"></script>
-<script src="site.js?v=20261028a"></script>
+<script src="site.js?v=20261102a"></script>
 <script src="fx.js?v={V_FX}"></script>
 </body>
 </html>
