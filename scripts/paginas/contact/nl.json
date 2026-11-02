@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "Contact: plan een gratis demo | EM Launchpad",
+    "desc": "Bel, mail of WhatsApp EM Launchpad in Vechmaal (Heers), Limburg. Of plan meteen een gratis demo van 30 minuten via Teams, zonder verplichtingen.",
+    "ogtitle": "Contact: plan een gratis demo"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {"p": 0, "ax": 80, "ay": 30, "bx": 8, "by": 96, "ao": 0.9, "bo": 0.45},
+    {"p": 0.35, "ax": 22, "ay": 44, "bx": 86, "by": 66, "ao": 0.65, "bo": 0.7},
+    {"p": 0.7, "ax": 80, "ay": 60, "bx": 18, "by": 30, "ao": 0.75, "bo": 0.6},
+    {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}
+  ],
+  "hero": {
+    "crumb_home": "Home",
+    "crumb": "Contact",
+    "eyebrow": "Contact",
+    "h1a": "Laten we",
+    "h1b": "praten.",
+    "lede": "Een vraag? Een project? Of gewoon even kennismaken? Je bereikt ons rechtstreeks: geen ticketsysteem, geen wachtrijen.",
+    "wegen_label": "Kies wat voor jou werkt",
+    "wegen": [
+      {"icon": "tel", "k": "Bellen", "v": "+32 476 01 54 51", "n": "Snelste manier om antwoord te krijgen. We nemen zelf op.", "go": "Bel nu", "href": "tel:+32476015451"},
+      {"icon": "wa", "k": "WhatsApp", "v": "Stuur een berichtje", "n": "We antwoorden zo snel we kunnen, op werkdagen meestal dezelfde dag.", "go": "Open chat", "href": "https://wa.me/32476015451"},
+      {"icon": "mail", "k": "E-mail", "v": "ebert@emlaunchpad.com", "n": "Liever schrijven? Mail ons direct.", "go": "Mail ons", "href": "mailto:ebert@emlaunchpad.com"},
+      {"icon": "demo", "k": "Gratis demo", "v": "Plan een gratis demo", "n": "30 minuten via Teams of telefoon. Kies zelf je moment in onze agenda.", "go": "Open agenda", "href": "Contact", "book": true}
+    ],
+    "snel": "Bellen of WhatsApp gaat het snelst.",
+    "nap": {
+      "adres_k": "Adres",
+      "adres": "Brugstraat 2A, 3870 Vechmaal",
+      "adres_s": "Heers, Limburg · Actief in heel België",
+      "streek": "Onze klanten in Limburg, per streek",
+      "streek_href": "website-laten-maken-limburg",
+      "btw_k": "Btw-nummer",
+      "btw": "BE1024.977.818",
+      "btw_s": "EM Launchpad, Belgisch bedrijf"
+    },
+    "foto": {
+      "src720": "assets/hero-werkplek-720.webp",
+      "src1086": "assets/hero-werkplek-1086.webp",
+      "sizes": "(max-width: 999px) calc(100vw - 32px), 440px",
+      "sizes_desk": "440px",
+      "alt": "Werkplek onder een schuin houten dak: iemand werkt achter twee schermen, met uitzicht op het dorp",
+      "label": "Onze werkplek",
+      "tekst": "Elke weg komt bij ons uit."
+    }
+  },
+  "bericht": {
+    "eyebrow": "Bericht",
+    "h2a": "Stuur ons een",
+    "h2b": "bericht.",
+    "sub": "Vul het formulier in. Zo gaat het daarna verder:",
+    "stappen": [
+      {"t": "Je bericht", "d": "Komt rechtstreeks bij ons binnen, niet in een ticketsysteem."},
+      {"t": "Ons antwoord", "d": "Zo snel we kunnen, op werkdagen meestal dezelfde dag."},
+      {"t": "Gratis demo", "d": "Wil je verder? Dan kies je een moment voor een gratis demo van 30 minuten via Teams, zonder verplichtingen."}
+    ],
+    "form": {"id": "txKMoCdzSgIb1y8i74Yj", "name": "Website Form ", "height": "620", "title": "Contactformulier"},
+    "note": "Formulier laadt niet? Mail ons direct op"
+  },
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Goed om",
+    "h2b": "te weten.",
+    "items": [
+      {"q": "Hoe snel krijg ik antwoord?", "a": "We antwoorden zo snel we kunnen, op werkdagen meestal dezelfde dag. Bellen of WhatsApp gaat het snelst."},
+      {"q": "Krijg ik direct een offerte?", "a": "Onze prijzen staan gewoon [op de site](Diensten). Online groeien kost €150 per maand en AI Consulting €200 per maand (introductieprijs), allebei excl. btw en maandelijks opzegbaar. In een gratis demo van 30 minuten bekijken we wat jouw zaak nodig heeft. Voor [EML AI Team](eml-ai-team) starten we altijd met een gratis analyse."},
+      {"q": "Kunnen we ergens fysiek afspreken?", "a": "We werken volledig online. De gratis demo doen we via Teams: 30 minuten, zonder dat je je moet verplaatsen. Daarna regelen we alles op afstand."},
+      {"q": "Werken jullie ook met startups?", "a": "Ja. Online groeien (€150 per maand, excl. btw) is er voor elke zaak die online gevonden wil worden en klanten wil opvolgen, ook als je net start. Wil je zelf leren werken met AI, dan is er AI Consulting. Voor grotere bedrijven met een team is er EML AI Team."}
+    ]
+  },
+  "cta": {
+    "h2a": "Geen tijd om te wachten?",
+    "h2b": "Plan direct een gratis demo.",
+    "text": "Kies zelf een moment in onze agenda. 30 minuten via Teams, zonder verplichtingen.",
+    "btn": "Plan een gratis demo"
+  }
+}

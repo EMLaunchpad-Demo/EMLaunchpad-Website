@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Contact : planifiez une démo gratuite | EM Launchpad",
+    "desc": "Appelez, écrivez ou envoyez un WhatsApp à EM Launchpad à Vechmaal (Heers), Limbourg. Ou planifiez une démo gratuite de 30 minutes via Teams.",
+    "ogtitle": "Contact : planifiez une démo gratuite"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {"p": 0, "ax": 80, "ay": 30, "bx": 8, "by": 96, "ao": 0.9, "bo": 0.45},
+    {"p": 0.35, "ax": 22, "ay": 44, "bx": 86, "by": 66, "ao": 0.65, "bo": 0.7},
+    {"p": 0.7, "ax": 80, "ay": 60, "bx": 18, "by": 30, "ao": 0.75, "bo": 0.6},
+    {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}
+  ],
+  "hero": {
+    "crumb_home": "Accueil",
+    "crumb": "Contact",
+    "eyebrow": "Contact",
+    "h1a": "Et si on",
+    "h1b": "discutait ?",
+    "lede": "Une question ? Un projet ? Ou simplement faire connaissance ? Vous nous joignez directement : pas de système de tickets, pas de files d’attente.",
+    "wegen_label": "Choisissez ce qui vous convient",
+    "wegen": [
+      {"icon": "tel", "k": "Téléphone", "v": "+32 476 01 54 51", "n": "Le moyen le plus rapide d’avoir une réponse. Nous décrochons nous-mêmes.", "go": "Appeler", "href": "tel:+32476015451"},
+      {"icon": "wa", "k": "WhatsApp", "v": "Envoyez un message", "n": "Nous répondons le plus vite possible, en général le jour même en semaine.", "go": "Ouvrir le chat", "href": "https://wa.me/32476015451"},
+      {"icon": "mail", "k": "E-mail", "v": "ebert@emlaunchpad.com", "n": "Vous préférez écrire ? Écrivez-nous directement.", "go": "Écrivez-nous", "href": "mailto:ebert@emlaunchpad.com"},
+      {"icon": "demo", "k": "Démo gratuite", "v": "Planifiez une démo gratuite", "n": "30 minutes via Teams ou par téléphone. Choisissez votre créneau dans notre agenda.", "go": "Ouvrir l’agenda", "href": "Contact", "book": true}
+    ],
+    "snel": "Le téléphone ou WhatsApp est le plus rapide.",
+    "nap": {
+      "adres_k": "Adresse",
+      "adres": "Brugstraat 2A, 3870 Vechmaal",
+      "adres_s": "Heers, Limbourg · Actifs dans toute la Belgique",
+      "btw_k": "Numéro de TVA",
+      "btw": "BE1024.977.818",
+      "btw_s": "EM Launchpad, entreprise belge"
+    },
+    "foto": {
+      "src720": "assets/hero-werkplek-720.webp",
+      "src1086": "assets/hero-werkplek-1086.webp",
+      "sizes": "(max-width: 999px) calc(100vw - 32px), 440px",
+      "sizes_desk": "440px",
+      "alt": "Espace de travail sous un toit en bois incliné : quelqu’un travaille devant deux écrans, avec vue sur le village",
+      "label": "Notre espace de travail",
+      "tekst": "Tous les chemins mènent à nous."
+    }
+  },
+  "bericht": {
+    "eyebrow": "Message",
+    "h2a": "Envoyez-nous un",
+    "h2b": "message.",
+    "sub": "Remplissez le formulaire. Voici la suite :",
+    "stappen": [
+      {"t": "Votre message", "d": "Arrive directement chez nous, pas dans un système de tickets."},
+      {"t": "Notre réponse", "d": "Le plus vite possible, en général le jour même en semaine."},
+      {"t": "Démo gratuite", "d": "Vous voulez aller plus loin ? Choisissez alors un créneau pour une démo gratuite de 30 minutes via Teams, sans engagement."}
+    ],
+    "form": {"id": "pvTdNWo8nWRn98JyYsmK", "name": "Website Form  - FR", "height": "620", "title": "Formulaire de contact"},
+    "note": "Le formulaire ne charge pas ? Écrivez-nous directement à"
+  },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "h2a": "Bon à",
+    "h2b": "savoir.",
+    "items": [
+      {"q": "En combien de temps ai-je une réponse ?", "a": "Nous répondons le plus vite possible, en général le jour même en semaine. Le téléphone ou WhatsApp est le plus rapide."},
+      {"q": "Ai-je un devis tout de suite ?", "a": "Nos prix figurent simplement [sur le site](Diensten). Croissance en ligne coûte 150 € par mois et le Consulting IA 200 € par mois (prix d’introduction), tous deux HTVA et résiliables chaque mois. Lors d’une démo gratuite de 30 minutes, nous regardons ce dont votre entreprise a besoin. Pour [EML AI Team](eml-ai-team), nous commençons toujours par une analyse gratuite."},
+      {"q": "Peut-on se rencontrer physiquement ?", "a": "Nous travaillons entièrement en ligne. La démo gratuite se fait via Teams : 30 minutes, sans devoir vous déplacer. Ensuite, nous gérons tout à distance."},
+      {"q": "Travaillez-vous aussi avec des startups ?", "a": "Oui. Croissance en ligne (150 € par mois HTVA) s’adresse à toute entreprise qui veut être trouvée en ligne et suivre ses clients, même si vous débutez. Vous voulez apprendre à travailler avec l’IA ? Il y a le Consulting IA. Pour les entreprises plus grandes avec une équipe, il y a EML AI Team."}
+    ]
+  },
+  "cta": {
+    "h2a": "Pas le temps d’attendre ?",
+    "h2b": "Planifiez tout de suite une démo gratuite.",
+    "text": "Choisissez un créneau dans notre agenda. 30 minutes via Teams, sans engagement.",
+    "btn": "Planifier une démo gratuite"
+  }
+}

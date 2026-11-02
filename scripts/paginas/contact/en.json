@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Contact: book a free demo | EM Launchpad",
+    "desc": "Call, email or WhatsApp EM Launchpad in Vechmaal (Heers), Limburg. Or book a free 30-minute demo via Teams right away, with no obligation.",
+    "ogtitle": "Contact: book a free demo"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {"p": 0, "ax": 80, "ay": 30, "bx": 8, "by": 96, "ao": 0.9, "bo": 0.45},
+    {"p": 0.35, "ax": 22, "ay": 44, "bx": 86, "by": 66, "ao": 0.65, "bo": 0.7},
+    {"p": 0.7, "ax": 80, "ay": 60, "bx": 18, "by": 30, "ao": 0.75, "bo": 0.6},
+    {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}
+  ],
+  "hero": {
+    "crumb_home": "Home",
+    "crumb": "Contact",
+    "eyebrow": "Contact",
+    "h1a": "Let's",
+    "h1b": "talk.",
+    "lede": "A question? A project? Or just want to say hello? You can reach us directly: no ticket system, no queues.",
+    "wegen_label": "Choose what works for you",
+    "wegen": [
+      {"icon": "tel", "k": "Call", "v": "+32 476 01 54 51", "n": "The quickest way to get an answer. We pick up the phone ourselves.", "go": "Call now", "href": "tel:+32476015451"},
+      {"icon": "wa", "k": "WhatsApp", "v": "Send a message", "n": "We reply as fast as we can, usually the same day on working days.", "go": "Open chat", "href": "https://wa.me/32476015451"},
+      {"icon": "mail", "k": "Email", "v": "ebert@emlaunchpad.com", "n": "Rather write? Email us directly.", "go": "Email us", "href": "mailto:ebert@emlaunchpad.com"},
+      {"icon": "demo", "k": "Free demo", "v": "Book a free demo", "n": "30 minutes via Teams or by phone. Pick your slot in our calendar.", "go": "Open calendar", "href": "Contact", "book": true}
+    ],
+    "snel": "Calling or WhatsApp is quickest.",
+    "nap": {
+      "adres_k": "Address",
+      "adres": "Brugstraat 2A, 3870 Vechmaal",
+      "adres_s": "Heers, Limburg · Active across Belgium",
+      "btw_k": "VAT number",
+      "btw": "BE1024.977.818",
+      "btw_s": "EM Launchpad, Belgian company"
+    },
+    "foto": {
+      "src720": "assets/hero-werkplek-720.webp",
+      "src1086": "assets/hero-werkplek-1086.webp",
+      "sizes": "(max-width: 999px) calc(100vw - 32px), 440px",
+      "sizes_desk": "440px",
+      "alt": "Workspace under a sloping wooden roof: someone working at two screens, with a view of the village",
+      "label": "Our workspace",
+      "tekst": "Every road leads to us."
+    }
+  },
+  "bericht": {
+    "eyebrow": "Message",
+    "h2a": "Send us a",
+    "h2b": "message.",
+    "sub": "Fill in the form. This is what happens next:",
+    "stappen": [
+      {"t": "Your message", "d": "Comes straight to us, not into a ticket system."},
+      {"t": "Our reply", "d": "As fast as we can, usually the same day on working days."},
+      {"t": "Free demo", "d": "Want to take it further? Then pick a slot for a free 30-minute demo via Teams, with no obligation."}
+    ],
+    "form": {"id": "55RHuAILHKuSbQsAKrnM", "name": "Website Form - EN", "height": "619", "title": "Contact form"},
+    "note": "Form not loading? Email us directly at"
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "h2a": "Good to",
+    "h2b": "know.",
+    "items": [
+      {"q": "How fast do I get a reply?", "a": "We reply as fast as we can, usually the same day on working days. Calling or WhatsApp is quickest."},
+      {"q": "Do I get a quote right away?", "a": "Our prices are simply [on the site](Diensten). Online Growth costs €150 a month and AI Consulting €200 a month (introductory price), both excl. VAT and cancellable monthly. In a free 30-minute demo we look at what your business needs. For [EML AI Team](eml-ai-team) we always start with a free analysis."},
+      {"q": "Can we meet in person somewhere?", "a": "We work fully online. We do the free demo via Teams: 30 minutes, without you having to travel. After that, we handle everything remotely."},
+      {"q": "Do you work with startups too?", "a": "Yes. Online Growth (€150 a month, excl. VAT) is there for every business that wants to be found online and follow up its customers, even if you're just starting out. Want to learn to work with AI yourself? Then there's AI Consulting. For larger businesses with a team, there's EML AI Team."}
+    ]
+  },
+  "cta": {
+    "h2a": "No time to wait?",
+    "h2b": "Book a free demo right away.",
+    "text": "Pick a slot in our calendar. 30 minutes via Teams, with no obligation.",
+    "btn": "Book a free demo"
+  }
+}
