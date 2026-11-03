@@ -5,10 +5,14 @@
 //   _redirects blijven werken. Bestanden die bestaan, worden zoals altijd rechtstreeks geserveerd, zonder het script.
 // - ratelimits: max. 8 scans per minuut per IP (per Cloudflare-locatie). namespace_id is een vrij gekozen nummer,
 //   geen geheim. Geen sleutels of tokens nodig.
+// - global_fetch_strictly_public: fetch() van de scan gaat altijd via het publieke internet, zoals een gewone bezoeker.
+//   Zonder deze vlag geeft een scan van emlaunchpad.com zelf een fout (522: een Worker kan zijn eigen domein niet
+//   ophalen) en gaan verzoeken naar onze eigen zone rechtstreeks naar de origin, langs de beveiliging van Cloudflare heen.
 // Uitleg: README.md, deel "Gratis website scan".
 {
   "name": "emlaunchpad-website",
   "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["global_fetch_strictly_public"],
   "main": "worker/index.js",
   "observability": {
     "enabled": true

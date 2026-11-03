@@ -51,6 +51,9 @@ wil zien, vult een formulier van ons platform in: dat wordt een lead voor Ebert.
 - User-Agent: `EMLaunchpadScan/1.0 (+https://emlaunchpad.com/gratis-website-scan)`.
 - Per IP-adres: 8 scans per minuut, via de Rate Limiting-binding `SCAN_LIMIT` in `wrangler.jsonc`
   (namespace `1103`). Zonder binding (lokaal) telt de Worker zelf per isolate.
+- Compatibiliteitsvlag `global_fetch_strictly_public`: elk verzoek van de scan gaat via het publieke internet, zoals
+  een gewone bezoeker. Zonder die vlag lukt een scan van emlaunchpad.com zelf niet (522) en zouden verzoeken naar
+  onze eigen zone rechtstreeks naar de origin gaan.
 - `run_worker_first: ["/api/*"]`: alleen `/api/*` gaat eerst langs de Worker. De rest blijft gewoon statisch,
   dus `_redirects`, de 404-pagina en de nette URL's werken zoals voorheen.
 
