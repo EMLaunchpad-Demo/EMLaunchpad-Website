@@ -450,7 +450,11 @@ export function analyse(raw, ctx) {
     const c = maak('compressie', 'snelheid', 2, 'Compressie',
       'Met compressie (gzip of Brotli) stuurt je server de pagina kleiner door. Dat scheelt laadtijd.',
       'Zet gzip- of Brotli-compressie aan bij je hosting. Bij de meeste hostingpartijen is dat een instelling.');
+    // Een site achter Cloudflare stuurt naar onze scan (zelf een Cloudflare Worker) geen gecomprimeerde versie,
+    // maar Cloudflare comprimeert HTML standaard voor browsers. Dan zeggen we dat, in plaats van "geen compressie".
+    const viaCloudflare = /cloudflare/i.test(ctx.headers.get('server') || '') || !!ctx.headers.get('cf-ray');
     if (/br|gzip|zstd|deflate/.test(enc)) out.push(c('goed', `Aan (${enc === 'br' ? 'Brotli' : enc}).`));
+    else if (viaCloudflare) out.push(c('goed', 'Je site loopt via Cloudflare, dat je pagina standaard comprimeert voor browsers.'));
     else out.push(c('beter', 'We zagen geen compressie.'));
   }
 
