@@ -13,7 +13,7 @@
 # Daarna de pagina's met een bouwscript opnieuw bouwen en redirects.py draaien (zie de stappen in de oplevering).
 import os, re, sys, urllib.request
 
-EML_SITE = 'https://NIEUW-EML-AI-TEAM-DOMEIN'
+EML_SITE = 'https://emlteam.eu'
 
 # De tijdelijke waarde, in twee stukken, zodat dit script ze bij het vervangen niet zelf kwijtraakt.
 TIJDELIJK = 'https://' + 'NIEUW-EML-AI-TEAM-DOMEIN'

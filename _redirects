@@ -426,15 +426,15 @@
 /lokaal/ai-willebroek /Websites 301
 /lokaal/ai-willebroek.html /Websites 301
 /lokaal/ai-willebroek/ /Websites 301
-/eml-ai-team https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/eml-ai-team.html https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/eml-ai-team/ https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/en/eml-ai-team https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/en/eml-ai-team.html https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/en/eml-ai-team/ https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/fr/eml-ai-team https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/fr/eml-ai-team.html https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
-/fr/eml-ai-team/ https://NIEUW-EML-AI-TEAM-DOMEIN/ 301
+/eml-ai-team https://emlteam.eu/ 301
+/eml-ai-team.html https://emlteam.eu/ 301
+/eml-ai-team/ https://emlteam.eu/ 301
+/en/eml-ai-team https://emlteam.eu/ 301
+/en/eml-ai-team.html https://emlteam.eu/ 301
+/en/eml-ai-team/ https://emlteam.eu/ 301
+/fr/eml-ai-team https://emlteam.eu/ 301
+/fr/eml-ai-team.html https://emlteam.eu/ 301
+/fr/eml-ai-team/ https://emlteam.eu/ 301
 # Oude blog-URL's van de vorige site en de oude map /lokaal/ (dynamische regels komen na de statische).
 /post/* /emtimes/ 301
 /hoe-ai-de-wereld-zal-veranderen/* /emtimes/ 301
