@@ -129,7 +129,7 @@
       "extra": "Wil je dat klanten ook een moment kunnen boeken, zoals bij een kliniek of een sauna? Dat kan binnen hetzelfde pakket. Een AI-chatbot kost €50 per maand extra. Alles excl. btw.",
       "links": [
         {"label": "Bekijk wat er in elk pakket zit", "href": "Diensten"},
-        {"label": "Welk pakket? De pakketkiezer helpt", "href": "Pakketkiezer"}
+        {"label": "Welk pakket? De pakketkiezer helpt", "href": "Pakketkiezer"}, {"label": "Check je huidige site met de gratis website scan", "href": "gratis-website-scan"}
       ]
     },
     {

@@ -714,6 +714,7 @@
   "reload": "Herlaad en meet opnieuw",
   "foot": "Gemeten in je eigen browser, met de meetpunten die Google gebruikt voor snelheid en stabiliteit. Er gaat niets naar ons of naar iemand anders. Een ander toestel of een andere verbinding geeft andere cijfers. De grenzen komen van Google (web.dev).",
   "slot": "emlaunchpad.com is drietalig, en we bouwden het zelf. Met dezelfde zorg bouwen we de jouwe.",
+  "scan": {"tekst": "Benieuwd hoe je eigen site het doet?", "t": "Doe de gratis website scan", "href": "gratis-website-scan"},
   "sr": "Deze pagina stond er bij jou na {x}.",
   "chip": "Deze pagina stond er bij jou na {x}"
  },

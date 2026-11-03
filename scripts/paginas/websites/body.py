@@ -255,6 +255,7 @@ def body(L, lang, pre):
 <p class="ws-verdict" data-ws-verdict="">{esc(mt['wait'])}</p>
 <button class="ws-pbtn ws-reload" data-ws-reload="" type="button">{AGAIN}<span>{esc(mt['reload'])}</span></button>
 <p class="ws-note-s">{esc(mt['foot'])}</p>
+{('<p class="ws-note-s ws-scanlink">%s <a href="%s">%s</a></p>' % (esc(mt['scan']['tekst']), attr(mt['scan']['href']), esc(mt['scan']['t']))) if mt.get('scan') else ''}
 </div>
 <div class="ws-meet-r">
 <dl class="ws-rulers" data-ws-rulers="">{rows}</dl>

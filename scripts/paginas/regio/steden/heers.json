@@ -139,7 +139,7 @@
       "extra": "Wil je dat vragen ook 's avonds een antwoord krijgen? Een AI-chatbot kost €50 per maand bovenop het pakket. Alle prijzen excl. btw.",
       "links": [
         {"label": "Alles wat in Online groeien zit", "href": "Diensten"},
-        {"label": "Zoek je pakket met de pakketkiezer", "href": "Pakketkiezer"}
+        {"label": "Zoek je pakket met de pakketkiezer", "href": "Pakketkiezer"}, {"label": "Check je huidige site met de gratis website scan", "href": "gratis-website-scan"}
       ]
     },
     {

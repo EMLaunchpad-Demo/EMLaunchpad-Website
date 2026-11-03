@@ -97,9 +97,9 @@ def tail(pre, footer='<div id="footer-mount"></div>'):
     # form_embed.js van het formulier blijft vooraan, zoals op de vorige versie van de pagina
     return f'''{footer}
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-<script src="{pre}i18n.js?v=20261028a"></script>
+<script src="{pre}i18n.js?v=20261103a"></script>
 <script src="{pre}i18n-pages.js?v=20261028a"></script>
-<script src="{pre}site.js?v=20261102a"></script>
+<script src="{pre}site.js?v=20261103a"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}contact.js?v={V_JS}"></script>
 </body>

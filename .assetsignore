@@ -11,3 +11,5 @@ node_modules
 scripts
 *.py
 *.md
+worker
+controle

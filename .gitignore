@@ -9,3 +9,6 @@ __pycache__/
 
 # Lokale wrangler dev (test van _headers en _redirects)
 .wrangler/
+
+# Controlebeelden en metingen (lokaal, niet in git en niet online)
+controle/

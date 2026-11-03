@@ -143,7 +143,7 @@
    {"q": "Wat als ik stop?", "a": "Je zegt maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou, je klantenlijst inbegrepen."}
   ],
   "meer_label": "Lees ook:",
-  "meer": [{"t": "Alle diensten en prijzen", "href": "Diensten"}, {"t": "Pakketkiezer", "href": "Pakketkiezer"}, {"t": "Gratis demo", "href": "Gratis%20Demo"}, {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"}, {"t": "AI-automatisering", "href": "AI-Automatisering"}]
+  "meer": [{"t": "Alle diensten en prijzen", "href": "Diensten"}, {"t": "Pakketkiezer", "href": "Pakketkiezer"}, {"t": "Gratis demo", "href": "Gratis%20Demo"}, {"t": "Gratis website scan", "href": "gratis-website-scan"}, {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"}, {"t": "AI-automatisering", "href": "AI-Automatisering"}]
  },
  "cta": {
   "h2a": "Zien hoe boeken per kapper",

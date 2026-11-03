@@ -113,7 +113,7 @@ document.documentElement.classList.add('js');
             <div class="foot-links">
               <a href="${P}Diensten#pakket-1">online groeien</a><a href="${P}Diensten#pakket-2">ai consulting</a>
               <a href="${P}AI%20Chatbots">ai chatbots</a><a href="${P}AI%20Voice%20Agents">ai voice agents</a>
-              <a href="${P}Websites">websites</a><a href="${P}AI-Automatisering">ai-automatisering</a><a href="${P}Afsprakensysteem">online afspraken</a>
+              <a href="${P}Websites">websites</a><a href="${P}AI-Automatisering">ai-automatisering</a><a href="${P}Afsprakensysteem">online afspraken</a><a href="${B}gratis-website-scan"${_HLNL}>gratis website scan</a>
               <a href="${P}Diensten#pakket-1">reputatiebeheer</a><a href="${P}Diensten#pakket-1">crm &amp; dashboard</a>
               <a href="${P}Diensten#pakket-1">e-mailcampagnes</a><a href="${P}Diensten#pakket-1">landingspagina's</a>
             </div>

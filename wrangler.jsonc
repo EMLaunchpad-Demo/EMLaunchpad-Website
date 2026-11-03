@@ -1,14 +1,29 @@
-// Cloudflare Workers: statische site uit de hoofdmap van deze repo.
-// Zelfde instellingen als de config die Cloudflare automatisch aanmaakte,
-// plus not_found_handling: onbekende adressen tonen 404.html (status 404).
+// Cloudflare Workers: statische site uit de hoofdmap van deze repo, plus één klein script voor de gratis website scan.
+// - assets: zoals voorheen; not_found_handling: onbekende adressen tonen 404.html (status 404).
+// - main: worker/index.js. Het draait alleen voor /api/* (run_worker_first) en voor adressen die geen bestand zijn;
+//   die laatste geeft het script meteen door aan de assets (env.ASSETS), zodat de 404-pagina, de nette URL's en
+//   _redirects blijven werken. Bestanden die bestaan, worden zoals altijd rechtstreeks geserveerd, zonder het script.
+// - ratelimits: max. 8 scans per minuut per IP (per Cloudflare-locatie). namespace_id is een vrij gekozen nummer,
+//   geen geheim. Geen sleutels of tokens nodig.
+// Uitleg: README.md, deel "Gratis website scan".
 {
   "name": "emlaunchpad-website",
   "compatibility_date": "2026-10-01",
+  "main": "worker/index.js",
   "observability": {
     "enabled": true
   },
   "assets": {
     "directory": ".",
-    "not_found_handling": "404-page"
-  }
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "ratelimits": [
+    {
+      "name": "SCAN_LIMIT",
+      "namespace_id": "1103",
+      "simple": { "limit": 8, "period": 60 }
+    }
+  ]
 }

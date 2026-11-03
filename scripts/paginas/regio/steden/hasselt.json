@@ -220,6 +220,10 @@
         {
           "label": "Welk pakket past? Doe de pakketkiezer",
           "href": "Pakketkiezer"
+        },
+        {
+          "label": "Check je huidige site met de gratis website scan",
+          "href": "gratis-website-scan"
         }
       ]
     },

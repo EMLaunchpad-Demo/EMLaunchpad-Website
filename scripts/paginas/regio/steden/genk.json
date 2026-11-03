@@ -150,7 +150,7 @@
       "extra": "Mis je toch veel telefoontjes terwijl je met een klant bezig bent? Een AI-receptioniste neemt op voor €750 eenmalig en €150 per maand, met 300 belminuten inbegrepen. Prijzen excl. btw.",
       "links": [
         {"label": "Diensten en prijzen", "href": "Diensten"},
-        {"label": "Kies je pakket met de pakketkiezer", "href": "Pakketkiezer"}
+        {"label": "Kies je pakket met de pakketkiezer", "href": "Pakketkiezer"}, {"label": "Check je huidige site met de gratis website scan", "href": "gratis-website-scan"}
       ]
     },
     {

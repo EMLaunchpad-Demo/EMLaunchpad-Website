@@ -153,7 +153,7 @@
         "Mailcampagnes, en het beheer van alles door ons"
       ],
       "extra": "Wil je er iets bij? Een AI-chatbot die vragen beantwoordt, kost €50 per maand extra. Een AI-receptioniste die je telefoon opneemt, kost eenmalig €750 en daarna €150 per maand, met 300 belminuten. Alle prijzen excl. btw.",
-      "links": [{"label": "Alle diensten en prijzen", "href": "Diensten"}, {"label": "Twijfel je? Doe de pakketkiezer", "href": "Pakketkiezer"}]
+      "links": [{"label": "Alle diensten en prijzen", "href": "Diensten"}, {"label": "Twijfel je? Doe de pakketkiezer", "href": "Pakketkiezer"}, {"label": "Check je huidige site met de gratis website scan", "href": "gratis-website-scan"}]
     },
     {
       "type": "steden",

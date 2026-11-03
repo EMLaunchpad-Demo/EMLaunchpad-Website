@@ -129,7 +129,7 @@
       "extra": "Wil je toch ook afspraken laten boeken of online laten betalen? Dat kan binnen hetzelfde pakket. Een AI-chatbot die vragen beantwoordt, komt erbij voor €50 per maand. Prijzen excl. btw.",
       "links": [
         {"label": "Wat er nog in Online groeien zit", "href": "Diensten"},
-        {"label": "Vind je pakket met de pakketkiezer", "href": "Pakketkiezer"}
+        {"label": "Vind je pakket met de pakketkiezer", "href": "Pakketkiezer"}, {"label": "Check je huidige site met de gratis website scan", "href": "gratis-website-scan"}
       ]
     },
     {

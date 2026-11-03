@@ -40,7 +40,11 @@ const VOOR_WIE = [
   ["website-voor-praktijken", "Website voor praktijken"],
   ["website-laten-maken-limburg", "Website laten maken in Limburg"],
 ];
-const voorWie = () => VOOR_WIE.filter(([slug]) => existsSync(path.join(ROOT, `${slug}.html`)));
+/** Hulpmiddelen die alleen in het Nederlands bestaan (sinds 2026-11-03: de gratis website scan). Zelfde regels als Voor wie. */
+const NL_TOOLS = [
+  ["gratis-website-scan", "Gratis website scan"],
+];
+const voorWie = () => [...VOOR_WIE, ...NL_TOOLS].filter(([slug]) => existsSync(path.join(ROOT, `${slug}.html`)));
 const LANG_NAMES = { nl: "Nederlands", en: "English", fr: "Français" };
 /** NAP (naam, adres, telefoon) zoals in de footer van site.js; zo staat het ook zonder JavaScript op elke pagina. */
 const NAP = { name: "EM Launchpad", street: "Brugstraat 2A", postal: "3870", city: "Vechmaal", tel: "+32 476 01 54 51", telHref: "+32476015451", email: "ebert@emlaunchpad.com" };

@@ -146,7 +146,7 @@
    {"q": "Wat als ik stop?", "a": "Online groeien zeg je maandelijks op. We dragen alles aan je over: je website en al je gegevens gaan naar jou. Ook je klantenlijst blijft dus van jou."}
   ],
   "meer_label": "Lees ook:",
-  "meer": [{"t": "Alle diensten en prijzen", "href": "Diensten"}, {"t": "Pakketkiezer", "href": "Pakketkiezer"}, {"t": "Gratis demo", "href": "Gratis%20Demo"}, {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"}, {"t": "Portfolio", "href": "Portfolio"}]
+  "meer": [{"t": "Alle diensten en prijzen", "href": "Diensten"}, {"t": "Pakketkiezer", "href": "Pakketkiezer"}, {"t": "Gratis demo", "href": "Gratis%20Demo"}, {"t": "Gratis website scan", "href": "gratis-website-scan"}, {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"}, {"t": "Portfolio", "href": "Portfolio"}]
  },
  "cta": {
   "h2a": "Benieuwd hoe dat eruitziet",

@@ -1,0 +1,121 @@
+{
+  "slug": "gratis-website-scan",
+  "fallback": "Websites.html",
+  "meta": {
+    "title": "Gratis website scan en SEO check | EM Launchpad",
+    "desc": "Gratis website scan en SEO check: zie meteen hoe je site scoort op vindbaarheid in Google, snelheid, gsm, veiligheid en klanten. Zonder account.",
+    "ogtitle": "Gratis website scan: hoe scoort jouw site? | EM Launchpad",
+    "ogimage": "assets/og-website-scan.png",
+    "app": "Gratis website scan van EM Launchpad",
+    "appdesc": "Online tool die één webpagina controleert op vindbaarheid in Google (SEO), snelheid, gebruik op de gsm, veiligheid en contactmogelijkheden, met uitleg in gewone woorden."
+  },
+  "skyKeys": [
+    {"p": 0, "ax": 22, "ay": 30, "bx": 82, "by": 88, "ao": 0.8, "bo": 0.45},
+    {"p": 0.35, "ax": 74, "ay": 42, "bx": 18, "by": 72, "ao": 0.6, "bo": 0.65},
+    {"p": 0.7, "ax": 26, "ay": 60, "bx": 76, "by": 30, "ao": 0.65, "bo": 0.6},
+    {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}
+  ],
+  "form": {
+    "ghl_form_id": "r5N5NSQ8ocdaCAHLXIPh",
+    "ghl_form_name": "Website scan · Verbeterplan",
+    "query": {"url": "website_scan_url", "score": "website_scan_score", "samenvatting": "website_scan_samenvatting"}
+  },
+  "hero": {
+    "crumb": "Gratis website scan",
+    "eyebrow": "Gratis website scan",
+    "h1a": "Gratis website scan:",
+    "h1b": "hoe scoort jouw site?",
+    "lede": "Geef je webadres in en zie meteen hoe je site scoort: vindbaar in Google (SEO), snelheid, gsm, veiligheid en hoe makkelijk klanten je bereiken. Meer dan 30 punten, met uitleg in gewone woorden.",
+    "label": "Adres van je website",
+    "placeholder": "jouwzaak.be",
+    "knop": "Scan mijn site",
+    "bezig": "Bezig met scannen",
+    "noot": "Gratis en zonder account. We halen alleen je startpagina op (en waar nodig je contact- of boekingspagina), zoals een zoekmachine dat doet. We bewaren je adres en het resultaat niet, tenzij je zelf je verbeterplan aanvraagt.",
+    "noscript": "Voor de scan heb je JavaScript nodig. Zet het aan in je browser, of plan een gratis gesprek: dan bekijken we je site samen.",
+    "feiten": ["Meer dan 30 punten", "Meestal klaar in enkele seconden", "Uitleg in gewone woorden"],
+    "voorbeeld": {
+      "tag": "Voorbeeld",
+      "titel": "Zo ziet je rapport eruit",
+      "score": 68,
+      "label": "Goed op weg, maar je laat punten liggen.",
+      "cats": [["Vindbaar in Google", 74], ["Klanten binnenhalen", 55], ["Snelheid", 81], ["Op de gsm", 88], ["Veiligheid en vertrouwen", 57]],
+      "noot": "Een voorbeeld, geen echte site."
+    }
+  },
+  "rapport": {
+    "kop": "Je rapport",
+    "opnieuw": "Scan een andere site",
+    "legende": [["goed", "Goed"], ["beter", "Kan beter"], ["slecht", "Probleem"], ["info", "Niet meegeteld"]],
+    "uitleg_knop": "Waarom dit telt",
+    "jsnoot": "Je site toont een deel van haar inhoud pas met JavaScript. Onze scan leest de pagina zoals je server ze doorstuurt, dus sommige punten (zoals een telefoonnummer of formulier) kunnen we dan missen.",
+    "plan_kop": "Je verbeterplan",
+    "plan_lede": "Alles wat beter kan, op volgorde van belang: eerst de problemen, dan wat beter kan. Per punt staat erbij wat je eraan kunt doen.",
+    "plan_slot": "Vul je gegevens in en je ziet meteen per punt wat je eraan kunt doen. Je krijgt het plan ook per mail, zodat je het kunt doorsturen naar wie je site beheert.",
+    "plan_knop": "Toon mijn verbeterplan",
+    "plan_verborgen": "Zit in je verbeterplan",
+    "plan_klaar": "Bedankt. Je verbeterplan staat hieronder en komt ook in je mailbox.",
+    "plan_leeg": "Mooi: we vonden niets dat beter kan. Hou het zo.",
+    "gesprek_kop": "Liever samen bekijken?",
+    "gesprek_tekst": "In een gratis gesprek van 30 minuten via Teams overlopen we je scan en wat je eerst aanpakt.",
+    "gesprek_knop": "Plan een gratis gesprek"
+  },
+  "checken": {
+    "eyebrow": "Wat we checken",
+    "h2a": "Vijf dingen die bepalen",
+    "h2b": "of je site voor je werkt.",
+    "lede": "Per punt zie je wat we zagen, waarom het telt en wat je eraan kunt doen.",
+    "groepen": [
+      {"naam": "Vindbaar in Google (SEO)", "tekst": "SEO betekent: je site zo maken dat Google ze goed kan lezen en begrijpt waarover ze gaat.",
+       "items": ["Titel en beschrijving in Google", "Eén duidelijke hoofdtitel en tussentitels", "Geen noindex, wel robots.txt en een sitemap", "Bedrijfsgegevens voor Google (gestructureerde gegevens)", "Voorbeeld bij delen op sociale media", "Beschrijving bij foto's (alt-tekst)"]},
+      {"naam": "Snelheid", "tekst": "Wat we kunnen meten zonder je site in een browser te openen.",
+       "items": ["Reactietijd van je server", "Grootte van de pagina", "Aantal scripts en stylesheets", "Compressie", "Doorverwijzingen"]},
+      {"naam": "Op de gsm", "tekst": "De meeste bezoekers komen via hun gsm.",
+       "items": ["Past de pagina zich aan het scherm aan", "Kunnen bezoekers inzoomen", "Foto's op maat van het scherm", "Icoon voor op het beginscherm"]},
+      {"naam": "Veiligheid en vertrouwen", "tekst": "Wat een bezoeker ziet voor hij je vertrouwt.",
+       "items": ["Beveiligde verbinding (https)", "Doorverwijzing van http naar https", "Geen onbeveiligde onderdelen", "Favicon en een bijgewerkt jaartal", "Een eigen domeinnaam"]},
+      {"naam": "Klanten binnenhalen", "tekst": "Hoe makkelijk een bezoeker een klant wordt.",
+       "items": ["Klikbaar telefoonnummer en e-mailadres", "Contactformulier", "Online afspraak maken", "WhatsApp", "Chat op je site"]}
+    ]
+  },
+  "niet": {
+    "eyebrow": "Eerlijk is eerlijk",
+    "h2a": "Wat deze scan",
+    "h2b": "niet doet.",
+    "items": [
+      ["Niet je hele site", "We kijken naar je startpagina, en waar nodig naar je contact- of boekingspagina. Andere pagina's kunnen andere punten hebben."],
+      ["Geen plaats in Google", "We zeggen niet op welke plaats je in Google staat. Dat hangt ook af van je concurrenten, je reviews en je Google Bedrijfsprofiel."],
+      ["Niet de snelheidsscore van Google", "We meten de reactietijd van je server en het gewicht van je pagina. De score van Google (PageSpeed Insights) meet ook hoe snel foto's en scripts in een browser laden."],
+      ["Geen garantie", "Een hoge score is geen garantie op meer klanten. Ze toont wel waar je site punten laat liggen."]
+    ]
+  },
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Vragen over",
+    "h2b": "de website scan.",
+    "items": [
+      {"q": "Is de website scan echt gratis?", "a": "Ja. Je hebt geen account nodig en je zit nergens aan vast. Wil je je verbeterplan zien en per mail ontvangen, dan vragen we je naam, je e-mailadres en de naam van je bedrijf."},
+      {"q": "Wat is SEO?", "a": "SEO staat voor zoekmachineoptimalisatie: je site zo maken dat Google ze goed kan lezen en begrijpt waarover ze gaat. Denk aan een duidelijke titel, een beschrijving, tussentitels en een sitemap. Goede SEO maakt het makkelijker om gevonden te worden, maar niemand kan je een plaats in Google beloven."},
+      {"q": "Wat checkt de scan precies?", "a": "Meer dan 30 punten in vijf groepen: vindbaar in Google, snelheid, op de gsm, veiligheid en vertrouwen, en klanten binnenhalen. Per punt zie je wat we zagen en waarom het telt. In je verbeterplan staat ook wat je eraan kunt doen."},
+      {"q": "Waarom verschilt mijn score van andere tools?", "a": "Elke tool meet iets anders. Wij lezen de pagina zoals je server ze doorstuurt en meten de reactietijd van je server. PageSpeed Insights van Google meet bijvoorbeeld ook hoe snel je foto's en scripts in een browser laden. Gebruik ze dus naast elkaar."},
+      {"q": "Bewaren jullie mijn gegevens?", "a": "Het adres dat je scant en het resultaat bewaren we niet. Vraag je je verbeterplan aan, dan komen je naam, je e-mailadres, je bedrijf, je webadres en je score in ons klantenbestand, zodat we je het plan kunnen sturen en je kunnen opvolgen. Meer daarover lees je in ons privacybeleid."},
+      {"q": "Mijn site scoort laag. Wat nu?", "a": "Begin bij de rode punten in je verbeterplan: die tellen het zwaarst. Veel punten kan wie je site beheert snel oplossen. Wil je liever dat wij meekijken, plan dan een gratis gesprek van 30 minuten."},
+      {"q": "Kan ik elke website scannen?", "a": "Elke openbare website, gebouwd met WordPress, Wix, Shopify, Webflow of iets anders. Sites achter een wachtwoord, of sites die automatische scans blokkeren, kunnen we niet lezen. Interne adressen en IP-adressen scannen we niet."}
+    ],
+    "meer_label": "Meer lezen:",
+    "meer": [
+      {"t": "Websites", "href": "Websites"},
+      {"t": "Waarom je website traag is", "href": "emtimes/websites/waarom-je-website-traag-is/"},
+      {"t": "Checklist voor de website van je zaak", "href": "emtimes/websites/website-lokale-zaak-checklist/"},
+      {"t": "Gevonden worden op Google Maps", "href": "emtimes/groei/lokale-seo-google-maps/"}
+    ]
+  },
+  "cta": {
+    "h2a": "Liever samen naar",
+    "h2b": "je site kijken?",
+    "tekst": "Plan een gratis gesprek van 30 minuten via Teams. We overlopen je scan, wat je eerst aanpakt en wat je zelf kunt doen.",
+    "knop": "Plan een gratis gesprek",
+    "knop2": "Hoe wij websites bouwen",
+    "knop2_href": "Websites",
+    "badges": ["Gratis en vrijblijvend", "30 minuten via Teams", "Belgisch bedrijf, BE1024.977.818"]
+  }
+}
