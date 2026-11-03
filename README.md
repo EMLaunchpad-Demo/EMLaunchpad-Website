@@ -50,12 +50,17 @@ wil zien, vult een formulier van ons platform in: dat wordt een lead voor Ebert.
 - Max. 45 verzoeken per scan (in de praktijk 7 tot 12), max. 4 eigen scripts.
 - User-Agent: `EMLaunchpadScan/1.0 (+https://emlaunchpad.com/gratis-website-scan)`.
 - Per IP-adres: 8 scans per minuut, via de Rate Limiting-binding `SCAN_LIMIT` in `wrangler.jsonc`
-  (namespace `1103`). Zonder binding (lokaal) telt de Worker zelf per isolate.
+  (namespace `1103`). Zonder binding (lokaal) telt de Worker zelf per isolate. Cloudflare telt per locatie en
+  bij benadering: op de preview kwam de 429 na een 15-tal snelle verzoeken in een minuut.
 - Compatibiliteitsvlag `global_fetch_strictly_public`: elk verzoek van de scan gaat via het publieke internet, zoals
   een gewone bezoeker. Zonder die vlag lukt een scan van emlaunchpad.com zelf niet (522) en zouden verzoeken naar
   onze eigen zone rechtstreeks naar de origin gaan.
 - `run_worker_first: ["/api/*"]`: alleen `/api/*` gaat eerst langs de Worker. De rest blijft gewoon statisch,
   dus `_redirects`, de 404-pagina en de nette URL's werken zoals voorheen.
+
+Goed om te weten: een site achter Cloudflare stuurt naar de Worker geen gecomprimeerde versie. Dan meldt de scan
+dat Cloudflare standaard comprimeert, in plaats van "geen compressie". De reactietijd gemeten vanuit Cloudflare is
+korter dan vanaf een pc, en wisselt per meting: de score kan daardoor een paar punten verschillen.
 
 Wat de scan niet doet: geen browser, dus geen Core Web Vitals en niet de score van PageSpeed Insights; alleen de
 startpagina (plus de contact- of boekingspagina als we die nodig hebben); inhoud die pas met JavaScript verschijnt,
