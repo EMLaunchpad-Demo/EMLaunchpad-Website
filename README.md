@@ -81,7 +81,13 @@ Sub-account EM Launchpad (`2tBkltDEdjuF6a2ULx8o`).
   (`set-sticky-contacts`-bericht van het formulier). De punten zelf en hun status ziet iedereen.
 - Workflow "Website scan - verbeterplan per mail en opvolging" (`eb83d724-6989-4aad-9b47-ceae911792d2`, staat in
   **Concept**): tag `website-scan`, opportunity in Outreach process / Nieuwe lead, notitie met de scan, mail met het
-  verbeterplan, melding aan Ebert, na 24 uur zonder afspraak (tag `cc-meeting`) een taak voor Ebert om te bellen.
+  verbeterplan (afzender Ebert Vanbrabant, ebert@emlaunchpad.com), melding aan Ebert, na 24 uur zonder afspraak
+  (tag `website-scan-geboekt`) een taak voor Ebert om te bellen.
+- Workflow "Website scan - afspraak geboekt - naar Afspraak geboekt" (`48276560-e841-4a22-aced-f07f4db6c4f9`, staat in
+  **Concept**): bij een boeking in EMLaunchpad Agenda door een contact met de tag `website-scan` de tag
+  `website-scan-geboekt` en de opportunity naar Afspraak geboekt (of een nieuwe opportunity daar). Publiceer deze
+  workflow samen met de vorige: zonder deze krijgt iedereen na 24 uur een belt-taak. Wie eerst boekt en pas daarna het
+  formulier invult, krijgt toch een belt-taak.
 - De link in de mail (`/gratis-website-scan?url=...&plan=1`) start de scan opnieuw en opent het plan meteen.
 
 ### Werken aan de scan
