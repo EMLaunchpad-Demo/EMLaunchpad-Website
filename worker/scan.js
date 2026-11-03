@@ -139,6 +139,9 @@ async function stap(u, ctx, signal, extraHeaders) {
         'user-agent': UA,
         accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.5',
         'accept-language': 'nl-BE,nl;q=0.9,fr;q=0.6,en;q=0.5',
+        // uitdrukkelijk vragen: anders toont fetch() in Workers de header content-encoding niet (de inhoud lezen we
+        // toch gedecodeerd, zowel in Workers als in Node)
+        'accept-encoding': 'br, gzip',
         ...(extraHeaders || {}),
       },
     });
