@@ -90,6 +90,19 @@ Sub-account EM Launchpad (`2tBkltDEdjuF6a2ULx8o`).
   formulier invult, krijgt toch een belt-taak.
 - De link in de mail (`/gratis-website-scan?url=...&plan=1`) start de scan opnieuw en opent het plan meteen.
 
+### Waar de scan gelinkt staat (alleen NL)
+
+- Hoofdmenu: `site.js` (`_SCAN` in de balk, `_SCANM` in het gsm-menu), alleen als de taal `nl` is. De scanpagina heeft
+  `data-page="scan"`, zodat het item daar actief staat. Opmaak in `home.css` (`.nv-scan`, `.nv-sheet-scan`, `.nv.has-scan`).
+- Home: de sectie `#website-scan` in `index.html` (eigen `<style>` in de sectie). Het formulier stuurt met GET naar
+  `/gratis-website-scan?url=<adres>`; `website-scan.js` start de scan dan zelf.
+- Diensten: het kaartje `.dv-scan` in de hero en een regel in de kaart Website (`Diensten.html`, opmaak in `diensten.css`).
+- Websites: `scan` in `scripts/paginas/websites/nl.json`. Ook op de branche- en regiopagina's (`scripts/paginas/branche/*.json`, `scripts/paginas/regio/limburg.json`).
+  Footer: `site.js` (in EN en FR naar de NL-pagina).
+- EM Times: in de tekst van de artikels over snelheid, kosten, de checklist, lokale SEO en het Google Bedrijfsprofiel
+  (tussen `ET:PROSE:START` en `ET:PROSE:END`, daarna `node scripts/build-emtimes.mjs`).
+- EN en FR krijgen geen menu-item en geen blok: de scan en het rapport bestaan alleen in het Nederlands.
+
 ### Werken aan de scan
 
 ```

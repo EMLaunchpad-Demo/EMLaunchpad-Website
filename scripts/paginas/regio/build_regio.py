@@ -98,7 +98,7 @@ def head(L, C, s):
 def tail(footer):
     return f'''{footer}
 <script src="i18n.js?v=20261103a"></script>
-<script src="site.js?v=20261103a"></script>
+<script src="site.js?v=20261104a"></script>
 <script src="fx.js?v={V_FX}"></script>
 <script src="regio.js?v={V_JS}"></script>
 </body>

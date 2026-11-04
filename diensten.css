@@ -40,6 +40,18 @@ body[data-page="diensten"] .dv-jump .p{font-size:14px;color:var(--mid);overflow-
 body[data-page="diensten"] .dv-links{margin:22px auto 0;font-family:var(--mono);font-size:12.5px;color:var(--dim);display:flex;flex-wrap:wrap;justify-content:center;gap:6px 10px}
 body[data-page="diensten"] .dv-links a{color:var(--hi);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:1px;transition:border-color .2s ease}
 body[data-page="diensten"] .dv-links a:hover{border-color:var(--acc)}
+/* gratis website scan (alleen NL): een kaartje onder de links in de hero, met dezelfde meter als in het menu */
+body[data-page="diensten"] .dv-scan{display:flex;align-items:center;gap:14px;max-width:500px;margin:26px auto 0;padding:14px 18px 14px 14px;border:1px solid var(--line-2);border-radius:16px;background:rgba(255,255,255,.03);color:var(--hi);text-decoration:none;text-align:left;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+body[data-page="diensten"] .dv-scan:hover{border-color:rgba(79,211,148,.45);background:rgba(79,211,148,.06);transform:translateY(-1px)}
+body[data-page="diensten"] .dv-scan:focus-visible{outline:2px solid #9dbcf0;outline-offset:3px}
+body[data-page="diensten"] .dv-scan-ic{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(79,211,148,.15);color:#4fd394}
+body[data-page="diensten"] .dv-scan-ic svg{width:20px;height:20px}
+body[data-page="diensten"] .dv-scan-t{flex:1;min-width:0}
+body[data-page="diensten"] .dv-scan-t b{display:block;font-size:15.5px;font-weight:700;letter-spacing:-.01em}
+body[data-page="diensten"] .dv-scan-t small{display:block;margin-top:2px;font-size:13.5px;line-height:1.4;color:var(--mid)}
+body[data-page="diensten"] .dv-scan > svg{flex:none;width:15px;height:15px;color:var(--mid);transition:transform .2s ease,color .2s ease}
+body[data-page="diensten"] .dv-scan:hover > svg{transform:translateX(3px);color:#4fd394}
+@media (prefers-reduced-motion:reduce){body[data-page="diensten"] .dv-scan,body[data-page="diensten"] .dv-scan > svg{transition:none}body[data-page="diensten"] .dv-scan:hover{transform:none}}
 body[data-page="diensten"] .dv-jump svg{position:absolute;right:20px;top:50%;width:16px;height:16px;margin-top:-8px;color:var(--mid);transform:rotate(90deg);transition:transform .25s ease,color .25s ease}
 body[data-page="diensten"] .dv-jump a:hover{border-color:rgba(31,158,95,.55);transform:translateY(-2px)}
 body[data-page="diensten"] .dv-jump a:hover svg{color:var(--hi);transform:rotate(90deg) translateX(3px)}

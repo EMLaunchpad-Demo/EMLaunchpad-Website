@@ -120,6 +120,11 @@ html{scroll-padding-top:100px}
 .nv-demo i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(79,211,148,.15);color:var(--nv-green-hi)}
 .nv-demo i svg{width:10px;height:10px;margin-left:1px}
 .nv-demo:hover,.nv-demo.active{color:var(--nv-hi);background:rgba(255,255,255,.06)}
+/* gratis website scan (alleen NL): licht opvallend, met een meter in een groen rondje zoals "Gratis demo" */
+.nv-link.nv-scan{gap:8px;padding:0 13px 0 8px;color:var(--nv-hi)}
+.nv-scan-ic{display:grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:rgba(79,211,148,.15);color:var(--nv-green-hi);transition:background .2s ease}
+.nv-link.nv-scan .nv-scan-ic svg{width:13px;height:13px;opacity:1}
+.nv-link.nv-scan:hover .nv-scan-ic,.nv-link.nv-scan.active .nv-scan-ic{background:rgba(79,211,148,.27)}
 /* blauwe glasknop: doorschijnend blauw, glans bovenaan, dunne lichtrand */
 .nv-cta{
   position:relative;overflow:hidden;isolation:isolate;
@@ -252,9 +257,15 @@ html{scroll-padding-top:100px}
 .nv-sheet.open .nv-sheet-links > :nth-child(4){transition-delay:.12s}
 .nv-sheet.open .nv-sheet-links > :nth-child(5){transition-delay:.16s}
 .nv-sheet.open .nv-sheet-links > :nth-child(6){transition-delay:.2s}
+.nv-sheet.open .nv-sheet-links > :nth-child(7){transition-delay:.24s}
 .nv-sheet-links > a svg{width:18px;height:18px;color:rgba(244,241,234,.4);transition:transform .2s ease,color .2s ease}
 .nv-sheet-links > a.active,.nv-acc-btn.active{color:#6fd3a0}
 .nv-sheet-links > a:hover svg,.nv-sheet-links > a.active svg{color:#6fd3a0;transform:translateX(3px)}
+.nv-scan-t{display:inline-flex;align-items:center;gap:12px;min-width:0}
+.nv-sheet-links > a.nv-sheet-scan{gap:10px}
+.nv-sheet-links > a.nv-sheet-scan .nv-scan-ic{width:30px;height:30px}
+@media (max-width:360px){.nv-sheet-links > a.nv-sheet-scan .nv-scan-t{gap:8px}.nv-sheet-links > a.nv-sheet-scan .nv-scan-ic{width:24px;height:24px}}
+.nv-sheet-links > a.nv-sheet-scan .nv-scan-ic svg,.nv-sheet-links > a.nv-sheet-scan:hover .nv-scan-ic svg,.nv-sheet-links > a.nv-sheet-scan.active .nv-scan-ic svg{width:16px;height:16px;color:var(--nv-green-hi);transform:none}
 .nv-plus{position:relative;width:18px;height:18px;flex:none}
 .nv-plus::before,.nv-plus::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;margin:-1px 0 0 -7px;border-radius:2px;background:rgba(244,241,234,.6);transition:transform .3s ease}
 .nv-plus::after{transform:rotate(90deg)}
@@ -286,6 +297,8 @@ html{scroll-padding-top:100px}
 
 /* ── breakpoints ── */
 @media (max-width:1140px){.nv-demo{display:none}}
+/* alleen met het scan-item (NL): tussen 981 en 1180 px wat smallere menu-items, zodat de balk niet vol loopt */
+@media (max-width:1180px){.nv.has-scan .nv-link{padding:0 11px}.nv.has-scan .nv-link.nv-scan{padding:0 11px 0 7px}}
 @media (max-width:1100px){.nv-mega{left:16px;right:16px}.nv-col{padding:10px 8px}}
 /* footer met vier kolommen (diensten, voor wie, bedrijf, contact); tussen 681 en 1100 px twee bij twee, smaller valt terug op de regel in de basis (één kolom) */
 @media (min-width:1101px){.foot-grid{grid-template-columns:1.7fr 1fr 1fr 1.2fr}.foot-cell{padding:30px 28px}.foot-cell:first-child{padding-left:0}}

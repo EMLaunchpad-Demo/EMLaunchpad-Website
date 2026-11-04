@@ -12,7 +12,7 @@ V_CSS = '20261103a'           # website-scan.css
 V_JS = '20261103a'            # website-scan.js
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261016a'
-V_SITE = '20261103a'          # site.js (footerlink naar de scan)
+V_SITE = '20261104a'          # site.js (menu-item en footerlink naar de scan)
 SITE = 'https://emlaunchpad.com/'
 TEMPLATE = 'website-voor-kappers.html'
 
@@ -89,7 +89,7 @@ def head(L, s):
     assert hd.count('home-redesign.css') == 1 and hd.count('website-scan.css') == 1
     NOS = '<noscript><style>#loader{display:none!important}</style></noscript>\n'
     hd = hd.replace(NOS, '').replace('</head>', NOS + '</head>')
-    body_tag = '<body data-lang-fallback="%s" data-page="diensten" data-skin="v2" data-tone="blauw">' % attr(L['fallback'])
+    body_tag = '<body data-lang-fallback="%s" data-page="scan" data-skin="v2" data-tone="blauw">' % attr(L['fallback'])  # data-page="scan": het menu-item Gratis website scan staat dan actief
     hd, n = re.subn(r'<body[^>]*>', body_tag, hd); assert n == 1
     hd = re.sub(r'\n<div aria-hidden="true" class="sky"[^>]*>.*?</div>', '', hd)
     keys = attr(json.dumps(L['skyKeys'], separators=(',', ':')))
