@@ -57,7 +57,7 @@ export function staticFooter(lang = "nl", alternates = {}) {
   const pre = lang === "nl" ? "/" : `/${lang}/`;
   const links = [
     [pre, T.home], [`${pre}Diensten`, T.services], [`${pre}Pakketkiezer`, T.pk], [`${pre}AI%20Chatbots`, T.s1], [`${pre}AI%20Voice%20Agents`, T.s2],
-    [`${pre}Websites`, T.s3], [`${pre}AI-Automatisering`, T.s4], [`${pre}Afsprakensysteem`, T.s5], [`${pre}advertenties`, T.s6], [`${pre}Portfolio`, T.portfolio],
+    [`${pre}Websites`, T.s3], [`${pre}AI-Automatisering`, T.s4], [`${pre}advertenties`, T.s6], [`${pre}Afsprakensysteem`, T.s5], [`${pre}Portfolio`, T.portfolio],
     [`${pre}Clinic3D`, T.case], [`${pre}Over%20ons`, T.about], [`${pre}Contact`, T.contact], [`${pre}Gratis%20Demo`, T.demo],
   ];
   if (lang === "nl") links.push(["/emtimes/", T.emtimes]);

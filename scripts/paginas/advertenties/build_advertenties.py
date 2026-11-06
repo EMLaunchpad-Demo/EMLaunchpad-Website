@@ -106,7 +106,7 @@ def tail(pre, footer='<div id="footer-mount"></div>'):
     # zoals de branchepagina's: geen i18n-pages.js nodig, de tekst staat al vertaald in de HTML
     return f'''{footer}
 <script src="{pre}i18n.js?v=20261103a"></script>
-<script src="{pre}site.js?v=20261106a"></script>
+<script src="{pre}site.js?v=20261106b"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}spoor.js?v={V_JS}"></script>
 </body>
