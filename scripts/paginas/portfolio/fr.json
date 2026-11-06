@@ -12,7 +12,7 @@
       "bo": 0.4
     },
     {
-      "p": 0.25,
+      "p": 0.2,
       "ax": 24,
       "ay": 48,
       "bx": 84,
@@ -21,7 +21,7 @@
       "bo": 0.6
     },
     {
-      "p": 0.44,
+      "p": 0.37,
       "ax": 78,
       "ay": 50,
       "bx": 16,
@@ -30,7 +30,7 @@
       "bo": 0.6
     },
     {
-      "p": 0.585,
+      "p": 0.5,
       "ax": 24,
       "ay": 52,
       "bx": 80,
@@ -39,13 +39,22 @@
       "bo": 0.9
     },
     {
-      "p": 0.735,
+      "p": 0.645,
       "ax": 78,
       "ay": 50,
       "bx": 18,
       "by": 34,
       "ao": 0.85,
       "bo": 0.6
+    },
+    {
+      "p": 0.79,
+      "ax": 24,
+      "ay": 50,
+      "bx": 82,
+      "by": 66,
+      "ao": 0.85,
+      "bo": 0.7
     },
     {
       "p": 1,
@@ -60,17 +69,17 @@
   "meta": {
     "title": "Portfolio : sites web et IA au Limbourg | EM Launchpad",
     "ogtitle": "Portfolio : de vraies entreprises, du vrai travail | EM Launchpad",
-    "desc": "Découvrez notre travail : Amakhosi Sauna, Clinic3D, Mett-U, 't Kleinhof et Bambine. Cinq entreprises du Limbourg, cinq sites web en ligne aujourd'hui.",
+    "desc": "Découvrez notre travail : Amakhosi Sauna, Clinic3D, Mett-U, 't Kleinhof, Bambine et Frituur Madelyn. Six entreprises du Limbourg, six sites web en ligne aujourd'hui.",
     "service": "Travail d'EM Launchpad"
   },
   "hero": {
     "eyebrow": "Portfolio",
     "h1a": "De vraies entreprises.",
     "h1b": "Du vrai travail.",
-    "lede": "Cinq entreprises du Limbourg. Cinq sites web en ligne aujourd'hui. Regardez à l'intérieur, sur ordinateur et sur smartphone.",
+    "lede": "Six entreprises du Limbourg. Six sites web en ligne aujourd'hui. Regardez à l'intérieur, sur ordinateur et sur smartphone.",
     "spring_label": "Sur cette page",
     "feiten": [
-      "Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel",
+      "Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel · Borgloon",
       "Construit à Vechmaal · En ligne en général sous 14 jours"
     ],
     "glas_aria": "La page d'accueil d'amakhosi.be sur un ordinateur, telle qu'un visiteur la voit. L'image défile lentement de haut en bas.",
@@ -98,7 +107,7 @@
     "de_zaak": "L'entreprise",
     "wat": "Ce que nous avons réalisé",
     "anders": "Ce qui a changé",
-    "shot": "Capture d'écran de {d}, octobre 2026.",
+    "shot": "Capture d'écran de {d}, {m}.",
     "newtab": "(s'ouvre dans une nouvelle fenêtre)",
     "case_link": "Lire l'étude de cas complète",
     "open": "Ouvrir {d}",
@@ -112,7 +121,7 @@
       "url": "https://amakhosi.be",
       "domein": "amakhosi.be",
       "index": [
-        "01 / 05",
+        "01 / 06",
         "En ligne",
         "Hamont-Achel"
       ],
@@ -143,22 +152,23 @@
     },
     {
       "id": "clinic3d",
-      "slug": "clinic3d",
+      "slug": "clinic3d2",
       "naam": "Clinic3D",
       "url": "https://clinic3d.be",
       "domein": "clinic3d.be",
       "case": "Clinic3D",
       "side": "links",
       "index": [
-        "02 / 05",
+        "02 / 06",
         "Mesuré sur 263 jours",
         "Hasselt"
       ],
       "kop_a": "Les patients réservent",
       "kop_b": "eux-mêmes.",
-      "kort": "Site web, agenda en ligne et e-mails automatiques pour une clinique esthétique à Hasselt. Sur 263 jours : 650 rendez-vous sur 681 confirmés.",
-      "alt": "Page d'accueil de clinic3d.be : un site clair avec le titre Natuurlijke schoonheid, wetenschappelijk onderbouwd, une photo du médecin au comptoir et le bouton Boek je gratis consult.",
-      "soort": "Clinique esthétique · Hasselt · Dr Kenis",
+      "kort": "Site web, agenda en ligne et e-mails automatiques pour une clinique d'esthétique médicale à Hasselt. Sur 263 jours : 650 rendez-vous sur 681 confirmés.",
+      "alt": "Page d'accueil de clinic3d.be : un site clair et chaleureux en beige et or avec le titre Natuurlijke schoonheid, wetenschappelijk onderbouwd, un portrait du Dr Sasha Kenis et les boutons Boek je afspraak et Onze behandelingen, avec en dessous des photos de la clinique.",
+      "maand": "novembre 2026",
+      "soort": "Clinique d'esthétique médicale · Hasselt · Dr Kenis",
       "gemaakt": "Site web · Agenda en ligne · E-mails automatiques",
       "logo": {
         "src": "https://assets.cdn.filesafe.space/U08LkHeoQdx8yNxCQvps/media/69525c5573a5e0065b9027d4.png",
@@ -170,11 +180,11 @@
       "beats": [
         [
           "L'entreprise",
-          "Clinique esthétique à Hasselt, dirigée par le Dr Kenis."
+          "Clinique d'esthétique médicale à Hasselt. Le Dr Kenis réalise lui-même chaque traitement."
         ],
         [
           "Ce que nous avons réalisé",
-          "Le site web, l'agenda en ligne et les e-mails automatiques. Les patients choisissent eux-mêmes un moment. La confirmation et le rappel partent automatiquement."
+          "Le site web, en beige chaud et or, avec le Dr Kenis à l'image, de vraies photos de la clinique et tous les traitements présentés clairement. Avec l'agenda en ligne et les e-mails automatiques : les patients choisissent eux-mêmes un moment, la confirmation et le rappel partent automatiquement."
         ],
         [
           "Ce qui a changé",
@@ -225,7 +235,7 @@
       "domein": "mett-u.be",
       "side": "rechts",
       "index": [
-        "03 / 05",
+        "03 / 06",
         "",
         "Heers"
       ],
@@ -233,6 +243,7 @@
       "kop_b": "un CRM.",
       "kort": "Nouveau site web pour une ASBL à Heers, relié à un suivi automatisé et à un CRM central.",
       "alt": "Page d'accueil de mett-u.be : un en-tête vert VZW Mett-U avec deux boutons et une photo de bénévoles dans le potager.",
+      "maand": "octobre 2026",
       "soort": "ASBL · Heers",
       "gemaakt": "Site web · Suivi automatisé · CRM",
       "logo": {
@@ -268,22 +279,23 @@
     },
     {
       "id": "kleinhof",
-      "slug": "kleinhof",
+      "slug": "kleinhof2",
       "naam": "'t Kleinhof",
       "url": "https://kleinhof.be",
       "domein": "kleinhof.be",
       "side": "links",
       "index": [
-        "04 / 05",
+        "04 / 06",
         "notre propre village",
         "Vechmaal"
       ],
       "kop_a": "L'histoire de",
       "kop_b": "Liesbeth et Gert.",
-      "kort": "Nouveau site web pour une ferme bio et ferme de soins à Vechmaal, avec leur histoire et leurs produits.",
-      "alt": "Page d'accueil de kleinhof.be : un champ de céréales avec le titre Biologisch kleinschalig et deux blocs Bio-boerderij et Zorg-boerderij.",
+      "kort": "Nouveau site web pour une ferme bio et ferme de soins à Vechmaal, avec leur histoire, leurs animaux et leurs cultures, et une page pour réserver leurs produits en ligne.",
+      "alt": "Page d'accueil de kleinhof.be : une photo d'un champ de céréales avec la légende manuscrite de akkers in Vechmaal, en dessous le titre Biologisch kleinschalig et le bouton Producten reserveren.",
+      "maand": "novembre 2026",
       "soort": "Ferme bio et ferme de soins · Vechmaal · Liesbeth et Gert",
-      "gemaakt": "Site web",
+      "gemaakt": "Site web · Réservation des produits · Newsletter",
       "logo": null,
       "beats": [
         [
@@ -292,11 +304,11 @@
         ],
         [
           "Ce que nous avons réalisé",
-          "Un nouveau site web avec leur histoire, la ferme bio et la ferme de soins, et leurs produits."
+          "Un nouveau site web, calme et rural comme un petit journal de ferme : de grandes photos des champs, leur histoire, les animaux et les cultures, et une page pour réserver en ligne des œufs, des pommes de terre, des oignons et de la viande de bœuf. Vous payez au retrait. Pour rester informé, vous pouvez vous inscrire à leur newsletter."
         ],
         [
           "Ce qui a changé",
-          "Qui les cherche voit tout de suite qui ils sont et ce qu'ils cultivent."
+          "Qui les cherche voit tout de suite qui ils sont et ce qu'ils cultivent, et réserve leurs produits en ligne."
         ]
       ],
       "producten": [
@@ -319,7 +331,7 @@
       "domein": "bambine.be",
       "side": "rechts",
       "index": [
-        "05 / 05",
+        "05 / 06",
         "",
         "Lommel"
       ],
@@ -327,6 +339,7 @@
       "kop_b": "réservé en ligne.",
       "kort": "Nouveau site web pour le bien-être des bébés et les soins aux mamans à Lommel, avec le système de réservation et ses options, un bon cadeau numérique et des e-mails automatiques.",
       "alt": "Page d'accueil de bambine.be : un bébé qui regarde sous une serviette blanche, avec le titre Een warm bad voor de allerkleinsten et les boutons Reserveer jullie moment et Bekijk de cadeaubonnen.",
+      "maand": "octobre 2026",
       "soort": "Bien-être pour bébés et soins pour mamans · Lommel · Ine",
       "gemaakt": "Site web · Système de réservation avec options · Bon cadeau numérique · E-mails automatiques",
       "logo": null,
@@ -353,15 +366,61 @@
         "label": "En savoir plus sur la prise de rendez-vous en ligne",
         "href": "Afsprakensysteem"
       }
+    },
+    {
+      "id": "madelyn",
+      "slug": "madelyn",
+      "naam": "Frituur Madelyn",
+      "url": "https://frituurmadelyn.be",
+      "domein": "frituurmadelyn.be",
+      "side": "links",
+      "index": [
+        "06 / 06",
+        "",
+        "Borgloon"
+      ],
+      "kop_a": "Ouvert en ce moment ?",
+      "kop_b": "Vous le voyez tout de suite.",
+      "kort": "Nouveau site web pour une friterie et café vélo à Borgloon, avec la carte, des horaires qui indiquent s'ils sont ouverts en ce moment, une page pour les groupes et un formulaire de contact.",
+      "alt": "Page d'accueil de frituurmadelyn.be : une photo sombre de frites fraîches dans un panier à frites, avec le titre Frituur Madelyn, les boutons Bekijk het menu et Bel, et la mention Nu open.",
+      "maand": "novembre 2026",
+      "soort": "Friterie et café vélo · Borgloon · Ravi et Sam",
+      "gemaakt": "Site web · Carte · Groupes et excursions · Formulaire de contact",
+      "logo": null,
+      "beats": [
+        [
+          "L'entreprise",
+          "Une friterie et café vélo sur la Graethempoort à Borgloon, ouverte 7 jours sur 7. Ravi et Sam tiennent l'établissement."
+        ],
+        [
+          "Ce que nous avons réalisé",
+          "Un nouveau site web en rouge et blanc, avec de vraies photos de l'établissement et de la vitrine. La carte par catégorie, des horaires qui indiquent d'eux-mêmes s'ils sont ouverts, une page pour les cyclistes, les autocars et les associations, et un formulaire de contact qui arrive dans notre plateforme."
+        ],
+        [
+          "Ce qui a changé",
+          "Qui cherche sur son smartphone voit tout de suite ce qu'il y a à la carte, s'ils sont ouverts et comment appeler. Les groupes demandent leur devis via le formulaire."
+        ]
+      ],
+      "producten": [
+        "Frites et snacks",
+        "Sandwichs",
+        "Soupe du jour",
+        "Plats maison",
+        "Glaces"
+      ],
+      "dienst": {
+        "label": "En savoir plus sur les sites web",
+        "href": "Websites"
+      }
     }
   ],
   "eerlijk": {
-    "text": "Nous n'avons pas encore d'avis. Mais cinq entreprises où vous pouvez regarder vous-même.",
+    "text": "Nous n'avons pas encore d'avis. Mais six entreprises où vous pouvez regarder vous-même.",
     "sub": "Démo gratuite de 30 minutes · En ligne en général sous 14 jours"
   },
   "cta": {
     "h2a": "Votre entreprise sera-t-elle",
-    "h2b": "la sixième ?",
+    "h2b": "la septième ?",
     "text": "Réservez une démo gratuite de 30 minutes. Sans engagement. Votre site est en général en ligne sous 14 jours.",
     "btn": "Planifier une démo gratuite",
     "badges": [

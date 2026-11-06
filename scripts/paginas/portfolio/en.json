@@ -12,7 +12,7 @@
       "bo": 0.4
     },
     {
-      "p": 0.25,
+      "p": 0.2,
       "ax": 24,
       "ay": 48,
       "bx": 84,
@@ -21,7 +21,7 @@
       "bo": 0.6
     },
     {
-      "p": 0.44,
+      "p": 0.37,
       "ax": 78,
       "ay": 50,
       "bx": 16,
@@ -30,7 +30,7 @@
       "bo": 0.6
     },
     {
-      "p": 0.585,
+      "p": 0.5,
       "ax": 24,
       "ay": 52,
       "bx": 80,
@@ -39,13 +39,22 @@
       "bo": 0.9
     },
     {
-      "p": 0.735,
+      "p": 0.645,
       "ax": 78,
       "ay": 50,
       "bx": 18,
       "by": 34,
       "ao": 0.85,
       "bo": 0.6
+    },
+    {
+      "p": 0.79,
+      "ax": 24,
+      "ay": 50,
+      "bx": 82,
+      "by": 66,
+      "ao": 0.85,
+      "bo": 0.7
     },
     {
       "p": 1,
@@ -60,17 +69,17 @@
   "meta": {
     "title": "Portfolio: websites and AI from Limburg | EM Launchpad",
     "ogtitle": "Portfolio: real businesses, real work | EM Launchpad",
-    "desc": "See our work: Amakhosi Sauna, Clinic3D, Mett-U, 't Kleinhof and Bambine. Five businesses from Limburg, five websites that are online today.",
+    "desc": "See our work: Amakhosi Sauna, Clinic3D, Mett-U, 't Kleinhof, Bambine and Frituur Madelyn. Six businesses from Limburg, six websites that are online today.",
     "service": "Work by EM Launchpad"
   },
   "hero": {
     "eyebrow": "Portfolio",
     "h1a": "Real businesses.",
     "h1b": "Real work.",
-    "lede": "Five businesses from Limburg. Five websites that are online today. Feel free to look inside, on desktop and on mobile.",
+    "lede": "Six businesses from Limburg. Six websites that are online today. Feel free to look inside, on desktop and on mobile.",
     "spring_label": "On this page",
     "feiten": [
-      "Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel",
+      "Hamont-Achel · Hasselt · Heers · Vechmaal · Lommel · Borgloon",
       "Built in Vechmaal · Usually live within 14 days"
     ],
     "glas_aria": "The homepage of amakhosi.be on a computer, as a visitor sees it. The image slowly scrolls from top to bottom.",
@@ -98,7 +107,7 @@
     "de_zaak": "The business",
     "wat": "What we built",
     "anders": "What changed",
-    "shot": "Screenshot of {d}, October 2026.",
+    "shot": "Screenshot of {d}, {m}.",
     "newtab": "(opens in a new window)",
     "case_link": "Read the full case study",
     "open": "Open {d}",
@@ -112,7 +121,7 @@
       "url": "https://amakhosi.be",
       "domein": "amakhosi.be",
       "index": [
-        "01 / 05",
+        "01 / 06",
         "Live",
         "Hamont-Achel"
       ],
@@ -143,22 +152,23 @@
     },
     {
       "id": "clinic3d",
-      "slug": "clinic3d",
+      "slug": "clinic3d2",
       "naam": "Clinic3D",
       "url": "https://clinic3d.be",
       "domein": "clinic3d.be",
       "case": "Clinic3D",
       "side": "links",
       "index": [
-        "02 / 05",
+        "02 / 06",
         "Measured over 263 days",
         "Hasselt"
       ],
       "kop_a": "Patients book",
       "kop_b": "themselves.",
-      "kort": "Website, online calendar and automatic emails for an aesthetic clinic in Hasselt. Over 263 days: 650 of 681 appointments confirmed.",
-      "alt": "Homepage of clinic3d.be: a light site with the headline Natuurlijke schoonheid, wetenschappelijk onderbouwd, a photo of the doctor at the desk and the button Boek je gratis consult.",
-      "soort": "Aesthetic clinic · Hasselt · Dr. Kenis",
+      "kort": "Website, online calendar and automatic emails for a medical aesthetic clinic in Hasselt. Over 263 days: 650 of 681 appointments confirmed.",
+      "alt": "Homepage of clinic3d.be: a light, warm site in beige and gold with the headline Natuurlijke schoonheid, wetenschappelijk onderbouwd, a portrait of Dr. Sasha Kenis and the buttons Boek je afspraak and Onze behandelingen, with photos of the clinic below.",
+      "maand": "November 2026",
+      "soort": "Medical aesthetic clinic · Hasselt · Dr. Kenis",
       "gemaakt": "Website · Online calendar · Automatic emails",
       "logo": {
         "src": "https://assets.cdn.filesafe.space/U08LkHeoQdx8yNxCQvps/media/69525c5573a5e0065b9027d4.png",
@@ -170,11 +180,11 @@
       "beats": [
         [
           "The business",
-          "Aesthetic clinic in Hasselt, led by Dr. Kenis."
+          "Medical aesthetic clinic in Hasselt. Dr. Kenis carries out every treatment himself."
         ],
         [
           "What we built",
-          "The website, the online calendar and the automatic emails. Patients pick a moment themselves. Confirmation and reminder go out automatically."
+          "The website, in warm beige and gold, with Dr. Kenis in the picture, real photos of the clinic and all treatments laid out clearly. Plus the online calendar and the automatic emails: patients pick a moment themselves, confirmation and reminder go out automatically."
         ],
         [
           "What changed",
@@ -225,7 +235,7 @@
       "domein": "mett-u.be",
       "side": "rechts",
       "index": [
-        "03 / 05",
+        "03 / 06",
         "",
         "Heers"
       ],
@@ -233,6 +243,7 @@
       "kop_b": "one CRM.",
       "kort": "New website for a non-profit in Heers, connected to automated follow-up and a central CRM.",
       "alt": "Homepage of mett-u.be: a green header VZW Mett-U with two buttons and a photo of volunteers in the vegetable garden.",
+      "maand": "October 2026",
       "soort": "Non-profit · Heers",
       "gemaakt": "Website · Automated follow-up · CRM",
       "logo": {
@@ -268,22 +279,23 @@
     },
     {
       "id": "kleinhof",
-      "slug": "kleinhof",
+      "slug": "kleinhof2",
       "naam": "'t Kleinhof",
       "url": "https://kleinhof.be",
       "domein": "kleinhof.be",
       "side": "links",
       "index": [
-        "04 / 05",
+        "04 / 06",
         "our own village",
         "Vechmaal"
       ],
       "kop_a": "The story of",
       "kop_b": "Liesbeth and Gert.",
-      "kort": "New website for an organic and care farm in Vechmaal, with their story and their produce.",
-      "alt": "Homepage of kleinhof.be: a grain field with the headline Biologisch kleinschalig and two blocks Bio-boerderij and Zorg-boerderij.",
+      "kort": "New website for an organic and care farm in Vechmaal, with their story, their animals and crops, and a page where you reserve their produce online.",
+      "alt": "Homepage of kleinhof.be: a photo of a grain field with the handwritten caption de akkers in Vechmaal, below it the headline Biologisch kleinschalig and the button Producten reserveren.",
+      "maand": "November 2026",
       "soort": "Organic and care farm · Vechmaal · Liesbeth and Gert",
-      "gemaakt": "Website",
+      "gemaakt": "Website · Reserving produce · Newsletter",
       "logo": null,
       "beats": [
         [
@@ -292,11 +304,11 @@
         ],
         [
           "What we built",
-          "A new website with their story, the organic farm and the care farm, and their produce."
+          "A new website, calm and rural like a small farm newspaper: large photos of the fields, their story, the animals and the crops, and a page where you reserve eggs, potatoes, onions and beef online. You pay on collection. Anyone who wants to stay up to date can sign up for their newsletter."
         ],
         [
           "What changed",
-          "Anyone looking for them sees straight away who they are and what they grow."
+          "Anyone looking for them sees straight away who they are and what they grow, and reserves their produce online."
         ]
       ],
       "producten": [
@@ -319,7 +331,7 @@
       "domein": "bambine.be",
       "side": "rechts",
       "index": [
-        "05 / 05",
+        "05 / 06",
         "",
         "Lommel"
       ],
@@ -327,6 +339,7 @@
       "kop_b": "booked online.",
       "kort": "New website for baby wellness and care for mums in Lommel, with the booking system and add-ons, a digital gift card and automatic emails.",
       "alt": "Homepage of bambine.be: a baby peeking out from under a white towel, with the headline Een warm bad voor de allerkleinsten and the buttons Reserveer jullie moment and Bekijk de cadeaubonnen.",
+      "maand": "October 2026",
       "soort": "Baby wellness and care for mums · Lommel · Ine",
       "gemaakt": "Website · Booking system with add-ons · Digital gift card · Automatic emails",
       "logo": null,
@@ -353,15 +366,61 @@
         "label": "More about the booking system",
         "href": "Afsprakensysteem"
       }
+    },
+    {
+      "id": "madelyn",
+      "slug": "madelyn",
+      "naam": "Frituur Madelyn",
+      "url": "https://frituurmadelyn.be",
+      "domein": "frituurmadelyn.be",
+      "side": "links",
+      "index": [
+        "06 / 06",
+        "",
+        "Borgloon"
+      ],
+      "kop_a": "Open right now?",
+      "kop_b": "You can tell at a glance.",
+      "kort": "New website for a chip shop and cyclists' café in Borgloon, with the menu, opening hours that show whether they are open right now, a page for groups and a contact form.",
+      "alt": "Homepage of frituurmadelyn.be: a dark photo of fresh fries in a frying basket, with the headline Frituur Madelyn, the buttons Bekijk het menu and Bel, and the notice Nu open.",
+      "maand": "November 2026",
+      "soort": "Chip shop and cyclists' café · Borgloon · Ravi and Sam",
+      "gemaakt": "Website · Menu · Groups and day trips · Contact form",
+      "logo": null,
+      "beats": [
+        [
+          "The business",
+          "A chip shop and cyclists' café on the Graethempoort in Borgloon, open 7 days a week. Ravi and Sam run the place."
+        ],
+        [
+          "What we built",
+          "A new website in red and white, with real photos of the shop and the display counter. The menu by category, opening hours that tell you themselves whether they are open now, a page for cyclists, coaches and clubs, and a contact form that arrives in our platform."
+        ],
+        [
+          "What changed",
+          "Anyone searching on their phone sees straight away what is on the menu, whether they are open and how to call. Groups request their quote through the form."
+        ]
+      ],
+      "producten": [
+        "Fries and snacks",
+        "Sandwiches",
+        "Soup of the day",
+        "Home-made dishes",
+        "Ice cream"
+      ],
+      "dienst": {
+        "label": "More about websites",
+        "href": "Websites"
+      }
     }
   ],
   "eerlijk": {
-    "text": "We have no reviews yet. We do have five businesses you can look into yourself.",
+    "text": "We have no reviews yet. We do have six businesses you can look into yourself.",
     "sub": "Free 30-minute demo · Usually live within 14 days"
   },
   "cta": {
     "h2a": "Will your business be",
-    "h2b": "the sixth?",
+    "h2b": "the seventh?",
     "text": "Book a free 30-minute demo. No obligation. Your site is usually live within 14 days.",
     "btn": "Book a free demo",
     "badges": [

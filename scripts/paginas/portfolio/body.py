@@ -1,5 +1,5 @@
 # HTML van de Portfolio-pagina ("Door het venster"). body(L, lang, pre) -> str
-# Het is blauw uur: bij vijf zaken brandt het licht en je kijkt binnen. Het hero-venster
+# Het is blauw uur: bij elke zaak brandt het licht en je kijkt binnen. Het hero-venster
 # laat de nieuwe amakhosi.be traag doorscrollen (pure CSS, pauzeerbaar via checkbox + label);
 # de andere zaken staan als open composities op de lichtlaag, elk met een naambordje.
 import html, re, os
@@ -143,7 +143,7 @@ def body(L, lang, pre):
 <div class="wrap pf-zaak-grid" data-reveal="">
 <figure class="pf-zaak-venster">
 {venster(c['slug'] + '-lang-1200.webp', c['slug'] + '-gsm-780.webp', A, c['alt'])}
-<figcaption class="pf-onder">{esc(fill(lb['shot'], {'d': c['domein']}))}</figcaption>
+<figcaption class="pf-onder">{esc(fill(lb['shot'], {'d': c['domein'], 'm': c.get('maand', '')}))}</figcaption>
 </figure>
 <div class="pf-zaak-tekst">
 {index_line(c)}
