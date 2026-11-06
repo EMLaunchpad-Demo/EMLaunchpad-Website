@@ -1,0 +1,281 @@
+/* =============================================================
+   Advertentiebeheer / Google Ads: "Het spoor", van klik tot klant.
+   v2-skin + blauw uur (home-redesign.css). Prefix sp-.
+   Kleur: goud = resultaat (de aanvraag of boeking en wat ze werd),
+   blauw en groen = actie (advertentie, klik, knoppen). Geen goud op
+   knoppen en geen gouden vlakken, alleen lijnen, stippen en tekst.
+   Eén bewegend object: het lichtje dat in de hero van de advertentie
+   naar de aanvraag loopt. Gsm eerst. Geen sticky.
+   Bewust geen klassen met "ad"/"ads"/"advert": adblockers verbergen die.
+   ============================================================= */
+.sp-main{display:block;
+  --sp-goud:#e6c46e;--sp-goud-l:#f6e7b8;--sp-goud-line:rgba(230,196,110,.42);--sp-goud-soft:rgba(230,196,110,.10);
+  --sp-blauw:#2f74e0;--sp-blauw-l:#b9cff5;--sp-blauw-line:rgba(47,116,224,.55);--sp-blauw-soft:rgba(47,116,224,.14);
+  --sp-link:#8ab4f8;--sp-groen-l:#7fd3a8}
+.sp-main:focus{outline:none}
+.sp-main a:focus-visible,.sp-main button:focus-visible{outline:2px solid #9dbcf0;outline-offset:3px}
+
+/* labels in codestijl */
+.sp-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02)}
+.sp-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.sp-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sp-goud);box-shadow:0 0 0 3px rgba(230,196,110,.16);flex:none}
+
+/* ---------------- hero ---------------- */
+.sp-hero{position:relative;padding:14px 0 56px;background:transparent}
+.sp-crumb{font-family:var(--mono);font-size:12px;color:var(--dim);margin:0 0 22px}
+.sp-crumb a{color:var(--mid);text-decoration:none}
+.sp-crumb a:hover{color:var(--hi)}
+.sp-crumb span{margin:0 3px}
+.sp-hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.sp-hero-copy{min-width:0}
+.sp-hero-copy .eyebrow{margin:0 0 18px}
+.sp-h1{margin:0;font-weight:800;font-size:clamp(38px,10.4vw,56px);line-height:1.03;letter-spacing:-.045em;color:var(--hi);text-wrap:balance}
+.sp-lede{max-width:50ch;margin-top:20px}
+.sp-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.sp-cta .btn svg,.sp-cta .btn-ghost svg{width:15px;height:15px}
+.sp-facts{list-style:none;margin:26px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.sp-facts li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--mid)}
+.sp-facts li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc);flex:none}
+
+/* het spoor in de hero: zoekopdracht → advertentie → klik → pagina → aanvraag */
+.sp-trail{position:relative;margin:0;min-width:0;padding:18px;border:1px solid var(--line-2);border-radius:22px;background:var(--glass);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 40px 80px -40px rgba(0,0,0,.6)}
+.sp-trail>.sp-label{position:absolute;top:-13px;right:18px;background:#10203a}
+.sp-q{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--line-2);border-radius:999px;background:rgba(255,255,255,.05);margin-bottom:12px}
+.sp-q-ic{display:grid;place-items:center;color:var(--mid)}
+.sp-q-ic svg{width:16px;height:16px}
+.sp-q-t{font-size:14.5px;color:var(--hi);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* een zoekresultaat (advertentie) */
+.sp-res{display:flex;flex-direction:column;gap:4px;width:100%;text-align:left;padding:14px 16px;border:1px solid var(--line);border-radius:14px;
+  background:rgba(9,18,33,.55);color:var(--hi);font-family:var(--font)}
+.sp-res-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sp-spons{font-weight:700;font-size:12px;color:var(--hi)}
+.sp-url{font-size:12.5px;color:var(--mid);overflow-wrap:anywhere}
+.sp-res-t{font-size:17px;line-height:1.3;font-weight:600;color:var(--sp-link);letter-spacing:-.005em}
+.sp-res-d{font-size:14px;line-height:1.5;color:var(--mid)}
+.sp-res-hero{border-color:var(--sp-blauw-line);box-shadow:0 0 0 3px var(--sp-blauw-soft)}
+
+/* de lijn met de tussenstops */
+.sp-rail{position:relative;padding:16px 0 18px 40px}
+.sp-line{position:absolute;left:20px;top:0;bottom:0;width:2px;border-radius:2px;
+  background:linear-gradient(180deg,var(--sp-blauw) 0%,#33a06a 62%,var(--sp-goud) 100%);opacity:.75}
+.sp-line-dot{position:absolute;left:50%;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#fff;opacity:0;
+  box-shadow:0 0 0 4px rgba(255,255,255,.12),0 0 18px 4px rgba(150,200,255,.55)}
+.sp-stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.sp-stops li{position:relative;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--mid);line-height:1.4}
+.sp-stop-dot{position:absolute;left:-25px;top:3px;width:12px;height:12px;border-radius:50%;border:2px solid #4f8de8;background:#10203a}
+.sp-stops li:last-child .sp-stop-dot{border-color:#3fae78}
+
+/* de aanvraag: het resultaat, in goud */
+.sp-lead-hero{position:relative;display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--sp-goud-line);border-radius:14px;
+  background:linear-gradient(180deg,rgba(230,196,110,.07),rgba(230,196,110,0) 70%),rgba(9,18,33,.55)}
+.sp-lead-hero::before{content:"";position:absolute;left:18px;right:18px;top:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--sp-goud-l),transparent);opacity:.8}
+.sp-lead-hero-top{display:flex;align-items:center;gap:9px}
+.sp-lead-hero-top time{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.sp-lead-hero b{font-size:18px;font-weight:700;color:var(--hi);margin-top:4px}
+.sp-lead-what{font-size:14px;line-height:1.45;color:var(--mid)}
+.sp-tag{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;align-self:flex-start;margin-top:8px;padding:5px 11px;border:1px solid var(--sp-goud-line);
+  border-radius:999px;font-size:13px;color:var(--sp-goud-l);background:var(--sp-goud-soft)}
+.sp-tag .sp-k{color:#c9b27a}
+
+@media (prefers-reduced-motion:no-preference){
+  html.js .sp-line-dot{animation:sp-run 6.4s cubic-bezier(.45,.05,.35,1) infinite 1.2s}
+  html.js .sp-lead-hero{animation:sp-land 6.4s ease-in-out infinite 1.2s}
+}
+@keyframes sp-run{
+  0%{top:0;opacity:0}
+  6%{opacity:1}
+  40%{top:100%;opacity:1}
+  46%,100%{top:100%;opacity:0}
+}
+@keyframes sp-land{
+  0%,38%{box-shadow:0 0 0 0 rgba(230,196,110,0)}
+  46%{box-shadow:0 0 0 4px rgba(230,196,110,.22),0 0 34px -6px rgba(230,196,110,.45)}
+  70%,100%{box-shadow:0 0 0 0 rgba(230,196,110,0)}
+}
+
+/* ---------------- probleem: rapport tegenover klantenoverzicht ---------------- */
+.sp-vs{display:grid;gap:18px;margin-top:40px}
+.sp-vs-card{min-width:0;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.sp-vs-card.is-new{border-color:var(--line-2)}
+.sp-vs-k{margin:0 0 16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.sp-vs-note{margin:18px 0 0;font-size:14px;line-height:1.5;color:var(--mid)}
+.sp-bars{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.sp-bars li{display:grid;grid-template-columns:120px minmax(0,1fr);align-items:center;gap:14px;font-size:14px;color:var(--mid)}
+.sp-bars i{display:block;height:8px;width:var(--w);border-radius:4px;background:linear-gradient(90deg,rgba(150,180,220,.32),rgba(150,180,220,.12))}
+.sp-names{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.sp-names li{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:12px;row-gap:6px;padding:12px 14px;
+  border:1px solid var(--line);border-radius:14px;background:rgba(9,18,33,.45)}
+.sp-who{display:flex;flex-direction:column;min-width:0}
+.sp-who b{font-size:15.5px;color:var(--hi)}
+.sp-who span{font-size:13.5px;color:var(--mid)}
+.sp-src{grid-column:2;justify-self:start;font-size:12.5px;line-height:1.3;padding:4px 10px;border-radius:999px;border:1px solid var(--sp-blauw-line);
+  background:var(--sp-blauw-soft);color:var(--sp-blauw-l)}
+.sp-src.is-other{border-color:var(--line-2);background:rgba(255,255,255,.03);color:var(--mid)}
+
+/* ---------------- het spoor: het voorbeeld ---------------- */
+.sp-board{position:relative;margin-top:40px;padding:18px;border:1px solid var(--line-2);border-radius:24px;background:rgba(10,20,36,.45);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.sp-board-label{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:0 0 18px}
+.sp-hint{font-size:13.5px;color:var(--mid)}
+.sp-cols{position:relative;z-index:1;display:grid;gap:26px}
+.sp-col{min-width:0}
+.sp-col-k{margin:0 0 12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.sp-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+button.sp-res{cursor:pointer;transition:border-color .25s ease,box-shadow .25s ease,opacity .25s ease,background-color .25s ease}
+button.sp-res:hover{border-color:var(--line-2)}
+button.sp-res[aria-pressed="true"],button.sp-res.is-lit{border-color:var(--sp-blauw-line);box-shadow:0 0 0 3px var(--sp-blauw-soft);background:rgba(14,30,56,.7)}
+.sp-res-c{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px;padding-top:8px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.sp-count{font-family:var(--font);font-size:12.5px;letter-spacing:0;text-transform:none;font-weight:600;color:var(--sp-goud-l)}
+.sp-count:empty{display:none}
+
+.sp-lead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;width:100%;text-align:left;cursor:pointer;
+  padding:13px 15px;border:1px solid var(--line);border-radius:14px;background:rgba(9,18,33,.55);color:var(--hi);font-family:var(--font);
+  transition:border-color .25s ease,box-shadow .25s ease,opacity .25s ease,background-color .25s ease}
+.sp-lead .sp-dot{margin-top:6px}
+.sp-lead.is-other .sp-dot{background:#8fa0b3;box-shadow:0 0 0 3px rgba(143,160,179,.16)}
+.sp-lead:hover{border-color:var(--line-2)}
+.sp-lead[aria-pressed="true"],.sp-lead.is-lit{border-color:var(--sp-goud-line);box-shadow:0 0 0 3px rgba(230,196,110,.12);
+  background:linear-gradient(180deg,rgba(230,196,110,.06),rgba(230,196,110,0) 80%),rgba(9,18,33,.7)}
+.sp-lead-main{display:flex;flex-direction:column;gap:3px;min-width:0}
+.sp-lead-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.sp-lead-top b{font-size:16px;font-weight:700}
+.sp-kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sp-goud-l);padding:2px 8px;border:1px solid var(--sp-goud-line);border-radius:999px}
+.sp-lead.is-other .sp-kind{color:var(--mid);border-color:var(--line-2)}
+.sp-lead-top time{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.sp-lead-src{font-family:var(--mono);font-size:11.5px;line-height:1.5;color:var(--dim)}
+.sp-board.is-filter .sp-lead:not(.is-lit),.sp-board.is-filter button.sp-res:not(.is-lit):not([aria-pressed="true"]),
+.sp-board.is-one button.sp-res:not(.is-lit){opacity:.42}
+
+/* de strook met het spoor van de gekozen aanvraag */
+.sp-strip{position:relative;z-index:1;margin-top:20px;padding:16px;border:1px solid var(--line-2);border-radius:18px;background:rgba(7,15,28,.6)}
+.sp-strip[hidden]{display:none}
+.sp-list .sp-strip{margin-top:10px}
+.sp-strip-k{margin:0 0 12px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.sp-steps-row{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.sp-step{position:relative;display:flex;flex-direction:column;gap:3px;padding:10px 12px 10px 16px;border-left:2px solid var(--sp-blauw-line)}
+.sp-step b{font-size:15px;font-weight:600;color:var(--hi);line-height:1.35}
+.sp-step span{font-size:13.5px;color:var(--mid);line-height:1.45}
+.sp-step.is-res{border-left-color:var(--sp-goud)}
+.sp-step.is-res b{color:var(--sp-goud-l)}
+.sp-step.is-none{border-left-color:rgba(143,160,179,.5)}
+.sp-strip-msg{margin:0;font-size:15px;color:var(--hi)}
+.sp-strip-msg b{color:var(--sp-goud-l);font-weight:600}
+.sp-wire{display:none}
+.sp-voet{max-width:72ch;margin:18px auto 0;text-align:center;font-size:14px;line-height:1.55;color:var(--dim)}
+
+/* ---------------- wat we doen ---------------- */
+.sp-cards{display:grid;gap:14px;margin-top:40px}
+.sp-card{min-width:0;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.sp-ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:#d6e3f2}
+.sp-ic svg{width:20px;height:20px}
+.sp-card h3{margin:16px 0 8px;font-size:17.5px;font-weight:700;letter-spacing:-.01em;color:var(--hi)}
+.sp-card p{margin:0;font-size:15px;line-height:1.6;color:var(--mid)}
+
+/* ---------------- wie doet wat / voor wie ---------------- */
+.sp-two{display:grid;gap:14px;margin-top:40px}
+.sp-role{min-width:0;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.sp-role.is-wij{border-color:var(--line-2)}
+.sp-role h3{margin:0 0 16px;font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--hi)}
+.sp-checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.sp-checks li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px;align-items:start;font-size:15.5px;line-height:1.55;color:var(--mid)}
+.sp-checks svg{width:18px;height:18px;margin-top:3px;color:var(--sp-groen-l)}
+.sp-checks.is-x svg{color:#9aa7b6}
+.sp-keynote{display:flex;align-items:flex-start;gap:12px;margin:22px 0 0;font-size:15.5px;line-height:1.55;color:var(--hi)}
+.sp-key{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:10px;border:1px solid var(--line-2);color:#d6e3f2}
+.sp-key svg{width:18px;height:18px}
+.sp-tip{margin:22px 0 0;font-size:15px;line-height:1.55;color:var(--mid)}
+.sp-tip a,.sp-more a,.sp-faq .faq-a a{color:var(--hi);text-decoration:underline;text-decoration-color:rgba(127,211,168,.5);text-underline-offset:3px}
+.sp-tip a:hover,.sp-more a:hover{text-decoration-color:var(--sp-groen-l)}
+
+/* ---------------- zo starten we ---------------- */
+.sp-how-h{margin:0;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--mid)}
+.sp-slash{color:var(--acc);margin-right:8px}
+.sp-steps{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px;counter-reset:none}
+.sp-steps li{position:relative;padding:20px 20px 22px;border:1px solid var(--line);border-radius:18px;background:var(--glass)}
+.sp-n{font-family:var(--mono);font-size:12px;color:var(--sp-groen-l)}
+.sp-steps h3{margin:10px 0 6px;font-size:17px;font-weight:700;color:var(--hi)}
+.sp-steps p{margin:0;font-size:14.5px;line-height:1.55;color:var(--mid)}
+
+/* ---------------- eerlijk ---------------- */
+.sp-honest{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(6,12,24,.28)}
+.sp-honest-grid{display:grid;gap:32px}
+.sp-honest-copy{min-width:0}
+/* zelfde onderlijning als .grad, maar in goud: het gaat over resultaat */
+body[data-skin="v2"] .sp-goud{color:var(--hi);font-weight:800;background:linear-gradient(90deg,#b98f3e,#f6e7b8 55%,#e6c46e) no-repeat;
+  background-position:0 100%;background-size:100% 2px;padding-bottom:.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sp-honest-card{position:relative;min-width:0;padding:24px;border:1px solid var(--sp-goud-line);border-radius:20px;background:var(--glass);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.sp-honest-card::before{content:"";position:absolute;left:24px;right:24px;top:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--sp-goud-l),transparent)}
+.sp-gold-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.sp-gold-list li{display:grid;grid-template-columns:12px minmax(0,1fr);gap:12px;align-items:start;font-size:16px;line-height:1.5;color:var(--hi)}
+.sp-gold-dot{width:8px;height:8px;margin-top:8px;border-radius:50%;background:var(--sp-goud);box-shadow:0 0 0 3px rgba(230,196,110,.16)}
+
+/* ---------------- prijs ---------------- */
+.sp-price{display:grid;gap:32px}
+.sp-price-copy{min-width:0}
+.sp-price-card{min-width:0;padding:26px;border:1px solid var(--line-2);border-radius:22px;background:var(--glass);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 40px 80px -40px rgba(0,0,0,.6)}
+.sp-amount{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px}
+.sp-amount b{font-size:56px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--hi)}
+.sp-amount span{font-size:15px;color:var(--mid)}
+.sp-plus{margin:10px 0 22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim)}
+.sp-samen{margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.55;color:var(--mid)}
+.sp-price-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.sp-price-cta svg{width:15px;height:15px}
+
+/* ---------------- FAQ ---------------- */
+.sp-faq{background:rgba(6,12,24,.3);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sp-faq-grid{display:grid;gap:4px}
+.sp-faq .faq-list{margin-top:28px;max-width:none}
+.sp-more{margin:22px 0 0;font-size:14.5px;line-height:1.7;color:var(--mid)}
+.sp-more span{margin:0 4px;color:var(--dim)}
+
+/* ---------------- tablet ---------------- */
+@media (min-width:700px){
+  .sp-vs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sp-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sp-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sp-steps-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sp-facts{flex-direction:row;flex-wrap:wrap;gap:10px 22px}
+}
+
+/* ---------------- desktop ---------------- */
+@media (min-width:1000px){
+  .sp-hero{padding:18px 0 96px}
+  .sp-hero-grid{grid-template-columns:minmax(0,1fr) clamp(380px,34vw,460px);column-gap:clamp(64px,7vw,104px);align-items:center}
+  .sp-h1{font-size:clamp(50px,4.3vw,62px)}
+  .sp-trail{padding:22px}
+  .sp-cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(72px,8vw,120px)}
+  .sp-board{padding:26px}
+  .sp-steps-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sp-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sp-steps{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .sp-honest-grid{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:72px;align-items:center}
+  .sp-price{grid-template-columns:minmax(0,5fr) minmax(0,5fr);gap:72px;align-items:center}
+  .sp-faq-grid{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px;align-items:start}
+  .sp-faq .faq-list{margin-top:4px}
+  /* de lijn van de gekozen aanvraag naar haar advertentie (spoor.js) */
+  html.js .sp-wire{display:block;position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+  .sp-wire path{fill:none;stroke-width:1.6;stroke-linecap:round}
+}
+@media (prefers-reduced-motion:no-preference){
+  .sp-wire path{stroke-dasharray:var(--len,0);stroke-dashoffset:var(--len,0);animation:sp-draw .7s cubic-bezier(.3,.7,.2,1) forwards}
+}
+@keyframes sp-draw{to{stroke-dashoffset:0}}
+
+/* smalle gsm */
+@media (max-width:380px){
+  .sp-trail,.sp-board{padding:14px}
+  .sp-bars li{grid-template-columns:96px minmax(0,1fr)}
+  .sp-amount b{font-size:48px}
+}
+
+/* hoog contrast */
+@media (forced-colors:active){
+  .sp-line,.sp-lead-hero::before,.sp-honest-card::before{display:none}
+  body[data-skin="v2"] .sp-goud{background:none;text-decoration:underline}
+}

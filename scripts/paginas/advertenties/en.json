@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Google Ads management for your business | EM Launchpad",
+    "desc": "We set up and manage your Google Ads. You see which enquiry or booking came from which ad. €200 a month on top of Online Growth, excl. VAT.",
+    "ogtitle": "Google Ads: see which ad brings in your customers",
+    "service": "Ad management (Google Ads)",
+    "service_type": "Google Ads management",
+    "offer": "Ad management, on top of Online Growth",
+    "offer_unit": "per month, excl. VAT"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {"p": 0, "ax": 78, "ay": 26, "bx": 10, "by": 92, "ao": 0.9, "bo": 0.45},
+    {"p": 0.3, "ax": 20, "ay": 40, "bx": 84, "by": 70, "ao": 0.6, "bo": 0.7},
+    {"p": 0.65, "ax": 82, "ay": 62, "bx": 16, "by": 28, "ao": 0.75, "bo": 0.6},
+    {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}
+  ],
+  "hero": {
+    "crumb_home": "Home",
+    "crumb_parent": "Services",
+    "crumb": "Google Ads",
+    "eyebrow": "Ad management",
+    "h1a": "Google Ads,|with a trail",
+    "h1b": "all the way to the customer.",
+    "lede": "We set up and manage your ads. When an enquiry or booking comes in through an ad, your customer overview shows which campaign and which ad it came from. Not just clicks, but who became a customer.",
+    "cta1": "Book a free demo",
+    "cta2": "Follow an enquiry",
+    "facts": ["€200 a month on top of Online Growth, excl. VAT", "You pay your budget directly to Google", "Cancellable monthly"],
+    "vis": {
+      "label": "Example",
+      "q": "painter living room and stairwell",
+      "sponsored": "Sponsored",
+      "url": "yourbusiness.be/interior-painting",
+      "title": "Interior painting by a professional | Get your quote",
+      "desc": "Walls, ceilings and stairs. A clean finish and a tidy site.",
+      "stop1": "Click",
+      "stop2": "Your page with the enquiry form",
+      "lead_k": "New enquiry",
+      "lead_t": "Tue 10:42",
+      "lead_name": "Sofie",
+      "lead_txt": "Paint the living room, kitchen and stairwell",
+      "tag_k": "Source",
+      "tag": "Ad Interior painting"
+    }
+  },
+  "probleem": {
+    "eyebrow": "The problem",
+    "h2a": "Clicks are",
+    "h2b": "not customers yet.",
+    "lede": "Most reports show impressions, clicks and the cost per click. What you really want to know isn't in there: who asked for a quote, who booked, and through which ad.",
+    "links": {
+      "k": "A typical report",
+      "rows": ["Impressions", "Clicks", "Click-through rate", "Cost per click"],
+      "note": "Doesn't say who called, sent an enquiry or booked."
+    },
+    "rechts": {
+      "k": "Your customer overview",
+      "rows": [
+        {"who": "Sofie", "what": "Enquiry: living room and stairwell", "src": "Ad Interior painting", "ad": true},
+        {"who": "Marc", "what": "Booking: site visit", "src": "Ad Site visit", "ad": true},
+        {"who": "Jan", "what": "Enquiry: windows and doors", "src": "Google profile, no ad", "ad": false}
+      ],
+      "note": "Every name with its source. Example."
+    }
+  },
+  "spoor": {
+    "eyebrow": "The trail",
+    "h2a": "Pick an enquiry.",
+    "h2b": "See which ad brought it in.",
+    "lede": "An example of a painting business with three ads. Pick a name: the trail runs back to the ad and forward to what the enquiry became. Pick an ad to see who it brought in.",
+    "voorbeeld": "Example: made-up business, names and ads",
+    "ads_k": "Your ads on Google",
+    "sponsored": "Sponsored",
+    "leads_k": "Your customer overview",
+    "ads": [
+      {"id": "binnen", "camp": "Interior painting", "url": "yourbusiness.be/interior-painting", "title": "Interior painting by a professional | Get your quote", "text": "Walls, ceilings and stairs. A clean finish and a tidy site."},
+      {"id": "buiten", "camp": "Exterior painting", "url": "yourbusiness.be/exterior-painting", "title": "Facade or windows need painting? | Tailored quote", "text": "Woodwork, facades and windows. We come and take a look first."},
+      {"id": "bezoek", "camp": "Site visit", "url": "yourbusiness.be/site-visit", "title": "Book a site visit | Pick your own time", "text": "Book a site visit online. You get a confirmation by email straight away."}
+    ],
+    "leads": [
+      {"id": "l1", "name": "Sofie", "kind": "a", "what": "Living room, kitchen and stairwell", "when": "Tue 10:42", "ad": "binnen", "page": "Interior painting page, with the enquiry form", "stage": "Quote sent"},
+      {"id": "l2", "name": "Marc", "kind": "b", "what": "Site visit", "when": "Wed 21:15", "ad": "bezoek", "page": "Site visit page, with your calendar", "stage": "Site visit scheduled"},
+      {"id": "l3", "name": "Els", "kind": "a", "what": "Facade and windows", "when": "Fri 08:05", "ad": "buiten", "page": "Exterior painting page, with the enquiry form", "stage": "Contacted"},
+      {"id": "l4", "name": "Jan", "kind": "a", "what": "Outside windows and doors", "when": "Sat 11:30", "ad": null, "other": "Through your Google profile, not through an ad", "stage": "New enquiry"},
+      {"id": "l5", "name": "Lotte", "kind": "a", "what": "Ceilings in three rooms", "when": "Mon 19:20", "ad": "binnen", "page": "Interior painting page, with the enquiry form", "stage": "Job scheduled"}
+    ],
+    "lbl": {
+      "ad": "Ad",
+      "page": "Page",
+      "kind_a": "Enquiry",
+      "kind_b": "Booking",
+      "next": "Then",
+      "src": "Source",
+      "via": "Via ad",
+      "none_ad": "No ad",
+      "none_ad_d": "Doesn't count towards your ad figures. So you also see what does not come from your ads.",
+      "per_ad": "From this ad, in this example: {n} of {t}.",
+      "per_ad_0": "Nobody has come in through this ad in this example yet.",
+      "trail": "The trail"
+    },
+    "hint": "Pick a name or an ad.",
+    "nojs": "Every name shows its source: the ad or another route.",
+    "voet": "In your real customer overview, the source is shown for enquiries and bookings that come in through a form or the calendar of our platform, on the page your ad leads to. That's why we build that page too."
+  },
+  "doen": {
+    "eyebrow": "What we do",
+    "h2a": "Set up, measure",
+    "h2b": "and fine-tune every week.",
+    "items": [
+      {"ic": "zoek", "t": "Search ads on Google", "d": "Your ad shows up when someone in your area searches for what you do. We choose the keywords, write the copy and exclude search terms that bring in nothing."},
+      {"ic": "meta", "t": "Facebook and Instagram, if it fits", "d": "Ad management also works on Meta. In the free demo we look at which channel suits your business. You then pay the budget directly to Meta."},
+      {"ic": "pagina", "t": "A page that measures", "d": "Your ad leads to a page with your form or calendar on it. That way the source travels with the enquiry or booking, all the way into your customer overview."},
+      {"ic": "doel", "t": "Letting Google learn", "d": "We set up measurement so Google knows which clicks turned into an enquiry. Then it can spend your budget more effectively."},
+      {"ic": "week", "t": "Fine-tuning every week", "d": "Every week we check which search terms cost money without an enquiry, and adjust. Your budget only changes with your approval."},
+      {"ic": "rapport", "t": "A monthly report in plain language", "d": "What it cost, how many enquiries and bookings came from it, and what we changed. No jargon."}
+    ]
+  },
+  "rollen": {
+    "eyebrow": "Who does what",
+    "h2a": "You keep the keys.",
+    "h2b": "We do the work.",
+    "jij": {
+      "k": "You",
+      "items": [
+        "A Google Ads account in your own name, with your own payment card",
+        "You choose your monthly budget and pay it directly to Google",
+        "You give us access with an invitation, without sharing your password",
+        "You approve the ads before they start",
+        "You follow up the enquiries: call, quote, appointment"
+      ]
+    },
+    "wij": {
+      "k": "Us",
+      "items": [
+        "Keywords, ad copy and exclusions",
+        "The page your ad leads to, with your form or calendar",
+        "Measurement: the source of enquiries and bookings in your customer overview",
+        "Checking and fine-tuning every week",
+        "A short report every month"
+      ]
+    },
+    "note": "Stopping? You keep your account, your ads and all the history. They're in your name."
+  },
+  "stappen": {
+    "h": "How we start",
+    "items": [
+      {"t": "Free demo", "d": "30 minutes on Teams. We look at your business, your area and what a new customer is worth to you."},
+      {"t": "Your account", "d": "You create a Google Ads account in your name, or use the one you already have. Then you invite us."},
+      {"t": "The proposal", "d": "We prepare the campaign: keywords, copy, the page and the measurement. You see everything before anything starts."},
+      {"t": "Live", "d": "Once you approve, the ads go live. Google also reviews every ad itself."},
+      {"t": "Fine-tuning and report", "d": "Fine-tuning every week, a report every month. More or less budget? That's your call."}
+    ]
+  },
+  "eerlijk": {
+    "eyebrow": "Honest",
+    "h2a": "No promises up front.",
+    "h2b": "Just the real numbers.",
+    "text": "We don't show you made-up success stories and we don't promise you a number of customers. Nobody honestly can. What you do get: the real numbers every month, from your own account and your own customer overview. If an ad isn't working, you'll see that too, and we'll tell you what we're doing about it.",
+    "k": "What you see every month",
+    "punten": [
+      "What your ads cost, straight from Google",
+      "Which enquiries and bookings they brought in, with name and source",
+      "What happened next: quote, appointment, customer"
+    ]
+  },
+  "voorwie": {
+    "eyebrow": "Who it's for",
+    "h2a": "Is it right",
+    "h2b": "for your business?",
+    "wel": {
+      "k": "It fits if",
+      "items": [
+        "People actively search for what you do: a painter, a hairdresser, a physiotherapist, a garage",
+        "You can follow up new enquiries quickly, even when it's busy",
+        "You want to know what every euro spent on ads brings in"
+      ]
+    },
+    "niet": {
+      "k": "It doesn't fit (yet) if",
+      "items": [
+        "You don't have time to follow up new enquiries",
+        "You want a guaranteed number of customers up front",
+        "You want to advertise prescription medicines: Google doesn't allow that in Belgium"
+      ]
+    },
+    "tip": "Want to be found more easily first, without paying per click? Then look at [your Google profile and SEO Plus](Diensten#uitbreidingen)."
+  },
+  "prijs": {
+    "eyebrow": "What it costs",
+    "h2a": "A fixed fee.",
+    "h2b": "Your budget goes to Google.",
+    "text": "You pay us a fixed fee for the management. You pay your ad budget yourself to Google or Meta, and we don't add anything on top.",
+    "amount": "€200",
+    "per": "a month, excl. VAT",
+    "plus": "On top of Online Growth (€150 a month)",
+    "points": [
+      "Setting up and managing your ads",
+      "The source of enquiries and bookings in your customer overview",
+      "Checking and fine-tuning every week",
+      "A report every month",
+      "No setup fee, cancellable monthly"
+    ],
+    "samen": "Together with Online Growth: €350 a month, excl. VAT, plus your ad budget.",
+    "cta": "Book a free demo",
+    "cta2": "View Online Growth"
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "h2a": "Good",
+    "h2b": "to know.",
+    "items": [
+      {"q": "What does ad management cost?", "a": "€200 a month, excl. VAT, on top of [Online Growth](Diensten#pakket-1) (€150 a month). There's no setup fee and it's cancellable monthly. You pay your ad budget directly to Google or Meta."},
+      {"q": "How much ad budget do I need?", "a": "That depends on your sector, your area and how many enquiries you can handle. We look at it together in the free demo. You choose the budget, and it only changes with your approval."},
+      {"q": "Who owns the Google Ads account?", "a": "You do. It's in your name and you pay the budget with your own payment card. We get access through an invitation, without you sharing a password. If you stop, you keep your account and all the history."},
+      {"q": "How do I see which enquiry came from an ad?", "a": "When an enquiry or booking comes in through a form or the calendar of our platform, it carries its source: the campaign and the ad. You see it with the customer in your customer overview. It works when the visitor enquires or books on the page the ad leads to. That's why we have your ads land on a page with your form or calendar on it."},
+      {"q": "Do you also do Facebook and Instagram?", "a": "Yes. Ad management also works on Meta. You then pay the budget directly to Meta. In the free demo we look at which channel suits your business."},
+      {"q": "Do you promise a number of customers?", "a": "No. Nobody can honestly promise that. What we do: show you the real numbers every month, from your own account and your own customer overview, and tell you what we're adjusting."},
+      {"q": "Can I get ad management without Online Growth?", "a": "No. It's an add-on on top of [Online Growth](Diensten#pakket-1). That's where your customer overview, your forms and your calendar live, and we need those to measure what each ad brought in."},
+      {"q": "When do my ads start?", "a": "Only once you've approved the campaign and your account is ready. Google then also reviews every ad itself before it can appear."},
+      {"q": "I already have a Google Ads account. Can I switch?", "a": "Yes. You invite us into your existing account, so your history stays. In the free demo we look together at what's already running."},
+      {"q": "Does this work for a healthcare practice?", "a": "Sometimes, with restrictions. In Belgium, Google doesn't allow ads for prescription medicines, and audiences based on health are restricted. We check up front what's allowed, and only advertise what's within the rules."}
+    ],
+    "more_k": "More about the building blocks:",
+    "more": [
+      {"t": "Online booking system", "href": "Afsprakensysteem"},
+      {"t": "Websites", "href": "Websites"},
+      {"t": "All services and prices", "href": "Diensten"}
+    ]
+  },
+  "cta": {
+    "h2a": "Want to see which ad",
+    "h2b": "brings in your customers?",
+    "text": "Book a free 30-minute demo on Teams. We look at your business and tell you honestly whether ads make sense right now.",
+    "btn": "Book a free demo",
+    "badges": ["30 minutes on Teams", "Free", "No obligation"]
+  }
+}

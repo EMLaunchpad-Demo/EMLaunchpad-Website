@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Gestion Google Ads pour votre entreprise | EM Launchpad",
+    "desc": "Nous créons et gérons vos Google Ads. Vous voyez de quelle annonce vient une demande ou une réservation. 200 € par mois en plus de Croissance en ligne, HTVA.",
+    "ogtitle": "Google Ads : voyez quelle annonce vous amène vos clients",
+    "service": "Gestion de publicités (Google Ads)",
+    "service_type": "Gestion Google Ads",
+    "offer": "Gestion de publicités, en plus de Croissance en ligne",
+    "offer_unit": "par mois, HTVA"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {"p": 0, "ax": 78, "ay": 26, "bx": 10, "by": 92, "ao": 0.9, "bo": 0.45},
+    {"p": 0.3, "ax": 20, "ay": 40, "bx": 84, "by": 70, "ao": 0.6, "bo": 0.7},
+    {"p": 0.65, "ax": 82, "ay": 62, "bx": 16, "by": 28, "ao": 0.75, "bo": 0.6},
+    {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}
+  ],
+  "hero": {
+    "crumb_home": "Accueil",
+    "crumb_parent": "Services",
+    "crumb": "Google Ads",
+    "eyebrow": "Gestion de publicités",
+    "h1a": "Google Ads,|avec une trace",
+    "h1b": "jusqu’au client.",
+    "lede": "Nous créons et gérons vos annonces. Quand une demande ou une réservation arrive via une annonce, votre fichier clients montre de quelle campagne et de quelle annonce elle vient. Pas seulement des clics, mais qui est devenu client.",
+    "cta1": "Planifier une démo gratuite",
+    "cta2": "Suivre une demande",
+    "facts": ["200 € par mois en plus de Croissance en ligne, HTVA", "Vous payez votre budget directement à Google", "Résiliable chaque mois"],
+    "vis": {
+      "label": "Exemple",
+      "q": "peintre salon et cage d’escalier",
+      "sponsored": "Sponsorisé",
+      "url": "votreentreprise.be/peinture-interieure",
+      "title": "Peinture intérieure par un pro | Demandez votre devis",
+      "desc": "Murs, plafonds et escaliers. Une finition nette et un chantier propre.",
+      "stop1": "Clic",
+      "stop2": "Votre page avec le formulaire de demande",
+      "lead_k": "Nouvelle demande",
+      "lead_t": "mar 10:42",
+      "lead_name": "Sofie",
+      "lead_txt": "Faire peindre le salon, la cuisine et la cage d’escalier",
+      "tag_k": "Source",
+      "tag": "Annonce Peinture intérieure"
+    }
+  },
+  "probleem": {
+    "eyebrow": "Le problème",
+    "h2a": "Des clics,",
+    "h2b": "ce ne sont pas encore des clients.",
+    "lede": "La plupart des rapports montrent les impressions, les clics et le coût par clic. Ce que vous voulez vraiment savoir n’y figure pas : qui a demandé un devis, qui a réservé, et via quelle annonce.",
+    "links": {
+      "k": "Un rapport classique",
+      "rows": ["Impressions", "Clics", "Taux de clics", "Coût par clic"],
+      "note": "Ne dit pas qui a appelé, envoyé une demande ou réservé."
+    },
+    "rechts": {
+      "k": "Votre fichier clients",
+      "rows": [
+        {"who": "Sofie", "what": "Demande : salon et cage d’escalier", "src": "Annonce Peinture intérieure", "ad": true},
+        {"who": "Marc", "what": "Réservation : visite sur place", "src": "Annonce Visite sur place", "ad": true},
+        {"who": "Jan", "what": "Demande : fenêtres et portes", "src": "Fiche Google, pas d’annonce", "ad": false}
+      ],
+      "note": "Chaque nom avec sa source. Exemple."
+    }
+  },
+  "spoor": {
+    "eyebrow": "La trace",
+    "h2a": "Choisissez une demande.",
+    "h2b": "Voyez quelle annonce l’a amenée.",
+    "lede": "L’exemple d’une entreprise de peinture avec trois annonces. Choisissez un nom : la trace remonte jusqu’à l’annonce et montre ce que la demande est devenue. Choisissez une annonce pour voir qui elle a amené.",
+    "voorbeeld": "Exemple : entreprise, noms et annonces inventés",
+    "ads_k": "Vos annonces sur Google",
+    "sponsored": "Sponsorisé",
+    "leads_k": "Votre fichier clients",
+    "ads": [
+      {"id": "binnen", "camp": "Peinture intérieure", "url": "votreentreprise.be/peinture-interieure", "title": "Peinture intérieure par un pro | Demandez votre devis", "text": "Murs, plafonds et escaliers. Une finition nette et un chantier propre."},
+      {"id": "buiten", "camp": "Peinture extérieure", "url": "votreentreprise.be/peinture-exterieure", "title": "Façade ou fenêtres à repeindre ? | Devis sur mesure", "text": "Boiseries, façades et fenêtres. Nous venons d’abord voir."},
+      {"id": "bezoek", "camp": "Visite sur place", "url": "votreentreprise.be/visite", "title": "Planifiez une visite sur place | Choisissez le moment", "text": "Réservez une visite en ligne. Vous recevez tout de suite une confirmation par e-mail."}
+    ],
+    "leads": [
+      {"id": "l1", "name": "Sofie", "kind": "a", "what": "Salon, cuisine et cage d’escalier", "when": "mar 10:42", "ad": "binnen", "page": "Page peinture intérieure, avec le formulaire de demande", "stage": "Devis envoyé"},
+      {"id": "l2", "name": "Marc", "kind": "b", "what": "Visite sur place", "when": "mer 21:15", "ad": "bezoek", "page": "Page visite sur place, avec votre agenda", "stage": "Visite planifiée"},
+      {"id": "l3", "name": "Els", "kind": "a", "what": "Façade et fenêtres", "when": "ven 08:05", "ad": "buiten", "page": "Page peinture extérieure, avec le formulaire de demande", "stage": "Premier contact"},
+      {"id": "l4", "name": "Jan", "kind": "a", "what": "Fenêtres et portes extérieures", "when": "sam 11:30", "ad": null, "other": "Via votre fiche Google, pas via une annonce", "stage": "Nouvelle demande"},
+      {"id": "l5", "name": "Lotte", "kind": "a", "what": "Plafonds de trois pièces", "when": "lun 19:20", "ad": "binnen", "page": "Page peinture intérieure, avec le formulaire de demande", "stage": "Travaux planifiés"}
+    ],
+    "lbl": {
+      "ad": "Annonce",
+      "page": "Page",
+      "kind_a": "Demande",
+      "kind_b": "Réservation",
+      "next": "Ensuite",
+      "src": "Source",
+      "via": "Via l’annonce",
+      "none_ad": "Pas d’annonce",
+      "none_ad_d": "Ne compte pas dans vos chiffres publicitaires. Vous voyez donc aussi ce qui ne vient pas de vos annonces.",
+      "per_ad": "Via cette annonce, dans cet exemple : {n} sur {t}.",
+      "per_ad_0": "Personne n’est encore arrivé via cette annonce dans cet exemple.",
+      "trail": "La trace"
+    },
+    "hint": "Choisissez un nom ou une annonce.",
+    "nojs": "Chaque nom indique sa source : l’annonce ou un autre chemin.",
+    "voet": "Dans votre vrai fichier clients, la source figure pour les demandes et réservations qui arrivent via un formulaire ou l’agenda de notre plateforme, sur la page vers laquelle mène votre annonce. C’est pourquoi nous construisons aussi cette page."
+  },
+  "doen": {
+    "eyebrow": "Ce que nous faisons",
+    "h2a": "Créer, mesurer",
+    "h2b": "et ajuster chaque semaine.",
+    "items": [
+      {"ic": "zoek", "t": "Annonces sur la recherche Google", "d": "Votre annonce apparaît quand quelqu’un de votre région cherche ce que vous faites. Nous choisissons les mots-clés, rédigeons les textes et excluons les recherches qui ne rapportent rien."},
+      {"ic": "meta", "t": "Facebook et Instagram, si c’est pertinent", "d": "La gestion de publicités est aussi possible sur Meta. Pendant la démo gratuite, nous voyons quel canal convient à votre entreprise. Vous payez alors le budget directement à Meta."},
+      {"ic": "pagina", "t": "Une page qui mesure", "d": "Votre annonce mène à une page avec votre formulaire ou votre agenda. Ainsi, la source accompagne la demande ou la réservation, jusque dans votre fichier clients."},
+      {"ic": "doel", "t": "Laisser Google apprendre", "d": "Nous mettons en place la mesure pour que Google sache quels clics sont devenus une demande. Il peut alors mieux utiliser votre budget."},
+      {"ic": "week", "t": "Ajuster chaque semaine", "d": "Chaque semaine, nous regardons quelles recherches coûtent de l’argent sans demande, et nous ajustons. Votre budget ne change qu’avec votre accord."},
+      {"ic": "rapport", "t": "Un rapport mensuel en langage clair", "d": "Ce que ça a coûté, combien de demandes et de réservations en sont venues, et ce que nous avons changé. Sans jargon."}
+    ]
+  },
+  "rollen": {
+    "eyebrow": "Qui fait quoi",
+    "h2a": "Vous gardez les clés.",
+    "h2b": "Nous faisons le travail.",
+    "jij": {
+      "k": "Vous",
+      "items": [
+        "Un compte Google Ads à votre nom, avec votre propre carte de paiement",
+        "Vous choisissez votre budget mensuel et le payez directement à Google",
+        "Vous nous donnez accès par une invitation, sans partager votre mot de passe",
+        "Vous approuvez les annonces avant leur lancement",
+        "Vous suivez les demandes : appel, devis, rendez-vous"
+      ]
+    },
+    "wij": {
+      "k": "Nous",
+      "items": [
+        "Mots-clés, textes d’annonce et exclusions",
+        "La page vers laquelle mène votre annonce, avec votre formulaire ou agenda",
+        "La mesure : la source des demandes et réservations dans votre fichier clients",
+        "Vérifier et ajuster chaque semaine",
+        "Un court rapport chaque mois"
+      ]
+    },
+    "note": "Vous arrêtez ? Vous gardez votre compte, vos annonces et tout l’historique. Ils sont à votre nom."
+  },
+  "stappen": {
+    "h": "Comment nous commençons",
+    "items": [
+      {"t": "Démo gratuite", "d": "30 minutes sur Teams. Nous regardons votre entreprise, votre région et ce que vaut un nouveau client pour vous."},
+      {"t": "Votre compte", "d": "Vous créez un compte Google Ads à votre nom, ou vous utilisez celui que vous avez déjà. Ensuite, vous nous invitez."},
+      {"t": "La proposition", "d": "Nous préparons la campagne : mots-clés, textes, la page et la mesure. Vous voyez tout avant que quoi que ce soit ne démarre."},
+      {"t": "En ligne", "d": "Après votre accord, les annonces sont mises en ligne. Google vérifie aussi lui-même chaque annonce."},
+      {"t": "Ajuster et rapporter", "d": "Des ajustements chaque semaine, un rapport chaque mois. Plus ou moins de budget ? C’est vous qui décidez."}
+    ]
+  },
+  "eerlijk": {
+    "eyebrow": "Honnête",
+    "h2a": "Pas de promesses à l’avance.",
+    "h2b": "Les vrais chiffres.",
+    "text": "Nous ne vous montrons pas de succès inventés et nous ne vous promettons pas un nombre de clients. Personne ne peut le faire honnêtement. Ce que vous recevez : chaque mois, les vrais chiffres de votre propre compte et de votre propre fichier clients. Si une annonce ne fonctionne pas, vous le voyez aussi, et nous vous disons ce que nous faisons pour y remédier.",
+    "k": "Ce que vous voyez chaque mois",
+    "punten": [
+      "Ce que vos annonces ont coûté, directement depuis Google",
+      "Quelles demandes et réservations elles ont amenées, avec nom et source",
+      "Ce qui s’est passé ensuite : devis, rendez-vous, client"
+    ]
+  },
+  "voorwie": {
+    "eyebrow": "Pour qui",
+    "h2a": "Est-ce adapté",
+    "h2b": "à votre entreprise ?",
+    "wel": {
+      "k": "C’est adapté si",
+      "items": [
+        "Les gens cherchent activement ce que vous faites : un peintre, un coiffeur, un kiné, un garage",
+        "Vous pouvez suivre rapidement les nouvelles demandes, même quand c’est chargé",
+        "Vous voulez savoir ce que rapporte chaque euro investi en publicité"
+      ]
+    },
+    "niet": {
+      "k": "Ce n’est pas (encore) adapté si",
+      "items": [
+        "Vous n’avez pas le temps de suivre les nouvelles demandes",
+        "Vous voulez un nombre de clients garanti à l’avance",
+        "Vous voulez faire de la publicité pour des médicaments sur prescription : Google ne l’autorise pas en Belgique"
+      ]
+    },
+    "tip": "Vous voulez d’abord être mieux trouvé sans payer par clic ? Regardez alors [votre fiche Google et SEO Plus](Diensten#uitbreidingen)."
+  },
+  "prijs": {
+    "eyebrow": "Ce que ça coûte",
+    "h2a": "Un montant fixe.",
+    "h2b": "Votre budget va à Google.",
+    "text": "Vous nous payez un montant fixe pour la gestion. Votre budget publicitaire, vous le payez vous-même à Google ou à Meta, et nous n’ajoutons rien dessus.",
+    "amount": "200 €",
+    "per": "par mois, HTVA",
+    "plus": "En plus de Croissance en ligne (150 € par mois)",
+    "points": [
+      "Création et gestion de vos annonces",
+      "La source des demandes et réservations dans votre fichier clients",
+      "Vérifier et ajuster chaque semaine",
+      "Un rapport chaque mois",
+      "Sans frais de démarrage, résiliable chaque mois"
+    ],
+    "samen": "Avec Croissance en ligne : 350 € par mois, HTVA, plus votre budget publicitaire.",
+    "cta": "Planifier une démo gratuite",
+    "cta2": "Voir Croissance en ligne"
+  },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "h2a": "Bon à",
+    "h2b": "savoir.",
+    "items": [
+      {"q": "Combien coûte la gestion de publicités ?", "a": "200 € par mois, HTVA, en plus de [Croissance en ligne](Diensten#pakket-1) (150 € par mois). Il n’y a pas de frais de démarrage et c’est résiliable chaque mois. Votre budget publicitaire, vous le payez directement à Google ou à Meta."},
+      {"q": "De quel budget publicitaire ai-je besoin ?", "a": "Cela dépend de votre secteur, de votre région et du nombre de demandes que vous pouvez traiter. Nous le regardons ensemble pendant la démo gratuite. C’est vous qui choisissez le budget, et il ne change qu’avec votre accord."},
+      {"q": "À qui appartient le compte Google Ads ?", "a": "À vous. Il est à votre nom et vous payez le budget avec votre propre carte. Nous recevons l’accès par une invitation, sans que vous partagiez de mot de passe. Si vous arrêtez, vous gardez votre compte et tout l’historique."},
+      {"q": "Comment voir quelle demande vient d’une annonce ?", "a": "Quand une demande ou une réservation arrive via un formulaire ou l’agenda de notre plateforme, elle garde sa source : la campagne et l’annonce. Vous la voyez chez le client, dans votre fichier clients. Cela fonctionne quand le visiteur fait sa demande ou réserve sur la page vers laquelle mène l’annonce. C’est pourquoi vos annonces mènent à une page avec votre formulaire ou votre agenda."},
+      {"q": "Faites-vous aussi Facebook et Instagram ?", "a": "Oui. La gestion de publicités est aussi possible sur Meta. Vous payez alors le budget directement à Meta. Pendant la démo gratuite, nous voyons quel canal convient à votre entreprise."},
+      {"q": "Promettez-vous un nombre de clients ?", "a": "Non. Personne ne peut le promettre honnêtement. Ce que nous faisons : vous montrer chaque mois les vrais chiffres, de votre propre compte et de votre propre fichier clients, et vous dire ce que nous ajustons."},
+      {"q": "Puis-je prendre la gestion de publicités sans Croissance en ligne ?", "a": "Non. C’est une extension en plus de [Croissance en ligne](Diensten#pakket-1). C’est là que se trouvent votre fichier clients, vos formulaires et votre agenda, et nous en avons besoin pour mesurer ce que chaque annonce a rapporté."},
+      {"q": "Quand mes annonces démarrent-elles ?", "a": "Seulement quand vous avez approuvé la campagne et que votre compte est prêt. Google vérifie ensuite aussi lui-même chaque annonce avant qu’elle puisse apparaître."},
+      {"q": "J’ai déjà un compte Google Ads. Puis-je passer chez vous ?", "a": "Oui. Vous nous invitez dans votre compte existant, et votre historique reste. Pendant la démo gratuite, nous regardons ensemble ce qui tourne déjà."},
+      {"q": "Est-ce que ça fonctionne pour un cabinet de soins ?", "a": "Parfois, avec des restrictions. En Belgique, Google n’autorise pas les annonces pour des médicaments sur prescription, et les audiences basées sur la santé sont limitées. Nous vérifions d’abord ce qui est permis, et ne faisons de la publicité que dans les règles."}
+    ],
+    "more_k": "En savoir plus sur les éléments :",
+    "more": [
+      {"t": "Prise de rendez-vous en ligne", "href": "Afsprakensysteem"},
+      {"t": "Sites web", "href": "Websites"},
+      {"t": "Tous les services et tarifs", "href": "Diensten"}
+    ]
+  },
+  "cta": {
+    "h2a": "Vous voulez voir quelle annonce",
+    "h2b": "vous amène vos clients ?",
+    "text": "Planifiez une démo gratuite de 30 minutes sur Teams. Nous regardons votre entreprise et vous disons honnêtement si la publicité a du sens maintenant.",
+    "btn": "Planifier une démo gratuite",
+    "badges": ["30 minutes sur Teams", "Gratuit", "Sans engagement"]
+  }
+}

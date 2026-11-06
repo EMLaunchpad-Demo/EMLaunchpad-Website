@@ -12,7 +12,7 @@ V_CSS = '20261106a'           # website-scan.css
 V_JS = '20261106a'            # website-scan.js
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261106a'
-V_SITE = '20261104a'          # site.js (menu-item en footerlink naar de scan)
+V_SITE = '20261106a'          # site.js (menu-item en footerlink naar de scan)
 SITE = 'https://emlaunchpad.com/'
 TEMPLATE = 'website-voor-kappers.html'
 

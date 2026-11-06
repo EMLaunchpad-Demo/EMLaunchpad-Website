@@ -126,3 +126,18 @@ Verander je `website-scan.css`, `website-scan.js`, `site.js` of `i18n.js`, verho
 - `/bestaat-niet` geeft de 404-pagina, een oude URL uit `_redirects` geeft 301, `/Diensten` geeft 200.
 - CPU-tijd van de Worker in de logs: de analyse duurt 2 tot 6 ms (de eerste keer na een koude start meer).
   Op het gratis plan is de grens 10 ms per verzoek.
+
+## Advertentiebeheer / Google Ads (`/advertenties`)
+
+Dienstpagina "Het spoor" in NL, EN en FR (`advertenties.html`, `en/advertenties.html`, `fr/advertenties.html`).
+Metafoor: het spoor van een klik tot bij de klant. Goud = resultaat (de aanvraag of boeking), blauw en groen = actie.
+Alle cijfers zijn voorbeelden zonder resultaten; prijs uit de goedgekeurde kennis (€200 per maand bovenop Online groeien,
+budget rechtstreeks aan Google of Meta). Gelinkt vanaf de kaart Advertentiebeheer op `/Diensten` (drie talen).
+
+| Bestand | Wat |
+|---|---|
+| `scripts/paginas/advertenties/nl.json`, `en.json`, `fr.json` | Alle teksten (NL is de bron), het voorbeeld en de FAQ |
+| `scripts/paginas/advertenties/body.py`, `build_advertenties.py` | Sjabloon en bouwscript: `py build_advertenties.py nl en fr` |
+| `spoor.css`, `spoor.js` | Opmaak (prefix `sp-`) en het voorbeeld (aanvraag of advertentie kiezen, het spoor tekenen) |
+
+Geen bestandsnamen of klassen met "ad", "ads" of "advert": adblockers verbergen die. Daarom `spoor.*` en `sp-`.

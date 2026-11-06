@@ -29,9 +29,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SKIP_DIRS = new Set([".git", ".github", ".claude", "node_modules", "scripts", "assets", "demo"]);
 
 const LABELS = {
-  nl: { nav: "Sitemap", home: "Home", services: "Diensten", pk: "Pakketkiezer", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI-automatisering", s5: "Online afsprakensysteem", portfolio: "Portfolio", case: "Case: Clinic3D", about: "Over ons", contact: "Contact", demo: "Gratis demo", privacy: "Privacy", emtimes: "EM Times (blog)" },
-  en: { nav: "Sitemap", home: "Home", services: "Services", pk: "Package finder", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI automation", s5: "Online booking system", portfolio: "Portfolio", case: "Case: Clinic3D", about: "About us", contact: "Contact", demo: "Free demo", privacy: "Privacy" },
-  fr: { nav: "Plan du site", home: "Accueil", services: "Services", pk: "Choix du pack", s1: "Chatbots IA", s2: "Agents vocaux IA", s3: "Sites web", s4: "Automatisation IA", s5: "Prise de rendez-vous en ligne", portfolio: "Portfolio", case: "Étude de cas : Clinic3D", about: "À propos", contact: "Contact", demo: "Démo gratuite", privacy: "Confidentialité" },
+  nl: { nav: "Sitemap", home: "Home", services: "Diensten", pk: "Pakketkiezer", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI-automatisering", s5: "Online afsprakensysteem", s6: "Google Ads", portfolio: "Portfolio", case: "Case: Clinic3D", about: "Over ons", contact: "Contact", demo: "Gratis demo", privacy: "Privacy", emtimes: "EM Times (blog)" },
+  en: { nav: "Sitemap", home: "Home", services: "Services", pk: "Package finder", s1: "AI Chatbots", s2: "AI Voice Agents", s3: "Websites", s4: "AI automation", s5: "Online booking system", s6: "Google Ads", portfolio: "Portfolio", case: "Case: Clinic3D", about: "About us", contact: "Contact", demo: "Free demo", privacy: "Privacy" },
+  fr: { nav: "Plan du site", home: "Accueil", services: "Services", pk: "Choix du pack", s1: "Chatbots IA", s2: "Agents vocaux IA", s3: "Sites web", s4: "Automatisation IA", s5: "Prise de rendez-vous en ligne", s6: "Google Ads", portfolio: "Portfolio", case: "Étude de cas : Clinic3D", about: "À propos", contact: "Contact", demo: "Démo gratuite", privacy: "Confidentialité" },
 };
 /** Voor wie: [bestand in de hoofdmap zonder .html, label]. Labels blijven Nederlands, want de pagina's zijn Nederlands. */
 const VOOR_WIE = [
@@ -57,7 +57,7 @@ export function staticFooter(lang = "nl", alternates = {}) {
   const pre = lang === "nl" ? "/" : `/${lang}/`;
   const links = [
     [pre, T.home], [`${pre}Diensten`, T.services], [`${pre}Pakketkiezer`, T.pk], [`${pre}AI%20Chatbots`, T.s1], [`${pre}AI%20Voice%20Agents`, T.s2],
-    [`${pre}Websites`, T.s3], [`${pre}AI-Automatisering`, T.s4], [`${pre}Afsprakensysteem`, T.s5], [`${pre}Portfolio`, T.portfolio],
+    [`${pre}Websites`, T.s3], [`${pre}AI-Automatisering`, T.s4], [`${pre}Afsprakensysteem`, T.s5], [`${pre}advertenties`, T.s6], [`${pre}Portfolio`, T.portfolio],
     [`${pre}Clinic3D`, T.case], [`${pre}Over%20ons`, T.about], [`${pre}Contact`, T.contact], [`${pre}Gratis%20Demo`, T.demo],
   ];
   if (lang === "nl") links.push(["/emtimes/", T.emtimes]);
@@ -95,7 +95,8 @@ function alternatesOf(html) {
 export function applyFallback(html, rel) {
   let out = html.replace(/<div id="footer-mount">[\s\S]*?<\/div>/,
     `<div id="footer-mount">${staticFooter(langOf(rel), alternatesOf(html))}</div>`);
-  if (/id="loader"/.test(out) && !out.includes(LOADER_NOSCRIPT)) out = out.replace("</head>", `${LOADER_NOSCRIPT}\n</head>`);
+  // een <noscript> die #loader samen met andere regels verbergt, telt ook (de home doet dat); anders komt er een dubbele bij
+  if (/id="loader"/.test(out) && !/<noscript><style>[^<]*#loader\{display:none!important\}/.test(out)) out = out.replace("</head>", `${LOADER_NOSCRIPT}\n</head>`);
   return out;
 }
 

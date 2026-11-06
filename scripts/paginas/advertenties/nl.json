@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "Google Ads laten beheren voor je zaak | EM Launchpad",
+    "desc": "Wij zetten je Google Ads op en beheren ze. Je ziet welke aanvraag of boeking uit welke advertentie kwam. €200 per maand bovenop Online groeien, excl. btw.",
+    "ogtitle": "Google Ads: zie welke advertentie je klanten brengt",
+    "service": "Advertentiebeheer (Google Ads)",
+    "service_type": "Google Ads-beheer",
+    "offer": "Advertentiebeheer, bovenop Online groeien",
+    "offer_unit": "per maand, excl. btw"
+  },
+  "tone": "blauw",
+  "skyKeys": [
+    {"p": 0, "ax": 78, "ay": 26, "bx": 10, "by": 92, "ao": 0.9, "bo": 0.45},
+    {"p": 0.3, "ax": 20, "ay": 40, "bx": 84, "by": 70, "ao": 0.6, "bo": 0.7},
+    {"p": 0.65, "ax": 82, "ay": 62, "bx": 16, "by": 28, "ao": 0.75, "bo": 0.6},
+    {"p": 1, "ax": 46, "ay": 36, "bx": 56, "by": 42, "ao": 1, "bo": 1}
+  ],
+  "hero": {
+    "crumb_home": "Home",
+    "crumb_parent": "Diensten",
+    "crumb": "Google Ads",
+    "eyebrow": "Advertentiebeheer",
+    "h1a": "Google Ads,|met een spoor",
+    "h1b": "tot bij de klant.",
+    "lede": "Wij zetten je advertenties op en beheren ze. Komt er via een advertentie een aanvraag of boeking binnen, dan zie je in je klantenoverzicht uit welke campagne en welke advertentie ze kwam. Niet alleen klikken, maar wie er klant werd.",
+    "cta1": "Plan een gratis demo",
+    "cta2": "Volg een aanvraag",
+    "facts": ["€200 per maand bovenop Online groeien, excl. btw", "Je budget betaal je rechtstreeks aan Google", "Maandelijks opzegbaar"],
+    "vis": {
+      "label": "Voorbeeld",
+      "q": "schilder living en traphal",
+      "sponsored": "Gesponsord",
+      "url": "jouwzaak.be/binnenschilderwerk",
+      "title": "Binnenschilderwerk door een vakman | Vraag je offerte",
+      "desc": "Muren, plafonds en trappen. Strak afgewerkt en een propere werf.",
+      "stop1": "Klik",
+      "stop2": "Je pagina met het aanvraagformulier",
+      "lead_k": "Nieuwe aanvraag",
+      "lead_t": "di 10:42",
+      "lead_name": "Sofie",
+      "lead_txt": "Living, keuken en traphal laten schilderen",
+      "tag_k": "Bron",
+      "tag": "Advertentie Binnenschilderwerk"
+    }
+  },
+  "probleem": {
+    "eyebrow": "Het probleem",
+    "h2a": "Klikken zijn",
+    "h2b": "nog geen klanten.",
+    "lede": "De meeste rapporten tonen vertoningen, klikken en de prijs per klik. Wat je echt wil weten, staat er niet in: wie vroeg een offerte aan, wie boekte, en via welke advertentie.",
+    "links": {
+      "k": "Een klassiek rapport",
+      "rows": ["Vertoningen", "Klikken", "Klikratio", "Kost per klik"],
+      "note": "Zegt niet wie belde, een aanvraag deed of boekte."
+    },
+    "rechts": {
+      "k": "Jouw klantenoverzicht",
+      "rows": [
+        {"who": "Sofie", "what": "Aanvraag: living en traphal", "src": "Advertentie Binnenschilderwerk", "ad": true},
+        {"who": "Marc", "what": "Boeking: plaatsbezoek", "src": "Advertentie Plaatsbezoek", "ad": true},
+        {"who": "Jan", "what": "Aanvraag: ramen en deuren", "src": "Google-profiel, geen advertentie", "ad": false}
+      ],
+      "note": "Elke naam met zijn bron. Voorbeeld."
+    }
+  },
+  "spoor": {
+    "eyebrow": "Het spoor",
+    "h2a": "Kies een aanvraag.",
+    "h2b": "Zie welke advertentie ze bracht.",
+    "lede": "Een voorbeeld van een schildersbedrijf met drie advertenties. Kies een naam: het spoor loopt terug naar de advertentie en vooruit naar wat de aanvraag werd. Kies je een advertentie, dan zie je wie ze bracht.",
+    "voorbeeld": "Voorbeeld: verzonnen zaak, namen en advertenties",
+    "ads_k": "Je advertenties op Google",
+    "sponsored": "Gesponsord",
+    "leads_k": "Je klantenoverzicht",
+    "ads": [
+      {"id": "binnen", "camp": "Binnenschilderwerk", "url": "jouwzaak.be/binnenschilderwerk", "title": "Binnenschilderwerk door een vakman | Vraag je offerte", "text": "Muren, plafonds en trappen. Strak afgewerkt en een propere werf."},
+      {"id": "buiten", "camp": "Buitenschilderwerk", "url": "jouwzaak.be/buitenschilderwerk", "title": "Gevel of ramen laten schilderen? | Offerte op maat", "text": "Houtwerk, gevels en ramen. We komen eerst kijken."},
+      {"id": "bezoek", "camp": "Plaatsbezoek", "url": "jouwzaak.be/plaatsbezoek", "title": "Plan een plaatsbezoek | Kies zelf je moment", "text": "Boek online een plaatsbezoek. Je krijgt meteen een bevestiging per e-mail."}
+    ],
+    "leads": [
+      {"id": "l1", "name": "Sofie", "kind": "a", "what": "Living, keuken en traphal", "when": "di 10:42", "ad": "binnen", "page": "Pagina binnenschilderwerk, met het aanvraagformulier", "stage": "Offerte verstuurd"},
+      {"id": "l2", "name": "Marc", "kind": "b", "what": "Plaatsbezoek", "when": "wo 21:15", "ad": "bezoek", "page": "Pagina plaatsbezoek, met je agenda", "stage": "Plaatsbezoek gepland"},
+      {"id": "l3", "name": "Els", "kind": "a", "what": "Gevel en ramen", "when": "vr 08:05", "ad": "buiten", "page": "Pagina buitenschilderwerk, met het aanvraagformulier", "stage": "Contact gehad"},
+      {"id": "l4", "name": "Jan", "kind": "a", "what": "Ramen en deuren buiten", "when": "za 11:30", "ad": null, "other": "Via je Google-profiel, niet via een advertentie", "stage": "Nieuwe aanvraag"},
+      {"id": "l5", "name": "Lotte", "kind": "a", "what": "Plafonds in drie kamers", "when": "ma 19:20", "ad": "binnen", "page": "Pagina binnenschilderwerk, met het aanvraagformulier", "stage": "Werk gepland"}
+    ],
+    "lbl": {
+      "ad": "Advertentie",
+      "page": "Pagina",
+      "kind_a": "Aanvraag",
+      "kind_b": "Boeking",
+      "next": "Daarna",
+      "src": "Bron",
+      "via": "Via advertentie",
+      "none_ad": "Geen advertentie",
+      "none_ad_d": "Telt niet mee in je advertentiecijfers. Zo zie je ook wat níet uit je advertenties komt.",
+      "per_ad": "Uit deze advertentie, in dit voorbeeld: {n} van de {t}.",
+      "per_ad_0": "Uit deze advertentie kwam in dit voorbeeld nog niemand.",
+      "trail": "Het spoor"
+    },
+    "hint": "Kies een naam of een advertentie.",
+    "nojs": "Bij elke naam staat de bron: de advertentie of een andere weg.",
+    "voet": "In je echte klantenoverzicht staat de bron bij aanvragen en boekingen die binnenkomen via een formulier of de agenda van ons platform, op de pagina waar je advertentie naartoe leidt. Daarom bouwen we die pagina mee."
+  },
+  "doen": {
+    "eyebrow": "Wat we doen",
+    "h2a": "Opzetten, meten",
+    "h2b": "en elke week bijsturen.",
+    "items": [
+      {"ic": "zoek", "t": "Zoekadvertenties op Google", "d": "Je advertentie verschijnt wanneer iemand in je regio zoekt naar wat jij doet. Wij kiezen de zoekwoorden, schrijven de teksten en sluiten zoektermen uit die niets opleveren."},
+      {"ic": "meta", "t": "Facebook en Instagram, als het past", "d": "Advertentiebeheer kan ook op Meta. In de gratis demo bekijken we welk kanaal bij je zaak past. Het budget betaal je dan rechtstreeks aan Meta."},
+      {"ic": "pagina", "t": "Een pagina die meet", "d": "Je advertentie leidt naar een pagina met je formulier of je agenda erop. Zo komt de bron mee met de aanvraag of boeking, tot in je klantenoverzicht."},
+      {"ic": "doel", "t": "Google laten leren", "d": "We stellen de meting in zodat Google weet welke klikken een aanvraag werden. Dan kan het je budget gerichter inzetten."},
+      {"ic": "week", "t": "Elke week bijsturen", "d": "We kijken wekelijks welke zoektermen geld kosten zonder aanvraag, en passen aan. Je budget verandert alleen met jouw akkoord."},
+      {"ic": "rapport", "t": "Een maandrapport in gewone taal", "d": "Wat het kostte, hoeveel aanvragen en boekingen eruit kwamen, en wat we veranderden. Zonder vakjargon."}
+    ]
+  },
+  "rollen": {
+    "eyebrow": "Wie doet wat",
+    "h2a": "Jij houdt de sleutels.",
+    "h2b": "Wij doen het werk.",
+    "jij": {
+      "k": "Jij",
+      "items": [
+        "Een Google Ads-account op je eigen naam, met je eigen betaalkaart",
+        "Je kiest je maandbudget en betaalt het rechtstreeks aan Google",
+        "Je geeft ons toegang met een uitnodiging, zonder je wachtwoord te delen",
+        "Je keurt de advertenties goed voor ze starten",
+        "Je volgt de aanvragen op: bellen, offerte, afspraak"
+      ]
+    },
+    "wij": {
+      "k": "Wij",
+      "items": [
+        "Zoekwoorden, advertentieteksten en uitsluitingen",
+        "De pagina waar je advertentie naartoe leidt, met je formulier of agenda",
+        "De meting: de bron van aanvragen en boekingen in je klantenoverzicht",
+        "Elke week nakijken en bijsturen",
+        "Elke maand een kort rapport"
+      ]
+    },
+    "note": "Stop je? Dan hou je je account, je advertenties en alle historiek. Ze staan op jouw naam."
+  },
+  "stappen": {
+    "h": "Zo starten we",
+    "items": [
+      {"t": "Gratis demo", "d": "30 minuten via Teams. We bekijken je zaak, je regio en wat een nieuwe klant voor jou waard is."},
+      {"t": "Je account", "d": "Je maakt een Google Ads-account op je naam, of je gebruikt het account dat je al hebt. Daarna nodig je ons uit."},
+      {"t": "Het voorstel", "d": "Wij maken de campagne klaar: zoekwoorden, teksten, de pagina en de meting. Je ziet alles voor er iets start."},
+      {"t": "Live", "d": "Na jouw akkoord gaan de advertenties online. Google keurt elke advertentie ook zelf na."},
+      {"t": "Bijsturen en rapport", "d": "Elke week bijsturen, elke maand een rapport. Meer of minder budget? Dat beslis jij."}
+    ]
+  },
+  "eerlijk": {
+    "eyebrow": "Eerlijk",
+    "h2a": "Geen beloftes vooraf.",
+    "h2b": "Wel de echte cijfers.",
+    "text": "We tonen je geen verzonnen succesverhalen en we beloven je geen aantal klanten. Niemand kan dat eerlijk. Wat je wel krijgt: elke maand de echte cijfers uit je eigen account en je eigen klantenoverzicht. Werkt een advertentie niet, dan zie je dat ook, en zeggen we wat we eraan doen.",
+    "k": "Wat je elke maand ziet",
+    "punten": [
+      "Wat je advertenties kostten, rechtstreeks uit Google",
+      "Welke aanvragen en boekingen eruit kwamen, met naam en bron",
+      "Wat er daarna mee gebeurde: offerte, afspraak, klant"
+    ]
+  },
+  "voorwie": {
+    "eyebrow": "Voor wie",
+    "h2a": "Past het",
+    "h2b": "bij je zaak?",
+    "wel": {
+      "k": "Het past als",
+      "items": [
+        "Mensen actief zoeken naar wat jij doet: een schilder, een kapper, een kinesist, een garage",
+        "Je nieuwe aanvragen snel kan opvolgen, ook als het druk is",
+        "Je wil weten wat elke euro aan advertenties oplevert"
+      ]
+    },
+    "niet": {
+      "k": "Het past (nog) niet als",
+      "items": [
+        "Je geen tijd hebt om nieuwe aanvragen op te volgen",
+        "Je vooraf een gegarandeerd aantal klanten wil",
+        "Je geneesmiddelen op voorschrift wil adverteren: dat laat Google in België niet toe"
+      ]
+    },
+    "tip": "Wil je eerst beter gevonden worden zonder per klik te betalen? Kijk dan naar [je Google-profiel en SEO Plus](Diensten#uitbreidingen)."
+  },
+  "prijs": {
+    "eyebrow": "Wat het kost",
+    "h2a": "Een vast bedrag.",
+    "h2b": "Je budget gaat naar Google.",
+    "text": "Je betaalt ons een vast bedrag voor het beheer. Je advertentiebudget betaal je zelf aan Google of Meta, wij rekenen daar niets op.",
+    "amount": "€200",
+    "per": "per maand, excl. btw",
+    "plus": "Bovenop Online groeien (€150 per maand)",
+    "points": [
+      "Opzet en beheer van je advertenties",
+      "De bron van aanvragen en boekingen in je klantenoverzicht",
+      "Elke week nakijken en bijsturen",
+      "Elke maand een rapport",
+      "Geen opstartkost, maandelijks opzegbaar"
+    ],
+    "samen": "Samen met Online groeien: €350 per maand, excl. btw, plus je advertentiebudget.",
+    "cta": "Plan een gratis demo",
+    "cta2": "Bekijk Online groeien"
+  },
+  "faq": {
+    "eyebrow": "Veelgestelde vragen",
+    "h2a": "Goed om",
+    "h2b": "te weten.",
+    "items": [
+      {"q": "Wat kost advertentiebeheer?", "a": "€200 per maand, excl. btw, bovenop [Online groeien](Diensten#pakket-1) (€150 per maand). Er is geen opstartkost en het is maandelijks opzegbaar. Je advertentiebudget betaal je rechtstreeks aan Google of Meta."},
+      {"q": "Hoeveel advertentiebudget heb ik nodig?", "a": "Dat hangt af van je sector, je regio en hoeveel aanvragen je aankan. In de gratis demo bekijken we het samen. Jij kiest het budget, en het verandert alleen met jouw akkoord."},
+      {"q": "Van wie is het Google Ads-account?", "a": "Van jou. Het staat op je naam en je betaalt het budget met je eigen betaalkaart. Wij krijgen toegang met een uitnodiging, zonder dat je een wachtwoord deelt. Stop je, dan hou je je account en alle historiek."},
+      {"q": "Hoe zie ik welke aanvraag uit een advertentie kwam?", "a": "Komt een aanvraag of boeking binnen via een formulier of de agenda van ons platform, dan krijgt ze de bron mee: de campagne en de advertentie. Dat zie je bij de klant in je klantenoverzicht. Het werkt als de bezoeker aanvraagt of boekt op de pagina waar de advertentie naartoe leidt. Daarom laten we je advertenties landen op een pagina met je formulier of agenda erop."},
+      {"q": "Doen jullie ook Facebook en Instagram?", "a": "Ja. Advertentiebeheer kan ook op Meta. Het budget betaal je dan rechtstreeks aan Meta. In de gratis demo bekijken we welk kanaal bij je zaak past."},
+      {"q": "Beloven jullie een aantal klanten?", "a": "Nee. Niemand kan dat eerlijk beloven. Wat we wel doen: je elke maand de echte cijfers tonen, uit je eigen account en je eigen klantenoverzicht, en zeggen wat we bijsturen."},
+      {"q": "Kan ik advertentiebeheer nemen zonder Online groeien?", "a": "Nee. Het is een uitbreiding bovenop [Online groeien](Diensten#pakket-1). Daar zitten je klantenoverzicht, je formulieren en je agenda in, en die hebben we nodig om te meten welke advertentie wat opleverde."},
+      {"q": "Wanneer starten mijn advertenties?", "a": "Pas als jij de campagne goedgekeurd hebt en je account klaar is. Google keurt elke advertentie daarna ook zelf na, voor ze mag verschijnen."},
+      {"q": "Ik heb al een Google Ads-account. Kan ik overstappen?", "a": "Ja. Je nodigt ons uit in je bestaande account, zodat je historiek blijft. In de gratis demo kijken we samen wat er nu al loopt."},
+      {"q": "Werkt dit voor een zorgpraktijk?", "a": "Soms, met beperkingen. Google laat in België geen advertenties toe voor geneesmiddelen op voorschrift, en doelgroepen op basis van gezondheid zijn beperkt. We bekijken vooraf wat mag, en adverteren alleen wat binnen de regels valt."}
+    ],
+    "more_k": "Meer over de bouwstenen:",
+    "more": [
+      {"t": "Online afsprakensysteem", "href": "Afsprakensysteem"},
+      {"t": "Websites", "href": "Websites"},
+      {"t": "Alle diensten en prijzen", "href": "Diensten"}
+    ]
+  },
+  "cta": {
+    "h2a": "Wil je zien welke advertentie",
+    "h2b": "jouw klanten brengt?",
+    "text": "Plan een gratis demo van 30 minuten via Teams. We bekijken je zaak en zeggen eerlijk of advertenties nu zin hebben.",
+    "btn": "Plan een gratis demo",
+    "badges": ["30 minuten via Teams", "Gratis", "Zonder verplichtingen"]
+  }
+}
