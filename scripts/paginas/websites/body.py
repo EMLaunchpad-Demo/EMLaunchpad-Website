@@ -1,4 +1,7 @@
-# HTML van de Websites-pagina ("Blauwdruk"). body(L, lang, pre) -> str
+# HTML van de Websites-pagina ("Blauwdruk"). body(L, lang, pre, sites) -> str
+# Eén bewegend object: de bouwtafel in de hero. Een echte klantensite tekent zich als blauwdruk
+# (vakken opgemeten op de live pagina, sites.json), wordt ingekleurd en verschijnt op de gsm.
+# Zonder JavaScript en bij minder beweging staat alles meteen in de eindstand.
 import json, html, re
 
 def esc(s):
@@ -12,250 +15,317 @@ def I(d, sw='1.8', vb='0 0 24 24'):
             'stroke-width="%s" viewBox="%s">%s</svg>' % (sw, vb, d))
 
 ARROW = I('<path d="M3 8h10M9 4l4 4-4 4"></path>', '2', '0 0 16 16')
+DOWN = I('<path d="M8 3v10M4 9l4 4 4-4"></path>', '2', '0 0 16 16')
 OUT = I('<path d="M6 3h7v7M13 3L5 11"></path>', '2', '0 0 16 16')
+LOCK = I('<rect x="4.5" y="7" width="7" height="6" rx="1.4"></rect><path d="M6 7V5.6a2 2 0 0 1 4 0V7"></path>', '1.6', '0 0 16 16')
+CHECK = I('<path d="M5 12.5l4.5 4.5L19 7.5"></path>', '2.4')
 PLAY = ('<svg aria-hidden="true" viewBox="0 0 24 24"><path class="i-play" d="M8 5.5v13l10.5-6.5z" fill="currentColor"></path>'
         '<g class="i-pause" fill="currentColor"><rect height="13" rx="1.2" width="3.6" x="6.6" y="5.5"></rect><rect height="13" rx="1.2" width="3.6" x="13.8" y="5.5"></rect></g></svg>')
 AGAIN = I('<path d="M4 12a8 8 0 1 0 2.4-5.7"></path><path d="M4 4.5v4h4"></path>', '2')
-CHECK = I('<path d="M5 12.5l4.5 4.5L19 7.5" pathLength="1"></path>', '2.4')
-CROSS = '<svg aria-hidden="true" class="ws-reg" viewBox="0 0 14 14"><path d="M7 0v14M0 7h14"></path><circle cx="7" cy="7" r="3.2"></circle></svg>'
+GRIP = I('<path d="M9 8l-4 4 4 4M15 8l4 4-4 4"></path>', '2')
+DESK = I('<rect x="3" y="4.5" width="18" height="12" rx="1.6"></rect><path d="M9 20h6M12 16.5V20"></path>', '1.7')
+GSM = I('<rect x="7" y="2.8" width="10" height="18.4" rx="2.2"></rect><path d="M11 18h2"></path>', '1.7')
+
+DIM = {'desk': (1440, 900), 'gsm': (390, 844)}
 
 def fill(s, v):
     return re.sub(r'\{(\w+)\}', lambda m: str(v.get(m.group(1), m.group(0))), s)
 
-def unsplash(pid, w=600):
-    return 'https://images.unsplash.com/%s?auto=format&amp;fit=crop&amp;q=70&amp;w=%d' % (pid, w)
+def bp_svg(boxes, mode, labels, cls='ws-bp'):
+    """blauwdruk: de vakken van het eerste scherm als lijntekening (aria-hidden).
+    Elk vak is een pad met pathLength=1, zodat CSS het kan laten tekenen; foto's krijgen een kruis."""
+    W, H = DIM[mode]
+    fs = 21 if mode == 'desk' else 17
+    out = []
+    for i, b in enumerate(boxes):
+        x, y, w, h = b['x'] * W / 100, b['y'] * H / 100, b['w'] * W / 100, b['h'] * H / 100
+        if w < 4 or h < 4:
+            continue
+        d = 'M%.1f %.1fh%.1fv%.1fh%.1fZ' % (x, y, w, h, -w)
+        k = b['k']
+        out.append('<path class="k-%s" d="%s" pathLength="1" style="--i:%d"></path>' % (k, d, i))
+        if k == 'foto':
+            out.append('<path class="k-x" d="M%.1f %.1fL%.1f %.1fM%.1f %.1fL%.1f %.1f" pathLength="1" style="--i:%d"></path>'
+                       % (x, y, x + w, y + h, x + w, y, x, y + h, i))
+        lab = labels.get(k, '')
+        if lab and w > fs * 2.6 and h > fs * 1.1:
+            out.append('<text style="--i:%d" x="%.1f" y="%.1f">%s</text>' % (i, x + 8, y + fs + 4 if h > fs * 1.8 else y + h - 4, esc(lab)))
+    return ('<svg aria-hidden="true" class="%s" focusable="false" preserveAspectRatio="none" viewBox="0 0 %d %d" style="--fs:%dpx">%s</svg>'
+            % (cls, W, H, fs, ''.join(out)))
 
-def site(v, ui, cls='', lazy=True):
-    """de voorbeeldsite (mock). Alle teksten hebben data-f, zodat JS ze per vak kan wisselen.
-    lazy=False voor de kopie in de hero (eerste scherm, anders komt de foto later binnen)."""
-    p = v['pal']
-    style = '--s-bg:%s;--s-ink:%s;--s-acc:%s;--s-line:%s;--s-card:%s' % (p['bg'], p['ink'], p['acc'], p['line'], p['card'])
-    links = ''.join('<i>%s</i>' % esc(x) for x in v['links'])
-    return f'''<div aria-hidden="true" class="ws-site{cls}" data-ws-site="" style="{style}">
-<div class="ws-s-nav" data-part="nav"><b class="ws-s-logo" data-f="naam" data-part="logo">{esc(v['naam'])}</b><span class="ws-s-links" data-f="links" data-part="links">{links}</span><span class="ws-s-tel"><i></i><span data-f="tel">{esc(v['tel'])}</span><em>{esc(ui['picks'])}</em></span><span class="ws-s-cta" data-f="cta" data-part="cta">{esc(v['cta'])}</span><span class="ws-s-burger" data-part="burger"><i></i><i></i><i></i></span></div>
-<div class="ws-s-hero"><div class="ws-s-copy"><b class="ws-s-title" data-f="titel" data-part="titel">{esc(v['titel'])}</b><span class="ws-s-sub" data-f="sub" data-part="sub">{esc(v['sub'])}</span><span class="ws-s-btn" data-f="cta" data-part="knop">{esc(v['cta'])}</span></div>
-<div class="ws-s-photo" data-part="foto"><img alt="{attr(v['foto'].get('alt', ''))}" data-f="foto" decoding="async" height="390"{' loading="lazy"' if lazy else ''} src="{unsplash(v['foto']['id'])}" style="object-position:{v['foto']['pos']}" width="600"/></div></div>
-<div class="ws-s-row"><div class="ws-s-card" data-part="uren"><small>{esc(ui['hours_label'])}</small><b data-f="uren">{esc(v['uren'])}</b><em class="ws-s-closed">{esc(ui['closed'])}</em></div>
-<div class="ws-s-card" data-part="review"><small>{esc(ui['review_label'])}</small><b data-f="review">{esc(v['review'])}</b><em class="ws-s-ex">{esc(ui['example'])}</em></div>
-<div class="ws-s-card" data-part="adres"><small>{esc(ui['address_label'])}</small><b data-f="adres">{esc(v['adres'])}</b></div></div>
-<div class="ws-s-bar" data-part="bar"><b data-f="naam">{esc(v['naam'])}</b><span data-f="cta">{esc(v['cta'])}</span></div>
-<div class="ws-s-chat"><i></i></div>
-<div class="ws-s-sheet"><div class="ws-s-sheet-in"></div></div>
-</div>'''
+def img_desk(rel, sid, alt, cls, eager=False, sizes='(max-width: 760px) 92vw, (max-width: 1180px) 56vw, 680px'):
+    return ('<img alt="%s" class="%s" decoding="async" height="900"%s sizes="%s" src="%sassets/werk/websites/%s-desk-960.webp" '
+            'srcset="%sassets/werk/websites/%s-desk-960.webp 960w, %sassets/werk/websites/%s-desk-1440.webp 1440w" width="1440"/>'
+            % (attr(alt), cls, ' fetchpriority="high"' if eager else ' loading="lazy"', sizes, rel, sid, rel, sid, rel, sid))
 
-def body(L, lang, pre):
-    h, u, dt, wk, mt, pr, st, fq, ct = L['hero'], L['ui'], L['doet'], L['werk'], L['meet'], L['prijs'], L['stappen'], L['faq'], L['cta']
+def img_gsm(rel, sid, alt, cls, sizes, lazy=True):
+    return ('<img alt="%s" class="%s" decoding="async" height="1688"%s sizes="%s" src="%sassets/werk/websites/%s-gsm-390.webp" '
+            'srcset="%sassets/werk/websites/%s-gsm-390.webp 390w, %sassets/werk/websites/%s-gsm-780.webp 780w" width="780"/>'
+            % (attr(alt), cls, ' loading="lazy"' if lazy else '', sizes, rel, sid, rel, sid, rel, sid))
+
+def body(L, lang, pre, SITES):
+    h, u, dt, pf, wk, mt, pr, st, fq, ct = (L['hero'], L['ui'], L['doet'], L['platform'], L['werk'], L['meet'],
+                                            L['prijs'], L['stappen'], L['faq'], L['cta'])
     rel = '' if lang == 'nl' else '../'
-    v0 = L['vak'][0]
-    # Frans: bedrag voor het €-teken (150 €), nl/en: €150
     eur = (lambda n: '%s €' % n) if lang == 'fr' else (lambda n: '€%s' % n)
+    labels = u['labels']
+    sites = L['sites']
+    s0 = sites[0]
+    B = lambda sid: SITES[sid]
 
-    # ---------------- HERO ----------------
-    chips = ''.join('<button aria-pressed="%s" class="ws-chip" data-ws-vak="%d" type="button">%s</button>'
-                    % ('true' if i == 0 else 'false', i, esc(v['chip'])) for i, v in enumerate(L['vak']))
-    chaps = ''.join('<button aria-pressed="false" class="ws-chap" data-ws-ch="%d" type="button"><span>%s</span><i aria-hidden="true"></i></button>'
-                    % (i, esc(c)) for i, c in enumerate(h['chapters']))
-    foot = ''.join('<span>%s</span>' % esc(f) for f in h['foot'])
+    def link(href, text, extra=''):
+        if href.startswith('#'):
+            return '<a class="ws-link"%s href="%s">%s %s</a>' % (extra, href, esc(text), ARROW)
+        return '<a class="ws-link"%s href="%s%s">%s %s</a>' % (extra, rel, href, esc(text), ARROW)
 
-    # ---------------- DOET ----------------
-    lenses = ''.join('<button aria-pressed="%s" class="ws-lensb" data-ws-lens="%d" type="button"><b>%s</b><span class="ws-lens-t">%s</span><i aria-hidden="true"></i></button>'
-                     % ('true' if i == 0 else 'false', i, esc(x['titel']), esc(fill(x['tekst'], {'vak': v0['chip'].lower(), 'cta': v0['cta']})))
-                     for i, x in enumerate(dt['lenses']))
-    # Lede: [label](href) wordt een link (fase 2: link naar de regiopagina, die alleen in het NL bestaat).
-    lede = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', lambda m: '<a href="%s%s" style="text-decoration:underline;text-underline-offset:3px">%s</a>' % (rel, m.group(2), m.group(1)), esc(h['lede']))
-    dlinks = ''.join('<a href="%s%s">%s %s</a>' % (rel, x['href'], esc(x['label']), ARROW) for x in dt['links'])
+    def ext(url, text):
+        return '<a class="ws-link" href="%s" rel="noopener" target="_blank">%s %s<span class="sr-only"> %s</span></a>' % (attr(url), esc(text), OUT, esc(u['newtab']))
 
-    # ---------------- WERK ----------------
-    tags = ''.join('<span>%s</span>' % esc(t) for t in wk['tags'])
-    pins_sr = ''.join('<li>%s</li>' % esc(p['t']) for p in wk['pins']['desk'])
-    def card(c):
-        nums = ''.join('<div><b>%s</b><span>%s</span></div>' % (esc(n[0]), esc(n[1])) for n in c.get('nums', []))
-        cls = ' is-wide' if (c.get('nums') or c.get('wide')) else (' is-site' if c.get('site') else '')
-        logo = ''
-        if c.get('logo'):
-            lg = c['logo']
-            logo = '<img alt="%s" class="ws-card-logo" decoding="async" height="%d" loading="lazy" src="%s" width="%d"/>' % (attr(lg['alt']), lg['h'], lg['src'], lg['w'])
-        out = '<article class="ws-card%s">%s<p class="ws-card-k">%s</p><h3>%s</h3><p>%s</p>' % (cls, logo, esc(c['k']), esc(c['t']), esc(c['txt']))
-        out += ''.join('<p>%s</p>' % esc(c[k]) for k in ('txt2', 'txt3') if c.get(k))
-        if nums: out += '<div class="ws-nums">%s</div><p class="ws-note-s">%s</p>' % (nums, esc(c['note']))
-        if c.get('quote'): out += '<blockquote class="ws-quote"><p>“%s”</p><cite>%s</cite></blockquote>' % (esc(c['quote']), esc(c['cite']))
-        if c.get('link'):
-            if c['href'].startswith('http'):
-                out += '<a class="ws-link" href="%s" rel="noopener" target="_blank">%s %s<span class="sr-only"> %s</span></a>' % (attr(c['href']), esc(c['link']), OUT, esc(wk['newtab']))
-            else:
-                href = c['href'] if c['href'].startswith('#') else rel + c['href']
-                out += '<a class="ws-link" href="%s">%s %s</a>' % (href, esc(c['link']), ARROW)
-        return out + '</article>'
-    cards = ''.join(card(c) for c in wk['cards'])
+    # ═════════════════ HERO ═════════════════
+    lede = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', lambda m: '<a href="%s%s">%s</a>' % (rel, m.group(2), m.group(1)), esc(h['lede']))
+    facts = ''.join('<li><span class="ws-vink">%s</span>%s</li>' % (CHECK, esc(f)) for f in h['foot'])
+    stages = ''.join('<span class="s%d">%s%s</span>' % (i, '<i></i>' if i == 3 else '', esc(s)) for i, s in enumerate(h['stages']))
+    who = ''.join('<button aria-pressed="%s" class="ws-who-b" data-ws-who="%d" type="button"><span>%s</span><i aria-hidden="true"></i></button>'
+                  % ('true' if i == 0 else 'false', i, esc(s['domein'])) for i, s in enumerate(sites))
 
-    # ---------------- METING ----------------
+    # ═════════════════ DOET: anatomie op een echte gsm ═════════════════
+    an_site = 'clinic3d'
+    an_parts = {'gevonden': 'titel', 'vertrouwen': 'foto', 'boeken': 'knop', 'alles': 'scherm'}
+    def an_item(i, x):
+        more = ('<a class="ws-an-more" href="#platform">%s %s</a>' % (esc(dt['more']), DOWN)) if x['id'] == 'alles' else ''
+        return ('<li class="ws-an-i" data-ws-an="%d"><button aria-pressed="%s" class="ws-an-b" data-part="%s" type="button"><b>%s</b></button>'
+                '<p>%s</p>%s</li>' % (i, 'true' if i == 0 else 'false', an_parts.get(x['id'], ''), esc(x['titel']), esc(x['tekst']), more))
+    items = dt['items']
+    an_l = ''.join(an_item(i, x) for i, x in enumerate(items[:2]))
+    an_r = ''.join(an_item(i + 2, x) for i, x in enumerate(items[2:]))
+
+    # ═════════════════ PLATFORM ═════════════════
+    ph, pn = pf['phone'], pf['panel']
+    days = ''.join('<span%s>%s</span>' % (' class="is-pick"' if i == ph['pick'] else '', esc(d)) for i, d in enumerate(ph['dagen']))
+    chips = ''.join('<span>%s</span>' % esc(c) for c in u['pay_chips'])
+    ICON = {'wa': 'WA', 'ig': 'IG', 'mail': '@', 'tel': 'T'}
+    inbox = ''.join('<li class="ws-ib-%s"><span class="ws-ib-ic" aria-hidden="true">%s</span><div><b>%s</b><span>%s</span></div></li>'
+                    % (x[0], ICON.get(x[0], ''), esc(x[1]), esc(x[2])) for x in pf['inbox'])
+    flow = ''.join('<li><span class="ws-fl-ic">%s</span><div><b>%s</b><span>%s</span></div></li>' % (CHECK, esc(a), esc(b)) for a, b in pn['flow'])
+    plinks = ''.join('<li>%s</li>' % link(x['href'], x['label']) for x in pf['links'])
+    moment = ph['dagen'][ph['pick']]
+
+    # ═════════════════ WERK: blauwdruk naast live ═════════════════
+    def case(i, s):
+        nums = ''
+        if s.get('nums'):
+            nums = ('<div class="ws-nums">%s</div><p class="ws-note-s">%s</p>'
+                    % (''.join('<div><b>%s</b><span>%s</span></div>' % (esc(n[0]), esc(n[1])) for n in s['nums']), esc(s['note'])))
+        quote = ('<blockquote class="ws-quote"><p>“%s”</p><cite>%s</cite></blockquote>' % (esc(s['quote']), esc(s['cite']))) if s.get('quote') else ''
+        tags = ''.join('<span>%s</span>' % esc(t) for t in s['tags'])
+        return ('<article class="ws-case%s" data-ws-case="%d" id="werk-%s">'
+                '<h3><button aria-expanded="%s" aria-controls="werk-%s-in" class="ws-case-b" data-ws-caseb="%d" type="button"><b>%s</b><span>%s · %s</span><i aria-hidden="true"></i></button></h3>'
+                '<div class="ws-case-in" id="werk-%s-in"><p>%s</p><p class="ws-tags">%s</p>%s%s<p class="ws-case-l">%s%s</p></div></article>'
+                % (' is-on' if i == 0 else '', i, s['id'], 'true' if i == 0 else 'false', s['id'], i, esc(s['naam']), esc(s['plaats']), esc(s['soort']),
+                   s['id'], esc(s['wat']), tags, nums, quote, ext(s['url'], fill(wk['visit'], s)), link(s['link']['href'], s['link']['label'])))
+    cases = ''.join(case(i, s) for i, s in enumerate(sites))
+    also = ' · '.join('<a href="%s%s">%s</a> <span>(%s)</span>' % ('' if a['href'].startswith('#') else rel, a['href'], esc(a['t']), esc(a['s'])) for a in wk['also'])
+    sect = [x for x in wk.get('sectors', []) if x['href'].startswith('website-voor-')]
+    regio = [x for x in wk.get('sectors', []) if x['href'] == 'website-laten-maken-limburg']
+    sector_html = ''
+    if sect:
+        sector_html += '<p class="ws-also"><b>%s</b> %s</p>' % (esc(wk['sector_label']), ' · '.join('<a href="%s%s">%s</a>' % (rel, x['href'], esc(x['label'])) for x in sect))
+    if regio:
+        sector_html += '<p class="ws-also">%s</p>' % link(regio[0]['href'], regio[0]['label'])
+
+    # ═════════════════ METING ═════════════════
     rows = ''.join(
         '<div class="ws-mrow" data-ws-m="%s"><dt>%s</dt><dd><span class="ws-mval" data-ws-v="">…</span>'
-        '<svg aria-hidden="true" class="ws-ruler-m" preserveAspectRatio="none" viewBox="0 0 1000 24"><path class="ws-rb" d="M0 6v12M1000 6v12M0 12h1000"></path>'
+        '<svg aria-hidden="true" class="ws-ruler-m" preserveAspectRatio="none" viewBox="0 0 1000 24"><path class="ws-rb" d="M0 12h1000"></path>'
         '%s<path class="ws-rv" d="M0 12h1000" pathLength="1"></path></svg>%s</dd></div>'
         % (r['k'], esc(r['label']),
-           ('<path class="ws-rt" d="M%d 2v20"></path>' % round(1000 * r['tick'] / r['max'])) if r.get('tick') else '',
+           ('<path class="ws-rt" d="M%d 3v18"></path>' % round(1000 * r['tick'] / r['max'])) if r.get('tick') else '',
            ('<span class="ws-tick-l" style="--t:%.1f%%">%s</span>' % (100 * r['tick'] / r['max'], esc(r['tick_l']))) if r.get('tick') else '')
         for r in mt['rows'])
 
-    # ---------------- PRIJS ----------------
-    prow = ''.join('<li><span class="ws-pos">%02d</span><div><b>%s</b>%s</div></li>' % (i + 1, esc(r[0]), ('<span>%s</span>' % esc(r[1])) if r[1] else '')
-                   for i, r in enumerate(pr['rows']))
-    # een uitbreiding kan een eenmalig bedrag hebben (once); dat telt niet mee in de maandprijs
+    # ═════════════════ PRIJS ═════════════════
+    prow = ''.join('<li><div><b>%s</b>%s</div></li>' % (esc(r[0]), ('<span>%s</span>' % esc(r[1])) if r[1] else '') for r in pr['rows'])
     once_s = lambda a: (' + %s %s' % (eur(a['once']), esc(u['once_word']))) if a.get('once') else ''
-    extra = ''.join('<li class="ws-extra" data-ws-row="%s" hidden=""><span class="ws-pos">%02d</span><div><b>%s</b><span>%s / %s%s</span></div></li>'
-                    % (a['id'], len(pr['rows']) + 1 + i, esc(a['row']), eur(a['price']), esc(re.sub(r'^\S+\s', '', u['per'])), once_s(a)) for i, a in enumerate(pr['addons']))
+    extra = ''.join('<li class="ws-extra" data-ws-row="%s" hidden=""><div><b>%s</b><span>%s / %s%s</span></div></li>'
+                    % (a['id'], esc(a['row']), eur(a['price']), esc(re.sub(r'^\S+\s', '', u['per'])), once_s(a)) for a in pr['addons'])
     tb = ''.join('<div><dt>%s</dt><dd%s>%s</dd></div>' % (esc(a), ' data-ws-tbp=""' if i == 1 else '', esc(b)) for i, (a, b) in enumerate(pr['tb']))
-    addons = ''.join('<button aria-pressed="false" class="ws-addon" data-once="%d" data-price="%d" data-ws-add="%s" type="button"><span class="ws-plus" aria-hidden="true"></span><b>%s</b><span class="ws-ap">+ %s %s%s</span><span class="ws-at">%s</span></button>'
-                     % (a.get('once', 0), a['price'], a['id'], esc(a['label']), eur(a['price']), esc(u['per']),
-                        (', %s %s' % (eur(a['once']), esc(u['once_word']))) if a.get('once') else '', esc(a['txt'])) for a in pr['addons'])
+    addons = ''.join('<button aria-pressed="false" class="ws-addon" data-once="%d" data-price="%d" data-ws-add="%s" type="button"><span class="ws-plus" aria-hidden="true"></span><span class="ws-ad-t"><b>%s</b><span>%s</span></span><span class="ws-ap">+ %s %s%s</span></button>'
+                     % (a.get('once', 0), a['price'], a['id'], esc(a['label']), esc(a['txt']), eur(a['price']), esc(u['per']),
+                        (', %s %s' % (eur(a['once']), esc(u['once_word']))) if a.get('once') else '') for a in pr['addons'])
     onces = ''.join('<p class="ws-once" data-ws-once="%s" hidden="">%s</p>' % (a['id'], esc(fill(u['once_line'], {'once': eur(a['once']), 'label': a['label']})))
                     for a in pr['addons'] if a.get('once'))
 
-    # ---------------- STAPPEN ----------------
+    # ═════════════════ STAPPEN ═════════════════
     SK = [
         '<rect x="6" y="6" width="108" height="68" rx="3"></rect><path class="ws-cur" d="M20 22v14"></path>',
         '<rect x="6" y="6" width="108" height="68" rx="3"></rect><path d="M6 18h108"></path><rect x="14" y="26" width="44" height="8"></rect><rect x="14" y="40" width="30" height="5"></rect><rect x="66" y="26" width="40" height="28"></rect><path d="M66 26l40 28M106 26L66 54"></path><rect x="14" y="60" width="92" height="8"></rect>',
         '<rect x="6" y="6" width="108" height="68" rx="3"></rect><path d="M6 18h108"></path><rect class="ws-fillw" x="66" y="26" width="40" height="28"></rect><rect x="14" y="26" width="44" height="8"></rect><rect class="ws-fillg" x="14" y="40" width="26" height="8" rx="4"></rect><circle class="ws-dotg" cx="30" cy="64" r="2.5"></circle><circle class="ws-dotg" cx="42" cy="64" r="2.5"></circle><circle class="ws-dotg" cx="54" cy="64" r="2.5"></circle>',
-        '<rect x="40" y="4" width="40" height="72" rx="8"></rect><path d="M52 10h16"></path><rect x="46" y="16" width="28" height="20"></rect><rect x="46" y="62" width="28" height="8" rx="2"></rect><circle class="ws-live" cx="96" cy="20" r="4"></circle><text x="92" y="34">LIVE</text>',
+        '<rect x="40" y="4" width="40" height="72" rx="8"></rect><path d="M52 10h16"></path><rect x="46" y="16" width="28" height="20"></rect><rect x="46" y="62" width="28" height="8" rx="2"></rect><circle class="ws-live" cx="96" cy="20" r="4"></circle>',
     ]
-    steps = ''.join('<li class="ws-step"><svg aria-hidden="true" class="ws-sk" viewBox="0 0 120 80">%s</svg><span class="ws-snum">%02d</span><h3>%s</h3><p>%s</p></li>'
-                    % (SK[i], i + 1, esc(s[0]), esc(s[1])) for i, s in enumerate(st['items']))
+    steps = ''.join('<li class="ws-step"><svg aria-hidden="true" class="ws-sk" viewBox="0 0 120 80">%s</svg><h3>%s</h3><p>%s</p></li>'
+                    % (SK[i], esc(s[0]), esc(s[1])) for i, s in enumerate(st['items']))
 
-    # ---------------- FAQ + CTA ----------------
+    # ═════════════════ FAQ + CTA ═════════════════
     faqs = ''.join('<div class="faq-item"><button class="faq-q" type="button"><span class="ws-q">%s</span><span class="ic"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner">%s</div></div></div>'
                    % (esc(q['q']), esc(q['a'])) for q in fq['items'])
-    more = ' · '.join('<a href="%s%s">%s</a>' % (rel, m['href'], esc(m['title'])) for m in fq['more'])
+    more = ''.join('<li><a href="%s%s">%s</a></li>' % (rel, m['href'], esc(m['title'])) for m in fq['more'])
     badges = ''.join('<span>%s</span>' % esc(b) for b in ct['badges'])
 
-    # ---------------- DATA voor JS ----------------
-    data = {'lang': lang, 'rel': rel, 'ui': u, 'vak': L['vak'], 'chapters': h['chapters'],
-            'lenses': dt['lenses'], 'bp': wk['bp'], 'pins': wk['pins'], 'meet': mt, 'base': 150,
-            'hero': {'chip_wait': h['chip_wait'], 'chip_fallback': h['chip_fallback']}, 'cta': {'micro': ct['micro'], 'micro_fb': ct['micro_fb']}}
+    # ═════════════════ DATA voor JS ═════════════════
+    jsites = []
+    for s in sites:
+        jsites.append({'id': s['id'], 'naam': s['naam'], 'domein': s['domein'], 'alt_desk': s['alt_desk'], 'alt_gsm': s['alt_gsm'],
+                       'desk': B(s['id'])['desk'], 'gsm': B(s['id'])['gsm']})
+    data = {'lang': lang, 'rel': rel, 'ui': u, 'sites': jsites, 'h2b_t': wk['h2b_t'], 'sr_hero': h['sr'],
+            'an': {'site': an_site, 'gsm': B(an_site)['gsm'], 'hl': [x['hl'] for x in items]},
+            'plat': {'done': ph['done'], 'btn': ph['btn'], 'again': pf['again'], 'sr_done': pf['sr_done']},
+            'meet': mt, 'base': 150, 'hero': {'chip_wait': h['chip_wait'], 'chip_fallback': h['chip_fallback']},
+            'cta': {'micro': ct['micro'], 'micro_fb': ct['micro_fb']}}
     djson = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
-    return f'''<svg aria-hidden="true" class="ws-defs" focusable="false" height="0" width="0"><defs><linearGradient gradientUnits="userSpaceOnUse" id="wsPen" x1="0" x2="1000" y1="0" y2="0"><stop offset="0" stop-color="#2f74e0"></stop><stop offset="1" stop-color="#2fbf86"></stop></linearGradient></defs></svg>
-<!-- ════════ HERO: het tekenblad ════════ -->
-<header class="ws-hero" data-ws-hero="" id="main" tabindex="-1">
-<div class="wrap ws-hero-grid">
+    return f'''<!-- ════════ HERO: de bouwtafel ════════ -->
+<header class="ws-hero" id="main" tabindex="-1">
+<div class="wrap">
+<nav aria-label="Breadcrumb" class="ws-crumb"><a href="{rel}Diensten">{esc(h['crumb_home'])}</a> <span aria-hidden="true">/</span> <span aria-current="page">{esc(h['crumb'])}</span></nav>
+<div class="ws-hero-grid">
 <div class="ws-copy">
-<div class="ws-crumb"><a href="{rel}Diensten">{esc(h['crumb_home'])}</a> <span>/</span> <span>{esc(h['crumb'])}</span></div>
-<span class="eyebrow">{esc(h['eyebrow'])}</span>
 <h1 class="ws-h1">{esc(h['h1a'])}<br/> <span class="grad">{esc(h['h1b'])}</span></h1>
-<p class="lead ws-lede">{lede}</p>
+<div class="ws-side">
+<p class="ws-lede">{lede}</p>
 <div class="ws-cta"><a class="btn" data-book="" href="{rel}Contact">{esc(h['cta'])} {ARROW}</a><a class="btn-ghost" href="#werk">{esc(h['cta2'])}</a></div>
-<div class="ws-pick">
-<p class="ws-label" id="wsPickL">{esc(h['pick'])}</p>
-<div aria-labelledby="wsPickL" class="ws-chips" role="group">{chips}</div>
-<button aria-controls="wsNameBox" aria-expanded="false" class="ws-namebtn" data-ws-namebtn="" type="button">{esc(h['name_btn'])}</button>
-<div class="ws-namebox" hidden="" id="wsNameBox"><label for="wsName">{esc(h['name_label'])}</label><input autocomplete="off" id="wsName" maxlength="28" placeholder="{attr(h['name_ph'])}" spellcheck="false" type="text"/><small>{esc(h['name_hint'])}</small></div>
+<ul class="ws-facts">{facts}</ul>
+<a class="ws-meetchip" data-ws-chip="" href="#gemeten"><i aria-hidden="true"></i><span>{esc(h['chip_wait'])}</span></a>
 </div>
 </div>
-<div class="ws-sheetcol">
-<div class="ws-sheet" data-ws-sheet="">
-<div aria-hidden="true" class="ws-grid"></div>
-{CROSS.replace('class="ws-reg"', 'class="ws-reg tl"')}{CROSS.replace('class="ws-reg"', 'class="ws-reg tr"')}{CROSS.replace('class="ws-reg"', 'class="ws-reg bl"')}{CROSS.replace('class="ws-reg"', 'class="ws-reg br"')}
-<span aria-hidden="true" class="ws-tag">{esc(u['example'])}</span>
-<div aria-hidden="true" class="ws-ruler"><i></i><span data-ws-rulen="">1280 px</span><i></i></div>
-<div class="ws-stage" data-ws-stage="">
-<div class="ws-frame" data-ws-frame=""><div aria-hidden="true" class="ws-addr"><i></i><i></i><i></i><span data-f="domein">{esc(v0['domein'])}</span></div>
-<div class="ws-view" data-ws-view=""><div class="ws-scale" data-ws-scale="">{site(v0, u, lazy=False)}</div></div></div>
+<figure class="ws-build is-run" data-site="{s0['id']}" data-ws-build="">
+<div class="ws-stage">
+<div class="ws-desk">
+<div class="ws-bar" aria-hidden="true"><i></i><i></i><i></i><span class="ws-url">{LOCK}<b data-ws-dom="">{esc(s0['domein'])}</b></span><span class="ws-state">{stages}</span></div>
+<div class="ws-view">
+{img_desk(rel, s0['id'], s0['alt_desk'], 'ws-ink', eager=True)}
+<div class="ws-paper" aria-hidden="true">{bp_svg(B(s0['id'])['desk'], 'desk', labels)}</div>
+<i aria-hidden="true" class="ws-scan"></i>
 </div>
-<div aria-hidden="true" class="ws-labels" data-ws-labels=""></div>
-<div aria-hidden="true" class="ws-notes" data-ws-notes=""></div>
-<div aria-hidden="true" class="ws-dim"></div>
-<div aria-hidden="true" class="ws-clock" data-ws-clock=""><b data-ws-clockt="">{esc(u['clock_a'])}</b><span>{esc(u['clock_sub'])}</span></div>
-<div aria-hidden="true" class="ws-toast" data-ws-toast=""><i></i><b></b><span></span></div>
 </div>
-<div class="ws-ctrl">
-<div aria-label="{attr(h['chapters_label'])}" class="ws-chaps" role="group">{chaps}</div>
-<div class="ws-ctrl-r"><button aria-label="{attr(u['pause_aria'])}" class="ws-pbtn" data-state="playing" data-ws-pause="" type="button">{PLAY}<span>{esc(u['pause'])}</span></button><button aria-label="{attr(u['again_aria'])}" class="ws-pbtn" data-ws-again="" type="button">{AGAIN}<span>{esc(u['again'])}</span></button></div>
+<div class="ws-phone">
+<div class="ws-phone-in">
+{img_gsm(rel, s0['id'], s0['alt_gsm'], 'ws-ink', '(max-width: 760px) 34vw, 190px', lazy=False)}
+<div class="ws-paper" aria-hidden="true">{bp_svg(B(s0['id'])['gsm'], 'gsm', labels)}</div>
+<i aria-hidden="true" class="ws-scan"></i>
 </div>
+</div>
+</div>
+<figcaption class="ws-buildcap">
+<div aria-label="{attr(h['sites_label'])}" class="ws-who" role="group">{who}<button aria-label="{attr(u['pause_aria'])}" class="ws-pbtn" data-state="playing" data-ws-pause="" type="button">{PLAY}<span>{esc(u['pause'])}</span></button></div>
 <p class="ws-cap">{esc(h['caption'])}</p>
-<p class="sr-only" data-ws-herosr="">{esc(fill(u['sr_hero'], {'naam': v0['naam'], 'wat': u['sr_boek']}))}</p>
-<p aria-live="polite" class="sr-only" data-ws-herolive=""></p>
+<p class="sr-only" data-ws-buildsr="">{esc(fill(h['sr'], s0))}</p>
+</figcaption>
+</figure>
 </div>
 </div>
-<div class="wrap"><div class="ws-foot">{foot}<a class="ws-meetchip" data-ws-chip="" href="#gemeten"><i aria-hidden="true"></i><span>{esc(h['chip_wait'])}</span></a></div></div>
 </header>
-<!-- ════════ WAT JE SITE DOET ════════ -->
+<!-- ════════ WAAROM: anatomie van een site die boekt ════════ -->
 <section class="sec ws-doet" id="doet">
 <div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">{esc(dt['eyebrow'])}</span>
+<div class="ws-head ws-head-w" data-reveal="">
 <h2 class="h2">{esc(dt['h2a'])}<br/> <span class="grad">{esc(dt['h2b'])}</span></h2>
 <p class="lead">{esc(dt['lede'])}</p>
 </div>
-<div class="ws-doet-grid">
-<div class="ws-doet-l">
-<div aria-label="{attr(dt['group'])}" class="ws-lenses" role="group">{lenses}</div>
-<p class="ws-dlinks">{dlinks}</p>
+<div aria-label="{attr(dt['group'])}" class="ws-anat" data-ws-anat="" role="group">
+<ul class="ws-an-col ws-an-l">{an_l}</ul>
+<figure class="ws-an-phone">
+<div class="ws-an-dev"><div class="ws-an-scr">
+{img_gsm(rel, an_site, dt['phone_alt'], 'ws-an-img', '(max-width: 760px) 64vw, 300px')}
+<span aria-hidden="true" class="ws-an-hl" data-ws-hl=""><em></em></span>
+</div></div>
+<figcaption class="ws-cap">{esc(dt['phone_cap'])}</figcaption>
+</figure>
+<ul class="ws-an-col ws-an-r">{an_r}</ul>
+<svg aria-hidden="true" class="ws-an-lines" data-ws-lines=""></svg>
 </div>
-<div class="ws-lenscol">
-<div class="ws-lens" data-ws-lens-root="">
-<div aria-hidden="true" class="ws-grid"></div>
-<div class="ws-lview" data-ws-lview=""><div class="ws-scale" data-ws-lscale="">{site(v0, u)}</div></div>
-<svg aria-hidden="true" class="ws-lbox" data-ws-lbox=""><path d="M0 0" pathLength="1"></path></svg>
-<div aria-hidden="true" class="ws-over" data-ws-over=""></div>
-<span aria-hidden="true" class="ws-tag">{esc(u['example'])}</span>
 </div>
-<button aria-label="{attr(u['lens_pause'])}" class="ws-pbtn ws-lpause" data-state="playing" data-ws-lpause="" type="button">{PLAY}<span>{esc(u['pause'])}</span></button>
+</section>
+<!-- ════════ ONS PLATFORM: van je site naar je CRM ════════ -->
+<section class="sec ws-plat" id="platform">
+<div class="wrap">
+<div class="ws-head" data-reveal="">
+<h2 class="h2">{esc(pf['h2a'])}<br/> <span class="grad">{esc(pf['h2b'])}</span></h2>
+<p class="lead">{esc(pf['lede'])}</p>
+</div>
+<div class="ws-plat-grid">
+<div class="ws-plat-demo is-done" data-ws-plat="">
+<div class="ws-bk" data-ui="">
+<p class="ws-bk-zaak">{esc(ph['zaak'])}</p>
+<p class="ws-bk-kop">{esc(ph['kop'])}</p>
+<div class="ws-bk-row"><span>{esc(ph['dienst_l'])}</span><b>{esc(ph['dienst'])}</b></div>
+<div class="ws-bk-row"><span>{esc(ph['dag_l'])}</span><div class="ws-bk-days">{days}</div></div>
+<div class="ws-bk-row"><span>{esc(ph['pay_l'])}</span><div class="ws-bk-pay">{chips}</div></div>
+<button class="ws-bk-btn" data-ws-bk="" type="button"><span class="t-a">{esc(ph['btn'])}</span><span class="t-b">{CHECK}{esc(ph['done'])}</span></button>
+</div>
+<div aria-hidden="true" class="ws-wire"><i></i></div>
+<div class="ws-crm" data-ui="">
+<p class="ws-crm-t"><span>{esc(pn['title'])}</span><em>CRM</em></p>
+<p class="ws-crm-h">{esc(pn['inbox'])}</p>
+<ul class="ws-ib"><li class="ws-ib-web ws-ib-new" data-ws-new=""><span class="ws-ib-ic" aria-hidden="true">W</span><div><b>{esc(pn['boek_t'])}</b><span>{esc(ph['dienst'])} · {esc(moment)}</span></div><em>{esc(pn['nieuw'])}</em></li>{inbox}</ul>
+<p class="ws-crm-h">{esc(pn['flow_t'])}</p>
+<ol class="ws-fl" data-ws-flow="">{flow}</ol>
+</div>
+<p class="ws-tag">{esc(u['example'])}</p>
+<button class="ws-pbtn ws-again" data-ws-again="" hidden="" type="button">{AGAIN}<span>{esc(pf['again'])}</span></button>
+<p aria-live="polite" class="sr-only" data-ws-platsr=""></p>
+</div>
+<div class="ws-plat-side">
+<p class="ws-plat-note">{esc(pf['note'])}</p>
+<ul class="ws-plinks">{plinks}</ul>
 </div>
 </div>
 </div>
 </section>
-<!-- ════════ ECHT WERK: de doorsnede ════════ -->
+<!-- ════════ ECHT WERK: blauwdruk naast de live site ════════ -->
 <section class="sec ws-werk" id="werk">
 <div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">{esc(wk['eyebrow'])}</span>
-<h2 class="h2">{esc(wk['h2a'])}<br/> <span class="grad">{esc(wk['h2b'])}</span></h2>
+<div class="ws-head" data-reveal="">
+<h2 class="h2">{esc(wk['h2a'])}<br/> <span class="grad" data-ws-wh="">{esc(fill(wk['h2b_t'], s0))}</span></h2>
 <p class="lead">{esc(wk['lede'])}</p>
 </div>
 <div class="ws-werk-grid">
-<div class="ws-cutcol">
-<div class="ws-cut" data-mode="desk" data-ws-cut="">
-<div class="ws-cut-frame" data-ws-cutframe="">
-<div aria-hidden="true" class="ws-cut-addr"><i></i><i></i><i></i><span>amakhosi.be</span></div>
-<div class="ws-cut-view">
-<div aria-hidden="true" class="ws-bp" data-ws-bp=""></div>
-<img alt="{attr(wk['alt_desk'])}" class="ws-shot ws-shot-d" decoding="async" height="900" loading="lazy" sizes="(max-width: 760px) 92vw, (max-width: 1099px) 88vw, 640px" src="{rel}assets/werk/amakhosi-desk-960.webp" srcset="{rel}assets/werk/amakhosi-desk-960.webp 960w, {rel}assets/werk/amakhosi-desk-1440.webp 1440w" width="1440"/>
-<img alt="{attr(wk['alt_gsm'])}" class="ws-shot ws-shot-m" decoding="async" height="1688" loading="lazy" sizes="300px" src="{rel}assets/werk/amakhosi-gsm-390.webp" srcset="{rel}assets/werk/amakhosi-gsm-390.webp 390w, {rel}assets/werk/amakhosi-gsm-780.webp 780w" width="780"/>
-<div aria-hidden="true" class="ws-pins" data-ws-pins=""></div>
+<div class="ws-cmp" data-mode="desk" data-ws-cmp="" style="--cut:50">
+<div class="ws-cmp-frame">
+<div class="ws-cmp-bar" aria-hidden="true"><i></i><i></i><i></i><span class="ws-url">{LOCK}<b data-ws-cdom="">{esc(s0['domein'])}</b></span></div>
+<div class="ws-cmp-view" data-ws-cview="">
+{img_desk(rel, s0['id'], s0['alt_desk'], 'ws-cmp-img ws-cmp-d', sizes='(max-width: 760px) 92vw, (max-width: 1180px) 60vw, 700px')}
+{img_gsm(rel, s0['id'], s0['alt_gsm'], 'ws-cmp-img ws-cmp-m', '(max-width: 760px) 70vw, 320px')}
+<div class="ws-cmp-bp" aria-hidden="true" data-ws-cbp="">{bp_svg(B(s0['id'])['desk'], 'desk', labels, 'ws-bp ws-cbp-d')}{bp_svg(B(s0['id'])['gsm'], 'gsm', labels, 'ws-bp ws-cbp-m')}</div>
+<span aria-hidden="true" class="ws-cmp-tag l">{esc(u['bp'])}</span><span aria-hidden="true" class="ws-cmp-tag r">{esc(u['live'])}</span>
+<div aria-label="{attr(u['slider'])}" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" aria-valuetext="{attr(fill(u['slider_v'], {'p': 50}))}" class="ws-knife" data-ws-knife="" role="slider" tabindex="0"><span class="ws-grip">{GRIP}</span></div>
 </div>
 </div>
-<div aria-label="{attr(u['slider'])}" aria-valuemax="100" aria-valuemin="0" aria-valuenow="56" aria-valuetext="{attr(u['slider_none'])}" class="ws-knife" data-ws-knife="" role="slider" tabindex="0"><span class="ws-knife-l"></span><span aria-hidden="true" class="ws-grip"><svg viewBox="0 0 24 24"><path d="M8 9l4-4 4 4M8 15l4 4 4-4"></path></svg></span><span aria-hidden="true" class="ws-knife-t">{esc(wk['line'])}</span></div>
+<div class="ws-cmp-ctrl"><div aria-label="{attr(u['desk'])} / {attr(u['gsm'])}" class="ws-toggle" role="group"><button aria-pressed="true" data-ws-mode="desk" type="button">{DESK}<span>{esc(u['desk'])}</span></button><button aria-pressed="false" data-ws-mode="gsm" type="button">{GSM}<span>{esc(u['gsm'])}</span></button></div><p class="ws-cap">{esc(wk['caption'])}</p></div>
 </div>
-<p class="ws-pincap" data-ws-pincap="">{esc(u['slider_none'])}</p>
-<ul class="sr-only">{pins_sr}</ul>
-</div>
-<div class="ws-werk-txt">
-<p class="ws-card-k">{esc(wk['k1'])}</p>
-<h3>{esc(wk['name'])}</h3>
-<p>{esc(wk['text'])}</p>
-<p class="ws-tags">{tags}</p>
-<div aria-label="{attr(u['desk'])} / {attr(u['gsm'])}" class="ws-toggle" role="group"><button aria-pressed="true" data-ws-mode="desk" type="button">{esc(u['desk'])}</button><button aria-pressed="false" data-ws-mode="gsm" type="button">{esc(u['gsm'])}</button></div>
-<a class="ws-link" href="https://amakhosi.be" rel="noopener" target="_blank">{esc(wk['visit'])} {OUT}<span class="sr-only"> {esc(wk['newtab'])}</span></a>
-<p class="ws-note-s">{esc(wk['caption'])}</p>
+<div class="ws-cases" data-ws-cases="">
+{cases}
 </div>
 </div>
-<div class="ws-cards">{cards}</div>
+<div class="ws-werk-foot">
+<p class="ws-also"><b>{esc(wk['also_label'])}</b> {also}</p>
+{sector_html}
+</div>
 </div>
 </section>
 <!-- ════════ GEMETEN ════════ -->
 <section class="sec ws-meet" id="gemeten">
-<div class="wrap ws-meet-grid">
-<div class="ws-meet-l">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">{esc(mt['eyebrow'])}</span>
+<div class="wrap">
+<div class="ws-head" data-reveal="">
 <h2 class="h2">{esc(mt['h2a'])}<br/> <span class="grad">{esc(mt['h2b'])}</span></h2>
 <p class="lead">{esc(mt['lede'])}</p>
 </div>
+<div class="ws-meet-grid">
+<div class="ws-meet-l">
 <p class="ws-stamp" data-ws-stamp=""></p>
 <p class="ws-verdict" data-ws-verdict="">{esc(mt['wait'])}</p>
 <button class="ws-pbtn ws-reload" data-ws-reload="" type="button">{AGAIN}<span>{esc(mt['reload'])}</span></button>
 <p class="ws-note-s">{esc(mt['foot'])}</p>
-{('<p class="ws-note-s ws-scanlink">%s <a href="%s">%s</a></p>' % (esc(mt['scan']['tekst']), attr(mt['scan']['href']), esc(mt['scan']['t']))) if mt.get('scan') else ''}
+{('<p class="ws-scanlink">%s %s</p>' % (esc(mt['scan']['tekst']), link(mt['scan']['href'], mt['scan']['t']))) if mt.get('scan') else ''}
 </div>
 <div class="ws-meet-r">
 <dl class="ws-rulers" data-ws-rulers="">{rows}</dl>
@@ -266,41 +336,37 @@ def body(L, lang, pre):
 <p aria-live="polite" class="sr-only" data-ws-meetsr=""></p>
 </div>
 </div>
+</div>
 </section>
-<!-- ════════ PRIJS: stuklijst ════════ -->
+<!-- ════════ PRIJS: het titelblok van de tekening ════════ -->
 <section class="sec ws-prijs" id="prijs">
 <div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">{esc(pr['eyebrow'])}</span>
+<div class="ws-head" data-reveal="">
 <h2 class="h2">{esc(pr['h2a'])}<br/> <span class="grad">{esc(pr['h2b'])}</span></h2>
 <p class="lead">{esc(pr['lede'])}</p>
 </div>
 <div class="ws-prijs-grid">
-<div class="ws-prijs-l">
-<p class="ws-slhead">{esc(pr['head'])}</p>
-<ol class="ws-sl" data-ws-sl="">{prow}{extra}</ol>
-<dl class="ws-tb" data-ws-tb="">{tb}</dl>
-</div>
-<div class="ws-prijs-r">
-<div class="ws-mini" data-ws-mini=""><div class="ws-mini-dev"><div class="ws-scale" data-ws-mscale="">{site(v0, u, ' is-gsm')}</div></div><span aria-hidden="true" class="ws-tag">{esc(u['example'])}</span></div>
-<div class="ws-prijs-side">
+<div class="ws-tblock">
+<div class="ws-total"><span class="ws-total-l">{esc(pr['total_label'])}</span><b>{'' if lang == 'fr' else '<span class="ws-eur">€</span>'}<span class="ws-amt" data-ws-amt=""><span aria-hidden="true" class="ws-amt-d">150</span><span class="sr-only">150</span></span>{'<span class="ws-eur">€</span>' if lang == 'fr' else ''}</b><em data-ws-per="">{esc(u['per'])}</em></div>
 <p class="ws-addl">{esc(pr['addons_label'])}</p>
 <div aria-label="{attr(pr['addons_label'])}" class="ws-addons" role="group">{addons}</div>
-<div class="ws-total"><span>{esc(pr['total_label'])}</span><b>{'' if lang == 'fr' else '<span class="ws-eur">€</span>'}<span class="ws-amt" data-ws-amt=""><span aria-hidden="true" class="ws-amt-d">150</span><span class="sr-only">150</span></span>{'<span class="ws-eur">€</span>' if lang == 'fr' else ''}</b><em data-ws-per="">{esc(u['per'])}</em></div>
 {onces}
 <p aria-live="polite" class="sr-only" data-ws-totsr=""></p>
-</div>
-</div>
-</div>
 <div class="ws-prijs-cta"><a class="btn" data-book="" href="{rel}Contact">{esc(pr['cta'])} {ARROW}</a><a class="btn-ghost" href="{rel}Diensten#pakket-1">{esc(pr['cta2'])}</a></div>
-<p class="ws-cons">{esc(pr['cons'])} <a class="ws-link" href="{rel}Diensten#pakket-2">{esc(pr['cons_link'])} {ARROW}</a></p>
+<dl class="ws-tb" data-ws-tb="">{tb}</dl>
+</div>
+<div class="ws-slwrap">
+<p class="ws-slhead">{esc(pr['head'])}</p>
+<ol class="ws-sl" data-ws-sl="">{prow}{extra}</ol>
+</div>
+</div>
+<p class="ws-cons">{esc(pr['cons'])} {link('Diensten#pakket-2', pr['cons_link'])}</p>
 </div>
 </section>
 <!-- ════════ STAPPEN ════════ -->
 <section class="sec ws-stap" id="stappen">
 <div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">{esc(st['eyebrow'])}</span>
+<div class="ws-head" data-reveal="">
 <h2 class="h2">{esc(st['h2a'])}<br/> <span class="grad">{esc(st['h2b'])}</span></h2>
 <p class="lead">{esc(st['lede'])}</p>
 </div>
@@ -310,18 +376,20 @@ def body(L, lang, pre):
 <!-- ════════ FAQ ════════ -->
 <section class="sec ws-faq" id="faq">
 <div class="wrap">
-<div class="sec-head" data-reveal="">
-<span class="eyebrow">{esc(fq['eyebrow'])}</span>
+<div class="ws-head" data-reveal="">
 <h2 class="h2">{esc(fq['h2a'])}<br/> <span class="grad">{esc(fq['h2b'])}</span></h2>
 </div>
-<div class="faq-list" data-reveal="">{faqs}</div>
-<p class="ws-more">{esc(fq['more_label'])} {more}</p>
+<div class="ws-faq-grid">
+<div class="ws-faq-l">
+<p class="ws-more-l">{esc(fq['more_label'])}</p>
+<ul class="ws-more">{more}</ul>
+</div>
+<div class="faq-list">{faqs}</div>
+</div>
 </div>
 </section>
 <!-- ════════ CTA ════════ -->
-<section class="cta-band" id="contact">
-<canvas aria-hidden="true" class="starfield" data-stars=""></canvas>
-<div class="glow"></div>
+<section class="cta-band ws-ctab" id="contact">
 <div class="wrap">
 <div class="cta-inner" data-reveal="">
 <svg aria-hidden="true" class="ws-blank" data-ws-blank="" viewBox="0 0 140 90"><path class="ws-bl-c" d="M4 10V4h6M130 4h6v6M136 80v6h-6M10 86H4v-6"></path><path class="ws-bl-f" d="M22 18h96v56H22zM22 28h96" pathLength="1"></path><path class="ws-cur" d="M34 40v12"></path></svg>

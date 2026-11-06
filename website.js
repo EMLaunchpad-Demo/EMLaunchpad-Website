@@ -1,13 +1,14 @@
 /* =============================================================
-   EM Launchpad — Websites ("Blauwdruk")
-   1. meting   : hoe snel deze pagina bij de bezoeker laadde (lokaal)
-   2. Site     : de voorbeeldsite per vak (kapper, kinesist, ...)
-   3. hero     : het tekenblad (tekenen, inkleuren, op je gsm, 's avonds)
-   4. lenzen   : wat een site voor je doet
-   5. doorsnede: blauwdruk en echte site van amakhosi.be
-   6. meetlijnen · 7. stuklijst en add-ons · 8. stappen · 9. slot-CTA
+   EM Launchpad — Websites ("Blauwdruk"), vernieuwd op 6/11/2026
+   1. meting    : hoe snel deze pagina bij de bezoeker laadde (lokaal)
+   2. blauwdruk : de vakken van een echte klantensite als lijntekening
+   3. hero      : de bouwtafel (blauwdruk, inkleuren, op je gsm, live)
+   4. waarom    : anatomie op een echte gsm-site (clinic3d.be)
+   5. platform  : een boeking op je site komt binnen in je CRM (voorbeeld)
+   6. echt werk : blauwdruk naast de live site, per klant, computer of gsm
+   7. meetlijnen · 8. stuklijst en add-ons · 9. stappen · 10. slot-CTA
    Er wordt niets verstuurd of bewaard. Zonder JS of met minder
-   beweging blijft alles leesbaar.
+   beweging blijft alles leesbaar en staat alles in de eindstand.
    ============================================================= */
 (function () {
   'use strict';
@@ -142,653 +143,294 @@
     }
   };
 
-  /* chatwidget: site.js laadt hem na de eerste interactie of na 5 s, zoals op de rest van de site */
-
   /* ============================================================
-     2. SITE — alle voorbeeldsites volgen één gedeelde keuze
+     2. BLAUWDRUK — zelfde tekening als body.py (bp_svg)
      ============================================================ */
-  var S = { vak: 0, naam: '' };
-  var sites = $$('[data-ws-site]');
-  var subs = [];
-  function vak() { return D.vak[S.vak]; }
-  function naam() { return S.naam || vak().naam; }
-  function slug(n) {
-    var s = String(n).toLowerCase();
-    try { s = s.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) {}
-    s = s.replace(/[^a-z0-9]/g, '').slice(0, 24);
-    return s ? s + '.be' : vak().domein;
-  }
-  function photoUrl(id, w) { return 'https://images.unsplash.com/' + id + '?auto=format&fit=crop&q=70&w=' + (w || 600); }
-  function applySite(el, onlyText) {
-    var v = vak(), p = v.pal;
-    var set = function (f, t) { $$('[data-f="' + f + '"]', el).forEach(function (x) { x.textContent = t; }); };
-    set('naam', naam()); set('titel', v.titel); set('sub', v.sub); set('cta', v.cta); set('uren', v.uren); set('review', v.review); set('adres', v.adres); set('tel', v.tel);
-    if (onlyText) return;
-    var links = $('[data-f="links"]', el);
-    if (links) { links.textContent = ''; v.links.forEach(function (l) { links.appendChild(mk('i', null, l)); }); }
-    el.style.setProperty('--s-bg', p.bg); el.style.setProperty('--s-ink', p.ink); el.style.setProperty('--s-acc', p.acc);
-    el.style.setProperty('--s-line', p.line); el.style.setProperty('--s-card', p.card);
-    var img = $('[data-f="foto"]', el);
-    if (img && img.getAttribute('data-id') !== v.foto.id) {
-      img.setAttribute('data-id', v.foto.id); img.src = photoUrl(v.foto.id); img.style.objectPosition = v.foto.pos; img.alt = v.foto.alt || '';
-    }
-  }
-  function applyAll(onlyText) {
-    sites.forEach(function (el) { applySite(el, onlyText); });
-    $$('[data-f="domein"]').forEach(function (x) { x.textContent = slug(naam()); });
-    subs.forEach(function (fn) { safe(function () { fn(onlyText); }); });
-  }
-  function preload(i) { var v = D.vak[i]; if (!v || v._pre) return; v._pre = 1; var im = new Image(); im.src = photoUrl(v.foto.id); }
-  /* lokale coördinaten van een onderdeel binnen de site (niet beïnvloed door transform) */
-  function relRect(el, site) {
-    var x = 0, y = 0, e = el;
-    while (e && e !== site) { x += e.offsetLeft; y += e.offsetTop; e = e.offsetParent; }
-    return { x: x, y: y, w: el.offsetWidth, h: el.offsetHeight };
-  }
-
-  /* ============================================================
-     3. HERO — het tekenblad
-     ============================================================ */
-  safe(function () {
-    var root = $('[data-ws-hero]');
-    if (!root) return;
-    var sheet = $('[data-ws-sheet]', root), stage = $('[data-ws-stage]', root), frame = $('[data-ws-frame]', root);
-    var view = $('[data-ws-view]', root), scale = $('[data-ws-scale]', root), site = $('[data-ws-site]', scale);
-    var labels = $('[data-ws-labels]', root), notes = $('[data-ws-notes]', root), clock = $('[data-ws-clock]', root), clockT = $('[data-ws-clockt]', root);
-    var toast = $('[data-ws-toast]', root), rulerN = $('[data-ws-rulen]', root), ruler = $('.ws-ruler', root);
-    var chaps = $$('.ws-chap', root), pauseB = $('[data-ws-pause]', root), againB = $('[data-ws-again]', root);
-    var heroSr = $('[data-ws-herosr]', root), heroLive = $('[data-ws-herolive]', root);
-    var chips = $$('.ws-chip', root), nameBtn = $('[data-ws-namebtn]', root), nameBox = $('#wsNameBox'), nameIn = $('#wsName');
-    if (!sheet || !site) return;
-    root.classList.add('is-js');
-    site.removeAttribute('aria-hidden'); site.setAttribute('aria-hidden', 'true');
-    var draft = sv('svg', { 'class': 'ws-draft', 'aria-hidden': 'true' });
-    scale.appendChild(draft);
-
-    var H = { mode: 'desk', ch: -1, user: false, userPaused: false, off: true, hidden: false, timers: [], k: 1, prog: null, done: false };
-    function paused() { return H.userPaused || H.off || H.hidden; }
-    function later(fn, ms) { var t = new Timer(fn, ms); H.timers.push(t); if (!paused()) t.start(); return t; }
-    function kill() { H.timers.forEach(function (t) { t.kill(); }); H.timers = []; H.prog = null; }
-    function sync() {
-      var p = paused();
-      H.timers = H.timers.filter(function (t) { return !t.done; });
-      H.timers.forEach(function (t) { if (p) t.pause(); else t.start(); });
-      if (!p && H.prog) Loop.add(progTick);
-    }
-
-    /* ---------- maat en schaal ---------- */
-    var DIM = { desk: [1000, 625, 24], gsm: [390, 780, 18] };
-    function geo(mode) {
-      var sw = stage.clientWidth, sh = stage.clientHeight, d = DIM[mode];
-      var k = Math.min(sw / d[0], (sh - d[2]) / d[1]);
-      if (mode === 'desk') k = Math.min(k, 0.66);
-      var fw = d[0] * k, fh = d[1] * k;
-      return { k: k, fw: fw, fh: fh, addr: d[2], left: stage.offsetLeft + (sw - fw) / 2, top: stage.offsetTop + (sh - fh - d[2]) / 2 + d[2] };
-    }
-    function layout(mode, instant) {
-      var g = geo(mode);
-      H.k = g.k; H.g = g;
-      if (instant) { frame.style.transition = 'none'; view.style.transition = 'none'; scale.style.transition = 'none'; }
-      frame.style.setProperty('--fw', g.fw.toFixed(1) + 'px');
-      view.style.setProperty('--fh', g.fh.toFixed(1) + 'px');
-      scale.style.transform = 'scale(' + g.k.toFixed(4) + ')';
-      if (instant) { void frame.offsetWidth; frame.style.transition = ''; view.style.transition = ''; scale.style.transition = ''; }
-      return g;
-    }
-    scale.style.transition = 'transform .9s cubic-bezier(.6,.05,.2,1)';
-
-    /* ---------- de schets ---------- */
-    var PARTS_D = ['nav', 'logo', 'links', 'cta', 'foto', 'titel', 'sub', 'knop', 'uren', 'review', 'adres'];
-    var PARTS_G = ['nav', 'logo', 'burger', 'foto', 'titel', 'sub', 'uren', 'review', 'adres', 'bar'];
-    var LAB = { logo: 'logo', links: 'links', cta: 'cta', knop: 'cta', foto: 'foto', titel: 'titel', uren: 'uren', review: 'review', adres: 'adres', bar: 'bar' };
-    var LAB_M = { knop: 1, cta: 1, foto: 1, uren: 1, bar: 1 };
-    function part(n) { return $('[data-part="' + n + '"]', site); }
-    function drawDraft(mode, animate) {
-      var W = DIM[mode][0], Hh = DIM[mode][1];
-      draft.setAttribute('viewBox', '0 0 ' + W + ' ' + Hh);
-      draft.setAttribute('width', W); draft.setAttribute('height', Hh);
-      draft.textContent = ''; labels.textContent = '';
-      var list = mode === 'desk' ? PARTS_D : PARTS_G, g = H.g, i = 0;
-      list.forEach(function (n) {
-        var el = part(n); if (!el || !el.offsetWidth) return;
-        var r = relRect(el, site);
-        var p = sv('path', { d: 'M' + f1(r.x) + ' ' + f1(r.y) + 'h' + f1(r.w) + 'v' + f1(r.h) + 'h' + f1(-r.w) + 'Z', pathLength: 1 }, draft);
-        var dl = 0.3 + i * 0.08;
-        if (animate) p.style.transition = 'stroke-dashoffset .6s cubic-bezier(.6,.05,.2,1) ' + dl + 's';
-        if (n === 'foto') {
-          var c1 = sv('path', { d: 'M' + f1(r.x) + ' ' + f1(r.y) + 'L' + f1(r.x + r.w) + ' ' + f1(r.y + r.h) + 'M' + f1(r.x + r.w) + ' ' + f1(r.y) + 'L' + f1(r.x) + ' ' + f1(r.y + r.h), pathLength: 1 }, draft);
-          if (animate) c1.style.transition = p.style.transition;
-        }
-        var key = LAB[n];
-        if (key && (!mobile.matches || LAB_M[n]) && !(n === 'knop' && mode === 'desk' && !mobile.matches && false)) {
-          var lab = mk('span', 'ws-lab', U.labels[key]);
-          lab.style.left = f1(g.left + r.x * g.k) + 'px';
-          lab.style.top = f1(g.top + r.y * g.k) + 'px';
-          if (animate) lab.style.transitionDelay = (dl + 0.25) + 's';
-          labels.appendChild(lab);
-        }
-        i++;
-      });
-      if (animate) { void draft.getBoundingClientRect(); requestAnimationFrame(function () { draft.classList.add('is-on'); $$('.ws-lab', labels).forEach(function (l) { l.classList.add('is-on'); }); }); }
-      else { draft.classList.add('is-on'); $$('.ws-lab', labels).forEach(function (l) { l.classList.add('is-on'); }); }
-    }
-
-    /* ---------- notities (handschrift) ---------- */
-    var ARR = { up: '<path d="M13 24c-1-7 0-13 2-20M10 8l5-4 3 6"/>', left: '<path d="M24 14c-7 1-14 0-20-2M8 8l-4 4 5 4"/>', right: '<path d="M2 14c7 1 14 0 20-2M18 8l4 4-5 4"/>' };
-    function note(i, target) {
-      var g = H.g, el = part(target), r = el ? relRect(el, site) : { x: 0, y: 0, w: 0, h: 0 };
-      var n = mk('span', 'ws-note');
-      var s = sv('svg', { viewBox: '0 0 26 26', 'aria-hidden': 'true' });
-      var txt = mk('span', null, U.notes[i]);
-      var sw = sheet.clientWidth, sh = sheet.clientHeight;
-      if (H.mode === 'desk') {
-        /* onder het frame, in een vaste plek links of rechts, met een pijl omhoog */
-        s.innerHTML = ARR.up; n.classList.add('up');
-        n.appendChild(s); n.appendChild(txt);
-        if (i % 2 === 0) n.style.left = f1(Math.max(18, g.left + 6)) + 'px';
-        else { n.style.right = f1(Math.max(18, sw - g.left - g.fw + 6)) + 'px'; }
-        n.style.top = f1(g.top + g.fh + 8) + 'px';
-      } else {
-        /* naast de gsm, op de hoogte van het blok */
-        var y = g.top + (r.y + r.h / 2) * g.k - 12, leftSide = i % 2 === 0;
-        if (leftSide) { s.innerHTML = ARR.right; n.appendChild(txt); n.appendChild(s); n.style.right = f1(sw - g.left + 6) + 'px'; n.style.textAlign = 'right'; }
-        else { s.innerHTML = ARR.left; n.appendChild(s); n.appendChild(txt); n.style.left = f1(g.left + g.fw + 6) + 'px'; }
-        n.style.top = f1(clamp(y, 40, sh - 60)) + 'px';
+  var DIM = { desk: [1440, 900], gsm: [390, 844] };
+  function bpSVG(svg, boxes, mode) {
+    if (!svg) return;
+    var W = DIM[mode][0], H = DIM[mode][1], fs = mode === 'desk' ? 21 : 17, L = U.labels || {};
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    (boxes || []).forEach(function (b, i) {
+      var x = b.x * W / 100, y = b.y * H / 100, w = b.w * W / 100, h = b.h * H / 100;
+      if (w < 4 || h < 4) return;
+      sv('path', { 'class': 'k-' + b.k, d: 'M' + f1(x) + ' ' + f1(y) + 'h' + f1(w) + 'v' + f1(h) + 'h' + f1(-w) + 'Z', pathLength: 1, style: '--i:' + i }, svg);
+      if (b.k === 'foto') sv('path', { 'class': 'k-x', d: 'M' + f1(x) + ' ' + f1(y) + 'L' + f1(x + w) + ' ' + f1(y + h) + 'M' + f1(x + w) + ' ' + f1(y) + 'L' + f1(x) + ' ' + f1(y + h), pathLength: 1, style: '--i:' + i }, svg);
+      var lab = L[b.k];
+      if (lab && w > fs * 2.6 && h > fs * 1.1) {
+        var t = sv('text', { x: f1(x + 8), y: f1(h > fs * 1.8 ? y + fs + 4 : y + h - 4), style: '--i:' + i }, svg);
+        t.textContent = lab;
       }
-      notes.appendChild(n);
-      var on = $$('.ws-note.is-on', notes);
-      if (on.length >= 2) { on[0].classList.remove('is-on'); setTimeout(function () { if (on[0].parentNode) on[0].parentNode.removeChild(on[0]); }, 400); }
-      requestAnimationFrame(function () { n.classList.add('is-on'); });
-    }
-    function clearNotes() { notes.textContent = ''; }
-
-    /* ---------- hoofdstukken ---------- */
-    function progTick(dt) {
-      if (paused() || !H.prog) return false;
-      H.prog.t += dt * 1000;
-      var p = clamp(H.prog.t / H.prog.dur, 0, 1);
-      H.prog.el.style.setProperty('--p', p.toFixed(3));
-      return p < 1;
-    }
-    function markChap(i) {
-      chaps.forEach(function (b, k) {
-        b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
-        b.classList.toggle('is-done', k < i);
-        if (k !== i) b.querySelector('i').style.removeProperty('--p');
-      });
-    }
-    var DUR = [2400, 2600, 1800, 3900];
-    function setRuler(n) { if (rulerN) rulerN.textContent = n + ' px'; }
-    function clearSite() {
-      site.classList.remove('is-night', 'is-sheet');
-      sheet.classList.remove('is-night');
-      clock.classList.remove('is-on'); toast.classList.remove('is-on');
-      $$('.ws-tap', site).forEach(function (t) { t.parentNode.removeChild(t); });
-    }
-    function setMode(mode) {
-      H.mode = mode;
-      site.classList.toggle('is-gsm', mode === 'gsm');
-      frame.classList.toggle('is-gsm', mode === 'gsm');
-      sheet.style.setProperty('--rw', mode === 'gsm' ? '34%' : '60%');
-      setRuler(mode === 'gsm' ? 390 : 1280);
-    }
-    /* eindstand van een hoofdstuk zonder beweging (voor terugspringen en minder beweging) */
-    function endState(i) {
-      if (i === 0) { sheet.classList.add('is-ruled'); drawDraft(H.mode, false); }
-      if (i === 1) { sheet.classList.add('is-inked'); draft.classList.add('is-faint'); labels.classList.add('is-gone'); }
-      if (i === 2) { setMode('gsm'); layout('gsm', true); drawDraft('gsm', false); draft.classList.add('is-faint'); labels.classList.add('is-gone'); }
-      if (i === 3) { nightOn(false); }
-    }
-    function sheetContent() {
-      var v = vak(), box = $('.ws-s-sheet-in', site);
-      box.textContent = '';
-      if (v.flow === 'offerte') {
-        U.form.forEach(function (f, k) { var ln = mk('div', 'ln'); ln.appendChild(mk('span', null, f)); ln.appendChild(mk('b', null, k === 0 ? 'Volkswagen' : (k === 1 ? v.dienst : '04•• •• •• 12'))); box.appendChild(ln); });
-      } else {
-        box.appendChild(mk('p', null, naam()));
-        var ln = mk('div', 'ln'); ln.appendChild(mk('span', null, v.dienst)); ln.appendChild(mk('b', null, v.moment)); box.appendChild(ln);
-      }
-      var ok = mk('div', 'ok');
-      var s = sv('svg', { viewBox: '0 0 24 24' }); sv('path', { d: 'M5 12.5l4.5 4.5L19 7.5', pathLength: 1 }, s);
-      ok.appendChild(s); ok.appendChild(mk('span', null, v.flow === 'offerte' ? U.sent : U.confirmed)); box.appendChild(ok);
-      var t = v.flow === 'offerte' ? U.toast_offerte : U.toast_boek;
-      $('b', toast).textContent = fill(t[0], v); $('span', toast).textContent = fill(t[1], v);
-    }
-    function placeNight() {
-      var g = H.g, sw = sheet.clientWidth;
-      var cx = g.left - 12;
-      if (H.mode === 'gsm' && cx > 150) { clock.style.left = ''; clock.style.right = f1(sw - cx) + 'px'; clock.style.top = f1(g.top + 6) + 'px'; }
-      else { clock.style.right = ''; clock.style.left = '14px'; clock.style.top = '36px'; }
-      if (H.mode === 'gsm' && g.left > 230) { toast.style.left = ''; toast.style.right = f1(sw - g.left + 14) + 'px'; toast.style.top = f1(g.top + g.fh * 0.45) + 'px'; }
-      else { toast.style.right = ''; toast.style.left = '14px'; toast.style.top = f1(Math.max(36, g.top + g.fh * 0.3)) + 'px'; }
-    }
-    function nightOn(animate) {
-      sheetContent(); placeNight();
-      clockT.textContent = U.clock_b;
-      clock.classList.add('is-on'); sheet.classList.add('is-night'); site.classList.add('is-night', 'is-sheet');
-      toast.classList.add('is-on'); root.classList.add('is-booked');
-      if (!animate) { clearNotes(); note(4, H.mode === 'gsm' ? 'bar' : 'knop'); }
-    }
-    function chapter(i) {
-      H.ch = i; markChap(i);
-      var b = chaps[i].querySelector('i');
-      H.prog = { t: 0, dur: DUR[i], el: b };
-      if (!paused()) Loop.add(progTick);
-      if (H.user && heroLive) heroLive.textContent = fill(U.live_chapter, { i: i + 1, naam: D.chapters[i] });
-      if (i === 0) {
-        clearNotes(); sheet.classList.remove('is-inked'); draft.classList.remove('is-faint', 'is-on'); labels.classList.remove('is-gone');
-        later(function () { sheet.classList.add('is-ruled'); }, 200);
-        drawDraft(H.mode, true);
-        later(function () { note(0, H.mode === 'gsm' ? 'bar' : 'knop'); }, 1400);
-        later(function () { note(1, 'uren'); }, 2000);
-      } else if (i === 1) {
-        sheet.classList.add('is-inked');
-        var ph = $('.ws-s-photo img', site), ti = part('titel'), kn = part('knop'), cards = $$('.ws-s-card', site);
-        anim(site, [{ opacity: 0 }, { opacity: 1 }], { duration: 300 });
-        anim(ph, [{ clipPath: 'inset(0 100% 0 0)', transform: 'scale(1.06)' }, { clipPath: 'inset(0 0% 0 0)', transform: 'scale(1)' }], { duration: 1000, delay: 250, easing: 'cubic-bezier(.6,.05,.2,1)', fill: 'backwards' });
-        if (ti && !reduce) {
-          var full = ti.textContent, tt = 0;
-          ti.textContent = '';
-          later(function () {
-            Loop.add(function type(dt) {
-              if (paused()) { later(function () { Loop.add(type); }, 50); return false; }
-              tt += dt * 1000; var n = Math.min(full.length, Math.floor(tt / 28));
-              ti.textContent = full.slice(0, n);
-              return n < full.length;
-            });
-          }, 500);
-        }
-        anim(kn, [{ opacity: 0, transform: 'scale(.94)' }, { opacity: 1, transform: 'scale(1)' }], { duration: 400, delay: 1200, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
-        cards.forEach(function (c, k) { anim(c, [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 400, delay: 1500 + k * 80, fill: 'backwards' }); });
-        later(function () { draft.classList.add('is-faint'); labels.classList.add('is-gone'); }, 1800);
-        later(function () { note(2, 'foto'); }, 2000);
-      } else if (i === 2) {
-        toGsm();
-      } else if (i === 3) {
-        sheetContent(); placeNight();
-        clockT.textContent = U.clock_a; clock.classList.add('is-on');
-        later(function () { roll(clockT, U.clock_b); }, 700);
-        later(function () { sheet.classList.add('is-night'); site.classList.add('is-night'); }, 1300);
-        later(function () { tap(); }, 2200);
-        later(function () { site.classList.add('is-sheet'); root.classList.add('is-booked'); }, 2600);
-        later(function () { toast.classList.add('is-on'); }, 3200);
-        later(function () { note(4, H.mode === 'gsm' ? 'bar' : 'knop'); }, 3700);
-      }
-      later(function () {
-        chaps[i].classList.add('is-done');
-        if (i < 3) chapter(i + 1); else { H.done = true; H.ch = 4; markChap(4); pauseB.hidden = true; }
-      }, DUR[i] + (i === 3 ? 400 : 250));
-    }
-    function roll(el, text) {
-      if (reduce) { el.textContent = text; return; }
-      anim(el, [{ transform: 'none', opacity: 1 }, { transform: 'translateY(-60%)', opacity: 0 }], { duration: 220 });
-      setTimeout(function () { el.textContent = text; anim(el, [{ transform: 'translateY(60%)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 260 }); }, 220);
-    }
-    function tap() {
-      var el = H.mode === 'gsm' ? $('.ws-s-bar span', site) : part('knop');
+    });
+  }
+  function imgSet(img, id, mode) {
+    if (!img) return;
+    var base = D.rel + 'assets/werk/websites/' + id + '-' + mode + '-';
+    if (mode === 'desk') { img.srcset = base + '960.webp 960w, ' + base + '1440.webp 1440w'; img.src = base + '960.webp'; }
+    else { img.srcset = base + '390.webp 390w, ' + base + '780.webp 780w'; img.src = base + '390.webp'; }
+  }
+  function preload(id, like) {
+    if (!id) return;
+    (like || []).forEach(function (el) {
       if (!el) return;
-      var r = relRect(el, site), t = mk('i', 'ws-tap');
-      t.style.left = f1(r.x + r.w / 2) + 'px'; t.style.top = f1(r.y + r.h / 2) + 'px';
-      site.appendChild(t);
-      anim(t, [{ opacity: 0.9, transform: 'scale(.4)' }, { opacity: 0, transform: 'scale(1.6)' }], { duration: 520, easing: 'ease-out' });
-      setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 560);
+      var im = new Image();
+      im.sizes = el.getAttribute('sizes') || '';
+      imgSet(im, id, el.getAttribute('data-mode') || (el.getAttribute('height') === '900' ? 'desk' : 'gsm'));
+    });
+  }
+  function siteBy(id) { for (var i = 0; i < D.sites.length; i++) if (D.sites[i].id === id) return D.sites[i]; return null; }
+
+  /* ============================================================
+     3. HERO — de bouwtafel: blauwdruk, inkleuren, gsm, live
+        De eerste ronde speelt met CSS (ook zonder JS). JS gaat daarna
+        langs de andere klanten, pauzeert buiten beeld en op vraag.
+     ============================================================ */
+  safe(function () {
+    var fig = $('[data-ws-build]');
+    if (!fig) return;
+    var desk = $('.ws-desk .ws-ink', fig), phone = $('.ws-phone .ws-ink', fig);
+    var bpD = $('.ws-desk .ws-bp', fig), bpM = $('.ws-phone .ws-bp', fig);
+    var dom = $('[data-ws-dom]', fig), whos = $$('[data-ws-who]', fig), pbtn = $('[data-ws-pause]', fig), srEl = $('[data-ws-buildsr]', fig);
+    var BUILD = 5200, HOLD = 4300, OUTMS = 420;
+    var H = { i: 0, paused: false, off: false, hidden: document.visibilityState === 'hidden', timer: null };
+    function running() { return !H.paused && !H.off && !H.hidden; }
+    function sync() {
+      fig.classList.toggle('is-paused', !running());
+      if (H.timer) { if (running()) H.timer.start(); else H.timer.pause(); }
     }
-    /* FLIP: van desktop naar gsm, onderdelen schuiven vloeiend naar hun nieuwe plek */
-    function toGsm() {
-      var names = ['nav', 'logo', 'titel', 'sub', 'foto', 'uren', 'review', 'adres'];
-      var before = {};
-      names.forEach(function (n) { var e = part(n); if (e) before[n] = relRect(e, site); });
-      clearNotes();
-      setMode('gsm');
-      var g = layout('gsm');
-      names.forEach(function (n) {
-        var e = part(n), a = before[n]; if (!e || !a) return;
-        var b = relRect(e, site);
-        var dx = a.x - b.x, dy = a.y - b.y, sx = a.w / Math.max(1, b.w), sy = a.h / Math.max(1, b.h);
-        var from = n === 'foto' ? 'translate(' + dx + 'px,' + dy + 'px) scale(' + sx.toFixed(3) + ',' + sy.toFixed(3) + ')' : 'translate(' + dx + 'px,' + dy + 'px)';
-        e.style.transformOrigin = '0 0';
-        anim(e, [{ transform: from }, { transform: 'none' }], { duration: 900, easing: 'cubic-bezier(.6,.05,.2,1)' });
+    function sched(ms) { if (H.timer) H.timer.kill(); H.timer = new Timer(next, ms); if (running()) H.timer.start(); }
+    function mark() {
+      whos.forEach(function (b, k) { b.setAttribute('aria-pressed', k === H.i ? 'true' : 'false'); b.classList.remove('is-prog'); });
+      var a = whos[H.i];
+      if (a && !reduce && !H.paused) { void a.offsetWidth; a.style.setProperty('--dur', (BUILD + HOLD + OUTMS) + 'ms'); a.classList.add('is-prog'); }
+    }
+    function show(i) {
+      var s = D.sites[i];
+      if (!s) return;
+      H.i = i;
+      fig.setAttribute('data-site', s.id);
+      imgSet(desk, s.id, 'desk'); desk.alt = s.alt_desk;
+      imgSet(phone, s.id, 'gsm'); phone.alt = s.alt_gsm;
+      bpSVG(bpD, s.desk, 'desk'); bpSVG(bpM, s.gsm, 'gsm');
+      if (dom) dom.textContent = s.domein;
+      if (srEl) srEl.textContent = fill(D.sr_hero, s);
+      fig.classList.toggle('is-still', reduce || H.paused);
+      fig.classList.remove('is-run'); void fig.offsetWidth; fig.classList.add('is-run');
+      fig.classList.remove('is-out');
+      mark();
+      var nx = D.sites[(i + 1) % D.sites.length];
+      if (nx) setTimeout(function () { preload(nx.id, [desk, phone]); }, 2400);
+      if (!reduce) sched(BUILD + HOLD);
+    }
+    function go(i) {
+      if (reduce || H.paused) { show(i); return; }
+      fig.classList.add('is-out');
+      setTimeout(function () { show(i); }, OUTMS);
+    }
+    function next() { go((H.i + 1) % D.sites.length); }
+    whos.forEach(function (b, k) { b.addEventListener('click', function () { if (H.timer) H.timer.kill(); go(k); }); });
+    if (pbtn) {
+      if (reduce) pbtn.hidden = true;
+      pbtn.addEventListener('click', function () {
+        H.paused = !H.paused;
+        pbtn.setAttribute('data-state', H.paused ? 'paused' : 'playing');
+        pbtn.setAttribute('aria-label', H.paused ? U.play_aria : U.pause_aria);
+        $('span', pbtn).textContent = H.paused ? U.play : U.pause;
+        if (!H.paused) mark(); else whos.forEach(function (b) { b.classList.remove('is-prog'); });
+        sync();
       });
-      var bar = part('bar');
-      anim(bar, [{ transform: 'translateY(100%)' }, { transform: 'none' }], { duration: 320, delay: 700, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'backwards' });
-      var n0 = 1280, t0 = 0;
-      Loop.add(function cnt(dt) { t0 += dt * 1000; var u = clamp(t0 / 900, 0, 1); setRuler(Math.round(n0 + (390 - n0) * easeIO(u))); return u < 1; });
-      draft.style.opacity = '0';
-      later(function () { drawDraft('gsm', false); draft.classList.add('is-faint'); draft.style.opacity = ''; labels.classList.add('is-gone'); }, 1000);
-      later(function () { note(3, 'bar'); }, 1200);
-      H.g = g;
     }
-
-    function restart(fromCh) {
-      kill(); H.done = false; pauseB.hidden = false;
-      clearSite(); clearNotes();
-      root.classList.remove('is-booked');
-      var ti = part('titel'); if (ti) ti.textContent = vak().titel;
-      if (fromCh <= 2) { setMode('desk'); layout('desk', true); }
-      if (fromCh === 0) { sheet.classList.remove('is-inked', 'is-ruled'); }
-      for (var k = 0; k < fromCh; k++) endState(k);
-      markChap(fromCh);
-      chapter(fromCh);
-    }
-    function setPause(on) {
-      H.userPaused = on;
-      pauseB.setAttribute('data-state', on ? 'paused' : 'playing');
-      pauseB.setAttribute('aria-label', on ? U.play_aria : U.pause_aria);
-      $('span', pauseB).textContent = on ? U.play : U.pause;
-      sync();
-    }
-    chaps.forEach(function (b, i) {
-      b.addEventListener('click', function () {
-        H.user = true;
-        if (reduce) { staticChapter(i); return; }
-        if (H.userPaused) setPause(false);
-        restart(i);
-      });
-    });
-    pauseB.addEventListener('click', function () { H.user = true; setPause(!H.userPaused); });
-    againB.addEventListener('click', function () { H.user = true; if (reduce) { staticChapter(1); return; } if (H.userPaused) setPause(false); restart(0); });
-
-    /* vak kiezen: de inkt trekt terug en het blad kleurt opnieuw in */
-    var vakT = 0;
-    function setVak(i) {
-      if (i === S.vak) return;
-      S.vak = i;
-      chips.forEach(function (c, k) { c.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
-      if (heroSr) heroSr.textContent = fill(U.sr_hero, { naam: naam(), wat: vak().flow === 'offerte' ? U.sr_offerte : U.sr_boek });
-      if (reduce) { applyAll(); staticChapter(Math.max(1, H.ch)); return; }
-      if (H.ch < 1) { applyAll(); return; }
-      kill(); H.done = false; pauseB.hidden = false;
-      var mode = H.mode;
-      anim(site, [{ opacity: 1 }, { opacity: 0 }], { duration: 350 });
-      draft.classList.remove('is-faint');
-      clearTimeout(vakT);
-      vakT = setTimeout(function () {
-        kill();
-        clearSite(); clearNotes(); root.classList.remove('is-booked');
-        applyAll();
-        if (mode === 'gsm') { drawDraft('gsm', false); }
-        markChap(1);
-        chapter(1);
-        if (mode === 'gsm') {
-          /* in gsm-stand: na het inkleuren niet opnieuw omklappen, meteen naar 's avonds */
-          H.timers.forEach(function (t) { t.kill(); }); H.timers = [];
-          later(function () { chaps[1].classList.add('is-done'); chaps[2].classList.add('is-done'); draft.classList.add('is-faint'); labels.classList.add('is-gone'); chapter(3); }, DUR[1] + 250);
-        }
-      }, 360);
-    }
-    chips.forEach(function (c, i) {
-      c.addEventListener('click', function () { H.user = true; setVak(i); });
-      c.addEventListener('pointerenter', function () { preload(i); });
-      c.addEventListener('focus', function () { preload(i); });
-    });
-    if (nameBtn && nameBox) nameBtn.addEventListener('click', function () {
-      var open = nameBox.hidden; nameBox.hidden = !open; nameBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open && nameIn) nameIn.focus();
-    });
-    var nt = 0;
-    if (nameIn) nameIn.addEventListener('input', function () {
-      clearTimeout(nt);
-      nt = setTimeout(function () {
-        var v = String(nameIn.value || '').replace(/[<>{}]/g, '').trim().slice(0, 28);
-        S.naam = v; applyAll(true);
-        $$('[data-f="domein"]').forEach(function (x) { x.textContent = slug(naam()); });
-        if (heroSr) heroSr.textContent = fill(U.sr_hero, { naam: naam(), wat: vak().flow === 'offerte' ? U.sr_offerte : U.sr_boek });
-        if (site.classList.contains('is-sheet')) sheetContent();
-      }, 200);
-    });
-
-    /* minder beweging: elke knop toont meteen de eindstand */
-    function staticChapter(i) {
-      clearSite(); clearNotes(); root.classList.remove('is-booked');
-      setMode(i >= 2 ? 'gsm' : 'desk'); layout(H.mode, true);
-      sheet.classList.add('is-ruled');
-      drawDraft(H.mode, false);
-      if (i >= 1) { sheet.classList.add('is-inked'); draft.classList.add('is-faint'); labels.classList.add('is-gone'); } else sheet.classList.remove('is-inked');
-      if (i === 0) { note(0, 'knop'); note(1, 'uren'); }
-      if (i === 1) { note(2, 'foto'); }
-      if (i === 2) { note(3, 'bar'); }
-      if (i === 3) nightOn(false);
-      H.ch = i; markChap(i); chaps.forEach(function (b, k) { b.classList.toggle('is-done', k < i); });
-      if (H.user && heroLive) heroLive.textContent = fill(U.live_chapter, { i: i + 1, naam: D.chapters[i] });
-    }
-
-    /* opnieuw meten bij een andere breedte, zonder de stand te verliezen */
-    var rt = 0;
-    function relayout() {
-      layout(H.mode, true);
-      if (sheet.classList.contains('is-ruled')) {
-        var faint = draft.classList.contains('is-faint');
-        drawDraft(H.mode, false); if (faint) draft.classList.add('is-faint');
-      }
-      if (sheet.classList.contains('is-night')) placeNight();
-      clearNotes();
-    }
-    if ('ResizeObserver' in window) new ResizeObserver(function () { clearTimeout(rt); rt = setTimeout(relayout, 150); }).observe(sheet);
-    else window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(relayout, 150); });
-
-    watch(sheet, function (vis) { H.off = !vis; sync(); }, 0.25);
-    document.addEventListener('visibilitychange', function () { H.hidden = document.hidden; sync(); });
-
-    layout('desk', true);
-    if (reduce) { pauseB.hidden = true; H.off = false; staticChapter(1); return; }
-    var started = false;
-    var start = function () { if (started) return; started = true; preload(1); preload(2); preload(3); chapter(0); };
-    requestAnimationFrame(function () { once(sheet, start, 0.35); });
+    watch(fig, function (v) { H.off = !v; sync(); }, 0.15);
+    document.addEventListener('visibilitychange', function () { H.hidden = document.visibilityState === 'hidden'; sync(); });
+    if (reduce) return;
+    mark();
+    sched(BUILD + HOLD);
+    /* de volgende klant pas na de eerste ronde voorladen: zo telt hij niet mee in de eerlijke meting */
+    setTimeout(function () { if (D.sites[1]) preload(D.sites[1].id, [desk, phone]); }, 6200);
   });
 
   /* ============================================================
-     4. LENZEN — wat je site voor je doet
+     4. WAAROM — anatomie: elk punt licht het juiste stuk van een echte gsm-site op
      ============================================================ */
   safe(function () {
-    var lens = $('[data-ws-lens-root]');
-    if (!lens) return;
-    var sec = lens.closest('section');
-    var scale = $('[data-ws-lscale]', lens), site = $('[data-ws-site]', scale), box = $('[data-ws-lbox]', lens), boxP = $('path', box), over = $('[data-ws-over]', lens);
-    var btns = $$('.ws-lensb', sec), pauseB = $('[data-ws-lpause]', sec);
-    var live = mk('p', 'ws-lens-live'); live.setAttribute('aria-live', 'polite'); live.style.display = 'none';
-    var group = $('.ws-lenses', sec); group.parentNode.insertBefore(live, group.nextSibling);
-    var L = { i: 0, stop: false, userPaused: false, off: true, t: 0, dur: 6000, typing: null };
-    var k0 = 1;
-    function base() { k0 = lens.clientWidth / 1000; }
-    function texts() {
-      var v = vak();
-      btns.forEach(function (b, i) {
-        var d = D.lenses[i], off = v.flow === 'offerte';
-        $('b', b).textContent = off && d.titel_offerte ? d.titel_offerte : d.titel;
-        $('.ws-lens-t', b).textContent = fill(off && d.tekst_offerte ? d.tekst_offerte : d.tekst, { vak: v.chip.toLowerCase(), cta: v.cta });
-      });
-      live.textContent = $('.ws-lens-t', btns[L.i]).textContent;
+    var root = $('[data-ws-anat]');
+    if (!root) return;
+    var items = $$('.ws-an-i', root), btns = $$('.ws-an-b', root), hl = $('[data-ws-hl]', root), scr = $('.ws-an-scr', root), svg = $('[data-ws-lines]', root);
+    var em = hl && $('em', hl), boxes = (D.an && D.an.gsm) || [], A = { i: 0, user: false, vis: false, t: 0 };
+    function biggest(k, minY) {
+      var best = null;
+      boxes.forEach(function (b) { if (b.k !== k || b.y < (minY || 0)) return; if (!best || b.w * b.h > best.w * best.h + 0.5) best = b; });
+      return best;
     }
-    subs.push(function () { texts(); if (!L.stop || true) show(L.i, true); });
-    function zoomTo(pn) {
-      var W = lens.clientWidth, Hh = lens.clientHeight;
-      box.setAttribute('viewBox', '0 0 ' + W + ' ' + Hh);
-      if (!pn) { scale.style.transform = 'scale(' + k0 + ')'; return null; }
-      var el = $('[data-part="' + pn + '"]', site); if (!el) return null;
-      var r = relRect(el, site), s = k0 * 1.55;
-      var tx = clamp(W / 2 - (r.x + r.w / 2) * s, W - 1000 * s, 0), ty = clamp(Hh / 2 - (r.y + r.h / 2) * s, Hh - 625 * s, 0);
-      scale.style.transform = 'translate(' + f1(tx) + 'px,' + f1(ty) + 'px) scale(' + s.toFixed(4) + ')';
-      return { x: r.x * s + tx - 6, y: r.y * s + ty - 6, w: r.w * s + 12, h: r.h * s + 12 };
+    function boxFor(part) {
+      if (part === 'scherm') return { x: 2, y: 1.5, w: 96, h: 97 };
+      if (part === 'titel') {
+        var t = biggest('titel'), x = biggest('tekst');
+        if (t && x) { var x0 = Math.min(t.x, x.x), y0 = Math.min(t.y, x.y), x1 = Math.max(t.x + t.w, x.x + x.w), y1 = Math.max(t.y + t.h, x.y + x.h); return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 }; }
+        return t || x;
+      }
+      if (part === 'knop') return biggest('knop', 12);
+      return biggest(part);
     }
-    function ov(cls, css) { var d = mk('div', 'ws-ov ' + cls); for (var k in css) d.style[k] = css[k]; over.appendChild(d); return d; }
-    var TI = {
-      web: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>', wa: '<path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l1.9-5.7A8.4 8.4 0 1 1 21 11.5z"/>',
-      ig: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/>', mail: '<rect height="14" rx="2" width="18" x="3" y="5"/><path d="m3 7 9 6 9-6"/>',
-      sms: '<path d="M4 5h16v11H9l-5 4z"/>', tel: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>'
-    };
-    function overlay(i) {
-      over.textContent = ''; if (L.typing) { clearInterval(L.typing); L.typing = null; }
-      var v = vak(), id = D.lenses[i].id;
-      if (id === 'gevonden') {
-        var o = ov('ws-srch', { right: '4%', top: '12%', width: 'min(300px,62%)' });
-        var f = mk('div', 'ws-q-field'); f.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>';
-        var q = mk('span'); f.appendChild(q); o.appendChild(f);
-        var res = mk('div', 'ws-res'); res.appendChild(mk('b', null, naam())); res.appendChild(mk('em', null, slug(naam())));
-        res.appendChild(mk('span', null, U.open_until));
-        var rb = mk('div', 'ws-res-b'); U.result_btns.forEach(function (t) { rb.appendChild(mk('i', null, t)); }); res.appendChild(rb);
-        res.appendChild(mk('small', null, U.example)); res.style.opacity = '0'; o.appendChild(res);
-        var full = v.zoek, n = 0;
-        if (reduce) { q.textContent = full; res.style.opacity = '1'; }
-        else L.typing = setInterval(function () { n++; q.textContent = full.slice(0, n); if (n >= full.length) { clearInterval(L.typing); L.typing = null; res.style.transition = 'opacity .35s ease'; res.style.opacity = '1'; } }, 45);
-      } else if (id === 'vertrouwen') {
-        var o2 = ov('ws-sms', { right: '4%', bottom: '8%' });
-        o2.appendChild(mk('small', null, U.sms_meta)); o2.appendChild(mk('p', null, U.sms_text)); o2.appendChild(mk('small', null, U.example));
-      } else if (id === 'boeken') {
-        var o3 = ov('ws-tiles', { right: '4%', top: '10%' }), tiles = [];
-        if (v.flow === 'offerte') { U.form.forEach(function (f) { tiles.push(mk('div', null, f)); }); tiles.push(mk('div', 'done', U.sent + ' · ' + U.crm)); }
-        else {
-          tiles.push(mk('div', null, fill(U.tile_service, v))); tiles.push(mk('div', null, v.moment));
-          var p = mk('div', null, U.pay), pc = mk('span', 'pay'); U.pay_chips.forEach(function (c) { pc.appendChild(mk('i', null, c)); }); p.appendChild(pc); tiles.push(p);
-          tiles.push(mk('div', 'done', '✓ ' + U.confirmed));
+    function lines() {
+      if (!svg) return;
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      if (window.innerWidth < 1000 || !hl || hl.style.display === 'none') return;
+      var r0 = root.getBoundingClientRect(), b = btns[A.i].getBoundingClientRect(), h = hl.getBoundingClientRect();
+      var left = items[A.i].parentNode.classList.contains('ws-an-l');
+      svg.setAttribute('viewBox', '0 0 ' + f1(r0.width) + ' ' + f1(r0.height));
+      var sx = left ? b.right - r0.left + 14 : b.left - r0.left - 14, sy = b.top - r0.top + b.height / 2;
+      var ex = left ? h.left - r0.left - 4 : h.right - r0.left + 4, ey = h.top - r0.top + Math.min(h.height / 2, 40);
+      var dx = (ex - sx) * 0.5;
+      var p = sv('path', { d: 'M' + f1(sx) + ' ' + f1(sy) + 'C' + f1(sx + dx) + ' ' + f1(sy) + ' ' + f1(ex - dx) + ' ' + f1(ey) + ' ' + f1(ex) + ' ' + f1(ey), pathLength: 1 }, svg);
+      sv('circle', { cx: f1(sx), cy: f1(sy), r: 3.5 }, svg);
+      sv('circle', { cx: f1(ex), cy: f1(ey), r: 4.5, 'class': 'e' }, svg);
+      if (!reduce) anim(p, [{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 520, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'both' });
+    }
+    function set(i) {
+      A.i = i;
+      btns.forEach(function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+      items.forEach(function (it, k) { it.classList.toggle('is-on', k === i); });
+      var bx = boxFor(btns[i].getAttribute('data-part'));
+      if (hl) {
+        if (!bx) { hl.style.display = 'none'; } else {
+          hl.style.display = '';
+          var pad = 1.2;
+          hl.style.left = Math.max(0, bx.x - pad) + '%'; hl.style.top = Math.max(0, bx.y - pad * 0.45) + '%';
+          hl.style.width = Math.min(100, bx.w + pad * 2) + '%'; hl.style.height = Math.min(100, bx.h + pad * 0.9) + '%';
+          hl.classList.toggle('is-low', bx.y > 70);
+          if (em) em.textContent = (D.an.hl || [])[i] || '';
         }
-        tiles.forEach(function (t, k) { o3.appendChild(t); setTimeout(function () { t.classList.add('is-on'); }, reduce ? 0 : 400 + k * 600); });
-        o3.appendChild(mk('small', null, U.example));
-      } else {
-        var o4 = ov('ws-inbox', { left: '50%', top: '50%', transform: 'translate(-50%,-50%)' });
-        U.inbox.forEach(function (r) {
-          var row = mk('div'), s = sv('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true' }); s.innerHTML = TI[r[0]] || '';
-          row.appendChild(s); row.appendChild(mk('b', null, r[1])); row.appendChild(mk('span', null, r[0] === 'web' ? r[2] + ' · ' + naam() : r[2])); o4.appendChild(row);
-        });
-        o4.appendChild(mk('small', null, U.example));
       }
-      requestAnimationFrame(function () { $$('.ws-ov', over).forEach(function (o) { o.style.transitionDelay = reduce ? '0s' : '.75s'; o.classList.add('is-on'); }); });
+      root.classList.add('is-js');
+      if (reduce) lines(); else setTimeout(lines, 360);
     }
-    function show(i, quiet) {
-      L.i = i; L.t = 0;
-      btns.forEach(function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); var bar = $('i', b); if (bar) bar.style.transform = 'scaleX(0)'; });
-      base();
-      var d = D.lenses[i];
-      lens.classList.toggle('is-dim', !d.part);
-      box.classList.remove('is-on');
-      var r = zoomTo(d.part);
-      if (r) {
-        boxP.setAttribute('d', 'M' + f1(r.x) + ' ' + f1(r.y) + 'h' + f1(r.w) + 'v' + f1(r.h) + 'h' + f1(-r.w) + 'Z');
-        setTimeout(function () { box.classList.add('is-on'); }, reduce ? 0 : 650);
-      }
-      overlay(i);
-      live.textContent = $('.ws-lens-t', btns[i]).textContent;
-    }
-    function tick(dt) {
-      if (L.stop || L.userPaused || L.off) return false;
-      L.t += dt * 1000;
-      var bar = $('i', btns[L.i]); if (bar) bar.style.transform = 'scaleX(' + clamp(L.t / L.dur, 0, 1).toFixed(3) + ')';
-      if (L.t >= L.dur) show((L.i + 1) % btns.length);
-      return true;
-    }
-    function stopAuto() { L.stop = true; pauseB.hidden = true; btns.forEach(function (b) { var bar = $('i', b); if (bar) bar.style.transform = 'scaleX(0)'; }); }
-    btns.forEach(function (b, i) { b.addEventListener('click', function () { stopAuto(); show(i); }); });
-    sec.addEventListener('keydown', function (e) { if (e.target.closest && e.target.closest('.ws-lensb')) stopAuto(); });
-    pauseB.addEventListener('click', function () {
-      L.userPaused = !L.userPaused;
-      pauseB.setAttribute('data-state', L.userPaused ? 'paused' : 'playing');
-      pauseB.setAttribute('aria-label', L.userPaused ? U.lens_play : U.lens_pause);
-      $('span', pauseB).textContent = L.userPaused ? U.play : U.pause;
-      if (!L.userPaused) Loop.add(tick);
-    });
-    var mq = function () { live.style.display = mobile.matches ? 'block' : 'none'; };
-    mq(); if (mobile.addEventListener) mobile.addEventListener('change', mq);
-    if ('ResizeObserver' in window) new ResizeObserver(function () { show(L.i, true); }).observe(lens);
-    texts(); show(0, true);
-    if (reduce) { stopAuto(); return; }
-    watch(lens, function (v) { L.off = !v; if (v && !L.stop) Loop.add(tick); }, 0.25);
-    once(lens, function () { if (!L.stop) Loop.add(tick); }, 0.5);
+    btns.forEach(function (b, k) { b.addEventListener('click', function () { A.user = true; set(k); }); });
+    set(0);
+    var rs = 0;
+    window.addEventListener('resize', function () { cancelAnimationFrame(rs); rs = requestAnimationFrame(lines); });
+    var img = $('.ws-an-img', root);
+    if (img && !img.complete) img.addEventListener('load', lines);
+    if (reduce) return;
+    function tick() { A.t = 0; if (!A.user && A.vis) set((A.i + 1) % btns.length); }
+    watch(root, function (v) { A.vis = v; if (v) lines(); }, 0.35);
+    setInterval(function () { if (!document.hidden) tick(); }, 3600);
   });
 
   /* ============================================================
-     5. DOORSNEDE — blauwdruk boven, echte site onder de lijn
+     5. ONS PLATFORM — een boeking op je site komt binnen in je CRM
      ============================================================ */
   safe(function () {
-    var cut = $('[data-ws-cut]');
-    if (!cut) return;
-    var sec = cut.closest('section');
-    var bp = $('[data-ws-bp]', cut), pinsEl = $('[data-ws-pins]', cut), knife = $('[data-ws-knife]', cut), viewEl = $('.ws-cut-view', cut), cap = $('[data-ws-pincap]', sec);
-    var toggles = $$('[data-ws-mode]', sec);
-    cut.classList.add('is-js');
-    var C = { v: 56, mode: 'desk', user: false, lastPin: -1 };
-    function build() {
-      bp.textContent = '';
-      var s = sv('svg', { viewBox: '0 0 100 100', preserveAspectRatio: 'none' }, bp);
-      D.bp[C.mode].forEach(function (r) {
-        sv('path', { d: 'M' + r.x + ' ' + r.y + 'h' + r.w + 'v' + r.h + 'h' + (-r.w) + 'Z' }, s);
-        if (r.x_) sv('path', { 'class': 'x', d: 'M' + r.x + ' ' + r.y + 'L' + (r.x + r.w) + ' ' + (r.y + r.h) + 'M' + (r.x + r.w) + ' ' + r.y + 'L' + r.x + ' ' + (r.y + r.h) }, s);
-        if (r.l) { var l = mk('span', null, r.l); l.style.left = r.x + '%'; l.style.top = r.y + '%'; bp.appendChild(l); }
-      });
-      pinsEl.textContent = '';
-      D.pins[C.mode].forEach(function (p, i) {
-        var el = mk('div', 'ws-pin' + (p.x > 60 ? ' is-left' : ''));
-        el.style.left = p.x + '%'; el.style.top = p.y + '%';
-        var dot = mk('i', null, C.mode === 'gsm' ? String(i + 1) : ''); el.appendChild(dot); el.appendChild(mk('span', null, p.t));
-        pinsEl.appendChild(el);
-      });
-      C.lastPin = -1; set(C.v, true);
+    var root = $('[data-ws-plat]');
+    if (!root) return;
+    var btn = $('[data-ws-bk]', root), again = $('[data-ws-again]', root), flow = $$('[data-ws-flow] li', root), sr = $('[data-ws-platsr]', root);
+    var P = { busy: false, done: false, user: false, ts: [] };
+    root.classList.remove('is-done'); root.classList.add('is-ready');
+    function later(fn, ms) { P.ts.push(setTimeout(fn, reduce ? 0 : ms)); }
+    function reset() {
+      P.ts.forEach(clearTimeout); P.ts = [];
+      root.classList.remove('is-press', 'is-send', 'is-in', 'is-done');
+      flow.forEach(function (f) { f.classList.remove('is-on'); });
+      if (again) again.hidden = true;
+      if (sr) sr.textContent = '';
+      P.done = false; P.busy = false;
     }
-    function set(v, quiet) {
+    function play() {
+      if (P.busy) return;
+      if (P.done) reset();
+      P.busy = true;
+      root.classList.add('is-press');
+      later(function () { root.classList.add('is-send'); }, 260);
+      later(function () { root.classList.add('is-in'); }, 980);
+      flow.forEach(function (f, k) { later(function () { f.classList.add('is-on'); }, 1550 + k * 620); });
+      later(function () {
+        root.classList.add('is-done');
+        P.busy = false; P.done = true;
+        if (again) again.hidden = false;
+        if (sr) sr.textContent = D.plat.sr_done;
+      }, 1550 + flow.length * 620);
+    }
+    if (btn) btn.addEventListener('click', function () { P.user = true; if (!P.done) play(); });
+    if (again) again.addEventListener('click', function () { P.user = true; reset(); setTimeout(play, reduce ? 0 : 200); });
+    if (reduce) return;
+    once(root, function () { setTimeout(function () { if (!P.user && !P.done && !P.busy) play(); }, 1100); }, 0.4);
+  });
+
+  /* ============================================================
+     6. ECHT WERK — blauwdruk naast de live site, per klant, computer of gsm
+     ============================================================ */
+  safe(function () {
+    var cmp = $('[data-ws-cmp]');
+    if (!cmp) return;
+    var view = $('[data-ws-cview]', cmp), knife = $('[data-ws-knife]', cmp);
+    var bpD = $('.ws-cbp-d', cmp), bpM = $('.ws-cbp-m', cmp), imgD = $('.ws-cmp-d', cmp), imgM = $('.ws-cmp-m', cmp);
+    var cdom = $('[data-ws-cdom]', cmp), toggles = $$('[data-ws-mode]', cmp);
+    var list = $('[data-ws-cases]'), cases = $$('[data-ws-case]'), cbs = $$('[data-ws-caseb]'), wh = $('[data-ws-wh]');
+    var C = { v: 50, user: false, i: 0 };
+    if (list) list.classList.add('is-js');
+    function set(v) {
       C.v = clamp(v, 0, 100);
-      cut.style.setProperty('--cut', C.v.toFixed(2));
-      knife.style.top = f1(viewEl.offsetTop + viewEl.offsetHeight * C.v / 100 + $('.ws-cut-frame', cut).offsetTop) + 'px';
-      knife.style.left = f1($('.ws-cut-frame', cut).offsetLeft - 20) + 'px';
-      knife.style.right = f1(cut.clientWidth - $('.ws-cut-frame', cut).offsetLeft - $('.ws-cut-frame', cut).offsetWidth - 20) + 'px';
+      cmp.style.setProperty('--cut', C.v.toFixed(2));
       knife.setAttribute('aria-valuenow', String(Math.round(C.v)));
-      var pins = D.pins[C.mode], last = -1, lastY = -1;
-      var els = $$('.ws-pin', pinsEl);
-      els.forEach(function (el, i) {
-        var on = C.v >= pins[i].y; el.classList.toggle('is-on', on);
-        if (on && pins[i].y > lastY) { lastY = pins[i].y; last = i; }
-      });
-      els.forEach(function (el, i) { el.classList.toggle('is-last', i === last); });
-      if (last !== C.lastPin) {
-        C.lastPin = last;
-        var t = last >= 0 ? pins[last].t : U.slider_none;
-        knife.setAttribute('aria-valuetext', t);
-        if (cap) cap.textContent = t;
-      }
+      knife.setAttribute('aria-valuetext', fill(U.slider_v, { p: Math.round(C.v) }));
     }
-    /* slepen met muis of vinger, pijltjes met het toetsenbord */
+    function fromEvent(e) { var r = view.getBoundingClientRect(); return (e.clientX - r.left) / Math.max(1, r.width) * 100; }
     var drag = false;
-    function fromEvent(e) { var r = viewEl.getBoundingClientRect(); return (e.clientY - r.top) / r.height * 100; }
-    knife.addEventListener('pointerdown', function (e) { C.user = true; drag = true; try { knife.setPointerCapture(e.pointerId); } catch (x) {} set(fromEvent(e)); e.preventDefault(); });
-    knife.addEventListener('pointermove', function (e) { if (drag) set(fromEvent(e)); });
-    knife.addEventListener('pointerup', function () { drag = false; });
-    knife.addEventListener('pointercancel', function () { drag = false; });
-    viewEl.addEventListener('click', function (e) { C.user = true; set(fromEvent(e)); });
+    view.addEventListener('pointerdown', function (e) {
+      if (e.button != null && e.button !== 0) return;
+      C.user = true; drag = true; cmp.classList.add('is-drag');
+      try { view.setPointerCapture(e.pointerId); } catch (x) {}
+      set(fromEvent(e));
+    });
+    view.addEventListener('pointermove', function (e) { if (drag) set(fromEvent(e)); });
+    ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(function (n) { view.addEventListener(n, function () { drag = false; cmp.classList.remove('is-drag'); }); });
     knife.addEventListener('keydown', function (e) {
       var k = e.key, d = 0;
-      if (k === 'ArrowDown' || k === 'ArrowRight') d = 5; else if (k === 'ArrowUp' || k === 'ArrowLeft') d = -5;
-      else if (k === 'PageDown') d = 20; else if (k === 'PageUp') d = -20;
+      if (k === 'ArrowRight' || k === 'ArrowUp') d = 5; else if (k === 'ArrowLeft' || k === 'ArrowDown') d = -5;
+      else if (k === 'PageUp') d = 20; else if (k === 'PageDown') d = -20;
       else if (k === 'Home') { C.user = true; set(0); e.preventDefault(); return; } else if (k === 'End') { C.user = true; set(100); e.preventDefault(); return; }
       if (d) { C.user = true; set(C.v + d); e.preventDefault(); }
     });
-    toggles.forEach(function (b) {
-      b.addEventListener('click', function () {
-        var m = b.getAttribute('data-ws-mode'); if (m === C.mode) return;
-        toggles.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-        cut.classList.add('is-swap');
-        setTimeout(function () { C.mode = m; cut.setAttribute('data-mode', m); build(); cut.classList.remove('is-swap'); }, reduce ? 0 : 300);
-      });
-    });
-    if (mobile.matches) { C.mode = 'gsm'; cut.setAttribute('data-mode', 'gsm'); toggles.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-ws-mode') === 'gsm' ? 'true' : 'false'); }); }
-    build();
-    if ('ResizeObserver' in window) new ResizeObserver(function () { set(C.v, true); }).observe(cut);
-    var shot = $('.ws-shot-' + (C.mode === 'gsm' ? 'm' : 'd'), cut);
-    if (shot && !shot.complete) shot.addEventListener('load', function () { set(C.v, true); });
-    if (reduce) return;
-    once(cut, function () {
-      if (C.user) return;
-      set(0);
-      var t = 0, phase = 0;
+    function mode(m) {
+      cmp.setAttribute('data-mode', m);
+      toggles.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-ws-mode') === m ? 'true' : 'false'); });
+    }
+    toggles.forEach(function (b) { b.addEventListener('click', function () { mode(b.getAttribute('data-ws-mode')); }); });
+    function sweep() {
+      if (reduce) return;
+      var t = 0, from = C.v;
+      C.user = false;
       Loop.add(function run(dt) {
         if (C.user) return false;
         t += dt * 1000;
-        if (phase === 0) { set(100 * easeIO(clamp(t / 3200, 0, 1))); if (t >= 3200) { phase = 1; t = 0; } return true; }
-        if (phase === 1) { if (t >= 900) { phase = 2; t = 0; } return true; }
-        set(100 + (56 - 100) * easeIO(clamp(t / 900, 0, 1)));
-        return t < 900;
+        if (t < 900) { set(from + (88 - from) * easeIO(t / 900)); return true; }
+        if (t < 2300) { set(88 + (14 - 88) * easeIO((t - 900) / 1400)); return true; }
+        set(14 + (50 - 14) * easeIO(clamp((t - 2300) / 800, 0, 1)));
+        return t < 3100;
       });
-    }, 0.5);
+    }
+    function pick(i, quiet) {
+      var s = D.sites[i];
+      if (!s) return;
+      C.i = i;
+      cases.forEach(function (c, k) { c.classList.toggle('is-on', k === i); });
+      cbs.forEach(function (b, k) { b.setAttribute('aria-expanded', k === i ? 'true' : 'false'); });
+      imgSet(imgD, s.id, 'desk'); imgD.alt = s.alt_desk;
+      imgSet(imgM, s.id, 'gsm'); imgM.alt = s.alt_gsm;
+      bpSVG(bpD, s.desk, 'desk'); bpSVG(bpM, s.gsm, 'gsm');
+      if (cdom) cdom.textContent = s.domein;
+      if (wh) wh.textContent = fill(D.h2b_t, s);
+      if (!quiet) sweep();
+    }
+    cbs.forEach(function (b, k) { b.addEventListener('click', function () { if (k !== C.i) pick(k); }); });
+    if (mobile.matches) mode('gsm');
+    set(50);
+    if (reduce) return;
+    once(cmp, function () { if (!C.user) { set(50); sweep(); } }, 0.5);
   });
 
   /* ============================================================
-     6. METEN — tonen wat de browser zelf zegt
+     7. METEN — tonen wat de browser zelf zegt
      ============================================================ */
   safe(function () {
     var chip = $('[data-ws-chip]'), rulers = $('[data-ws-rulers]'), meet = $('#gemeten');
@@ -796,7 +438,7 @@
     var sr = $('[data-ws-meetsr]'), micro = $('[data-ws-micro]'), reload = $('[data-ws-reload]');
     var T = D.meet, loaded = false, shown = false;
     function kb(b) { var k = b / 1024; return k >= 1024 ? (NF1 ? NF1.format(k / 1024) : (k / 1024).toFixed(1)) + ' MB' : num(Math.round(k)) + ' kB'; }
-    function inMock(el) { return el && el.closest && el.closest('.ws-sheet,.ws-lens,.ws-cut,.ws-mini'); }
+    function inMock(el) { return el && el.closest && el.closest('.ws-anat,.ws-cmp,.ws-plat-demo'); }
     function chipUpdate() {
       if (!chip) return;
       var span = $('span', chip);
@@ -816,7 +458,7 @@
       T.rows.forEach(function (r, i) {
         var row = $('[data-ws-m="' + r.k + '"]', rulers); if (!row) return;
         var v = vals[r.k];
-        if (v == null) { row.classList.add('is-off'); return; }
+        if (v == null) { row.classList.add('is-off'); $('[data-ws-v]', row).textContent = '–'; return; }
         var txt = r.k === 'cls' ? (NF2 ? NF2.format(v) : v.toFixed(2)) : (r.k === 'kb' ? kb(M.own) : sec(v));
         $('[data-ws-v]', row).textContent = txt;
         var p = clamp(v / r.max, 0.004, 1);
@@ -839,7 +481,8 @@
       if (nav) try { var n2 = performance.getEntriesByType('navigation')[0]; M.load = n2 && n2.loadEventEnd ? t0(n2.loadEventEnd) : null; } catch (e) {}
       if (M.load == null) M.load = null;
       setTimeout(function () {
-        loaded = true; chipUpdate();
+        /* meten tot kort na het laden: wat de bouwtafel daarna nog inlaadt (de volgende klant), telt niet mee */
+        loaded = true; freeze(); chipUpdate();
         if (micro && M.fcp != null && !M.bg) micro.textContent = fill(D.cta.micro, { x: sec(M.fcp) });
         if (meetVisible) tryRender();
       }, 1200);
@@ -854,18 +497,15 @@
   });
 
   /* ============================================================
-     7. STUKLIJST EN ADD-ONS
+     8. STUKLIJST EN ADD-ONS
      ============================================================ */
   safe(function () {
     var sl = $('[data-ws-sl]');
     if (!sl) return;
     var sec = sl.closest('section');
-    var mini = $('[data-ws-mini]', sec), mscale = $('[data-ws-mscale]', sec), msite = mscale && $('[data-ws-site]', mscale);
     var amt = $('[data-ws-amt]', sec), amtD = $('.ws-amt-d', amt), amtSr = $('.sr-only', amt), per = $('[data-ws-per]', sec), totSr = $('[data-ws-totsr]', sec), tbp = $('[data-ws-tbp]', sec);
     var btns = $$('.ws-addon', sec), on = {};
     var R = new Roll(amtD, D.base);
-    function fit() { if (!mscale || !mini) return; var w = $('.ws-mini-dev', mini).clientWidth; mscale.style.transform = 'scale(' + (w / 390).toFixed(4) + ')'; }
-    fit(); if ('ResizeObserver' in window) new ResizeObserver(fit).observe(mini);
     btns.forEach(function (b) {
       b.addEventListener('click', function () {
         var id = b.getAttribute('data-ws-add'); on[id] = !on[id];
@@ -875,7 +515,6 @@
           row.hidden = !on[id];
           if (on[id]) anim(row, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], { duration: 450, easing: 'cubic-bezier(.6,.05,.2,1)' });
         }
-        if (msite) msite.classList.toggle(id === 'cb' ? 'has-cb' : 'has-rc', !!on[id]);
         /* maandprijs; een eenmalig bedrag (data-once, bv. de AI-receptioniste) telt niet mee en staat als aparte regel eronder */
         var t = D.base, o = 0;
         btns.forEach(function (x) { if (on[x.getAttribute('data-ws-add')]) { t += +x.getAttribute('data-price'); o += +x.getAttribute('data-once') || 0; } });
@@ -893,7 +532,7 @@
   });
 
   /* ============================================================
-     8. STAPPEN · 9. SLOT-CTA
+     9. STAPPEN · 10. SLOT-CTA
      ============================================================ */
   safe(function () {
     var ol = $('[data-ws-steps]');
@@ -912,7 +551,4 @@
     var on = function () { blank.classList.add('is-on'); };
     btn.addEventListener('pointerenter', on); btn.addEventListener('focus', on);
   });
-
-  /* alles wat de keuze van vak of naam volgt */
-  applyAll();
 })();

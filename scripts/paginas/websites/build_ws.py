@@ -1,12 +1,13 @@
 # Bouwt "Websites.html" (+ en/, fr/) opnieuw op als de nieuwe dienstpagina Websites.
 # De URL blijft (bestaande links en Google), de inhoud komt uit <taal>.json + body.py (sjabloon).
-# Gebruik: py build_auto.py nl [en fr]
+# Gebruik: py build_ws.py nl [en fr]
+# sites.json: de vakken van de blauwdruk per klantensite (gemeten op de live pagina), gedeeld door de drie talen.
 import io, re, json, html, sys, os
 
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20261018a', '20261018a'
+V_CSS, V_JS = '20261107a', '20261107a'
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261106a'
 FILE = 'Websites.html'
@@ -37,10 +38,9 @@ def head(L, lang, pre, s):
         hc = re.search(r'<link href="%shome\.css\?v=[0-9a-z]+" rel="stylesheet"/>\n' % re.escape(pre), hd)
         hd = hd[:hc.end()] + ('<link href="%shome-redesign.css?v=%s" rel="stylesheet"/>\n<link href="%swebsite.css?v=%s" rel="stylesheet"/>\n'
                               % (pre, V_SKIN, pre, V_CSS)) + hd[hc.end():]
-    # lettertypes: zelf gehost via @font-face in home.css (Caveat laadt vanzelf waar het gebruikt wordt);
-    # sneller naar de foto's: preconnect vóór de font-preload
-    if UNSPLASH not in hd:
-        hd = hd.replace(PRELOAD, UNSPLASH + '\n' + PRELOAD)
+    # lettertypes: zelf gehost via @font-face in home.css. Geen Unsplash-foto's meer op deze pagina
+    # (alleen schermafbeeldingen van echte klantensites in assets/werk/websites/), dus geen preconnect.
+    hd = hd.replace(UNSPLASH + '\n', '')
     # geen laadscherm op deze pagina: ze meet zichzelf, dus er mag niets kunstmatig tussen zitten
     if '<!-- LOADER -->' in hd:
         a0 = hd.index('<!-- LOADER -->')
@@ -86,7 +86,6 @@ def tail(pre, footer='<div id="footer-mount"></div>'):
 <script src="{pre}i18n.js?v=20261103a"></script>
 <script src="{pre}i18n-pages.js?v=20261028a"></script>
 <script src="{pre}site.js?v=20261106b"></script>
-<script src="{pre}stars.js?v=1"></script>
 <script src="{pre}fx.js?v={V_FX}"></script>
 <script src="{pre}website.js?v={V_JS}"></script>
 </body>
@@ -94,14 +93,15 @@ def tail(pre, footer='<div id="footer-mount"></div>'):
 '''
 
 def build(lang):
-    import body as B                      # body.py: body(L, lang, pre) -> str
+    import body as B                      # body.py: body(L, lang, pre, sites) -> str
     L = json.load(io.open(os.path.join(HERE, lang + '.json'), encoding='utf-8'))
+    SITES = json.load(io.open(os.path.join(HERE, 'sites.json'), encoding='utf-8'))['sites']
     path = ('' if lang == 'nl' else lang + '/') + FILE
     pre = '' if lang == 'nl' else '../'
     s = io.open(R + path, encoding='utf-8').read()
     # de linklijst in #footer-mount (crawl-fallback voor zoekmachines) blijft behouden
     fm = re.search(r'<div id="footer-mount">.*?</div>(?=\s*<script)', s, re.S)
-    out = head(L, lang, pre, s) + B.body(L, lang, pre) + (tail(pre, fm.group(0)) if fm else tail(pre))
+    out = head(L, lang, pre, s) + B.body(L, lang, pre, SITES) + (tail(pre, fm.group(0)) if fm else tail(pre))
     io.open(R + path, 'w', encoding='utf-8', newline='').write(out)
     print(path, 'ok', len(out))
 
