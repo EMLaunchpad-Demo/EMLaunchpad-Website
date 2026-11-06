@@ -96,6 +96,10 @@
     var tags = [].slice.call(root.querySelectorAll('.hl-tag'));
     /* [poolhoek, lengtegraad] van de labels op het oppervlak */
     var TAGPOS = [[1.05, 0.2], [1.75, 1.45], [2.35, 2.75], [0.7, 3.9], [1.95, 5.05]];
+    /* goud (6/11/2026, zie goud.css): met de class goud-draden op <html> zijn 3 van de 12 draden
+       (gsm 2 van 8) goud, enkel aan de voorkant van de bol; achteraan blijven ze wit (geen kaki)
+       en er lopen geen lichtpulsen over. Blauw en groen blijven de kleur van de pulsen. */
+    var GOLD = document.documentElement.classList.contains('goud-draden');
 
     var W = 0, H = 0, dpr = 1, cx = 0, cy = 0, R = 0, small = null, strands = [];
     var rotY = 0.8, tilt = 0, tiltT = 0, yaw = 0, yawT = 0, mx = -1e4, my = -1e4;
@@ -199,8 +203,9 @@
           var j = Math.min(i + CH, n - 1);
           var dp = depth((Z[i] + Z[j]) * 0.5);
           var a = (0.03 + 0.5 * dp * dp) * fade;
-          ctx.strokeStyle = 'rgba(236,232,222,' + a.toFixed(3) + ')';
-          ctx.lineWidth = 0.55 + 0.75 * dp;
+          var gt = GOLD && k % 4 === 0 ? clamp((dp - 0.4) / 0.3, 0, 1) : 0; /* 0 = wit, 1 = goud (#f0c468) */
+          ctx.strokeStyle = 'rgba(' + (236 + 4 * gt | 0) + ',' + (232 - 36 * gt | 0) + ',' + (222 - 118 * gt | 0) + ',' + Math.min(1, a * (1 + 0.8 * gt)).toFixed(3) + ')';
+          ctx.lineWidth = 0.55 + 0.15 * gt + 0.75 * dp;
           ctx.beginPath();
           ctx.moveTo(X[i], Y[i]);
           for (var q = i + 1; q <= j; q++) ctx.lineTo(X[q], Y[q]);
@@ -257,6 +262,7 @@
       yaw += (yawT - yaw) * Math.min(1, dt * 3);
       if (u >= 1 && time > nextPulse && pulses.length < (small ? 3 : 5)) {
         var k = Math.floor(Math.random() * strands.length);
+        if (GOLD && k % 4 === 0) k = (k + 1) % strands.length; /* geen lichtpulsen over de gouden draden */
         pulses.push({ k: k, pos: Math.random() * strands[k].n * 0.4, sp: (small ? 70 : 95) + Math.random() * 70, len: small ? 22 : 30 });
         nextPulse = time + 0.6 + Math.random() * 0.9;
       }

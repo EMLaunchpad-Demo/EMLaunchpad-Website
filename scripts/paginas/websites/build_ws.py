@@ -8,7 +8,7 @@ R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..
 HERE = os.path.dirname(os.path.abspath(__file__))
 V_CSS, V_JS = '20261018a', '20261018a'
 V_SKIN = '20260925a'          # home-redesign.css
-V_FX = '20261016a'
+V_FX = '20261106a'
 FILE = 'Websites.html'
 PRELOAD = '<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>'
 UNSPLASH = '<link href="https://images.unsplash.com" rel="preconnect"/>'

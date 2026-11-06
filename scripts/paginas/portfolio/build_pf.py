@@ -9,7 +9,7 @@ R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..
 HERE = os.path.dirname(os.path.abspath(__file__))
 V_CSS, V_JS = '20261019a', '20261007a'
 V_SKIN = '20260925a'          # home-redesign.css
-V_FX = '20261016a'
+V_FX = '20261106a'
 FILE = 'Portfolio.html'
 SITE = 'https://emlaunchpad.com/'
 

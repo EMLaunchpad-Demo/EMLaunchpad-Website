@@ -1,0 +1,54 @@
+/* =============================================================
+   EM Launchpad — goud bij blauw en groen (homepage)
+   Keuze Martijn 6/11/2026: gouden accent + gouden draden + gouden lijn.
+   Aan per pagina met classes op <html>:
+   • goud-accent : goud enkel als signaal (klantlink in de hero,
+                   EML AI Team-kaart, de resultaatcijfers van de case)
+   • goud-draden : 3 van de 12 draden van de bol (gsm 2 van 8) goud,
+                   enkel vooraan; dat tekent fx.js (heroLines), hier niets
+   • goud-lijn   : een strakke gouden lijn boven de feitenregel van de hero
+   Regel: blauw en groen = actie (knoppen en links, de hoofdknop blijft
+   groen). Goud = premium en resultaat. Basisgoud #e6c46e, zoals
+   .hl-foot b in hero-lines.css.
+   ============================================================= */
+:root{
+  --goud:#e6c46e;
+  --goud-licht:#f6e7b8;
+  --goud-diep:#b98f3e;
+  --goud-grad:linear-gradient(100deg,#f8ebc2 0%,#e6c46e 45%,#b98f3e 100%);
+  --goud-line:rgba(230,196,110,.42);
+}
+
+/* ---------- gouden accent ---------- */
+/* klantlink in de hero (Clinic3D) */
+html.goud-accent .hero-lines .hl-foot a{color:var(--goud-licht);border-bottom-color:var(--goud-line)}
+html.goud-accent .hero-lines .hl-foot a:hover{color:#fff;border-color:var(--goud)}
+/* EML AI Team (derde kaart van #drie-diensten), het high-ticket-aanbod:
+   gouden haarlijn rond, scherpe gouden lijn bovenaan, nummer en prijs in goud */
+html.goud-accent .dd-grid .dd-card:nth-child(3){border-color:var(--goud-line);box-shadow:inset 0 1px 0 rgba(246,231,184,.28),0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(230,196,110,.10)}
+html.goud-accent .dd-grid .dd-card:nth-child(3):hover{border-color:rgba(230,196,110,.62);box-shadow:inset 0 1px 0 rgba(246,231,184,.4),0 36px 84px rgba(0,0,0,.55),0 0 0 1px rgba(230,196,110,.16)}
+html.goud-accent .dd-grid .dd-card:nth-child(3) .corner{display:none}
+html.goud-accent .dd-grid .dd-card:nth-child(3)::after{content:"";position:absolute;left:28px;right:28px;top:0;height:1px;z-index:3;pointer-events:none;background:linear-gradient(90deg,transparent,var(--goud-licht),transparent)}
+html.goud-accent .dd-grid .dd-card:nth-child(3) .num{color:var(--goud)}
+html.goud-accent .dd-grid .dd-card:nth-child(3) .dd-price{color:var(--goud-licht);border-top-color:var(--goud-line)}
+/* resultaten van de klantcase in goud (650, 95,4%, 3.250, 40.280) */
+html.goud-accent body[data-skin="v2"] .tm-stat b{width:fit-content;background:var(--goud-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+html.goud-accent body[data-skin="v2"] .tm-author .ava{background:var(--goud-grad);color:#1a1405}
+html.goud-accent body[data-skin="v2"] .tm-period .dot{background:var(--goud)}
+
+/* ---------- gouden lijn boven de feitenregel van de hero ----------
+   dekkende bronzen tussentinten (geen grijs), het felst onder de bol
+   bij de gouden Clinic3D-link; op de gsm het felst in het midden */
+html.goud-lijn .hero-lines .hl-foot{border-top-color:transparent}
+html.goud-lijn .hero-lines .hl-foot::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;pointer-events:none;
+  filter:drop-shadow(0 0 3px rgba(240,192,96,.5));
+  background:linear-gradient(90deg,rgba(185,143,62,0) 0%,rgba(185,143,62,0) 14%,#8f6c2c 34%,#d9b25c 54%,#f8ebc2 74%,#e6c46e 86%,#b98f3e 95%,rgba(185,143,62,0) 100%)}
+@media (max-width:820px){
+  html.goud-lijn .hero-lines .hl-foot::before{background:linear-gradient(90deg,rgba(185,143,62,0) 0%,#9c7634 14%,#f8ebc2 50%,#9c7634 86%,rgba(185,143,62,0) 100%)}
+}
+
+/* hoog contrast: geen verloop in tekst, geen decoratieve lijn */
+@media (forced-colors:active){
+  html.goud-accent .tm-stat b{background:none!important;-webkit-text-fill-color:CanvasText!important;color:CanvasText!important}
+  html.goud-lijn .hero-lines .hl-foot::before{display:none}
+}

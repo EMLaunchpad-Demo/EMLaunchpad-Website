@@ -14,7 +14,7 @@ R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..
 HERE = os.path.dirname(os.path.abspath(__file__))
 V_CSS = '20261019a'           # branche.css (de coördinator zet de ?v= in de integratiestap)
 V_SKIN = '20260925a'          # home-redesign.css
-V_FX = '20261016a'
+V_FX = '20261106a'
 SITE = 'https://emlaunchpad.com/'
 TEMPLATE = 'website-voor-kappers.html'   # bron van de <head> voor een branchepagina die nog niet bestaat
 ALL = ['schoonheid', 'kappers', 'praktijken']
