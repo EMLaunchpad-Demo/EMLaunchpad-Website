@@ -22,7 +22,6 @@
   },
   "hero": {
     "crumb": "Gratis website scan",
-    "eyebrow": "Gratis website scan",
     "h1a": "Gratis website scan:",
     "h1b": "hoe scoort jouw site?",
     "lede": "Geef je webadres in en zie meteen hoe je site scoort: vindbaar in Google (SEO), snelheid, gsm, veiligheid en hoe makkelijk klanten je bereiken. Meer dan 30 punten, met uitleg in gewone woorden.",
@@ -38,14 +37,27 @@
       "titel": "Zo ziet je rapport eruit",
       "score": 68,
       "label": "Goed op weg, maar je laat punten liggen.",
-      "cats": [["Vindbaar in Google", 74], ["Klanten binnenhalen", 55], ["Snelheid", 81], ["Op de gsm", 88], ["Veiligheid en vertrouwen", 57]],
+      "cats": [["seo", "Vindbaar in Google", 74], ["klanten", "Klanten binnenhalen", 55], ["snelheid", "Snelheid", 81], ["gsm", "Op de gsm", 88], ["veiligheid", "Veiligheid en vertrouwen", 57]],
       "noot": "Een voorbeeld, geen echte site."
+    },
+    "scanner": {
+      "bezig": "Bezig met scannen",
+      "bezig_label": "We lopen meer dan 30 punten na.",
+      "bezig_noot": "Meestal klaar in enkele seconden.",
+      "nu": "Nu:",
+      "klaar": "Je score",
+      "klaar_noot": "Je volledige rapport staat hieronder.",
+      "naar_rapport": "Naar je rapport"
     }
   },
   "rapport": {
     "kop": "Je rapport",
     "opnieuw": "Scan een andere site",
-    "legende": [["goed", "Goed"], ["beter", "Kan beter"], ["slecht", "Probleem"], ["info", "Niet meegeteld"]],
+    "uitleg_score": "Je score is het gewogen gemiddelde van de vijf onderdelen. Een punt dat goed is, telt volledig mee. Kan beter telt half, een probleem telt niet.",
+    "weegt": "Weegt {n} van de 100 punten",
+    "groepen_kop": "Alle punten per onderdeel",
+    "groepen_lede": "Per onderdeel eerst wat aandacht vraagt. De punten die in orde zijn, klap je open.",
+    "alles_ok": "Alles in orde in dit onderdeel.",
     "uitleg_knop": "Waarom dit telt",
     "jsnoot": "Je site toont een deel van haar inhoud pas met JavaScript. Onze scan leest de pagina zoals je server ze doorstuurt, dus sommige punten (zoals een telefoonnummer of formulier) kunnen we dan missen.",
     "plan_kop": "Je verbeterplan",
@@ -64,17 +76,19 @@
     "h2a": "Vijf dingen die bepalen",
     "h2b": "of je site voor je werkt.",
     "lede": "Per punt zie je wat we zagen, waarom het telt en wat je eraan kunt doen.",
+    "opbouw": "Zo is je score van 100 punten opgebouwd",
+    "punten": "{n} van de 100 punten",
     "groepen": [
-      {"naam": "Vindbaar in Google (SEO)", "tekst": "SEO betekent: je site zo maken dat Google ze goed kan lezen en begrijpt waarover ze gaat.",
+      {"id": "seo", "gewicht": 30, "naam": "Vindbaar in Google (SEO)", "tekst": "SEO betekent: je site zo maken dat Google ze goed kan lezen en begrijpt waarover ze gaat.",
        "items": ["Titel en beschrijving in Google", "Eén duidelijke hoofdtitel en tussentitels", "Geen noindex, wel robots.txt en een sitemap", "Bedrijfsgegevens voor Google (gestructureerde gegevens)", "Voorbeeld bij delen op sociale media", "Beschrijving bij foto's (alt-tekst)"]},
-      {"naam": "Snelheid", "tekst": "Wat we kunnen meten zonder je site in een browser te openen.",
+      {"id": "klanten", "gewicht": 25, "naam": "Klanten binnenhalen", "tekst": "Hoe makkelijk een bezoeker een klant wordt.",
+       "items": ["Klikbaar telefoonnummer en e-mailadres", "Contactformulier", "Online afspraak maken", "WhatsApp", "Chat op je site"]},
+      {"id": "snelheid", "gewicht": 15, "naam": "Snelheid", "tekst": "Wat we kunnen meten zonder je site in een browser te openen.",
        "items": ["Reactietijd van je server", "Grootte van de pagina", "Aantal scripts en stylesheets", "Compressie", "Doorverwijzingen"]},
-      {"naam": "Op de gsm", "tekst": "De meeste bezoekers komen via hun gsm.",
+      {"id": "gsm", "gewicht": 15, "naam": "Op de gsm", "tekst": "De meeste bezoekers komen via hun gsm.",
        "items": ["Past de pagina zich aan het scherm aan", "Kunnen bezoekers inzoomen", "Foto's op maat van het scherm", "Icoon voor op het beginscherm"]},
-      {"naam": "Veiligheid en vertrouwen", "tekst": "Wat een bezoeker ziet voor hij je vertrouwt.",
-       "items": ["Beveiligde verbinding (https)", "Doorverwijzing van http naar https", "Geen onbeveiligde onderdelen", "Favicon en een bijgewerkt jaartal", "Een eigen domeinnaam"]},
-      {"naam": "Klanten binnenhalen", "tekst": "Hoe makkelijk een bezoeker een klant wordt.",
-       "items": ["Klikbaar telefoonnummer en e-mailadres", "Contactformulier", "Online afspraak maken", "WhatsApp", "Chat op je site"]}
+      {"id": "veiligheid", "gewicht": 15, "naam": "Veiligheid en vertrouwen", "tekst": "Wat een bezoeker ziet voor hij je vertrouwt.",
+       "items": ["Beveiligde verbinding (https)", "Doorverwijzing van http naar https", "Geen onbeveiligde onderdelen", "Favicon en een bijgewerkt jaartal", "Een eigen domeinnaam"]}
     ]
   },
   "niet": {

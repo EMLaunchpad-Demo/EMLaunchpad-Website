@@ -8,8 +8,8 @@ import io, re, json, html, os
 
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS = '20261103a'           # website-scan.css
-V_JS = '20261103a'            # website-scan.js
+V_CSS = '20261106a'           # website-scan.css
+V_JS = '20261106a'            # website-scan.js
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261106a'
 V_SITE = '20261104a'          # site.js (menu-item en footerlink naar de scan)
@@ -32,13 +32,9 @@ def I(d, sw='1.8', vb='0 0 24 24'):
 
 ARROW = I('<path d="M3 8h10M9 4l4 4-4 4"></path>', '2', '0 0 16 16')
 PLUS = '<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"></path></svg>'
-ICON = [
-    I('<circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.2-4.2"></path>'),                      # vindbaar
-    I('<path d="M4 14a8 8 0 0 1 16 0"></path><path d="M12 14l4-5"></path><circle cx="12" cy="14" r="1.2"></circle>'),  # snelheid
-    I('<rect height="17" rx="2.5" width="11" x="6.5" y="3.5"></rect><path d="M10.5 17.5h3"></path>'),   # gsm
-    I('<path d="M12 3.5l7 3v5c0 4.4-3 7.9-7 9-4-1.1-7-4.6-7-9v-5z"></path><path d="M9 12l2 2 4-4"></path>'),  # veiligheid
-    I('<path d="M5 4.5h3.5l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5z"></path>'),  # klanten
-]
+GLOBE = I('<circle cx="12" cy="12" r="8.5"></circle><path d="M3.5 12h17M12 3.5c2.3 2.4 3.4 5.2 3.4 8.5s-1.1 6.1-3.4 8.5c-2.3-2.4-3.4-5.2-3.4-8.5s1.1-6.1 3.4-8.5z"></path>')
+LOCK = I('<rect height="9" rx="2" width="12" x="6" y="11"></rect><path d="M9 11V8a3 3 0 0 1 6 0v3"></path>', '2')
+CHECK = I('<path d="M5 12.5l4.2 4L19 7"></path>', '2.4')
 
 
 def sec_head(x, hid=None):
@@ -105,37 +101,43 @@ def head(L, s):
 def body(L):
     h, rp, ck, ni, fq, ct, fm = L['hero'], L['rapport'], L['checken'], L['niet'], L['faq'], L['cta'], L['form']
     vb = h['voorbeeld']
-    feiten = ''.join('<li>%s</li>' % esc(f) for f in h['feiten'])
-    cats = ''.join('<li><span>%s</span><i style="--w:%d%%"></i><b>%d</b></li>' % (esc(c[0]), c[1], c[1]) for c in vb['cats'])
+    feiten = ''.join('<li><span aria-hidden="true" class="sc-vink">%s</span>%s</li>' % (CHECK, esc(f)) for f in h['feiten'])
+    klas = lambda n: 'goed' if n >= 80 else 'beter' if n >= 50 else 'slecht'   # zoals klasVan() in website-scan.js
+    cats = ''.join('<li class="is-%s" data-cat="%s" style="--w:%d%%"><span>%s</span><b>%d</b><i></i></li>'
+                   % (klas(c[2]), attr(c[0]), c[2], esc(c[1]), c[2]) for c in vb['cats'])
+    # Het scanpaneel rechts in de hero: eerst een voorbeeld (zonder JavaScript blijft het dat), tijdens de scan
+    # loopt het de punten na, daarna toont het je eigen score (website-scan.js). Eén bewegend object op de pagina.
     hero = f'''<header class="sc-hero">
-<div class="wrap sc-hero-grid">
-<div class="sc-copy">
+<div class="wrap">
 <nav aria-label="Kruimelpad" class="sc-crumb"><a href="./">Home</a> <span aria-hidden="true">/</span> <a href="Websites">Websites</a> <span aria-hidden="true">/</span> <span aria-current="page">{esc(h['crumb'])}</span></nav>
-<span class="eyebrow">{esc(h['eyebrow'])}</span>
 <h1 class="sc-h1">{esc(h['h1a'])}<br/> <span class="grad">{esc(h['h1b'])}</span></h1>
+<div class="sc-hero-grid">
+<div class="sc-copy">
 <p class="lead sc-lede">{esc(h['lede'])}</p>
 <form action="#rapport" class="sc-form" data-sc-form="" method="get" novalidate="">
 <label class="sc-label" for="sc-url">{esc(h['label'])}</label>
 <div class="sc-field">
-<input autocapitalize="off" autocomplete="url" class="sc-input" enterkeyhint="go" id="sc-url" inputmode="url" maxlength="500" name="url" placeholder="{attr(h['placeholder'])}" required="" spellcheck="false" type="text"/>
+<span aria-hidden="true" class="sc-field-ic">{GLOBE}</span>
+<input aria-describedby="sc-status" autocapitalize="off" autocomplete="url" class="sc-input" enterkeyhint="go" id="sc-url" inputmode="url" maxlength="500" name="url" placeholder="{attr(h['placeholder'])}" required="" spellcheck="false" type="text"/>
 <button class="btn sc-go" data-bezig="{attr(h['bezig'])}" type="submit"><span class="sc-go-t">{esc(h['knop'])}</span> {ARROW}</button>
 </div>
-<p aria-live="polite" class="sc-status" data-sc-status="" role="status"></p>
+<p aria-live="polite" class="sc-status" data-sc-status="" id="sc-status" role="status"></p>
 </form>
 <noscript><p class="sc-noscript">{esc(h['noscript'])} <a href="Contact">Plan een gratis gesprek</a></p></noscript>
-<p class="sc-noot">{esc(h['noot'])}</p>
 <ul class="sc-feiten">{feiten}</ul>
+<p class="sc-noot">{esc(h['noot'])}</p>
 </div>
-<figure aria-label="{attr(vb['titel'])}" class="sc-voorbeeld" data-sc-voorbeeld="">
-<div class="sc-vb-top"><span class="sc-tag">{esc(vb['tag'])}</span><b>{esc(vb['titel'])}</b></div>
-<div class="sc-vb-score"><div class="sc-dial" style="--s:{vb['score']}"><svg aria-hidden="true" viewBox="0 0 120 120"><circle class="sc-dial-bg" cx="60" cy="60" r="52"></circle><circle class="sc-dial-fg" cx="60" cy="60" pathLength="100" r="52"></circle></svg><span class="sc-dial-n">{vb['score']}<small>/100</small></span></div><p>{esc(vb['label'])}</p></div>
+<figure aria-label="{attr(vb['titel'])}" class="sc-scanner" data-sc-voorbeeld="" data-ui="">
+<div class="sc-sc-top"><span class="sc-sc-adres">{LOCK}<span data-sc-adres="">{esc(vb['tag'])}</span></span><span class="sc-sc-staat" data-sc-staat="">{esc(vb['titel'])}</span></div>
+<div class="sc-vb-score"><div class="sc-dial is-{klas(vb['score'])}" data-sc-vb-dial="" style="--s:{vb['score']}"><svg aria-hidden="true" viewBox="0 0 120 120"><circle class="sc-dial-bg" cx="60" cy="60" r="52"></circle><circle class="sc-dial-fg" cx="60" cy="60" pathLength="100" r="52"></circle></svg><span class="sc-dial-n"><span data-sc-vb-n="">{vb['score']}</span><small>/100</small></span></div><p data-sc-vb-label="">{esc(vb['label'])}</p></div>
 <ul class="sc-vb-cats">{cats}</ul>
-<figcaption>{esc(vb['noot'])}</figcaption>
+<figcaption data-sc-vb-noot="">{esc(vb['noot'])}</figcaption>
+<span aria-hidden="true" class="sc-sc-beam"></span>
 </figure>
+</div>
 </div>
 </header>'''
 
-    legende = ''.join('<li class="is-%s"><span aria-hidden="true" class="sc-dot"></span>%s</li>' % (attr(k), esc(t)) for k, t in rp['legende'])
     rapport = f'''<section aria-labelledby="sc-rapport-kop" class="sec sc-rapport" data-sc-rapport="" hidden="" id="rapport">
 <div class="wrap">
 <div class="sc-r-head">
@@ -143,9 +145,7 @@ def body(L):
 <button class="btn-ghost sc-opnieuw" data-sc-opnieuw="" type="button">{esc(rp['opnieuw'])}</button>
 </div>
 <div data-sc-uitkomst=""></div>
-<ul aria-label="Legende" class="sc-legende">{legende}</ul>
 <p class="sc-jsnoot" data-sc-jsnoot="" hidden="">{esc(rp['jsnoot'])}</p>
-<div class="sc-groepen" data-sc-groepen=""></div>
 <section aria-labelledby="sc-plan-kop" class="sc-plan" data-sc-plan="">
 <div class="sc-plan-head">
 <h3 id="sc-plan-kop">{esc(rp['plan_kop'])}</h3>
@@ -163,26 +163,41 @@ def body(L):
 <a class="btn-ghost" data-book="" href="Contact">{esc(rp['gesprek_knop'])} {ARROW}</a>
 </div>
 </section>
+<div class="sc-alle">
+<div class="sc-alle-head"><h3 id="sc-alle-kop">{esc(rp['groepen_kop'])}</h3><p>{esc(rp['groepen_lede'])}</p></div>
+<div class="sc-groepen" data-sc-groepen=""></div>
+</div>
 </div>
 </section>'''
 
+    # Wat we checken: de balk van 100 punten (gewichten uit worker/analyse.js, CATEGORIEEN) en per onderdeel een rij.
+    assert sum(g['gewicht'] for g in ck['groepen']) == 100, 'de gewichten tellen niet op tot 100'
+    echt = dict(re.findall(r"\{ id: '([a-z]+)', naam: '[^']*', gewicht: (\d+) \}", io.open(R + 'worker/analyse.js', encoding='utf-8').read()))
+    assert echt and all(echt.get(g['id']) == str(g['gewicht']) for g in ck['groepen']), 'gewichten in nl.json wijken af van worker/analyse.js'
+    punten = lambda n: esc(ck['punten'].replace('{n}', str(n)))
+    delen = ''.join('<li style="--g:%d"><i></i><span>%s</span><b>%s</b></li>' % (g['gewicht'], esc(g['naam']), punten(g['gewicht']))
+                    for g in ck['groepen'])
     groepen = ''
-    for i, g in enumerate(ck['groepen']):
-        items = ''.join('<li>%s</li>' % esc(x) for x in g['items'])
-        groepen += ('<article class="sc-check" data-reveal=""><span class="sc-check-ic">%s</span><h3>%s</h3><p>%s</p><ul>%s</ul></article>'
-                    % (ICON[i % len(ICON)], esc(g['naam']), esc(g['tekst']), items))
+    for g in ck['groepen']:
+        items = ''.join('<li><span aria-hidden="true" class="sc-vink">%s</span>%s</li>' % (CHECK, esc(x)) for x in g['items'])
+        groepen += ('<article class="sc-check" data-cat="%s" data-reveal=""><div class="sc-check-k"><h3>%s</h3><p class="sc-check-w">%s</p><p>%s</p></div><ul>%s</ul></article>'
+                    % (attr(g['id']), esc(g['naam']), punten(g['gewicht']), esc(g['tekst']), items))
     checken = f'''<section class="sec sc-checken" id="wat-we-checken">
 <div class="wrap">
 {sec_head(ck)}
+<figure class="sc-opbouw" data-reveal="">
+<figcaption>{esc(ck['opbouw'])}</figcaption>
+<ul class="sc-opbouw-balk">{delen}</ul>
+</figure>
 <div class="sc-checks" data-reveal-group="">{groepen}</div>
 </div>
 </section>'''
 
     niets = ''.join('<li data-reveal=""><h3>%s</h3><p>%s</p></li>' % (esc(x[0]), esc(x[1])) for x in ni['items'])
     niet = f'''<section class="sec sc-niet" id="wat-de-scan-niet-doet">
-<div class="wrap">
+<div class="wrap sc-split">
 {sec_head(ni)}
-<ul class="sc-niet-lijst">{niets}</ul>
+<ul class="sc-niet-lijst" data-reveal-group="">{niets}</ul>
 </div>
 </section>'''
 
@@ -194,10 +209,12 @@ def body(L):
                    '<div class="faq-a"><div class="faq-a-inner">%s</div></div></div>' % (esc(q['q']), PLUS, antwoord(q)) for q in fq['items'])
     more = ' · '.join('<a href="%s">%s</a>' % (attr(m['href']), esc(m['t'])) for m in fq['meer'])
     faq = f'''<section class="sec sc-faq" id="faq">
-<div class="wrap">
+<div class="wrap sc-split">
+<div class="sc-faq-kop">
 {sec_head(fq)}
-<div class="faq-list" data-reveal="">{faqs}</div>
 <p class="sc-more">{esc(fq['meer_label'])} {more}</p>
+</div>
+<div class="faq-list" data-reveal="">{faqs}</div>
 </div>
 </section>'''
     badges = ''.join('<span>%s</span>' % esc(b) for b in ct['badges'])
@@ -213,8 +230,9 @@ def body(L):
 </div>
 </section>'''
 
-    cfg = {'formId': fm['ghl_form_id'], 'formName': fm['ghl_form_name'], 'query': fm['query'],
-           'teksten': {k: rp[k] for k in ('uitleg_knop', 'plan_verborgen', 'plan_leeg')}}
+    teksten = {k: rp[k] for k in ('uitleg_knop', 'plan_verborgen', 'plan_leeg', 'weegt', 'alles_ok', 'uitleg_score')}
+    teksten.update({'scan_' + k: v for k, v in h['scanner'].items()})
+    cfg = {'formId': fm['ghl_form_id'], 'formName': fm['ghl_form_name'], 'query': fm['query'], 'teksten': teksten}
     data = '<script id="scData" type="application/json">%s</script>' % json.dumps(cfg, ensure_ascii=False).replace('</', '<\\/')
     out = ('<main class="sc-main" id="main" tabindex="-1">\n' + '\n'.join([hero, rapport, checken, niet, faq, cta]) + '\n</main>\n' + data + '\n')
     assert '—' not in out and '–' not in out, 'gedachtestreepje in de tekst'

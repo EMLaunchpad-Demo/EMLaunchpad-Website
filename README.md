@@ -18,7 +18,7 @@ wil zien, vult een formulier van ons platform in: dat wordt een lead voor Ebert.
 | `worker/scan.js` | Ophalen met alle veiligheidscontroles (adres, DNS, doorverwijzingen, tijd, grootte), robots.txt, sitemap, http naar https, favicon, eigen scripts, contact- en boekingspagina. |
 | `worker/analyse.js` | De punten zelf (regex, geen DOM) en de score: `analyse(html, ctx)` en `score(checks)`. Gewichten per groep: Vindbaar in Google 30, Klanten binnenhalen 25, Snelheid 15, Op de gsm 15, Veiligheid en vertrouwen 15. |
 | `gratis-website-scan.html` | Gebouwd door `scripts/paginas/website-scan/build_scan.py` uit `nl.json`. Niet met de hand aanpassen. |
-| `website-scan.css`, `website-scan.js` | Opmaak (prefix `sc-`) en de werking van de pagina (scan starten, rapport tonen, formulier openen). |
+| `website-scan.css`, `website-scan.js` | Opmaak (prefix `sc-`) en de werking van de pagina (scan starten, rapport tonen, formulier openen). Het scanpaneel in de hero toont eerst het voorbeeld, loopt tijdens de scan de punten van "Wat we checken" na (het antwoord komt in één keer, dus dat is geen echte voortgang) en toont daarna je eigen score. Het rapport: score met telling en uitleg, score per onderdeel (met het gewicht), het verbeterplan, dan alle punten per onderdeel (wat in orde is, klapt open). |
 | `scripts/paginas/website-scan/nl.json` | Alle teksten van de pagina, de FAQ en de instellingen van het formulier. |
 | `scripts/paginas/website-scan/mail-verbeterplan.html` | Bron van de mail met het verbeterplan (staat in de workflow in ons platform). |
 | `scripts/paginas/website-scan/og.html`, `scripts/website-scan/maak-og.mjs` | Deelafbeelding `assets/og-website-scan.png` (1200x630). |
