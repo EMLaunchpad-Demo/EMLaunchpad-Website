@@ -1,48 +1,28 @@
 /* =============================================================
-   EM Launchpad — glazen groene heroknop (homepage), PREVIEW 6/11/2026
-   Vraag Martijn: "Voor deze knop wil ik een premium glass effect erop.
-   Wel nog altijd groen." Enkel de hoofdknop in de hero van de home
-   (.hero-lines .hl-cta .btn), nl/en/fr. Andere groene knoppen blijven.
-   Twee versies, aan met één class op <html> (zoals het goud):
-   • knop-glas-1 : groen glas. Doorschijnend groen vlak met
-                   backdrop-filter (blur + verzadiging), zodat verloop B
-                   erdoor schemert; fijne lichtrand bovenaan, subtiele
-                   binnenschaduw en bij hover één keer een schuine glans.
-   • knop-glas-2 : vol groen met een glazen lens erover: bovenste helft
-                   met lichtreflectie, een lichtrand en een diepere
-                   schaduw eronder.
-   Beide: donkere tekst (AA tegen de knop), focusring #9dbcf0 zoals op
-   de rest van de site, hover, active (lichte indruk), forced-colors en
-   een terugval zonder backdrop-filter. Zonder class verandert er niets.
+   EM Launchpad — glazen groene heroknop (homepage)
+   Vraag Martijn 6/11/2026: "Voor deze knop wil ik een premium glass
+   effect erop. Wel nog altijd groen." Gekozen: versie 1, groen glas
+   (Martijn, 6/11/2026). Versie 2 (vol groen met een glazen lens) is
+   niet gekozen en staat niet meer in dit bestand (beelden:
+   ai-team/content/media/2026-11-06-knop-glas/).
+   Enkel de hoofdknop in de hero van de home (.hero-lines .hl-cta .btn),
+   nl/en/fr. Andere groene knoppen blijven zoals ze zijn.
+   Aan met de class knop-glas-1 op <html> (zoals het goud); zonder
+   class verandert er niets.
+   • Doorschijnend groen vlak met backdrop-filter (blur + verzadiging),
+     zodat verloop B erdoor schemert; glans linksboven, fijne lichtrand
+     bovenaan, subtiele binnenschaduw, lichte onderrand en bij hover
+     één keer een schuine glans (uit bij minder beweging).
+   • Donkere tekst (AA tegen de knop), focusring #9dbcf0 zoals op de
+     rest van de site, hover, active (lichte indruk), forced-colors en
+     een terugval zonder backdrop-filter.
    ============================================================= */
 
-/* ---------- gemeenschappelijk ---------- */
-html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn,
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn{
+html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn{
   position:relative;isolation:isolate;overflow:hidden;
   color:#04130f;filter:none;
   transition:transform .2s ease,box-shadow .25s ease,background-color .25s ease;
-}
-html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn > *,
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn > *{position:relative;z-index:2}
-/* focus: dezelfde lichtblauwe ring als de rest van de site (#9dbcf0), als
-   schaduwring rond de pil (een outline tekent in sommige browsers een
-   rechthoek) met een donkere spleet, zodat hij op elk groen zichtbaar is.
-   De doorzichtige outline wordt zichtbaar in hoog contrast. */
-html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn,
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn{--ring:0 0 0 0 transparent}
-html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:focus-visible,
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:focus-visible{
-  --ring:0 0 0 3px #0b1a2e,0 0 0 5px #9dbcf0;
-  outline:2px solid transparent;outline-offset:3px;border-radius:999px;
-}
-html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:hover,
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:hover{transform:translateY(-1px);filter:none}
-html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:active,
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:active{transform:translateY(1px) scale(.985);transition-duration:.08s}
-
-/* ---------- versie 1 · groen glas ---------- */
-html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn{
+  --ring:0 0 0 0 transparent;
   background:
     radial-gradient(120% 150% at 18% -40%,rgba(255,255,255,.34) 0%,rgba(255,255,255,.1) 42%,rgba(255,255,255,0) 60%),
     linear-gradient(180deg,rgba(255,255,255,.1) 0%,rgba(255,255,255,0) 58%),
@@ -59,6 +39,8 @@ html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn{
     0 12px 28px rgba(3,10,22,.48),
     0 4px 18px rgba(46,190,118,.22);
 }
+html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn > *{position:relative;z-index:2}
+
 /* de glans: een schuine lichtstreep die bij hover één keer over de knop loopt */
 html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn::after{
   content:"";position:absolute;z-index:1;top:-20%;bottom:-20%;left:0;width:42%;pointer-events:none;
@@ -73,7 +55,10 @@ html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:focus-visible::af
   85%{opacity:1}
   100%{transform:translateX(330%) skewX(-18deg);opacity:0}
 }
+
+/* hover: 1 px omhoog, lichtere rand en iets meer gloed */
 html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:hover{
+  transform:translateY(-1px);filter:none;
   border-color:rgba(190,255,222,.5);
   box-shadow:
     var(--ring),
@@ -84,7 +69,9 @@ html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:hover{
     0 16px 34px rgba(3,10,22,.52),
     0 6px 24px rgba(46,190,118,.32);
 }
+/* active: een lichte indruk */
 html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:active{
+  transform:translateY(1px) scale(.985);transition-duration:.08s;
   box-shadow:
     var(--ring),
     inset 0 1px 0 rgba(255,255,255,.45),
@@ -92,6 +79,15 @@ html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:active{
     0 0 0 1px rgba(4,14,26,.3),
     0 6px 16px rgba(3,10,22,.45);
 }
+/* focus: dezelfde lichtblauwe ring als de rest van de site (#9dbcf0), als
+   schaduwring rond de pil (een outline tekent in sommige browsers een
+   rechthoek) met een donkere spleet, zodat hij op elk groen zichtbaar is.
+   De doorzichtige outline wordt zichtbaar in hoog contrast. */
+html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:focus-visible{
+  --ring:0 0 0 3px #0b1a2e,0 0 0 5px #9dbcf0;
+  outline:2px solid transparent;outline-offset:3px;border-radius:999px;
+}
+
 /* terugval zonder backdrop-filter: een vollere groene laag, zelfde randen */
 @supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
   html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn{
@@ -102,66 +98,20 @@ html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:active{
   }
 }
 
-/* ---------- versie 2 · vol groen met een glazen lens ---------- */
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn{
-  background:linear-gradient(180deg,#27ad6a 0%,#1f9e5f 52%,#1a9157 100%);
-  border:1px solid rgba(12,70,40,.55);
-  box-shadow:
-    var(--ring),
-    inset 0 1px 0 rgba(255,255,255,.55),         /* lichtrand bovenaan */
-    inset 0 0 0 1px rgba(255,255,255,.1),
-    inset 0 -3px 8px rgba(4,46,26,.3),
-    0 0 0 1px rgba(4,14,26,.3),
-    0 16px 30px -6px rgba(3,10,22,.62),           /* diepere schaduw eronder */
-    0 5px 12px rgba(3,10,22,.36);
-}
-/* de lens: de bovenste helft vangt het licht, met een zachte boog onderaan */
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn::before{
-  content:"";position:absolute;z-index:1;left:3px;right:3px;top:2px;height:50%;pointer-events:none;
-  border-radius:999px 999px 46% 46% / 999px 999px 60% 60%;
-  background:linear-gradient(180deg,rgba(255,255,255,.38) 0%,rgba(255,255,255,.16) 55%,rgba(255,255,255,.05) 100%);
-}
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:hover{
-  background:linear-gradient(180deg,#2cb672 0%,#22a465 52%,#1c975b 100%);
-  box-shadow:
-    var(--ring),
-    inset 0 1px 0 rgba(255,255,255,.65),
-    inset 0 0 0 1px rgba(255,255,255,.14),
-    inset 0 -3px 8px rgba(4,46,26,.3),
-    0 0 0 1px rgba(4,14,26,.3),
-    0 20px 34px -6px rgba(3,10,22,.66),
-    0 6px 14px rgba(3,10,22,.38);
-}
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:active{
-  box-shadow:
-    var(--ring),
-    inset 0 1px 0 rgba(255,255,255,.35),
-    inset 0 3px 10px rgba(4,46,26,.45),
-    0 0 0 1px rgba(4,14,26,.3),
-    0 6px 14px -4px rgba(3,10,22,.55);
-}
-html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:active::before{opacity:.7}
-
-/* ---------- minder beweging: geen glans, geen verschuiving ---------- */
+/* minder beweging: geen glans, geen verschuiving */
 @media (prefers-reduced-motion:reduce){
   html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn::after{display:none}
-  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn,
-  html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn{transition:none}
+  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn{transition:none}
   html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:hover,
-  html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:hover,
-  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:active,
-  html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:active{transform:none}
+  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:active{transform:none}
 }
 
-/* ---------- hoog contrast: een gewone knop met systeemkleuren ---------- */
+/* hoog contrast: een gewone knop met systeemkleuren */
 @media (forced-colors:active){
-  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn,
-  html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn{
+  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn{
     background:ButtonFace;color:ButtonText;border:2px solid ButtonText;box-shadow:none;
     -webkit-backdrop-filter:none;backdrop-filter:none;
   }
-  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn::after,
-  html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn::before{display:none}
-  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:focus-visible,
-  html.knop-glas-2 body[data-skin="v2"] .hero-lines .hl-cta .btn:focus-visible{outline:2px solid Highlight}
+  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn::after{display:none}
+  html.knop-glas-1 body[data-skin="v2"] .hero-lines .hl-cta .btn:focus-visible{outline:2px solid Highlight}
 }
