@@ -69,6 +69,9 @@
   "lede": "L'automatisation IA pour votre PME : confirmer, rappeler, facturer, demander un avis. Nous construisons les workflows qui font ce travail ennuyeux tout seuls, chaque fois au bon moment. Vous, vous continuez à travailler.",
   "cta": "Planifier une démo gratuite",
   "cta2": "Ce qu'il y a dedans",
+  "skip": "Passer",
+  "skip_label": "Passer la vidéo",
+  "video_txt": "Exemple dans la vidéo : un client réserve en ligne et reçoit tout de suite un e-mail de confirmation. S'il n'est toujours pas ouvert après 24 heures, l'IA écrit un nouvel objet et renvoie l'e-mail. La veille du rendez-vous, un rappel part. Si le client pose une question, le chatbot IA ou la réceptionniste IA répond immédiatement. Après le rendez-vous vient une demande d'avis, un avis apparaît sur Google et le client avance dans le pipeline de votre CRM. À la fin, le titre apparaît en grandes lettres et la caméra traverse le o.",
   "label": "Choisissez ce qui se passe",
   "read_label": "Ce qui vient de se passer tout seul",
   "foot": [

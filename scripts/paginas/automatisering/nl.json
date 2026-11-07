@@ -69,6 +69,9 @@
   "lede": "AI-automatisering voor je kmo: bevestigen, herinneren, factureren, om een review vragen. Wij bouwen de workflows die dat saaie werk vanzelf doen, telkens op het juiste moment. Jij werkt gewoon verder.",
   "cta": "Plan een gratis demo",
   "cta2": "Wat zit erin",
+  "skip": "Overslaan",
+  "skip_label": "Video overslaan",
+  "video_txt": "Voorbeeld in de video: een klant boekt online en krijgt meteen een bevestigingsmail. Is die na 24 uur niet geopend, dan schrijft de AI een nieuw onderwerp en gaat de mail opnieuw de deur uit. De dag voor de afspraak volgt een herinnering. Stelt de klant een vraag, dan antwoordt de AI-chatbot of de AI-receptioniste meteen. Na de afspraak volgt een reviewvraag, er komt een review op Google en de klant schuift door in de pipeline van je CRM. Op het einde verschijnt de titel in grote letters en vliegt de camera door de o.",
   "label": "Kies wat er gebeurt",
   "read_label": "Wat er net vanzelf gebeurde",
   "foot": [

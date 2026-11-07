@@ -6,7 +6,7 @@ import io, re, json, html, sys, os
 # de hoofdmap van de site (drie mappen hoger dan dit script)
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..')).replace(os.sep, '/') + '/'
 HERE = os.path.dirname(os.path.abspath(__file__))
-V_CSS, V_JS = '20261018a', '20261018a'
+V_CSS, V_JS = '20261107a', '20261018a'
 V_SKIN = '20260925a'          # home-redesign.css
 V_FX = '20261106a'
 PRELOAD = '<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>'
@@ -41,6 +41,13 @@ def head(L, lang, pre, s):
     # sneller naar de foto's: preconnect vóór de font-preload
     if UNSPLASH not in hd:
         hd = hd.replace(PRELOAD, UNSPLASH + '\n' + PRELOAD)
+    # hero-video: het eerste beeld (poster) vroeg laden, alleen als de video ook echt speelt (niet bij minder beweging)
+    import body as B
+    hd = re.sub(r'<link as="image" fetchpriority="high" href="[^"]*automatisering-hero[^"]*"[^>]*/>\n', '', hd)
+    v = pre + B.VIDEO
+    pl = ''.join('<link as="image" fetchpriority="high" href="%s" media="(prefers-reduced-motion: no-preference) and (%s)" rel="preload"/>\n' % (href, mq)
+                 for href, mq in ((v + '-' + B.VER + '-start.webp', 'min-width: 761px'), (v + '-4x5-' + B.VER + '-start.webp', 'max-width: 760px')))
+    hd = hd.replace(PRELOAD + '\n', PRELOAD + '\n' + pl, 1)
     # body: v2-skin (+ eventueel toon), zonder dubbele attributen bij herbouwen
     tone = L.get('tone')
     body_tag = '<body data-page="diensten" data-skin="v2"%s>' % (' data-tone="%s"' % tone if tone else '')

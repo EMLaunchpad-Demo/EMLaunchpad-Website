@@ -30,6 +30,34 @@ IC = {
 }
 LOGO = {'agenda': 'assets/logos/google-agenda.svg', 'stripe': 'assets/logos/stripe.svg', 'google': 'assets/logos/google-bedrijfsprofiel.webp'}
 
+# hero-video (bestanden in assets/video/; nooit overschrijven, want /assets/* is een jaar "immutable": nieuwe versie = nieuwe naam)
+VIDEO = 'assets/video/automatisering-hero'
+VER = 'v3'
+VH_JS = (
+    "(function(){var h=document.querySelector('[data-am-vhero]');if(!h)return;"
+    "var v=h.querySelector('[data-am-video]'),mm=window.matchMedia,"
+    "set=function(s){h.setAttribute('data-state',s)};"
+    "var rm=!!(mm&&mm('(prefers-reduced-motion: reduce)').matches),c=navigator.connection||{},"
+    "slow=!!c.saveData||/2g/.test(c.effectiveType||'');"
+    "if(rm||slow||!v||!v.play||!mm){set('still');return}"
+    "var mob=mm('(max-width: 760px)').matches,d=v.dataset,done=0,tm=0;"
+    "v.muted=true;v.poster=mob?d.posterM:d.posterD;set('wait');"
+    "function end(s){if(done)return;done=1;clearTimeout(tm);if(s=='still'){try{v.pause()}catch(e){}}set(s)}"
+    "function guard(ms){clearTimeout(tm);tm=setTimeout(function(){end('still')},ms)}"
+    "function go(){if(done)return;"
+    "var l;[[mob?d.webmM:d.webmD,'video/webm'],[mob?d.srcM:d.srcD,'video/mp4']].forEach(function(a){l=document.createElement('source');l.src=a[0];l.type=a[1];v.appendChild(l)});"
+    "l.addEventListener('error',function(){end('still')});"
+    "v.preload='auto';v.load();guard(4500);var p=v.play();if(p&&p.catch)p.catch(function(){end('still')})}"
+    "v.addEventListener('playing',function(){if(done)return;clearTimeout(tm);set('play')});"
+    "v.addEventListener('waiting',function(){if(!done)guard(3500)});"
+    "v.addEventListener('ended',function(){end('end')});"
+    "v.addEventListener('error',function(){end('still')});"
+    "h.addEventListener('click',function(e){if(!e.target.closest||!e.target.closest('[data-am-skip]'))return;end('still');var t=h.querySelector('h1');if(t){t.setAttribute('tabindex','-1');t.focus({preventScroll:true})}});"
+    "function ready(){var n=0,w=function(){var l=document.getElementById('loader');"
+    "if(!l||/(^| )go( |$)/.test(l.className)||n++>24)setTimeout(go,l?450:0);else setTimeout(w,150)};w()}"
+    "if(document.readyState=='complete')ready();else addEventListener('load',ready)})();"
+)
+
 def fill(s, v):
     return re.sub(r'\{(\w+)\}', lambda m: str(v.get(m.group(1), m.group(0))), s)
 
@@ -100,21 +128,12 @@ def body(L, lang, pre):
     # Frans: bedrag voor het €-teken (150 €), nl/en: €150
     eur = (lambda n: '%s €' % n) if lang == 'fr' else (lambda n: '€%s' % n)
 
-    # ---------------- HERO ----------------
-    chips = ''.join(
-        '<button aria-pressed="%s" class="am-chip" data-am-ev="%s" type="button">%s<span>%s</span></button>'
-        % ('true' if k == L['order'][0] else 'false', k, I(IC[L['events'][k]['icon']]), esc(L['events'][k]['chip']))
-        for k in L['order'])
-    ev0 = L['events'][L['order'][0]]
-    v0 = ev0.get('vars', {})
-    s0 = ev0['steps'][0]
-    first_body = ('<p class="am-kop">%s</p>' % esc(s0['kop'])
-                  + ('<p class="am-msg">%s</p>' % esc(fill(s0['msg'], v0)) if s0.get('msg') else '<p class="am-txt">%s</p>' % esc(fill(s0.get('txt', ''), v0)))
-                  + ('<p class="am-extra">%s</p>' % esc(fill(s0['extra'], v0)) if s0.get('extra') else '')
-                  + tools_html(s0.get('tools'), u, pre))
-    seq = ''.join('<li><b>%s</b> %s: %s</li>' % (esc(s['grav'].capitalize()), esc(s['kop']), esc(fill(s.get('msg') or s.get('txt', ''), v0)))
-                  for s in resolve(ev0))
+    # ---------------- HERO: video ----------------
+    # De video speelt één keer (gedempt); pas als ze eindigt, komen kruimelpad, kop, lead en knoppen naar boven.
+    # Zonder JavaScript, met minder beweging of op een trage verbinding: meteen het eindbeeld met de titels.
     foot = ''.join('<span>%s</span>' % esc(f) for f in h['foot'])
+    V = pre + VIDEO
+    SKIP = I('<path d="M5 5.5v13l8.5-6.5z"></path><path d="M14.5 5.5v13"></path><path d="M18.5 5.5v13"></path>', '2')
 
     # ---------------- LIJSTJE ----------------
     def img(ph, first):
@@ -217,7 +236,7 @@ def body(L, lang, pre):
     badges = ''.join('<span>%s</span>' % esc(b) for b in ct['badges'])
 
     # ---------------- DATA voor JS ----------------
-    data = {k: L[k] for k in ('ui', 'geo', 'order', 'events')}
+    data = {k: L[k] for k in ('ui', 'geo')}
     data['lang'] = lang
     data['rel'] = rel
     data['trades'] = [{'tasks': t['tasks'], 'rest': t['rest']} for t in ls['trades']]
@@ -230,34 +249,22 @@ def body(L, lang, pre):
 <linearGradient id="amPen" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#2f74e0"></stop><stop offset="1" stop-color="#2fbf86"></stop></linearGradient>
 <linearGradient gradientUnits="userSpaceOnUse" id="amSig" x1="0" x2="1000" y1="0" y2="1000"><stop offset="0" stop-color="#4b8df0"></stop><stop offset="1" stop-color="#3fb27a"></stop></linearGradient>
 </defs></svg>
-<!-- ════════ HERO: het uurwerk ════════ -->
-<header class="am-hero" data-am-hero="" id="main" tabindex="-1">
-<div class="wrap am-hero-grid">
-<div class="am-copy">
-<div class="am-crumb"><a href="{rel}Diensten">{esc(h['crumb_home'])}</a> <span>/</span> <span>{esc(h['crumb'])}</span></div>
-<span class="eyebrow am-in">{esc(h['eyebrow'])}</span>
-<h1 class="am-h1"><span class="am-h1a" data-am-h1="">{esc(h['h1a'])}</span><br/> <span class="grad">{esc(h['h1b'])}</span></h1>
-<p class="lead am-lede am-in">{esc(h['lede'])}</p>
-<div class="am-cta am-in"><a class="btn" data-book="" href="{rel}Contact">{esc(h['cta'])} {ARROW}</a><a class="btn-ghost" href="#erin">{esc(h['cta2'])}</a></div>
-<div class="am-pick am-in">
-<p class="am-label" id="amPickL">{esc(h['label'])}</p>
-<div aria-labelledby="amPickL" class="am-chips" role="group">{chips}</div>
+<!-- ════════ HERO: de video ════════ -->
+<header class="am-hero am-vh" data-am-vhero="" id="main" tabindex="-1">
+<div class="am-vh-box">
+<div class="am-vh-stage">
+<video aria-hidden="true" class="am-vh-video" data-am-video="" data-poster-d="{V}-{VER}-start.webp" data-poster-m="{V}-4x5-{VER}-start.webp" data-src-d="{V}-{VER}-{lang}.mp4" data-src-m="{V}-4x5-{VER}-{lang}.mp4" data-webm-d="{V}-{VER}-{lang}.webm" data-webm-m="{V}-4x5-{VER}-{lang}.webm" disablepictureinpicture="" disableremoteplayback="" height="1080" muted="" playsinline="" preload="none" tabindex="-1" width="1920"></video>
+<p class="sr-only">{esc(h['video_txt'])}</p>
 </div>
-</div>
-<div class="am-stage" data-am-stage="">
-<div class="am-podium" data-am-podium="">
-<svg aria-hidden="true" class="am-plate" viewBox="0 0 1000 1000">{plate_static(g)}</svg>
-<div aria-hidden="true" class="am-window"><span class="am-ex">{esc(u['example'])}</span><span class="am-win"><span class="am-win-t" data-am-win="">{esc(s0['win'])}</span></span><span class="am-jij" data-am-jij="">{esc(s0['jij'])}</span></div>
-<button aria-label="{attr(u['pause'])}" class="am-pause" data-am-pause="" data-state="playing" type="button">{PLAY}</button>
-</div>
-<div class="am-stepbar"><div aria-label="{attr(u['steps_label'])}" class="am-dots-nav" data-am-steps="" role="group"></div><button class="am-restart" data-am-restart="" type="button">{AGAIN}<span>{esc(u['again'])}</span></button></div>
-<div aria-label="{attr(h['read_label'])}" class="am-read" data-am-read="" role="region">
-<p class="am-read-top"><span class="am-tag">{esc(u['example'])}</span><span class="am-moment" data-am-moment="">{esc(s0['grav'])}</span></p>
-<div class="am-read-body" data-am-body="">{first_body}</div>
-<p aria-live="polite" class="sr-only" data-am-live=""></p>
-</div>
-<details class="am-seq"><summary>{esc(u['seq'])}</summary><ol data-am-seq="">{seq}</ol></details>
-</div>
+<script>{VH_JS}</script>
+<div class="am-vh-copy"><div class="wrap"><div class="am-vh-in">
+<div class="am-crumb am-vh-i"><a href="{rel}Diensten">{esc(h['crumb_home'])}</a> <span>/</span> <span>{esc(h['crumb'])}</span></div>
+<span class="eyebrow am-vh-i">{esc(h['eyebrow'])}</span>
+<h1 class="am-h1 am-vh-i"><span class="am-h1a">{esc(h['h1a'])}</span><br/> <span class="grad">{esc(h['h1b'])}</span></h1>
+<p class="lead am-lede am-vh-i">{esc(h['lede'])}</p>
+<div class="am-cta am-vh-i"><a class="btn" data-book="" href="{rel}Contact">{esc(h['cta'])} {ARROW}</a><a class="btn-ghost" href="#erin">{esc(h['cta2'])}</a></div>
+</div></div></div>
+<div class="am-vh-bar"><span class="am-tag">{esc(u['example'])}</span><button aria-label="{attr(h['skip_label'])}" class="am-vh-skip" data-am-skip="" type="button">{SKIP}<span>{esc(h['skip'])}</span></button></div>
 </div>
 <div class="wrap"><div class="am-foot">{foot}<a href="#bewijs">{esc(h['foot_link'])} {ARROW}</a></div></div>
 </header>
