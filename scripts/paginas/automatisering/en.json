@@ -71,7 +71,7 @@
   "cta2": "What's included",
   "skip": "Skip",
   "skip_label": "Skip the video",
-  "video_txt": "Example in the video: a customer books online and immediately gets a confirmation email. If it is still unopened after 24 hours, the AI writes a new subject line and sends the email again. The day before the appointment, a reminder goes out. If the customer asks a question, the AI chatbot or the AI receptionist answers right away. After the appointment comes a review request, a review appears on Google and the customer moves on in your CRM pipeline. At the end, the title appears in large letters and the camera flies through the o.",
+  "video_txt": "Example in the video: a customer books online and immediately gets a confirmation email. If it is still unopened after 24 hours, the AI writes a new subject line and sends the email again. If the customer asks a question, the AI chatbot or the AI receptionist answers right away. After the appointment comes a review request, a review appears on Google and the customer moves on in your CRM pipeline. At the end, the title appears in large letters and the camera flies through the o.",
   "label": "Choose what happens",
   "read_label": "What just happened by itself",
   "foot": [
