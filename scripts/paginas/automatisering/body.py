@@ -32,7 +32,7 @@ LOGO = {'agenda': 'assets/logos/google-agenda.svg', 'stripe': 'assets/logos/stri
 
 # hero-video (bestanden in assets/video/; nooit overschrijven, want /assets/* is een jaar "immutable": nieuwe versie = nieuwe naam)
 VIDEO = 'assets/video/automatisering-hero'
-VER = 'v4'
+VER = 'v5'
 VH_JS = (
     "(function(){var h=document.querySelector('[data-am-vhero]');if(!h)return;"
     "var v=h.querySelector('[data-am-video]'),mm=window.matchMedia,"
