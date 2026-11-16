@@ -96,9 +96,22 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible,.hc-c-pauze:fo
   grid-column:2;grid-row:1;justify-self:start;
   color:var(--hc-wit);font-size:16px;font-weight:600;text-decoration:none;white-space:nowrap;
   padding:14px 0;background:linear-gradient(currentColor,currentColor) 0 calc(100% - 11px)/100% 1px no-repeat;
-  opacity:.88;transition:opacity .2s ease,background-size .45s var(--hc-ease);
+  opacity:.88;transition:opacity .2s ease,background-size .45s var(--hc-ease),transform .7s var(--hc-ease);
 }
 .hc-c-link:hover{opacity:1;background-size:0 1px;background-position:100% calc(100% - 11px)}
+
+/* ───── chatballon van ons platform (zie hero-planeet.js) ─────
+   Zolang de begroetingsballon of de chatknop over de knop, de link, de microregel, de kop of de zin zou vallen, schuift de tekst net genoeg
+   omhoog en sluiten de tussenruimtes iets (liggend en op een breed scherm mag het blok ook iets zakken). Alles met transform: geen
+   layoutverschuiving. De bovenregel blijft onder het menu.
+   --hc-k3 schuift de hele knoprij, --hc-k4 en --hc-k5 schuiven de microregel en de link daar nog wat extra bij. */
+.hc-c-top,.hc-c-h1,.hc-c-zin,.hc-c-acties,.hc-c-micro{transition:transform .7s var(--hc-ease)}
+.hc-c-chat .hc-c-top{transform:translate3d(0,var(--hc-k0,0px),0)}
+.hc-c-chat .hc-c-h1{transform:translate3d(0,var(--hc-k1,0px),0)}
+.hc-c-chat .hc-c-zin{transform:translate3d(0,var(--hc-k2,0px),0)}
+.hc-c-chat .hc-c-acties{transform:translate3d(0,var(--hc-k3,0px),0)}
+.hc-c-chat .hc-c-micro{transform:translate3d(0,var(--hc-k4,0px),0)}
+.hc-c-chat .hc-c-link{transform:translate3d(0,var(--hc-k5,0px),0)}
 
 /* ───── statusregel onderaan: alleen ware labels ───── */
 .hc-c-voet{
@@ -200,18 +213,20 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
   body .hc-c-c .btn.hc-c-btn{width:auto;min-height:44px;padding:0 22px;font-size:15px}
   .hc-c-micro{grid-column:1/-1;grid-row:2;margin-top:0}
   .hc-c-link{grid-column:2;grid-row:1;margin-top:0;font-size:15px}
+  /* maat en hoogte uit de CSS; met JS past hero-planeet.js ze aan (--hc-fit-d, --hc-fit-top) zodat de planeet overal 48 px vrij blijft van de tekst */
   .hc-c-stage{
-    --d:min(74vh,34vw);
+    --d:var(--hc-fit-d,min(74vh,34vw));
     position:absolute;flex:none;align-self:auto;margin:0;
-    top:calc(var(--hc-menu) + (100% - var(--hc-menu)) / 2 - var(--d) / 2);
+    top:var(--hc-fit-top,calc(var(--hc-menu) + (100% - var(--hc-menu)) / 2 - var(--d) / 2));
     right:max(16px,3vw);
   }
 }
 
-/* ───── EN en FR (productie, 15/11/2026). NL blijft zoals in ronde 2. ─────
+/* ───── per taal (productie, 15/11/2026) ─────
    Eén teken van de kop is 0,565 em breed (JetBrains Mono 0,6 em, letter-spacing -0,035 em).
    Langste regel: NL 14 tekens ('klantendienst.'), EN 12 ('AI into your'), FR 15 ('l’IA dans votre', 'service client.').
-   EN past met de NL-maat overal ruim naast de planeet; FR niet: daarom hieronder een eigen maat voor FR. */
+   EN past met de basismaat overal ruim naast de planeet. FR krijgt op brede schermen een eigen maat, NL alleen op brede en hoge
+   schermen (1536x864, 1600x900, 1680x1050); op 1280, 1366, 1440 en 1920 is de NL-kop zoals in ronde 2. */
 
 /* bovenregel (label en pauzeknop) even breed als de langste vaste regel van de kop, zoals NL 'Wij brengen' (6,2 em) */
 @media (min-width:561px) and (min-height:521px){
@@ -235,6 +250,13 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
     --fs:min(clamp(46px,5.833vw,92px),calc((100vw - max(24px,(100vw - 1180px) * .14 + 32px) - min(58vh,34vw,600px) - max(32px,(100vw - 1180px) / 2 + 32px) - 50px) / 7.91));
   }
 }
+/* zeer lage liggende gsm (tot 360 px hoog, bv. 568x320 en 640x360): iets minder witruimte, zodat ook de microregel op het eerste scherm staat */
+@media (max-height:360px) and (min-width:561px){
+  .hc-c-in{padding-top:4px;padding-bottom:8px}
+  .hc-c-top{margin-bottom:8px}
+  .hc-c-zin{margin-top:8px}
+  .hc-c-acties{margin-top:10px}
+}
 /* liggende gsm: 'Nous intégrons l’IA dans votre' (30 tekens) past niet naast de planeet. FR houdt daarom drie regels, iets kleiner. */
 @media (max-height:520px) and (min-width:561px){
   html[lang="fr"] .hc-c-c{--fs:clamp(22px,7.6vh,36px)}
@@ -245,6 +267,19 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
 /* smalle gsm: '30 min · sans engagement · via Teams' (36 tekens) blijft zo binnen de kolom van 288 px */
 @media (max-width:360px){
   html[lang="fr"] .hc-c-micro{letter-spacing:.1em}
+}
+/* smalle gsm (320 tot 354 px): de FR-zin breekt anders af met 'collaborateurs.' alleen op de laatste regel. Even lange regels, zelfde tekst. */
+@media (max-width:354px){
+  html[lang="fr"] .hc-c-zin{text-wrap:balance}
+}
+/* NL en EN, smalle tablet (561 tot 820 px, staand) en liggend vanaf 740 px: de eerste zin past op één regel. Dan begint de tweede zin
+   op een nieuwe regel, zoals op desktop (vanaf 1101 px), en blijft 'Wij' of 'We put AI' niet achteraan hangen. Evenveel regels. FR niet: die zin is langer. */
+@media (min-width:561px) and (max-width:820px) and (min-height:521px),(min-width:740px) and (max-height:520px){
+  html:not([lang="fr"]) .hc-c-br{display:inline}
+}
+/* statusregel tussen 821 en 1279 px breed: rechts plaats voor de chatknop van ons platform (±60 px, 20 px van de rand), zodat de klok vrij blijft */
+@media (min-width:821px) and (max-width:1279px){
+  .hc-c-voet{padding-right:102px}
 }
 
 @media (prefers-reduced-motion:reduce){

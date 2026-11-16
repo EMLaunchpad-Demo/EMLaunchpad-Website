@@ -5,6 +5,9 @@
    2) planeet: één bol in monospace-tekens op een 2D-canvas (vooraf getekende tekens), die traag draait, 14 beelden per seconde
    3) klok: de echte tijd in België (Europe/Brussels, uit de klok van de browser), HH:MM, springt op de minuut
    Alles pauzeert buiten beeld, in een verborgen tabblad, als de boekingspopup open is en met de pauzeknop. Op de gsm stopt de draai na 60 s zonder interactie.
+   Fix 1 (15/11/2026): de tekst wijkt voor de chatballon van ons platform (transform), en in liggende stand past de planeet zich aan de tekst aan.
+   Fix 2 (16/11/2026): de doorzichtige houder van die widget laat tikken door (alleen de ballon en de chatknop zelf zijn klikbaar); op lage
+   gsm-schermen mag het tekstblok compacter worden zolang de ballon open is, en liggend mag het iets zakken, zodat de knop en de link vrij blijven.
    Minder beweging: één stil beeld van de planeet, het vaste woord, geen klok. Hoog contrast (forced-colors): geen planeet, vast woord, geen klok.
    Voor tests: window.__hcFrames (getekende beelden), window.__hcMs (gemiddelde tekentijd per beeld, ms), window.__hcTex (opbouw van de textuur, ms),
    window.__hcCellen (tekens op de bol), window.__hcSlaapt (planeet stil na 60 s op de gsm). */
@@ -27,6 +30,219 @@
     new IntersectionObserver(function (e) { doc.classList.toggle('hc-c-weg', !e[e.length - 1].isIntersecting); },
       { rootMargin: '-' + menuH + 'px 0px 0px 0px' }).observe(acties);
   }
+  /* ───── chatwidget van ons platform (rechtsonder, geladen door site.js; fix 1 en 2, 15 en 16/11/2026) ─────
+     a) De doorzichtige houder rond de begroetingsballon en de chatknop (#lc_text-widget) laat tikken door: alleen de ballon en de chatknop
+        zelf blijven klikbaar (pointer-events, met een eigen <style> in de shadow root van de widget). Zo werken de knop en de link die onder
+        dat onzichtbare vak liggen gewoon, ook op een liggende gsm. Alleen zolang de houder zelf niets toont (geen achtergrond, rand of schaduw).
+     b) Valt de ballon (of de chatknop) over de groene knop, de link, de microregel, de kop of de zin, dan schuift de tekst omhoog en sluiten
+        de tussenruimtes iets, net genoeg om vrij te komen; weer terug als de ballon dicht gaat. Met transform: geen layoutverschuiving.
+        Eerst met de gewone kleinste tussenruimtes (MIN); lukt het zo niet, dan mag het blok compacter (KRAP). Staat de planeet naast de tekst
+        (liggende gsm, breed scherm), dan mag het hele blok ook iets zakken, onder de ballon uit. De bovenregel (label en pauzeknop) blijft
+        12 px onder het menu. Gekozen wordt de stand die het belangrijkste vrijhoudt (eerst de knop, dan de link, de kop,
+        de microregel en de zin; een belangrijker deel wordt nooit slechter voor een minder belangrijk), met zo weinig mogelijk beweging.
+        Helpt schuiven niet, dan beweegt er niets. Ook bij minder beweging en hoog contrast. */
+  (function () {
+    var top = root.querySelector('.hc-c-top'), h1 = root.querySelector('.hc-c-h1'), zin = root.querySelector('.hc-c-zin');
+    var btn = root.querySelector('.hc-c-btn'), micro = root.querySelector('.hc-c-micro'), link = root.querySelector('.hc-c-link');
+    var wis = root.querySelector('.hc-c-wissel');
+    if (!window.MutationObserver || !top || !h1 || !zin || !acties || !btn || !micro || !link) return;
+    /* kleinste tussenruimte (px): bovenregel en kop, kop en zin, zin en knop, knop en microregel, microregel en de tekst van de link.
+       KRAP: alleen als het met MIN niet lukt (lage gsm, ballon open). STAART: het puntje onder de ballon. */
+    var MIN = [12, 14, 16, 8, 8], KRAP = [8, 10, 12, 6, 6], MARGE = 8, STAART = 10, ONDER_MENU = 12;
+    var DOOR = '#lc_text-widget{pointer-events:none!important}:where(#lc_text-widget)>*{pointer-events:auto}';
+    var LANGST = 0;
+    (wis ? (wis.getAttribute('data-woorden') || '').split('|') : []).forEach(function (s) { LANGST = Math.max(LANGST, s.length); });
+    var sr = null, raf = 0, nog = 0, nu = '', stijl = null;
+    function zie(e) {
+      if (!e) return null; var r = e.getBoundingClientRect(); if (!(r.width > 0 && r.height > 0)) return null;
+      var cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity < 0.05) return null; return r;
+    }
+    /* plaats zonder transform, ten opzichte van de hero (offsetTop negeert transforms) */
+    function y(el) { var t = 0; for (var e = el; e && e !== root; e = e.offsetParent) t += e.offsetTop; return t; }
+    function breed(el) { var g = document.createRange(); g.selectNodeContents(el); return g.getBoundingClientRect(); }
+    /* tekstregels van een element zonder verschuiving: de plaats binnen het element plus de plaats van het element zelf (basis) */
+    function regels(el, basis, behalve) {
+      var uit = [], eb = el.getBoundingClientRect(), tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n;
+      while ((n = tw.nextNode())) {
+        if (!n.nodeValue.trim() || (behalve && n.parentElement && n.parentElement.closest(behalve))) continue;
+        var g = document.createRange(); g.selectNodeContents(n);
+        var rs = g.getClientRects();
+        for (var i = 0; i < rs.length; i++) if (rs[i].width > 0.5) uit.push({ l: rs[i].left, r: rs[i].right, t: basis + rs[i].top - eb.top, b: basis + rs[i].bottom - eb.top });
+      }
+      return uit;
+    }
+    function leeg(c) { return !c || c === 'transparent' || /^rgba\(.*,\s*0\)$/.test(c); }
+    /* a) de houder laat tikken door zolang hij zelf niets toont; geeft terug of dat nu zo is */
+    function doorlaat(h) {
+      var cs = h ? getComputedStyle(h) : null;
+      var aan = !!cs && leeg(cs.backgroundColor) && cs.backgroundImage === 'none' && cs.boxShadow === 'none' &&
+        !((parseFloat(cs.borderTopWidth) || 0) + (parseFloat(cs.borderRightWidth) || 0) + (parseFloat(cs.borderBottomWidth) || 0) + (parseFloat(cs.borderLeftWidth) || 0) > 0);
+      if (!stijl || !sr.contains(stijl)) { stijl = document.createElement('style'); sr.appendChild(stijl); }
+      var t = aan ? DOOR : '';
+      if (stijl.textContent !== t) stijl.textContent = t;
+      return aan && getComputedStyle(h).pointerEvents === 'none';
+    }
+    /* s: verschuiving per deel (px, positief = omhoog): bovenregel, kop, zin, knoprij, microregel, link. De microregel en de link zitten in
+       de knoprij en schuiven daar nog wat bij (--hc-k4, --hc-k5). null: alles terug. */
+    function zet(s) {
+      var k = s ? [s[0], s[1], s[2], s[3], s[4] - s[3], s[5] - s[3]].map(function (v) { return -Math.round(v) || 0; }) : null;
+      if (k && !k.some(function (v) { return v; })) k = null;
+      var sleutel = k ? k.join(',') : '';
+      if (sleutel === nu) return;
+      nu = sleutel;
+      if (!sleutel) root.classList.remove('hc-c-chat');
+      else { for (var i = 0; i < 6; i++) root.style.setProperty('--hc-k' + i, k[i] + 'px'); root.classList.add('hc-c-chat'); }
+      /* de planeet (liggende stand) houdt ook afstand van de verschoven tekst: laat haar opnieuw passen */
+      try { root.dispatchEvent(new CustomEvent('hc-c-chat')); } catch (e) {}
+    }
+    function reken() {
+      raf = 0;
+      if (!sr) return;
+      /* wat in de weg kan liggen: de ballon (met zijn puntje), de ronde chatknop en, als hij toch tikken opvangt, de houder */
+      var hd = sr.querySelector('#lc_text-widget'), door = doorlaat(hd), obs = [];
+      var o1 = zie(sr.querySelector('.lc_text-widget_prompt--msg-bubble')), o2 = zie(sr.querySelector('#lc_text-widget--btn')), o3 = door ? null : zie(hd);
+      if (o1) obs.push({ l: o1.left, r: o1.right, t: o1.top, b: o1.bottom + STAART, b0: o1.bottom });
+      if (o2) obs.push({ l: o2.left, r: o2.right, t: o2.top, b: o2.bottom, b0: o2.bottom });
+      if (o3) obs.push({ l: o3.left, r: o3.right, t: o3.top, b: o3.bottom, b0: o3.bottom });
+      if (!obs.length) { zet(null); return; }
+      /* alles als stond de pagina bovenaan: de chat staat vast in beeld, de tekst op zijn plaats zonder verschuiving */
+      var rb = root.getBoundingClientRect(), Y = rb.top + window.scrollY;
+      var menu = parseFloat(getComputedStyle(root).paddingTop) || 0;
+      var tTop = Y + y(top), bTop = tTop + top.offsetHeight, tH1 = Y + y(h1), bH1 = tH1 + h1.offsetHeight;
+      var tZin = Y + y(zin), bZin = tZin + zin.offsetHeight, tBtn = Y + y(btn), bBtn = tBtn + btn.offsetHeight;
+      var tMic = Y + y(micro), bMic = tMic + micro.offsetHeight;
+      var lk = Y + y(link), tLnk = lk + (parseFloat(getComputedStyle(link).paddingTop) || 0), bLnk = lk + link.offsetHeight - 11; /* tekst en onderlijn, niet de tikruimte */
+      var stapel = tLnk > bMic; /* gsm: de link staat onder de microregel; anders naast de knop */
+      function ruimte(m) {
+        return [
+          Math.max(0, tTop - (Y + menu + ONDER_MENU)), Math.max(0, tH1 - bTop - m[0]), Math.max(0, tZin - bH1 - m[1]),
+          Math.max(0, tBtn - bZin - m[2]), Math.max(0, tMic - bBtn - m[3]), stapel ? Math.max(0, tLnk - bMic - m[4]) : 0
+        ];
+      }
+      /* de doelen, zonder verschuiving. k: welke verschuiving geldt (0 bovenregel, 1 kop, 2 zin, 3 knoprij, 4 microregel, 5 link) */
+      var live = root.classList.contains('hc-c-live'), kop = regels(h1, tH1, live ? '.hc-c-vast' : null);
+      if (live && wis && wis.getClientRects().length) {
+        /* het wisselwoord: de regel zo breed als het langste woord (0,565 em per teken) */
+        var rw = wis.getBoundingClientRect(), hb = h1.getBoundingClientRect(), fs = parseFloat(getComputedStyle(h1).fontSize) || 0;
+        kop.push({ l: rw.left, r: rw.left + Math.max(rw.width, LANGST * fs * 0.565), t: tH1 + rw.top - hb.top, b: tH1 + rw.bottom - hb.top });
+      }
+      var rk = btn.getBoundingClientRect(), rm = breed(micro), rl = link.getBoundingClientRect();
+      var doelen = [
+        { n: 'knop', k: 3, q: [{ l: rk.left, r: rk.right, t: tBtn, b: bBtn }] },
+        { n: 'link', k: stapel ? 5 : 3, q: [{ l: rl.left, r: rl.right, t: tLnk, b: bLnk }] },
+        { n: 'kop', k: 1, q: kop },
+        { n: 'micro', k: 4, q: [{ l: rm.left, r: rm.right, t: tMic, b: bMic }] },
+        { n: 'zin', k: 2, q: regels(zin, tZin) }
+      ];
+      /* verschuiving omhoog per deel bij fractie f van de vrije ruimte a; alles in verhouding, dus elk deel schuift f maal zijn eigen maximum */
+      function schuif(a, f) {
+        var s0 = f * a[0], s1 = s0 + f * a[1], s2 = s1 + f * a[2], s3 = s2 + f * a[3], s4 = s3 + f * a[4];
+        return [s0, s1, s2, s3, s4, stapel ? s4 + f * a[5] : s3];
+      }
+      function botst(q, s) {
+        for (var j = 0; j < obs.length; j++) {
+          var o = obs[j];
+          if (o.l < q.r && q.l < o.r && o.t < q.b - s + MARGE && q.t - s - MARGE < o.b) return true;
+        }
+        return false;
+      }
+      /* hoe een doel erbij staat: lv 0 = vrij met marge, 1 = vrij maar binnen de marge, 2 = (deels) bedekt;
+         d = het deel van zijn oppervlak dat echt onder de ballon of de chatknop ligt */
+      function graad(d, s) {
+        var zacht = false, opp = 0, bed = 0;
+        for (var j = 0; j < d.q.length; j++) {
+          var q = d.q[j], t = q.t - s, b = q.b - s, a = (q.r - q.l) * (b - t), x = 0;
+          if (botst(q, s)) zacht = true;
+          for (var o = 0; o < obs.length; o++) {
+            var ob = obs[o], w = Math.min(q.r, ob.r) - Math.max(q.l, ob.l), h = Math.min(b, ob.b0) - Math.max(t, ob.t);
+            if (w > 0 && h > 0) x += w * h;
+          }
+          opp += a; bed += Math.min(a, x);
+        }
+        var deel = opp > 0 ? bed / opp : 0;
+        return { lv: deel > 0.001 ? 2 : zacht ? 1 : 0, d: deel };
+      }
+      function staat(s) { return doelen.map(function (d) { return graad(d, s[d.k]); }); }
+      /* beter: de doelen in volgorde van belang (knop, link, kop, microregel, zin). Wordt een doel vrij of juist bedekt, dan beslist dat.
+         Komt een bedekt doel dieper onder de ballon, dan nooit (bv. de link niet dieper om de zin vrij te maken). Wat alleen wat minder
+         bedekt raakt of wat meer marge krijgt, beslist pas als er verder niets verschilt (het eerste zulke verschil telt). */
+      function beter(x, z) {
+        var wat = 0;
+        for (var i = 0; i < x.length; i++) {
+          var xb = x[i].lv === 2, zb = z[i].lv === 2;
+          if (xb !== zb) return zb;
+          if (xb) {
+            if (x[i].d > z[i].d + 0.05) return false;
+            if (!wat && x[i].d < z[i].d - 0.05) wat = 1;
+          } else if (!wat && x[i].lv !== z[i].lv) wat = x[i].lv < z[i].lv ? 1 : -1;
+        }
+        return wat > 0;
+      }
+      /* omhoog: per doel net genoeg om boven een ballon of chatknop uit te komen, of zo ver als het kan */
+      function omhoog(m) {
+        var a = ruimte(m), heel = schuif(a, 1), fr = [1], uit = [];
+        for (var i = 0; i < doelen.length; i++) {
+          var d = doelen[i], A = heel[d.k];
+          if (!(A > 0)) continue;
+          for (var j = 0; j < d.q.length; j++) {
+            for (var o = 0; o < obs.length; o++) {
+              var q = d.q[j], ob = obs[o], nodig = q.b + MARGE + 1 - ob.t;
+              if (ob.l < q.r && q.l < ob.r && nodig > 0 && nodig <= A) fr.push(nodig / A);
+            }
+          }
+        }
+        fr.sort(function (x, z) { return x - z; });
+        for (i = 0; i < fr.length; i++) uit.push(schuif(a, fr[i]));
+        return uit;
+      }
+      /* omlaag (alleen waar de planeet naast de tekst staat: liggende gsm en breed scherm): het hele blok, zonder de tussenruimtes te
+         veranderen, net genoeg om onder de ballon uit te komen. Alles blijft op het eerste scherm en boven de statusregel. */
+      function omlaag() {
+        var st = root.querySelector('.hc-c-stage'), uit = [];
+        if (!st || getComputedStyle(st).position !== 'absolute') return uit;
+        var voet = root.querySelector('.hc-c-voet'), grens = Math.min(window.innerHeight, Y + root.offsetHeight) - MARGE;
+        if (voet && voet.offsetHeight) grens = Math.min(grens, Y + voet.offsetTop - MARGE);
+        var max = grens - Math.max(bBtn, bMic, lk + link.offsetHeight), ds = [];
+        if (!(max > 0)) return uit;
+        for (var i = 0; i < doelen.length; i++) {
+          for (var j = 0; j < doelen[i].q.length; j++) {
+            for (var o = 0; o < obs.length; o++) {
+              var q = doelen[i].q[j], ob = obs[o], nodig = ob.b + MARGE + 1 - q.t;
+              if (ob.l < q.r && q.l < ob.r && q.b + MARGE > ob.t && nodig > 0 && nodig <= max) ds.push(nodig);
+            }
+          }
+        }
+        ds.sort(function (x, z) { return x - z; });
+        for (i = 0; i < ds.length; i++) uit.push([-ds[i], -ds[i], -ds[i], -ds[i], -ds[i], -ds[i]]);
+        return uit;
+      }
+      /* kandidaten in volgorde van voorkeur: niet schuiven, omhoog met MIN, omlaag, omhoog met KRAP. Bij gelijkspel wint de eerste. */
+      var nul = [0, 0, 0, 0, 0, 0], best = { v: staat(nul), s: null };
+      [function () { return omhoog(MIN); }, omlaag, function () { return omhoog(KRAP); }].forEach(function (maak) {
+        if (!best.v.some(function (c) { return c.lv > 0; })) return;
+        var lijst = maak();
+        for (var i = 0; i < lijst.length; i++) { var v = staat(lijst[i]); if (beter(v, best.v)) best = { v: v, s: lijst[i] }; }
+      });
+      zet(best.s);
+    }
+    function plan() {
+      if (!raf) raf = requestAnimationFrame(reken);
+      /* nog eens als de ballon klaar is met invliegen of uitfaden */
+      clearTimeout(nog); nog = setTimeout(function () { reken(); nog = setTimeout(reken, 1000); }, 400);
+    }
+    function koppel() {
+      var cw = document.querySelector('chat-widget'); if (!cw || !cw.shadowRoot) return false;
+      sr = cw.shadowRoot;
+      new MutationObserver(plan).observe(sr, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden'] });
+      sr.addEventListener('animationend', plan); sr.addEventListener('transitionend', plan);
+      window.addEventListener('resize', plan);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(plan, function () {});
+      plan(); return true;
+    }
+    /* de widget komt pas na de eerste interactie of na 5 s: rustig peilen tot hij er is (hooguit 3 minuten) */
+    var keer = 0, zoek = setInterval(function () { if (koppel() || ++keer > 360) clearInterval(zoek); }, 500);
+  })();
+
   if (forced) return; /* hoog contrast: geen beeld en geen beweging, de CSS toont de vaste tekst */
 
   /* ───── zichtbaarheid: één bron voor het woord, de planeet en de klok ───── */
@@ -79,14 +295,17 @@
       root.classList.add('hc-c-live');
       /* per positie: het oude teken zakt de ladder af (# + :), daarna klimt het nieuwe op (. - + #) tot de letter.
          Een lege plaats wacht even lang, zodat alle letters in hetzelfde ritme lopen: één strakke golf van links naar rechts.
-         Een letter die blijft staan, blijft gewoon staan. De laatste trede voor de letter is groen: één puls die door het woord loopt. */
+         Een letter die blijft staan, blijft gewoon staan. De laatste trede voor de letter is groen: één puls die door het woord loopt.
+         Wordt het woord korter, dan blijft een plaats die leeg wordt een spatie tot de golf voorbij is: de tekens erachter schuiven niet op
+         (geen layoutverschuiving); aan het eind gaan de lege plaatsen samen weg. */
       function maakPlan(van, nw) {
         var n = Math.max(van.length, nw.length), p = [];
         for (var k = 0; k < n; k++) {
           var a = van.charAt(k), b = nw.charAt(k), q;
           if (a && a === b) { p.push(null); continue; }
           q = a ? ['#', '+', ':'] : ['', '', ''];
-          if (b) q.push('.', '-', '+', '#', b); else q.push('');
+          if (b) q.push('.', '-', '+', '#', b); else q.push(' ');
+          q.letter = !!b;
           p.push(q);
         }
         return p;
@@ -99,7 +318,7 @@
           var j = Math.floor((t - k * SCHUIF) / STAP), c, kl = 'hc-c-t';
           if (j < 0) { c = toon.charAt(k); klaar = false; }
           else if (j >= q.length - 1) c = q[q.length - 1];
-          else { c = q[j]; klaar = false; kl += (q[q.length - 1] && j === q.length - 2) ? ' is-kop' : ' is-ruis'; }
+          else { c = q[j]; klaar = false; kl += (q.letter && j === q.length - 2) ? ' is-kop' : ' is-ruis'; }
           zetCel(k, c, kl);
         }
         if (klaar) { toon = naar; plan = null; schrijf(toon); volgende(); return; }
@@ -124,16 +343,18 @@
   }
 
   /* ───── pauzeknop (WCAG 2.2.2), rechts op de bovenregel ─────
-     De zichtbare tekst is de naam van de knop (WCAG 2.5.3); geen aria-pressed, want de tekst wisselt al mee. */
+     De zichtbare tekst is de naam van de knop (WCAG 2.5.3); geen aria-pressed, want de tekst wisselt al mee.
+     aria-label: hetzelfde woord in gewone schrijfwijze, want Chrome geeft de hoofdletters van text-transform door ('SPEEL AF'). */
   if (!reduce) {
     var TXT = { nl: ['Pauzeer', 'Speel af'], en: ['Pause', 'Play'], fr: ['Pause', 'Lecture'] }[lang] || ['Pauzeer', 'Speel af'];
     var knop = document.createElement('button');
     knop.type = 'button'; knop.className = 'hc-c-pauze';
     knop.innerHTML = '<i aria-hidden="true"></i><span></span>';
-    knop.lastChild.textContent = TXT[0];
+    knop.lastChild.textContent = TXT[0]; knop.setAttribute('aria-label', TXT[0]);
     knop.addEventListener('click', function () {
       gepauzeerd = !gepauzeerd; knop.classList.toggle('is-stil', gepauzeerd);
-      knop.lastChild.textContent = gepauzeerd ? TXT[1] : TXT[0]; meld();
+      var w = gepauzeerd ? TXT[1] : TXT[0];
+      knop.lastChild.textContent = w; knop.setAttribute('aria-label', w); meld();
     });
     var top = root.querySelector('.hc-c-top');
     if (top) top.appendChild(knop); else root.insertBefore(knop, root.firstChild);
@@ -259,8 +480,105 @@
       }
     }
 
+    /* ── liggende gsm en lage vensters (tot 520 px hoog, vanaf 561 px breed; fix 1, 15/11/2026) ──
+       Daar staat de planeet naast de tekst. Ze krimpt en schuift in de hoogte tot ze overal VRIJ px vrij blijft van de tekst:
+       bovenregel, kop (met het langste wisselwoord), zin, knop, microregel en link. Eerst zo groot mogelijk, dan zo dicht mogelijk
+       bij het midden (de plaats uit de CSS). Zonder JS geldt de maat uit de CSS. Op andere schermen doet dit niets. */
+    var LIGGEND = '(max-height: 520px) and (min-width: 561px)', VRIJ = 48, DMIN = 96, pasSleutel = '';
+    var LANGST = 0;
+    (function () { var w = root.querySelector('.hc-c-wissel'), l = w ? (w.getAttribute('data-woorden') || '').split('|') : []; for (var i = 0; i < l.length; i++) LANGST = Math.max(LANGST, l[i].length); })();
+    /* verschuiving (translateY) van een element en zijn ouders binnen de hero: de chatroutine kan de tekst met transform verplaatsen */
+    function tY(el) {
+      var t = 0;
+      for (var e = el; e && e !== root; e = e.parentElement) {
+        var m = getComputedStyle(e).transform, p = m && m !== 'none' ? m.match(/matrix(3d)?\(([^)]+)\)/) : null;
+        if (p) { var v = p[2].split(','); t += +(p[1] ? v[13] : v[5]) || 0; }
+      }
+      return t;
+    }
+    function tekstBlokken(rb) {
+      var uit = [], K = [0, 0, 0, 0, 0, 0], kk;
+      /* staat de tekst opzij voor de chatballon, dan telt ook die plaats (eindstand van de verschuiving, zie --hc-k0 tot --hc-k5) */
+      if (root.classList.contains('hc-c-chat')) for (kk = 0; kk < 6; kk++) K[kk] = parseFloat(root.style.getPropertyValue('--hc-k' + kk)) || 0;
+      function zet(el, r, k, t, b) {
+        if (!r || !(r.width > 0)) return;
+        var d = tY(el), q = { l: r.left - rb.left, r: r.right - rb.left, t: (t == null ? r.top : t) - d - rb.top, b: (b == null ? r.bottom : b) - d - rb.top };
+        uit.push(q);
+        if (k) uit.push({ l: q.l, r: q.r, t: q.t + k, b: q.b + k });
+      }
+      function regels(el, k, behalve) {
+        if (!el) return;
+        var tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n;
+        while ((n = tw.nextNode())) {
+          if (!n.nodeValue.trim() || (behalve && n.parentElement && n.parentElement.closest(behalve))) continue;
+          var g = document.createRange(); g.selectNodeContents(n);
+          var rs = g.getClientRects(); for (var i = 0; i < rs.length; i++) zet(el, rs[i], k);
+        }
+      }
+      function inhoud(el, k) { if (!el || !el.getClientRects().length) return; var g = document.createRange(); g.selectNodeContents(el); zet(el, g.getBoundingClientRect(), k); }
+      var h1 = root.querySelector('.hc-c-h1'), w = root.querySelector('.hc-c-wissel'), live = root.classList.contains('hc-c-live');
+      inhoud(root.querySelector('.hc-c-eyebrow'), K[0]); inhoud(root.querySelector('.hc-c-pauze'), K[0]);
+      if (h1) {
+        regels(h1, K[1], live ? '.hc-c-vast' : null);
+        /* het wisselwoord: de regel zo breed als het langste woord (0,565 em per teken) */
+        if (live && w && w.getClientRects().length) {
+          var rw = w.getBoundingClientRect(), fs = parseFloat(getComputedStyle(h1).fontSize) || 0;
+          zet(h1, { left: rw.left, right: rw.left + LANGST * fs * 0.565, top: rw.top, bottom: rw.bottom, width: 1 }, K[1]);
+        }
+      }
+      regels(root.querySelector('.hc-c-zin'), K[2]);
+      var b = root.querySelector('.hc-c-btn'); if (b && b.getClientRects().length) zet(b, b.getBoundingClientRect(), K[3]);
+      inhoud(root.querySelector('.hc-c-micro'), K[3] + K[4]);
+      var lk = root.querySelector('.hc-c-link');
+      if (lk && lk.getClientRects().length) { var rl = lk.getBoundingClientRect(); zet(lk, rl, K[3] + K[5], rl.top + (parseFloat(getComputedStyle(lk).paddingTop) || 0), rl.bottom - 11); }
+      return uit;
+    }
+    function pas() {
+      if (!mq(LIGGEND)) {
+        if (pasSleutel) { root.style.removeProperty('--hc-fit-d'); root.style.removeProperty('--hc-fit-top'); pasSleutel = ''; }
+        return;
+      }
+      var rb = root.getBoundingClientRect(), W = rb.width, H = rb.height, vw = window.innerWidth, vh = window.innerHeight;
+      if (!W || !H) return;
+      var menu = parseFloat(getComputedStyle(root).paddingTop) || 0;
+      var blok = tekstBlokken(rb), rechts = Math.max(16, vw * 0.03), dMax = Math.floor(Math.min(vh * 0.74, vw * 0.34));
+      var boven = menu + 8, onder = Math.min(H, vh - (rb.top + window.scrollY)) - 8;
+      /* de inkt van de bol: tot ongeveer een halve tekenhoogte binnen het vak (zie maat()); 4 px is aan de veilige kant */
+      function vrij(cx, cy, r) {
+        var m = Infinity;
+        for (var i = 0; i < blok.length; i++) {
+          var q = blok[i], dx = Math.max(q.l - cx, 0, cx - q.r), dy = Math.max(q.t - cy, 0, cy - q.b);
+          m = Math.min(m, Math.sqrt(dx * dx + dy * dy) - r);
+        }
+        return m;
+      }
+      var best = null, d, cy, k;
+      for (d = dMax; d >= DMIN && !best; d -= 2) {
+        var cx = W - rechts - d / 2, r = d / 2 - 4, lo = boven + d / 2, hi = onder - d / 2, cy0 = menu + (H - menu) / 2;
+        if (hi < lo) continue;
+        cy0 = Math.min(hi, Math.max(lo, cy0));
+        for (k = 0; k <= hi - lo + 2 && !best; k += 2) {
+          for (var z = -1; z <= 1; z += 2) {
+            cy = cy0 + z * k;
+            if (cy < lo || cy > hi) continue;
+            if (vrij(cx, cy, r) >= VRIJ) { best = { d: d, top: cy - d / 2 }; break; }
+          }
+        }
+      }
+      if (!best) {
+        /* past nergens: de kleinste maat, op de hoogte met de meeste ruimte */
+        d = DMIN; var cx2 = W - rechts - d / 2, lo2 = boven + d / 2, hi2 = Math.max(lo2, onder - d / 2), bestV = -Infinity;
+        for (cy = lo2; cy <= hi2; cy += 2) { var v = vrij(cx2, cy, d / 2 - 4); if (v > bestV) { bestV = v; best = { d: d, top: cy - d / 2 }; } }
+      }
+      var sl = best.d + '|' + Math.round(best.top);
+      if (sl === pasSleutel) return;
+      pasSleutel = sl;
+      root.style.setProperty('--hc-fit-d', best.d + 'px'); root.style.setProperty('--hc-fit-top', Math.round(best.top) + 'px');
+    }
+
     /* het canvas krijgt een maat en plaats op hele pixels: zo blijven de tekens scherp */
     function maat() {
+      pas();
       var sb = stage.getBoundingClientRect();
       if (!sb.width || !sb.height) return false;
       dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -369,6 +687,13 @@
     if (IO) new IntersectionObserver(function (e) { zichtBol = e[e.length - 1].isIntersecting; zet(actief()); }, { threshold: 0 }).observe(stage);
     var rz = later(function () { if (klaar && maat()) teken(tijd, -1); }, 160);
     window.addEventListener('resize', rz);
+    /* de tekst schuift opzij voor de chatballon (of terug): opnieuw passen (alleen liggend verandert er iets) */
+    root.addEventListener('hc-c-chat', rz);
+    /* lettertypes later geladen (Archivo van de zin en de knoppen): de tekst wordt iets breder of smaller, dus opnieuw passen */
+    if (document.fonts) {
+      if (document.fonts.ready) document.fonts.ready.then(rz, function () {});
+      if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', rz);
+    }
 
     /* op de gsm: de draai stopt na 60 s zonder interactie en gaat verder bij de eerste aanraking, scroll of toets */
     function slaap() {
