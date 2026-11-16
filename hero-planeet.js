@@ -4,10 +4,11 @@
    1) wisselwoord: elk teken gaat de tekenladder van de planeet af en weer op ( # + :  dan  . - + # ) tot het nieuwe woord er staat
    2) planeet: één bol in monospace-tekens op een 2D-canvas (vooraf getekende tekens), die traag draait, 14 beelden per seconde
    3) klok: de echte tijd in België (Europe/Brussels, uit de klok van de browser), HH:MM, springt op de minuut
-   Alles pauzeert buiten beeld, in een verborgen tabblad, als de boekingspopup open is en met de pauzeknop. Op de gsm stopt de draai na 60 s zonder interactie.
+   Alles pauzeert buiten beeld, in een verborgen tabblad en als de boekingspopup open is. Op de gsm stopt de draai na 60 s zonder interactie.
    Fix 1 (15/11/2026): de tekst wijkt voor de chatballon van ons platform (transform), en in liggende stand past de planeet zich aan de tekst aan.
    Fix 2 (16/11/2026): de doorzichtige houder van die widget laat tikken door (alleen de ballon en de chatknop zelf zijn klikbaar); op lage
    gsm-schermen mag het tekstblok compacter worden zolang de ballon open is, en liggend mag het iets zakken, zodat de knop en de link vrij blijven.
+   16/11/2026: de pauzeknop (rechts op de bovenregel) is weg, op vraag van Martijn. Op de gsm stopt de planeet nog altijd na 60 s.
    Minder beweging: één stil beeld van de planeet, het vaste woord, geen klok. Hoog contrast (forced-colors): geen planeet, vast woord, geen klok.
    Voor tests: window.__hcFrames (getekende beelden), window.__hcMs (gemiddelde tekentijd per beeld, ms), window.__hcTex (opbouw van de textuur, ms),
    window.__hcCellen (tekens op de bol), window.__hcSlaapt (planeet stil na 60 s op de gsm). */
@@ -37,7 +38,7 @@
      b) Valt de ballon (of de chatknop) over de groene knop, de link, de microregel, de kop of de zin, dan schuift de tekst omhoog en sluiten
         de tussenruimtes iets, net genoeg om vrij te komen; weer terug als de ballon dicht gaat. Met transform: geen layoutverschuiving.
         Eerst met de gewone kleinste tussenruimtes (MIN); lukt het zo niet, dan mag het blok compacter (KRAP). Staat de planeet naast de tekst
-        (liggende gsm, breed scherm), dan mag het hele blok ook iets zakken, onder de ballon uit. De bovenregel (label en pauzeknop) blijft
+        (liggende gsm, breed scherm), dan mag het hele blok ook iets zakken, onder de ballon uit. De bovenregel (het label) blijft
         12 px onder het menu. Gekozen wordt de stand die het belangrijkste vrijhoudt (eerst de knop, dan de link, de kop,
         de microregel en de zin; een belangrijker deel wordt nooit slechter voor een minder belangrijk), met zo weinig mogelijk beweging.
         Helpt schuiven niet, dan beweegt er niets. Ook bij minder beweging en hoog contrast. */
@@ -246,9 +247,9 @@
   if (forced) return; /* hoog contrast: geen beeld en geen beweging, de CSS toont de vaste tekst */
 
   /* ───── zichtbaarheid: één bron voor het woord, de planeet en de klok ───── */
-  var zicht = true, gepauzeerd = false, popup = null, luisteraars = [];
+  var zicht = true, popup = null, luisteraars = [];
   function popupOpen() { return !!(popup && popup.classList.contains('open')); }
-  function actief() { return zicht && !document.hidden && !gepauzeerd && !popupOpen(); }
+  function actief() { return zicht && !document.hidden && !popupOpen(); }
   function meld() { var a = actief(); for (var i = 0; i < luisteraars.length; i++) luisteraars[i](a); }
   if (IO) new IntersectionObserver(function (e) { zicht = e[e.length - 1].isIntersecting; meld(); }, { threshold: 0 }).observe(root);
   document.addEventListener('visibilitychange', meld);
@@ -340,24 +341,6 @@
       });
       startWissel = function () { loopt = true; volgende(); };
     })();
-  }
-
-  /* ───── pauzeknop (WCAG 2.2.2), rechts op de bovenregel ─────
-     De zichtbare tekst is de naam van de knop (WCAG 2.5.3); geen aria-pressed, want de tekst wisselt al mee.
-     aria-label: hetzelfde woord in gewone schrijfwijze, want Chrome geeft de hoofdletters van text-transform door ('SPEEL AF'). */
-  if (!reduce) {
-    var TXT = { nl: ['Pauzeer', 'Speel af'], en: ['Pause', 'Play'], fr: ['Pause', 'Lecture'] }[lang] || ['Pauzeer', 'Speel af'];
-    var knop = document.createElement('button');
-    knop.type = 'button'; knop.className = 'hc-c-pauze';
-    knop.innerHTML = '<i aria-hidden="true"></i><span></span>';
-    knop.lastChild.textContent = TXT[0]; knop.setAttribute('aria-label', TXT[0]);
-    knop.addEventListener('click', function () {
-      gepauzeerd = !gepauzeerd; knop.classList.toggle('is-stil', gepauzeerd);
-      var w = gepauzeerd ? TXT[1] : TXT[0];
-      knop.lastChild.textContent = w; knop.setAttribute('aria-label', w); meld();
-    });
-    var top = root.querySelector('.hc-c-top');
-    if (top) top.appendChild(knop); else root.insertBefore(knop, root.firstChild);
   }
 
   /* ───── 3. klok: uur en minuut in België. Springt op de minuut, staat stil zodra de rest stilstaat.
@@ -517,7 +500,7 @@
       }
       function inhoud(el, k) { if (!el || !el.getClientRects().length) return; var g = document.createRange(); g.selectNodeContents(el); zet(el, g.getBoundingClientRect(), k); }
       var h1 = root.querySelector('.hc-c-h1'), w = root.querySelector('.hc-c-wissel'), live = root.classList.contains('hc-c-live');
-      inhoud(root.querySelector('.hc-c-eyebrow'), K[0]); inhoud(root.querySelector('.hc-c-pauze'), K[0]);
+      inhoud(root.querySelector('.hc-c-eyebrow'), K[0]);
       if (h1) {
         regels(h1, K[1], live ? '.hc-c-vast' : null);
         /* het wisselwoord: de regel zo breed als het langste woord (0,565 em per teken) */
@@ -722,7 +705,7 @@
             luisteraars.push(zet);
             slaap();
             zet(actief());
-            if (!raf) { introKlaar = true; teken(tijd, -1); } /* gepauzeerd of buiten beeld gestart: toch één volledig beeld */
+            if (!raf) { introKlaar = true; teken(tijd, -1); } /* stil gestart (buiten beeld, verborgen tabblad of popup open): toch één volledig beeld */
           });
         };
         /* wachten op het lettertype (anders tekent de atlas het reservefont), hooguit 1,5 s */

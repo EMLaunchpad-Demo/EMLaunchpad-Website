@@ -4,7 +4,8 @@
    Eén object: een planeet getekend in monospace-tekens (ASCII, een dichtheidsladder . : - = + * #), donkergrijs op zwart.
    De titel staat in JetBrains Mono (al in de site, niets extra te laden). Het laatste woord ontcijfert langs dezelfde tekenladder.
    Zonder JS: vaste tekst en de planeet als stil beeld (noscript). Minder beweging: één stil beeld, vast woord ("team."), geen klok.
-   EN en FR: eigen regels onderaan (langere woorden). */
+   EN en FR: eigen regels onderaan (langere woorden).
+   16/11/2026: de pauzeknop en "via Teams" in de microregel zijn weg, op vraag van Martijn. */
 .hc-c-c{
   --hc-wit:#f3f6fa;--hc-tekst:#c3ccd6;--hc-label:#8d97a3;--hc-label-hi:#b3bcc6;--hc-lijn:rgba(243,246,250,.12);
   --hc-groen:#1f9e5f;--hc-groen-l:#43b581;
@@ -37,11 +38,8 @@
   display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
   padding-top:48px;padding-bottom:40px;
 }
-/* bovenregel: label links, pauzeknop rechts op dezelfde lijn (zo breed als "Wij brengen") */
-.hc-c-top{
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
-  width:100%;max-width:max(330px,calc(var(--fs) * 6.2));margin:0 0 26px;
-}
+/* bovenregel: het label */
+.hc-c-top{display:flex;align-items:center;margin:0 0 26px}
 .hc-c-eyebrow{
   display:flex;align-items:center;gap:12px;margin:0;white-space:nowrap;
   font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--hc-label);
@@ -87,7 +85,7 @@ body .hc-c-c .btn.hc-c-btn svg{width:16px;height:16px;flex:none;transition:trans
 body .hc-c-c .btn.hc-c-btn:hover{transform:translateY(-1px);background:#23ad68;box-shadow:none;filter:none}
 body .hc-c-c .btn.hc-c-btn:hover svg{transform:translateX(3px)}
 body .hc-c-c .btn.hc-c-btn:active{transform:scale(.985)}
-body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible,.hc-c-pauze:focus-visible{outline:2px solid #9dbcf0;outline-offset:3px;border-radius:999px}
+body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px solid #9dbcf0;outline-offset:3px;border-radius:999px}
 .hc-c-micro{
   grid-column:1/-1;grid-row:2;margin:0;padding-left:2px;white-space:nowrap;
   font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--hc-label);
@@ -127,18 +125,6 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible,.hc-c-pauze:fo
 .hc-c-merk i{display:block;width:5px;height:5px;background:var(--hc-groen-l)}
 .hc-c-tijd{margin-left:auto;font-variant-numeric:tabular-nums}
 .hc-c-tijd[hidden]{display:none}
-
-/* ───── pauzeknop (WCAG 2.2.2): rechts op de bovenregel. Klikvlak 44 px hoog; de negatieve marge houdt de regel even laag als het label ───── */
-.hc-c-pauze{
-  flex:none;display:inline-flex;align-items:center;gap:9px;
-  min-height:44px;padding:0 10px;margin:-16px -10px -16px 0;
-  border:0;border-radius:999px;background:transparent;cursor:pointer;
-  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--hc-label-hi);transition:color .2s ease;
-}
-.hc-c-pauze:hover{color:var(--hc-wit)}
-.hc-c-pauze i{position:relative;display:block;flex:none;width:8px;height:10px;border-left:2px solid currentColor;border-right:2px solid currentColor;box-sizing:border-box}
-.hc-c-pauze.is-stil i{width:0;height:0;border:0;border-left:8px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
 
 /* de menuknop wordt een rustige omlijning zolang de groene heroknop onder het menu in beeld is: die is dan de enige gevulde knop */
 html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta{
@@ -183,7 +169,6 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
 @media (max-width:680px) and (min-width:561px){.hc-c-voet::before{left:20px;right:20px}}
 @media (max-width:560px){
   .hc-c-c{--hc-menu:74px;--fs:calc((100vw - 32px) / 8.7)}
-  .hc-c-top{max-width:none}
   .hc-c-acties{grid-template-columns:minmax(0,1fr);width:100%;row-gap:0}
   body .hc-c-c .btn.hc-c-btn{width:100%}
   .hc-c-micro{grid-column:1;grid-row:2;margin-top:12px}
@@ -194,18 +179,16 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
   .hc-c-talen{display:none}
 }
 @media (max-width:360px){
-  .hc-c-top{gap:12px}
   .hc-c-eyebrow{font-size:10.5px;letter-spacing:.16em;gap:10px}
-  .hc-c-pauze{font-size:10.5px;letter-spacing:.14em}
   .hc-c-micro{letter-spacing:.13em}
 }
-/* ───── liggende gsm: alles op één scherm. Titel op twee regels, knop en link naast elkaar, de planeet klein rechts, de pauzeknop links op de bovenregel ───── */
+/* ───── liggende gsm: alles op één scherm. Titel op twee regels, knop en link naast elkaar, de planeet klein rechts ───── */
 @media (max-height:520px) and (min-width:561px){
   .hc-c-c{min-height:100vh;min-height:100svh;--fs:clamp(24px,8.6vh,40px);--voet:0px;
     background:linear-gradient(180deg,#000 0,#000 calc(100% - 90px),rgba(0,0,0,.55) calc(100% - 30px),rgba(0,0,0,0) 100%)}
   .hc-c-in{flex:1 0 auto;justify-content:center;padding-top:12px;padding-bottom:14px}
   .hc-c-r1,.hc-c-br{display:none}
-  .hc-c-top{max-width:max(300px,calc(var(--fs) * 11.3));margin-bottom:12px}
+  .hc-c-top{margin-bottom:12px}
   .hc-c-voet{display:none}
   .hc-c-h1{line-height:1.08}
   .hc-c-zin{margin-top:10px;font-size:14.5px;line-height:1.45;max-width:min(30em,54vw)}
@@ -228,11 +211,6 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
    EN past met de basismaat overal ruim naast de planeet. FR krijgt op brede schermen een eigen maat, NL alleen op brede en hoge
    schermen (1536x864, 1600x900, 1680x1050); op 1280, 1366, 1440 en 1920 is de NL-kop zoals in ronde 2. */
 
-/* bovenregel (label en pauzeknop) even breed als de langste vaste regel van de kop, zoals NL 'Wij brengen' (6,2 em) */
-@media (min-width:561px) and (min-height:521px){
-  html[lang="en"] .hc-c-top{max-width:max(330px,calc(var(--fs) * 6.78))}  /* 'AI into your' */
-  html[lang="fr"] .hc-c-top{max-width:max(330px,calc(var(--fs) * 8.48))}  /* 'l’IA dans votre' */
-}
 /* FR, breed scherm: de kop krimpt net genoeg om 50 px vrij te blijven van het vak van de planeet
    (de inkt van de bol begint nog 10 tot 13 px verder; met een schuifbalk van 12 px blijft er nog altijd meer dan 48 px tot de inkt).
    Dezelfde rekensom als de plaats van .hc-c-stage en .wrap hierboven:
@@ -261,12 +239,6 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
 @media (max-height:520px) and (min-width:561px){
   html[lang="fr"] .hc-c-c{--fs:clamp(22px,7.6vh,36px)}
   html[lang="fr"] .hc-c-r1{display:inline}
-  html[lang="fr"] .hc-c-top{max-width:max(300px,calc(var(--fs) * 8.48))}   /* 'l’IA dans votre' */
-  html[lang="en"] .hc-c-top{max-width:max(300px,calc(var(--fs) * 11.87))}  /* 'We bring AI into your' */
-}
-/* smalle gsm: '30 min · sans engagement · via Teams' (36 tekens) blijft zo binnen de kolom van 288 px */
-@media (max-width:360px){
-  html[lang="fr"] .hc-c-micro{letter-spacing:.1em}
 }
 /* smalle gsm (320 tot 354 px): de FR-zin breekt anders af met 'collaborateurs.' alleen op de laatste regel. Even lange regels, zelfde tekst. */
 @media (max-width:354px){
@@ -287,7 +259,7 @@ html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246
 }
 @media (forced-colors:active){
   .hc-c-c{background:Canvas}
-  .hc-c-stage,.hc-c-pauze,.hc-c-eyebrow i,.hc-c-merk i,.hc-c-voet::before,.hc-c-tijd{display:none}
+  .hc-c-stage,.hc-c-eyebrow i,.hc-c-merk i,.hc-c-voet::before,.hc-c-tijd{display:none}
   .hc-c-t.is-ruis,.hc-c-t.is-kop{color:CanvasText}
   body .hc-c-c .btn.hc-c-btn{border:1px solid ButtonText;box-shadow:none}
 }
