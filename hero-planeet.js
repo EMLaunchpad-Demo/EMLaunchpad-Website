@@ -24,13 +24,8 @@
   var lang = (doc.getAttribute('lang') || 'nl').slice(0, 2).toLowerCase();
   var IO = 'IntersectionObserver' in window;
 
-  /* menuknop (alleen op de echte pagina): een omlijning zolang de groene heroknop onder het menu zichtbaar is, daarna weer gevuld */
+  /* de menuknop "Plan een gratis demo" blijft ook boven deze hero de blauwe glasknop uit home.css (Martijn, 17/11/2026) */
   var acties = root.querySelector('.hc-c-acties');
-  if (IO && acties) {
-    var menuH = Math.round(parseFloat(getComputedStyle(root).paddingTop) || 86);
-    new IntersectionObserver(function (e) { doc.classList.toggle('hc-c-weg', !e[e.length - 1].isIntersecting); },
-      { rootMargin: '-' + menuH + 'px 0px 0px 0px' }).observe(acties);
-  }
   /* ───── chatwidget van ons platform (rechtsonder, geladen door site.js; fix 1 en 2, 15 en 16/11/2026) ─────
      a) De doorzichtige houder rond de begroetingsballon en de chatknop (#lc_text-widget) laat tikken door: alleen de ballon en de chatknop
         zelf blijven klikbaar (pointer-events, met een eigen <style> in de shadow root van de widget). Zo werken de knop en de link die onder

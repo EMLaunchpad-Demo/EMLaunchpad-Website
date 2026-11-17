@@ -126,13 +126,6 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
 .hc-c-tijd{margin-left:auto;font-variant-numeric:tabular-nums}
 .hc-c-tijd[hidden]{display:none}
 
-/* de menuknop wordt een rustige omlijning zolang de groene heroknop onder het menu in beeld is: die is dan de enige gevulde knop */
-html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta{
-  background:transparent;border:1px solid rgba(243,246,250,.32);color:#f3f6fa;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;
-}
-html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta::after,html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta::before{display:none}
-html:not(.hc-c-weg):has(.hc-c-c) .nv-bar .nv-cta:hover{border-color:rgba(243,246,250,.6);background:rgba(243,246,250,.06)}
-
 /* ───── laag laptopscherm: kleinere kop, zodat de knop boven de vouw blijft ───── */
 @media (max-height:620px) and (min-width:821px){
   .hc-c-c{min-height:100vh;min-height:100svh;--fs:clamp(40px,min(5vw,10.5vh),72px)}
