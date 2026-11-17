@@ -24,7 +24,10 @@
       groene gloed) naar blauw (rechts, bij de planeet). Label, microregel en statusregel iets lichter (#95a6b9).
    4. FR en EN: tussen 821 en 1023 px staat de FR-link onder de microregel (50 px vrij van de bol); op een lage liggende gsm is de
       FR-zin 12,5 px, zodat de knop op het eerste scherm staat. Op de gsm geen woord alleen op de laatste regel (FR) en geen 'We'
-      achteraan een regel (EN). */
+      achteraan een regel (EN).
+   Herstel ronde 1 (17/11/2026, na de controle van schermmaten en talen), alleen FR: op een liggende gsm van 561 tot 660 px breed
+   is de knoprij smaller, zodat de chatknop van ons platform de link niet meer bedekt; op een smalle tablet staand (561 tot 639 px)
+   staat de link onder de microregel, zodat hij niet meer buiten beeld valt. Zie de regels onderaan. */
 .hc-c-c{
   --hc-wit:#f3f6fa;--hc-tekst:#c6d0db;--hc-label:#95a6b9;--hc-label-hi:#b7c3cf;--hc-lijn:rgba(243,246,250,.12);
   --hc-groen:#1f9e5f;--hc-groen-l:#43b581;
@@ -387,15 +390,41 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
 @media (max-width:820px) and (min-width:561px) and (min-height:521px){
   html[lang="fr"] .hc-c-stage{--d:min(80vw,400px,max(240px,100svh - 706px))}
 }
+/* FR, smalle tablet staand (561 tot 639 px breed, bv. 600x960 en 600x1024): knop en link naast elkaar zijn in mono 588 px breed;
+   tot 607 px viel het einde van de link buiten beeld, tot 627 px stond hij binnen de rand van 20 px. De link gaat hier onder de
+   microregel, zoals van 821 tot 1023 px en op de gsm (herstel ronde 1, 17/11/2026). Het blok wordt 62 px hoger: de planeet krimpt
+   evenveel, zodat de statusregel op het eerste scherm blijft. De tekst erboven groeit mee met de breedte (de kop is
+   (100vw - 40px) / 8,7), vandaar 36,6vw in de rekensom: zo is de planeet op elke breedte zo groot als past, met 8 px speling
+   (600x960: 213 px, was 254). Nooit kleiner dan 200 px. */
+@media (min-width:561px) and (max-width:639px) and (min-height:521px){
+  html[lang="fr"] .hc-c-acties{grid-template-columns:auto}
+  html[lang="fr"] .hc-c-micro{grid-column:1;grid-row:2}
+  html[lang="fr"] .hc-c-link{grid-column:1;grid-row:3;margin-top:2px}
+  html[lang="fr"] .hc-c-stage{--d:min(80vw,400px,max(200px,100svh - 36.6vw - 527px))}
+}
 /* FR, zeer lage liggende gsm (tot 360 px hoog, bv. 568x320): de FR-zin (125 tekens) nam in mono vier regels en duwde de knop half
    onder de vouw. Iets kleiner en iets breder geeft drie regels; de planeet past zich aan (hero-planeet.js). Zoals k-c. */
 @media (max-height:360px) and (min-width:561px){
   html[lang="fr"] .hc-c-zin{font-size:12.5px;max-width:min(60ch,58vw)}
 }
 /* FR, smalle liggende gsm (561 tot 639 px breed): knop (27 tekens) en link naast elkaar passen in 16 px niet; de knoptekst is daar
-   14 px, op één regel (NL en EN: 16 px, zoals overal vanaf 361 px) */
+   14 px, op één regel (NL en EN: 16 px, zoals overal vanaf 361 px).
+   Herstel ronde 1 (17/11/2026): de ronde chatknop van ons platform (58 px, 20 px van de rand, laadt na 5 s) lag hier over het einde
+   van de link (568x320: 47 px van 'connaissance'), en boven of onder de knoprij is geen plaats om uit te wijken. De knoprij is
+   daarom 59 px smaller: geen pijl in de knop (de menuknop erboven heeft hem wel), minder binnenruimte, link 13 px (de zin is hier
+   12,5 tot 13,5 px). De knoptekst blijft 14 px. De link eindigt nu op 479 px: vrij van de chatknop vanaf 561 px breed (568x320: 11 px). */
 @media (max-height:520px) and (min-width:561px) and (max-width:639px){
-  html[lang="fr"] body .hc-c-c .btn.hc-c-btn{font-size:14px}
+  html[lang="fr"] body .hc-c-c .btn.hc-c-btn{font-size:14px;padding:0 14px}
+  html[lang="fr"] body .hc-c-c .btn.hc-c-btn svg{display:none}
+  html[lang="fr"] .hc-c-acties{column-gap:16px}
+  html[lang="fr"] .hc-c-link{font-size:13px}
+}
+/* FR, liggende gsm van 640 tot 660 px breed (bv. 640x360): de knop is hier 16 px en de link raakte de chatknop nog (640x360: de
+   laatste letter). Iets minder binnenruimte in de knop en tussen knop en link volstaat: de link eindigt 18 px vroeger (640x360:
+   11 px vrij van de chatknop). Pijl en lettergroottes blijven. Vanaf 661 px is er plaats genoeg (667x375: 20 px vrij). */
+@media (max-height:520px) and (min-width:640px) and (max-width:660px){
+  html[lang="fr"] body .hc-c-c .btn.hc-c-btn{padding:0 14px}
+  html[lang="fr"] .hc-c-acties{column-gap:16px}
 }
 /* statusregel tussen 821 en 1279 px breed: rechts plaats voor de chatknop van ons platform (±60 px, 20 px van de rand), zodat de klok vrij blijft */
 @media (min-width:821px) and (max-width:1279px){
