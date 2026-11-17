@@ -1,14 +1,34 @@
 /* hero-planeet.css: de hero van de home, ontwerp C-C "Teken voor teken". Gekozen door Martijn op 15/11/2026.
    Productie (15/11/2026), gemaakt uit de goedgekeurde voorvertoning hero-c-c.css (ronde 2). Gebruikt op index.html, en/ en fr/.
    Prefix .hc-c- (zoals de marmerhero zijn prefix .hv-a hield); raakt .hv-a-, .hero-lines en .hl- niet aan. Stil beeld in assets/hero-planeet/.
-   Eén object: een planeet getekend in monospace-tekens (ASCII, een dichtheidsladder . : - = + * #), donkergrijs op zwart.
+   Eén object: een planeet getekend in monospace-tekens (ASCII, een dichtheidsladder . : - = + * #), tot 17/11/2026 donkergrijs op zwart.
    De titel staat in JetBrains Mono (al in de site, niets extra te laden). Het laatste woord ontcijfert langs dezelfde tekenladder.
    Zonder JS: vaste tekst en de planeet als stil beeld (noscript). Minder beweging: één stil beeld, vast woord ("team."), geen klok.
    EN en FR: eigen regels onderaan (langere woorden).
-   16/11/2026: de pauzeknop en "via Teams" in de microregel zijn weg, op vraag van Martijn. */
+   16/11/2026: de pauzeknop en "via Teams" in de microregel zijn weg, op vraag van Martijn.
+   17/11/2026: de hero in onze kleuren, op vraag van Martijn ("De font van de website is jetbrains mono. De Hero van de homepagina moet
+   meer in onze kleuren [...] donker blauw en donker groen"). Ontwerp k-a "Aarde in onze kleuren" uit de ronde "hero in onze kleuren",
+   gekozen door Martijn op 17/11/2026, met de opmerkingen van de drie jury's verwerkt (_hero-2026-11/kleur/finaal/verslag.md).
+   Het ontwerp, de teksten, de maten van de kop, de breekpunten en het gedrag bleven; dit veranderde:
+   1. Kleur. De planeet is een aarde in onze kleuren (zie hero-planeet.js): zee in diepe blauwen, continenten in diepe groenen,
+      poolkappen koel blauwgrijs. De achtergrond blijft overwegend zwart, met een diepe marineblauwe gloed schuin rechtsboven de planeet
+      (.hc-c-stage::before, volgt de planeet op elk scherm) en een donkergroene gloed laag in de hoek links (.hc-c-c::before).
+      Op gsm en smalle tablet ook een zachte marine rechtsboven, achter het label en de kop. Een donkere, rustige versie van verloop B (6/11).
+      Geen neon, geen verlooptekst, geen beweging in de achtergrond. De gloed staat los van de bol, zonder lichte rand rond de planeet,
+      en het groen blijft weg van de knop: de knop staat overal minstens 4,5:1 tegen de achtergrond rond de knop.
+   2. Lettertype. Alle tekst van de hero staat nu in JetBrains Mono (var(--mono)): ook de zin, de knop en de link (waren Archivo).
+      Mono is breder: de zin is 17 px (was 18,5) met regels tot 64 tekens, de knop 16 px vanaf 361 px breed (600 weegt lichter
+      dan de Archivo 700 van vroeger), de link 15 px. Ligaturen uit, zoals in de kop.
+   3. Accenten in het groen van de continenten en de knop: het blokje in het label, de merkstip, de groene trede in het
+      wisselwoord. De ruistekens van het wisselwoord zijn zeeblauw. De lijn boven de statusregel loopt van groen (links, bij de
+      groene gloed) naar blauw (rechts, bij de planeet). Label, microregel en statusregel iets lichter (#95a6b9).
+   4. FR en EN: tussen 821 en 1023 px staat de FR-link onder de microregel (50 px vrij van de bol); op een lage liggende gsm is de
+      FR-zin 12,5 px, zodat de knop op het eerste scherm staat. Op de gsm geen woord alleen op de laatste regel (FR) en geen 'We'
+      achteraan een regel (EN). */
 .hc-c-c{
-  --hc-wit:#f3f6fa;--hc-tekst:#c3ccd6;--hc-label:#8d97a3;--hc-label-hi:#b3bcc6;--hc-lijn:rgba(243,246,250,.12);
+  --hc-wit:#f3f6fa;--hc-tekst:#c6d0db;--hc-label:#95a6b9;--hc-label-hi:#b7c3cf;--hc-lijn:rgba(243,246,250,.12);
   --hc-groen:#1f9e5f;--hc-groen-l:#43b581;
+  --hc-zee:#5a7fb5;                              /* ruistekens van het wisselwoord: het blauw van de zee */
   --hc-ease:cubic-bezier(.22,1,.36,1);
   --hc-menu:86px;
   --voet:56px;                                   /* hoogte van de statusregel: de planeet staat midden in wat erboven overblijft */
@@ -21,6 +41,23 @@
   /* zwart, onderaan zacht open naar het marineblauw van de pagina (#drie-diensten ligt op de vaste lucht) */
   background:linear-gradient(180deg,#000 0,#000 calc(100% - 210px),rgba(0,0,0,.86) calc(100% - 120px),rgba(0,0,0,.45) calc(100% - 46px),rgba(0,0,0,0) 100%);
 }
+/* ───── donkergroene gloed laag links (boven het zwart, onder de planeet en de tekst) ─────
+   Een veel donkerder smaragd dan verloop B. Onderaan dooft hij uit (masker), zodat de hero zonder rand overgaat in de lucht van
+   #drie-diensten, waar links onderaan al een gedempt groen licht staat (.sky-b).
+   Na de jury (17/11/2026): weg van de groene knop. Vroeger lag het midden van de gloed op 0% 86%, pal achter de knop (knop tegen
+   de achtergrond 3,4 tot 3,8). Nu ligt het midden in de hoek linksonder (0 100%) en volgt de hoogte van de gloed de hoogte van
+   het scherm: op een laag scherm staat de knop dichter bij de onderrand (de ring van 12 px rond de knop eindigt op 1280x720 117 px
+   boven de onderrand, op 1920x1080 270 px), dus de gloed krimpt mee. Zo blijft de knop op elk scherm minstens 4,5:1 tegen de
+   achtergrond rond de knop, en blijft het groen in de hoek linksonder en langs de linkerrand te zien. Het masker onderaan is korter
+   (100 px, was 190 px): daar loopt het groen over in het groen van de lucht eronder. (Chrome aanvaardt geen % in calc() of clamp()
+   in de maat van een radiaal verloop, vandaar vw en vh.) */
+.hc-c-c::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(46vw clamp(150px,calc(100vh - 450px),720px) at 0 100%,rgba(16,104,68,.72) 0%,rgba(14,96,63,.58) 22%,rgba(12,82,55,.37) 45%,rgba(10,66,46,.18) 68%,rgba(8,50,36,.05) 86%,rgba(6,40,28,0) 100%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 100px),rgba(0,0,0,.5) calc(100% - 45px),rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 100px),rgba(0,0,0,.5) calc(100% - 45px),rgba(0,0,0,0) 100%);
+}
 
 /* ───── de planeet: één vierkant vak, het script tekent er een bol in ───── */
 .hc-c-stage{
@@ -29,6 +66,24 @@
   width:var(--d);height:var(--d);
   top:calc(var(--hc-menu) + (100% - var(--hc-menu) - var(--voet)) / 2 - var(--d) / 2);
   right:max(24px,calc((100% - 1180px) * .14 + 32px));
+}
+/* diepe marineblauwe gloed bij de planeet: een breed, zacht veld, schuin rechtsboven de bol (waar het licht vandaan komt,
+   zoals het blauw rechtsboven in verloop B). Een lichte, zachte schijf (even groot als de bol) dempt de gloed achter de bol,
+   zodat de zeetekens en de nachtzijde zichtbaar blijven. Hangt aan het vak van de planeet (--d), dus overal mee op zijn plaats.
+   Na de jury (17/11/2026), tegen het tegenlicht ("te AI"): vroeger lag het midden van de gloed achter de bol (0,28 d rechts en
+   0,26 d boven het midden) met een donkere schijf ervoor (.66 tot .34): zo kreeg de bol rechtsboven een lichte rand, zoals een
+   eclips. Nu ligt het midden verder naar buiten (0,40 d rechts, 0,36 d hoger), is de piek zachter (.62, was .80) en de gloed
+   breder en vlakker (straal 1,4 d, was 1,15 d), en is de schijf lichter en zachter (.45 tot .12, was .66 tot .34).
+   Gemeten (alleen de achtergrond, langs stralen naar rechtsboven): geen helderheidsbult meer op de rand van de bol, en evenveel of
+   meer blauw te zien dan in k-a, maar nergens zo licht als die rand. Gsm en smalle tablet: zie de regel bij 820 px.
+   Het vak van de bol begint in deze laag op 0,50 d / 1,26 d. */
+.hc-c-stage::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  left:calc(var(--d) * -.5);top:calc(var(--d) * -1.26);width:calc(var(--d) * 2.8);height:calc(var(--d) * 2.8);
+  background:
+    radial-gradient(closest-side,rgba(1,4,10,.45) 0,rgba(1,4,10,.38) 66%,rgba(1,4,10,.12) 90%,rgba(1,4,10,0) 100%)
+      calc(var(--d) * .5) calc(var(--d) * 1.26) / var(--d) var(--d) no-repeat,
+    radial-gradient(closest-side,rgba(22,62,128,.62) 0%,rgba(20,57,118,.6) 24%,rgba(17,49,102,.52) 46%,rgba(13,38,80,.36) 66%,rgba(9,27,58,.16) 84%,rgba(6,18,40,0) 100%);
 }
 .hc-c-cv,.hc-c-stil{position:absolute;left:0;top:0;width:100%;height:100%;display:block;max-width:none}
 
@@ -58,14 +113,16 @@
 .hc-c-live .hc-c-wissel{display:inline}
 .hc-c-live .hc-c-vast{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
 .hc-c-t::before{content:attr(data-c)}
-.hc-c-t.is-ruis{color:#7d8794}
+.hc-c-t.is-ruis{color:var(--hc-zee)}
 .hc-c-t.is-kop{color:var(--hc-groen-l)}
 
 .hc-c-br{display:none}
 @media (min-width:1101px){.hc-c-br{display:inline}}
+/* de zin in mono: iets kleiner dan het Archivo van vroeger (mono is breder), ruimere regelafstand, regels tot 64 tekens */
 .hc-c-zin{
-  margin:30px 0 0;max-width:33em;
-  font-size:18.5px;line-height:1.55;font-weight:450;letter-spacing:-.006em;color:var(--hc-tekst);text-wrap:pretty;
+  margin:30px 0 0;max-width:64ch;
+  font-family:var(--mono);font-size:17px;line-height:1.65;font-weight:400;letter-spacing:-.01em;color:var(--hc-tekst);text-wrap:pretty;
+  font-variant-ligatures:none;
 }
 /* knop, met de microregel er direct onder; de tweede link ernaast */
 .hc-c-acties{
@@ -75,8 +132,9 @@
 body .hc-c-c .btn.hc-c-btn{
   grid-column:1;grid-row:1;
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  width:auto;min-height:56px;padding:0 30px;
-  font-family:var(--font);font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.2;
+  width:auto;min-height:56px;padding:0 28px;white-space:nowrap;
+  font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:1.2;
+  font-variant-ligatures:none;
   color:#06130d;background:var(--hc-groen);border:0;border-radius:999px;
   box-shadow:none;filter:none;
   transition:transform .25s var(--hc-ease),background-color .2s ease;
@@ -92,7 +150,8 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
 }
 .hc-c-link{
   grid-column:2;grid-row:1;justify-self:start;
-  color:var(--hc-wit);font-size:16px;font-weight:600;text-decoration:none;white-space:nowrap;
+  color:var(--hc-wit);font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;
+  font-variant-ligatures:none;
   padding:14px 0;background:linear-gradient(currentColor,currentColor) 0 calc(100% - 11px)/100% 1px no-repeat;
   opacity:.88;transition:opacity .2s ease,background-size .45s var(--hc-ease),transform .7s var(--hc-ease);
 }
@@ -118,7 +177,9 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
   min-height:var(--voet);padding-top:15px;padding-bottom:22px;
   font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--hc-label);
 }
-.hc-c-voet::before{content:"";position:absolute;left:32px;right:32px;top:0;height:1px;background:var(--hc-lijn)}
+/* de lijn: groen links (bij de groene gloed), blauw rechts (onder de planeet), zacht uitlopend */
+.hc-c-voet::before{content:"";position:absolute;left:32px;right:32px;top:0;height:1px;
+  background:linear-gradient(90deg,rgba(67,181,129,.34),rgba(67,181,129,.16) 30%,rgba(76,128,206,.2) 62%,rgba(76,128,206,.3) 100%)}
 .hc-c-voet span{white-space:nowrap}
 .hc-c-voet b{font-weight:500}
 .hc-c-merk{display:inline-flex;align-items:center;gap:10px;color:var(--hc-label-hi)}
@@ -131,13 +192,13 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
   .hc-c-c{min-height:100vh;min-height:100svh;--fs:clamp(40px,min(5vw,10.5vh),72px)}
   .hc-c-in{padding-top:20px;padding-bottom:20px}
   .hc-c-top{margin-bottom:16px}
-  .hc-c-zin{margin-top:18px;font-size:16.5px}
+  .hc-c-zin{margin-top:18px;font-size:15.5px;line-height:1.55}
   .hc-c-acties{margin-top:20px;row-gap:10px}
   body .hc-c-c .btn.hc-c-btn{min-height:50px}
 }
 /* ───── tablet ───── */
 @media (max-width:1100px){
-  .hc-c-zin{font-size:17.5px;max-width:26em}
+  .hc-c-zin{font-size:16px;max-width:46ch}
 }
 /* ───── smalle tablet en gsm: één kolom. Eerst de boodschap en de knop, daaronder de planeet, volledig rond en gecentreerd ───── */
 @media (max-width:820px){
@@ -146,14 +207,33 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
   .hc-c-top{margin-bottom:20px}
   .hc-c-eyebrow{font-size:11px}
   .hc-c-h1{line-height:1.06}
-  .hc-c-zin{margin-top:22px;font-size:17px;max-width:30em}
+  .hc-c-zin{margin-top:22px;font-size:16px;line-height:1.62;max-width:60ch}
   .hc-c-acties{margin-top:26px}
   .hc-c-stage{
     --d:min(80vw,400px,max(260px,100svh - 560px));
     position:relative;top:auto;right:auto;flex:0 0 auto;align-self:center;
-    margin:30px auto 28px;
+    margin:32px auto 28px;                       /* 32 px (was 30, gsm 26): de link blijft minstens 48 px vrij van de inkt van de bol */
   }
   .hc-c-voet{margin-top:auto;padding-bottom:20px}
+  /* gsm en smalle tablet: bovenaan een zachte marine rechtsboven, achter het label en de kop (na de jury, 17/11/2026: anders bleef
+     de bovenste helft zwart). Ze dooft uit boven de knop. De groene gloed laag links staat iets hoger dan op desktop, links naast
+     de planeet, onder de knop, zodat hij op het eerste scherm meespeelt (zoals in k-a). Onderaan dooft hij uit over 190 px. */
+  .hc-c-c::before{
+    background:
+      radial-gradient(130% 45% at 60% 0%,rgba(20,46,96,.55) 0%,rgba(20,46,96,.42) 25%,rgba(20,46,96,.2) 50%,rgba(20,46,96,0) 70%),
+      radial-gradient(ellipse 100% 48% at 0% 76%,rgba(16,104,68,.62) 0%,rgba(14,96,63,.5) 20%,rgba(12,82,55,.33) 42%,rgba(10,66,46,.16) 66%,rgba(8,50,36,.05) 86%,rgba(6,40,28,0) 100%);
+    -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 190px),rgba(0,0,0,.5) calc(100% - 80px),rgba(0,0,0,0) 100%);
+    mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 190px),rgba(0,0,0,.5) calc(100% - 80px),rgba(0,0,0,0) 100%);
+  }
+  /* de marinegloed van de planeet: hier compacter (straal 1,15 d), met het midden 0,45 d rechts en 0,40 d boven het midden van de
+     bol. De bol staat onder de knop: een bredere gloed zou tot achter de knop reiken. De schijf .55 tot .15, zacht. Geen lichte rand. */
+  .hc-c-stage::before{
+    left:calc(var(--d) * -.2);top:calc(var(--d) * -1.05);width:calc(var(--d) * 2.3);height:calc(var(--d) * 2.3);
+    background:
+      radial-gradient(closest-side,rgba(1,4,10,.55) 0,rgba(1,4,10,.45) 70%,rgba(1,4,10,.15) 92%,rgba(1,4,10,0) 100%)
+        calc(var(--d) * .2) calc(var(--d) * 1.05) / var(--d) var(--d) no-repeat,
+      radial-gradient(closest-side,rgba(22,62,128,.55) 0%,rgba(20,57,118,.5) 24%,rgba(17,49,102,.4) 46%,rgba(13,38,80,.25) 66%,rgba(9,27,58,.1) 84%,rgba(6,18,40,0) 100%);
+  }
 }
 /* tablet staand: de planeet krimpt zo dat de hele hero, met de statusregel, op het eerste scherm past */
 @media (max-width:820px) and (min-width:561px){
@@ -162,11 +242,12 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
 @media (max-width:680px) and (min-width:561px){.hc-c-voet::before{left:20px;right:20px}}
 @media (max-width:560px){
   .hc-c-c{--hc-menu:74px;--fs:calc((100vw - 32px) / 8.7)}
+  .hc-c-zin{font-size:15.5px;line-height:1.6}
   .hc-c-acties{grid-template-columns:minmax(0,1fr);width:100%;row-gap:0}
   body .hc-c-c .btn.hc-c-btn{width:100%}
   .hc-c-micro{grid-column:1;grid-row:2;margin-top:12px}
   .hc-c-link{grid-column:1;grid-row:3;margin-top:4px}
-  .hc-c-stage{margin:26px auto 26px}
+  .hc-c-stage{margin:32px auto 26px}
   .hc-c-voet::before{left:16px;right:16px}
   .hc-c-voet{gap:8px 22px;font-size:10.5px;letter-spacing:.14em}
   .hc-c-talen{display:none}
@@ -174,21 +255,32 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
 @media (max-width:360px){
   .hc-c-eyebrow{font-size:10.5px;letter-spacing:.16em;gap:10px}
   .hc-c-micro{letter-spacing:.13em}
+  .hc-c-zin{font-size:15px}
+  /* tot 360 px: knoptekst 15 px (vanaf 361 px 16 px) */
+  body .hc-c-c .btn.hc-c-btn{padding:0 20px;font-size:15px}
 }
 /* ───── liggende gsm: alles op één scherm. Titel op twee regels, knop en link naast elkaar, de planeet klein rechts ───── */
 @media (max-height:520px) and (min-width:561px){
   .hc-c-c{min-height:100vh;min-height:100svh;--fs:clamp(24px,8.6vh,40px);--voet:0px;
     background:linear-gradient(180deg,#000 0,#000 calc(100% - 90px),rgba(0,0,0,.55) calc(100% - 30px),rgba(0,0,0,0) 100%)}
+  /* liggend staat de knop laag: het groen ligt hier plat in de hoek linksonder, onder de knop (geen marine bovenaan: de gloed van
+     de planeet kleurt de bovenkant al) */
+  .hc-c-c::before{
+    background:
+      radial-gradient(ellipse 70% 55% at 0% 100%,rgba(16,104,68,.45) 0%,rgba(14,96,63,.37) 20%,rgba(12,82,55,.25) 42%,rgba(10,66,46,.12) 66%,rgba(8,50,36,.04) 86%,rgba(6,40,28,0) 100%);
+    -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 80px),rgba(0,0,0,0) 100%);
+    mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 80px),rgba(0,0,0,0) 100%);
+  }
   .hc-c-in{flex:1 0 auto;justify-content:center;padding-top:12px;padding-bottom:14px}
   .hc-c-r1,.hc-c-br{display:none}
   .hc-c-top{margin-bottom:12px}
   .hc-c-voet{display:none}
   .hc-c-h1{line-height:1.08}
-  .hc-c-zin{margin-top:10px;font-size:14.5px;line-height:1.45;max-width:min(30em,54vw)}
+  .hc-c-zin{margin-top:10px;font-size:13.5px;line-height:1.5;max-width:min(54ch,54vw)}
   .hc-c-acties{grid-template-columns:auto auto;width:auto;margin-top:14px;row-gap:8px;column-gap:22px}
-  body .hc-c-c .btn.hc-c-btn{width:auto;min-height:44px;padding:0 22px;font-size:15px}
+  body .hc-c-c .btn.hc-c-btn{width:auto;min-height:44px;padding:0 20px;font-size:16px}
   .hc-c-micro{grid-column:1/-1;grid-row:2;margin-top:0}
-  .hc-c-link{grid-column:2;grid-row:1;margin-top:0;font-size:15px}
+  .hc-c-link{grid-column:2;grid-row:1;margin-top:0;font-size:14px}
   /* maat en hoogte uit de CSS; met JS past hero-planeet.js ze aan (--hc-fit-d, --hc-fit-top) zodat de planeet overal 48 px vrij blijft van de tekst */
   .hc-c-stage{
     --d:var(--hc-fit-d,min(74vh,34vw));
@@ -233,14 +325,77 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
   html[lang="fr"] .hc-c-c{--fs:clamp(22px,7.6vh,36px)}
   html[lang="fr"] .hc-c-r1{display:inline}
 }
-/* smalle gsm (320 tot 354 px): de FR-zin breekt anders af met 'collaborateurs.' alleen op de laatste regel. Even lange regels, zelfde tekst. */
-@media (max-width:354px){
+/* FR op de gsm (tot 560 px): de zin (125 tekens) breekt anders af met 'collaborateurs.' alleen op de laatste regel (390 px) en 'Nous'
+   achteraan een regel. Even lange regels, zelfde tekst. */
+@media (max-width:560px){
   html[lang="fr"] .hc-c-zin{text-wrap:balance}
+}
+/* FR onder 340 px: in 15 px worden het vijf regels met 'Nous' achteraan; in 14,5 px vier even lange regels, zonder 'Nous' achteraan */
+@media (max-width:339px){
+  html[lang="fr"] .hc-c-zin{font-size:14.5px}
+}
+/* NL en EN op een smalle gsm (tot 354 px): de tweede zin begint op een nieuwe regel, zoals op desktop. Anders blijft 'We' (EN, 320 tot
+   341 px) of 'Wij' (NL, rond 340 px) achteraan een regel hangen. Beide zinnen nemen dan twee regels, samen evenveel als zonder breuk. */
+@media (max-width:354px){
+  html:not([lang="fr"]) .hc-c-zin .hc-c-br{display:inline}
 }
 /* NL en EN, smalle tablet (561 tot 820 px, staand) en liggend vanaf 740 px: de eerste zin past op één regel. Dan begint de tweede zin
    op een nieuwe regel, zoals op desktop (vanaf 1101 px), en blijft 'Wij' of 'We put AI' niet achteraan hangen. Evenveel regels. FR niet: die zin is langer. */
 @media (min-width:561px) and (max-width:820px) and (min-height:521px),(min-width:740px) and (max-height:520px){
   html:not([lang="fr"]) .hc-c-br{display:inline}
+}
+/* ───── de zin in mono (ronde kleur, 17/11/2026) ─────
+   Mono is breder dan Archivo: de eerste zin (NL 60 tekens, EN 54) past niet overal meer op één regel. Waar hij niet past, valt de
+   regelbreuk weg en loopt de zin gewoon door, zodat er nooit één woord ('Limburg.') alleen op een regel staat.
+   Desktop: de zin blijft altijd 50 px vrij van het vak van de planeet (dezelfde rekensom als de FR-kop). */
+@media (min-width:1101px){
+  .hc-c-zin{max-width:min(64ch,calc(100vw - max(24px,(100vw - 1180px) * .14 + 32px) - min(58vh,34vw,600px) - max(32px,(100vw - 1180px) / 2 + 32px) - 50px))}
+  /* FR: de eerste zin is 71 tekens en past niet op één regel naast de planeet */
+  html[lang="fr"] .hc-c-br{display:none}
+}
+/* smalle tablet staand onder 640 px: de eerste zin (60 tekens van 16 px) past niet op één regel */
+@media (min-width:561px) and (max-width:639px) and (min-height:521px){
+  html .hc-c-c .hc-c-br{display:none}
+}
+/* liggende gsm: de zin staat smal naast de planeet; zonder regelbreuk, met even lange regels */
+@media (max-height:520px) and (min-width:561px){
+  html .hc-c-c .hc-c-br{display:none}
+  .hc-c-zin{text-wrap:balance}
+}
+/* FR-knop (27 tekens): van 361 tot 380 px 16 px met iets minder binnenruimte, op 320 tot 360 px iets kleiner (14 px),
+   zodat hij altijd op één regel blijft */
+@media (max-width:380px){
+  html[lang="fr"] body .hc-c-c .btn.hc-c-btn{padding:0 18px;gap:8px}
+}
+@media (max-width:360px){
+  html[lang="fr"] body .hc-c-c .btn.hc-c-btn{font-size:14px;padding:0 16px;gap:8px}
+}
+/* FR, smal scherm met de planeet ernaast (821 tot 1023 px): knop en link naast elkaar zijn in mono te breed en komen tot onder de
+   rand van de bol. De link gaat daar onder de microregel, zoals op de gsm (zoals k-c en k-d), en blijft zo 50 px vrij van de bol.
+   NL en EN passen wel naast elkaar. Niet op een liggende gsm (tot 520 px hoog): daar zou de link onder de vouw vallen; daar houdt
+   hero-planeet.js de planeet 48 px vrij van de knop en de link. */
+@media (min-width:821px) and (max-width:1023px) and (min-height:521px){
+  html[lang="fr"] .hc-c-acties{grid-template-columns:auto}
+  html[lang="fr"] .hc-c-micro{grid-column:1;grid-row:2}
+  html[lang="fr"] .hc-c-link{grid-column:1;grid-row:3;margin-top:2px}
+  /* de link onder de microregel maakt het blok hoger: iets minder witruimte, zodat de statusregel op een laag scherm
+     (bv. 900x700) op het eerste scherm blijft. Op een hoog scherm verandert er niets (het blok staat in het midden). */
+  html[lang="fr"] .hc-c-in{padding-top:36px;padding-bottom:28px}
+}
+/* FR, tablet staand: de zin neemt een regel meer dan in NL en EN; de planeet krimpt even veel mee, zodat de hele hero met de
+   statusregel op het eerste scherm blijft (zoals de regel voor tablet staand hierboven) */
+@media (max-width:820px) and (min-width:561px) and (min-height:521px){
+  html[lang="fr"] .hc-c-stage{--d:min(80vw,400px,max(240px,100svh - 706px))}
+}
+/* FR, zeer lage liggende gsm (tot 360 px hoog, bv. 568x320): de FR-zin (125 tekens) nam in mono vier regels en duwde de knop half
+   onder de vouw. Iets kleiner en iets breder geeft drie regels; de planeet past zich aan (hero-planeet.js). Zoals k-c. */
+@media (max-height:360px) and (min-width:561px){
+  html[lang="fr"] .hc-c-zin{font-size:12.5px;max-width:min(60ch,58vw)}
+}
+/* FR, smalle liggende gsm (561 tot 639 px breed): knop (27 tekens) en link naast elkaar passen in 16 px niet; de knoptekst is daar
+   14 px, op één regel (NL en EN: 16 px, zoals overal vanaf 361 px) */
+@media (max-height:520px) and (min-width:561px) and (max-width:639px){
+  html[lang="fr"] body .hc-c-c .btn.hc-c-btn{font-size:14px}
 }
 /* statusregel tussen 821 en 1279 px breed: rechts plaats voor de chatknop van ons platform (±60 px, 20 px van de rand), zodat de klok vrij blijft */
 @media (min-width:821px) and (max-width:1279px){
@@ -252,7 +407,7 @@ body .hc-c-c .btn.hc-c-btn:focus-visible,.hc-c-link:focus-visible{outline:2px so
 }
 @media (forced-colors:active){
   .hc-c-c{background:Canvas}
-  .hc-c-stage,.hc-c-eyebrow i,.hc-c-merk i,.hc-c-voet::before,.hc-c-tijd{display:none}
+  .hc-c-c::before,.hc-c-stage,.hc-c-eyebrow i,.hc-c-merk i,.hc-c-voet::before,.hc-c-tijd{display:none}
   .hc-c-t.is-ruis,.hc-c-t.is-kop{color:CanvasText}
   body .hc-c-c .btn.hc-c-btn{border:1px solid ButtonText;box-shadow:none}
 }

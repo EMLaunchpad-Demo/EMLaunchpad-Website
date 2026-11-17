@@ -10,6 +10,17 @@
    gsm-schermen mag het tekstblok compacter worden zolang de ballon open is, en liggend mag het iets zakken, zodat de knop en de link vrij blijven.
    16/11/2026: de pauzeknop (rechts op de bovenregel) is weg, op vraag van Martijn. Op de gsm stopt de planeet nog altijd na 60 s.
    Minder beweging: één stil beeld van de planeet, het vaste woord, geen klok. Hoog contrast (forced-colors): geen planeet, vast woord, geen klok.
+   17/11/2026: de planeet in onze kleuren, op vraag van Martijn ("meer in onze kleuren", donkerblauw en donkergroen). Ontwerp k-a
+   "Aarde in onze kleuren" uit de ronde "hero in onze kleuren", gekozen door Martijn op 17/11/2026 (zie de opmerking bovenaan
+   hero-planeet.css). Alleen de planeet veranderde, al het gedrag is hetzelfde:
+   - maakTextuur houdt naast de albedo een masker bij per punt van de bol: zee, land of ijs (msk, de eerste rij van zijn ladder in de atlas);
+   - de atlas heeft drie tonenladders in plaats van één grijze: diepe blauwen voor de zee, diepe groenen voor het land (tint van de
+     groene knop #1f9e5f) en koel blauwgrijs voor de poolkappen. De nachtzijde is in de drie ladders dezelfde diepe marinestip, zodat de
+     bol als één vorm leest met een duidelijke dag- en nachtzijde;
+   - teken() leest per teken één getal extra (het masker) en kiest daarmee de ladder: evenveel tekenwerk als voorheen.
+   Na de jury (17/11/2026): het ijs is minder fel (lichtste trede #5a6c83, was #7b8ea6) en het felste land is iets donkerder
+   (#2a835c, was #2f9165), zodat de groene knop het felste groen blijft en de planeet in rang achter de tekst staat.
+   Stil beeld zonder JS: assets/hero-planeet/planeet-stil-kleur.webp (zelfde raster en stand als het grijze planeet-stil.webp).
    Voor tests: window.__hcFrames (getekende beelden), window.__hcMs (gemiddelde tekentijd per beeld, ms), window.__hcTex (opbouw van de textuur, ms),
    window.__hcCellen (tekens op de bol), window.__hcSlaapt (planeet stil na 60 s op de gsm). */
 (function () {
@@ -378,8 +389,17 @@
 
     /* de tekenladder, van ijl naar dicht: . : - = + * (de # bovenaan is alleen voor het felste land; door de randdonkerte komt hij zo goed als niet voor) */
     var GLYF = ' .:-=+*#';
-    /* grijstinten per helderheid: donker, en de lichtste (#8f98a3) blijft ver onder het wit van de titel */
-    var TONEN = ['#1d232b', '#2a3039', '#3a414b', '#4f5761', '#6b747f', '#8f98a3'];
+    /* kleur per helderheid, drie ladders van 6 tinten (17/11/2026). Trede 0 is de nachtzijde: in alle drie dezelfde diepe
+       marinestip. Zee: diep blauw (tint van #2f74e0, de zee haalt hoogstens trede 4). Land: diep groen (tint van de knop #1f9e5f),
+       het felste land (#2a835c) blijft duidelijk donkerder dan de knop. IJs: koel blauwgrijs, hoogstens #5a6c83 (geen felle poolkap).
+       De lichtste tint van de bol blijft ver onder het wit van de kop (#f3f6fa). */
+    var NACHT = '#172840';
+    var LADDERS = [
+      [NACHT, '#1a3050', '#1f3c66', '#264b80', '#2e5d9d', '#3870b9'],   /* 0 zee */
+      [NACHT, '#163a2e', '#1a4a38', '#1f5d45', '#267656', '#2a835c'],   /* 1 land */
+      [NACHT, '#223146', '#304055', '#425369', '#4e6076', '#5a6c83']    /* 2 ijs */
+    ];
+    var TREDEN = 6;
     var VLOER = 0.11;                                     /* nachtzijde: overal een fijn, donker punt, zodat de bol rond blijft */
     var ZEE = 0.42, LAND = 0.95, IJS = 0.98;              /* albedo: zee donker en ijl ( : - ), land dichter ( + * ) */
     var RAND = 0.35;                                      /* randdonkerte: ook de verlichte rand dooft, zodat je een bol leest en geen harde halve maan */
@@ -391,8 +411,9 @@
     function norm(x, y, z) { var l = Math.sqrt(x * x + y * y + z * z); return [x / l, y / l, z / l]; }
     function sm(a, b, x) { x = (x - a) / (b - a); x = x < 0 ? 0 : x > 1 ? 1 : x; return x * x * (3 - 2 * x); }
 
-    /* ── textuur: albedo van continenten, zee en poolkappen uit 3D-ruis op de bol (naadloos), één keer berekend, in kleine stukken ── */
-    var TW = 192, TH = 96, tex = null;
+    /* ── textuur: albedo van continenten, zee en poolkappen uit 3D-ruis op de bol (naadloos), één keer berekend, in kleine stukken ──
+       msk: per punt de eerste rij van zijn ladder in de atlas (zee 0, land 6, ijs 12) */
+    var TW = 192, TH = 96, tex = null, msk = null;
     function hash(x, y, z) {
       var h = Math.imul(x | 0, 0x27d4eb2d) ^ Math.imul(y | 0, 0x165667b1) ^ Math.imul(z | 0, 0x1b873593) ^ 0x5bd1e995;
       h = Math.imul(h ^ (h >>> 15), 0x85ebca6b); h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35); h ^= h >>> 16;
@@ -414,7 +435,7 @@
     }
     /* per stuk van 12 rijen een eigen taak: ook op een trage gsm blijft elke taak ruim onder 50 ms */
     function maakTextuur(klaar) {
-      tex = new Float32Array(TW * TH);
+      tex = new Float32Array(TW * TH); msk = new Uint8Array(TW * TH);
       var v = 0, ms = 0;
       (function stuk() {
         var t0 = performance.now(), eind = Math.min(TH, v + 12);
@@ -431,6 +452,8 @@
             var ijs = sm(0.93, 0.97, Math.abs(sl) + 0.04 * (d - 0.5));
             a += (IJS - a) * ijs;
             tex[v * TW + u] = a;
+            /* masker: een punt is land of ijs zodra het er voor meer dan de helft bij hoort (op de kustlijn en de rand van het ijs) */
+            msk[v * TW + u] = (ijs >= 0.5 ? 2 : land >= 0.5 ? 1 : 0) * TREDEN;
           }
         }
         ms += performance.now() - t0;
@@ -447,14 +470,18 @@
 
     function bouwAtlas() {
       var fs = cw / 0.6;
-      atlas.width = cwD * GLYF.length; atlas.height = lhD * TONEN.length;
+      atlas.width = cwD * GLYF.length; atlas.height = lhD * TREDEN * LADDERS.length;
       var a = atlas.getContext('2d');
       a.clearRect(0, 0, atlas.width, atlas.height);
       a.font = '400 ' + (fs * dpr).toFixed(2) + 'px "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace';
       a.textAlign = 'center'; a.textBaseline = 'middle';
-      for (var t = 0; t < TONEN.length; t++) {
-        a.fillStyle = TONEN[t];
-        for (var g = 1; g < GLYF.length; g++) a.fillText(GLYF[g], g * cwD + cwD / 2, t * lhD + lhD / 2 + 0.5 * dpr);
+      /* rij = ladder * 6 + trede: eerst de 6 blauwen van de zee, dan de groenen van het land, dan het ijs */
+      for (var s = 0; s < LADDERS.length; s++) {
+        for (var t = 0; t < TREDEN; t++) {
+          var rij = s * TREDEN + t;
+          a.fillStyle = LADDERS[s][t];
+          for (var g = 1; g < GLYF.length; g++) a.fillText(GLYF[g], g * cwD + cwD / 2, rij * lhD + lhD / 2 + 0.5 * dpr);
+        }
       }
     }
 
@@ -620,8 +647,9 @@
       var du = ((hoek0 + tijd * SPIN) / (2 * Math.PI)) * TW;
       for (var i = 0; i < N; i++) {
         var u = (U0[i] - du) % TW; if (u < 0) u += TW;
-        var al = tex[RIJ[i] + (u | 0)];
-        /* b kiest het teken (land dichter dan zee), bt de grijstint: half licht, half land, zodat de bol als één vorm leest */
+        var k = RIJ[i] + (u | 0), al = tex[k];
+        /* b kiest het teken (land dichter dan zee), bt de trede in de ladder: half licht, half land, zodat de bol als één vorm leest.
+           De ladder (zee, land of ijs) komt uit het masker. */
         var b = VLOER + (1 - VLOER) * LAM[i] * al;
         var bt = VLOER + (1 - VLOER) * LAM[i] * (0.5 * al + 0.35);
         if (opb) {
@@ -630,8 +658,8 @@
           if (f < 1) { f = f * f * (3 - 2 * f); b = VLOER + (b - VLOER) * f; bt = VLOER + (bt - VLOER) * f; }
         }
         var g = (b * 7.3) | 0; if (g < 1) g = 1; else if (g > 7) g = 7;
-        var tn = (bt * 7.4) | 0; if (tn > 5) tn = 5;          /* alleen het felste land haalt de lichtste tint */
-        sprite(g, tn, X[i], Y[i]);
+        var tn = (bt * 7.4) | 0; if (tn > 5) tn = 5;          /* alleen het felste land en het ijs halen de lichtste tint */
+        sprite(g, tn + msk[k], X[i], Y[i]);
       }
       window.__hcFrames++;
       msSom += performance.now() - tStart; window.__hcMs = Math.round(msSom / window.__hcFrames * 100) / 100;
@@ -667,7 +695,7 @@
     window.addEventListener('resize', rz);
     /* de tekst schuift opzij voor de chatballon (of terug): opnieuw passen (alleen liggend verandert er iets) */
     root.addEventListener('hc-c-chat', rz);
-    /* lettertypes later geladen (Archivo van de zin en de knoppen): de tekst wordt iets breder of smaller, dus opnieuw passen */
+    /* lettertypes later geladen (JetBrains Mono van de kop, de zin en de knoppen): de tekst wordt iets breder of smaller, dus opnieuw passen */
     if (document.fonts) {
       if (document.fonts.ready) document.fonts.ready.then(rz, function () {});
       if (document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', rz);
