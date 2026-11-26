@@ -363,15 +363,51 @@ html{scroll-padding-top:100px}
 }
 .ck-yes:hover{transform:translateY(-1px);border-color:rgba(180,210,255,.72);background:linear-gradient(180deg,rgba(110,165,255,.62) 0%,rgba(55,126,236,.46) 55%,rgba(40,100,210,.54) 100%)}
 .ck-btn:focus-visible{outline:2px solid #9dbcf0;outline-offset:2px}
-/* gsm: bovenaan onder de navigatie, want rechtsonder zit de chatknop met zijn begroetingsballon */
-@media (max-width:560px){
-  .ck{left:12px;right:12px;width:auto;top:calc(82px + env(safe-area-inset-top,0px));bottom:auto;padding:16px;transform:translateY(-14px) scale(.98)}
-  .ck.show{transform:none}
+/* computer (24/11/2026, EMLS-3): breed en laag, zodat de kaart de heroknop en de microregel eronder niet raakt */
+@media (min-width:768px){
+  .ck{bottom:16px;width:min(620px,calc(100vw - 140px));padding:14px 16px;display:grid;grid-template-columns:1fr auto;column-gap:18px;align-items:center}
+  .ck-top{grid-column:1;grid-row:1}
+  .ck p{grid-column:1;grid-row:2;margin-top:6px;font-size:13px;line-height:1.5}
+  .ck-btns{grid-column:2;grid-row:1 / span 2;margin-top:0;grid-template-columns:auto auto}
+  .ck-btn{padding:0 18px}
+  .ck-ic{width:34px;height:34px;border-radius:11px}
+  .ck-ic svg{width:22px;height:22px}
+  .ck-top b{font-size:15px}
+}
+/* gsm (24/11/2026, EMLS-3): onderaan en compact, zodat de titel van de hero vrij blijft; rechts blijft de chatknop vrij.
+   Vroeger stond de kaart bovenaan door de begroetingsballon van de chat, maar die staat sinds 16/11 uit. */
+@media (max-width:767px){
+  .ck{left:12px;right:84px;width:auto;top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:12px 14px}
+  .ck-ic{width:32px;height:32px;border-radius:10px}
+  .ck-ic svg{width:21px;height:21px}
+  .ck-top{gap:10px}
+  .ck-top b{font-size:15px}
+  .ck p{margin-top:6px;font-size:12.5px;line-height:1.45}
+  .ck-btns{margin-top:10px;gap:6px}
+  .ck-btn{height:40px;font-size:13.5px}
 }
 @media (prefers-reduced-motion:reduce){
   .ck{transition:opacity .2s ease;transform:none}
   .ck.show .ck-ic svg{animation:none}
 }
+/* ═══════════════════════════════════════════════════════════════
+   CHATKNOP (26/11/2026, EMLS-1) — .em-chat (site.js)
+   Eigen knop op de plaats en in de vorm van de chatknop van ons platform (rechtsonder, 58 px, #155EEF), zolang de chat
+   niet geladen is. Een klik laadt de chat en opent hem; daarna neemt de knop van de chat het over en verdwijnt deze.
+   ═══════════════════════════════════════════════════════════════ */
+.em-chat{position:fixed;right:20px;bottom:20px;z-index:9990;width:58px;height:58px;margin:0;padding:0;border:0;border-radius:50%;display:grid;place-items:center;background:#155eef;color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s ease}
+.em-chat svg{display:block;width:26px;height:26px}
+.em-chat:hover{transform:scale(1.05)}
+.em-chat:focus-visible{outline:2px solid #9dbcf0;outline-offset:3px}
+.em-chat.is-laden{cursor:progress}
+.em-chat.is-laden svg{animation:emChatLaden 1s ease-in-out infinite}
+@keyframes emChatLaden{50%{opacity:.4}}
+@media (prefers-reduced-motion:reduce){
+  .em-chat{transition:none}
+  .em-chat:hover{transform:none}
+  .em-chat.is-laden svg{animation:none;opacity:.6}
+}
+@media print{.em-chat{display:none}}
 /* ═══ LOADER "één draad" — intro puur CSS/SVG, exit via .go (site.js) ═══ */
 /* Laadscherm: vaste overlay boven een meteen gerenderde pagina. Alles beweegt met transform, opacity en mask, nooit met breedte of hoogte (CLS 0). --emld-k is een getal: de opening is R*(k-1), de ring schaalt mee; K = 78vmax/R, met 14 als reserve voor browsers zonder tan()/atan2(). */
 @property --emld-k{syntax:'<number>';inherits:true;initial-value:1}
@@ -440,3 +476,5 @@ html.emld-off .emld{display:none!important}
 @media (max-width:680px){.dd-grid{grid-template-columns:1fr;margin-top:36px}.dd-grid .dd-card:last-child{grid-column:auto}}
 /* FAQ zonder JavaScript: antwoorden open (site.js zet html.js) */
 html:not(.js) .faq-a{max-height:none}
+/* FAQ (24/11/2026, EMLS-4): een ingeklapt antwoord is ook voor het toetsenbord en schermlezers dicht; visibility springt pas na het inklappen om */
+html.js .faq-item:not(.open) .faq-a{visibility:hidden;transition:max-height .3s ease,visibility 0s linear .3s}

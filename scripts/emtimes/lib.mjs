@@ -207,7 +207,7 @@ ${main}
 const crumb = (items) => `<nav class="emt-crumb" aria-label="Kruimelpad">${items.map(([label, href], i) =>
   (i ? '<span class="sep" aria-hidden="true">/</span>' : "") + (href ? `<a href="${href}">${esc(label)}</a>` : `<span aria-current="page">${esc(label)}</span>`)).join("")}</nav>`;
 
-const byline = (R, a) => `<span class="emt-meta"><span class="emt-av"><img alt="" src="${R}assets/logo-em.png" width="40" height="40"/></span><span>EM Launchpad</span><i aria-hidden="true"></i><time datetime="${a.iso}">${esc(a.date)}</time><i aria-hidden="true"></i><span>${esc(a.read)} lezen</span></span>`;
+const byline = (R, a) => `<span class="emt-meta"><span class="emt-av"><img alt="" src="${R}assets/logo-em-128.webp" width="40" height="40"/></span><span>EM Launchpad</span><i aria-hidden="true"></i><time datetime="${a.iso}">${esc(a.date)}</time><i aria-hidden="true"></i><span>${esc(a.read)} lezen</span></span>`;
 
 export function cardHtml(a, R) {
   return `<a class="et-card" data-reveal="" href="${R}${a.path}">
@@ -376,7 +376,8 @@ ${topicsHtml(R, counts, { exclude: c.key, eyebrow: "Verder lezen", h2a: "Andere"
 ${ctaBand(R)}
 </main>`;
   return page({ R, V, main, jsonld, topic: c.key,
-    title: `${c.name} | EM Times`, desc: c.lead, canonical: url });
+    /* eigen titel uit de h1 en de korte beschrijving (24/11/2026, EMLS-6) */
+    title: `${c.h1.join(" ").replace(/\.$/, "")} | EM Times`, desc: c.desc, canonical: url });
 }
 
 export function articlePage(a, proseRaw, related, V) {
@@ -456,7 +457,8 @@ ${related.map((r) => cardHtml(r, R)).join("\n")}
 ${ctaBand(R)}
 </main>`;
   return page({ R, V, main, jsonld, topic: a.topicKey, ogType: "article", ogImage: img,
-    title: `${a.title} | EM Times`, desc: a.desc, canonical: url });
+    /* lange titels zonder achtervoegsel, zodat ze in Google niet afgekapt worden (24/11/2026, EMLS-6) */
+    title: `${a.title} | EM Times`.length > 60 ? a.title : `${a.title} | EM Times`, desc: a.desc, canonical: url });
 }
 
 /* Max. 3: eerst uit dezelfde categorie, dan de nieuwste andere. */

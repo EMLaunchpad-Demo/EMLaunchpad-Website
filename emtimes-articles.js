@@ -201,7 +201,7 @@ window.ET_ARTICLES = [
   {
     title: "Waarom AI-chatbots werken voor Belgische bedrijven",
     excerpt: "Van gemiste telefoontjes naar geboekte afspraken: hoe een chatbot je klantcontact overneemt zonder dat het onpersoonlijk wordt, met concrete cijfers.",
-    desc: "Ontdek waarom AI-chatbots zo goed werken voor Belgische bedrijven: minder gemiste leads, 24/7 bereikbaarheid en meer geboekte afspraken, met concrete cijfers en voorbeelden.",
+    desc: "Waarom AI-chatbots werken voor Belgische bedrijven: minder gemiste leads, 24/7 bereikbaar en meer geboekte afspraken, met concrete cijfers en voorbeelden.",
     topic: "AI · Chatbots",
     topicKey: "ai",
     path: "emtimes/ai/waarom-ai-chatbots-werken-voor-lokale-bedrijven/",
